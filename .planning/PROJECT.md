@@ -68,8 +68,8 @@ The technical reference architecture is a TypeScript/Next.js modular monolith ba
 | Decision | Rationale | Outcome |
 |----------|-----------|---------|
 | Use a modular monolith for the MVP | Lowest operational complexity while preserving internal boundaries | — Pending |
-| Begin with one region and 32GB DDR5 kits | Proves the full data chain before multiplying unknowns | — Pending |
-| Select the first region by lawful source quality, not assumption | Source viability is the existential dependency | — Pending |
+| Begin with one region and 32GB DDR5 kits | Proves the full data chain before multiplying unknowns | Accepted; UK selected for diligence only, with no production region yet approved |
+| Select the first region by lawful source quality, not assumption | Source viability is the existential dependency | Applied; UK is the first contracting target, while Phase 1 remains no-go pending rights |
 | Make deterministic software own prices, indices and scoring | Public facts must be replayable and testable | — Pending |
 | Use agents for bounded work with hard external-action locks | Maximises leverage without outsourcing accountability | — Pending |
 | Keep forecasts human-approved initially | Causal interpretation and public recommendations carry disproportionate trust risk | — Pending |

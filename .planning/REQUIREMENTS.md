@@ -105,7 +105,10 @@ The v1 milestone is complete only when all v1 requirements are implemented, test
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SRC-01, SRC-02, SRC-03, SRC-04 | Phase 1 | Pending |
+| SRC-01 | Phase 1 | Evidence register complete; no source approved |
+| SRC-02 | Phase 1 | Blocked — no approved three-source portfolio or experimental designation |
+| SRC-03 | Phase 1 | Executable UK draft complete; thresholds and activation unapproved |
+| SRC-04 | Phase 1 | Governance/evidence controls defined; application enforcement pending |
 | CAT-01, CAT-02, CAT-03 | Phase 2 | Pending |
 | APP-04, AI-01, AI-03, AI-04 | Phase 2 | Pending |
 | ING-01, ING-02, ING-03, ING-04, ING-05 | Phase 3 | Pending |
