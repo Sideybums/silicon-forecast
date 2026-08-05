@@ -5,7 +5,7 @@
 See `.planning/PROJECT.md` (updated 2026-08-05).
 
 **Core value:** Produce one lawful, accurate and reproducible regional component-price index whose every value can be traced to immutable source observations.
-**Current focus:** Phase 1 — Source and Methodology Gate
+**Current focus:** Publisher-access enabling work — public pre-launch site and UK affiliate-network diligence
 
 ## Status
 
@@ -16,6 +16,8 @@ See `.planning/PROJECT.md` (updated 2026-08-05).
 - The UK is selected as the first **diligence region only**; no production region or production source is approved.
 - Methodology `SF-GB-DDR5-32-UDIMM-OFFER` v0.1 is an executable draft with 20 proposed thresholds, all locked pending human approval.
 - External publish, spend, production mutation, source approval and methodology-change locks remain on.
+- David explicitly approved a public promotional pre-launch website for publisher-network review. This approval covers only static project, demonstration and policy content; it does not approve publication of live offers, index values, forecasts or retailer claims.
+- PriceRunner is no longer the initial diligence route because its paid model does not fit the bootstrapped stage. The current order is Awin first, Webgains second and CJ Affiliate only if it materially improves lawful coverage.
 
 ## Current Phase
 
@@ -26,8 +28,9 @@ Phase 1 — Source and Methodology Gate is **evidence-complete but gate-blocked*
 - Selected diligence region: United Kingdom.
 - Approved production region: none.
 - Production collection/index: no-go.
-- Public/commercial display: no-go.
-- First diligence target: PriceRunner UK commercial API, followed by PriceAPI UK and independently licensed retailer routes.
+- Public/commercial price or index display: no-go; static pre-launch project information is the approved exception.
+- First diligence target: authorised UK affiliate publisher feeds, beginning with Awin and then Webgains; CJ Affiliate is an optional supplement.
+- Public promotional site: approved for publisher-network legitimacy review, provided it remains visibly pre-launch and uses no live or purportedly current prices.
 - Germany is the quantitative fallback if the UK continuation test fails; its higher score does not override solute/billiger.de's explicit 24-hour retention conflict.
 
 ## Blockers
@@ -40,7 +43,7 @@ Phase 1 — Source and Methodology Gate is **evidence-complete but gate-blocked*
 
 ## Next Action
 
-With explicit human approval, prepare and send a non-binding diligence enquiry to PriceRunner UK requesting the controlling licence, DDR5 sample/data dictionary, UK retailer panel, rights matrix, tax/delivery semantics, identifier completeness, SLA, correction policy and derived-index survival terms. No account, trial, contract or spend should occur during that enquiry without separate approval.
+Publish and verify the static publisher-review site, then purchase/connect `siliconforecast.com` and activate its project email through human-controlled registrar and mail-provider actions. After the domain, HTTPS, contact route and disclosures are verified, David may submit the Awin publisher application. Account creation, acceptance of network or advertiser terms, programme applications and spending remain separate human-gated actions.
 
 ## Safety Note
 

@@ -42,6 +42,7 @@ Produce one lawful, accurate and reproducible regional component-price index who
 - Used/refurbished-market indices — condition grading makes comparability substantially harder.
 - Public API and commercial data resale — require proven demand and explicit redistribution rights.
 - Automated AI-written publication or unapproved forecasts — incompatible with initial trust and accountability requirements.
+- Live public price/index publication remains deferred; a clearly labelled static pre-launch publisher-review site is permitted as an enabling artefact.
 - User accounts, premium memberships and alerts — deferred until the core index proves useful.
 - Microservices — unnecessary operational complexity for the MVP.
 - Zero-human corporate operation — legal, security, methodology and publication accountability remain human-governed.
@@ -73,6 +74,7 @@ The technical reference architecture is a TypeScript/Next.js modular monolith ba
 | Make deterministic software own prices, indices and scoring | Public facts must be replayable and testable | — Pending |
 | Use agents for bounded work with hard external-action locks | Maximises leverage without outsourcing accountability | — Pending |
 | Keep forecasts human-approved initially | Causal interpretation and public recommendations carry disproportionate trust risk | — Pending |
+| Publish a static pre-launch publisher-review site | Affiliate-network diligence needs a legitimate public promotional space before live feeds exist | Approved for project, synthetic demonstration and policy content only |
 
 ## Evolution
 

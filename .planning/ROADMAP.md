@@ -4,6 +4,8 @@
 
 Build the evidence chain in dependency order. The roadmap intentionally delays broad UI, editorial automation and geographic expansion until one lawful regional DDR5 index has survived a private shadow run.
 
+A narrow public pre-launch publisher-review site is an approved enabling exception to that sequencing. It may explain the project, show clearly labelled synthetic demonstrations and publish contact/privacy/affiliate information, but it must not imply live prices, approved source coverage, a supported public index or retailer partnerships that do not yet exist.
+
 ## Phase 1 — Source and Methodology Gate
 
 **Goal:** Prove that one candidate region can legally and methodologically support the vertical slice.

@@ -1,0 +1,4 @@
+import type { Metadata } from "next";
+import { SiteFooter } from "@/components/SiteFooter"; import { SiteHeader } from "@/components/SiteHeader"; import { site } from "@/lib/site"; import "./globals.css";
+export const metadata:Metadata={title:{default:site.name,template:`%s — ${site.name}`},description:site.description,applicationName:site.name,keywords:["UK PC component prices","DDR5 price history","RAM prices","GPU prices","CPU prices","SSD prices"],robots:{index:true,follow:true},openGraph:{type:"website",title:site.name,description:site.description,locale:"en_GB",siteName:site.name}};
+export default function RootLayout({children}:{children:React.ReactNode}){return <html lang="en-GB"><body><SiteHeader/><main id="main">{children}</main><SiteFooter/></body></html>}

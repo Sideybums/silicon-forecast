@@ -1,0 +1,1 @@
+import Link from "next/link"; export default function NotFound(){return <div className="shell page-shell not-found"><p className="eyebrow">404 · Signal absent</p><h1>That component has left the bench.</h1><p>The page does not exist, or the machine has developed opinions.</p><Link className="button primary" href="/">Return home</Link></div>}
