@@ -1,0 +1,31 @@
+# macOS
+.DS_Store
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# JavaScript / TypeScript
+node_modules/
+.next/
+dist/
+coverage/
+
+# Python tooling used for data experiments
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Local runtime data
+.local/
+tmp/
+*.log
+*.sqlite
+*.sqlite3
+
+# IDE
+.vscode/
+.idea/
