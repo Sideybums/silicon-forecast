@@ -11,6 +11,11 @@ test("affiliate verification is network-neutral and honest",()=>{
 });
 test("demonstration cannot be mistaken for live data",()=>{assert.match(source,/Every value above is synthetic/);assert.match(source,/No live prices/i);assert.match(source,/does not yet compare current retailer offers/i)});
 test("required publisher routes exist",()=>{for(const route of ["about","contact","privacy","affiliate-disclosure","price-history"]){assert.ok(readFileSync(`app/${route}/page.tsx`,`utf8`).length>300)}});
+test("project email is operational",()=>{
+  const contact=readFileSync("app/contact/page.tsx","utf8");
+  assert.match(contact,/active project address/i);
+  assert.doesNotMatch(contact,/will become active|must be purchased|non-working contact route/i);
+});
 test("no tracking package",()=>assert.doesNotMatch(readFileSync("package.json","utf8"),/google-analytics|gtag|plausible|posthog|segment|facebook-pixel/i));
 test("Cloudflare deploys the static export without OpenNext",()=>{
   const config=readFileSync("wrangler.jsonc","utf8");

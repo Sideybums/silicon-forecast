@@ -123,7 +123,10 @@ require(all(locks.values()), "all configured consequential-action locks remain e
 require("SRC-02 | Phase 1 | Blocked" in requirements, "SRC-02 remains visibly blocked")
 require("Approved production region: none" in state, "state records no approved production region")
 require("Production collection/index: no-go" in state, "state records the production no-go")
-require("No application code exists yet" in state, "state does not claim implementation that does not exist")
+require(
+    "No production data/index application exists yet" in state,
+    "state does not claim a production data/index implementation that does not exist",
+)
 require("all seven fields are required" in template.lower(), "source template requires all seven rights dimensions")
 require("Production collection:** no-go" in verification, "verification records the production no-go")
 require("approves no source" in verification, "verification explicitly grants no source approval")

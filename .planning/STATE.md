@@ -5,12 +5,12 @@
 See `.planning/PROJECT.md` (updated 2026-08-05).
 
 **Core value:** Produce one lawful, accurate and reproducible regional component-price index whose every value can be traced to immutable source observations.
-**Current focus:** Publisher-access enabling work — project email activation and UK affiliate-network applications
+**Current focus:** Publisher-access enabling work — UK affiliate-network applications and account-level rights diligence
 
 ## Status
 
 - Project initialised from the supplied product plan and technical specification.
-- No application code exists yet.
+- No production data/index application exists yet; only the approved static pre-launch publisher-review site is implemented.
 - Phase 1 research compared 26 candidate access routes across the US, UK, Germany and Japan using first-party evidence retrieved on 2026-08-05.
 - A source-rights evidence template and register now distinguish technical access from collection, retention, derivation, display and redistribution permission.
 - The UK is selected as the first **diligence region only**; no production region or production source is approved.
@@ -20,7 +20,7 @@ See `.planning/PROJECT.md` (updated 2026-08-05).
 - PriceRunner is no longer the initial diligence route because its paid model does not fit the bootstrapped stage. The current order is Awin first, Webgains second and CJ Affiliate only if it materially improves lawful coverage.
 - The static pre-launch site is live at `https://siliconforecast.com`, deployed from GitHub through Cloudflare Workers; `www` and plaintext HTTP permanently redirect to the HTTPS apex domain.
 - The affiliate disclosure is network-neutral. Non-visible page metadata names Awin, Webgains and CJ Affiliate solely for publisher-ownership verification and explicitly claims no approval, endorsement or partnership.
-- `hello@siliconforecast.com` is published as the intended project address but remains non-operational until Cloudflare Email Routing is configured and end-to-end delivery is verified.
+- `hello@siliconforecast.com` is operational through Cloudflare Email Routing to David's verified destination inbox. Public MX and SPF records, the exact forwarding rule and real inbound delivery were verified on 2026-08-06.
 
 ## Current Phase
 
@@ -46,7 +46,7 @@ Phase 1 — Source and Methodology Gate is **evidence-complete but gate-blocked*
 
 ## Next Action
 
-Configure Cloudflare Email Routing so `hello@siliconforecast.com` forwards to David's verified destination inbox, then test real inbound delivery and update the contact page from “reserved” to operational. After that gate passes, David may submit publisher applications to Awin and Webgains, using CJ Affiliate only where it materially improves lawful retailer coverage. Account creation, acceptance of network or advertiser terms, advertiser-programme applications and spending remain separate human-gated actions.
+David may now submit publisher applications to Awin and Webgains. Capture the exact account-level terms before acceptance, inventory relevant UK DDR5 advertisers, and treat each advertiser-programme application as a separate human-gated action. Use CJ Affiliate only if its catalogue adds new retailer groups, materially better identifiers or otherwise improves lawful coverage. Production ingestion, retained history and publication remain locked pending affirmative rights evidence.
 
 ## Safety Note
 
@@ -54,4 +54,4 @@ The completed Phase 1 work is Tier 1/Tier 2 research and reversible documentatio
 
 ---
 *State created: 2026-08-05*
-*Last updated: 2026-08-06 after public-site and custom-domain deployment*
+*Last updated: 2026-08-06 after project-email activation and delivery verification*

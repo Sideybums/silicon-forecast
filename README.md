@@ -59,11 +59,11 @@ Do not select Cloudflare's OpenNext/SSR preset: this application intentionally u
 
 GitHub Pages remains a temporary fallback through `.github/workflows/deploy-pages.yml`; its `/silicon-forecast` base path is set only inside that workflow.
 
-The public site and custom domain are live through Cloudflare Workers. Before an affiliate-network application is submitted:
+The public site and custom domain are live through Cloudflare Workers. `hello@siliconforecast.com` is active through Cloudflare Email Routing and was verified end to end on 6 August 2026. Before accepting affiliate-network or advertiser terms:
 
-1. activate and test `hello@siliconforecast.com` through Cloudflare Email Routing;
-2. update the contact page only after end-to-end delivery passes;
-3. re-read the privacy and affiliate disclosures against the actual hosting/tracking configuration; and
+1. capture the exact terms presented in the authenticated account flow;
+2. re-read the privacy and affiliate disclosures against the actual hosting/tracking configuration;
+3. treat each advertiser application and feed permission as a separate rights decision; and
 4. retain network names only in non-visible ownership-verification metadata unless a live commercial relationship requires public disclosure.
 
 Do not add analytics, affiliate tracking, live offers or claims of complete market coverage without updating the disclosures and passing the project approval gates.
