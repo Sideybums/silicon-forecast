@@ -1,0 +1,2 @@
+# Preserve captured third-party HTML byte-for-byte; its original whitespace is evidence.
+research/evidence/awin/**/*.html -whitespace

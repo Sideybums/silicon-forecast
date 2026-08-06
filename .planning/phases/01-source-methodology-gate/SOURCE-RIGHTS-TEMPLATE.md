@@ -1,7 +1,7 @@
-# Source Rights Evidence Template
+# Source Use Evidence Template
 
 **Purpose:** stable, auditable due-diligence records for candidate price-data sources under SRC-01 and SRC-04.
-**Scope:** technical access, collection, retention, derivation and display rights are assessed separately. Technical availability, a paid account, a public endpoint, marketing copy or `robots.txt` allowance is not permission.
+**Scope:** technical access, applicable terms, explicit restrictions, evidence handling, derivation and display are assessed separately. Under the human-approved 2026-08-06 policy, silence does not require bespoke permission for retention or derivation of factual public observations.
 **Boundary:** this register supports sourcing and contract review; it is not legal advice and cannot approve a production source.
 
 ## 1. Controlled vocabulary
@@ -11,9 +11,10 @@ Every rights dimension MUST contain exactly one of these machine-stable values:
 | Status | Meaning |
 |---|---|
 | `verified_permitted` | An authoritative document governing the proposed route explicitly permits this exact use, within recorded conditions. |
+| `policy_permitted` | The use concerns factual public observations, no explicit applicable restriction has been identified after current terms review, and the human-approved minimal evidence policy applies. This does not authorise access, creative reuse, raw redistribution or production activation. |
 | `verified_restricted` | An authoritative governing document explicitly prohibits or materially conflicts with this exact use. |
 | `contract_required` | A credible route exists, but the right depends on an unexecuted, account-gated, programme-specific, paid or bespoke agreement. This is not permission. |
-| `unknown` | No adequate authoritative evidence resolves the dimension, or the controlling text is inaccessible or silent. This is not permission. |
+| `unknown` | Applicable controlling terms are inaccessible, conflicting, ambiguous about an actual restriction, or otherwise cannot be reviewed. Silence alone is not `unknown` for factual retention/derivation. |
 | `not_applicable` | The dimension genuinely does not apply to the proposed route; the rationale is mandatory. It MUST NOT be used to avoid an unresolved question. |
 
 Do not use hybrids such as `U-CR`, “conditionally permitted” or “likely”. Record the single current status, then preserve conditions and possible status transitions in `rights_notes` and `unresolved_vendor_questions`.
@@ -62,7 +63,7 @@ All seven fields are required and use only the controlled vocabulary above.
 
 | Field | Required content |
 |---|---|
-| `evidence_refs` | Stable evidence IDs linking to evidence records below. Every non-`unknown` legal claim needs authoritative support. |
+| `evidence_refs` | Stable evidence IDs linking to evidence records below. Every explicit permission/restriction claim needs authoritative support; every `policy_permitted` status needs the owner policy reference plus evidence that applicable terms were reviewed. |
 | `retrieval_date` | ISO date on which each cited source was retrieved; record per evidence item if dates differ. |
 | `unresolved_vendor_questions` | Concrete written questions that would resolve statuses, semantics, warranty, survival, attribution or access. |
 | `phase_1_eligibility` | One of `blocked`, `diligence_only` or `candidate_pending_human_approval`; never `approved`. |
@@ -107,7 +108,7 @@ Use the highest available applicable authority; applicability outranks general p
 4. **L4 — first-party sales/marketing or enquiry page:** establishes that a route may exist; normally supports `contract_required`, never permission by itself.
 5. **L5 — discovery-only material:** search results, archived snippets, third-party commentary, unofficial wrappers or inaccessible URLs. It cannot resolve a rights status.
 
-Where L1/L2 is silent, do not promote L3/L4 capability claims into permission. Where documents conflict, use the more specific controlling instrument only after its scope and incorporation are verified; otherwise mark the affected dimension `unknown` and block eligibility.
+Where L1/L2 is silent about factual retention or derivation, `policy_permitted` may be recorded only after confirming the route is within the project's factual/minimal evidence policy and no explicit applicable restriction was found. Do not promote L3/L4 capability claims into technical access or creative/raw redistribution rights. Where documents conflict, use the more specific controlling instrument only after its scope and incorporation are verified; otherwise mark the affected dimension `unknown` and block eligibility.
 
 ## 5. Review, expiry and suspension mechanics
 
@@ -115,7 +116,7 @@ Where L1/L2 is silent, do not promote L3/L4 capability claims into permission. W
 - **Evidence expiry:** absent a stated earlier expiry, L2/L3 web evidence expires 90 days after retrieval and L4 evidence after 30 days. L1 expires at the earliest of contract expiry/termination, an incorporated-term change, territorial/product-scope change or the next annual legal review.
 - **Event-triggered review:** immediate review is required for terms/version/schema changes, vendor/source-panel changes, termination notices, ownership changes, enforcement/takedown contact, a changed use case, new public/commercial display, new processor/auditor access, or evidence that semantics/rights were misstated.
 - **Stale handling:** when `next_review_due` or `evidence_expiry_at` passes, eligibility automatically becomes `blocked`; previous statuses remain in history but cannot authorise operation.
-- **Suspension:** any credible conflict, inaccessible controlling agreement, lost programme approval or material uncertainty suspends collection/use for affected dimensions pending review. Preserve only evidence whose retention is itself permitted.
+- **Suspension:** any credible conflict, inaccessible applicable terms, lost programme approval or material uncertainty suspends collection/use for affected dimensions pending review. Factual observations already captured remain immutable unless an explicit binding deletion duty is identified; authored creative remains excluded by default.
 - **History:** never overwrite material conclusions. Append a dated change entry with old/new values, evidence, author, reviewer, reason and approval reference.
 
 ## 6. Change approval
@@ -133,13 +134,13 @@ Agents may research, draft and recommend. They may not accept terms, sign contra
 
 `phase_1_eligibility` is computed separately from technical suitability and regional scoring.
 
-- `blocked`: default. Required rights are `unknown`, `verified_restricted`, stale, conflicting or unsupported; semantics prevent a reproducible regional price; or controlling evidence is missing.
+- `blocked`: default. Required access/source-use states are `unknown`, `verified_restricted`, stale, conflicting or unsupported; semantics prevent a reproducible regional price; or applicable terms cannot be reviewed.
 - `diligence_only`: a credible technical/commercial route exists and written diligence may proceed, but collection/use is not authorised.
-- `candidate_pending_human_approval`: authoritative applicable evidence resolves every right required by the declared Phase 1 mode, no verified restriction conflicts, data semantics and source independence are acceptable, evidence is current, and only the explicit human production decision remains. This is still not approval.
+- `candidate_pending_human_approval`: authoritative applicable evidence or the approved `policy_permitted` basis resolves every source-use dimension required by the declared Phase 1 mode, no verified restriction conflicts, data semantics and source independence are acceptable, evidence is current, and only the explicit human production decision remains. This is still not approval.
 
-For the private Phase 1 index, `automated_collection_status`, `raw_evidence_storage_status`, `derived_history_status`, `private_display_status` and `cross_source_combination_status` must each be `verified_permitted`; public/commercial display may be `not_applicable` only while the public lock remains on and the rationale is recorded. Raw redistribution may be `verified_restricted` if Phase 1 requires none, but permitted processor/auditor handling and evidence access must still be contractually workable. Any required field that is `contract_required` or `unknown`, or any conflicting `verified_restricted`, fails closed.
+For the private Phase 1 index, `automated_collection_status` must reflect actual authorised technical access. `raw_evidence_storage_status`, `derived_history_status`, `private_display_status` and `cross_source_combination_status` may be either `verified_permitted` or `policy_permitted`. Public/commercial display remains separately human-locked. Raw redistribution may be `verified_restricted` because Phase 1 requires none. A required access condition that remains `contract_required`, any material `unknown`, or any conflicting `verified_restricted` fails closed.
 
-No numerical quality score, technical API access, account payment, vendor assurance, public availability or affiliate approval can override this gate. `production_approval` remains `not_approved` until a separate recorded human decision.
+No numerical quality score, technical API access, account payment, vendor assurance, public availability or affiliate approval can override an explicit restriction or the production lock. `production_approval` remains `not_approved` until a separate recorded human decision.
 
 ## 8. Compact source record example
 

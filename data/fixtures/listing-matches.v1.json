@@ -1,0 +1,129 @@
+{
+  "schema_version": 1,
+  "fixture_set_id": "sf-ddr5-listing-labels-2026-08-06",
+  "catalogue_fixture_set_id": "sf-ddr5-32gb-seed-2026-08-06",
+  "status": "candidate_pending_human_review",
+  "auto_confirmation_gate": "locked",
+  "examples": [
+    {
+      "example_id": "exact-kingston-beast",
+      "listing": {"title": "Kingston FURY Beast 32GB (2x16GB) DDR5 6000 CL30", "manufacturer_raw": "Kingston", "mpn_raw": "KF560C30BBEK2-32"},
+      "expected": {"decision": "match", "product_key": "kingston-fury-beast-kf560c30bbek2-32", "reason_code": "exact_mpn", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": true, "exclusion_reason": null}
+    },
+    {
+      "example_id": "normalised-case-and-space",
+      "listing": {"title": "Kingston Fury Beast DDR5 kit", "manufacturer_raw": "kingston technology", "mpn_raw": "  kf560c30bbek2-32  "},
+      "expected": {"decision": "match", "product_key": "kingston-fury-beast-kf560c30bbek2-32", "reason_code": "normalized_mpn", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": true, "exclusion_reason": null}
+    },
+    {
+      "example_id": "exact-kingston-renegade",
+      "listing": {"title": "Kingston FURY Renegade 32GB DDR5-6400", "manufacturer_raw": "Kingston", "mpn_raw": "KF564C32RSK2-32"},
+      "expected": {"decision": "match", "product_key": "kingston-fury-renegade-kf564c32rsk2-32", "reason_code": "exact_mpn", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": true, "exclusion_reason": null}
+    },
+    {
+      "example_id": "exact-gskill-flare",
+      "listing": {"title": "G.Skill Flare X5 32GB 6000MHz DDR5 AMD EXPO", "manufacturer_raw": "G.SKILL", "mpn_raw": "F5-6000J3636F16GX2-FX5"},
+      "expected": {"decision": "match", "product_key": "gskill-flare-x5-f5-6000j3636f16gx2-fx5", "reason_code": "exact_mpn", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": true, "exclusion_reason": null}
+    },
+    {
+      "example_id": "exact-gskill-trident",
+      "listing": {"title": "G.Skill Trident Z5 Neo RGB 32GB 6000 DDR5", "manufacturer_raw": "G.SKILL", "mpn_raw": "F5-6000J3636F16GX2-TZ5NR"},
+      "expected": {"decision": "match", "product_key": "gskill-trident-z5-neo-rgb-f5-6000j3636f16gx2-tz5nr", "reason_code": "exact_mpn", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": true, "exclusion_reason": null}
+    },
+    {
+      "example_id": "exact-identity-refurbished-ineligible",
+      "listing": {"title": "Refurbished Kingston FURY Beast 32GB DDR5", "manufacturer_raw": "Kingston", "mpn_raw": "KF560C30BBEK2-32", "condition": "refurbished"},
+      "expected": {"decision": "match", "product_key": "kingston-fury-beast-kf560c30bbek2-32", "reason_code": "exact_mpn", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": false, "exclusion_reason": "condition_not_new"}
+    },
+    {
+      "example_id": "one-character-mpn-difference",
+      "listing": {"title": "Kingston FURY Beast 32GB DDR5 6000", "manufacturer_raw": "Kingston", "mpn_raw": "KF560C30BBEK2-33"},
+      "expected": {"decision": "abstain_insufficient", "product_key": null, "reason_code": "near_mpn_only", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": false, "exclusion_reason": "identity_unresolved"}
+    },
+    {
+      "example_id": "punctuation-stripping-forbidden",
+      "listing": {"title": "G.Skill Flare X5 DDR5", "manufacturer_raw": "G.SKILL", "mpn_raw": "F56000J3636F16GX2FX5"},
+      "expected": {"decision": "abstain_insufficient", "product_key": null, "reason_code": "near_mpn_only", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": false, "exclusion_reason": "identity_unresolved"}
+    },
+    {
+      "example_id": "generic-title-multiple-candidates",
+      "listing": {"title": "G.Skill 32GB (2x16GB) DDR5 6000 kit", "manufacturer_raw": "G.SKILL"},
+      "expected": {"decision": "abstain_ambiguous", "product_key": null, "reason_code": "multiple_candidates", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": false, "exclusion_reason": "identity_unresolved"}
+    },
+    {
+      "example_id": "exact-mpn-capacity-conflict",
+      "listing": {"title": "Kingston FURY Beast 64GB (2x32GB) DDR5 6000", "manufacturer_raw": "Kingston", "mpn_raw": "KF560C30BBEK2-32", "total_capacity_gb": 64, "module_count": 2},
+      "expected": {"decision": "abstain_ambiguous", "product_key": null, "reason_code": "specification_conflict", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": false, "exclusion_reason": "identity_conflict"}
+    },
+    {
+      "example_id": "manufacturer-conflict",
+      "listing": {"title": "Acme DDR5 memory", "manufacturer_raw": "Acme", "mpn_raw": "KF560C30BBEK2-32"},
+      "expected": {"decision": "abstain_ambiguous", "product_key": null, "reason_code": "manufacturer_mismatch", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": false, "exclusion_reason": "identity_conflict"}
+    },
+    {
+      "example_id": "unknown-exact-mpn",
+      "listing": {"title": "Kingston FURY Beast DDR5 kit", "manufacturer_raw": "Kingston", "mpn_raw": "KF560C36BBEK2-32"},
+      "expected": {"decision": "no_match", "product_key": null, "reason_code": "no_catalogue_product", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": false, "exclusion_reason": "catalogue_product_absent"}
+    },
+    {
+      "example_id": "unsupported-ddr4",
+      "listing": {"title": "Kingston FURY Beast 32GB (2x16GB) DDR4 3600", "manufacturer_raw": "Kingston", "memory_generation": "DDR4"},
+      "expected": {"decision": "unsupported", "product_key": null, "reason_code": "unsupported_memory_type", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": false, "exclusion_reason": "outside_catalogue_scope"}
+    },
+    {
+      "example_id": "unsupported-sodimm",
+      "listing": {"title": "32GB (2x16GB) DDR5-5600 laptop memory", "form_factor": "SODIMM"},
+      "expected": {"decision": "unsupported", "product_key": null, "reason_code": "unsupported_form_factor", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": false, "exclusion_reason": "outside_catalogue_scope"}
+    },
+    {
+      "example_id": "unsupported-one-by-thirty-two",
+      "listing": {"title": "32GB DDR5-6000 single module", "total_capacity_gb": 32, "module_count": 1},
+      "expected": {"decision": "unsupported", "product_key": null, "reason_code": "unsupported_module_configuration", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": false, "exclusion_reason": "outside_catalogue_scope"}
+    },
+    {
+      "example_id": "unsupported-sixty-four-gb-kit",
+      "listing": {"title": "64GB (2x32GB) DDR5-6000 desktop kit", "total_capacity_gb": 64, "module_count": 2},
+      "expected": {"decision": "unsupported", "product_key": null, "reason_code": "unsupported_capacity", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": false, "exclusion_reason": "outside_catalogue_scope"}
+    },
+    {
+      "example_id": "unsupported-ecc-rdimm",
+      "listing": {"title": "32GB DDR5 ECC Registered server memory", "form_factor": "RDIMM", "ecc": true, "registered": true},
+      "expected": {"decision": "unsupported", "product_key": null, "reason_code": "unsupported_form_factor", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": false, "exclusion_reason": "outside_catalogue_scope"}
+    },
+    {
+      "example_id": "multi-product-listing",
+      "listing": {"title": "Choose G.Skill Flare X5 or Trident Z5 Neo RGB 32GB DDR5 6000", "manufacturer_raw": "G.SKILL"},
+      "expected": {"decision": "abstain_ambiguous", "product_key": null, "reason_code": "multi_product_listing", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": false, "exclusion_reason": "identity_unresolved"}
+    },
+    {
+      "example_id": "title-only-single-apparent-candidate",
+      "listing": {"title": "Kingston FURY Renegade 32GB DDR5-6400 CL32", "manufacturer_raw": "Kingston"},
+      "expected": {"decision": "abstain_insufficient", "product_key": null, "reason_code": "missing_identifier", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": false, "exclusion_reason": "identity_unresolved"}
+    },
+    {
+      "example_id": "malformed-gtin-does-not-rescue-title",
+      "listing": {"title": "G.Skill Flare X5 32GB DDR5 6000", "manufacturer_raw": "G.SKILL", "gtin_raw": "1234ABC"},
+      "expected": {"decision": "abstain_insufficient", "product_key": null, "reason_code": "malformed_identifier", "auto_confirmation_allowed": false},
+      "qualification": {"index_eligible": false, "exclusion_reason": "identity_unresolved"}
+    }
+  ]
+}

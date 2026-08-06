@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "evidence_set": "catalogue-2026-08-06",
+  "status": "candidate_fixture_evidence_only",
+  "handling": "minimal_factual_extracts_no_authored_creative",
+  "items": [
+    {
+      "file": "gskill-f5-6000j3636f16gx2-fx5.extract.json",
+      "evidence_type": "minimal_factual_product_extract",
+      "product_mpn": "F5-6000J3636F16GX2-FX5",
+      "source_urls": [
+        "https://www.gskill.com/product/165/396/1662622664/F5-6000J3636F16GX2-FX5",
+        "https://www.gskill.com/specification/165/396/1662622664/F5-6000J3636F16GX2-FX5-Specification"
+      ],
+      "recorded_at": "2026-08-06T08:46:18Z",
+      "authored_content_retained": false,
+      "bytes": 1264,
+      "sha256": "42eb7553de65af918fc6dfc4655cab028838185753a1a04fe74707fa3cc3e4fb"
+    },
+    {
+      "file": "gskill-f5-6000j3636f16gx2-tz5nr.extract.json",
+      "evidence_type": "minimal_factual_product_extract",
+      "product_mpn": "F5-6000J3636F16GX2-TZ5NR",
+      "source_urls": [
+        "https://www.gskill.com/product/165/390/1662621819/F5-6000J3636F16GX2-TZ5NR",
+        "https://www.gskill.com/specification/165/390/1662621819/F5-6000J3636F16GX2-TZ5NR-Specification"
+      ],
+      "recorded_at": "2026-08-06T08:46:18Z",
+      "authored_content_retained": false,
+      "bytes": 1280,
+      "sha256": "1c527f81b36bf5ca2ca4e7552d745413cdd3b166c7ff1f20f7c72e32e3af9731"
+    },
+    {
+      "file": "kingston-kf560c30bbek2-32.extract.json",
+      "evidence_type": "minimal_factual_product_extract",
+      "product_mpn": "KF560C30BBEK2-32",
+      "source_urls": [
+        "https://www.kingston.com/datasheets/KF560C30BBEK2-32.pdf"
+      ],
+      "recorded_at": "2026-08-06T08:46:18Z",
+      "authored_content_retained": false,
+      "bytes": 1082,
+      "sha256": "d037a833ea7fdae27eeb7b6bfb76c0e58d4ce424471f5ee6db56049da090f144"
+    },
+    {
+      "file": "kingston-kf564c32rsk2-32.extract.json",
+      "evidence_type": "minimal_factual_product_extract",
+      "product_mpn": "KF564C32RSK2-32",
+      "source_urls": [
+        "https://www.kingston.com/datasheets/KF564C32RSK2-32.pdf"
+      ],
+      "recorded_at": "2026-08-06T08:46:18Z",
+      "authored_content_retained": false,
+      "bytes": 1322,
+      "sha256": "031ccc8c1d88c257c26fed1e1f19983f11b640f8a7cf0722334792f924f4cafb"
+    }
+  ]
+}

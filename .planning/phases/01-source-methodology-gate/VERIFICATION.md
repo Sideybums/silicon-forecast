@@ -5,6 +5,8 @@
 **Selected diligence region:** United Kingdom
 **Approved production region:** none
 
+> **Post-verification update — 2026-08-06:** David approved `research/source_use_policy_decision_2026-08-06.md`, replacing the blanket requirement for an affirmative retention/derivation grant with explicit-restriction review for factual public observations. This does not retrospectively alter the 5 August verification evidence, but its “complete rights chain” blocker is superseded. The current blockers are recorded in `.planning/STATE.md`: no Awin advertiser programme/feed access yet, no validated DDR5 feed samples, no approved source portfolio/experimental designation, and locked methodology thresholds.
+
 ## Verdict
 
 Phase 1 has answered its governing question without pretending that an API is permission.

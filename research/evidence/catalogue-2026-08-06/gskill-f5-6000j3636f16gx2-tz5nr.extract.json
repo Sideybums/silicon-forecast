@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "evidence_type": "minimal_factual_product_extract",
+  "product_mpn": "F5-6000J3636F16GX2-TZ5NR",
+  "source": {
+    "publisher": "G.SKILL International Enterprise Co., Ltd.",
+    "overview_url": "https://www.gskill.com/product/165/390/1662621819/F5-6000J3636F16GX2-TZ5NR",
+    "specification_url": "https://www.gskill.com/specification/165/390/1662621819/F5-6000J3636F16GX2-TZ5NR-Specification",
+    "retrieved_on": "2026-08-06",
+    "overview_response_bytes": 63451,
+    "overview_response_sha256": "43084d24e5de5c5484d21953240a167ce358f4162f220d4577dbdf7ae356ab83",
+    "specification_response_bytes": 53343,
+    "specification_response_sha256": "b0db4ee780242acc854638e3ba944704ae1c5298d4b7705717d16a42f26d2eef"
+  },
+  "extraction": {
+    "recorded_at": "2026-08-06T08:46:18Z",
+    "method": "exact_HTML_field_selection_from_first_party_overview_and_specification",
+    "authored_content_retained": false
+  },
+  "facts": {
+    "product_family": "Trident Z5 Neo RGB",
+    "memory_generation": "DDR5",
+    "total_capacity_gb": 32,
+    "module_count": 2,
+    "capacity_per_module_gb": 16,
+    "tested_speed_mt_s": 6000,
+    "catalogue_category": "Desktop Memory (U-DIMM/CU-DIMM)",
+    "registered_or_unbuffered": "Unbuffered",
+    "ecc": "Non-ECC"
+  }
+}

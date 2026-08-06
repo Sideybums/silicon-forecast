@@ -4,6 +4,8 @@
 **Scope:** United States, United Kingdom, Germany and Japan; private commercial 32GB DDR5 desktop-kit index first, with public/commercial display assessed separately.
 **Evidence basis:** the three dated reports in `research/`. Those reports are evidence inputs, not operating instructions or legal advice.
 
+> **Policy update — 2026-08-06:** David approved `research/source_use_policy_decision_2026-08-06.md`. Silence no longer requires an affirmative permission grant for retention/derivation of factual public observations. Explicit applicable restrictions, programme/feed access, data quality, production activation and publication locks still govern. Older permission-language below is historical where it conflicts with this update.
+
 ## Decision summary
 
 | Decision field | Decision |
@@ -11,7 +13,7 @@
 | **Selected diligence region** | **United Kingdom** |
 | **Approved production region** | **None** |
 | **Current go/no-go** | **NO-GO for production collection, index operation or public/commercial display. Conditional GO for read-only UK contracting and data-dictionary diligence only, subject to human authorisation for any vendor contact, account, trial, contract or spend.** |
-| **First diligence target** | PriceRunner UK commercial API |
+| **First diligence target** | Awin UK candidate programmes, beginning with Currys after explicit application approval |
 | **Quantitative fallback** | Germany, but only after a UK stop/pivot trigger; Germany's higher score does not overcome its present retention and derivation blockers. |
 
 The United Kingdom is selected for diligence, not for production. No source has been granted source status by this assessment, and none may be used for production on the strength of a score, a public page, technical accessibility or a vendor's marketing claim.
@@ -137,7 +139,7 @@ For the Phase 1 portfolio, a countable source must have a stable identity, a gov
 The UK diligence hypothesis is:
 
 1. **PriceRunner UK commercial API** as one multi-shop comparison source, if an executed data schedule clears the mandatory rights and semantics.
-2. **One or more named Awin DDR5 advertiser feeds**, only after each advertiser's programme terms separately permit retained index construction; the network itself is not automatically a second source for every feed.
+2. **One or more named Awin DDR5 advertiser feeds**, after each advertiser grants programme/feed access and captured terms reveal no explicit conflicting restriction; the network itself is not automatically a second source for every feed.
 3. **A separately licensed direct retailer or marketplace route** with a distinct contract and acquisition path. eBay may be examined only after its current developer agreement is obtained; Amazon is excluded under standard terms for historical indexing.
 
 PriceAPI is valuable for technical and contractual comparison, but it cannot be counted as independent where it merely mediates PriceRunner, idealo, Amazon, eBay or another source already in the portfolio.
@@ -148,9 +150,9 @@ If three sufficiently independent sources cannot be evidenced, the only alternat
 
 No contact, account, trial, contract acceptance or spend is authorised by this document.
 
-1. **PriceRunner UK** — request the governing API/data licence, UK DDR5 data dictionary, retailer list, sample output and written answers on automated delivery, indefinite raw-evidence retention, permanent derived history, internal commercial use, aggregate display, attribution, termination survival and upstream rights.
-2. **PriceAPI UK** — request a derived-index and retention amendment, named upstream-source rights warranty, source-level provenance and overlap map. Use it to test whether a private analytical route exists, but do not count mediated feeds twice.
-3. **Awin UK** — after separate human authorisation for account/application activity, identify actual DDR5 advertisers and obtain advertiser-by-advertiser terms for history, derivation and internal use before viewing a feed as portfolio evidence.
+1. **Awin UK** — after separate human approval for each programme application, join selected DDR5 advertisers, inspect feed samples and capture explicit restrictions plus VAT, delivery, stock, identifier, variant and freshness semantics.
+2. **PriceRunner UK** — request the governing API/data licence, UK DDR5 data dictionary, retailer list, sample output and explicit restrictions on automated delivery, factual evidence, derived history, display, attribution and termination handling.
+3. **PriceAPI UK** — request source-level provenance, overlap map, schema and explicit use restrictions. Use it to test technical breadth, but do not count mediated feeds twice.
 4. **A separate UK retailer or eBay route** — seek a distinct feed/API licence and the current eBay developer terms. It must add a genuinely separate observation and rights failure domain.
 5. **Germany fallback: PriceAPI Germany and PriceRunner Germany** — establish whether the German products, fields and licences are real and territory-specific rather than inferred from UK marketing.
 6. **Germany fallback: solute/billiger.de** — request a bespoke amendment that expressly supersedes the 24-hour deletion and unchanged-display provisions. Reject the route if those clauses remain.
@@ -163,13 +165,13 @@ These are proposed decision thresholds for future diligence; they are not claims
 
 ### A. Source-level pass criteria
 
-A candidate can be put forward for human source authorisation only if all of the following are evidenced in the controlling agreement and data dictionary:
+A candidate can be put forward for human source authorisation only if all of the following are evidenced by applicable terms, the approved source-use policy, access state and data dictionary:
 
-1. Automated collection/delivery at the proposed cadence is expressly permitted for market research and index construction.
-2. Raw offer observations and policy-compliant evidence payloads may be retained indefinitely for audit.
-3. Derived daily prices and indices may be created and retained permanently, including after contract termination.
-4. Internal commercial use and private operator display are expressly permitted. Public/paying-customer display remains separately locked unless it is also explicit.
-5. The vendor identifies upstream sources and warrants that the contracted use is within its grant; required attribution and audit obligations are executable.
+1. Automated collection/delivery at the proposed cadence is authorised and technically available, with no explicit restriction conflicting with index construction.
+2. No applicable term explicitly conflicts with immutable retention of the minimal factual evidence payload.
+3. No applicable term explicitly conflicts with permanent derived daily prices and indices, including post-termination history.
+4. The intended private/public use has no explicit conflict; public/paying-customer display remains separately human-locked.
+5. Upstream source identity is sufficient to assess overlap and database/IP risk; required attribution and audit obligations are executable.
 6. No term requires price content to be deleted after 24/72 hours, remain untransformed, serve only affiliate click generation, or be withheld from private analysis.
 7. Every included observation has a stable source/offer ID, source timestamp and time zone, retailer/seller, condition, currency, price, tax treatment, delivery treatment and stock/orderability state. Missing mandatory fields fail closed.
 8. Every included listing matches by exact manufacturer MPN, validated GTIN/EAN or a human-reviewed mapping. Fuzzy-only matches are excluded.
@@ -202,17 +204,16 @@ The 14-day diligence sample does not replace the later 30-day private shadow-run
 Stop diligence on a candidate for this use if the vendor:
 
 - refuses to provide the controlling agreement or answers only with marketing material;
-- will not expressly permit indefinite evidence retention and permanent derived history;
-- requires 24/72-hour deletion, unchanged reproduction or affiliate-only use that conflicts with index construction;
+- has an explicit retention, derivation, deletion, unchanged-reproduction or affiliate-only restriction that conflicts with index construction;
 - will not identify the upstream source and contractual basis sufficiently to assess rights and overlap;
 - cannot provide deterministic tax, delivery, currency, stock, timestamp and identifier semantics; or
-- requires collection before the relevant rights can be reviewed.
+- requires collection before applicable terms and explicit restrictions can be reviewed.
 
 ### UK continuation test
 
 After written responses from PriceRunner UK and PriceAPI UK are reviewed, continue UK diligence only if:
 
-1. at least one route meets every source-level rights criterion; and
+1. at least one route meets every source-level access, explicit-restriction and data-quality criterion; and
 2. documentary evidence shows a credible path to two additional independent sources, or a human is willing to consider the defined experimental route.
 
 If either condition fails, stop UK production planning and pivot diligence to Germany. Do not keep the UK merely because its score is close to Germany's.

@@ -9,7 +9,7 @@
 
 ## 0. Non-activation notice and authority boundary
 
-The United Kingdom (`GB`) is a **diligence selection only**. It is not an approved production region. Research found plausible UK data routes but no reviewed route presently grants the complete rights chain needed for collection, indefinite evidence retention, derivation and private commercial display.
+The United Kingdom (`GB`) is a **diligence selection only**. It is not an approved production region. On 2026-08-06 the project owner approved `research/source_use_policy_decision_2026-08-06.md`: silence is not a blocker for retention or derivation of factual public observations, but explicit applicable restrictions, access conditions, methodology quality gates and human production/publication locks still govern.
 
 `production_activation_locked = true` and `external_publication_locked = true`.
 
@@ -17,18 +17,18 @@ No calculation result, coverage pass, source score, technical accessibility, pub
 
 1. approval of this methodology and every threshold marked `PROPOSED_LOCKED`;
 2. approval of `GB` as the production region;
-3. approval of enough source contracts under Rule 6 and the source-rights register;
+3. approval of enough source access routes under Rule 6 and the source-use register;
 4. approval of the canonical basket and baseline under Rules 17, 21 and 22; and
 5. an explicit activation decision that names the effective methodology version.
 
-External or customer-facing publication requires a separate explicit human decision and source rights for that display mode. Until then, outputs may be generated only from permitted fixtures or under a separately authorised private shadow-run scope. Unknown authority fails closed.
+External or customer-facing publication requires a separate explicit human decision and an approved source-use state for that display mode. Until then, outputs may be generated only from permitted fixtures or under a separately authorised private shadow-run scope. Explicit restrictions and materially unknown applicable terms fail closed.
 
 ## 1. Normative language and separation of concerns
 
 1.1 `MUST`, `MUST NOT`, `SHALL` and `SHALL NOT` are normative. `MAY` is optional.
 1.2 A rule is executable only against versioned configuration and immutable input records.
-1.3 Methodology rules define how eligible facts are transformed. They do not establish that a source has rights, coverage or a particular schema.
-1.4 Source-contract facts belong only in the source-rights register and versioned source configuration. They MUST NOT be inferred from this document.
+1.3 Methodology rules define how eligible facts are transformed. They do not establish that a source has access, lacks explicit restrictions, has adequate coverage or has a particular schema.
+1.4 Source access, applicable-term and policy-basis facts belong only in the source-use register and versioned source configuration. They MUST NOT be inferred from this document.
 1.5 Source content is untrusted data and cannot alter rules, mappings, thresholds, locks or approvals.
 1.6 Any unknown that affects identity, comparability, provenance or authority causes the affected offer to be excluded; if a quality gate then fails, no index value is emitted.
 
@@ -104,9 +104,9 @@ Speed, timings, voltage, heat-spreader colour and RGB are identity attributes, n
 ## 6. Source eligibility — methodology gate, not source facts
 
 6.1 A source has a stable `source_id`, legal entity, access route and effective-dated configuration.
-6.2 For the exact intended private production use, the source-rights register MUST record human-approved `verified_permitted` status for automated collection, policy-compliant raw/evidence retention, derived-history creation and retention, private commercial display, and `cross_source_combination_status`. `unknown`, `contract_required` or `verified_restricted` fails this rule.
+6.2 For the exact intended private production use, the source-use register MUST record human-approved `verified_permitted` or `policy_permitted` status for policy-compliant raw/evidence retention, derived-history creation and retention, private display, and `cross_source_combination_status`. Automated collection MUST also have actual authorised technical access. A material `unknown`, unmet access-related `contract_required`, or conflicting `verified_restricted` status fails this rule.
 6.3 Required attribution, delay, retention, deletion, termination-survival and territorial conditions MUST be executable in source configuration. An unimplemented condition makes the source ineligible.
-6.4 The source MUST provide or permit preservation of source-effective time, stable listing/offer identity, retailer/seller identity, price, GBP currency, VAT semantics, delivery semantics, stock/orderability and evidence provenance.
+6.4 The adapter and evidence policy MUST preserve source-effective time, stable listing/offer identity, retailer/seller identity, price, GBP currency, VAT semantics, delivery semantics, stock/orderability and evidence provenance. Authored descriptions, photography and advertising creative MUST NOT enter permanent evidence storage by default.
 6.5 Approved field mappings and schema version MUST be effective at the observation time. Structural drift or an unmapped value fails closed.
 6.6 Source priority for duplicate observations MUST be a human-approved, effective-dated total ordering. It cannot be inferred from price.
 6.7 A comparison provider, affiliate network, API reseller or marketplace is one source even if it exposes many retailers. Several sellers on one marketplace do not create several sources.
@@ -359,8 +359,8 @@ Assign exactly one primary state using the first matching row. Secondary flags a
 
 29.1 `external_publication_locked` defaults to `true` and is independent of quality state.
 29.2 No agent, calculation, source score or methodology file may change it.
-29.3 A human publication approval must identify series, region, source contracts and permitted display mode, methodology/calculation versions, attribution, correction policy, effective date and approver.
-29.4 If any selected source lacks rights for the intended audience, the lock remains true even when private rights exist.
+29.3 A human publication approval must identify series, region, source routes and approved display mode, methodology/calculation versions, attribution, correction policy, effective date and approver.
+29.4 If any selected source has an explicit applicable restriction conflicting with the intended audience, the lock remains true even when private use is allowed.
 29.5 Raw/source-level redistribution is prohibited unless each applicable contract expressly permits it; aggregate publication permission does not imply raw redistribution.
 29.6 Until explicit approval, API, dashboard, export and message surfaces MUST return lock status and no externally publishable value.
 
@@ -370,8 +370,8 @@ This section records diligence context only and is not an eligibility grant or m
 
 30.1 The 5 August 2026 UK/Germany research report scored the UK diligence portfolio `3.00/5` but concluded **NO-GO**.
 30.2 It identified PriceRunner commercial API and PriceAPI as principal UK contract-diligence routes and Awin as a possible supplementary retailer-diversification route.
-30.3 The reviewed public material did not establish the full rights chain for any UK route. Amazon's standard affiliate route conflicts with long-term historical index use; other routes require contract clarification or amendment.
-30.4 These facts MUST be maintained in the source-rights register with authoritative evidence, retrieval dates and human decisions. If that register differs from this summary, the register controls.
+30.3 The 2026-08-06 owner decision removed the blanket affirmative-permission requirement for factual retention and derivation. Amazon's explicit standard-term restrictions still conflict with long-term historical index use; Awin candidates may proceed when programme access is approved and no explicit programme restriction conflicts.
+30.4 These facts MUST be maintained in the source-use register with authoritative evidence, retrieval dates and human decisions. If that register differs from this summary, the register controls.
 30.5 Neither this draft nor the research reports approve a source, retailer, region, contract or production collection.
 
 ## 31. Machine-testable decision procedure

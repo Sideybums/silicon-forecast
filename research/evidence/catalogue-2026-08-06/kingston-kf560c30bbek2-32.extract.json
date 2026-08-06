@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "evidence_type": "minimal_factual_product_extract",
+  "product_mpn": "KF560C30BBEK2-32",
+  "source": {
+    "publisher": "Kingston Technology",
+    "url": "https://www.kingston.com/datasheets/KF560C30BBEK2-32.pdf",
+    "retrieved_on": "2026-08-06",
+    "source_response_bytes": 1348581,
+    "source_response_sha256": "485149a54c9282b548ece29eb1a5c04791760f952840f09f8c8e2ed9af30c85f"
+  },
+  "extraction": {
+    "recorded_at": "2026-08-06T08:46:18Z",
+    "method": "pypdf_text_extraction_then_manual_field_selection",
+    "authored_content_retained": false
+  },
+  "facts": {
+    "heading": "KF560C30BBEK2-32 — 32GB (16GB x 2), DDR5-6000 CL30, 288-Pin DIMM Kit",
+    "total_capacity_gb": 32,
+    "module_count": 2,
+    "capacity_per_module_gb": 16,
+    "memory_generation": "DDR5",
+    "tested_speed_mt_s": 6000,
+    "pin_count": 288,
+    "module_classification_note": "Consumer Kingston FURY 288-pin desktop DIMM. DDR5 on-die ECC is stated by the source and is not system ECC; non-system-ECC/unbuffered classification remains pending human review."
+  }
+}

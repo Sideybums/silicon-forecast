@@ -25,7 +25,7 @@ Produce one lawful, accurate and reproducible regional component-price index who
 
 ### Active
 
-- [ ] Confirm lawful collection, storage, derivation and display rights for enough sources to support one region.
+- [ ] Record the lawful basis and any explicit contractual restrictions for enough sources to support one region; bespoke permission is not required merely because factual public observations will be retained or used in derived history.
 - [ ] Define and version the first regional methodology, including tax, delivery, basket, baseline, coverage and outlier rules.
 - [ ] Maintain a reviewed canonical catalogue for 32GB DDR5 desktop-memory kits.
 - [ ] Preserve immutable raw observations and complete provenance for every derived value.
@@ -55,7 +55,7 @@ The technical reference architecture is a TypeScript/Next.js modular monolith ba
 
 ## Constraints
 
-- **Evidence**: No source may support a production index until its collection, storage, derivation, display and commercial-use permissions are recorded.
+- **Evidence**: No source may support a production index until its access basis, applicable terms, explicit restrictions and evidence policy are recorded. Public factual offer data may be retained and used in derived history unless an applicable restriction says otherwise; authored creative is excluded by default.
 - **Data integrity**: Raw observations are immutable; corrections and recalculations are additive, versioned and auditable.
 - **Autonomy**: External publishing, spend, production mutation and methodology changes default to locked.
 - **AI safety**: LLMs may rank, draft and recommend, but may not directly calculate or silently alter public facts.
@@ -75,6 +75,7 @@ The technical reference architecture is a TypeScript/Next.js modular monolith ba
 | Use agents for bounded work with hard external-action locks | Maximises leverage without outsourcing accountability | — Pending |
 | Keep forecasts human-approved initially | Causal interpretation and public recommendations carry disproportionate trust risk | — Pending |
 | Publish a static pre-launch publisher-review site | Affiliate-network diligence needs a legitimate public promotional space before live feeds exist | Approved for project, synthetic demonstration and policy content only |
+| Treat public factual offer observations as usable absent an explicit applicable restriction | Prices, stock, identifiers and product attributes are evidence inputs; requiring bespoke affirmative grants for every silent analytical use would prevent the intended comparison product | Approved by David on 2026-08-06; affiliate/feed access terms and explicit restrictions still govern, and authored descriptions/images are excluded by default |
 
 ## Evolution
 

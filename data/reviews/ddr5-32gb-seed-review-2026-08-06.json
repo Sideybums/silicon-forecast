@@ -1,0 +1,55 @@
+{
+  "schema_version": 1,
+  "review_id": "sf-ddr5-32gb-seed-human-review-2026-08-06",
+  "review_type": "human_catalogue_and_label_review",
+  "catalogue_fixture_set_id": "sf-ddr5-32gb-seed-2026-08-06",
+  "listing_fixture_set_id": "sf-ddr5-listing-labels-2026-08-06",
+  "decision": "approved_for_fixture_use",
+  "reviewed_by": {
+    "name": "David Sidebottom",
+    "role": "project_owner"
+  },
+  "reviewed_at": "2026-08-06T09:21:11Z",
+  "product_keys": [
+    "kingston-fury-beast-kf560c30bbek2-32",
+    "kingston-fury-renegade-kf564c32rsk2-32",
+    "gskill-flare-x5-f5-6000j3636f16gx2-fx5",
+    "gskill-trident-z5-neo-rgb-f5-6000j3636f16gx2-tz5nr"
+  ],
+  "listing_example_ids": [
+    "exact-kingston-beast",
+    "normalised-case-and-space",
+    "exact-kingston-renegade",
+    "exact-gskill-flare",
+    "exact-gskill-trident",
+    "exact-identity-refurbished-ineligible",
+    "one-character-mpn-difference",
+    "punctuation-stripping-forbidden",
+    "generic-title-multiple-candidates",
+    "exact-mpn-capacity-conflict",
+    "manufacturer-conflict",
+    "unknown-exact-mpn",
+    "unsupported-ddr4",
+    "unsupported-sodimm",
+    "unsupported-one-by-thirty-two",
+    "unsupported-sixty-four-gb-kit",
+    "unsupported-ecc-rdimm",
+    "multi-product-listing",
+    "title-only-single-apparent-candidate",
+    "malformed-gtin-does-not-rescue-title"
+  ],
+  "confirmations": [
+    "exact_mpn_and_specification_checked",
+    "kingston_on_die_ecc_interpretation_accepted",
+    "kingston_renegade_source_typo_handling_accepted",
+    "listing_labels_checked",
+    "auto_confirmation_remains_locked"
+  ],
+  "limitations": [
+    "approved_for_fixture_use_only",
+    "does_not_approve_production_activation",
+    "does_not_approve_index_methodology_or_baseline",
+    "does_not_approve_source_access_or_publication",
+    "does_not_enable_automatic_product_matching"
+  ]
+}

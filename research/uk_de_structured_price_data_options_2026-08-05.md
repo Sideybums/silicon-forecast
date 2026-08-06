@@ -3,7 +3,10 @@
 **Phase:** Silicon Forecast Phase 1
 **Retrieval date for every web source below:** 5 August 2026
 **Intended use assessed:** automated collection; retention of evidence/raw observations; calculation and retention of historical derived indices; initially private commercial display; possible later public/commercial display.
-**Method/constraint:** first-party pages and documents were fetched without creating an account, paying, accepting a contract, scraping retail pages or mutating an external service. Public availability and robots.txt were not treated as permission. This is a sourcing/rights screen, not legal advice.
+
+> **Policy update — 2026-08-06:** This report applied a conservative rule that silence required an affirmative licence grant for factual retention and derivation. David subsequently approved a different operating interpretation: publicly observable factual offer data may be retained and used for historical/index derivation unless an explicit applicable restriction says otherwise. Explicit contractual limits — such as Amazon's or solute/billiger.de's stated restrictions — still govern. VAT, delivery and identifier questions are now treated as methodology/data-quality verification rather than permission requests. Authored descriptions, photography and advertising creative remain excluded from permanent evidence storage by default.
+
+**Method/constraint:** first-party pages and documents were fetched without creating an account, paying, accepting a contract, scraping retail pages or mutating an external service. Public availability was not treated as overriding explicit applicable restrictions. This is a sourcing/source-use screen, not legal advice.
 
 ## Status vocabulary
 

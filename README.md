@@ -6,8 +6,9 @@ This repository currently contains:
 
 - the product and technical source briefs;
 - the governed methodology and source-rights research;
-- a public pre-launch publisher-review website; and
-- no live retailer feeds or production price index.
+- a public pre-launch publisher-review website;
+- a candidate-only PostgreSQL/control-plane foundation; and
+- no live retailer feeds, news collectors or production price index.
 
 ## Public website
 
@@ -41,6 +42,14 @@ npm run check
 ```
 
 This runs ESLint, the publisher-claim tests, TypeScript and the static production export.
+
+To include the candidate database foundation test, with Docker running:
+
+```bash
+npm run check:full
+```
+
+This starts a disposable PostgreSQL 16 container, applies `db/migrations/0001_foundation.sql`, exercises the fail-closed constraints and removes the container. It uses fixture-only credentials and makes no production connection.
 
 ## Deployment
 

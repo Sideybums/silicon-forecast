@@ -1,0 +1,40 @@
+{
+  "version": "1.0",
+  "timestamp": "2026-08-06T09:25:11Z",
+  "phase": "02",
+  "phase_name": "platform-catalogue-control-plane",
+  "phase_dir": ".planning/phases/02-platform-catalogue-control-plane",
+  "plan": 1,
+  "task": 5,
+  "total_tasks": 5,
+  "status": "paused",
+  "completed_tasks": [
+    {"id": 1, "name": "Public pre-launch publisher site and project email", "status": "done"},
+    {"id": 2, "name": "Awin publisher-account and programme diligence", "status": "done"},
+    {"id": 3, "name": "Candidate-only PostgreSQL foundation and governance locks", "status": "done"},
+    {"id": 4, "name": "Four-product DDR5 seed catalogue, evidence and labelled fixtures", "status": "done"},
+    {"id": 5, "name": "Additive human catalogue and label review", "status": "done"}
+  ],
+  "remaining_tasks": [
+    {"id": 6, "name": "Check advertiser programme decisions and inspect any newly authorised feed with bounded read-only samples", "status": "not_started"},
+    {"id": 7, "name": "Implement least-privilege additive reviewed catalogue revisions", "status": "not_started"},
+    {"id": 8, "name": "Extend exact first-party manufacturer coverage towards the proposed minimum basket size", "status": "not_started"}
+  ],
+  "blockers": [
+    {"description": "No advertiser programme or product feed is yet approved", "type": "external", "workaround": "Continue fixture-only foundations without production ingestion"},
+    {"description": "Methodology thresholds, production region, basket/baseline and activation remain unapproved", "type": "human_action", "workaround": "Keep all production and publication locks engaged"}
+  ],
+  "async_jobs": [],
+  "human_actions_pending": [
+    {"action": "Upload the prepared Awin profile image", "context": "Use assets/brand/silicon-forecast-awin-profile-168.jpg; profile publication remains David's external action", "blocking": false},
+    {"action": "Approve methodology, production region, canonical basket and baseline only after source/feed evidence is sufficient", "context": "These approvals are required before an official index can be activated", "blocking": true}
+  ],
+  "decisions": [
+    {"decision": "Approve the four-product catalogue and 20 listing labels for fixture use", "rationale": "David completed human review; approval is recorded additively and does not unlock production", "phase": "02"},
+    {"decision": "Keep exact manufacturer models as canonical measurement inputs", "rationale": "Strict identity prevents variant contamination; eligible product price relatives are aggregated into the user-facing index", "phase": "02"},
+    {"decision": "Keep catalogue source fixtures draft and auto-confirmation locked", "rationale": "The additive review record proves human approval without rewriting historical candidate inputs or implying production readiness", "phase": "02"}
+  ],
+  "uncommitted_files": [],
+  "next_action": "Read .planning/STATE.md, then query current Awin programme relationships read-only; if a programme is joined, inspect only bounded authorised feed samples before proposing any source or production approval.",
+  "context_notes": "The current seed proves identity, evidence and review mechanics. It is not yet a representative production basket: the draft methodology proposes at least 10 eligible daily products, at least 80% basket coverage, at least 3 sources and at least 3 retailers before emitting an official value. The planned index is 100 times the median of per-product price relatives against approved product baselines, equally weighted by canonical product."
+}

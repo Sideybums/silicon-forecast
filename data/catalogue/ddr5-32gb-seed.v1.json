@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "fixture_set_id": "sf-ddr5-32gb-seed-2026-08-06",
+  "status": "candidate_pending_human_review",
+  "normalization": {
+    "mpn": "mpn-v1-uppercase-trim"
+  },
+  "products": [
+    {
+      "product_key": "kingston-fury-beast-kf560c30bbek2-32",
+      "revision_no": 1,
+      "manufacturer": {
+        "key": "kingston-technology",
+        "name": "Kingston Technology",
+        "aliases": [
+          "Kingston",
+          "Kingston Technology"
+        ]
+      },
+      "model": "Kingston FURY Beast DDR5 6000 CL30",
+      "mpn_raw": "KF560C30BBEK2-32",
+      "mpn_normalized": "KF560C30BBEK2-32",
+      "specification": {
+        "memory_generation": "DDR5",
+        "total_capacity_gb": 32,
+        "module_count": 2,
+        "capacity_per_module_gb": 16,
+        "speed_mt_s": 6000,
+        "form_factor": "UDIMM",
+        "ecc": false,
+        "registered": false,
+        "buffering": "unbuffered"
+      },
+      "review": {
+        "status": "draft",
+        "evidence_references": [
+          "research/evidence/catalogue-2026-08-06/kingston-kf560c30bbek2-32.extract.json"
+        ],
+        "evidence_note": "First-party datasheet establishes exact MPN, 32GB as two 16GB modules, DDR5-6000 and 288-pin DIMM. Consumer Kingston FURY classification supports ordinary unbuffered, non-system-ECC UDIMM; DDR5 on-die ECC is not system ECC. Human catalogue review remains pending."
+      },
+      "identifiers": [
+        {
+          "type": "MPN",
+          "raw_value": "KF560C30BBEK2-32",
+          "normalized_value": "KF560C30BBEK2-32",
+          "is_primary": true,
+          "evidence_reference": "research/evidence/catalogue-2026-08-06/kingston-kf560c30bbek2-32.extract.json"
+        }
+      ]
+    },
+    {
+      "product_key": "kingston-fury-renegade-kf564c32rsk2-32",
+      "revision_no": 1,
+      "manufacturer": {
+        "key": "kingston-technology",
+        "name": "Kingston Technology",
+        "aliases": [
+          "Kingston",
+          "Kingston Technology"
+        ]
+      },
+      "model": "Kingston FURY Renegade DDR5 6400 CL32",
+      "mpn_raw": "KF564C32RSK2-32",
+      "mpn_normalized": "KF564C32RSK2-32",
+      "specification": {
+        "memory_generation": "DDR5",
+        "total_capacity_gb": 32,
+        "module_count": 2,
+        "capacity_per_module_gb": 16,
+        "speed_mt_s": 6400,
+        "form_factor": "UDIMM",
+        "ecc": false,
+        "registered": false,
+        "buffering": "unbuffered"
+      },
+      "review": {
+        "status": "draft",
+        "evidence_references": [
+          "research/evidence/catalogue-2026-08-06/kingston-kf564c32rsk2-32.extract.json"
+        ],
+        "evidence_note": "First-party datasheet heading establishes exact MPN, 32GB as two 16GB modules, DDR5-6400 and 288-pin DIMM. Its later prose contains an apparent per-module capacity typo, so the heading and total-kit statement control. Human catalogue review remains pending."
+      },
+      "identifiers": [
+        {
+          "type": "MPN",
+          "raw_value": "KF564C32RSK2-32",
+          "normalized_value": "KF564C32RSK2-32",
+          "is_primary": true,
+          "evidence_reference": "research/evidence/catalogue-2026-08-06/kingston-kf564c32rsk2-32.extract.json"
+        }
+      ]
+    },
+    {
+      "product_key": "gskill-flare-x5-f5-6000j3636f16gx2-fx5",
+      "revision_no": 1,
+      "manufacturer": {
+        "key": "gskill",
+        "name": "G.SKILL International Enterprise Co., Ltd.",
+        "aliases": [
+          "G.SKILL",
+          "G.SKILL International Enterprise Co., Ltd."
+        ]
+      },
+      "model": "Flare X5 DDR5-6000 CL36",
+      "mpn_raw": "F5-6000J3636F16GX2-FX5",
+      "mpn_normalized": "F5-6000J3636F16GX2-FX5",
+      "specification": {
+        "memory_generation": "DDR5",
+        "total_capacity_gb": 32,
+        "module_count": 2,
+        "capacity_per_module_gb": 16,
+        "speed_mt_s": 6000,
+        "form_factor": "UDIMM",
+        "ecc": false,
+        "registered": false,
+        "buffering": "unbuffered"
+      },
+      "review": {
+        "status": "draft",
+        "evidence_references": [
+          "research/evidence/catalogue-2026-08-06/gskill-f5-6000j3636f16gx2-fx5.extract.json"
+        ],
+        "evidence_note": "First-party overview and specification pages agree on exact MPN, DDR5-6000, 32GB (16GBx2), desktop U-DIMM category, unbuffered construction and Non-ECC. Human catalogue review remains pending."
+      },
+      "identifiers": [
+        {
+          "type": "MPN",
+          "raw_value": "F5-6000J3636F16GX2-FX5",
+          "normalized_value": "F5-6000J3636F16GX2-FX5",
+          "is_primary": true,
+          "evidence_reference": "research/evidence/catalogue-2026-08-06/gskill-f5-6000j3636f16gx2-fx5.extract.json"
+        }
+      ]
+    },
+    {
+      "product_key": "gskill-trident-z5-neo-rgb-f5-6000j3636f16gx2-tz5nr",
+      "revision_no": 1,
+      "manufacturer": {
+        "key": "gskill",
+        "name": "G.SKILL International Enterprise Co., Ltd.",
+        "aliases": [
+          "G.SKILL",
+          "G.SKILL International Enterprise Co., Ltd."
+        ]
+      },
+      "model": "Trident Z5 Neo RGB DDR5-6000 CL36",
+      "mpn_raw": "F5-6000J3636F16GX2-TZ5NR",
+      "mpn_normalized": "F5-6000J3636F16GX2-TZ5NR",
+      "specification": {
+        "memory_generation": "DDR5",
+        "total_capacity_gb": 32,
+        "module_count": 2,
+        "capacity_per_module_gb": 16,
+        "speed_mt_s": 6000,
+        "form_factor": "UDIMM",
+        "ecc": false,
+        "registered": false,
+        "buffering": "unbuffered"
+      },
+      "review": {
+        "status": "draft",
+        "evidence_references": [
+          "research/evidence/catalogue-2026-08-06/gskill-f5-6000j3636f16gx2-tz5nr.extract.json"
+        ],
+        "evidence_note": "First-party overview and specification pages agree on exact MPN, DDR5-6000, 32GB (16GBx2), desktop U-DIMM category, unbuffered construction and Non-ECC. Human catalogue review remains pending."
+      },
+      "identifiers": [
+        {
+          "type": "MPN",
+          "raw_value": "F5-6000J3636F16GX2-TZ5NR",
+          "normalized_value": "F5-6000J3636F16GX2-TZ5NR",
+          "is_primary": true,
+          "evidence_reference": "research/evidence/catalogue-2026-08-06/gskill-f5-6000j3636f16gx2-tz5nr.extract.json"
+        }
+      ]
+    }
+  ]
+}

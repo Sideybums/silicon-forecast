@@ -5,12 +5,12 @@
 
 ## v1 Requirements
 
-### Source Rights and Methodology
+### Source Use and Methodology
 
-- [ ] **SRC-01**: An operator can see a register of candidate sources and their collection, storage, derivation, display and commercial-use permissions.
+- [ ] **SRC-01**: An operator can see a register of candidate sources, access basis, applicable terms, explicit restrictions, evidence policy and commercial-use status. Silence does not require a bespoke permission request for retention or derivation of factual public observations.
 - [ ] **SRC-02**: The first supported region has at least three approved, stable price sources or an explicitly approved reduced-source experimental designation.
 - [ ] **SRC-03**: The first regional methodology defines tax, delivery, currency, collection cut-off, product eligibility, coverage, outliers, baseline and missing-data behaviour.
-- [ ] **SRC-04**: Methodology and source-permission changes are versioned, audited and blocked from production without approval.
+- [ ] **SRC-04**: Methodology and source-use policy changes are versioned, audited and blocked from production without approval.
 
 ### Canonical Catalogue
 
@@ -21,7 +21,7 @@
 ### Ingestion and Provenance
 
 - [ ] **ING-01**: An approved source adapter can fetch or import price data without embedding credentials in the repository.
-- [ ] **ING-02**: Every import preserves the original permitted payload or a policy-compliant evidence record with source, retrieval time and checksum.
+- [ ] **ING-02**: Every import preserves a policy-compliant factual evidence record with source, retrieval time and checksum. Authored descriptions, photography and advertising creative are excluded from permanent evidence storage unless specifically required and reviewed.
 - [ ] **ING-03**: Imports are validated, idempotent, concurrency-safe and safely replayable from fixtures or preserved inputs.
 - [ ] **ING-04**: Every import run records counts, duration, status, warnings and failure reason.
 - [ ] **ING-05**: Stale, incomplete or structurally changed sources fail closed and generate a deduplicated operational alert.
@@ -65,7 +65,7 @@
 - [ ] **OPS-02**: Backup, restore and deterministic replay are tested with recorded evidence.
 - [ ] **OPS-03**: A private shadow run completes for at least 30 consecutive days without an unresolved severe data-integrity incident.
 - [ ] **OPS-04**: Human exception workload, source reliability, matching precision and anomaly performance are measured before scope expansion.
-- [ ] **OPS-05**: Public release remains blocked until source rights, security, accessibility, lineage, correction and incident-response gates are approved.
+- [ ] **OPS-05**: Public release remains blocked until source-use restrictions, security, accessibility, lineage, correction and incident-response gates are approved.
 
 ## v2 Requirements
 
@@ -79,7 +79,7 @@
 
 ### Expansion and Commercialisation
 
-- **EXP-01**: Additional regions can be onboarded through the same source-rights, methodology, matching and shadow-run gates.
+- **EXP-01**: Additional regions can be onboarded through the same source-use, methodology, matching and shadow-run gates.
 - **EXP-02**: Additional component categories can define their own canonical specifications and basket methodology without branching the core pipeline.
 - **COM-01**: Public pages, affiliate links and commercial features preserve editorial-commercial separation.
 - **COM-02**: Licensed downloads or APIs enforce source-specific redistribution rights.
@@ -105,11 +105,11 @@ The v1 milestone is complete only when all v1 requirements are implemented, test
 
 | Requirement | Phase | Status |
 |-------------|-------|--------|
-| SRC-01 | Phase 1 | Evidence register complete; no source approved |
+| SRC-01 | Phase 1 | Evidence register complete; source-use policy revised by human decision on 2026-08-06; Awin programme eligibility/access still pending |
 | SRC-02 | Phase 1 | Blocked — no approved three-source portfolio or experimental designation |
 | SRC-03 | Phase 1 | Executable UK draft complete; thresholds and activation unapproved |
 | SRC-04 | Phase 1 | Governance/evidence controls defined; application enforcement pending |
-| CAT-01, CAT-02, CAT-03 | Phase 2 | Pending |
+| CAT-01, CAT-02, CAT-03 | Phase 2 | Catalogue schema exists; four-product candidate seed, retained first-party evidence and 20 labelled match fixtures validate in PostgreSQL; human review and operator workflow remain pending |
 | APP-04, AI-01, AI-03, AI-04 | Phase 2 | Pending |
 | ING-01, ING-02, ING-03, ING-04, ING-05 | Phase 3 | Pending |
 | MAT-01, MAT-02, MAT-03, MAT-04, MAT-05 | Phase 4 | Pending |

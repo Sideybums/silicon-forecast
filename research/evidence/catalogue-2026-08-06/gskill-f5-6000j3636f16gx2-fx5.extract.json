@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "evidence_type": "minimal_factual_product_extract",
+  "product_mpn": "F5-6000J3636F16GX2-FX5",
+  "source": {
+    "publisher": "G.SKILL International Enterprise Co., Ltd.",
+    "overview_url": "https://www.gskill.com/product/165/396/1662622664/F5-6000J3636F16GX2-FX5",
+    "specification_url": "https://www.gskill.com/specification/165/396/1662622664/F5-6000J3636F16GX2-FX5-Specification",
+    "retrieved_on": "2026-08-06",
+    "overview_response_bytes": 57928,
+    "overview_response_sha256": "2bbf0028eff9f5827fb3de60c57bcf3a0174205bb63d92e8c5ecfc3b91aebb21",
+    "specification_response_bytes": 52129,
+    "specification_response_sha256": "5be65bba74525d035e5ed67d3b9de77385492658e7d63dbe40aac14c9a6dab52"
+  },
+  "extraction": {
+    "recorded_at": "2026-08-06T08:46:18Z",
+    "method": "exact_HTML_field_selection_from_first_party_overview_and_specification",
+    "authored_content_retained": false
+  },
+  "facts": {
+    "product_family": "Flare X5",
+    "memory_generation": "DDR5",
+    "total_capacity_gb": 32,
+    "module_count": 2,
+    "capacity_per_module_gb": 16,
+    "tested_speed_mt_s": 6000,
+    "catalogue_category": "Desktop Memory (U-DIMM/CU-DIMM)",
+    "registered_or_unbuffered": "Unbuffered",
+    "ecc": "Non-ECC"
+  }
+}

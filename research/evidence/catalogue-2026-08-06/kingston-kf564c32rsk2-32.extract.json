@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "evidence_type": "minimal_factual_product_extract",
+  "product_mpn": "KF564C32RSK2-32",
+  "source": {
+    "publisher": "Kingston Technology",
+    "url": "https://www.kingston.com/datasheets/KF564C32RSK2-32.pdf",
+    "retrieved_on": "2026-08-06",
+    "source_response_bytes": 1561999,
+    "source_response_sha256": "3bef0d35e24ab353283d279ba23b05a05b1c20ad0a9492544f97a6ab8831bc21"
+  },
+  "extraction": {
+    "recorded_at": "2026-08-06T08:46:18Z",
+    "method": "pypdf_text_extraction_then_manual_field_selection",
+    "authored_content_retained": false
+  },
+  "facts": {
+    "heading": "KF564C32RSK2-32 — 32GB (16GB x 2), DDR5-6400 CL32, 288-Pin DIMM Kit",
+    "total_capacity_gb": 32,
+    "module_count": 2,
+    "capacity_per_module_gb": 16,
+    "memory_generation": "DDR5",
+    "tested_speed_mt_s": 6400,
+    "pin_count": 288,
+    "source_discrepancy_note": "The source heading and total-kit sentence establish 32GB as two 16GB modules. A later sentence says kit of two followed by 32GB in parentheses, which appears internally inconsistent and requires human review.",
+    "module_classification_note": "Consumer Kingston FURY 288-pin desktop DIMM. DDR5 on-die ECC is stated by the source and is not system ECC; non-system-ECC/unbuffered classification remains pending human review."
+  }
+}

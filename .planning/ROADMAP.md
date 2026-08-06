@@ -13,13 +13,13 @@ A narrow public pre-launch publisher-review site is an approved enabling excepti
 **Requirements:** SRC-01, SRC-02, SRC-03, SRC-04
 
 **Deliverables:**
-- Source-rights register and evidence template.
+- Source-use register and evidence template.
 - Candidate-region comparison based on lawful access, identifier quality, tax/delivery semantics, stability and source breadth.
 - Explicit first-region decision.
 - Versioned methodology v0.1 covering collection, eligibility, normalisation, coverage, outliers, missing data, baseline and corrections.
-- Go/no-go gate. No production scraper is built for a source with unresolved rights.
+- Go/no-go gate. No production adapter is built where access is unauthorised, applicable terms cannot be reviewed, or an explicit restriction conflicts.
 
-**Exit criteria:** At least one credible route to the required source breadth exists; unresolved permissions are clearly blocked rather than assumed; methodology decisions are executable rules rather than prose.
+**Exit criteria:** At least one credible route to the required source breadth exists; access and explicit restrictions are reviewed under the approved source-use policy; methodology decisions are executable rules rather than prose.
 
 ## Phase 2 — Platform, Catalogue and Control Plane
 
@@ -118,4 +118,4 @@ After the private MVP proves the data operation, plan a new milestone for events
 
 ## Phase Order Rationale
 
-Source permission and methodology precede code because they decide whether the data product is viable. Catalogue and immutable ingestion precede matching; matching precedes index calculation; deterministic facts precede agent orchestration; proven private operation precedes publication. Reversing this order creates an attractive interface over evidence we may not own or trust.
+Source access/use review and methodology precede code because they decide whether the data product is viable. Catalogue and immutable ingestion precede matching; matching precedes index calculation; deterministic facts precede agent orchestration; proven private operation precedes publication. Reversing this order creates an attractive interface over evidence we may not be entitled to access or cannot trust.
