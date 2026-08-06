@@ -5,7 +5,7 @@
 See `.planning/PROJECT.md` (updated 2026-08-05).
 
 **Core value:** Produce one lawful, accurate and reproducible regional component-price index whose every value can be traced to immutable source observations.
-**Current focus:** Publisher-access enabling work — public pre-launch site and UK affiliate-network diligence
+**Current focus:** Publisher-access enabling work — project email activation and UK affiliate-network applications
 
 ## Status
 
@@ -18,6 +18,9 @@ See `.planning/PROJECT.md` (updated 2026-08-05).
 - External publish, spend, production mutation, source approval and methodology-change locks remain on.
 - David explicitly approved a public promotional pre-launch website for publisher-network review. This approval covers only static project, demonstration and policy content; it does not approve publication of live offers, index values, forecasts or retailer claims.
 - PriceRunner is no longer the initial diligence route because its paid model does not fit the bootstrapped stage. The current order is Awin first, Webgains second and CJ Affiliate only if it materially improves lawful coverage.
+- The static pre-launch site is live at `https://siliconforecast.com`, deployed from GitHub through Cloudflare Workers; `www` and plaintext HTTP permanently redirect to the HTTPS apex domain.
+- The affiliate disclosure is network-neutral. Non-visible page metadata names Awin, Webgains and CJ Affiliate solely for publisher-ownership verification and explicitly claims no approval, endorsement or partnership.
+- `hello@siliconforecast.com` is published as the intended project address but remains non-operational until Cloudflare Email Routing is configured and end-to-end delivery is verified.
 
 ## Current Phase
 
@@ -43,7 +46,7 @@ Phase 1 — Source and Methodology Gate is **evidence-complete but gate-blocked*
 
 ## Next Action
 
-Publish and verify the static publisher-review site, then purchase/connect `siliconforecast.com` and activate its project email through human-controlled registrar and mail-provider actions. After the domain, HTTPS, contact route and disclosures are verified, David may submit the Awin publisher application. Account creation, acceptance of network or advertiser terms, programme applications and spending remain separate human-gated actions.
+Configure Cloudflare Email Routing so `hello@siliconforecast.com` forwards to David's verified destination inbox, then test real inbound delivery and update the contact page from “reserved” to operational. After that gate passes, David may submit publisher applications to Awin and Webgains, using CJ Affiliate only where it materially improves lawful retailer coverage. Account creation, acceptance of network or advertiser terms, advertiser-programme applications and spending remain separate human-gated actions.
 
 ## Safety Note
 
@@ -51,4 +54,4 @@ The completed Phase 1 work is Tier 1/Tier 2 research and reversible documentatio
 
 ---
 *State created: 2026-08-05*
-*Last updated: 2026-08-05 after Phase 1 evidence gate*
+*Last updated: 2026-08-06 after public-site and custom-domain deployment*
