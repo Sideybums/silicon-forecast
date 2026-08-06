@@ -55,6 +55,8 @@ Do not select Cloudflare's OpenNext/SSR preset: this application intentionally u
 
 `npm run deploy:dry-run` builds the site and verifies Wrangler can package the exported assets without making an external change.
 
+`worker.mjs` enforces HTTP-to-HTTPS redirection and adds baseline security headers before serving the static assets.
+
 GitHub Pages remains a temporary fallback through `.github/workflows/deploy-pages.yml`; its `/silicon-forecast` base path is set only inside that workflow.
 
 Before an affiliate-network application is submitted:
