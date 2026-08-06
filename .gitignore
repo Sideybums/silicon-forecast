@@ -5,6 +5,8 @@
 .env
 .env.*
 !.env.example
+.infisical.json
+.wrangler/
 *.pem
 *.key
 

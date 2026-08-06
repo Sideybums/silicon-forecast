@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint .",
     "test": "node --test tests/*.test.mjs",
-    "check": "npm run lint && npm test && npm run build"
+    "check": "npm run lint && npm test && npm run build",
+    "deploy": "wrangler deploy",
+    "deploy:dry-run": "npm run build && wrangler deploy --dry-run"
   },
   "dependencies": {
     "next": "16.3.0",
@@ -21,9 +23,13 @@
     "@types/react-dom": "^19.2.2",
     "eslint": "^9.39.1",
     "eslint-config-next": "16.3.0",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "wrangler": "^4.119.0"
   },
   "engines": {
-    "node": ">=20.9.0"
+    "node": ">=22.0.0"
+  },
+  "overrides": {
+    "undici": "7.29.0"
   }
 }

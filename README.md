@@ -25,7 +25,7 @@ Routes include:
 
 ## Local development
 
-Requirements: Node.js 20.9 or later.
+Requirements: Node.js 22 or later.
 
 ```bash
 npm install
@@ -44,11 +44,22 @@ This runs ESLint, the publisher-claim tests, TypeScript and the static productio
 
 ## Deployment
 
-Pushes to `main` deploy the static export to GitHub Pages through `.github/workflows/deploy-pages.yml`. The temporary Pages base path is configured as `/silicon-forecast`.
+The canonical deployment target is Cloudflare Workers Static Assets. Cloudflare's Git build must use:
+
+- build command: `npm run build`;
+- deploy command: `npm run deploy`;
+- output/assets directory: `out` (declared in `wrangler.jsonc`); and
+- no `NEXT_PUBLIC_BASE_PATH` environment variable.
+
+Do not select Cloudflare's OpenNext/SSR preset: this application intentionally uses Next.js static export and does not produce a `.next/standalone` server bundle.
+
+`npm run deploy:dry-run` builds the site and verifies Wrangler can package the exported assets without making an external change.
+
+GitHub Pages remains a temporary fallback through `.github/workflows/deploy-pages.yml`; its `/silicon-forecast` base path is set only inside that workflow.
 
 Before an affiliate-network application is submitted:
 
-1. purchase and connect `siliconforecast.com`;
+1. connect `siliconforecast.com` to the Cloudflare Worker after the first successful deployment;
 2. activate and test `hello@siliconforecast.com`;
 3. attach the custom domain to the host;
 4. verify HTTPS and every public route; and
