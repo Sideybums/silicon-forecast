@@ -11,6 +11,7 @@ test("Cloudflare deploys the static export without OpenNext",()=>{
   assert.match(config,/"directory"\s*:\s*"\.\/out"/);
   assert.doesNotMatch(config,/opennext/i);
   assert.match(config,/"pattern"\s*:\s*"siliconforecast\.com"/);
+  assert.match(config,/"pattern"\s*:\s*"www\.siliconforecast\.com"/);
   assert.match(config,/"custom_domain"\s*:\s*true/);
   const pkg=JSON.parse(readFileSync("package.json","utf8"));
   assert.equal(pkg.scripts.deploy,"wrangler deploy");

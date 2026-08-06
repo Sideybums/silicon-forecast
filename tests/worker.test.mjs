@@ -14,6 +14,12 @@ test("HTTP requests redirect permanently to HTTPS", async () => {
   assert.equal(response.headers.get("location"), "https://siliconforecast.com/about/?source=test");
 });
 
+test("www redirects permanently to the canonical apex URL", async () => {
+  const response = await worker.fetch(new Request("https://www.siliconforecast.com/price-history/?source=www"), env);
+  assert.equal(response.status, 308);
+  assert.equal(response.headers.get("location"), "https://siliconforecast.com/price-history/?source=www");
+});
+
 test("HTTPS assets receive baseline security headers", async () => {
   const response = await worker.fetch(new Request("https://siliconforecast.com/"), env);
   assert.equal(response.status, 200);

@@ -8,8 +8,11 @@ const worker = {
   async fetch(request, env) {
     const url = new URL(request.url);
 
-    if (url.protocol === "http:") {
+    if (url.protocol === "http:" || url.hostname === "www.siliconforecast.com") {
       url.protocol = "https:";
+      if (url.hostname === "www.siliconforecast.com") {
+        url.hostname = "siliconforecast.com";
+      }
       return Response.redirect(url.toString(), 308);
     }
 
