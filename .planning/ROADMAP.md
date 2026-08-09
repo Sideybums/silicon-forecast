@@ -2,7 +2,7 @@
 
 ## Strategy
 
-Build the evidence chain in dependency order. The roadmap intentionally delays broad UI, editorial automation and geographic expansion until one lawful regional DDR5 index has survived a private shadow run.
+Build the evidence chain in dependency order. The roadmap intentionally delays broad UI, public editorial automation and geographic expansion until one lawful regional DDR5 index has survived a private shadow run. The dated stock-market-style price graph is part of the narrow private proof, not optional decoration.
 
 A narrow public research-preview site is an approved enabling exception to that sequencing. It may explain the project, primary-retail tracking scope, qualification rules and release gates. Only separately approved qualifying retail observations may be shown; deferred price channels, unsupported index values, recommendations and invented retailer relationships remain private or absent.
 
@@ -68,7 +68,7 @@ A narrow public research-preview site is an approved enabling exception to that 
 
 ## Phase 5 — Reproducible Index and Private Dashboard
 
-**Goal:** Produce the first traceable 32GB DDR5 regional index and make its quality legible.
+**Goal:** Produce the first traceable UK 32GB DDR5 price history and let an authorised operator follow it through dated stock-market-style graphs with visible quality, gaps and lineage.
 
 **Requirements:** IDX-01, IDX-02, IDX-03, IDX-04, IDX-05, IDX-06, IDX-07, IDX-08, IDX-09, APP-01, APP-02, APP-03
 
@@ -82,7 +82,7 @@ A narrow public research-preview site is an approved enabling exception to that 
 - Monthly constant-price series using one approved official UK deflator, with exact release-vintage lineage and deterministic revision-impact reports. No approved deflator or incomplete input month means an explicit unavailable point.
 - Optional earnings-relative affordability design kept separate and unavailable until its official earnings concept, vintage and policy are approved.
 - Additive correction mechanism and replay tests.
-- Private nominal/real history, source-health, anomaly and review dashboard with visible unavailable reasons.
+- Private dated product/category graphs for nominal, approved-reference and monthly real views, with source health, quality state, gaps and exact-point lineage. The graph contract exposes a read-only overlay boundary, but Phase 5 does not depend on event records or editorial activation.
 
 **Exit criteria:** Fixed inputs reproduce bit-for-bit equivalent native, linked nominal and release-vintage real values; gaps remain gaps; every displayed point resolves to exact source observations, statistical release inputs and a calculation version. Basket-vintage scale and historical reference are demonstrably separate. A baseline/reference cannot be approved without its evidence and sensitivity report, and a basket cannot be approved unless every single-product-loss counterfactual passes all standard quality gates under the approved resilience threshold.
 
@@ -90,14 +90,14 @@ A narrow public research-preview site is an approved enabling exception to that 
 
 **Goal:** Let bounded workers run the private pipeline while making every action observable and stoppable.
 
-**Requirements:** AI-02, AI-05, AI-06, OPS-01, EVT-01, EVT-02, EVT-03
+**Requirements:** AI-02, AI-05, AI-06, OPS-01, EVT-01, EVT-02, EVT-03, EVT-04
 
 **Deliverables:**
 - Worker task contracts, run ledger, schedules and scoped stop controls.
 - Producer-before-consumer orchestration with idempotency keys.
 - Bounded retries, circuit breakers, heartbeats and cost metadata.
 - Agent evaluation suites for matching assistance, anomaly triage and research drafting.
-- Registered research-source discovery, event-draft records with supporting and contradictory evidence, mathematically separate overlay records, and an authorised-editor publication gate.
+- Registered research-source discovery, evidence-backed event drafts and dated graph-overlay records describing possible effects, with contradictory evidence, causal-language controls and an authorised-editor gate; overlay mutations must leave numeric checksums unchanged.
 - Private command view showing locks, runs, failures and pending human decisions.
 
 **Exit criteria:** Back-to-back and failed runs are safe; unknown workers or autonomy levels fail closed; the pipeline can be paused globally or by source/worker; no external-action lock is bypassed; event-overlay mutations leave numeric-series checksums unchanged.
@@ -122,7 +122,7 @@ A narrow public research-preview site is an approved enabling exception to that 
 
 ## Deferred Milestone — Supported Public Index and Editorial Automation
 
-The public research preview may explain primary-retail methodology and publish separately approved qualifying retail observations before the private MVP is complete. Deferred price channels, a supported live index, automated editorial pipeline, forecasts and commercial experiments remain deferred until the private data operation proves dependable. That later milestone must include an AI design contract, editorial evaluation set, citation/claim checks and continued human publication approval.
+The public research preview may explain primary-retail methodology and publish separately approved qualifying retail observations before the private MVP is complete. Deferred price channels, a supported live index, automated public editorial publication, forecasts and commercial experiments remain deferred until the private data operation proves dependable. Phase 6 may exercise private event discovery, drafting and graph-overlay records behind human approval and publication locks. Public activation still requires the later milestone's AI design contract, editorial evaluation set, citation/claim checks and continued human publication approval.
 
 ## Phase Order Rationale
 

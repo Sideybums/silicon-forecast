@@ -2,13 +2,13 @@
 
 ## What This Is
 
-Silicon Forecast is an evidence-backed PC-component price-intelligence platform. Its first job is to show how recent UK PC-component retail prices moved around AI-era shortages and other shocks, using a defensible historical affordability/reference period as 100 rather than implying that collection inception was normal. It connects upstream semiconductor-market events to observed prices without allowing editorial interpretation to alter the numbers, and preserves an accountable record of lineage, uncertainty and corrections.
+Silicon Forecast is an evidence-backed PC-component price-intelligence platform that lets people follow component prices as they would a stock: through dated price graphs with reviewed market and news events overlaid as possible explanations for movement. Its first proof is a lawful, reproducible UK history for 32GB DDR5 desktop-memory kits. Numeric series remain deterministic, versioned and replayable; editorial events are separate annotations and never alter the numbers.
 
-The first product is deliberately narrow: a private, reproducible UK history for 32GB DDR5 desktop-memory kits using lawful, stable retail sources. Its primary numeric layer is a basket-vintage-linked nominal series. A separate monthly constant-price series uses a specifically approved official UK deflator and preserves the exact statistical release vintage. An earnings-relative affordability series is optional and separate. AI employee agents build and operate bounded workflows; deterministic software owns public facts and consequential external actions remain human-governed.
+The primary numeric layer is a basket-vintage-linked nominal series. A separately evidenced historical reference may present 100; a monthly constant-price series uses a specifically approved official UK deflator and preserves the exact statistical release vintage; an earnings-relative affordability series is optional and separate. AI workers perform bounded evidence, implementation and review work while a strong orchestrator integrates and challenges their output. Deterministic software owns public facts and consequential external actions remain human-governed.
 
 ## Core Value
 
-Show recent UK component-price history around material market shocks on transparent nominal and inflation-adjusted scales, with a defensible evidence-approved historical reference at 100 and every value traceable to immutable source observations and official-statistics vintages.
+Let people follow trustworthy UK component-price graphs over time, inspect dated evidence-backed events that may help explain movement, and trace every numeric value to immutable observations and approved calculation versions.
 
 ## Business Context
 
@@ -51,7 +51,7 @@ Show recent UK component-price history around material market shocks on transpar
 
 ## Context
 
-Two supplied briefing documents define a broad four-region product and a detailed technical backlog. Review found a credible differentiator in Retail Price Lag, transparent forecast scoring and regional transmission analysis, but also unresolved assumptions around data rights, source stability, matching accuracy, regional comparability and willingness to pay.
+Two supplied briefing documents define a broad four-region product and a detailed technical backlog. Review found a credible differentiator in stock-market-style component-price histories, dated evidence-backed market context and transparent regional transmission analysis, while forecasts remain deferred. Unresolved assumptions remain around data rights, source stability, matching accuracy, regional comparability and willingness to pay.
 
 The technical reference architecture is a TypeScript/Next.js modular monolith backed by PostgreSQL, object storage, scheduled jobs and monitoring. The implementation may refine exact libraries during phase planning, but must retain the modular-monolith and deterministic-data principles.
 
@@ -83,6 +83,7 @@ The technical reference architecture is a TypeScript/Next.js modular monolith ba
 | Treat public factual offer observations as usable absent an explicit applicable restriction | Prices, stock, identifiers and product attributes are evidence inputs; requiring bespoke affirmative grants for every silent analytical use would prevent the intended comparison product | Approved by David on 2026-08-06; affiliate/feed access terms and explicit restrictions still govern, and authored descriptions/images are excluded by default |
 | Use a defensible historical reference rather than collection inception as 100 | The product should explain shortage-era purchasing power, not imply that the first observed day is normal | Product direction clarified 2026-08-09; the reference period and all selection thresholds remain `PROPOSED_LOCKED` pending evidence and approval |
 | Separate nominal, constant-price, affordability and event layers | Inflation adjustment, earnings comparison and editorial context answer different questions and must remain auditable | Nominal linked history is primary; monthly real history requires an approved official UK deflator/release vintage; earnings-relative affordability is optional; event overlays never change numbers |
+| Make dated price graphs the target experience | Users should follow components as they would a stock and inspect evidence-backed context without confusing correlation with causation | Stock-market-like describes the graph interaction and attention model, not speculative pricing; overlays remain mathematically separate |
 
 ## Evolution
 
@@ -96,4 +97,4 @@ After each phase transition:
 5. Recheck that the description and core value have not drifted.
 
 ---
-*Last updated: 2026-08-09 after clarifying the historical-reference, inflation and event-overlay product model*
+*Last updated: 2026-08-09 after clarifying the stock-market-style graph experience and governed agent execution model*

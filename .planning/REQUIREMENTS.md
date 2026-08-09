@@ -1,7 +1,7 @@
 # Requirements: Silicon Forecast
 
 **Defined:** 2026-08-05
-**Core Value:** Show recent UK component-price history around material market shocks on transparent nominal and inflation-adjusted scales, with a defensible evidence-approved historical reference at 100 and complete observation/statistical-vintage lineage.
+**Core Value:** Let people follow dated UK component-price graphs as they would a stock, with reviewed market and news events shown as possible explanations for movement, while preserving deterministic calculations and complete observation/statistical-vintage lineage.
 
 ## v1 Requirements
 
@@ -49,7 +49,7 @@
 
 ### Private Product and Administration
 
-- [ ] **APP-01**: An authorised operator can view daily linked nominal history, approved-reference presentation, monthly constant-price history, coverage, source freshness, quality state and explicit unavailable reasons on a private page.
+- [ ] **APP-01**: An authorised operator can follow daily product and linked category-price histories on dated stock-market-style graphs, switch approved nominal/reference/real views, and inspect gaps, coverage, freshness and exact-point lineage. The graph contract is overlay-ready, but reviewed event display is delivered separately by EVT-04.
 - [ ] **APP-02**: An authorised operator can review unmatched listings, anomalies, failed imports and proposed corrections.
 - [ ] **APP-03**: The private product displays methodology version, source limitations and visible gaps without implying unsupported certainty.
 - [ ] **APP-04**: Administrative actions use role-based access, MFA-capable authentication and an append-only audit log.
@@ -61,6 +61,7 @@
 - [ ] **EVT-01**: Agents can discover and draft market-event records from registered sources while retaining quotations, provenance, uncertainty, alternative explanations and contradictory evidence.
 - [ ] **EVT-02**: An authorised editor can approve event classification, regional impact and causal language before publication.
 - [ ] **EVT-03**: Event overlays reference dated event revisions and numeric-series revisions but remain separate annotation records; creating, editing, approving or removing an event cannot alter a price, weight, link factor, reference, deflator value, gap or quality state.
+- [ ] **EVT-04**: An approved event can appear as a dated marker or range on a price graph with evidence, uncertainty, alternatives and clearly qualified possible-effect wording; temporal proximity must not be presented as proof of causation.
 
 ### Autonomous Workers and Safety
 
@@ -141,7 +142,7 @@ Before the relevant v1 requirements can pass:
 | CAT-01, CAT-02, CAT-03, CAT-04 | Phase 2 | Four-product seed, evidence and 20 labelled fixtures are human-reviewed; eight further exact-MPN candidates remain pending additive review. Empirical basket readiness, lifecycle metadata, reserve candidates and single-product-loss resilience remain pending. Catalogue count is not treated as baseline eligibility. |
 | APP-04, AI-01, AI-03, AI-04 | Phase 2 | Pending |
 | PUB-01, PUB-02 | Public research-preview exception | Complete — retail-first frontend exposes scope and release gates; no verified series, deferred channels or outbound product links are public |
-| EVT-01, EVT-02, EVT-03 | Phase 6 | Public evidence workflow established; event/numeric separation specified; first movement note, event discovery, source registry integration and editor approval contract pending |
+| EVT-01, EVT-02, EVT-03, EVT-04 | Phase 6 | Design contract established and event/numeric separation specified; live discovery, first movement note, source-registry integration, editor workflow and any public event display remain pending and locked |
 | ING-01, ING-02, ING-03, ING-04, ING-05 | Phase 3 | Pending |
 | MAT-01, MAT-02, MAT-03, MAT-04, MAT-05 | Phase 4 | Pending |
 | IDX-01, IDX-02, IDX-03, IDX-04, IDX-05, IDX-06, IDX-07, IDX-08, IDX-09 | Phase 5 | Pending; methodology v1.0 draft defines the layer boundaries and unavailable states, while reference evidence, deflator choice, thresholds and linking remain unapproved |
@@ -150,10 +151,10 @@ Before the relevant v1 requirements can pass:
 | OPS-02, OPS-03, OPS-04, OPS-05 | Phase 7 | Pending |
 
 **Coverage:**
-- v1 requirements: 47 total
-- Mapped to phases or approved preview exception: 47
+- v1 requirements: 48 total
+- Mapped to phases or approved preview exception: 48
 - Unmapped: 0
 
 ---
 *Requirements defined: 2026-08-05*
-*Last updated: 2026-08-09 after defining linked nominal, approved-reference, monthly real and non-numeric event-overlay requirements*
+*Last updated: 2026-08-09 after defining the stock-market-style graph and governed event-overlay experience*

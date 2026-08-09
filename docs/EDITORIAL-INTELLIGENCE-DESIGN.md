@@ -4,7 +4,7 @@
 
 **Design-only · dormant · non-publishing**
 
-This document prepares the later editorial-intelligence milestone described in `.planning/ROADMAP.md`. It does not authorise live or scheduled news gathering, production tables, external credentials, public event pages, market claims, forecasts, recommendations or publication.
+This document defines the dormant v1 event-research and graph-overlay capability described in `.planning/ROADMAP.md`. It does not authorise live or scheduled news gathering, production tables, external credentials, public event pages, market claims, forecasts, recommendations or publication. Private discovery and drafting may begin only at a separately approved Phase 6 gate; public editorial output remains a later milestone.
 
 The first activated scope, when separately approved, is evidence relevant to the eventual approved regional 32GB DDR5 desktop-memory index. A broad automated newsroom is not the MVP. It is a very efficient way to manufacture review work.
 
@@ -26,6 +26,8 @@ The eventual system must keep these concepts distinct and append-only:
 An LLM summary is never a source fact. A URL without an eligible, checksummed capture is insufficient evidence.
 
 ## Numeric/editorial boundary
+
+The user-facing purpose is to place reviewed dated event markers or ranges on component-price graphs so readers can inspect possible explanations for observed movement. Temporal proximity is not proof of causation.
 
 Editorial intelligence explains or challenges observed movement; it never creates movement. Numeric calculation completes before overlay lookup and cannot read event, claim, impact, confidence or causal-language records as inputs.
 
@@ -101,11 +103,11 @@ Stable event ID, revision number/hash, title, event time and precision, separate
 
 ### Event overlay revision
 
-Stable overlay ID, revision/hash, approved event revision ID/hash, target numeric series ID/revision/hash, display date or range and precision, placement label, overlay state, unavailable reason where applicable, creator/reviewer and supersession link. Numeric values and transformation instructions are forbidden fields.
+Stable overlay ID, revision/hash, approved event revision ID/hash, target numeric series ID/revision/hash, display date or range and precision, concise possible-effect label, uncertainty/causal-language level, evidence-panel reference, placement state, unavailable reason where applicable, creator/reviewer and supersession link. Numeric values and transformation instructions are forbidden fields.
 
 ### Impact assessment
 
-Category, region, direction (`up`, `down`, `mixed`, `none`, `unknown`), strength, expected delay range, confidence, currency/inventory mechanisms, evidence, counterevidence, alternatives, invalidation conditions and human review state. Unknown values remain unknown; forms do not get to bully evidence into certainty.
+Category, region, direction (`up`, `down`, `mixed`, `none`, `unknown`), strength, expected delay range, confidence, currency/inventory mechanisms, evidence, counterevidence, alternatives, invalidation conditions and human review state. These fields are editorial hypotheses, not numeric inputs or forecasts. User-facing text uses “may have affected” or equivalent unless the separately approved causal threshold is met. Unknown values remain unknown; forms do not get to bully evidence into certainty.
 
 ## Evidence rules
 
@@ -148,11 +150,11 @@ Contracts, schemas, synthetic fixtures and tests only. No external fetch, schedu
 
 ### Gate 1 — private collection
 
-Requires completed v1 private-index phases, successful Phase 7 shadow run, explicit editorial milestone approval, source-rights review, threat-model tests, approved worker/RBAC contracts, immutable replayable captures and accepted human-review workload.
+Requires an approved private numeric-series revision, explicit Phase 6 editorial activation, source-use review, threat-model tests, approved worker/RBAC contracts, immutable replayable captures and a bounded human-review plan. No public display is authorised.
 
 ### Gate 2 — private event shadow run
 
-Requires at least 30 days private-only operation, complete claim lineage in sampled material statements, support plus counterevidence records, tested correction/retraction handling, accepted review burden and zero causal-language false positives on the activation evaluation set.
+Runs the private event workflow alongside the Phase 7 reliability shadow run and requires at least 30 days private-only operation, complete claim lineage in sampled material statements, support plus counterevidence records, tested correction/retraction handling, accepted review burden and zero causal-language false positives on the activation evaluation set.
 
 ### Gate 3 — public editorial activation
 
@@ -160,7 +162,7 @@ Requires separate public-beta approval, citation/claim evaluation, security/acce
 
 Forecasts and buy/wait recommendations remain separately locked.
 
-## Acceptance tests reserved for the later milestone
+## Acceptance tests introduced from Gate 0 onward
 
 - Current state rejects any source transition to `active_private`.
 - Duplicate syndications count as one evidence lineage.

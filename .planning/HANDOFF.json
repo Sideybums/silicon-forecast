@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "timestamp": "2026-08-09T16:31:12Z",
+  "timestamp": "2026-08-09T17:32:30Z",
   "phase": "02",
   "phase_name": "platform-catalogue-control-plane",
   "phase_dir": ".planning/phases/02-platform-catalogue-control-plane",
@@ -50,7 +50,7 @@
       "id": 8,
       "name": "Accumulate UK retail history and calibrate linked nominal, historical-reference and real-series methodology",
       "status": "in_progress",
-      "next_action": "Append a later-date immutable tranche for the same retailer+MPN lines and expand lawful historical evidence. Keep the inception-100 diagnostic explicitly not-an-index; prepare but do not approve a basket-vintage link method, historical-reference evidence/sensitivity criteria, official UK deflator release-vintage policy and explicit unavailable-state fixtures."
+      "next_action": "Run the governed worker waves in .planning/HANDOVER-2026-08-09.md. Begin with collision-safe evidence expansion, then integrate fail-closed linking/reference/real/event fixtures and an inactive private worker harness under parent verification. Keep the inception-100 diagnostic explicitly not-an-index and approve no method, threshold, source or public action."
     }
   ],
   "blockers": [
@@ -72,10 +72,11 @@
   ],
   "async_jobs": [
     {
-      "job_id": "f10760253c81",
-      "name": "Silicon Forecast second prospective retail tranche",
-      "next_run_at": "2026-08-10T12:30:00Z",
-      "scope": "One-shot re-fetch of the same three retailer+MPN lines; immutable candidate tranche, private diagnostic replay, full verification and local commit only; no push/deploy/publication."
+      "job_id": "7e98d1467473",
+      "name": "Silicon Forecast daily primary-retail history capture",
+      "next_run_at_at_handover": "2026-08-10T13:45:59.810825+01:00",
+      "schedule": "every 1440m",
+      "scope": "Append-only private UK primary-retail history using evidence-backed-data-pipelines; no production/index/publication authority."
     }
   ],
   "human_actions_pending": [
@@ -164,24 +165,19 @@
       "phase": "01/02",
       "methodology_draft": ".planning/phases/01-source-methodology-gate/METHODOLOGY-v1.0-draft.md",
       "approval_state": "design_clarified_thresholds_and_inputs_PROPOSED_LOCKED"
+    },
+    {
+      "decision": "Make stock-market-style dated component-price graphs the target experience and use bounded worker waves under parent-orchestrator control",
+      "rationale": "Users should be able to follow UK component-price movement over time and inspect reviewed events that may help explain it. Deterministic series remain authoritative; event overlays never alter numeric outputs. Lesser agents may gather evidence, build reversible artefacts and attack implementations, while the parent owns integration, correction, methodology interpretation, approval and final verification.",
+      "phase": "02/05/06",
+      "approval_state": "product_direction_and_execution_model_approved; numeric_methodology_and_activation_remain_locked"
     }
   ],
-  "uncommitted_files": [
-    ".planning/HANDOFF.json",
-    ".planning/HANDOVER-2026-08-08.md",
-    ".planning/PROJECT.md",
-    ".planning/REQUIREMENTS.md",
-    ".planning/ROADMAP.md",
-    ".planning/STATE.md",
-    ".planning/phases/01-source-methodology-gate/verify_phase1.py",
-    "docs/EDITORIAL-INTELLIGENCE-DESIGN.md",
-    "research/INDEX-RESILIENCE-PROPOSAL.md",
-    ".planning/phases/01-source-methodology-gate/METHODOLOGY-v1.0-draft.md"
-  ],
-  "next_action": "Collect another prospective immutable tranche and broaden lawful historical evidence. Use the inception-100 diagnostic only as a private collection diagnostic. Prepare evidence and fixtures for basket-vintage linking, historical-reference sensitivity, official-deflator release vintages and unavailable states; do not select or approve any period, deflator, formula or threshold.",
-  "context_notes": "The current 2026-08-09 diagnostic remains useful but explicitly is not an index and its 100 does not mean normal. Product design now has separate native basket vintages, linked nominal history, evidence-approved historical-reference presentation, monthly constant-price history with official UK deflator release-vintage lineage, optional earnings-relative affordability and non-numeric event overlays.",
-  "handover_document": ".planning/HANDOVER-2026-08-08.md",
-  "blocked_publications": "Public frontend remains primary-retail only and shows an honest collection-start state with no publishable point or active scale. Private history and the quoted-item diagnostic are not approved indices. No linked nominal, historical-reference, constant-price, earnings-relative or event-overlay output is approved for publication.",
-  "blocker_workaround_context": "Continue prospective append-only collection and lawful historical research. Archived observations may extend evidence but cannot make inception normal, bypass reference/link/deflator approval, revise prior release-vintage results or fill unavailable values.",
-  "verification_summary": "2026-08-09T16:31Z: all 48 tracked repository JSON files parsed; 47 unique v1 requirement IDs are mapped; npm run check:full passed 85/85 Node tests, ESLint, TypeScript, the 14-page static build, hardened public-boundary scans and disposable PostgreSQL verification; git diff --check passed. The stale Phase 1 verifier vocabulary was updated to recognise the documented policy_permitted status and now passes 130/130 structural checks."
+  "next_action": "Read .planning/HANDOVER-2026-08-09.md and run Wave 0. Verify Git, scheduler, observations, locks and baseline tests. While recurring job 7e98d1467473 is enabled, it is the sole prospective fetcher: Wave 1 may audit or integrate its completed output but must not launch a competing fetch before or during a pending run. The parent integrates and verifies every result. Do not select or approve methodology, sources, thresholds, references, deflators, baskets, causal claims, publication or production actions.",
+  "context_notes": "The target interface is stock-market-like dated component-price history with evidence-backed event markers. 'Stock-market-like' describes graph interaction and user attention, not speculative pricing or editorial adjustment. Native basket-vintage, linked nominal, historical-reference, monthly real and optional earnings-relative layers remain separate. Event overlays are read-only annotations. Governed execution uses up to three bounded workers per wave, with the parent orchestrator retaining integration and approval authority.",
+  "handover_document": ".planning/HANDOVER-2026-08-09.md",
+  "blocked_publications": "Public frontend remains primary-retail only and shows an honest empty verified-history state. No supported index, private diagnostic, linked nominal, historical-reference, constant-price, earnings-relative or event-overlay output is approved for publication.",
+  "blocker_workaround_context": "Continue append-only prospective collection, lawful historical research, decision-packet preparation, fail-closed synthetic methodology/event fixtures and an inactive private worker harness. Missing approval stays explicit and unavailable; worker convenience cannot become methodology.",
+  "verification_summary": "2026-08-09T17:32Z handover refresh verified: all 48 tracked JSON files parsed; 48 unique v1 requirement IDs are mapped exactly once; npm run check:full passed 85/85 Node tests, ESLint, TypeScript, the 14-page static build, hardened public-boundary scans and disposable PostgreSQL verification; the Phase 1 verifier passed 130/130 checks; git diff --check passed. The repository should be rechecked clean and aligned with origin/main after the handover commit.",
+  "working_tree_state": "Expected clean after the verified handover commit; re-check live Git state before work."
 }

@@ -12,12 +12,12 @@ This repository currently contains:
 
 ## Public website
 
-The website is intentionally honest about its status. Its chart contains synthetic demonstration values and is not a live price comparison or purchasing recommendation.
+The website is intentionally honest about its status. It exposes the primary-retail tracking scope, qualification rules and release gates, but no verified public price series, synthetic price chart, outbound product links or purchasing recommendations.
 
 Routes include:
 
-- `/` — project overview and demonstration chart;
-- `/price-history/` — chart explanation and methodology outline;
+- `/` — project overview and current research status;
+- `/price-history/` — tracking status, verified-history empty state, qualification rules and release gates;
 - `/categories/{ram,gpu,cpu,ssd}/` — category status pages;
 - `/about/`;
 - `/contact/`;
@@ -49,7 +49,7 @@ To include the candidate database foundation test, with Docker running:
 npm run check:full
 ```
 
-This starts a disposable PostgreSQL 16 container, applies `db/migrations/0001_foundation.sql`, exercises the fail-closed constraints and removes the container. It uses fixture-only credentials and makes no production connection.
+This starts a disposable PostgreSQL 16 container, applies migrations `0001_foundation.sql` through `0003_candidate_primary_retail_persistence.sql`, exercises the additive catalogue review and candidate primary-retail persistence constraints, then removes the container. It uses fixture-only credentials and makes no production connection.
 
 ## Deployment
 

@@ -2,10 +2,10 @@
 
 ## Project Reference
 
-See `.planning/PROJECT.md` (updated 2026-08-05).
+See `.planning/PROJECT.md` (last updated 2026-08-09).
 
-**Core value:** Show recent UK component-price history around material market shocks on transparent nominal and inflation-adjusted scales, with a defensible evidence-approved historical reference at 100 and complete observation/statistical-vintage lineage.
-**Current focus:** Accumulate lawful UK history and calibrate the linked-nominal/reference/real methodology without treating 2026-08-09 collection inception as normal; keep production sources, methodology thresholds, reference choice, deflator choice and publication locked
+**Core value:** Let people follow dated UK component-price graphs as they would a stock, with reviewed market/news overlays explaining possible effects while deterministic calculations and complete lineage remain authoritative.
+**Current focus:** Accumulate lawful UK history, calibrate the linked-nominal/reference/real methodology and define the narrow private graph experience without treating 2026-08-09 collection inception as normal; keep production sources, methodology thresholds, reference choice, deflator choice and publication locked.
 
 ## Status
 
@@ -69,6 +69,8 @@ See `.planning/PROJECT.md` (updated 2026-08-05).
 - Product direction is now explicit: the primary history is a basket-vintage-linked nominal series; a separately evidenced historical reference may present 100; a monthly constant-price series uses one approved official UK deflator with exact release-vintage lineage; an earnings-relative affordability series is optional and separate; event overlays are annotations only and can never change numbers or fill gaps.
 - Basket-vintage reference scale and historical reference are different. The former is an internal calculation/linking convention. The latter is an interpretive benchmark that requires an evidence packet, sensitivity analysis and human approval. No period—including 2026-08-09 inception—has been selected or approved as affordable, representative or normal.
 - `.planning/phases/01-source-methodology-gate/METHODOLOGY-v1.0-draft.md` records this design without modifying v0.1. Every new threshold, linking formula selection, monthly completeness rule, historical-reference choice, official deflator choice and optional earnings measure remains `PROPOSED_LOCKED`.
+- The target experience is a dated stock-market-style graph for each supported product/category history, with reviewed event markers or ranges opening evidence-backed possible-effect explanations. The graph presents deterministic series; editorial work cannot adjust them.
+- Governed execution uses bounded worker waves for evidence gathering, fixture/code construction and adversarial review. The parent orchestrator owns integration, methodology interpretation, approval decisions and final verification; workers cannot select thresholds, references, deflators, aggregation rules or public claims.
 
 ## Current Phase
 
@@ -99,7 +101,7 @@ Phase 1 — Source and Methodology Gate is **evidence-complete but access/method
 
 ## Next Action
 
-Continue the prospective series from the immutable 2026-08-09 inception and re-fetch the same exact retailer-product lines, while expanding lawful archive/source research needed to assess candidate historical reference periods. The candidate quoted-item relative diagnostic remains useful for collection and replay diagnostics but is explicitly not an index and its inception 100 has no "normal" meaning. In parallel, resolve landed-price semantics and overlapping coverage; prepare evidence and sensitivity criteria for a historical reference; evaluate official UK deflator candidates and release-vintage handling without selecting one; and test basket-vintage overlap/linking designs without approving a formula. Missing approvals produce explicit unavailable states. If an Awin programme is accepted, inspect only a bounded read-only feed sample under the existing human-approval gate.
+Run the governed multi-agent push defined in `.planning/HANDOVER-2026-08-09.md`. Treat the recurring retail collector as the sole prospective collector while it is enabled: inspect and integrate its output after completion, but do not launch a competing fetch before or during its scheduled run. In parallel, expand lawful historical evidence, prepare decision packets for historical reference and official UK deflator candidates, build fail-closed candidate fixtures for linking/reference/real/event layers, and implement an inactive private worker harness with adversarial tests. Specify private chart acceptance criteria for dated points, gaps, scale selection, exact-point lineage and the later read-only event-overlay boundary. Workers may do bounded grunt work; the parent must integrate, challenge and verify every result. No worker may select or approve a method, source, threshold, reference, deflator, basket, public claim or production action.
 
 ## Safety Note
 
@@ -107,4 +109,4 @@ The completed Phase 1 work and parallel foundation slice are Tier 1/Tier 2 resea
 
 ---
 *State created: 2026-08-05*
-*Last updated: 2026-08-09 after clarifying the historical-reference, linked nominal, constant-price and event-overlay product model*
+*Last updated: 2026-08-09 after clarifying the stock-market-style product experience and governed multi-agent push*
