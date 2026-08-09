@@ -1,0 +1,86 @@
+{
+  "schema_version": "private-worker-profiles.v1",
+  "status": "inactive_candidate_private_unapproved",
+  "enabled": false,
+  "override_token": null,
+  "max_global_concurrency": 3,
+  "controlled_actions_permanently_forbidden": [
+    "methodology_selection_change_or_approval",
+    "source_selection_or_approval",
+    "threshold_reference_deflator_or_basket_selection_or_approval",
+    "production_mutation_or_activation",
+    "editorial_activation_or_approval",
+    "external_publication",
+    "spend",
+    "live_credentials_or_secrets",
+    "migrations_or_public_app_edits",
+    "weakening_locks"
+  ],
+  "profiles": [
+    {
+      "id": "prospective-retail-replay",
+      "purpose": "Offline audit and replay of already-preserved prospective retail fixtures. The canonical recurring retail collector is the sole prospective fetcher. This harness cannot dispatch that collector while it is scheduler-owned, enabled, pending, or running.",
+      "task_kinds": ["retail_fixture_replay", "retail_capture_audit"],
+      "allowed_tools": ["fixture-reader", "checksum", "synthetic-executor"],
+      "allowed_requested_actions": ["replay_private_fixture"],
+      "described_network_tools_not_dispatchable_by_cli": ["canonical-recurring-retail-collector"],
+      "allowed_output_roots": ["data/private-worker-runs/prospective-retail-replay"],
+      "timeout_ms": 250,
+      "retry_cap": 1,
+      "concurrency_cap": 1,
+      "byte_cap": 4096
+    },
+    {
+      "id": "historical-research",
+      "purpose": "Prepare private candidate historical evidence research and deterministic fixture replays; source access, if separately authorised later, remains outside this CLI.",
+      "task_kinds": ["historical_fixture_replay", "historical_evidence_draft"],
+      "allowed_tools": ["fixture-reader", "archive-index-reader", "checksum", "synthetic-executor"],
+      "allowed_requested_actions": ["draft_candidate_evidence"],
+      "described_network_tools_not_dispatchable_by_cli": ["normal-access-archive-http"],
+      "allowed_output_roots": ["data/private-worker-runs/historical-research"],
+      "timeout_ms": 300,
+      "retry_cap": 2,
+      "concurrency_cap": 2,
+      "byte_cap": 8192
+    },
+    {
+      "id": "official-statistics-context",
+      "purpose": "Prepare candidate-only comparisons of official-statistics concepts and historical context without selecting a series, reference, deflator, threshold, or policy.",
+      "task_kinds": ["statistics_fixture_compare", "context_evidence_draft"],
+      "allowed_tools": ["fixture-reader", "statistics-snapshot-reader", "checksum", "synthetic-executor"],
+      "allowed_requested_actions": ["compare_candidates_without_selection"],
+      "described_network_tools_not_dispatchable_by_cli": ["official-statistics-http"],
+      "allowed_output_roots": ["data/private-worker-runs/official-statistics-context"],
+      "timeout_ms": 300,
+      "retry_cap": 1,
+      "concurrency_cap": 1,
+      "byte_cap": 8192
+    },
+    {
+      "id": "event-research",
+      "purpose": "Prepare private unapproved event evidence drafts with alternatives and counterevidence; no editorial approval, numeric mutation, or publication.",
+      "task_kinds": ["event_fixture_replay", "event_evidence_draft"],
+      "allowed_tools": ["fixture-reader", "event-snapshot-reader", "checksum", "synthetic-executor"],
+      "allowed_requested_actions": ["draft_private_unapproved_event"],
+      "described_network_tools_not_dispatchable_by_cli": ["registered-research-source-http"],
+      "allowed_output_roots": ["data/private-worker-runs/event-research"],
+      "timeout_ms": 300,
+      "retry_cap": 1,
+      "concurrency_cap": 1,
+      "byte_cap": 8192
+    },
+    {
+      "id": "adversarial-fixture-verification",
+      "purpose": "Attack synthetic fixtures and replay controls offline; report failures without granting integration or approval.",
+      "task_kinds": ["adversarial_fixture_replay", "control_report"],
+      "allowed_tools": ["fixture-reader", "checksum", "synthetic-executor"],
+      "allowed_requested_actions": ["verify_fail_closed_controls"],
+      "described_network_tools_not_dispatchable_by_cli": [],
+      "allowed_output_roots": ["data/private-worker-runs/adversarial-fixture-verification"],
+      "timeout_ms": 200,
+      "retry_cap": 2,
+      "concurrency_cap": 2,
+      "byte_cap": 4096
+    }
+  ]
+}

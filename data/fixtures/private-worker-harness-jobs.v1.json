@@ -1,0 +1,67 @@
+{
+  "schema_version": "private-worker-harness-jobs.v1",
+  "classification": "synthetic_candidate_private_unapproved",
+  "contains_credentials": false,
+  "jobs": [
+    {
+      "id": "retail-replay-001",
+      "profile_id": "prospective-retail-replay",
+      "task_kind": "retail_fixture_replay",
+      "tool": "fixture-reader",
+      "input_refs": ["fixture://retail/capture-a"],
+      "input_hashes": ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"],
+      "output_path": "data/private-worker-runs/prospective-retail-replay/retail-replay-001.json",
+      "requested_actions": ["replay_private_fixture"],
+      "scheduler_owned_pending": false,
+      "payload": {"mode": "offline_fixture", "note": "Replay preserved synthetic facts only."}
+    },
+    {
+      "id": "historical-replay-001",
+      "profile_id": "historical-research",
+      "task_kind": "historical_fixture_replay",
+      "tool": "archive-index-reader",
+      "input_refs": ["fixture://archive/exact-mpn-a"],
+      "input_hashes": ["bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"],
+      "output_path": "data/private-worker-runs/historical-research/historical-replay-001.json",
+      "requested_actions": ["draft_candidate_evidence"],
+      "scheduler_owned_pending": false,
+      "payload": {"identity": "EXACT-SYNTHETIC-MPN", "capture_kind": "archive_fixture"}
+    },
+    {
+      "id": "statistics-compare-001",
+      "profile_id": "official-statistics-context",
+      "task_kind": "statistics_fixture_compare",
+      "tool": "statistics-snapshot-reader",
+      "input_refs": ["fixture://statistics/release-a"],
+      "input_hashes": ["cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"],
+      "output_path": "data/private-worker-runs/official-statistics-context/statistics-compare-001.json",
+      "requested_actions": ["compare_candidates_without_selection"],
+      "scheduler_owned_pending": false,
+      "payload": {"candidate_ids": ["SYNTH-A", "SYNTH-B"], "selection": null}
+    },
+    {
+      "id": "event-replay-001",
+      "profile_id": "event-research",
+      "task_kind": "event_fixture_replay",
+      "tool": "event-snapshot-reader",
+      "input_refs": ["fixture://events/contested-a"],
+      "input_hashes": ["dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"],
+      "output_path": "data/private-worker-runs/event-research/event-replay-001.json",
+      "requested_actions": ["draft_private_unapproved_event"],
+      "scheduler_owned_pending": false,
+      "payload": {"alternatives_retained": true, "counterevidence_retained": true}
+    },
+    {
+      "id": "adversarial-replay-001",
+      "profile_id": "adversarial-fixture-verification",
+      "task_kind": "adversarial_fixture_replay",
+      "tool": "synthetic-executor",
+      "input_refs": ["fixture://adversarial/bounds-a"],
+      "input_hashes": ["eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"],
+      "output_path": "data/private-worker-runs/adversarial-fixture-verification/adversarial-replay-001.json",
+      "requested_actions": ["verify_fail_closed_controls"],
+      "scheduler_owned_pending": false,
+      "payload": {"case": "bounded-structured-result"}
+    }
+  ]
+}
