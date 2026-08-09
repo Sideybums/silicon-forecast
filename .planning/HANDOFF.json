@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "timestamp": "2026-08-09T10:07:45Z",
+  "timestamp": "2026-08-09T12:11:13Z",
   "phase": "02",
   "phase_name": "platform-catalogue-control-plane",
   "phase_dir": ".planning/phases/02-platform-catalogue-control-plane",
@@ -61,7 +61,7 @@
     {
       "description": "Methodology thresholds, production region, basket/baseline and activation remain unapproved",
       "type": "human_action",
-      "workaround": "Keep supported-index, production, source and methodology activation locked while publishing only separately approved checksum-bound dated observations"
+      "workaround": "Keep supported-index, production, source and methodology activation locked; use only candidate-private fixtures and observation evidence until explicit approval."
     }
   ],
   "async_jobs": [],
@@ -124,11 +124,16 @@
       "decision": "Keep the public frontend primary-retail only; defer marketplace and second-hand display",
       "rationale": "David corrected the public scope on 2026-08-09. The earlier checksum-bound non-retail publication artifact remains immutable for audit but is not imported by the public application. The site exposes retail scope, qualification rules and release gates; no verified series or outbound product links are currently public.",
       "phase": "02"
+    },
+    {
+      "decision": "Build candidate retail movement per retailer-product line before any product-level aggregation",
+      "rationale": "This produces real deterministic movement without silently choosing a cross-retailer minimum, median, daily deduplication or threshold. Multiple same-day eligible observations fail until an explicit selection rule is approved.",
+      "phase": "02"
     }
   ],
   "uncommitted_files": [],
-  "next_action": "Collect a second immutable UK tranche from retailer-owned stock for reviewed exact MPNs with explicit VAT, availability and mandatory-delivery evidence. Build candidate-only movement calculations, then draft market context only after a reproducible retail movement exists.",
-  "context_notes": "Retail-first frontend deployed through GitHub/Cloudflare. Price history now has four distinct responsive panels: tracking status, an honest empty verified-history state, retail qualification and release gates. Homepage, RAM category, research, about and disclosure pages consistently expose no verified retail series or product links. Research remains movement-first and no market note is public before a reproducible retail movement exists. Verification passed 43/43 Node tests, ESLint, TypeScript, the 14-page build, disposable PostgreSQL and desktop/mobile Firefox visual QA. Five live routes returned HTTP 200 with no deferred-channel terms; apex/www redirects returned HTTP 308.",
+  "next_action": "Convert the three independently re-fetched primary-retail routes into the first immutable candidate observation tranche with minimal factual extracts and explicit caveats, then repeat the same exact MPNs on later dates and derive only same-retailer/product movements.",
+  "context_notes": "A three-agent wave delivered: (1) current UK retail reconnaissance, identifying promising KingstonMemoryShop routes for KF560C30BBEK2-32 and KF564C32RSK2-32 plus AWD-IT for F5-6000J3636F16GX2-FX5; (2) a candidate-only primary-retail validation and movement module with credential-free adversarial fixtures; and (3) a methodology audit recommending observation overlap over catalogue expansion. Parent verification independently re-fetched the three pages and confirmed exact MPN, VAT-inclusive price, seller, availability and free-delivery evidence, but no factual tranche has yet been committed. Movement is deliberately confined to the same retailer-product line, requires two eligible dates, refuses ambiguous same-day selection and cannot import to production, activate, enter an index or publish. Full gate passed 51/51 Node tests, ESLint, 14-page build and disposable PostgreSQL.",
   "handover_document": ".planning/HANDOVER-2026-08-08.md",
   "blocked_publications": "Public frontend is primary-retail only. No price series or outbound product links are public; non-retail evidence remains private/deferred and all supported-index/editorial publication locks remain on."
 }
