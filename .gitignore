@@ -25,6 +25,7 @@ __pycache__/
 # Local runtime data
 .local/
 tmp/
+data/private-worker-runs/
 *.log
 *.sqlite
 *.sqlite3

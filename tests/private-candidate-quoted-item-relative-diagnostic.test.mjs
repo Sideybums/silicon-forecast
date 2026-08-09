@@ -170,15 +170,16 @@ test("VAT, exact identity, and retailer-owned requirements abstain explicitly ra
   );
 });
 
-test("duplicate same-retailer+MPN dates fail closed without a selection rule", async () => {
+test("alternate source keys for the same legal seller+MPN still trigger same-day duplicate refusal", async () => {
   const tranches = await loadFixture();
   const duplicate = clone(tranches[1].observations[0]);
   duplicate.observation_id = "fixture-retailer-a-mpn-a-2026-08-16-later";
   duplicate.observed_at = "2026-08-16T10:00:00Z";
+  duplicate.source.source_key = "retailer-a-migrated-source";
   tranches[1].observations.push(duplicate);
   assert.throws(
     () => derivePrivateCandidateQuotedItemRelativeDiagnostic(tranches),
-    /duplicate observation for retailer retailer-a-fixture, MPN MPN-A on 2026-08-16 requires an approved same-line\/same-date selection rule/u,
+    /duplicate observation for seller legal entity Fixture Retailer Legal Entity, MPN MPN-A on 2026-08-16 requires an approved same-line\/same-date selection rule/u,
   );
 });
 
@@ -213,15 +214,36 @@ test("append order, unique lineage, and authority locks fail closed", async () =
   );
 });
 
-test("exact retailer+MPN identity prevents cross-retailer and cross-MPN pairing", async () => {
+test("source-key migration remains one seller-legal-entity+MPN line and source keys remain lineage", async () => {
   const tranches = await loadFixture();
   tranches[1].observations[0].source.source_key = "retailer-z-fixture";
   const result = derivePrivateCandidateQuotedItemRelativeDiagnostic(tranches);
   const date = result.date_diagnostics.find((item) => item.date === "2026-08-16");
-  assert.equal(date.lines.find((item) => item.retailer_key === "retailer-a-fixture").status, "missing_current_observation_no_imputation");
-  assert.equal(date.lines.find((item) => item.retailer_key === "retailer-z-fixture").status, "no_baseline_observation");
-  assert.equal(date.quality_state, "abstain_incomplete_base_basket_coverage");
-  assert.equal(result.points.some((point) => point.date === "2026-08-16"), false);
+  assert.equal(date.lines.find((item) => item.mpn === "MPN-A").status, "eligible_paired_line");
+  const contribution = result.points
+    .find((point) => point.date === "2026-08-16")
+    .contributions.find((item) => item.mpn === "MPN-A");
+  assert.equal(contribution.retailer_key, "retailer-a-fixture", "display metadata comes from the stable line's first record");
+  assert.equal(contribution.base_observation_lineage.retailer_key, "retailer-a-fixture");
+  assert.equal(contribution.current_observation_lineage.retailer_key, "retailer-z-fixture");
+  assert.equal(date.quality_state, "calculable_complete_base_basket_without_imputation");
+});
+
+test("different legal sellers or exact MPNs remain separate lines", async () => {
+  const sellerChanged = await loadFixture();
+  sellerChanged[1].observations[0].seller.legal_name = "Different Fixture Retailer Ltd";
+  const sellerResult = derivePrivateCandidateQuotedItemRelativeDiagnostic(sellerChanged);
+  const sellerDate = sellerResult.date_diagnostics.find((item) => item.date === "2026-08-16");
+  assert.equal(sellerDate.lines.find((item) => item.retailer_legal_name === "Different Fixture Retailer Ltd").status, "no_baseline_observation");
+  assert.equal(sellerDate.lines.find((item) => item.retailer_legal_name === "Fixture Retailer Legal Entity" && item.mpn === "MPN-A").status, "missing_current_observation_no_imputation");
+
+  const mpnChanged = await loadFixture();
+  mpnChanged[1].observations[0].identity.mpn_expected = "MPN-Z";
+  mpnChanged[1].observations[0].identity.mpn_observed = "MPN-Z";
+  const mpnResult = derivePrivateCandidateQuotedItemRelativeDiagnostic(mpnChanged);
+  const mpnDate = mpnResult.date_diagnostics.find((item) => item.date === "2026-08-16");
+  assert.equal(mpnDate.lines.find((item) => item.mpn === "MPN-Z").status, "no_baseline_observation");
+  assert.equal(mpnDate.lines.find((item) => item.mpn === "MPN-A").status, "missing_current_observation_no_imputation");
 });
 
 test("the real historical backfill is an intentionally separate input type, not silently rebased", async () => {

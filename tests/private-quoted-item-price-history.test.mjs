@@ -92,6 +92,12 @@ test("accessible HTML is explicitly private, not an index, and reports provenanc
   const html = renderQuotedItemPriceHistoryHtml(history, svg);
   assert.match(html, /PRIVATE CANDIDATE · QUOTED ITEM PRICE · NOT AN INDEX · NOT FOR PUBLICATION/u);
   assert.match(html, /Accessible observation data/u);
+  assert.match(html, /Observation ID/u);
+  assert.match(html, /Tranche ID/u);
+  assert.match(html, /Evidence extract SHA-256/u);
+  assert.match(html, /<code>awdit-f5-6000j3636f16gx2-fx5-2026-08-09T122437Z<\/code>/u);
+  assert.match(html, /<code>sf-gb-primary-retail-2026-08-09T122437Z-v1<\/code>/u);
+  assert.match(html, /<code>[a-f0-9]{64}<\/code>/u);
   assert.match(html, /Archive timestamps are Wayback capture times/u);
   assert.match(html, /Delivery is not added to price/u);
   assert.match(html, /Abstain: availability_semantics_ambiguous, delivery_destination_not_fixed/u);

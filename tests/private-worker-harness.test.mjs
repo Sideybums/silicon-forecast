@@ -1,12 +1,13 @@
 import assert from "node:assert/strict";
-import { mkdtemp, mkdir, readFile, symlink } from "node:fs/promises";
+import { mkdtemp, mkdir, readFile, symlink, writeFile } from "node:fs/promises";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { spawnSync } from "node:child_process";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
-import { dispatchJob, dispatchJobs, prepareManifest } from "../lib/private-worker-harness.mjs";
+import * as harness from "../lib/private-worker-harness.mjs";
 
+const { prepareManifest, validateConfig, validateJobFixture } = harness;
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const configUrl = new URL("../config/private-worker-profiles.v1.json", import.meta.url);
 const fixtureUrl = new URL("../data/fixtures/private-worker-harness-jobs.v1.json", import.meta.url);
@@ -18,24 +19,29 @@ const authority = { enableMode: "synthetic-private-test", overrideToken: TOKEN, 
 
 async function setup() {
   const [config, fixture] = await Promise.all([load(configUrl), load(fixtureUrl)]);
-  return { config, jobs: fixture.jobs };
-}
-
-function executorFor(job, execute) {
-  return { profileId: job.profile_id, tool: job.tool, outputRoot: path.posix.dirname(job.output_path), execute };
+  return { config, jobs: validateJobFixture(fixture), fixture };
 }
 
 function cliRun(args) {
   return spawnSync(process.execPath, [cli, ...args], { cwd: repositoryRoot, encoding: "utf8" });
 }
 
-test("repository defaults are inactive and contain no usable override", async () => {
-  const { config, jobs } = await setup();
+async function materializeInput(root, job) {
+  const relative = job.input_refs[0].slice("repo://".length);
+  const bytes = await readFile(path.join(repositoryRoot, relative));
+  await mkdir(path.dirname(path.join(root, relative)), { recursive: true });
+  await writeFile(path.join(root, relative), bytes);
+}
+
+test("repository defaults are inactive, fixture schema is exact, and no dispatch API exists", async () => {
+  const { config, jobs, fixture } = await setup();
   assert.equal(config.enabled, false);
   assert.equal(config.override_token, null);
   await assert.rejects(() => prepareManifest(jobs, { config, repositoryRoot }), /HARNESS_DISABLED/u);
-  const job = jobs[4];
-  await assert.rejects(() => dispatchJob(job, { config, repositoryRoot, executor: executorFor(job, async () => ({ ok: true })) }), /HARNESS_DISABLED/u);
+  assert.equal("dispatchJob" in harness, false);
+  assert.equal("dispatchJobs" in harness, false);
+  assert.deepEqual(Object.keys(harness).sort(), ["HARNESS_CLASSIFICATION", "REQUIRED_ENABLE_MODE", "prepareManifest", "validateConfig", "validateJob", "validateJobFixture"].sort());
+  assert.throws(() => validateJobFixture({ ...fixture, extra: true }), /JOBS_SCHEMA_MISMATCH/u);
 });
 
 test("token alone, enable alone, and a wrong token are each insufficient", async () => {
@@ -45,7 +51,36 @@ test("token alone, enable alone, and a wrong token are each insufficient", async
   await assert.rejects(() => prepareManifest(jobs, { config, repositoryRoot, ...authority, overrideToken: `${TOKEN}-wrong` }), /OVERRIDE_REFUSED/u);
 });
 
-test("profile, tool, task, and output scope mismatches fail closed", async () => {
+test("config and every profile use exact schemas, capabilities, locks, and bounded limits", async () => {
+  const { config } = await setup();
+  assert.equal(validateConfig(config).size, 5);
+  const cases = [
+    [{ ...copy(config), status: "active" }, /CONFIG_INVALID/u],
+    [{ ...copy(config), unknown: true }, /CONFIG_SCHEMA_MISMATCH/u],
+    [{ ...copy(config), controlled_actions_permanently_forbidden: [...config.controlled_actions_permanently_forbidden, config.controlled_actions_permanently_forbidden[0]] }, /CONFIG_INVALID/u],
+  ];
+  for (const [candidate, pattern] of cases) assert.throws(() => validateConfig(candidate), pattern);
+
+  for (const mutate of [
+    (profile) => { profile.extra = true; },
+    (profile) => { profile.allowed_tools.push(profile.allowed_tools[0]); },
+    (profile) => { profile.allowed_tools = ["shell"]; },
+    (profile) => { profile.task_kinds = ["fetch"]; },
+    (profile) => { profile.allowed_requested_actions = ["publish"]; },
+    (profile) => { profile.byte_cap = 1_000_001; },
+  ]) {
+    const candidate = copy(config);
+    mutate(candidate.profiles[1]);
+    assert.throws(() => validateConfig(candidate), /CONFIG_(?:INVALID|SCHEMA_MISMATCH)/u);
+  }
+  const prospective = copy(config);
+  prospective.profiles[0].prospective_fetch_allowed = true;
+  assert.throws(() => validateConfig(prospective), /CONFIG_UNSAFE/u);
+  assert.ok(config.profiles[0].task_kinds.every((value) => !/fetch|network/iu.test(value)));
+  assert.ok(config.profiles[0].allowed_tools.every((value) => !/fetch|http|network/iu.test(value)));
+});
+
+test("profile, tool, task, action, job schema, and output scope mismatches fail closed", async () => {
   const { config, jobs } = await setup();
   const cases = [
     ["profile_id", "unknown-profile", /PROFILE_MISMATCH/u],
@@ -61,27 +96,61 @@ test("profile, tool, task, and output scope mismatches fail closed", async () =>
   }
 });
 
-test("output traversal and symlink escapes are rejected", async () => {
+test("only canonical scoped repo refs to exact regular-file bytes are accepted", async () => {
   const { config, jobs } = await setup();
-  const traversing = { ...copy(jobs[0]), output_path: "data/private-worker-runs/prospective-retail-replay/../../../../outside.json" };
-  await assert.rejects(() => prepareManifest([traversing], { config, repositoryRoot, ...authority }), /OUTPUT_(?:TRAVERSAL|SCOPE_MISMATCH)/u);
-
-  const root = await mkdtemp(path.join(tmpdir(), "sf-harness-"));
-  await mkdir(path.join(root, "data/private-worker-runs"), { recursive: true });
-  await symlink(tmpdir(), path.join(root, "data/private-worker-runs/prospective-retail-replay"));
-  await assert.rejects(() => prepareManifest([jobs[0]], { config, repositoryRoot: root, ...authority }), /OUTPUT_SYMLINK_ESCAPE/u);
-
-  const finalRoot = await mkdtemp(path.join(tmpdir(), "sf-harness-final-"));
-  const allowed = path.join(finalRoot, "data/private-worker-runs/prospective-retail-replay");
-  await mkdir(allowed, { recursive: true });
-  await symlink(path.join(tmpdir(), "escaped-output.json"), path.join(allowed, "retail-replay-001.json"));
-  await assert.rejects(() => prepareManifest([jobs[0]], { config, repositoryRoot: finalRoot, ...authority }), /OUTPUT_SYMLINK_ESCAPE/u);
+  for (const ref of [
+    "fixture://retail/capture-a",
+    "file:///tmp/capture-a",
+    "https://example.test/capture-a",
+  ]) {
+    const job = { ...copy(jobs[0]), input_refs: [ref] };
+    await assert.rejects(() => prepareManifest([job], { config, repositoryRoot, ...authority }), /INPUT_SCHEME_FORBIDDEN/u);
+  }
+  for (const ref of [
+    "repo://data/fixtures/../fixtures/primary-retail-observations.gb.v1.json",
+    "repo://data//fixtures/primary-retail-observations.gb.v1.json",
+    "repo://data/fixtures/%70rimary-retail-observations.gb.v1.json",
+  ]) {
+    const job = { ...copy(jobs[0]), input_refs: [ref] };
+    await assert.rejects(() => prepareManifest([job], { config, repositoryRoot, ...authority }), /INPUT_(?:TRAVERSAL|REF_INVALID)/u);
+  }
+  const wrongRoot = { ...copy(jobs[0]), input_refs: [jobs[1].input_refs[0]], input_hashes: [jobs[1].input_hashes[0]] };
+  await assert.rejects(() => prepareManifest([wrongRoot], { config, repositoryRoot, ...authority }), /INPUT_SCOPE_MISMATCH/u);
 });
 
-test("prospective scheduler collision is refused", async () => {
+test("changed and missing input files fail closed", async () => {
   const { config, jobs } = await setup();
-  const collision = { ...copy(jobs[0]), scheduler_owned_pending: true };
-  await assert.rejects(() => prepareManifest([collision], { config, repositoryRoot, ...authority }), /SCHEDULER_COLLISION/u);
+  const job = copy(jobs[0]);
+  const changedRoot = await mkdtemp(path.join(tmpdir(), "sf-harness-changed-"));
+  await materializeInput(changedRoot, job);
+  await writeFile(path.join(changedRoot, job.input_refs[0].slice(7)), "changed bytes\n");
+  await assert.rejects(() => prepareManifest([job], { config, repositoryRoot: changedRoot, ...authority }), /INPUT_HASH_MISMATCH/u);
+
+  const missingRoot = await mkdtemp(path.join(tmpdir(), "sf-harness-missing-"));
+  await assert.rejects(() => prepareManifest([job], { config, repositoryRoot: missingRoot, ...authority }), /INPUT_MISSING/u);
+});
+
+test("input and output symlinks are rejected", async () => {
+  const { config, jobs } = await setup();
+  const job = jobs[0];
+  const inputRoot = await mkdtemp(path.join(tmpdir(), "sf-harness-input-link-"));
+  const relative = job.input_refs[0].slice(7);
+  await mkdir(path.dirname(path.join(inputRoot, relative)), { recursive: true });
+  await symlink(path.join(repositoryRoot, relative), path.join(inputRoot, relative));
+  await assert.rejects(() => prepareManifest([job], { config, repositoryRoot: inputRoot, ...authority }), /INPUT_SYMLINK_FORBIDDEN/u);
+
+  const outputRoot = await mkdtemp(path.join(tmpdir(), "sf-harness-output-link-"));
+  await materializeInput(outputRoot, job);
+  await mkdir(path.join(outputRoot, "data/private-worker-runs"), { recursive: true });
+  await symlink(tmpdir(), path.join(outputRoot, "data/private-worker-runs/prospective-retail-replay"));
+  await assert.rejects(() => prepareManifest([job], { config, repositoryRoot: outputRoot, ...authority }), /OUTPUT_SYMLINK_ESCAPE/u);
+});
+
+test("duplicate job IDs and canonical output paths are rejected", async () => {
+  const { config, jobs } = await setup();
+  await assert.rejects(() => prepareManifest([jobs[0], copy(jobs[0])], { config, repositoryRoot, ...authority }), /DUPLICATE_JOB/u);
+  const duplicateOutput = { ...copy(jobs[0]), id: "retail-replay-duplicate" };
+  await assert.rejects(() => prepareManifest([jobs[0], duplicateOutput], { config, repositoryRoot, ...authority }), /DUPLICATE_OUTPUT/u);
 });
 
 test("every permanently controlled action remains forbidden despite override", async () => {
@@ -96,96 +165,40 @@ test("every permanently controlled action remains forbidden despite override", a
   }
 });
 
-test("dispatch rejects executor profile, tool, and output-scope mismatch", async () => {
+test("payload is opaque JSON but broad secret-shaped material is rejected as defence in depth", async () => {
   const { config, jobs } = await setup();
-  const job = jobs[4];
-  for (const change of [{ profileId: "forged" }, { tool: "fixture-reader" }, { outputRoot: "data/private-worker-runs" }]) {
-    const executor = { ...executorFor(job, async () => ({ ok: true })), ...change };
-    await assert.rejects(() => dispatchJob(job, { config, repositoryRoot, ...authority, executor }), /EXECUTOR_MISMATCH/u);
+  const opaque = copy(jobs[4]);
+  opaque.payload = { command: "not interpreted or executed", arbitrary_nested_data: [1, true, null] };
+  const manifest = await prepareManifest([opaque], { config, repositoryRoot, ...authority });
+  assert.deepEqual(manifest.jobs[0].payload, opaque.payload);
+
+  for (const payload of [
+    { authorization: "not-a-real-value" },
+    { cookie: "not-a-real-value" },
+    { nested: { headers: {} } },
+    { note: "xoxb-12345678901234567890" },
+    { note: "eyJabcdefghijk.abcdefghijkl.abcdefghijkl" },
+    { note: "https://user:password@example.test/path" },
+  ]) {
+    const bad = copy(jobs[4]);
+    bad.payload = payload;
+    await assert.rejects(() => prepareManifest([bad], { config, repositoryRoot, ...authority }), /SECRET_REJECTED/u);
   }
 });
 
-test("timeout is captured and retries never exceed the profile cap", async () => {
-  const { config, jobs } = await setup();
-  const bounded = copy(config);
-  const profile = bounded.profiles.find((item) => item.id === "adversarial-fixture-verification");
-  profile.timeout_ms = 15;
-  profile.retry_cap = 1;
-  let calls = 0;
-  const job = jobs[4];
-  const executor = executorFor(job, async () => { calls += 1; await new Promise((resolve) => setTimeout(resolve, 40)); return { late: true }; });
-  const result = await dispatchJob(job, { config: bounded, repositoryRoot, ...authority, executor });
-  assert.equal(result.status, "failed_bounded");
-  assert.equal(result.failure_code, "TIMEOUT");
-  assert.equal(result.attempts, 2);
-  assert.equal(calls, 2);
-});
-
-test("ordinary failures retry only to the configured cap", async () => {
-  const { config, jobs } = await setup();
-  let calls = 0;
-  const job = jobs[4];
-  const result = await dispatchJob(job, { config, repositoryRoot, ...authority, executor: executorFor(job, async () => { calls += 1; throw new Error("synthetic failure"); }) });
-  assert.equal(result.status, "failed_bounded");
-  assert.equal(result.attempts, 3);
-  assert.equal(calls, 3);
-});
-
-test("global and per-profile concurrency caps are enforced", async () => {
-  const { config, jobs } = await setup();
-  const base = jobs[4];
-  const batch = Array.from({ length: 7 }, (_, index) => ({ ...copy(base), id: `concurrency-${index}`, output_path: `data/private-worker-runs/adversarial-fixture-verification/concurrency-${index}.json` }));
-  let active = 0;
-  let maximum = 0;
-  const executor = executorFor(base, async () => { active += 1; maximum = Math.max(maximum, active); await new Promise((resolve) => setTimeout(resolve, 15)); active -= 1; return { ok: true }; });
-  const results = await dispatchJobs(batch, { config, repositoryRoot, ...authority, executor });
-  assert.equal(results.length, 7);
-  assert.ok(results.every((result) => result.status === "captured_candidate_private_unapproved"));
-  assert.equal(maximum, 2);
-  assert.ok(maximum <= config.max_global_concurrency);
-});
-
-test("oversized structured output is rejected without retaining it", async () => {
-  const { config, jobs } = await setup();
-  const job = jobs[4];
-  const result = await dispatchJob(job, { config, repositoryRoot, ...authority, executor: executorFor(job, async () => ({ text: "x".repeat(5000) })) });
-  assert.equal(result.failure_code, "OUTPUT_TOO_LARGE");
-  assert.equal(result.result, null);
-});
-
-test("secret-shaped job payloads and executor results are rejected and never retained", async () => {
-  const { config, jobs } = await setup();
-  const badJob = copy(jobs[4]);
-  badJob.payload.apiKey = "synthetic-not-even-a-real-key";
-  await assert.rejects(() => prepareManifest([badJob], { config, repositoryRoot, ...authority }), /SECRET_REJECTED/u);
-
-  const job = jobs[4];
-  const result = await dispatchJob(job, { config, repositoryRoot, ...authority, executor: executorFor(job, async () => ({ note: "Bearer abcdefghijklmnopqrstuvwxyz" })) });
-  assert.equal(result.failure_code, "SECRET_REJECTED");
-  assert.equal(result.result, null);
-  assert.doesNotMatch(JSON.stringify(result), /abcdefghijklmnopqrstuvwxyz/u);
-});
-
-test("worker self-report cannot confer approval or integration", async () => {
-  const { config, jobs } = await setup();
-  const job = jobs[4];
-  const result = await dispatchJob(job, { config, repositoryRoot, ...authority, executor: executorFor(job, async () => ({ integration_status: "approved_and_integrated", self_approved: true })) });
-  assert.equal(result.integration_status, "pending_independent_human_review");
-  assert.equal(result.approval_conferred, false);
-  assert.equal(result.worker_self_report_ignored, "approved_and_integrated");
-});
-
-test("manifest preparation is deterministic, token-free, private, and unapproved", async () => {
+test("manifest re-verifies provenance and is deterministic, token-free, private, and unapproved", async () => {
   const { config, jobs } = await setup();
   const first = await prepareManifest(jobs, { config, repositoryRoot, ...authority });
   const second = await prepareManifest(copy(jobs).reverse(), { config, repositoryRoot, ...authority });
   assert.deepEqual(first, second);
   assert.match(first.manifest_sha256, /^[a-f0-9]{64}$/u);
   assert.ok(first.jobs.every((job) => job.integration_status === "pending_independent_human_review" && job.worker_may_self_approve === false));
+  assert.ok(first.jobs.every((job) => job.inputs.every((input) => input.ref.startsWith("repo://") && /^[a-f0-9]{64}$/u.test(input.sha256) && Number.isInteger(input.bytes) && input.bytes > 0)));
   assert.doesNotMatch(JSON.stringify(first), new RegExp(TOKEN, "u"));
+  assert.equal(JSON.stringify(first).includes("scheduler_owned_pending"), false);
 });
 
-test("CLI exits nonzero by default and only prepares a manifest with explicit synthetic invocation override", () => {
+test("CLI exits nonzero by default and only prepares a validation-only manifest with dual synthetic confirmation", () => {
   const disabled = cliRun([]);
   assert.equal(disabled.status, 2);
   assert.match(disabled.stderr, /HARNESS_DISABLED/u);

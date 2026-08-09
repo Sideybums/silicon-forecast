@@ -3,7 +3,7 @@ import { readFile } from "node:fs/promises";
 import path from "node:path";
 import process from "node:process";
 import { fileURLToPath } from "node:url";
-import { prepareManifest, REQUIRED_ENABLE_MODE } from "../lib/private-worker-harness.mjs";
+import { prepareManifest, REQUIRED_ENABLE_MODE, validateJobFixture } from "../lib/private-worker-harness.mjs";
 
 const repositoryRoot = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const configPath = path.join(repositoryRoot, "config/private-worker-profiles.v1.json");
@@ -30,7 +30,8 @@ try {
     readFile(configPath, "utf8").then(JSON.parse),
     readFile(jobsPath, "utf8").then(JSON.parse),
   ]);
-  const selected = args.has("job-id") ? fixture.jobs.filter((job) => job.id === args.get("job-id")) : fixture.jobs;
+  const jobs = validateJobFixture(fixture);
+  const selected = args.has("job-id") ? jobs.filter((job) => job.id === args.get("job-id")) : jobs;
   if (args.has("job-id") && selected.length !== 1) throw new Error(`unknown synthetic fixture job: ${args.get("job-id")}`);
   const manifest = await prepareManifest(selected, {
     config,

@@ -8,11 +8,10 @@
       "profile_id": "prospective-retail-replay",
       "task_kind": "retail_fixture_replay",
       "tool": "fixture-reader",
-      "input_refs": ["fixture://retail/capture-a"],
-      "input_hashes": ["aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"],
+      "input_refs": ["repo://data/fixtures/primary-retail-observations.gb.v1.json"],
+      "input_hashes": ["8171540858df38c94a1ad6fc35b1921378a22e975c8b188462f40c2cd7e8833c"],
       "output_path": "data/private-worker-runs/prospective-retail-replay/retail-replay-001.json",
       "requested_actions": ["replay_private_fixture"],
-      "scheduler_owned_pending": false,
       "payload": {"mode": "offline_fixture", "note": "Replay preserved synthetic facts only."}
     },
     {
@@ -20,11 +19,10 @@
       "profile_id": "historical-research",
       "task_kind": "historical_fixture_replay",
       "tool": "archive-index-reader",
-      "input_refs": ["fixture://archive/exact-mpn-a"],
-      "input_hashes": ["bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb"],
+      "input_refs": ["repo://data/fixtures/listing-matches.v1.json"],
+      "input_hashes": ["554627a43ab56578da9d39ba698fef6f66753ed57befa8638a35a287b84a7001"],
       "output_path": "data/private-worker-runs/historical-research/historical-replay-001.json",
       "requested_actions": ["draft_candidate_evidence"],
-      "scheduler_owned_pending": false,
       "payload": {"identity": "EXACT-SYNTHETIC-MPN", "capture_kind": "archive_fixture"}
     },
     {
@@ -32,11 +30,10 @@
       "profile_id": "official-statistics-context",
       "task_kind": "statistics_fixture_compare",
       "tool": "statistics-snapshot-reader",
-      "input_refs": ["fixture://statistics/release-a"],
-      "input_hashes": ["cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"],
+      "input_refs": ["repo://data/fixtures/candidate-reference-real-series.gb.v1.json"],
+      "input_hashes": ["041e42f917bbe9531025dd3ac66cad498d860bde7e1ff915236eb529830af990"],
       "output_path": "data/private-worker-runs/official-statistics-context/statistics-compare-001.json",
       "requested_actions": ["compare_candidates_without_selection"],
-      "scheduler_owned_pending": false,
       "payload": {"candidate_ids": ["SYNTH-A", "SYNTH-B"], "selection": null}
     },
     {
@@ -44,24 +41,22 @@
       "profile_id": "event-research",
       "task_kind": "event_fixture_replay",
       "tool": "event-snapshot-reader",
-      "input_refs": ["fixture://events/contested-a"],
-      "input_hashes": ["dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"],
+      "input_refs": ["repo://data/fixtures/candidate-event-overlay.gb.v1.json"],
+      "input_hashes": ["c64092e2e6f2c865acfceffe382c28c7ee34b576cf9ff72c41df4cad62233c7b"],
       "output_path": "data/private-worker-runs/event-research/event-replay-001.json",
       "requested_actions": ["draft_private_unapproved_event"],
-      "scheduler_owned_pending": false,
       "payload": {"alternatives_retained": true, "counterevidence_retained": true}
     },
     {
       "id": "adversarial-replay-001",
       "profile_id": "adversarial-fixture-verification",
       "task_kind": "adversarial_fixture_replay",
-      "tool": "synthetic-executor",
-      "input_refs": ["fixture://adversarial/bounds-a"],
-      "input_hashes": ["eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee"],
+      "tool": "checksum",
+      "input_refs": ["repo://data/fixtures/ddr5-32gb-resilience-pilot.v1.json"],
+      "input_hashes": ["f6b1db58f8e6fc1a4df103c7357399c9baf3950746c02188cc862db3478cb9bb"],
       "output_path": "data/private-worker-runs/adversarial-fixture-verification/adversarial-replay-001.json",
       "requested_actions": ["verify_fail_closed_controls"],
-      "scheduler_owned_pending": false,
-      "payload": {"case": "bounded-structured-result"}
+      "payload": {"case": "bounded-manifest-control"}
     }
   ]
 }

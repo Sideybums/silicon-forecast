@@ -65,6 +65,7 @@ test("fixture baseline contains no selection or approval and every dependent lay
   assert.ok(fixture.deflator_series_candidates.every((item) => item.selected === false));
   assert.equal(result.calculation_version, CANDIDATE_REFERENCE_REAL_SERIES_VERSION);
   assert.equal(result.status, "unavailable_unapproved_fixture_baseline");
+  assert.equal(result.series_revisions, null);
   assert.deepEqual(result.monthly_nominal.map((item) => [item.quality_state, item.value]), [["UNAVAILABLE_MONTHLY_METHOD_NOT_APPROVED", null]]);
   assert.equal(result.historical_reference.quality_state, "UNAVAILABLE_HISTORICAL_REFERENCE_NOT_APPROVED");
   assert.equal(result.historical_reference.value, null);
@@ -78,6 +79,15 @@ test("exact named candidates calculate only through an external checksum-bound s
 
   assert.deepEqual(replay, result);
   assert.equal(result.status, "synthetic_fixture_calculated_from_external_checksum_bound_envelope");
+  assert.deepEqual(Object.keys(result.series_revisions).sort(), ["historical_reference_100", "monthly_constant_price", "monthly_nominal"]);
+  for (const [layer, revision] of Object.entries(result.series_revisions)) {
+    assert.match(revision.series_id, /^synthetic-fixture-/u);
+    assert.equal(revision.revision_id, result.approval_envelope_sha256);
+    assert.match(revision.input_binding_sha256, /^[a-f0-9]{64}$/u);
+    assert.match(revision.output_sha256, /^[a-f0-9]{64}$/u);
+    const output = layer === "monthly_nominal" ? result.monthly_nominal : layer === "historical_reference_100" ? result.historical_reference_100 : result.monthly_constant_price;
+    assert.equal(revision.output_sha256, sha256FixtureBytes(output));
+  }
   assert.deepEqual(result.monthly_nominal.map((point) => [point.period, point.value]), [
     ["2026-01", { numerator: "101", denominator: "1" }],
     ["2026-02", { numerator: "105", denominator: "1" }],
@@ -139,6 +149,34 @@ test("missing required daily points make a month, its reference use, and its rea
   assert.equal(result.monthly_constant_price[0].value, null);
   assert.equal(JSON.stringify(result).includes('"numerator":"0"'), false, "a gap must not become zero");
   assert.equal(JSON.stringify(result).includes("carry"), false, "a gap must not be carried forward");
+});
+
+test("checksum-bound monthly contracts reject duplicate and cross-month required dates before calculation", async () => {
+  const duplicate = await loadFixture();
+  duplicate.monthly_strategy_candidates[0].month_contracts[0].required_dates = [
+    "2026-01-05",
+    "2026-01-05",
+  ];
+  assert.throws(
+    () => deriveCandidateReferenceRealSeries(duplicate, approvalFor(duplicate)),
+    /contains duplicate required date 2026-01-05/u,
+  );
+
+  const crossMonth = await loadFixture();
+  crossMonth.monthly_strategy_candidates[0].month_contracts[0].required_dates[1] = "2026-02-02";
+  assert.throws(
+    () => deriveCandidateReferenceRealSeries(crossMonth, approvalFor(crossMonth)),
+    /contains cross-month required date 2026-02-02/u,
+  );
+
+  const duplicateMonth = await loadFixture();
+  duplicateMonth.monthly_strategy_candidates[0].month_contracts.push(
+    clone(duplicateMonth.monthly_strategy_candidates[0].month_contracts[0]),
+  );
+  assert.throws(
+    () => deriveCandidateReferenceRealSeries(duplicateMonth, approvalFor(duplicateMonth)),
+    /duplicate monthly contract 2026-01/u,
+  );
 });
 
 test("a release containing mixed-vintage observation bytes is rejected even when the envelope binds those exact bytes", async () => {

@@ -3,6 +3,7 @@ import { readFile } from "node:fs/promises";
 import test from "node:test";
 
 import {
+  candidateClosedImplementationBinding,
   candidateLinkInputSha256,
   divideRationals,
   linkCandidateVintage,
@@ -27,18 +28,12 @@ function candidateStrategy(id = "fixture-candidate-ratio-alpha") {
       operator: "first_deterministically_ordered_overlap_ratio",
       implementation_revision: "fixture-link-strategy-v1",
     },
-    calculateLinkFactor({ overlapRecords }) {
-      // Deliberately test-injected candidate logic, not library policy: use the
-      // first record after the library's deterministic date ordering.
-      return divideRationals(
-        overlapRecords[0].priorValue,
-        overlapRecords[0].candidateValue,
-      );
-    },
   };
 }
 
 function syntheticApproval(input) {
+  const implementation = candidateClosedImplementationBinding(input.strategy);
+  assert.ok(implementation, "test strategy must resolve to a closed synthetic implementation");
   const unsigned = {
     schemaVersion: 1,
     scope: "synthetic_test_only",
@@ -51,7 +46,10 @@ function syntheticApproval(input) {
     binding: {
       strategyId: input.strategy.strategyId,
       strategyContractSha256: sha256CandidateBinding(input.strategy.contract),
+      implementationId: implementation.implementationId,
+      implementationCodeSha256: implementation.implementationCodeSha256,
       inputSha256: candidateLinkInputSha256({
+        priorLinkedRevision: input.priorLinkedRevision,
         priorNativeVintage: input.priorNativeVintage,
         candidateNativeVintage: input.candidateNativeVintage,
         overlap: input.overlap,
@@ -96,7 +94,7 @@ test("fixture declares no default, preferred, selected, or approved strategy", (
   );
 });
 
-test("missing injected strategy fails closed with the exact state and null value", () => {
+test("missing strategy contract fails closed with the exact state and null value", () => {
   assert.deepEqual(linkCandidateVintage(request({ strategy: null })), {
     state: "UNAVAILABLE_LINK_NOT_APPROVED",
     value: null,
@@ -104,7 +102,7 @@ test("missing injected strategy fails closed with the exact state and null value
   });
 });
 
-test("missing approval fails closed even when a strategy is injected", () => {
+test("missing approval fails closed even when a closed strategy contract is named", () => {
   assert.deepEqual(linkCandidateVintage(request({ approval: null })), {
     state: "UNAVAILABLE_LINK_NOT_APPROVED",
     value: null,
@@ -141,15 +139,58 @@ test("an unbound or mismatched approval cannot activate a candidate strategy", (
   });
 });
 
-test("missing or unusable overlap fails closed without invoking strategy", () => {
+test("caller executable replacement and extra strategy fields cannot alter closed output", () => {
   let calls = 0;
-  const strategy = {
-    ...candidateStrategy(),
+  const attempted = request();
+  attempted.strategy = {
+    ...attempted.strategy,
     calculateLinkFactor() {
       calls += 1;
-      return { numerator: "1", denominator: "1" };
+      return { numerator: "999", denominator: "1" };
     },
   };
+  assert.deepEqual(linkCandidateVintage(attempted), {
+    state: "UNAVAILABLE_LINK_NOT_APPROVED",
+    value: null,
+    linkedRevision: null,
+  });
+  assert.equal(calls, 0, "arbitrary caller functions must never execute");
+
+  const unknownContract = request();
+  unknownContract.strategy.contract.implementation_revision = "fixture-link-strategy-v2";
+  assert.deepEqual(linkCandidateVintage(unknownContract), {
+    state: "UNAVAILABLE_LINK_NOT_APPROVED",
+    value: null,
+    linkedRevision: null,
+  });
+
+  const unknownImplementation = request({ strategy: candidateStrategy("fixture-candidate-ratio-beta") });
+  assert.deepEqual(linkCandidateVintage(unknownImplementation), {
+    state: "UNAVAILABLE_LINK_NOT_APPROVED",
+    value: null,
+    linkedRevision: null,
+  });
+});
+
+test("closed implementation ID or code-checksum drift invalidates an otherwise exact envelope", () => {
+  for (const [field, value] of [
+    ["implementationId", "closed-synthetic-first-ordered-overlap-ratio-v2"],
+    ["implementationCodeSha256", "0".repeat(64)],
+  ]) {
+    const input = request();
+    input.approval.binding[field] = value;
+    const unsigned = structuredClone(input.approval);
+    delete unsigned.envelopeSha256;
+    input.approval.envelopeSha256 = sha256CandidateBinding(unsigned);
+    assert.deepEqual(linkCandidateVintage(input), {
+      state: "UNAVAILABLE_LINK_NOT_APPROVED",
+      value: null,
+      linkedRevision: null,
+    });
+  }
+});
+
+test("missing or unusable overlap fails closed", () => {
   for (const overlap of [
     null,
     { ...clone(fixture.candidate_overlap), records: [] },
@@ -165,13 +206,12 @@ test("missing or unusable overlap fails closed without invoking strategy", () =>
       ],
     },
   ]) {
-    assert.deepEqual(linkCandidateVintage(request({ overlap, strategy })), {
+    assert.deepEqual(linkCandidateVintage(request({ overlap })), {
       state: "UNAVAILABLE_LINK_OVERLAP",
       value: null,
       linkedRevision: null,
     });
   }
-  assert.equal(calls, 0);
 });
 
 test("exact integer/rational arithmetic reduces without binary floating point", () => {
@@ -197,6 +237,7 @@ test("linking is independent of native-point and overlap input ordering", () => 
   reversedRequest.priorNativeVintage.points.reverse();
   reversedRequest.candidateNativeVintage.points.reverse();
   reversedRequest.overlap.records.reverse();
+  reversedRequest.priorLinkedRevision.segments[0].points.reverse();
   const reversed = linkCandidateVintage(reversedRequest);
   assert.deepEqual(reversed, normal);
 });
@@ -277,6 +318,42 @@ test("candidate dates before effective_from are overlap only and never silently 
     result.linkedRevision.segments[0],
     fixture.prior_linked_revision.segments[0],
   );
+});
+
+test("prior linked prefixes reject dates at or after the candidate native boundary", () => {
+  for (const date of ["2026-01-04", "2026-01-05"]) {
+    const input = request();
+    input.priorLinkedRevision.segments[0].points.at(-1).date = date;
+    input.approval = syntheticApproval(input);
+    assert.throws(
+      () => linkCandidateVintage(input),
+      /not strictly before candidate effective_from/u,
+    );
+  }
+});
+
+test("prior linked prefixes reject duplicate dates globally, including across segments", () => {
+  const input = request();
+  const secondSegment = clone(input.priorLinkedRevision.segments[0]);
+  secondSegment.vintage_id = "native-vintage-older-copy";
+  secondSegment.native_revision_id = "native-vintage-older-copy-r1";
+  secondSegment.native_manifest_hash = "fixture-native-older-copy-hash";
+  secondSegment.points = [clone(secondSegment.points[0])];
+  input.priorLinkedRevision.segments.push(secondSegment);
+  input.approval = syntheticApproval(input);
+  assert.throws(() => linkCandidateVintage(input), /duplicated/u);
+});
+
+test("malformed prior linked segments and points are rejected before revision output", () => {
+  const malformedSegment = request();
+  delete malformedSegment.priorLinkedRevision.segments[0].native_manifest_hash;
+  malformedSegment.approval = syntheticApproval(malformedSegment);
+  assert.throws(() => linkCandidateVintage(malformedSegment), /segment 0 is malformed/u);
+
+  const malformedPoint = request();
+  malformedPoint.priorLinkedRevision.segments[0].points[0].lineage_ids = null;
+  malformedPoint.approval = syntheticApproval(malformedPoint);
+  assert.throws(() => linkCandidateVintage(malformedPoint), /point 0:0 is malformed/u);
 });
 
 test("changed link input creates a distinct revision and leaves the earlier revision replayable", () => {

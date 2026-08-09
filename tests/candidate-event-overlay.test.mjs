@@ -23,7 +23,7 @@ function proposedOverlay(overrides = {}) {
     event_revision_ref: {
       event_id: "fixture-event-timing",
       revision: 1,
-      revision_hash: "74637a72d7e464bcc762c1410c18187c4d9d1ec1db2ab5c2a107d2c537aaa1fd",
+      revision_hash: "869361e1748ddda2978958ecba79c0d00125bd1279e2238afd40eaf54951c22a",
     },
     numeric_revision_ref: {
       series_id: "fixture-linked-nominal",
@@ -42,6 +42,7 @@ function proposedOverlay(overrides = {}) {
     display_order: 1,
     creator_id: "fixture-research-worker",
     review_state: "review_pending",
+    reviewer_id: null,
     ...overrides,
   });
 }
@@ -76,7 +77,7 @@ test("fixture models quarantined source items, captures, claims, lineage, contra
   assert.equal(model.evidence_relationships.find((item) => item.relationship === "contradicts").from_claim_id, "fixture-claim-contradiction");
   assert.equal(model.event_revisions.find((item) => item.event_id === "fixture-event-unresolved-date").event_date, null);
   assert.equal(model.overlay_revisions[0].unavailable_reason, "UNAVAILABLE_EVENT_DATE_OR_REVISION");
-  assert.deepEqual(model.presentation_order, ["fixture-overlay-unresolved"]);
+  assert.deepEqual(model.presentation_order, []);
   assert.ok(Object.isFrozen(model.numeric_revisions));
   assert.ok(Object.isFrozen(model.numeric_revisions[0]));
   assert.throws(() => { model.numeric_revisions[0].series_bytes_utf8 = "changed"; }, TypeError);
@@ -90,7 +91,7 @@ test("add, edit, reorder, review and remove append revisions while every numeric
   const originalOverlayRevisions = copy(model.overlay_revisions);
 
   const added = proposedOverlay();
-  let state = applyOverlayOperation(model, { action: "add", actor_type: "fixture_editor", revision: added });
+  let state = applyOverlayOperation(model, { action: "add", actor_id: "fixture-research-worker", actor_type: "fixture_editor", revision: added });
   assertNumericIdentity(state, snapshot, functionHash, bytes);
   assert.deepEqual(model.overlay_revisions, originalOverlayRevisions, "the input model is never edited in place");
 
@@ -99,20 +100,21 @@ test("add, edit, reorder, review and remove append revisions while every numeric
     possible_effect_label: "Coincided with observed movement; no causal conclusion is approved",
     uncertainty: "Contradictory evidence and currency, promotion and inventory alternatives remain unresolved.",
   });
-  state = applyOverlayOperation(state, { action: "edit", actor_type: "fixture_editor", revision: edited });
+  state = applyOverlayOperation(state, { action: "edit", actor_id: "fixture-research-worker", actor_type: "fixture_editor", revision: edited });
   assertNumericIdentity(state, snapshot, functionHash, bytes);
 
   const reordered = nextRevision(edited, { display_order: 9 });
-  state = applyOverlayOperation(state, { action: "reorder", actor_type: "fixture_editor", revision: reordered });
+  state = applyOverlayOperation(state, { action: "reorder", actor_id: "fixture-research-worker", actor_type: "fixture_editor", revision: reordered });
   assertNumericIdentity(state, snapshot, functionHash, bytes);
 
-  const reviewed = nextRevision(reordered, { review_state: "reviewed_private", creator_id: "fixture-human-editor" });
-  state = applyOverlayOperation(state, { action: "review", actor_type: "human_editor_fixture", revision: reviewed });
+  const reviewed = nextRevision(reordered, { review_state: "reviewed_private", reviewer_id: "fixture-human-editor" });
+  state = applyOverlayOperation(state, { action: "review", actor_id: "fixture-human-editor", actor_type: "human_editor_fixture", revision: reviewed });
   assertNumericIdentity(state, snapshot, functionHash, bytes);
   assert.equal(state.overlay_revisions.at(-1).review_state, "reviewed_private");
+  assert.deepEqual(state.presentation_order, ["fixture-overlay-dated"]);
 
-  const removed = nextRevision(reviewed, { placement_state: "withdrawn", review_state: "withdrawn", creator_id: "fixture-human-editor" });
-  state = applyOverlayOperation(state, { action: "remove", actor_type: "human_editor_fixture", revision: removed });
+  const removed = nextRevision(reviewed, { placement_state: "withdrawn", review_state: "withdrawn", reviewer_id: null });
+  state = applyOverlayOperation(state, { action: "remove", actor_id: "fixture-human-editor", actor_type: "human_editor_fixture", revision: removed });
   assertNumericIdentity(state, snapshot, functionHash, bytes);
   assert.equal(state.presentation_order.includes("fixture-overlay-dated"), false);
   assert.deepEqual(state.overlay_revisions.filter((item) => item.overlay_id === "fixture-overlay-dated").map((item) => item.revision), [1, 2, 3, 4, 5]);
@@ -164,17 +166,17 @@ test("unresolved dates stay unavailable and cannot create, fill or imply a numer
 test("temporal proximity cannot become causal approval and workers cannot review themselves", async () => {
   let state = createCandidateEventOverlayModel(await load());
   const added = proposedOverlay();
-  state = applyOverlayOperation(state, { action: "add", actor_type: "fixture_editor", revision: added });
+  state = applyOverlayOperation(state, { action: "add", actor_id: "fixture-research-worker", actor_type: "fixture_editor", revision: added });
 
-  const causal = nextRevision(added, { causal_language_level: "contributory_hypothesis", review_state: "reviewed_private" });
+  const causal = nextRevision(added, { causal_language_level: "contributory_hypothesis", review_state: "reviewed_private", reviewer_id: "fixture-human-editor" });
   assert.throws(
-    () => applyOverlayOperation(state, { action: "review", actor_type: "human_editor_fixture", revision: causal }),
+    () => applyOverlayOperation(state, { action: "review", actor_id: "fixture-human-editor", actor_type: "human_editor_fixture", revision: causal }),
     /cannot approve a contributory or causal claim/u,
   );
 
-  const selfApproved = nextRevision(added, { review_state: "reviewed_private" });
+  const selfApproved = nextRevision(added, { review_state: "reviewed_private", reviewer_id: "fixture-human-editor" });
   assert.throws(
-    () => applyOverlayOperation(state, { action: "review", actor_type: "fixture_editor", revision: selfApproved }),
+    () => applyOverlayOperation(state, { action: "review", actor_id: "fixture-human-editor", actor_type: "fixture_editor", revision: selfApproved }),
     /only an attributable human fixture editor may review/u,
   );
 
@@ -190,7 +192,7 @@ test("duplicated lineage and contradiction cannot be promoted or silently omitte
   assert.throws(() => validateCandidateEventOverlayFixture(noContradiction), /must retain duplicate lineage and contradictory evidence/u);
 
   const omittedFromEvent = await load();
-  omittedFromEvent.event_revisions[0].contradictory_claim_ids = [];
+  omittedFromEvent.event_revisions[0].contradictory_claim_revision_refs = [];
   assert.throws(() => validateCandidateEventOverlayFixture(omittedFromEvent), /revision_hash does not bind exact event revision content|contested event must expose contradiction/u);
 
   const lineages = (await load()).source_items.map((item) => item.duplicate_lineage_id);
@@ -213,4 +215,62 @@ test("changed revision bytes, causal/public review flags and every publication/e
     fixture.locks[lock] = false;
     assert.throws(() => validateCandidateEventOverlayFixture(fixture), new RegExp(`${lock} must remain engaged`, "u"));
   }
+});
+
+test("capture and claim bytes, provenance bindings, IDs and revision identities fail closed on drift or duplication", async () => {
+  const mutations = [
+    ["capture bytes", (fixture) => { fixture.captures[0].retained_bytes_utf8 += " drift"; }, /byte_count disagrees|sha256 disagrees/u],
+    ["capture count", (fixture) => { fixture.captures[0].byte_count += 1; }, /byte_count disagrees/u],
+    ["claim bytes", (fixture) => { fixture.atomic_claims[0].exact_extract_utf8 += " drift"; }, /claim_revision_hash does not bind/u],
+    ["capture checksum ref", (fixture) => { fixture.atomic_claims[0].capture_sha256 = "0".repeat(64); }, /claim_revision_hash does not bind|capture_sha256 must bind/u],
+    ["stale event claim binding", (fixture) => { fixture.event_revisions[0].claim_revision_refs[0].claim_revision_hash = fixture.atomic_claims[1].claim_revision_hash; }, /revision_hash does not bind|must bind an exact immutable claim revision/u],
+  ];
+  for (const [name, mutate, message] of mutations) {
+    const fixture = await load();
+    mutate(fixture);
+    assert.throws(() => validateCandidateEventOverlayFixture(fixture), message, name);
+  }
+
+  const duplicateCases = [
+    ["capture", "captures", "capture_id"],
+    ["claim", "atomic_claims", "claim_id"],
+    ["relationship", "evidence_relationships", "relationship_id"],
+    ["review", "reviews", "review_id"],
+  ];
+  for (const [name, collection, field] of duplicateCases) {
+    const fixture = await load();
+    fixture[collection].push(copy(fixture[collection][0]));
+    assert.throws(() => validateCandidateEventOverlayFixture(fixture), new RegExp(`${field} must be unique`, "u"), name);
+  }
+
+  for (const collection of ["event_revisions", "overlay_revisions"]) {
+    const fixture = await load();
+    fixture[collection].push(copy(fixture[collection][0]));
+    assert.throws(() => validateCandidateEventOverlayFixture(fixture), /hash must be unique|revision_hash must be unique|identity must be unique|additive revision chain/u, collection);
+  }
+});
+
+test("only independently reviewed placed_private revisions enter presentation order and add cannot bypass review", async () => {
+  let state = createCandidateEventOverlayModel(await load());
+  const pending = proposedOverlay();
+  state = applyOverlayOperation(state, { action: "add", actor_id: "fixture-research-worker", actor_type: "fixture_editor", revision: pending });
+  assert.deepEqual(state.presentation_order, [], "review-pending overlays remain absent");
+
+  const bypass = proposedOverlay({ overlay_id: "fixture-overlay-bypass", review_state: "reviewed_private", reviewer_id: "fixture-human-editor" });
+  assert.throws(
+    () => applyOverlayOperation(state, { action: "add", actor_id: "fixture-research-worker", actor_type: "fixture_editor", revision: bypass }),
+    /add cannot submit reviewed_private or bypass review/u,
+  );
+
+  const selfReview = nextRevision(pending, { review_state: "reviewed_private", reviewer_id: "fixture-research-worker" });
+  assert.throws(
+    () => applyOverlayOperation(state, { action: "review", actor_id: "fixture-research-worker", actor_type: "human_editor_fixture", revision: selfReview }),
+    /creator cannot review their own overlay revision|creator cannot review their own work/u,
+  );
+
+  const reviewed = nextRevision(pending, { review_state: "reviewed_private", reviewer_id: "fixture-human-editor" });
+  state = applyOverlayOperation(state, { action: "review", actor_id: "fixture-human-editor", actor_type: "human_editor_fixture", revision: reviewed });
+  assert.deepEqual(state.presentation_order, ["fixture-overlay-dated"]);
+  assert.equal(state.overlay_revisions.at(-1).creator_id, "fixture-research-worker");
+  assert.equal(state.overlay_revisions.at(-1).reviewer_id, "fixture-human-editor");
 });
