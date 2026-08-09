@@ -1,183 +1,87 @@
 {
-  "version": "1.0",
-  "timestamp": "2026-08-09T17:32:30Z",
-  "phase": "02",
-  "phase_name": "platform-catalogue-control-plane",
-  "phase_dir": ".planning/phases/02-platform-catalogue-control-plane",
-  "plan": 1,
-  "task": 8,
-  "total_tasks": 8,
-  "status": "in_progress",
-  "completed_tasks": [
-    {
-      "id": 1,
-      "name": "Public pre-launch publisher site and project email",
-      "status": "done"
-    },
-    {
-      "id": 2,
-      "name": "Awin publisher-account and programme diligence",
-      "status": "done"
-    },
-    {
-      "id": 3,
-      "name": "Candidate-only PostgreSQL foundation and governance locks",
-      "status": "done"
-    },
-    {
-      "id": 4,
-      "name": "Four-product DDR5 seed catalogue, evidence and labelled fixtures",
-      "status": "done"
-    },
-    {
-      "id": 5,
-      "name": "Additive human catalogue and label review",
-      "status": "done"
-    },
-    {
-      "id": 7,
-      "name": "Least-privilege additive reviewed catalogue revisions",
-      "status": "done"
-    }
-  ],
-  "remaining_tasks": [
-    {
-      "id": 6,
-      "name": "Check advertiser programme decisions and inspect any newly authorised feed with bounded read-only samples",
-      "status": "blocked_pending_advertiser"
-    },
-    {
-      "id": 8,
-      "name": "Accumulate UK retail history and calibrate linked nominal, historical-reference and real-series methodology",
-      "status": "in_progress",
-      "next_action": "Run the governed worker waves in .planning/HANDOVER-2026-08-09.md. Begin with collision-safe evidence expansion, then integrate fail-closed linking/reference/real/event fixtures and an inactive private worker harness under parent verification. Keep the inception-100 diagnostic explicitly not-an-index and approve no method, threshold, source or public action."
-    }
-  ],
-  "blockers": [
-    {
-      "description": "Currys, Scan Computers and Overclockers UK now show pending; no programme or product feed is joined/approved",
-      "type": "external",
-      "workaround": "Continue fixture-only foundations and conservative first-party catalogue coverage without production ingestion"
-    },
-    {
-      "description": "Methodology thresholds, production region, basket/baseline and activation remain unapproved",
-      "type": "human_action",
-      "workaround": "Keep supported-index, production, source and methodology activation locked; use only candidate-private fixtures and observation evidence until explicit approval."
-    },
-    {
-      "description": "No historical reference period, basket-vintage linking rule, official UK deflator/release-vintage policy, monthly completeness rule or earnings measure is approved",
-      "type": "human_action",
-      "workaround": "Keep each dependent series explicitly unavailable; collect evidence and run sensitivity/replay tests without choosing a convenient period or approving any new threshold."
-    }
-  ],
-  "async_jobs": [
-    {
-      "job_id": "7e98d1467473",
-      "name": "Silicon Forecast daily primary-retail history capture",
-      "next_run_at_at_handover": "2026-08-10T13:45:59.810825+01:00",
-      "schedule": "every 1440m",
-      "scope": "Append-only private UK primary-retail history using evidence-backed-data-pipelines; no production/index/publication authority."
-    }
-  ],
-  "human_actions_pending": [
-    {
-      "action": "Calibrate and explicitly approve exact resilience thresholds and the basket-vintage/linking method after approved-source evidence exists",
-      "context": "The architecture and planning direction are approved in data/reviews/index-resilience-architecture-review-2026-08-08.json. Exact numerical values and the linking/rebasing formula remain deliberately unapproved until empirical feed and shadow-run evidence exists.",
-      "blocking": true
-    },
-    {
-      "action": "Confirm whether the Scan Computers and Overclockers UK applications were intentionally submitted",
-      "context": "The read-only Awin API now reports both as pending alongside Currys; this check did not submit them or establish their provenance",
-      "blocking": false
-    },
-    {
-      "action": "Approve methodology, production region, canonical basket and baseline only after source/feed evidence is sufficient",
-      "context": "These approvals are required before an official index can be activated",
-      "blocking": true
-    },
-    {
-      "action": "Approve a historical reference, official UK deflator and release-vintage policy only after evidence and sensitivity review",
-      "context": "Basket-vintage calculation scale is not the historical reference and collection inception is not normal. The real series remains unavailable until the deflator series, monthly completeness rule, reference-price period and statistical revision policy are all explicitly approved.",
-      "blocking": true
-    }
-  ],
-  "decisions": [
-    {
-      "decision": "Approve the four-product catalogue and 20 listing labels for fixture use",
-      "rationale": "David completed human review; approval is recorded additively and does not unlock production",
-      "phase": "02"
-    },
-    {
-      "decision": "Keep exact manufacturer models as canonical measurement inputs",
-      "rationale": "Strict identity prevents variant contamination; eligible product price relatives are aggregated into the user-facing index",
-      "phase": "02"
-    },
-    {
-      "decision": "Apply fixture review through a least-privilege additive database function",
-      "rationale": "Reviewed revisions supersede rather than mutate drafts; the NOLOGIN reviewer role has no direct table-write privileges and all locks remain engaged",
-      "phase": "02"
-    },
-    {
-      "decision": "Do not treat the 12-product catalogue as sufficient market coverage or a production basket",
-      "rationale": "A single unavailable/EOL model, missing major brand such as Corsair, or unrepresentative family concentration could undermine reliability. Maintain a broad monitored universe, reviewed reserves and explicit product-churn resilience instead.",
-      "phase": "02"
-    },
-    {
-      "decision": "Approve the DDR5 market-universe and index-resilience architecture for continued fixture-only work",
-      "rationale": "The long-lived index needs broad major-brand discovery, lifecycle evidence, reserve candidates, explicit basket vintages and single-product-loss resilience. News is explanatory and can expose catalogue gaps but cannot change the numeric index.",
-      "phase": "02",
-      "approval_record": "data/reviews/index-resilience-architecture-review-2026-08-08.json"
-    },
-    {
-      "decision": "Keep manufacturer diversification as a separate checksum-pinned candidate tranche",
-      "rationale": "First-party Corsair, ADATA and Patriot evidence broadens the monitored-universe pilot without rewriting reviewed fixtures or implying source, eligibility, methodology or production approval. ADATA packaging-derived kit interpretation remains an explicit human-review caveat.",
-      "phase": "02"
-    },
-    {
-      "decision": "Approve selected Corsair and Patriot diversification products for fixture use; hold ADATA and abstain on Lexar",
-      "rationale": "Corsair and Patriot have strong exact-MPN first-party kit evidence. The ADATA Dual Tray records remain research-only until literal complete-kit evidence is retained. Lexar is neither approved nor rejected because normal-access first-party evidence could not be retained without questionable crawler impersonation.",
-      "phase": "02",
-      "approval_record": "data/reviews/ddr5-32gb-diversification-review-2026-08-09.json"
-    },
-    {
-      "decision": "Keep the public frontend primary-retail only; defer marketplace and second-hand display",
-      "rationale": "David corrected the public scope on 2026-08-09. The earlier checksum-bound non-retail publication artifact remains immutable for audit but is not imported by the public application. The site exposes retail scope, qualification rules and release gates; no verified series or outbound product links are currently public.",
-      "phase": "02"
-    },
-    {
-      "decision": "Build candidate retail movement per retailer-product line before any product-level aggregation",
-      "rationale": "This produces real deterministic movement without silently choosing a cross-retailer minimum, median, daily deduplication or threshold. Multiple same-day eligible observations fail until an explicit selection rule is approved.",
-      "phase": "02"
-    },
-    {
-      "decision": "Retain current exact-MPN primary-retail item prices as append-only private research history even when landed-price qualification abstains; keep source authority separate from factual eligibility and keep all production, methodology, index and publication gates locked.",
-      "source": "David approval plus independently verified 2026-08-09 candidate tranche",
-      "gate": "phase-02 candidate retail history only"
-    },
-    {
-      "decision": "Start a prospective private quoted-item relative diagnostic now; do not backcast or publish it as the index",
-      "rationale": "The immutable 2026-08-09 tranche is sufficient to freeze an inception basket at 100 for deterministic future comparison. Four lawful archived observations provide useful private history, but their sparse captures, separate schema and unresolved landed-price semantics do not support silent rebasing or an official index.",
-      "phase": "02"
-    },
-    {
-      "decision": "Distinguish basket-vintage scale from a defensible historical reference and keep numeric layers separate",
-      "rationale": "The product should show UK price history around AI-era shortages and other shocks without calling collection inception normal. The primary output is a linked nominal series; a historical-reference presentation requires evidence and approval; monthly constant-price output requires an approved official UK deflator with release-vintage lineage; earnings-relative affordability is optional; event overlays never alter numbers.",
-      "phase": "01/02",
-      "methodology_draft": ".planning/phases/01-source-methodology-gate/METHODOLOGY-v1.0-draft.md",
-      "approval_state": "design_clarified_thresholds_and_inputs_PROPOSED_LOCKED"
-    },
-    {
-      "decision": "Make stock-market-style dated component-price graphs the target experience and use bounded worker waves under parent-orchestrator control",
-      "rationale": "Users should be able to follow UK component-price movement over time and inspect reviewed events that may help explain it. Deterministic series remain authoritative; event overlays never alter numeric outputs. Lesser agents may gather evidence, build reversible artefacts and attack implementations, while the parent owns integration, correction, methodology interpretation, approval and final verification.",
-      "phase": "02/05/06",
-      "approval_state": "product_direction_and_execution_model_approved; numeric_methodology_and_activation_remain_locked"
-    }
-  ],
-  "next_action": "Read .planning/HANDOVER-2026-08-09.md and run Wave 0. Verify Git, scheduler, observations, locks and baseline tests. While recurring job 7e98d1467473 is enabled, it is the sole prospective fetcher: Wave 1 may audit or integrate its completed output but must not launch a competing fetch before or during a pending run. The parent integrates and verifies every result. Do not select or approve methodology, sources, thresholds, references, deflators, baskets, causal claims, publication or production actions.",
-  "context_notes": "The target interface is stock-market-like dated component-price history with evidence-backed event markers. 'Stock-market-like' describes graph interaction and user attention, not speculative pricing or editorial adjustment. Native basket-vintage, linked nominal, historical-reference, monthly real and optional earnings-relative layers remain separate. Event overlays are read-only annotations. Governed execution uses up to three bounded workers per wave, with the parent orchestrator retaining integration and approval authority.",
-  "handover_document": ".planning/HANDOVER-2026-08-09.md",
-  "blocked_publications": "Public frontend remains primary-retail only and shows an honest empty verified-history state. No supported index, private diagnostic, linked nominal, historical-reference, constant-price, earnings-relative or event-overlay output is approved for publication.",
-  "blocker_workaround_context": "Continue append-only prospective collection, lawful historical research, decision-packet preparation, fail-closed synthetic methodology/event fixtures and an inactive private worker harness. Missing approval stays explicit and unavailable; worker convenience cannot become methodology.",
-  "verification_summary": "2026-08-09T17:32Z handover refresh verified: all 48 tracked JSON files parsed; 48 unique v1 requirement IDs are mapped exactly once; npm run check:full passed 85/85 Node tests, ESLint, TypeScript, the 14-page static build, hardened public-boundary scans and disposable PostgreSQL verification; the Phase 1 verifier passed 130/130 checks; git diff --check passed. The repository should be rechecked clean and aligned with origin/main after the handover commit.",
-  "working_tree_state": "Expected clean after the verified handover commit; re-check live Git state before work."
+  "schema_version": "silicon-forecast-handoff.v2",
+  "generated_at": "2026-08-09T18:59:31Z",
+  "project": "Silicon Forecast",
+  "branch": "main",
+  "handoff_state": "governed_big_push_complete_waiting_for_canonical_collector",
+  "authority": {
+    "parent_orchestrator": "Jarvis",
+    "worker_outputs_trusted_without_parent_review": false,
+    "methodology_selected_or_approved": false,
+    "source_selected_or_approved": false,
+    "threshold_selected_or_approved": false,
+    "historical_reference_selected_or_approved": false,
+    "deflator_selected_or_approved": false,
+    "basket_selected_or_approved": false,
+    "production_action_approved": false,
+    "public_claim_or_publication_approved": false
+  },
+  "canonical_collector": {
+    "job_id": "7e98d1467473",
+    "name": "Silicon Forecast recurring UK primary-retail collector",
+    "enabled": true,
+    "state_observed": "scheduled",
+    "last_run_at": null,
+    "next_run_at": "2026-08-10T13:45:59.810825+01:00",
+    "sole_prospective_fetcher": true,
+    "instruction": "Do not launch another prospective fetch while this job remains pending or running. After completion, audit and integrate only through the fail-closed checklist in the Wave 1 readiness report."
+  },
+  "completed_waves": {
+    "wave_0": "Git, scheduler, two immutable observation tranches, seven extract hashes, all locks and baseline tests verified.",
+    "wave_1": "Prospective readiness, bounded exact-MPN archive research and non-selecting official-statistics/context reports integrated; no new historical observations found and no competing prospective fetch occurred.",
+    "wave_2": "Candidate basket-link, reference/real-series and event-overlay fixtures implemented with external synthetic approval envelopes bound to exact strategy, implementation and input bytes; numeric/event separation retained.",
+    "wave_3": "Private worker harness reduced to inactive validation-only manifest preparation. It resolves and hashes repository-local fixture bytes and exports no dispatcher or executor.",
+    "wave_4": "Three independent read-only audits completed. SEV-2 findings were reproduced and fixed; parent adversarial tests and the full suite passed. Remaining runtime concerns are inactive prerequisites, not enabled capabilities.",
+    "wave_5": "Seven separate non-approving decision packets produced; governing records and verification evidence updated."
+  },
+  "retained_evidence": {
+    "candidate_tranches": 2,
+    "observations": 7,
+    "exact_seller_mpn_lines": 3,
+    "historical_research_result": "no_new_evidence",
+    "immutable_observation_files_changed_by_big_push": false,
+    "all_source_approval_flags": false,
+    "all_production_eligibility_flags": false,
+    "all_publication_eligibility_flags": false
+  },
+  "private_contracts": {
+    "quoted_item_history": "seven dated non-interpolated points with visible lineage, gaps and abstentions; exact seller legal entity plus MPN line identity",
+    "quoted_item_relative_diagnostic": "private not_an_index; preserves prefix; source-key migration cannot split seller+MPN identity",
+    "basket_vintage_linking": "synthetic candidate only; closed internal implementation; exact approval and input binding; no method selected",
+    "reference_real_series": "synthetic candidate only; exact release-vintage and monthly checks; deterministic series/revision/input/output hashes; no reference or deflator selected",
+    "event_overlay": "synthetic private only; checksum-bound retained captures and claims; independent human-review transition; numeric bytes immutable",
+    "worker_harness": "validation_only_no_dispatch; five fixture jobs; exact schemas and allowlists; repository input bytes verified twice; default CLI refusal"
+  },
+  "decision_packets": "research/decision-packets/2026-08-09-big-push/",
+  "verification": {
+    "phase_1_checks": 130,
+    "tracked_json_files_parsed": 53,
+    "v1_requirements_mapped_exactly_once": 48,
+    "full_check": "passed lint, 135 Node tests, TypeScript, 14-page static build and disposable PostgreSQL verification",
+    "parent_wave_4_adversary": "passed",
+    "retail_report_sha256": "57b70c5818acceffc34bdf3b939c2c63f2dc97e32c6d81bca136877e8b2e740a",
+    "quoted_history_html_sha256": "f47d71ba22b8761f9729d4ccbe22d899908fd2dd0ff184552caa1a4c9bda4bcd",
+    "quoted_history_svg_sha256": "307b3486559f5a5dc808f71cebae7651eaa1f7e6007d46382b18aaa770f6139a",
+    "high_confidence_secret_scan": "passed",
+    "git_diff_check": "passed"
+  },
+  "locks": {
+    "external_publication": true,
+    "spend": true,
+    "production_mutation": true,
+    "methodology_change": true,
+    "source_approval": true,
+    "production_activation": true,
+    "editorial_activation": true
+  },
+  "next_action": {
+    "when": "after canonical collector job 7e98d1467473 completes",
+    "steps": [
+      "Re-check scheduler run ID, state, timestamps and errors; confirm there was no second prospective writer.",
+      "Inventory additive observation and evidence paths without changing prior bytes.",
+      "Apply research/waves/wave1/prospective-retail-readiness-audit-2026-08-09.md fail-closed integration checklist.",
+      "Quarantine path reuse, duplicate seller+MPN+date, identity disagreement, checksum mismatch, missing lineage or governance drift.",
+      "Do not fetch, select a value, aggregate, approve, activate or publish during audit integration."
+    ]
+  }
 }

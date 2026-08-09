@@ -5,7 +5,7 @@
 See `.planning/PROJECT.md` (last updated 2026-08-09).
 
 **Core value:** Let people follow dated UK component-price graphs as they would a stock, with reviewed market/news overlays explaining possible effects while deterministic calculations and complete lineage remain authoritative.
-**Current focus:** Accumulate lawful UK history, calibrate the linked-nominal/reference/real methodology and define the narrow private graph experience without treating 2026-08-09 collection inception as normal; keep production sources, methodology thresholds, reference choice, deflator choice and publication locked.
+**Current focus:** The governed big push is complete. Preserve its private fail-closed evidence/fixture contracts, wait for the canonical recurring collector's first scheduled run, then audit any completed output without launching a competing fetch. Production sources, methodology thresholds, reference choice, deflator choice, basket choice, runtime dispatch and publication remain locked.
 
 ## Status
 
@@ -71,10 +71,17 @@ See `.planning/PROJECT.md` (last updated 2026-08-09).
 - `.planning/phases/01-source-methodology-gate/METHODOLOGY-v1.0-draft.md` records this design without modifying v0.1. Every new threshold, linking formula selection, monthly completeness rule, historical-reference choice, official deflator choice and optional earnings measure remains `PROPOSED_LOCKED`.
 - The target experience is a dated stock-market-style graph for each supported product/category history, with reviewed event markers or ranges opening evidence-backed possible-effect explanations. The graph presents deterministic series; editorial work cannot adjust them.
 - Governed execution uses bounded worker waves for evidence gathering, fixture/code construction and adversarial review. The parent orchestrator owns integration, methodology interpretation, approval decisions and final verification; workers cannot select thresholds, references, deflators, aggregation rules or public claims.
+- The 2026-08-09 governed big push completed Waves 0–5 without launching a competing prospective fetch. Wave 1 added three report-only readiness/research packets and found no new exact-MPN historical evidence. Waves 2–4 added and independently hardened fail-closed candidate basket-link, reference/real-series, event-overlay and validation-only worker-manifest contracts. Worker findings were not accepted without parent review; SEV-2 audit findings were reproduced, remediated and adversarially retested.
+- The private quoted-item history remains seven non-interpolated points across three seller-legal-entity + exact-MPN lines. Its accessible view now exposes observation ID, tranche ID and evidence hash. The relative diagnostic treats collection-source-key changes as metadata rather than line identity and remains explicitly `not_an_index`.
+- Synthetic candidate link calculations now use a closed internal implementation and bind external synthetic approvals to strategy-contract, implementation and complete input bytes. Candidate reference/real layers reject duplicate/cross-month dates and mixed releases, expose deterministic series/revision/input/output hashes only when an exact synthetic approval is supplied, and remain unavailable otherwise. No link method, historical reference, deflator or monthly rule is selected.
+- Event fixture captures and claims are checksum-bound to exact retained bytes, revision/lineage identifiers are unique, add/edit/reorder cannot self-promote into presentation, and every event operation preserves all numeric bytes and checksums. No live event source, claim, workflow or public overlay is approved.
+- The private worker harness is deliberately validation-only. It has five exact fixture profiles/jobs, validates repository-local input bytes twice, rejects schema/action/path/hash drift and exports no dispatch or executor API. Default CLI invocation fails closed; future runtime execution requires a new isolated, ledgered, scheduler-aware design and separate approval.
+- Seven separate, non-approving decision packets are indexed at `research/decision-packets/2026-08-09-big-push/`. Evidence, link method, historical reference, deflator/release policy, harness runtime, event workflow and final approval decisions remain independent.
+- Final big-push verification passed 130 Phase 1 checks, parsed 53 tracked JSON files, mapped all 48 v1 requirements exactly once, reproduced all private report bytes twice, passed the parent Wave 4 adversary and completed `npm run check:full` with 135 Node tests, lint, TypeScript, the 14-page static build and disposable PostgreSQL verification. The high-confidence tracked-text secret scan and `git diff --check` were clean.
 
 ## Current Phase
 
-Phase 1 — Source and Methodology Gate is **evidence-complete but access/methodology-blocked**. The source-use interpretation is human-approved, but no advertiser programme/feed is joined or technically validated and the deterministic methodology thresholds remain unapproved. A bounded Phase 2 foundation slice is proceeding in parallel using candidate/fixture state only; Phase 2 is not complete and no Phase 1 gate has been bypassed.
+Phase 1 — Source and Methodology Gate remains **evidence-complete but access/methodology-blocked**. The governed big push is complete and verified as a private candidate/fixture slice. The repository is now waiting for the canonical recurring collector's first scheduled run; completion of that run will trigger a separate fail-closed audit/integration gate, not automatic acceptance. Phase 2 is still incomplete and no Phase 1 gate has been bypassed.
 
 ## Decision
 
@@ -101,7 +108,7 @@ Phase 1 — Source and Methodology Gate is **evidence-complete but access/method
 
 ## Next Action
 
-Run the governed multi-agent push defined in `.planning/HANDOVER-2026-08-09.md`. Treat the recurring retail collector as the sole prospective collector while it is enabled: inspect and integrate its output after completion, but do not launch a competing fetch before or during its scheduled run. In parallel, expand lawful historical evidence, prepare decision packets for historical reference and official UK deflator candidates, build fail-closed candidate fixtures for linking/reference/real/event layers, and implement an inactive private worker harness with adversarial tests. Specify private chart acceptance criteria for dated points, gaps, scale selection, exact-point lineage and the later read-only event-overlay boundary. Workers may do bounded grunt work; the parent must integrate, challenge and verify every result. No worker may select or approve a method, source, threshold, reference, deflator, basket, public claim or production action.
+Wait for recurring collector job `7e98d1467473` to complete its scheduled `2026-08-10T13:45:59.810825+01:00` run. Do not launch another prospective fetch while it remains pending or running. After completion, record its run identity/state/timestamps and apply the fail-closed checklist in `research/waves/wave1/prospective-retail-readiness-audit-2026-08-09.md` to any additive output. Quarantine path reuse, duplicate seller+MPN+date, identity disagreement, checksum mismatch, missing run lineage or governance drift. Do not choose between duplicate values, coerce schemas, mutate retained artefacts, aggregate, approve, activate or publish. The exact handoff is machine-readable in `.planning/HANDOFF.json`.
 
 ## Safety Note
 
@@ -109,4 +116,4 @@ The completed Phase 1 work and parallel foundation slice are Tier 1/Tier 2 resea
 
 ---
 *State created: 2026-08-05*
-*Last updated: 2026-08-09 after clarifying the stock-market-style product experience and governed multi-agent push*
+*Last updated: 2026-08-09 after completing and verifying the governed big push; waiting for canonical collector audit integration*
