@@ -21,7 +21,15 @@ const reviewedCatalogueSeed = execFileSync(
   [resolve(projectRoot, "scripts/render-catalogue-review-sql.mjs")],
   { encoding: "utf8", cwd: projectRoot },
 );
-const tests = readFileSync(resolve(projectRoot, "db/tests/foundation.sql"), "utf8");
+const testDir = resolve(projectRoot, "db/tests");
+const databaseTests = readdirSync(testDir)
+  .filter((file) => /^[a-z0-9_]+\.sql$/u.test(file))
+  .sort((left, right) => {
+    if (left === "foundation.sql") return -1;
+    if (right === "foundation.sql") return 1;
+    return left.localeCompare(right);
+  })
+  .map((file) => ({ file, sql: readFileSync(resolve(testDir, file), "utf8") }));
 let containerId = null;
 
 function docker(args, options = {}) {
@@ -86,7 +94,9 @@ try {
   }
   runSql(candidateCatalogueSeed, "candidate catalogue seed");
   runSql(reviewedCatalogueSeed, "reviewed catalogue seed");
-  runSql(tests, "foundation integration tests");
+  for (const databaseTest of databaseTests) {
+    runSql(databaseTest.sql, `database test ${databaseTest.file}`);
+  }
   console.log("Disposable PostgreSQL verification completed successfully.");
 } finally {
   cleanup();

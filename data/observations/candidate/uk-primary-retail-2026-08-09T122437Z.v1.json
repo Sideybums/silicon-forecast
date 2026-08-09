@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "tranche_id": "sf-gb-primary-retail-2026-08-09T122437Z-v1",
+  "status": "candidate_private_immutable",
+  "scope": "candidate_only",
+  "region": "GB",
+  "channel": "PRIMARY_RETAIL",
+  "created_at": "2026-08-09T12:25:54Z",
+  "immutability_policy": "Append-only candidate observation tranche; do not edit in place. Corrections require a new additive artifact.",
+  "evidence_policy": "Minimal factual extracts and response SHA-256 values are retained. Fetched response bytes are not retained.",
+  "governance": {
+    "production_import_allowed": false,
+    "production_activation_allowed": false,
+    "index_eligibility": false,
+    "methodology_approval": false,
+    "publication_allowed": false
+  },
+  "observations": [
+    {
+      "observation_id": "kms-kf560c30bbek2-32-2026-08-09T122553Z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-08-09T12:25:53Z",
+      "source": {
+        "source_key": "kingston-memory-shop-uk-public-page",
+        "source_name": "KingstonMemoryShop public product page",
+        "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-beast-kf560c30bbek2-32-32gb-16gb-x2-ddr5-6000mt-s-black-memory-dimm-expo",
+        "supplied_url_status": "supplied_slug_returned_http_404_current_url_discovered_via_public_sitemap",
+        "collection_method": "normal unauthenticated HTTP retrieval",
+        "source_approved_for_production": false
+      },
+      "identity": { "mpn_expected": "KF560C30BBEK2-32", "mpn_observed": "KF560C30BBEK2-32", "match_basis": "exact_mpn" },
+      "seller": { "display_name": "KingstonMemoryShop", "legal_name": "SweetCow Ltd t/a KingstonMemoryShop", "relationship": "retailer_owned" },
+      "item_price": { "amount_minor": 61144, "currency": "GBP", "vat_state": "included" },
+      "availability": { "normalised": "available_to_order", "schema": "InStock", "display": "Available To Order - 4-5 Business Day Delivery*", "eligibility_semantics": "ambiguous" },
+      "delivery": { "amount_minor": 0, "currency": "GBP", "claim": "FREE UK Delivery & Returns", "destination_basis": "UK unspecified", "destination_verified": false },
+      "landed_price": { "amount_minor": null, "currency": "GBP", "eligibility": "abstain" },
+      "qualification": { "status": "candidate_retained_not_landed_price_eligible", "reasons": ["availability_semantics_ambiguous", "delivery_destination_not_fixed"] },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-2026-08-09/kingston-kf560c30bbek2-32.extract.json",
+        "extract_sha256": "3b26672a7c429bcc1c3b85c3180ca20f2cbd9a862e5166243a7a61ced4685dcb",
+        "response_sha256": "b2c328412e7c479230e2183e252a150782c4ffa09b6f1f0a3fdef0cf36fddc62",
+        "response_bytes_retained": false
+      },
+      "governance": { "production_import_allowed": false, "production_activation_allowed": false, "index_eligibility": false, "methodology_approval": false, "publication_allowed": false }
+    },
+    {
+      "observation_id": "kms-kf564c32rsk2-32-2026-08-09T122554Z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-08-09T12:25:54Z",
+      "source": {
+        "source_key": "kingston-memory-shop-uk-public-page",
+        "source_name": "KingstonMemoryShop public product page",
+        "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm",
+        "supplied_url_status": "supplied_slug_returned_http_404_current_url_discovered_via_public_sitemap",
+        "collection_method": "normal unauthenticated HTTP retrieval",
+        "source_approved_for_production": false
+      },
+      "identity": { "mpn_expected": "KF564C32RSK2-32", "mpn_observed": "KF564C32RSK2-32", "match_basis": "exact_mpn" },
+      "seller": { "display_name": "KingstonMemoryShop", "legal_name": "SweetCow Ltd t/a KingstonMemoryShop", "relationship": "retailer_owned" },
+      "item_price": { "amount_minor": 62026, "currency": "GBP", "vat_state": "included" },
+      "availability": { "normalised": "available_to_order", "schema": "InStock", "display": "Available To Order - 4-5 Business Day Delivery*", "eligibility_semantics": "ambiguous" },
+      "delivery": { "amount_minor": 0, "currency": "GBP", "claim": "FREE UK Delivery & Returns", "destination_basis": "UK unspecified", "destination_verified": false },
+      "landed_price": { "amount_minor": null, "currency": "GBP", "eligibility": "abstain" },
+      "qualification": { "status": "candidate_retained_not_landed_price_eligible", "reasons": ["availability_semantics_ambiguous", "delivery_destination_not_fixed"] },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-2026-08-09/kingston-kf564c32rsk2-32.extract.json",
+        "extract_sha256": "a366d52c9bdedc4d375cce249dbde923e8183c15d2900bde16b3abf6d318c15f",
+        "response_sha256": "e44455fa7994e5f1edc3b10e4399726e74889cc07b4eab45245075dc5cec9c34",
+        "response_bytes_retained": false
+      },
+      "governance": { "production_import_allowed": false, "production_activation_allowed": false, "index_eligibility": false, "methodology_approval": false, "publication_allowed": false }
+    },
+    {
+      "observation_id": "awdit-f5-6000j3636f16gx2-fx5-2026-08-09T122437Z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-08-09T12:24:37Z",
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/g-skill-flare-x5-32gb-16gb-x2-ddr5-6000mt-s-cl36-memory-kit-black-f5-6000j3636f16gx2-fx5.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "normal unauthenticated HTTP retrieval",
+        "source_approved_for_production": false
+      },
+      "identity": { "mpn_expected": "F5-6000J3636F16GX2-FX5", "mpn_observed": "F5-6000J3636F16GX2-FX5", "match_basis": "exact_mpn" },
+      "seller": { "display_name": "AWD-IT", "legal_name": "ADMI Limited", "relationship": "retailer_owned" },
+      "item_price": { "amount_minor": 46999, "currency": "GBP", "vat_state": "included" },
+      "availability": { "normalised": "in_stock", "schema": "InStock", "display": "In stock", "eligibility_semantics": "explicit" },
+      "delivery": { "amount_minor": 0, "currency": "GBP", "claim": "FREE UK Mainland Delivery / Free Delivery Available", "destination_basis": "UK mainland unspecified", "destination_verified": false },
+      "landed_price": { "amount_minor": null, "currency": "GBP", "eligibility": "abstain" },
+      "qualification": { "status": "candidate_retained_not_landed_price_eligible", "reasons": ["delivery_destination_not_fixed"] },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-2026-08-09/awd-it-f5-6000j3636f16gx2-fx5.extract.json",
+        "extract_sha256": "a33271fe107022e4b001bd80a315bbf1133c2aaa8739497eb171746157e0598c",
+        "response_sha256": "32c1457be5324423430bad8a27e297c72f7265e556d9202980eef03801ab8931",
+        "response_bytes_retained": false
+      },
+      "governance": { "production_import_allowed": false, "production_activation_allowed": false, "index_eligibility": false, "methodology_approval": false, "publication_allowed": false }
+    }
+  ]
+}

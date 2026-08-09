@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "evidence_id": "sf-retail-kms-kf564c32rsk2-32-2026-08-09T122554Z",
+  "evidence_class": "minimal_factual_extract",
+  "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm",
+  "retrieved_at": "2026-08-09T12:25:54Z",
+  "http_status": 200,
+  "response_sha256": "e44455fa7994e5f1edc3b10e4399726e74889cc07b4eab45245075dc5cec9c34",
+  "response_bytes": 594266,
+  "response_bytes_retained": false,
+  "retention_note": "The fetched response bytes are not retained; only this minimal factual extract and the response SHA-256 are retained.",
+  "supplied_url_check": {
+    "url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-memory-ram-dimm",
+    "retrieved_at": "2026-08-09T12:24:36Z",
+    "http_status": 404,
+    "response_sha256": "6e170422d63c597746f033f8eb8c2eb219721cdb35640d220673d518f1a4f154",
+    "response_bytes": 288276,
+    "response_bytes_retained": false,
+    "factual_result": "Error 404 - Page not found."
+  },
+  "canonical_url_discovery": "Current product URL was discovered through the retailer's normal public sitemap after the supplied slug returned HTTP 404.",
+  "facts": {
+    "mpn": "KF564C32RSK2-32",
+    "price": { "amount_minor": 62026, "currency": "GBP", "vat_state": "included", "display": "£620.26 (inc. VAT)" },
+    "seller": { "display_name": "KingstonMemoryShop", "legal_name": "SweetCow Ltd t/a KingstonMemoryShop" },
+    "availability": { "schema": "InStock", "display": "Available To Order - 4-5 Business Day Delivery*", "normalised": "available_to_order", "semantics": "ambiguous_for_eligibility" },
+    "delivery": { "display": "FREE UK Delivery & Returns", "amount_minor": 0, "destination_scope": "UK unspecified", "destination_verified": false }
+  }
+}
