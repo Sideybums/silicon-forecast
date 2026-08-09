@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "manifest_id": "sf-gb-primary-retail-evidence-2026-08-09T234337Z-v1",
+  "status": "candidate_private_immutable",
+  "created_at": "2026-08-09T23:43:37Z",
+  "retention_policy": "Minimal factual extracts are retained and checksum-pinned. Fetched response bytes are not retained; their SHA-256 values and byte counts are retained.",
+  "observation_artifact": {
+    "path": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
+    "sha256": "41fd88e7e48cbb343254522d46d3ec74c999f494169da34ecfeefb3ed667428e"
+  },
+  "evidence": [
+    {
+      "path": "research/evidence/primary-retail-2026-08-09T234337Z/awd-it-f5-6000j3636f16gx2-fx5.extract.json",
+      "sha256": "25fff1e8b22788ac4b7027c16bdbc5579c508f86beb320ec79c9687bbb55173d",
+      "response_sha256": "94bf7b1fa2d64dd95507c486fad63f3233ee397b18432422c418b59243b8f4bb",
+      "response_bytes": 416068,
+      "response_bytes_retained": false
+    },
+    {
+      "path": "research/evidence/primary-retail-2026-08-09T234337Z/kingston-kf560c30bbek2-32.extract.json",
+      "sha256": "60193f3e3f80ac6d6df525c06c9441e7256fcccffd8a23a7a46b25df6e51a6e0",
+      "response_sha256": "f5d84dc0ab3d6b0064105221b85a143e19073e96f8c422b1193f3f1f17287de4",
+      "response_bytes": 594608,
+      "response_bytes_retained": false
+    },
+    {
+      "path": "research/evidence/primary-retail-2026-08-09T234337Z/kingston-kf564c32rsk2-32.extract.json",
+      "sha256": "bf2d1ad21cf3fd27e9be360a80028de5bf432b2948a3f7edc4ce2e574b156731",
+      "response_sha256": "e2d81796458d6250027b8f8610b881d043b4b5c60024a69082eb0270734a0c94",
+      "response_bytes": 594266,
+      "response_bytes_retained": false
+    }
+  ],
+  "governance": {
+    "production_import_allowed": false,
+    "production_activation_allowed": false,
+    "index_eligibility": false,
+    "methodology_approval": false,
+    "publication_allowed": false
+  }
+}

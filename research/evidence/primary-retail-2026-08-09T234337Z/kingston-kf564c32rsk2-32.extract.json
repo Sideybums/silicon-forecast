@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "evidence_id": "sf-retail-kingston-kf564c32rsk2-32-2026-08-09T234337Z",
+  "evidence_class": "minimal_factual_extract",
+  "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm",
+  "retrieved_at": "2026-08-09T23:43:37Z",
+  "http_status": 200,
+  "final_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm",
+  "source_url_status": "http_200",
+  "response_sha256": "e2d81796458d6250027b8f8610b881d043b4b5c60024a69082eb0270734a0c94",
+  "response_bytes": 594266,
+  "response_bytes_retained": false,
+  "retention_note": "The fetched response bytes are not retained; only this minimal factual extract, response byte count, and response SHA-256 are retained.",
+  "facts": {
+    "mpn": "KF564C32RSK2-32",
+    "price": {
+      "amount_minor": 62026,
+      "currency": "GBP",
+      "vat_state": "included",
+      "display": "£620.26 (inc. VAT)"
+    },
+    "seller": {
+      "display_name": "KingstonMemoryShop",
+      "legal_name": "SweetCow Ltd t/a KingstonMemoryShop"
+    },
+    "availability": {
+      "schema": "InStock",
+      "display": "Available To Order - 4-5 Business Day Delivery*",
+      "normalised": "available_to_order",
+      "semantics": "ambiguous_for_eligibility"
+    },
+    "delivery": {
+      "display": "FREE UK Delivery & Returns",
+      "amount_minor": 0,
+      "destination_scope": "UK unspecified",
+      "destination_verified": false
+    }
+  }
+}
