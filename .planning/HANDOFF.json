@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "timestamp": "2026-08-09T09:00:46Z",
+  "timestamp": "2026-08-09T10:07:45Z",
   "phase": "02",
   "phase_name": "platform-catalogue-control-plane",
   "phase_dir": ".planning/phases/02-platform-catalogue-control-plane",
@@ -121,18 +121,14 @@
       "approval_record": "data/reviews/ddr5-32gb-diversification-review-2026-08-09.json"
     },
     {
-      "decision": "Replace synthetic demo mode with a bounded public DDR5 research preview and direct unpaid source links",
-      "rationale": "Affiliate acceptance should not block useful evidence. The exact approved projection publishes three dated exact-MPN marketplace asking-price observations with source, channel and caveats; it cannot claim current prices, a supported index, recommendations, rankings, tracking or commission.",
-      "phase": "02",
-      "approval_record": "data/publications/ddr5-marketplace-observations-2026-08-09.v1.json"
+      "decision": "Keep the public frontend primary-retail only; defer marketplace and second-hand display",
+      "rationale": "David corrected the public scope on 2026-08-09. The earlier checksum-bound non-retail publication artifact remains immutable for audit but is not imported by the public application. The site exposes retail scope, qualification rules and release gates; no verified series or outbound product links are currently public.",
+      "phase": "02"
     }
   ],
-  "uncommitted_files": [
-    ".planning/HANDOFF.json",
-    ".planning/HANDOVER-2026-08-08.md",
-    ".planning/STATE.md"
-  ],
-  "next_action": "Produce a second immutable, channel-separated UK observation tranche for reviewed exact MPNs, prioritising primary new-retail pages with explicit VAT, stock and delivery evidence. Then implement deterministic candidate-only product-price and movement calculations and investigate the first observed movement against registered news/research sources with alternatives and counterevidence. Do not wait for affiliate commission, but require a separate checksum-bound human publication approval for every public projection.",
-  "context_notes": "The public site is no longer a synthetic demo. David approved an exact bounded public projection of three dated professional-marketplace asking-price observations and direct unpaid/untracked links. The projection is bound to the immutable source snapshot SHA-256 and excludes the missing-MPN abstention and all unapproved fields. PUB-01/PUB-02 are complete; EVT-01/EVT-02 are now v1 and pending. Full verification at 2026-08-09T09:00Z passed 43/43 Node tests, ESLint, TypeScript, a 14-page static build, disposable PostgreSQL, JSON parsing and diff checks. The Cloudflare deployment is live at https://siliconforecast.com; five routes returned HTTP 200, all three approved source URLs were present and reachable, and apex/www redirects returned HTTP 308. Supported-index, current-price, recommendation, paid-placement, source, methodology, production and automated-editorial gates remain locked.",
-  "handover_document": ".planning/HANDOVER-2026-08-08.md"
+  "uncommitted_files": [],
+  "next_action": "Collect a second immutable UK tranche from retailer-owned stock for reviewed exact MPNs with explicit VAT, availability and mandatory-delivery evidence. Build candidate-only movement calculations, then draft market context only after a reproducible retail movement exists.",
+  "context_notes": "Retail-first frontend deployed through GitHub/Cloudflare. Price history now has four distinct responsive panels: tracking status, an honest empty verified-history state, retail qualification and release gates. Homepage, RAM category, research, about and disclosure pages consistently expose no verified retail series or product links. Research remains movement-first and no market note is public before a reproducible retail movement exists. Verification passed 43/43 Node tests, ESLint, TypeScript, the 14-page build, disposable PostgreSQL and desktop/mobile Firefox visual QA. Five live routes returned HTTP 200 with no deferred-channel terms; apex/www redirects returned HTTP 308.",
+  "handover_document": ".planning/HANDOVER-2026-08-08.md",
+  "blocked_publications": "Public frontend is primary-retail only. No price series or outbound product links are public; non-retail evidence remains private/deferred and all supported-index/editorial publication locks remain on."
 }
