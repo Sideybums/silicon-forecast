@@ -16,7 +16,7 @@ A narrow public research-preview site is an approved enabling exception to that 
 - Source-use register and evidence template.
 - Candidate-region comparison based on lawful access, identifier quality, tax/delivery semantics, stability and source breadth.
 - Explicit first-region decision.
-- Versioned methodology v0.1 covering collection, eligibility, normalisation, coverage, outliers, missing data, baseline and corrections.
+- Preserved methodology v0.1 plus a separate methodology v1.0 draft defining basket-vintage linking, an evidence-approved historical reference, monthly official-deflator adjustment, optional earnings-relative affordability, event separation and explicit unavailable states. Every new threshold remains `PROPOSED_LOCKED`.
 - Go/no-go gate. No production adapter is built where access is unauthorised, applicable terms cannot be reviewed, or an explicit restriction conflicts.
 
 **Exit criteria:** At least one credible route to the required source breadth exists; access and explicit restrictions are reviewed under the approved source-use policy; methodology decisions are executable rules rather than prose.
@@ -70,34 +70,37 @@ A narrow public research-preview site is an approved enabling exception to that 
 
 **Goal:** Produce the first traceable 32GB DDR5 regional index and make its quality legible.
 
-**Requirements:** IDX-01, IDX-02, IDX-03, IDX-04, IDX-05, IDX-06, IDX-07, APP-01, APP-02, APP-03
+**Requirements:** IDX-01, IDX-02, IDX-03, IDX-04, IDX-05, IDX-06, IDX-07, IDX-08, IDX-09, APP-01, APP-02, APP-03
 
 **Deliverables:**
 - Qualification and regional total-price rules.
-- Daily product derivation and basket/index calculation as versioned pure logic.
+- Daily product derivation, native basket-vintage calculations and a basket-vintage-linked nominal series as versioned pure logic.
 - Full input lineage, coverage and quality state.
 - Baseline-candidate eligibility report, manufacturer/family coverage report and deterministic leave-one-product-out quality-gate matrix.
-- Product retirement/EOL impact report and an explicit basket-vintage, rebase or linking proposal; no silent successor substitution.
+- Product retirement/EOL impact report and an explicit overlap/linking implementation; no silent successor substitution, splice or rebase.
+- Historical-reference evidence packet and sensitivity report. The approved presentation may set that period to 100, but basket-vintage calculation scales remain separately identified and neither is called "normal" without supporting evidence.
+- Monthly constant-price series using one approved official UK deflator, with exact release-vintage lineage and deterministic revision-impact reports. No approved deflator or incomplete input month means an explicit unavailable point.
+- Optional earnings-relative affordability design kept separate and unavailable until its official earnings concept, vintage and policy are approved.
 - Additive correction mechanism and replay tests.
-- Private index, source-health, anomaly and review dashboard.
+- Private nominal/real history, source-health, anomaly and review dashboard with visible unavailable reasons.
 
-**Exit criteria:** Fixed inputs reproduce bit-for-bit equivalent calculated values; gaps remain gaps; every displayed point resolves to exact source observations and a calculation version. A baseline cannot be approved unless every single-product-loss counterfactual passes all standard quality gates under the approved resilience threshold.
+**Exit criteria:** Fixed inputs reproduce bit-for-bit equivalent native, linked nominal and release-vintage real values; gaps remain gaps; every displayed point resolves to exact source observations, statistical release inputs and a calculation version. Basket-vintage scale and historical reference are demonstrably separate. A baseline/reference cannot be approved without its evidence and sensitivity report, and a basket cannot be approved unless every single-product-loss counterfactual passes all standard quality gates under the approved resilience threshold.
 
 ## Phase 6 — Worker Harness and Operational Autonomy
 
 **Goal:** Let bounded workers run the private pipeline while making every action observable and stoppable.
 
-**Requirements:** AI-02, AI-05, AI-06, OPS-01, EVT-01, EVT-02
+**Requirements:** AI-02, AI-05, AI-06, OPS-01, EVT-01, EVT-02, EVT-03
 
 **Deliverables:**
 - Worker task contracts, run ledger, schedules and scoped stop controls.
 - Producer-before-consumer orchestration with idempotency keys.
 - Bounded retries, circuit breakers, heartbeats and cost metadata.
 - Agent evaluation suites for matching assistance, anomaly triage and research drafting.
-- Registered research-source discovery, event-draft records with supporting and contradictory evidence, and an authorised-editor publication gate.
+- Registered research-source discovery, event-draft records with supporting and contradictory evidence, mathematically separate overlay records, and an authorised-editor publication gate.
 - Private command view showing locks, runs, failures and pending human decisions.
 
-**Exit criteria:** Back-to-back and failed runs are safe; unknown workers or autonomy levels fail closed; the pipeline can be paused globally or by source/worker; no external-action lock is bypassed.
+**Exit criteria:** Back-to-back and failed runs are safe; unknown workers or autonomy levels fail closed; the pipeline can be paused globally or by source/worker; no external-action lock is bypassed; event-overlay mutations leave numeric-series checksums unchanged.
 
 ## Phase 7 — Reliability Shadow Run and MVP Decision
 
@@ -110,6 +113,7 @@ A narrow public research-preview site is an approved enabling exception to that 
 - At least 30 consecutive days of private scheduled operation.
 - Reliability, source concentration, match precision, anomaly and human-workload report.
 - Controlled product-disappearance/EOL and source/retailer-loss exercises, proving the original series remains replayable and no successor enters without an approved basket/baseline revision.
+- Basket-link, historical-reference, deflator-vintage replacement and unavailable-state replay exercises proving that old calculations remain reproducible and statistical revisions are additive.
 - Incident, correction and source-suspension playbooks.
 - Security and accessibility verification.
 - Explicit build/hold/pivot decision for public beta.

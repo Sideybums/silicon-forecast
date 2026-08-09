@@ -43,6 +43,7 @@ requirements = (ROOT / ".planning/REQUIREMENTS.md").read_text()
 
 status_vocab = {
     "verified_permitted",
+    "policy_permitted",
     "verified_restricted",
     "contract_required",
     "unknown",

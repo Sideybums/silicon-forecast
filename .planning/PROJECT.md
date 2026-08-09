@@ -2,13 +2,13 @@
 
 ## What This Is
 
-Silicon Forecast is an evidence-backed PC-component price-intelligence platform. It connects upstream semiconductor-market events to regional retail prices, explains observed lag and uncertainty, and preserves an accountable record of forecasts and corrections.
+Silicon Forecast is an evidence-backed PC-component price-intelligence platform. Its first job is to show how recent UK PC-component retail prices moved around AI-era shortages and other shocks, using a defensible historical affordability/reference period as 100 rather than implying that collection inception was normal. It connects upstream semiconductor-market events to observed prices without allowing editorial interpretation to alter the numbers, and preserves an accountable record of lineage, uncertainty and corrections.
 
-The first product is deliberately narrow: a private, reproducible regional index for 32GB DDR5 desktop-memory kits using lawful, stable retail sources. AI employee agents build and operate bounded workflows; deterministic software owns public facts and consequential external actions remain human-governed.
+The first product is deliberately narrow: a private, reproducible UK history for 32GB DDR5 desktop-memory kits using lawful, stable retail sources. Its primary numeric layer is a basket-vintage-linked nominal series. A separate monthly constant-price series uses a specifically approved official UK deflator and preserves the exact statistical release vintage. An earnings-relative affordability series is optional and separate. AI employee agents build and operate bounded workflows; deterministic software owns public facts and consequential external actions remain human-governed.
 
 ## Core Value
 
-Produce one lawful, accurate and reproducible regional component-price index whose every value can be traced to immutable source observations.
+Show recent UK component-price history around material market shocks on transparent nominal and inflation-adjusted scales, with a defensible evidence-approved historical reference at 100 and every value traceable to immutable source observations and official-statistics vintages.
 
 ## Business Context
 
@@ -26,16 +26,16 @@ Produce one lawful, accurate and reproducible regional component-price index who
 ### Active
 
 - [ ] Record the lawful basis and any explicit contractual restrictions for enough sources to support one region; bespoke permission is not required merely because factual public observations will be retained or used in derived history.
-- [ ] Define and version the first regional methodology, including tax, delivery, basket, baseline, coverage and outlier rules.
+- [ ] Define and version the first regional methodology, including tax, delivery, basket vintages, linking, historical-reference selection, nominal and real presentation, coverage, unavailable states and outlier rules.
 - [ ] Maintain a reviewed canonical catalogue for 32GB DDR5 desktop-memory kits.
 - [ ] Preserve immutable raw observations and complete provenance for every derived value.
 - [ ] Match listings conservatively, with exact identifiers first and an auditable exception queue.
-- [ ] Calculate deterministic daily product prices and one reproducible regional index.
+- [ ] Calculate deterministic daily product prices, a basket-vintage-linked nominal history and an approved-reference presentation; calculate monthly constant-price history only from an approved official UK deflator release vintage.
 - [ ] Expose source freshness, coverage, calculation version, quality state and corrections in a private dashboard.
 - [ ] Run bounded AI workers through explicit task contracts, audit logs, locks and measurable evaluation gates.
 - [ ] Demonstrate reliable scheduled operation and tested recovery before publishing a supported index.
 - [x] Publish a retail-first public research preview that explains tracking status, qualification rules and release gates without exposing deferred price channels.
-- [ ] Connect reviewed news and research to observed index movements using facts, alternatives, counterevidence and human-approved causal language.
+- [ ] Connect reviewed news and research to observed movements using facts, alternatives, counterevidence and human-approved causal language; event overlays remain mathematically separate annotations and never alter, fill or weight numeric series.
 
 ### Out of Scope
 
@@ -65,6 +65,8 @@ The technical reference architecture is a TypeScript/Next.js modular monolith ba
 - **Operations**: Jobs must be idempotent, observable, replayable and fail closed on unknown quality or provenance.
 - **Security**: Least privilege, managed secrets, role-based administration, MFA and an administrative audit trail are required before production use.
 - **Quality**: Auto-confirmed product matching must eventually demonstrate at least 99.5% precision on representative labelled data; abstention is preferable to false confidence.
+- **Interpretation**: A basket vintage's internal reference scale is a linking/calculation convention, not evidence that the period was affordable, typical or "normal". The historical reference period shown as 100 requires separate evidence and human approval; no convenient period may be chosen to improve the story.
+- **Inflation**: Constant-price output is monthly and must use one explicitly approved official UK deflator series with observation status and release-vintage lineage. If the deflator, vintage, reference or month is unavailable, the real value is unavailable rather than copied, interpolated or silently revised.
 
 ## Key Decisions
 
@@ -79,6 +81,8 @@ The technical reference architecture is a TypeScript/Next.js modular monolith ba
 | Publish a public research-preview site | Affiliate-network diligence needs a legitimate public space with useful evidence before paid feeds exist | Retail-first frontend now explains scope, qualification and release gates; no price series or outbound product links are currently public |
 | Keep the public frontend primary-retail only | The first product must prove one comparable retail index before adding noisier channels | Corrected by David on 2026-08-09; previously approved non-retail projection remains an immutable private audit artefact, not public UI |
 | Treat public factual offer observations as usable absent an explicit applicable restriction | Prices, stock, identifiers and product attributes are evidence inputs; requiring bespoke affirmative grants for every silent analytical use would prevent the intended comparison product | Approved by David on 2026-08-06; affiliate/feed access terms and explicit restrictions still govern, and authored descriptions/images are excluded by default |
+| Use a defensible historical reference rather than collection inception as 100 | The product should explain shortage-era purchasing power, not imply that the first observed day is normal | Product direction clarified 2026-08-09; the reference period and all selection thresholds remain `PROPOSED_LOCKED` pending evidence and approval |
+| Separate nominal, constant-price, affordability and event layers | Inflation adjustment, earnings comparison and editorial context answer different questions and must remain auditable | Nominal linked history is primary; monthly real history requires an approved official UK deflator/release vintage; earnings-relative affordability is optional; event overlays never change numbers |
 
 ## Evolution
 
@@ -92,4 +96,4 @@ After each phase transition:
 5. Recheck that the description and core value have not drifted.
 
 ---
-*Last updated: 2026-08-05 after project initialisation*
+*Last updated: 2026-08-09 after clarifying the historical-reference, inflation and event-overlay product model*

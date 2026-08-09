@@ -4,8 +4,8 @@
 
 See `.planning/PROJECT.md` (updated 2026-08-05).
 
-**Core value:** Produce one lawful, accurate and reproducible regional component-price index whose every value can be traced to immutable source observations.
-**Current focus:** Move from catalogue-control-plane preparation into meaningful UK observation coverage and evidence-backed market context while keeping the unsupported index, production sources, methodology and automated publication locked
+**Core value:** Show recent UK component-price history around material market shocks on transparent nominal and inflation-adjusted scales, with a defensible evidence-approved historical reference at 100 and complete observation/statistical-vintage lineage.
+**Current focus:** Accumulate lawful UK history and calibrate the linked-nominal/reference/real methodology without treating 2026-08-09 collection inception as normal; keep production sources, methodology thresholds, reference choice, deflator choice and publication locked
 
 ## Status
 
@@ -66,6 +66,9 @@ See `.planning/PROJECT.md` (updated 2026-08-05).
 - The deterministic private history renderer joins the four archived observations to the three immutable 2026-08-09 live observations only by seller legal entity plus exact MPN. It produces seven honest points across three lines, retains gaps and availability/delivery caveats, draws no interpolating path, and is checksum-bound against plausible fact, membership, provenance and governance forgeries.
 - A separate candidate quoted-item relative diagnostic can now start prospectively at 100.000000 from an immutable inception basket and append future points without revising its prefix. It is deliberately labelled `not_an_index`: availability is not qualification, delivery is excluded rather than represented as landed price, historical backfill is a separate schema and is not silently rebased or chain-linked, and later backdated tranches fail closed. The official index still requires approved methodology, a baseline/basket, source and retailer coverage, landed-price eligibility and repeated prospective observations.
 - Integration verification at 2026-08-09T15:17Z passed 85/85 Node tests, ESLint, TypeScript, the 14-page static build, hardened private-data boundary scans, deterministic report replay, `git diff --check` and disposable PostgreSQL verification. The report reproduced as HTML SHA-256 `ec30dbe6ef8d1277c8517359e83e97452ff85f37b453c841caad8f269605efec` and SVG SHA-256 `307b3486559f5a5dc808f71cebae7651eaa1f7e6007d46382b18aaa770f6139a`.
+- Product direction is now explicit: the primary history is a basket-vintage-linked nominal series; a separately evidenced historical reference may present 100; a monthly constant-price series uses one approved official UK deflator with exact release-vintage lineage; an earnings-relative affordability series is optional and separate; event overlays are annotations only and can never change numbers or fill gaps.
+- Basket-vintage reference scale and historical reference are different. The former is an internal calculation/linking convention. The latter is an interpretive benchmark that requires an evidence packet, sensitivity analysis and human approval. No period—including 2026-08-09 inception—has been selected or approved as affordable, representative or normal.
+- `.planning/phases/01-source-methodology-gate/METHODOLOGY-v1.0-draft.md` records this design without modifying v0.1. Every new threshold, linking formula selection, monthly completeness rule, historical-reference choice, official deflator choice and optional earnings measure remains `PROPOSED_LOCKED`.
 
 ## Current Phase
 
@@ -91,10 +94,12 @@ Phase 1 — Source and Methodology Gate is **evidence-complete but access/method
 - Awin's publisher OAuth token does not provide the separate legacy product-feed API key; feed existence, access and field quality remain unverified until programme membership advances.
 - Methodology thresholds and production activation remain unapproved.
 - No current candidate has been proven baseline-eligible against approved production feeds, and no leave-one-product-out, leave-one-retailer or EOL resilience assessment exists yet. Catalogue count alone cannot satisfy basket readiness.
+- No historical reference period or selection evidence is approved; collection inception must not be shown as normal or affordable.
+- No official UK deflator series, release-vintage policy, nominal monthly completeness rule, basket-vintage link rule or optional earnings measure is approved. Each dependent output must remain explicitly unavailable.
 
 ## Next Action
 
-Continue the prospective series from the immutable 2026-08-09 inception rather than waiting for a fictitious perfect back-history. Re-fetch the same three exact retailer-product lines on a later date and append a new immutable tranche, preserving changed and unchanged prices, stock transitions, failures and abstentions. The candidate quoted-item diagnostic may replay privately from 100 once two dates exist, but it must not be called or published as the index. In parallel, resolve a fixed UK delivery destination, approve availability treatment, gather overlapping retailer coverage and calibrate the draft methodology/basket gates. Historical archive research may add evidence, but must remain a separate backfill type and must never revise or backdate the prospective diagnostic. If an Awin programme is accepted, inspect only a bounded read-only feed sample under the existing human-approval gate.
+Continue the prospective series from the immutable 2026-08-09 inception and re-fetch the same exact retailer-product lines, while expanding lawful archive/source research needed to assess candidate historical reference periods. The candidate quoted-item relative diagnostic remains useful for collection and replay diagnostics but is explicitly not an index and its inception 100 has no "normal" meaning. In parallel, resolve landed-price semantics and overlapping coverage; prepare evidence and sensitivity criteria for a historical reference; evaluate official UK deflator candidates and release-vintage handling without selecting one; and test basket-vintage overlap/linking designs without approving a formula. Missing approvals produce explicit unavailable states. If an Awin programme is accepted, inspect only a bounded read-only feed sample under the existing human-approval gate.
 
 ## Safety Note
 
@@ -102,4 +107,4 @@ The completed Phase 1 work and parallel foundation slice are Tier 1/Tier 2 resea
 
 ---
 *State created: 2026-08-05*
-*Last updated: 2026-08-09 after historical backfill, private history rendering and prospective diagnostic integration*
+*Last updated: 2026-08-09 after clarifying the historical-reference, linked nominal, constant-price and event-overlay product model*

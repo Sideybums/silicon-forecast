@@ -20,8 +20,26 @@ The eventual system must keep these concepts distinct and append-only:
 6. **Market event revision** — editor-owned synthesis, separate from source facts.
 7. **Impact assessment** — category/region direction, strength, delay, mechanism and uncertainty.
 8. **Review decision** — attributable human decision bound to an exact immutable revision hash.
+9. **Numeric-series revision reference** — read-only identity/checksum of the native basket vintage, linked nominal, historical-reference presentation or monthly constant-price series being annotated; never an editable editorial field.
+10. **Event overlay revision** — append-only display metadata linking an approved event revision to a date/range and numeric-series revision. It contains no price, weight, link factor, deflator adjustment, imputation or gap-filling instruction.
 
 An LLM summary is never a source fact. A URL without an eligible, checksummed capture is insufficient evidence.
+
+## Numeric/editorial boundary
+
+Editorial intelligence explains or challenges observed movement; it never creates movement. Numeric calculation completes before overlay lookup and cannot read event, claim, impact, confidence or causal-language records as inputs.
+
+The product's numeric layers are also distinct:
+
+- native basket-vintage scale is calculation/linking infrastructure, not a claim of normality;
+- linked nominal history is the primary money-of-the-day movement series;
+- an evidence-approved historical reference may separately present 100 without changing linked values;
+- monthly constant-price history uses a pinned release vintage of an approved official UK deflator;
+- optional earnings-relative affordability uses a separately approved earnings concept and vintage.
+
+An overlay may reference any immutable numeric revision for display. Overlay creation, review, correction, date movement, withdrawal or deletion MUST leave numeric inputs and output checksums unchanged. An event cannot choose a historical reference, alter a basket/link, select a deflator vintage, change an earnings measure, weight a product, fill a gap, interpolate a month or replace an unavailable value.
+
+If the event date/revision is unresolved, the overlay is `UNAVAILABLE_EVENT_DATE_OR_REVISION`; numeric series remain unchanged. If the numeric point is unavailable, the overlay may still appear as context only if clearly detached from a value, but it cannot create a plotted point or imply measured movement.
 
 ## State machines
 
@@ -80,6 +98,10 @@ Subject, predicate, value/unit, exact claim text, claim type (`source_assertion`
 ### Event revision
 
 Stable event ID, revision number/hash, title, event time and precision, separately stored fact summary and editorial analysis, verified claim IDs, supporting and contradictory evidence, counterevidence-search record, relevance hypothesis, category/region scope, uncertainties, alternative explanations, invalidation conditions, next review date, causal-language level and author/reviewer identities.
+
+### Event overlay revision
+
+Stable overlay ID, revision/hash, approved event revision ID/hash, target numeric series ID/revision/hash, display date or range and precision, placement label, overlay state, unavailable reason where applicable, creator/reviewer and supersession link. Numeric values and transformation instructions are forbidden fields.
 
 ### Impact assessment
 
@@ -149,3 +171,7 @@ Forecasts and buy/wait recommendations remain separately locked.
 - One changed byte invalidates approval bound to an older revision hash.
 - Publication fails while either relevant lock is on.
 - Unknown rights, provenance, scope, reviewer authority, revision hash or lock state fails closed.
+- Creating, changing, approving, withdrawing or deleting an overlay leaves the native-vintage, linked-nominal, historical-reference, real-series and affordability-series checksums byte-for-byte unchanged.
+- An overlay schema containing a price override, numeric weight, link/reference/deflator instruction, imputation or gap-fill field is rejected.
+- `UNAVAILABLE_EVENT_DATE_OR_REVISION` creates no plotted numeric point; a numeric unavailable state remains visible and unchanged beneath any contextual annotation.
+- Switching a statistical release vintage or historical reference is a methodology/numeric revision requiring its own approval and impact report, never an editorial action.

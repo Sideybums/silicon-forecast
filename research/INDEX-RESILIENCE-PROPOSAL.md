@@ -2,7 +2,7 @@
 
 Status: architecture and planning direction approved by David Sidebottom
 Approved: 2026-08-08
-Effect: authorises continued candidate-universe, lifecycle, reserve-pool and resilience design work only. Exact numerical thresholds, a basket-vintage/linking formula, production methodology, production sources, baseline, activation and publication remain unapproved until their stated evidence gates are met.
+Effect: authorises continued candidate-universe, lifecycle, reserve-pool and resilience design work only. Exact numerical thresholds, a basket-vintage/linking formula, historical reference period, official UK deflator, release-vintage policy, earnings measure, production methodology, production sources, baseline, activation and publication remain unapproved until their stated evidence gates are met. All are `PROPOSED_LOCKED`.
 
 ## Problem statement
 
@@ -156,6 +156,55 @@ Before production, the methodology should define an approved process for:
 
 Until that method is approved, coverage failure must produce a gap rather than a convenient fiction.
 
+## Two different meanings of a reference scale
+
+These concepts must not be conflated:
+
+1. **Basket-vintage reference scale** is calculation infrastructure. A native basket vintage may use an internal base or overlap scale so its product relatives can be calculated and a later vintage can be linked. That number is not a claim that the date was cheap, affordable, representative or normal.
+2. **Historical reference presentation** is a product interpretation. It may rescale the already-linked nominal history so an evidence-approved historical period equals 100. It does not change native basket-vintage values, link factors or the linked nominal movement path.
+
+The desired product should not use collection inception as the historical reference merely because it is convenient. A candidate historical reference needs, at minimum, an explicit economic/product rationale; adequate approved-source and basket coverage; lifecycle and market-regime review; inflation and earnings context; exclusions; sensitivity against plausible alternative windows; and human approval bound to exact evidence and calculations. "Reference period" is the default label. "Normal" or "affordable" is allowed only if the evidence packet supports that stronger claim.
+
+If no period passes, the reference presentation is `UNAVAILABLE_HISTORICAL_REFERENCE_NOT_APPROVED`. The linked nominal history may still exist on its own identified calculation scale.
+
+## Three numeric layers
+
+### 1. Linked nominal category history — primary
+
+Preserve each native daily basket vintage, its membership and quality states. Join vintages only with an approved deterministic overlap/linking rule and stored link factors. The linked series expresses observed UK retail-price movement in money-of-the-day terms. Missing overlap, failed quality or an unapproved rule creates a gap; it never triggers silent substitution, splice, backcast or rebase.
+
+### 2. Monthly constant-price history — required when approved inputs exist
+
+Aggregate the linked nominal series to calendar months only under an approved completeness rule. Deflate it with one specifically approved official UK price-index series (for example, a precisely identified official CPI or CPIH series only after review—not a generic label or an assumption). Preserve provider, series code/title, observation month, provisional/final status, release/publication date, retrieval timestamp, captured bytes/checksum or equivalent immutable evidence, release-vintage ID and transformation version.
+
+For nominal monthly level `N_m`, official deflator observation `D_(m,v)` from release vintage `v`, and approved constant-price reference month/period `r`, the candidate design is:
+
+`R_(m,v) = N_m × D_(r,v) / D_(m,v)`
+
+The aggregation operator, completeness threshold, deflator series, reference period, treatment of provisional observations and revision policy are all `PROPOSED_LOCKED`. A later statistical release creates a separately replayable revision and impact report; it does not silently rewrite the as-calculated series. Real output is monthly, even if nominal output is daily.
+
+### 3. Optional earnings-relative affordability
+
+A later series may compare nominal component prices with an approved official UK earnings measure to answer the literal affordability question. It must define population, earnings concept, frequency alignment, seasonal-adjustment choice, release vintage and reference period. It is neither the nominal series nor the constant-price series and cannot be used as a substitute when either is unavailable.
+
+Until approved, its state is `UNAVAILABLE_EARNINGS_METHOD_NOT_APPROVED`.
+
+## Explicit unavailable states
+
+The method and product should preserve `value = null`, reason, affected period and lineage for at least:
+
+- `UNAVAILABLE_NATIVE_QUALITY` — the basket vintage fails its standard quality gates;
+- `UNAVAILABLE_LINK_NOT_APPROVED` — no approved deterministic linking method applies;
+- `UNAVAILABLE_LINK_OVERLAP` — approved overlap inputs are insufficient or fail quality;
+- `UNAVAILABLE_HISTORICAL_REFERENCE_NOT_APPROVED` — no evidence-approved historical reference exists;
+- `UNAVAILABLE_MONTH_INCOMPLETE` — linked nominal daily coverage fails the approved monthly rule;
+- `UNAVAILABLE_DEFLATOR_NOT_APPROVED` — no exact official UK deflator series/policy is approved;
+- `UNAVAILABLE_DEFLATOR_VINTAGE_MISSING` — the pinned release vintage lacks a required observation or lineage fact;
+- `UNAVAILABLE_EARNINGS_METHOD_NOT_APPROVED` and `UNAVAILABLE_EARNINGS_VINTAGE_MISSING`;
+- `UNAVAILABLE_EVENT_DATE_OR_REVISION` — an annotation cannot be placed; numeric output is unaffected.
+
+No unavailable point may be replaced with zero, last observation, interpolation, a model estimate, collection inception, another statistical vintage or an event-adjusted value.
+
 ## Research and news coverage
 
 News must never alter the numeric index directly.
@@ -169,6 +218,22 @@ A report that Corsair RAM prices fell should:
 5. support cautious commentary only when the observed data agrees.
 
 The price observations affect the index. The article explains or challenges the movement. Mixing those roles would turn evidence into editorial weighting, which is precisely the sort of cleverness future-us would regret.
+
+An event overlay is an append-only annotation referencing an approved event revision and an immutable numeric-series revision. Its date/range, label and causal-language state are display metadata only. Adding, approving, correcting, moving or removing an overlay must leave every numeric checksum, link factor, reference denominator, deflator input, missing state and weight unchanged.
+
+## Method acceptance tests
+
+Before activation, fixtures and replay tests must prove that:
+
+1. native basket vintages remain byte-for-byte replayable after linking;
+2. an approved overlap reproduces one deterministic link factor, while inadequate overlap yields `UNAVAILABLE_LINK_OVERLAP`;
+3. changing the historical reference changes only the presentation transform, never native or linked nominal values;
+4. no reference can be activated without a checksum-bound evidence and sensitivity decision;
+5. incomplete nominal months remain unavailable;
+6. a fixed official-deflator release vintage reproduces the same real values and a later release creates a separate revision/impact report;
+7. missing or mixed deflator vintages fail closed;
+8. earnings-relative activation or failure cannot change nominal or real outputs; and
+9. event-overlay create/update/delete operations leave all numeric checksums identical.
 
 ## Recommended immediate change
 
