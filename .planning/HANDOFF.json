@@ -1,9 +1,9 @@
 {
   "schema_version": "silicon-forecast-handoff.v2",
-  "generated_at": "2026-08-09T18:59:31Z",
+  "generated_at": "2026-08-09T23:51:30Z",
   "project": "Silicon Forecast",
   "branch": "main",
-  "handoff_state": "governed_big_push_complete_waiting_for_canonical_collector",
+  "handoff_state": "canonical_collector_run_audited_raw_evidence_retained_date_level_integration_blocked",
   "authority": {
     "parent_orchestrator": "Jarvis",
     "worker_outputs_trusted_without_parent_review": false,
@@ -21,10 +21,12 @@
     "name": "Silicon Forecast recurring UK primary-retail collector",
     "enabled": true,
     "state_observed": "scheduled",
-    "last_run_at": null,
-    "next_run_at": "2026-08-10T13:45:59.810825+01:00",
+    "last_run_at": "2026-08-10T00:46:29.452051+01:00",
+    "last_status": "ok",
+    "last_commit": "fbdbba3ea8841525b0b00f6c36897ebe3857c3a2",
+    "next_run_at": "2026-08-10T13:45:00+01:00",
     "sole_prospective_fetcher": true,
-    "instruction": "Do not launch another prospective fetch while this job remains pending or running. After completion, audit and integrate only through the fail-closed checklist in the Wave 1 readiness report."
+    "instruction": "Keep this job as the sole prospective fetcher. Every run must create an additive global run-integration audit. Same seller+MPN+UTC-date collisions remain raw candidate evidence but are blocked from date-level diagnostic integration unless a separate rule is explicitly approved."
   },
   "completed_waves": {
     "wave_0": "Git, scheduler, two immutable observation tranches, seven extract hashes, all locks and baseline tests verified.",
@@ -35,8 +37,8 @@
     "wave_5": "Seven separate non-approving decision packets produced; governing records and verification evidence updated."
   },
   "retained_evidence": {
-    "candidate_tranches": 2,
-    "observations": 7,
+    "candidate_tranches": 3,
+    "observations": 10,
     "exact_seller_mpn_lines": 3,
     "historical_research_result": "no_new_evidence",
     "immutable_observation_files_changed_by_big_push": false,
@@ -55,9 +57,10 @@
   "decision_packets": "research/decision-packets/2026-08-09-big-push/",
   "verification": {
     "phase_1_checks": 130,
-    "tracked_json_files_parsed": 53,
+    "tracked_json_files_parsed": 59,
     "v1_requirements_mapped_exactly_once": 48,
-    "full_check": "passed lint, 135 Node tests, TypeScript, 14-page static build and disposable PostgreSQL verification",
+    "full_check": "big-push baseline passed lint, 135 Node tests, TypeScript, 14-page static build and disposable PostgreSQL verification; post-collector audit verification is recorded separately",
+    "post_collector_audit_check": "passed 138 of 138 Node tests, lint, TypeScript, 14-page static build, disposable PostgreSQL verification, 130 Phase 1 checks, 59 current/tracked JSON parses, diff hygiene and high-confidence new-artifact secret scan",
     "parent_wave_4_adversary": "passed",
     "retail_report_sha256": "57b70c5818acceffc34bdf3b939c2c63f2dc97e32c6d81bca136877e8b2e740a",
     "quoted_history_html_sha256": "f47d71ba22b8761f9729d4ccbe22d899908fd2dd0ff184552caa1a4c9bda4bcd",
@@ -74,14 +77,21 @@
     "production_activation": true,
     "editorial_activation": true
   },
+  "collector_run_audit": {
+    "path": "research/audits/uk-primary-retail-run-integration-audit-2026-08-10T004629+0100.v1.json",
+    "result": "raw_candidate_evidence_retained_global_date_level_diagnostic_integration_blocked",
+    "collision_key": "seller legal name + exact MPN + UTC calendar date",
+    "collision_lines": 3,
+    "price_changes": 0,
+    "selection_or_aggregation_rule_approved": false
+  },
   "next_action": {
-    "when": "after canonical collector job 7e98d1467473 completes",
+    "when": "after the next canonical collector run",
     "steps": [
-      "Re-check scheduler run ID, state, timestamps and errors; confirm there was no second prospective writer.",
-      "Inventory additive observation and evidence paths without changing prior bytes.",
-      "Apply research/waves/wave1/prospective-retail-readiness-audit-2026-08-09.md fail-closed integration checklist.",
-      "Quarantine path reuse, duplicate seller+MPN+date, identity disagreement, checksum mismatch, missing lineage or governance drift.",
-      "Do not fetch, select a value, aggregate, approve, activate or publish during audit integration."
+      "Require the job to start from a clean branch aligned with origin/main and remain the sole prospective writer.",
+      "Verify its additive tranche, evidence, manifest and global run-integration audit bytes independently.",
+      "Keep all same-date collisions blocked; do not select or aggregate intraday values without separate approval.",
+      "Do not approve methodology, sources, references, baskets, production actions or publication."
     ]
   }
 }
