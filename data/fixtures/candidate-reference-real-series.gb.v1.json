@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "fixture_kind": "candidate_reference_real_series",
+  "scope": "synthetic_fixture_only",
+  "status": "candidate_unapproved",
+  "region": "GB",
+  "approval_envelope": null,
+  "selections": null,
+  "governance": {
+    "methodology_approved": false,
+    "production_activation_allowed": false,
+    "publication_allowed": false
+  },
+  "native_snapshot": {
+    "snapshot_id": "synthetic-native-snapshot-v1",
+    "fixture_only": true,
+    "vintages": [
+      {
+        "vintage_id": "synthetic-native-a",
+        "content_sha256": "1111111111111111111111111111111111111111111111111111111111111111"
+      },
+      {
+        "vintage_id": "synthetic-native-b",
+        "content_sha256": "2222222222222222222222222222222222222222222222222222222222222222"
+      }
+    ]
+  },
+  "native_snapshot_sha256": "9febd44d03c191a4ed807cff44077ce5ff81943cb4405421fdd7a90b7d859b70",
+  "linked_nominal_series": {
+    "series_id": "synthetic-linked-nominal-v1",
+    "revision_id": "synthetic-linked-nominal-revision-1",
+    "fixture_only": true,
+    "native_snapshot_id": "synthetic-native-snapshot-v1",
+    "points": [
+      { "date": "2026-01-05", "value": { "numerator": "100", "denominator": "1" } },
+      { "date": "2026-01-19", "value": { "numerator": "102", "denominator": "1" } },
+      { "date": "2026-02-02", "value": { "numerator": "104", "denominator": "1" } },
+      { "date": "2026-02-16", "value": { "numerator": "106", "denominator": "1" } }
+    ]
+  },
+  "linked_nominal_series_sha256": "d58502dc3e481940cdef75ce23140389bae5c2afcd94d58fcdf99fdc92a5a504",
+  "monthly_strategy_candidates": [
+    {
+      "strategy_id": "synthetic-monthly-two-required-dates-mean",
+      "candidate_only": true,
+      "selected": false,
+      "operator": "arithmetic_mean_exact_rational",
+      "month_contracts": [
+        { "month": "2026-01", "required_dates": ["2026-01-05", "2026-01-19"] },
+        { "month": "2026-02", "required_dates": ["2026-02-02", "2026-02-16"] }
+      ]
+    }
+  ],
+  "historical_reference_candidates": [
+    {
+      "reference_id": "synthetic-reference-january",
+      "candidate_only": true,
+      "selected": false,
+      "label": "Synthetic reference period",
+      "operator": "arithmetic_mean_exact_rational",
+      "months": ["2026-01"],
+      "evidence_packet_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+      "sensitivity_report_sha256": "4444444444444444444444444444444444444444444444444444444444444444"
+    }
+  ],
+  "deflator_series_candidates": [
+    {
+      "series_id": "SYNTHETIC-OFFICIAL-DEFLATOR-X",
+      "candidate_only": true,
+      "selected": false,
+      "series_metadata": {
+        "provider": "Fixture Statistics Authority",
+        "provider_kind": "official_statistics_fixture",
+        "not_real_official_data": true,
+        "canonical_source_url": "https://fixture.invalid/statistics/synthetic-deflator-x",
+        "series_code": "SYNTH-X",
+        "title": "Synthetic monthly deflator candidate",
+        "unit": "index_points",
+        "frequency": "monthly",
+        "adjustment_status": "not_seasonally_adjusted"
+      },
+      "release_vintages": [
+        {
+          "release_vintage_id": "synthetic-release-2026-03-a",
+          "release_id": "fixture-release-a",
+          "release_date": "2026-03-20",
+          "retrieved_at": "2026-03-20T12:00:00Z",
+          "capture_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "parser_version": "synthetic-parser-v1",
+          "supersedes_release_vintage_id": null,
+          "observations": [
+            {
+              "month": "2026-01",
+              "value": { "numerator": "120", "denominator": "1" },
+              "observation_status": "fixture_provisional",
+              "release_vintage_id": "synthetic-release-2026-03-a"
+            },
+            {
+              "month": "2026-02",
+              "value": { "numerator": "126", "denominator": "1" },
+              "observation_status": "fixture_provisional",
+              "release_vintage_id": "synthetic-release-2026-03-a"
+            }
+          ]
+        },
+        {
+          "release_vintage_id": "synthetic-release-2026-04-b",
+          "release_id": "fixture-release-b",
+          "release_date": "2026-04-22",
+          "retrieved_at": "2026-04-22T12:00:00Z",
+          "capture_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "parser_version": "synthetic-parser-v1",
+          "supersedes_release_vintage_id": "synthetic-release-2026-03-a",
+          "observations": [
+            {
+              "month": "2026-01",
+              "value": { "numerator": "121", "denominator": "1" },
+              "observation_status": "fixture_revised",
+              "release_vintage_id": "synthetic-release-2026-04-b"
+            },
+            {
+              "month": "2026-02",
+              "value": { "numerator": "124", "denominator": "1" },
+              "observation_status": "fixture_revised",
+              "release_vintage_id": "synthetic-release-2026-04-b"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

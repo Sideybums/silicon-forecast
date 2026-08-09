@@ -1,0 +1,136 @@
+{
+  "fixture_id": "candidate-basket-vintage-linking.gb.v1",
+  "scope": "synthetic_fixture_only",
+  "authority": {
+    "methodology_approved": false,
+    "production_activation": false,
+    "publication_authority": false,
+    "default_strategy_id": null,
+    "preferred_strategy_id": null,
+    "selected_strategy_id": null,
+    "approved_strategy_id": null
+  },
+  "native_vintages": [
+    {
+      "vintage_id": "native-vintage-a",
+      "revision_id": "native-vintage-a-r1",
+      "immutable_manifest_hash": "fixture-native-a-hash-r1",
+      "effective_from": "2026-01-01",
+      "points": [
+        {
+          "date": "2026-01-03",
+          "state": "AVAILABLE",
+          "value": { "numerator": "303", "denominator": "2" },
+          "lineage_ids": ["a-03"]
+        },
+        {
+          "date": "2026-01-01",
+          "state": "AVAILABLE",
+          "value": { "numerator": "300", "denominator": "2" },
+          "lineage_ids": ["a-01"]
+        },
+        {
+          "date": "2026-01-02",
+          "state": "UNAVAILABLE_NATIVE_QUALITY",
+          "value": null,
+          "lineage_ids": ["a-02-gap"]
+        }
+      ]
+    },
+    {
+      "vintage_id": "native-vintage-b",
+      "revision_id": "native-vintage-b-r1",
+      "immutable_manifest_hash": "fixture-native-b-hash-r1",
+      "effective_from": "2026-01-04",
+      "points": [
+        {
+          "date": "2026-01-06",
+          "state": "AVAILABLE",
+          "value": { "numerator": "403", "denominator": "3" },
+          "lineage_ids": ["b-06"]
+        },
+        {
+          "date": "2026-01-04",
+          "state": "AVAILABLE",
+          "value": { "numerator": "400", "denominator": "3" },
+          "lineage_ids": ["b-04"]
+        },
+        {
+          "date": "2026-01-05",
+          "state": "UNAVAILABLE_NATIVE_QUALITY",
+          "value": null,
+          "lineage_ids": ["b-05-gap"]
+        }
+      ]
+    }
+  ],
+  "prior_linked_revision": {
+    "series_id": "candidate-linked-nominal-fixture",
+    "revision_id": "candidate-linked-r1",
+    "segments": [
+      {
+        "vintage_id": "native-vintage-a",
+        "native_revision_id": "native-vintage-a-r1",
+        "native_manifest_hash": "fixture-native-a-hash-r1",
+        "link_factor": { "numerator": "1", "denominator": "1" },
+        "strategy_id": null,
+        "approval_id": null,
+        "points": [
+          {
+            "date": "2026-01-01",
+            "state": "AVAILABLE",
+            "value": { "numerator": "150", "denominator": "1" },
+            "lineage_ids": ["a-01"]
+          },
+          {
+            "date": "2026-01-02",
+            "state": "UNAVAILABLE_NATIVE_QUALITY",
+            "value": null,
+            "lineage_ids": ["a-02-gap"]
+          },
+          {
+            "date": "2026-01-03",
+            "state": "AVAILABLE",
+            "value": { "numerator": "303", "denominator": "2" },
+            "lineage_ids": ["a-03"]
+          }
+        ]
+      }
+    ]
+  },
+  "candidate_overlap": {
+    "overlap_manifest_id": "candidate-overlap-a-b-r1",
+    "records": [
+      {
+        "date": "2026-01-03",
+        "quality_state": "AVAILABLE",
+        "prior_value": { "numerator": "303", "denominator": "2" },
+        "candidate_value": { "numerator": "404", "denominator": "3" }
+      },
+      {
+        "date": "2026-01-02",
+        "quality_state": "AVAILABLE",
+        "prior_value": { "numerator": "301", "denominator": "2" },
+        "candidate_value": { "numerator": "401", "denominator": "3" }
+      }
+    ]
+  },
+  "candidate_strategy_descriptors": [
+    {
+      "strategy_id": "fixture-candidate-ratio-alpha",
+      "status": "PROPOSED_LOCKED",
+      "implementation": "injected_by_test_only"
+    },
+    {
+      "strategy_id": "fixture-candidate-ratio-beta",
+      "status": "PROPOSED_LOCKED",
+      "implementation": "injected_by_test_only"
+    }
+  ],
+  "link_approval_records": [],
+  "notes": [
+    "Candidate strategy identifiers describe no default, preference, selection or approval.",
+    "Dates and values are synthetic test inputs and do not choose a production overlap period or method.",
+    "Native nulls are intentional gaps and may not be filled, carried, rebased or estimated."
+  ]
+}
