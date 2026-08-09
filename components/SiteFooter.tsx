@@ -9,13 +9,13 @@ export function SiteFooter() {
           <p className="footer-brand">Silicon Forecast</p>
           <p>PC component prices, observed over time.</p>
           <p className="fine-print">
-            Dated research observations are not live comparisons, supported index values or
-            purchasing recommendations.
+            The verified retail series is still in preparation. Nothing shown here is a purchasing
+            recommendation or a supported current-price comparison.
           </p>
         </div>
         <div>
           <p className="footer-label">Research</p>
-          <Link href="/price-history">Observed prices</Link>
+          <Link href="/price-history">Retail price history</Link>
           <Link href="/research">Market notes</Link>
           <Link href="/about">About the project</Link>
         </div>

@@ -9,28 +9,30 @@ test("affiliate verification is network-neutral and honest",()=>{
   assert.doesNotMatch(source,/<h2>Awin status<\/h2>/);
   assert.doesNotMatch(source,/Affiliate partnerships provided through/i);
 });
-test("public research preview shows bounded dated prices without pretending they are a live index",()=>{
+test("public frontend is retail-first and does not expose deferred channels",()=>{
+  const publicSource=globSync(["app/**/*.tsx","components/**/*.tsx","lib/site.ts"])
+    .map((file)=>readFileSync(file,"utf8"))
+    .join("\n");
   const home=readFileSync("app/page.tsx","utf8");
-  const priceHistory=readFileSync("app/price-history/page.tsx","utf8")+readFileSync("components/ObservedPriceBoard.tsx","utf8");
   const disclosure=readFileSync("app/affiliate-disclosure/page.tsx","utf8");
-  assert.match(home,/Public research preview/);
-  assert.match(home,/Observed prices/);
-  assert.match(priceHistory,/Dated marketplace observations/);
-  assert.match(priceHistory,/not current-price claims/i);
-  assert.match(priceHistory,/or\s+the UK retail index/i);
-  assert.match(priceHistory,/Unpaid source link/);
-  assert.match(disclosure,/unpaid, untracked source links/i);
-  assert.doesNotMatch(home,/View the example chart|Published prices<\/dt><dd>None yet/);
-  assert.doesNotMatch(priceHistory,/Demonstration only|All chart values are synthetic/);
+  assert.match(home,/Primary retail only/);
+  assert.match(home,/Retail series in preparation/);
+  assert.match(disclosure,/No outbound product links are currently published/i);
+  assert.doesNotMatch(publicSource,/marketplace|second-hand|resale/i);
+  assert.doesNotMatch(publicSource,/ObservedPriceBoard|MarketChannelCharts/);
 });
-test("price channels are separated without weakening the headline index",()=>{
-  const priceHistory=readFileSync("app/price-history/page.tsx","utf8")+readFileSync("components/ObservedPriceBoard.tsx","utf8");
-  assert.match(priceHistory,/Marketplace · Asking prices/);
-  assert.match(priceHistory,/Primary retail index/);
-  assert.match(priceHistory,/Marketplace asking prices never enter the primary-retail index/);
-  assert.match(priceHistory,/Professional third-party seller/);
-  assert.match(priceHistory,/Observation time/);
-  assert.match(priceHistory,/VAT and delivery/);
+test("price history has four visually distinct retail sections and no invented series",()=>{
+  const priceHistory=readFileSync("app/price-history/page.tsx","utf8");
+  for(const section of ["Retail tracking status","Retail price history","What qualifies as retail","Release gates"]){
+    assert.match(priceHistory,new RegExp(section,"i"));
+  }
+  for(const className of ["retail-status-panel","retail-history-panel","retail-methodology-panel","retail-release-panel"]){
+    assert.match(priceHistory,new RegExp(`className=\\"[^\\"]*${className}`));
+  }
+  assert.match(priceHistory,/No verified retail series yet/);
+  assert.match(priceHistory,/VAT-inclusive landed price/);
+  assert.match(priceHistory,/Retailer-owned stock/);
+  assert.doesNotMatch(priceHistory,/synthetic|demo series|asking price/i);
 });
 test("research notes explain evidence-first context for future index movements",()=>{
   const research=readFileSync("app/research/page.tsx","utf8");
@@ -38,7 +40,8 @@ test("research notes explain evidence-first context for future index movements",
   assert.match(research,/movement first, explanation second/i);
   assert.match(research,/does not prove causation/i);
   assert.match(research,/supporting\s+and\s+contradictory evidence/i);
-  assert.match(research,/Marketplace scarcity is not the retail index/);
+  assert.match(research,/Retail evidence first/);
+  assert.match(research,/No movement note is published yet/);
 });
 test("required publisher routes exist",()=>{for(const route of ["about","contact","privacy","affiliate-disclosure","price-history","research"]){assert.ok(readFileSync(`app/${route}/page.tsx`,`utf8`).length>300)}});
 test("project email is operational",()=>{

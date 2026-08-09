@@ -54,8 +54,8 @@
 
 ### Public Research and Market Context
 
-- [x] **PUB-01**: A project-owner-approved public projection can display exact-MPN dated factual offer observations with source, channel, collection time and visible limitations without implying a current price or supported index.
-- [x] **PUB-02**: Every outbound product link displays its commercial status; the initial links are direct, unpaid and untracked, and commercial participation cannot determine inclusion or editorial interpretation.
+- [x] **PUB-01**: The public frontend exposes the primary-retail tracking scope, qualification rules, release gates and explicit absence of a verified series; only separately approved qualifying retail observations may be displayed.
+- [x] **PUB-02**: Every future outbound product link must display its commercial status, and commercial participation cannot determine inclusion or editorial interpretation; no outbound product links are currently public.
 - [ ] **EVT-01**: Agents can discover and draft market-event records from registered sources while retaining quotations, provenance, uncertainty, alternative explanations and contradictory evidence.
 - [ ] **EVT-02**: An authorised editor can approve event classification, regional impact and causal language before publication.
 
@@ -118,8 +118,8 @@ The v1 milestone is complete only when all v1 requirements are implemented, test
 | SRC-04 | Phase 1 | Governance/evidence controls defined; application enforcement pending |
 | CAT-01, CAT-02, CAT-03, CAT-04 | Phase 2 | Four-product seed, evidence and 20 labelled fixtures are human-reviewed; eight further exact-MPN candidates remain pending additive review. Empirical basket readiness, lifecycle metadata, reserve candidates and single-product-loss resilience remain pending. Catalogue count is not treated as baseline eligibility. |
 | APP-04, AI-01, AI-03, AI-04 | Phase 2 | Pending |
-| PUB-01, PUB-02 | Public research-preview exception | Complete — checksum-bound projection of three exact-MPN dated marketplace observations, direct unpaid links and visible exclusions approved 2026-08-09 |
-| EVT-01, EVT-02 | Phase 6 | Public evidence workflow and first non-causal market note established; event discovery, source registry integration and editor approval contract pending |
+| PUB-01, PUB-02 | Public research-preview exception | Complete — retail-first frontend exposes scope and release gates; no verified series, deferred channels or outbound product links are public |
+| EVT-01, EVT-02 | Phase 6 | Public evidence workflow established; first movement note, event discovery, source registry integration and editor approval contract pending |
 | ING-01, ING-02, ING-03, ING-04, ING-05 | Phase 3 | Pending |
 | MAT-01, MAT-02, MAT-03, MAT-04, MAT-05 | Phase 4 | Pending |
 | IDX-01, IDX-02, IDX-03, IDX-04, IDX-05, IDX-06, IDX-07 | Phase 5 | Pending |

@@ -4,7 +4,7 @@
 
 Build the evidence chain in dependency order. The roadmap intentionally delays broad UI, editorial automation and geographic expansion until one lawful regional DDR5 index has survived a private shadow run.
 
-A narrow public research-preview site is an approved enabling exception to that sequencing. It may explain the project and publish an exact, checksum-bound projection of project-owner-approved dated factual observations with direct unpaid source links, provided every value retains its observation time, channel, provenance and limitations. It must not imply current prices, approved production-source coverage, a supported public index, recommendations or retailer partnerships that do not exist.
+A narrow public research-preview site is an approved enabling exception to that sequencing. It may explain the project, primary-retail tracking scope, qualification rules and release gates. Only separately approved qualifying retail observations may be shown; deferred price channels, unsupported index values, recommendations and invented retailer relationships remain private or absent.
 
 ## Phase 1 — Source and Methodology Gate
 
@@ -118,7 +118,7 @@ A narrow public research-preview site is an approved enabling exception to that 
 
 ## Deferred Milestone — Supported Public Index and Editorial Automation
 
-The bounded public research preview may publish separately approved dated factual observations and human-reviewed market notes before the private MVP is complete. A supported live index, automated editorial pipeline, forecasts and commercial experiments remain deferred until the private data operation proves dependable. That later milestone must include an AI design contract, editorial evaluation set, citation/claim checks and continued human publication approval.
+The public research preview may explain primary-retail methodology and publish separately approved qualifying retail observations before the private MVP is complete. Deferred price channels, a supported live index, automated editorial pipeline, forecasts and commercial experiments remain deferred until the private data operation proves dependable. That later milestone must include an AI design contract, editorial evaluation set, citation/claim checks and continued human publication approval.
 
 ## Phase Order Rationale
 
