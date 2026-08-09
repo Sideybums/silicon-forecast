@@ -1,12 +1,20 @@
 import { createHash } from "node:crypto";
-import { existsSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { resolve } from "node:path";
-import { loadJson, validateCatalogue } from "../lib/catalogue-fixtures.mjs";
+import { loadJson, validateCatalogue, validateListingFixtures } from "../lib/catalogue-fixtures.mjs";
 
 const projectRoot = fileURLToPath(new URL("../", import.meta.url));
-const catalogue = loadJson(resolve(projectRoot, "data/catalogue/ddr5-32gb-seed.v1.json"));
+const cataloguePath = "data/catalogue/ddr5-32gb-seed.v1.json";
+const listingPath = "data/fixtures/listing-matches.v1.json";
+const catalogueAbsolutePath = resolve(projectRoot, cataloguePath);
+const listingAbsolutePath = resolve(projectRoot, listingPath);
+const catalogue = loadJson(catalogueAbsolutePath);
+const fixtures = loadJson(listingAbsolutePath);
 validateCatalogue(catalogue, { evidenceExists: (reference) => existsSync(resolve(projectRoot, reference)) });
+validateListingFixtures(fixtures, catalogue);
+const catalogueSha256 = createHash("sha256").update(readFileSync(catalogueAbsolutePath)).digest("hex");
+const listingSha256 = createHash("sha256").update(readFileSync(listingAbsolutePath)).digest("hex");
 
 function stableUuid(key) {
   const chars = createHash("sha256").update(`silicon-forecast:${key}`).digest("hex").slice(0, 32).split("");
@@ -30,6 +38,15 @@ const lines = [
   "-- Fresh disposable database only; repeated application must fail rather than merge silently.",
   "-- Candidate fixture data only: all revisions remain draft and unapproved.",
 ];
+
+lines.push(
+  "INSERT INTO silicon_forecast.catalogue_fixture_set_manifest (" +
+  "catalogue_fixture_set_id, catalogue_reference, catalogue_sha256, listing_fixture_set_id, listing_reference, listing_sha256, created_by" +
+  ") VALUES (" +
+  [catalogue.fixture_set_id, cataloguePath, catalogueSha256, fixtures.fixture_set_id, listingPath, listingSha256, creatorId]
+    .map(sql).join(", ") +
+  ");",
+);
 
 const manufacturers = new Map();
 for (const product of catalogue.products) manufacturers.set(product.manufacturer.key, product.manufacturer);

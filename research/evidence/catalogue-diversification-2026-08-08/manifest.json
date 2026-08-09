@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "evidence_set": "catalogue-diversification-2026-08-08",
+  "status": "candidate_fixture_evidence_only",
+  "handling": "minimal_factual_extracts_no_authored_creative",
+  "items": [
+    {
+      "file": "corsair-cmk32gx5m2b6000c36.extract.json",
+      "evidence_type": "minimal_factual_product_extract",
+      "product_mpn": "CMK32GX5M2B6000C36",
+      "source_urls": [
+        "https://www.corsair.com/us/en/p/memory/cmk32gx5m2b6000c36/vengeance-32gb-2x16gb-ddr5-dram-6000mhz-c36-memory-kit-black-cmk32gx5m2b6000c36"
+      ],
+      "recorded_at": "2026-08-08T18:23:49Z",
+      "authored_content_retained": false,
+      "bytes": 1191,
+      "sha256": "9055333503713e56d296faf5d244c47f6f3f8b0c5385fc70b875e827cf7fdd76"
+    },
+    {
+      "file": "adata-ad5u480016g-dt.extract.json",
+      "evidence_type": "minimal_factual_product_extract",
+      "product_mpn": "AD5U480016G-DT",
+      "source_urls": [
+        "https://assets.adata.com/storage/downloadfile/datasheet_ddr5_4800_u_dimm_20230829.pdf"
+      ],
+      "recorded_at": "2026-08-08T18:23:49Z",
+      "authored_content_retained": false,
+      "bytes": 1308,
+      "sha256": "1314ff8e99f7853bab222baea0e6d3a775e10dc424f3e2b0a26850aaeb02c3b4"
+    },
+    {
+      "file": "adata-ad5u560016g-dt.extract.json",
+      "evidence_type": "minimal_factual_product_extract",
+      "product_mpn": "AD5U560016G-DT",
+      "source_urls": [
+        "https://assets.adata.com/storage/downloadfile/datasheet_ddr5_5600_u_dimm_20251111_v2.pdf"
+      ],
+      "recorded_at": "2026-08-08T18:23:49Z",
+      "authored_content_retained": false,
+      "bytes": 1310,
+      "sha256": "d47e022612242ded02ccd9867717ebb010665647c35f4ca0983c1ab1b5e517f8"
+    },
+    {
+      "file": "patriot-vv532g60c30ak.extract.json",
+      "evidence_type": "minimal_factual_product_extract",
+      "product_mpn": "VV532G60C30AK",
+      "source_urls": [
+        "https://www.patriotmemory.com/products/viper-venom-amd-series-ddr5-performance-ram",
+        "https://patriot-cms-media.sgp1.cdn.digitaloceanspaces.com/VV_532_G60_C30_AK_sku_sheet_9490feb82b.pdf"
+      ],
+      "recorded_at": "2026-08-08T18:23:49Z",
+      "authored_content_retained": false,
+      "bytes": 1466,
+      "sha256": "409760c82da4738e1ba1e238e92bac1699ebb93fb259a6a7694abbf30a25d55a"
+    }
+  ]
+}

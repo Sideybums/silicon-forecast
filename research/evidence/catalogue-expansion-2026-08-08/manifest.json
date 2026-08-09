@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "evidence_set": "catalogue-expansion-2026-08-08",
+  "status": "candidate_fixture_evidence_only",
+  "handling": "minimal_factual_extracts_no_authored_creative",
+  "items": [
+    {
+      "file": "kingston-kf560c36bbek2-32.extract.json",
+      "evidence_type": "minimal_factual_product_extract",
+      "product_mpn": "KF560C36BBEK2-32",
+      "source_urls": [
+        "https://www.kingston.com/datasheets/KF560C36BBEK2-32.pdf"
+      ],
+      "recorded_at": "2026-08-08T09:13:58Z",
+      "authored_content_retained": false,
+      "bytes": 1119,
+      "sha256": "c8d10a7ac28299243ef9bededbc142c8bb73b68332e168c6af07c91a9c3af488"
+    },
+    {
+      "file": "crucial-ct2k16g56c46u5.extract.json",
+      "evidence_type": "minimal_factual_product_extract",
+      "product_mpn": "CT2K16G56C46U5",
+      "source_urls": [
+        "https://www.crucial.com/memory/ddr5/ct2k16g56c46u5"
+      ],
+      "recorded_at": "2026-08-08T09:13:58Z",
+      "authored_content_retained": false,
+      "bytes": 1246,
+      "sha256": "0376922472cdef00852a9483a1a4633d9d3b795e8b9e3d1df7f38d2a67a9406f"
+    },
+    {
+      "file": "crucial-cp2k16g56c46u5.extract.json",
+      "evidence_type": "minimal_factual_product_extract",
+      "product_mpn": "CP2K16G56C46U5",
+      "source_urls": [
+        "https://www.crucial.com/memory/ddr5/CP2K16G56C46U5"
+      ],
+      "recorded_at": "2026-08-08T09:13:58Z",
+      "authored_content_retained": false,
+      "bytes": 1250,
+      "sha256": "7f89f3447e824d17ee2ffdc39f693ef824ef6ee44cd204e11745b8338a6179f9"
+    },
+    {
+      "file": "crucial-cp2k16g60c36u5b.extract.json",
+      "evidence_type": "minimal_factual_product_extract",
+      "product_mpn": "CP2K16G60C36U5B",
+      "source_urls": [
+        "https://www.crucial.com/memory/ddr5/cp2k16g60c36u5b"
+      ],
+      "recorded_at": "2026-08-08T09:13:58Z",
+      "authored_content_retained": false,
+      "bytes": 1275,
+      "sha256": "76c4dd406e5816512b08c94f87c91ee40e8b1731d9215a754df815f9a225b50c"
+    },
+    {
+      "file": "crucial-cp2k16g64c38u5b.extract.json",
+      "evidence_type": "minimal_factual_product_extract",
+      "product_mpn": "CP2K16G64C38U5B",
+      "source_urls": [
+        "https://www.crucial.com/memory/ddr5/cp2k16g64c38u5b"
+      ],
+      "recorded_at": "2026-08-08T09:13:58Z",
+      "authored_content_retained": false,
+      "bytes": 1280,
+      "sha256": "1873bc726deae25589231781bd046452d0a56234b5bf452a5ac74b2d8e4afb3c"
+    },
+    {
+      "file": "teamgroup-ff3d532g6000hc30dc01.extract.json",
+      "evidence_type": "minimal_factual_product_extract",
+      "product_mpn": "FF3D532G6000HC30DC01",
+      "source_urls": [
+        "https://www.teamgroupinc.com/en/product-detail/memory/T-FORCE/delta-rgb-ddr5-black/delta-rgb-ddr5-black-FF3D532G6000HC30DC01/"
+      ],
+      "recorded_at": "2026-08-08T09:13:58Z",
+      "authored_content_retained": false,
+      "bytes": 1394,
+      "sha256": "760a31a2962e42b94e169575fc78fd33772587d3bf0f9029affa38668090dda8"
+    },
+    {
+      "file": "teamgroup-ffrd532g6000hc30dc01.extract.json",
+      "evidence_type": "minimal_factual_product_extract",
+      "product_mpn": "FFRD532G6000HC30DC01",
+      "source_urls": [
+        "https://www.teamgroupinc.com/en/product-detail/memory/T-FORCE/delta-rgb-rog-certified-ddr5/delta-rgb-rog-certified-ddr5-FFRD532G6000HC30DC01/"
+      ],
+      "recorded_at": "2026-08-08T09:13:58Z",
+      "authored_content_retained": false,
+      "bytes": 1425,
+      "sha256": "06f4086afb06032251aef71adc82646492d4c2bb075b06127f1771772d8b1356"
+    },
+    {
+      "file": "teamgroup-ctced532g6400hc32adc01.extract.json",
+      "evidence_type": "minimal_factual_product_extract",
+      "product_mpn": "CTCED532G6400HC32ADC01",
+      "source_urls": [
+        "https://www.teamgroupinc.com/en/product-detail/memory/T-CREATE/expert-u-dimm-ddr5-black/expert-u-dimm-ddr5-black-CTCED532G6400HC32ADC01/"
+      ],
+      "recorded_at": "2026-08-08T09:13:58Z",
+      "authored_content_retained": false,
+      "bytes": 1404,
+      "sha256": "74ad14f39b791dacca062a32e01fdd8a223bcac5971906ba5dcb8e2ed0bc67c0"
+    }
+  ]
+}

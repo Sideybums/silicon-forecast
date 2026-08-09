@@ -1,0 +1,352 @@
+{
+  "schema_version": 1,
+  "fixture_set_id": "sf-ddr5-32gb-expansion-2026-08-08",
+  "status": "candidate_pending_human_review",
+  "normalization": {
+    "mpn": "mpn-v1-uppercase-trim"
+  },
+  "products": [
+    {
+      "product_key": "kingston-fury-beast-kf560c36bbek2-32",
+      "revision_no": 1,
+      "manufacturer": {
+        "key": "kingston-technology",
+        "name": "Kingston Technology",
+        "aliases": [
+          "Kingston",
+          "Kingston Technology"
+        ]
+      },
+      "model": "Kingston FURY Beast DDR5-6000 CL36",
+      "mpn_raw": "KF560C36BBEK2-32",
+      "mpn_normalized": "KF560C36BBEK2-32",
+      "specification": {
+        "memory_generation": "DDR5",
+        "total_capacity_gb": 32,
+        "module_count": 2,
+        "capacity_per_module_gb": 16,
+        "speed_mt_s": 6000,
+        "form_factor": "UDIMM",
+        "ecc": false,
+        "registered": false,
+        "buffering": "unbuffered"
+      },
+      "review": {
+        "status": "draft",
+        "evidence_references": [
+          "research/evidence/catalogue-expansion-2026-08-08/kingston-kf560c36bbek2-32.extract.json"
+        ],
+        "evidence_note": "First-party Kingston datasheet establishes the exact MPN, 32GB as two 16GB modules, DDR5 speed and 288-pin DIMM construction. DDR5 on-die ECC is not system ECC. Human additive review remains pending."
+      },
+      "identifiers": [
+        {
+          "type": "MPN",
+          "raw_value": "KF560C36BBEK2-32",
+          "normalized_value": "KF560C36BBEK2-32",
+          "is_primary": true,
+          "evidence_reference": "research/evidence/catalogue-expansion-2026-08-08/kingston-kf560c36bbek2-32.extract.json"
+        }
+      ]
+    },
+    {
+      "product_key": "crucial-classic-ct2k16g56c46u5",
+      "revision_no": 1,
+      "manufacturer": {
+        "key": "crucial",
+        "name": "Crucial",
+        "aliases": [
+          "Crucial",
+          "Micron Crucial"
+        ]
+      },
+      "model": "Crucial Classic DDR5-5600 CL46",
+      "mpn_raw": "CT2K16G56C46U5",
+      "mpn_normalized": "CT2K16G56C46U5",
+      "specification": {
+        "memory_generation": "DDR5",
+        "total_capacity_gb": 32,
+        "module_count": 2,
+        "capacity_per_module_gb": 16,
+        "speed_mt_s": 5600,
+        "form_factor": "UDIMM",
+        "ecc": false,
+        "registered": false,
+        "buffering": "unbuffered"
+      },
+      "review": {
+        "status": "draft",
+        "evidence_references": [
+          "research/evidence/catalogue-expansion-2026-08-08/crucial-ct2k16g56c46u5.extract.json"
+        ],
+        "evidence_note": "First-party Crucial product evidence establishes the exact MPN, 32GB as 2x16GB, DDR5 speed and unbuffered UDIMM classification. Crucial distinguishes UDIMM from EUDIMM, supporting non-system-ECC treatment. Human additive review remains pending."
+      },
+      "identifiers": [
+        {
+          "type": "MPN",
+          "raw_value": "CT2K16G56C46U5",
+          "normalized_value": "CT2K16G56C46U5",
+          "is_primary": true,
+          "evidence_reference": "research/evidence/catalogue-expansion-2026-08-08/crucial-ct2k16g56c46u5.extract.json"
+        }
+      ]
+    },
+    {
+      "product_key": "crucial-pro-cp2k16g56c46u5",
+      "revision_no": 1,
+      "manufacturer": {
+        "key": "crucial",
+        "name": "Crucial",
+        "aliases": [
+          "Crucial",
+          "Micron Crucial"
+        ]
+      },
+      "model": "Crucial Pro DDR5-5600 CL46",
+      "mpn_raw": "CP2K16G56C46U5",
+      "mpn_normalized": "CP2K16G56C46U5",
+      "specification": {
+        "memory_generation": "DDR5",
+        "total_capacity_gb": 32,
+        "module_count": 2,
+        "capacity_per_module_gb": 16,
+        "speed_mt_s": 5600,
+        "form_factor": "UDIMM",
+        "ecc": false,
+        "registered": false,
+        "buffering": "unbuffered"
+      },
+      "review": {
+        "status": "draft",
+        "evidence_references": [
+          "research/evidence/catalogue-expansion-2026-08-08/crucial-cp2k16g56c46u5.extract.json"
+        ],
+        "evidence_note": "First-party Crucial product evidence establishes the exact MPN, 32GB as 2x16GB, DDR5 speed and unbuffered UDIMM classification. Crucial distinguishes UDIMM from EUDIMM, supporting non-system-ECC treatment. Human additive review remains pending."
+      },
+      "identifiers": [
+        {
+          "type": "MPN",
+          "raw_value": "CP2K16G56C46U5",
+          "normalized_value": "CP2K16G56C46U5",
+          "is_primary": true,
+          "evidence_reference": "research/evidence/catalogue-expansion-2026-08-08/crucial-cp2k16g56c46u5.extract.json"
+        }
+      ]
+    },
+    {
+      "product_key": "crucial-pro-oc-cp2k16g60c36u5b",
+      "revision_no": 1,
+      "manufacturer": {
+        "key": "crucial",
+        "name": "Crucial",
+        "aliases": [
+          "Crucial",
+          "Micron Crucial"
+        ]
+      },
+      "model": "Crucial Pro OC DDR5-6000 CL36 Black",
+      "mpn_raw": "CP2K16G60C36U5B",
+      "mpn_normalized": "CP2K16G60C36U5B",
+      "specification": {
+        "memory_generation": "DDR5",
+        "total_capacity_gb": 32,
+        "module_count": 2,
+        "capacity_per_module_gb": 16,
+        "speed_mt_s": 6000,
+        "form_factor": "UDIMM",
+        "ecc": false,
+        "registered": false,
+        "buffering": "unbuffered"
+      },
+      "review": {
+        "status": "draft",
+        "evidence_references": [
+          "research/evidence/catalogue-expansion-2026-08-08/crucial-cp2k16g60c36u5b.extract.json"
+        ],
+        "evidence_note": "First-party Crucial product evidence establishes the exact MPN, 32GB as 2x16GB, DDR5 speed and unbuffered UDIMM classification. Crucial distinguishes UDIMM from EUDIMM, supporting non-system-ECC treatment. Human additive review remains pending."
+      },
+      "identifiers": [
+        {
+          "type": "MPN",
+          "raw_value": "CP2K16G60C36U5B",
+          "normalized_value": "CP2K16G60C36U5B",
+          "is_primary": true,
+          "evidence_reference": "research/evidence/catalogue-expansion-2026-08-08/crucial-cp2k16g60c36u5b.extract.json"
+        }
+      ]
+    },
+    {
+      "product_key": "crucial-pro-oc-cp2k16g64c38u5b",
+      "revision_no": 1,
+      "manufacturer": {
+        "key": "crucial",
+        "name": "Crucial",
+        "aliases": [
+          "Crucial",
+          "Micron Crucial"
+        ]
+      },
+      "model": "Crucial Pro OC DDR5-6400 CL38 Black",
+      "mpn_raw": "CP2K16G64C38U5B",
+      "mpn_normalized": "CP2K16G64C38U5B",
+      "specification": {
+        "memory_generation": "DDR5",
+        "total_capacity_gb": 32,
+        "module_count": 2,
+        "capacity_per_module_gb": 16,
+        "speed_mt_s": 6400,
+        "form_factor": "UDIMM",
+        "ecc": false,
+        "registered": false,
+        "buffering": "unbuffered"
+      },
+      "review": {
+        "status": "draft",
+        "evidence_references": [
+          "research/evidence/catalogue-expansion-2026-08-08/crucial-cp2k16g64c38u5b.extract.json"
+        ],
+        "evidence_note": "First-party Crucial product evidence establishes the exact MPN, 32GB as 2x16GB, DDR5 speed and unbuffered UDIMM classification. Crucial distinguishes UDIMM from EUDIMM, supporting non-system-ECC treatment. Human additive review remains pending."
+      },
+      "identifiers": [
+        {
+          "type": "MPN",
+          "raw_value": "CP2K16G64C38U5B",
+          "normalized_value": "CP2K16G64C38U5B",
+          "is_primary": true,
+          "evidence_reference": "research/evidence/catalogue-expansion-2026-08-08/crucial-cp2k16g64c38u5b.extract.json"
+        }
+      ]
+    },
+    {
+      "product_key": "teamgroup-tforce-delta-rgb-ff3d532g6000hc30dc01",
+      "revision_no": 1,
+      "manufacturer": {
+        "key": "teamgroup",
+        "name": "TEAMGROUP Inc.",
+        "aliases": [
+          "TEAMGROUP",
+          "Team Group",
+          "T-FORCE",
+          "T-CREATE"
+        ]
+      },
+      "model": "T-FORCE DELTA RGB DDR5-6000 CL30 Black",
+      "mpn_raw": "FF3D532G6000HC30DC01",
+      "mpn_normalized": "FF3D532G6000HC30DC01",
+      "specification": {
+        "memory_generation": "DDR5",
+        "total_capacity_gb": 32,
+        "module_count": 2,
+        "capacity_per_module_gb": 16,
+        "speed_mt_s": 6000,
+        "form_factor": "UDIMM",
+        "ecc": false,
+        "registered": false,
+        "buffering": "unbuffered"
+      },
+      "review": {
+        "status": "draft",
+        "evidence_references": [
+          "research/evidence/catalogue-expansion-2026-08-08/teamgroup-ff3d532g6000hc30dc01.extract.json"
+        ],
+        "evidence_note": "The exact first-party TEAMGROUP product-table row establishes MPN, 32GB as 2x16GB and DDR5 speed; its product classification identifies desktop U-DIMM. On-die ECC is not system ECC. Human additive review remains pending."
+      },
+      "identifiers": [
+        {
+          "type": "MPN",
+          "raw_value": "FF3D532G6000HC30DC01",
+          "normalized_value": "FF3D532G6000HC30DC01",
+          "is_primary": true,
+          "evidence_reference": "research/evidence/catalogue-expansion-2026-08-08/teamgroup-ff3d532g6000hc30dc01.extract.json"
+        }
+      ]
+    },
+    {
+      "product_key": "teamgroup-tforce-delta-rog-ffrd532g6000hc30dc01",
+      "revision_no": 1,
+      "manufacturer": {
+        "key": "teamgroup",
+        "name": "TEAMGROUP Inc.",
+        "aliases": [
+          "TEAMGROUP",
+          "Team Group",
+          "T-FORCE",
+          "T-CREATE"
+        ]
+      },
+      "model": "T-FORCE DELTA RGB ROG Certified DDR5-6000 CL30",
+      "mpn_raw": "FFRD532G6000HC30DC01",
+      "mpn_normalized": "FFRD532G6000HC30DC01",
+      "specification": {
+        "memory_generation": "DDR5",
+        "total_capacity_gb": 32,
+        "module_count": 2,
+        "capacity_per_module_gb": 16,
+        "speed_mt_s": 6000,
+        "form_factor": "UDIMM",
+        "ecc": false,
+        "registered": false,
+        "buffering": "unbuffered"
+      },
+      "review": {
+        "status": "draft",
+        "evidence_references": [
+          "research/evidence/catalogue-expansion-2026-08-08/teamgroup-ffrd532g6000hc30dc01.extract.json"
+        ],
+        "evidence_note": "The exact first-party TEAMGROUP product-table row establishes MPN, 32GB as 2x16GB and DDR5 speed; its product classification identifies desktop U-DIMM. On-die ECC is not system ECC. Human additive review remains pending."
+      },
+      "identifiers": [
+        {
+          "type": "MPN",
+          "raw_value": "FFRD532G6000HC30DC01",
+          "normalized_value": "FFRD532G6000HC30DC01",
+          "is_primary": true,
+          "evidence_reference": "research/evidence/catalogue-expansion-2026-08-08/teamgroup-ffrd532g6000hc30dc01.extract.json"
+        }
+      ]
+    },
+    {
+      "product_key": "teamgroup-tcreate-expert-ctced532g6400hc32adc01",
+      "revision_no": 1,
+      "manufacturer": {
+        "key": "teamgroup",
+        "name": "TEAMGROUP Inc.",
+        "aliases": [
+          "TEAMGROUP",
+          "Team Group",
+          "T-FORCE",
+          "T-CREATE"
+        ]
+      },
+      "model": "T-CREATE EXPERT DDR5-6400 CL32 Black",
+      "mpn_raw": "CTCED532G6400HC32ADC01",
+      "mpn_normalized": "CTCED532G6400HC32ADC01",
+      "specification": {
+        "memory_generation": "DDR5",
+        "total_capacity_gb": 32,
+        "module_count": 2,
+        "capacity_per_module_gb": 16,
+        "speed_mt_s": 6400,
+        "form_factor": "UDIMM",
+        "ecc": false,
+        "registered": false,
+        "buffering": "unbuffered"
+      },
+      "review": {
+        "status": "draft",
+        "evidence_references": [
+          "research/evidence/catalogue-expansion-2026-08-08/teamgroup-ctced532g6400hc32adc01.extract.json"
+        ],
+        "evidence_note": "The exact first-party TEAMGROUP product-table row establishes MPN, 32GB as 2x16GB and DDR5 speed; its product classification identifies desktop U-DIMM. On-die ECC is not system ECC. Human additive review remains pending."
+      },
+      "identifiers": [
+        {
+          "type": "MPN",
+          "raw_value": "CTCED532G6400HC32ADC01",
+          "normalized_value": "CTCED532G6400HC32ADC01",
+          "is_primary": true,
+          "evidence_reference": "research/evidence/catalogue-expansion-2026-08-08/teamgroup-ctced532g6400hc32adc01.extract.json"
+        }
+      ]
+    }
+  ]
+}

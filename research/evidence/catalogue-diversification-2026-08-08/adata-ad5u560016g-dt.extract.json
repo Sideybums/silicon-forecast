@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "evidence_type": "minimal_factual_product_extract",
+  "product_mpn": "AD5U560016G-DT",
+  "source": {
+    "publisher": "ADATA Technology Co., Ltd.",
+    "url": "https://assets.adata.com/storage/downloadfile/datasheet_ddr5_5600_u_dimm_20251111_v2.pdf",
+    "retrieved_on": "2026-08-08",
+    "source_response_bytes": 548398,
+    "source_response_sha256": "25718981aa5ce970c3628a26c6e44b1e124b4a7229e01472b67634f39f203209"
+  },
+  "extraction": {
+    "recorded_at": "2026-08-08T18:23:49Z",
+    "method": "manual minimal factual extraction from independently retrieved first-party source",
+    "authored_content_retained": false
+  },
+  "facts": {
+    "heading": "DDR5-5600 U-DIMM Memory Module",
+    "memory_generation": "DDR5",
+    "tested_speed_mt_s": 5600,
+    "module_type": "UDIMM",
+    "pin_count": 288,
+    "package_type": "Dual Tray",
+    "module_configuration_note": "The ordering table places exact MPN AD5U560016G-DT on the 16GB Dual Tray row; interpreting Dual Tray as a two-module 2x16GB package remains a human-review caveat.",
+    "ecc_classification_note": "The datasheet states on-die error correcting code; this is not treated as system-visible ECC. UDIMM supports the unregistered/unbuffered classification pending human acceptance.",
+    "module_capacity_gb": 16
+  }
+}

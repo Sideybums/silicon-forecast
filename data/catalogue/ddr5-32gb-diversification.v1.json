@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "fixture_set_id": "sf-ddr5-32gb-diversification-2026-08-08",
+  "status": "candidate_pending_human_review",
+  "normalization": {
+    "mpn": "mpn-v1-uppercase-trim"
+  },
+  "products": [
+    {
+      "product_key": "corsair-vengeance-cmk32gx5m2b6000c36",
+      "revision_no": 1,
+      "manufacturer": {
+        "key": "corsair",
+        "name": "Corsair",
+        "aliases": [
+          "Corsair",
+          "Corsair Memory"
+        ]
+      },
+      "model": "Corsair VENGEANCE DDR5-6000 CL36 Black",
+      "mpn_raw": "CMK32GX5M2B6000C36",
+      "mpn_normalized": "CMK32GX5M2B6000C36",
+      "specification": {
+        "memory_generation": "DDR5",
+        "total_capacity_gb": 32,
+        "module_count": 2,
+        "capacity_per_module_gb": 16,
+        "speed_mt_s": 6000,
+        "form_factor": "UDIMM",
+        "ecc": false,
+        "registered": false,
+        "buffering": "unbuffered"
+      },
+      "review": {
+        "status": "draft",
+        "evidence_references": [
+          "research/evidence/catalogue-diversification-2026-08-08/corsair-cmk32gx5m2b6000c36.extract.json"
+        ],
+        "evidence_note": "First-party Corsair product data establishes the exact MPN, 32GB as 2x16GB, DDR5-6000, UDIMM and 288-pin format. The source does not explicitly state system-ECC status; the derived non-system-ECC classification remains pending human acceptance."
+      },
+      "identifiers": [
+        {
+          "type": "MPN",
+          "raw_value": "CMK32GX5M2B6000C36",
+          "normalized_value": "CMK32GX5M2B6000C36",
+          "is_primary": true,
+          "evidence_reference": "research/evidence/catalogue-diversification-2026-08-08/corsair-cmk32gx5m2b6000c36.extract.json"
+        }
+      ]
+    },
+    {
+      "product_key": "adata-ddr5-4800-ad5u480016g-dt",
+      "revision_no": 1,
+      "manufacturer": {
+        "key": "adata-xpg",
+        "name": "ADATA Technology Co., Ltd.",
+        "aliases": [
+          "ADATA",
+          "ADATA Technology",
+          "XPG"
+        ]
+      },
+      "model": "ADATA DDR5-4800 U-DIMM Dual Tray",
+      "mpn_raw": "AD5U480016G-DT",
+      "mpn_normalized": "AD5U480016G-DT",
+      "specification": {
+        "memory_generation": "DDR5",
+        "total_capacity_gb": 32,
+        "module_count": 2,
+        "capacity_per_module_gb": 16,
+        "speed_mt_s": 4800,
+        "form_factor": "UDIMM",
+        "ecc": false,
+        "registered": false,
+        "buffering": "unbuffered"
+      },
+      "review": {
+        "status": "draft",
+        "evidence_references": [
+          "research/evidence/catalogue-diversification-2026-08-08/adata-ad5u480016g-dt.extract.json"
+        ],
+        "evidence_note": "First-party ADATA datasheet establishes the exact 16GB Dual Tray MPN, DDR5-4800 U-DIMM and 288-pin format. Treating Dual Tray as 2x16GB and on-die ECC as non-system-ECC are explicit derived-classification caveats pending human acceptance."
+      },
+      "identifiers": [
+        {
+          "type": "MPN",
+          "raw_value": "AD5U480016G-DT",
+          "normalized_value": "AD5U480016G-DT",
+          "is_primary": true,
+          "evidence_reference": "research/evidence/catalogue-diversification-2026-08-08/adata-ad5u480016g-dt.extract.json"
+        }
+      ]
+    },
+    {
+      "product_key": "adata-ddr5-5600-ad5u560016g-dt",
+      "revision_no": 1,
+      "manufacturer": {
+        "key": "adata-xpg",
+        "name": "ADATA Technology Co., Ltd.",
+        "aliases": [
+          "ADATA",
+          "ADATA Technology",
+          "XPG"
+        ]
+      },
+      "model": "ADATA DDR5-5600 U-DIMM Dual Tray",
+      "mpn_raw": "AD5U560016G-DT",
+      "mpn_normalized": "AD5U560016G-DT",
+      "specification": {
+        "memory_generation": "DDR5",
+        "total_capacity_gb": 32,
+        "module_count": 2,
+        "capacity_per_module_gb": 16,
+        "speed_mt_s": 5600,
+        "form_factor": "UDIMM",
+        "ecc": false,
+        "registered": false,
+        "buffering": "unbuffered"
+      },
+      "review": {
+        "status": "draft",
+        "evidence_references": [
+          "research/evidence/catalogue-diversification-2026-08-08/adata-ad5u560016g-dt.extract.json"
+        ],
+        "evidence_note": "First-party ADATA datasheet establishes the exact 16GB Dual Tray MPN, DDR5-5600 U-DIMM and 288-pin format. Treating Dual Tray as 2x16GB and on-die ECC as non-system-ECC are explicit derived-classification caveats pending human acceptance."
+      },
+      "identifiers": [
+        {
+          "type": "MPN",
+          "raw_value": "AD5U560016G-DT",
+          "normalized_value": "AD5U560016G-DT",
+          "is_primary": true,
+          "evidence_reference": "research/evidence/catalogue-diversification-2026-08-08/adata-ad5u560016g-dt.extract.json"
+        }
+      ]
+    },
+    {
+      "product_key": "patriot-viper-venom-amd-vv532g60c30ak",
+      "revision_no": 1,
+      "manufacturer": {
+        "key": "patriot-viper",
+        "name": "Patriot Memory",
+        "aliases": [
+          "Patriot",
+          "Patriot Memory",
+          "Viper",
+          "Viper Gaming"
+        ]
+      },
+      "model": "Viper Venom AMD DDR5-6000 CL30",
+      "mpn_raw": "VV532G60C30AK",
+      "mpn_normalized": "VV532G60C30AK",
+      "specification": {
+        "memory_generation": "DDR5",
+        "total_capacity_gb": 32,
+        "module_count": 2,
+        "capacity_per_module_gb": 16,
+        "speed_mt_s": 6000,
+        "form_factor": "UDIMM",
+        "ecc": false,
+        "registered": false,
+        "buffering": "unbuffered"
+      },
+      "review": {
+        "status": "draft",
+        "evidence_references": [
+          "research/evidence/catalogue-diversification-2026-08-08/patriot-vv532g60c30ak.extract.json"
+        ],
+        "evidence_note": "First-party Patriot catalogue and SKU sheet establish the exact MPN, 32GB as 2x16GB, DDR5-6000 and UDIMM kit format. On-die ECC is not system-visible ECC; derived non-system-ECC and unbuffered classifications remain pending human acceptance."
+      },
+      "identifiers": [
+        {
+          "type": "MPN",
+          "raw_value": "VV532G60C30AK",
+          "normalized_value": "VV532G60C30AK",
+          "is_primary": true,
+          "evidence_reference": "research/evidence/catalogue-diversification-2026-08-08/patriot-vv532g60c30ak.extract.json"
+        }
+      ]
+    }
+  ]
+}

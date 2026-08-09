@@ -1,0 +1,94 @@
+{
+  "schema_version": 1,
+  "publication_id": "sf-public-ddr5-marketplace-observations-2026-08-09-v1",
+  "status": "approved_public_research_snapshot",
+  "approved_by": {
+    "name": "David Sidebottom",
+    "role": "project_owner"
+  },
+  "approved_at": "2026-08-09T08:28:21Z",
+  "source_snapshot_reference": "data/observations/candidate/amazon-uk-2026-08-06T103140Z.v1.json",
+  "source_snapshot_sha256": "27591a9b5f220c0e18be845bd4a97ea4bb04e813891aa9ff7e6656f9dce68a5d",
+  "observation_time": "2026-08-06T10:31:40Z",
+  "market": "GB",
+  "currency": "GBP",
+  "series": {
+    "channel": "MARKETPLACE_PRO",
+    "offer_basis": "ASK",
+    "condition": "NEW_OTHER",
+    "index_eligible": false
+  },
+  "commercial_status": {
+    "links_are_affiliate": false,
+    "links_are_tracked": false,
+    "commission_expected": false,
+    "link_label": "Unpaid source link"
+  },
+  "publication_scope": {
+    "allowed_fields": [
+      "observation_key",
+      "product_name",
+      "mpn",
+      "observed_price_gbp",
+      "seller",
+      "availability",
+      "source_url",
+      "caveats"
+    ],
+    "current_price_claim_allowed": false,
+    "deal_or_recommendation_allowed": false,
+    "index_inclusion_allowed": false,
+    "production_source_approval_implied": false
+  },
+  "observations": [
+    {
+      "observation_key": "amazon-uk-B0CYHC58P6-2026-08-06T103140Z",
+      "product_name": "Kingston FURY Beast 32GB DDR5-6000 CL30",
+      "mpn": "KF560C30BBEK2-32",
+      "observed_price_gbp": "469.99",
+      "seller": "CCL Computers",
+      "availability": "In stock when observed",
+      "source_url": "https://www.amazon.co.uk/dp/B0CYHC58P6",
+      "caveats": [
+        "Professional third-party marketplace asking price",
+        "VAT inclusion was not explicitly verified",
+        "Delivery cost was not verified"
+      ]
+    },
+    {
+      "observation_key": "amazon-uk-B0B72827G5-2026-08-06T103140Z",
+      "product_name": "Kingston FURY Renegade 32GB DDR5-6400 CL32",
+      "mpn": "KF564C32RSK2-32",
+      "observed_price_gbp": "450.94",
+      "seller": "CCL Computers",
+      "availability": "In stock when observed",
+      "source_url": "https://www.amazon.co.uk/dp/B0B72827G5",
+      "caveats": [
+        "Professional third-party marketplace asking price",
+        "VAT inclusion was not explicitly verified",
+        "Delivery cost was not verified"
+      ]
+    },
+    {
+      "observation_key": "amazon-uk-B0BF6ZQ8MY-2026-08-06T103140Z",
+      "product_name": "G.SKILL Trident Z5 Neo RGB 32GB DDR5-6000 CL36",
+      "mpn": "F5-6000J3636F16GX2-TZ5NR",
+      "observed_price_gbp": "527.08",
+      "seller": "UKZEZSTORE",
+      "availability": "Usually dispatched within 5 to 6 days when observed",
+      "source_url": "https://www.amazon.co.uk/dp/B0BF6ZQ8MY",
+      "caveats": [
+        "Professional third-party marketplace asking price",
+        "VAT inclusion was not explicitly verified",
+        "Free delivery was displayed",
+        "Availability requires policy review"
+      ]
+    }
+  ],
+  "limitations": [
+    "These are dated observations, not current-price claims.",
+    "The prices are marketplace asking prices and do not enter the primary-retail index.",
+    "The sample is narrow and is not representative of the complete UK market.",
+    "No purchase recommendation, retailer endorsement or affiliate relationship is implied."
+  ]
+}

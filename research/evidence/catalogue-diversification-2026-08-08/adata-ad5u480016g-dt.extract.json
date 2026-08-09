@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "evidence_type": "minimal_factual_product_extract",
+  "product_mpn": "AD5U480016G-DT",
+  "source": {
+    "publisher": "ADATA Technology Co., Ltd.",
+    "url": "https://assets.adata.com/storage/downloadfile/datasheet_ddr5_4800_u_dimm_20230829.pdf",
+    "retrieved_on": "2026-08-08",
+    "source_response_bytes": 1102047,
+    "source_response_sha256": "7a9a9001c8bb7adc113a4dad847e95ad188ca5affd3a3939970fff6051c025cd"
+  },
+  "extraction": {
+    "recorded_at": "2026-08-08T18:23:49Z",
+    "method": "manual minimal factual extraction from independently retrieved first-party source",
+    "authored_content_retained": false
+  },
+  "facts": {
+    "heading": "DDR5-4800 U-DIMM Memory Module",
+    "memory_generation": "DDR5",
+    "tested_speed_mt_s": 4800,
+    "module_type": "UDIMM",
+    "pin_count": 288,
+    "package_type": "Dual Tray",
+    "module_configuration_note": "The ordering table places exact MPN AD5U480016G-DT on the 16GB Dual Tray row; interpreting Dual Tray as a two-module 2x16GB package remains a human-review caveat.",
+    "ecc_classification_note": "The datasheet states on-die error correcting code; this is not treated as system-visible ECC. UDIMM supports the unregistered/unbuffered classification pending human acceptance.",
+    "module_capacity_gb": 16
+  }
+}

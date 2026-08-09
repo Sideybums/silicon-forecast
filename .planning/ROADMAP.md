@@ -4,7 +4,7 @@
 
 Build the evidence chain in dependency order. The roadmap intentionally delays broad UI, editorial automation and geographic expansion until one lawful regional DDR5 index has survived a private shadow run.
 
-A narrow public pre-launch publisher-review site is an approved enabling exception to that sequencing. It may explain the project, show clearly labelled synthetic demonstrations and publish contact/privacy/affiliate information, but it must not imply live prices, approved source coverage, a supported public index or retailer partnerships that do not yet exist.
+A narrow public research-preview site is an approved enabling exception to that sequencing. It may explain the project and publish an exact, checksum-bound projection of project-owner-approved dated factual observations with direct unpaid source links, provided every value retains its observation time, channel, provenance and limitations. It must not imply current prices, approved production-source coverage, a supported public index, recommendations or retailer partnerships that do not exist.
 
 ## Phase 1 — Source and Methodology Gate
 
@@ -25,17 +25,17 @@ A narrow public pre-launch publisher-review site is an approved enabling excepti
 
 **Goal:** Establish the boring foundations on which autonomous operation can safely depend.
 
-**Requirements:** CAT-01, CAT-02, CAT-03, APP-04, AI-01, AI-03, AI-04
+**Requirements:** CAT-01, CAT-02, CAT-03, CAT-04, APP-04, AI-01, AI-03, AI-04
 
 **Deliverables:**
 - TypeScript/Next.js modular-monolith skeleton and PostgreSQL migrations.
 - Environment, secret and migration conventions.
 - Canonical product, region, source, retailer, methodology, audit and lock schemas.
-- Reviewed 32GB DDR5 seed catalogue and labelled matching fixture set.
+- Reviewed exact-MPN candidate catalogue, labelled matching fixtures, effective-dated lifecycle metadata and separately identified reserve candidates. Catalogue membership remains explicitly separate from basket membership and baseline eligibility.
 - Worker registry and default-on external-action locks.
 - CI, baseline tests and threat model for untrusted source content.
 
-**Exit criteria:** A fresh environment can be created reproducibly; seed catalogue validates; locks and audit behaviour have tests; no secret material exists in Git.
+**Exit criteria:** A fresh environment can be created reproducibly; seed catalogue validates; product retirement/successor history remains additive; reserve and basket states cannot be conflated; locks and audit behaviour have tests; no secret material exists in Git. Reaching a candidate-product count does not approve or prove a resilient basket.
 
 ## Phase 3 — Immutable Ingestion Vertical Slice
 
@@ -70,28 +70,31 @@ A narrow public pre-launch publisher-review site is an approved enabling excepti
 
 **Goal:** Produce the first traceable 32GB DDR5 regional index and make its quality legible.
 
-**Requirements:** IDX-01, IDX-02, IDX-03, IDX-04, IDX-05, IDX-06, APP-01, APP-02, APP-03
+**Requirements:** IDX-01, IDX-02, IDX-03, IDX-04, IDX-05, IDX-06, IDX-07, APP-01, APP-02, APP-03
 
 **Deliverables:**
 - Qualification and regional total-price rules.
 - Daily product derivation and basket/index calculation as versioned pure logic.
 - Full input lineage, coverage and quality state.
+- Baseline-candidate eligibility report, manufacturer/family coverage report and deterministic leave-one-product-out quality-gate matrix.
+- Product retirement/EOL impact report and an explicit basket-vintage, rebase or linking proposal; no silent successor substitution.
 - Additive correction mechanism and replay tests.
 - Private index, source-health, anomaly and review dashboard.
 
-**Exit criteria:** Fixed inputs reproduce bit-for-bit equivalent calculated values; gaps remain gaps; every displayed point resolves to exact source observations and a calculation version.
+**Exit criteria:** Fixed inputs reproduce bit-for-bit equivalent calculated values; gaps remain gaps; every displayed point resolves to exact source observations and a calculation version. A baseline cannot be approved unless every single-product-loss counterfactual passes all standard quality gates under the approved resilience threshold.
 
 ## Phase 6 — Worker Harness and Operational Autonomy
 
 **Goal:** Let bounded workers run the private pipeline while making every action observable and stoppable.
 
-**Requirements:** AI-02, AI-05, AI-06, OPS-01
+**Requirements:** AI-02, AI-05, AI-06, OPS-01, EVT-01, EVT-02
 
 **Deliverables:**
 - Worker task contracts, run ledger, schedules and scoped stop controls.
 - Producer-before-consumer orchestration with idempotency keys.
 - Bounded retries, circuit breakers, heartbeats and cost metadata.
 - Agent evaluation suites for matching assistance, anomaly triage and research drafting.
+- Registered research-source discovery, event-draft records with supporting and contradictory evidence, and an authorised-editor publication gate.
 - Private command view showing locks, runs, failures and pending human decisions.
 
 **Exit criteria:** Back-to-back and failed runs are safe; unknown workers or autonomy levels fail closed; the pipeline can be paused globally or by source/worker; no external-action lock is bypassed.
@@ -106,15 +109,16 @@ A narrow public pre-launch publisher-review site is an approved enabling excepti
 - Tested backup, restore and full deterministic replay.
 - At least 30 consecutive days of private scheduled operation.
 - Reliability, source concentration, match precision, anomaly and human-workload report.
+- Controlled product-disappearance/EOL and source/retailer-loss exercises, proving the original series remains replayable and no successor enters without an approved basket/baseline revision.
 - Incident, correction and source-suspension playbooks.
 - Security and accessibility verification.
 - Explicit build/hold/pivot decision for public beta.
 
 **Exit criteria:** No unresolved severe integrity incident; all values retain lineage; review burden is measured and acceptable; public beta is separately approved rather than assumed.
 
-## Deferred Milestone — Editorial Intelligence and Public Beta
+## Deferred Milestone — Supported Public Index and Editorial Automation
 
-After the private MVP proves the data operation, plan a new milestone for events, forecasts, public pages and commercial experiments. That milestone must include an AI design contract, editorial evaluation set, citation/claim checks and continued human publication approval.
+The bounded public research preview may publish separately approved dated factual observations and human-reviewed market notes before the private MVP is complete. A supported live index, automated editorial pipeline, forecasts and commercial experiments remain deferred until the private data operation proves dependable. That later milestone must include an AI design contract, editorial evaluation set, citation/claim checks and continued human publication approval.
 
 ## Phase Order Rationale
 

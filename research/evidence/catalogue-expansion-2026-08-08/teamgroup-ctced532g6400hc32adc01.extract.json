@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "evidence_type": "minimal_factual_product_extract",
+  "product_mpn": "CTCED532G6400HC32ADC01",
+  "source": {
+    "publisher": "TEAMGROUP Inc.",
+    "url": "https://www.teamgroupinc.com/en/product-detail/memory/T-CREATE/expert-u-dimm-ddr5-black/expert-u-dimm-ddr5-black-CTCED532G6400HC32ADC01/",
+    "retrieved_on": "2026-08-08",
+    "source_response_bytes": 286484,
+    "source_response_sha256": "a8f33af7967f4e4ecb8f19fef52da271a044d443c7a42956417cd74b46239390"
+  },
+  "extraction": {
+    "recorded_at": "2026-08-08T09:13:58Z",
+    "method": "Deterministic factual extraction from the exact TEAMGROUP product table row and first-party product classification; source response was checksum-pinned before authored content was discarded.",
+    "authored_content_retained": false
+  },
+  "facts": {
+    "heading": "EXPERT DDR5 DESKTOP MEMORY 32GB(2x16GB) 6400MHz CL32",
+    "memory_generation": "DDR5",
+    "total_capacity_gb": 32,
+    "module_count": 2,
+    "capacity_per_module_gb": 16,
+    "tested_speed_mt_s": 6400,
+    "module_type": "UDIMM",
+    "registered_or_unbuffered": "Unbuffered",
+    "ecc_classification_note": "The first-party product response classifies the product under memory/u-dimm/ddr5 and calls it desktop memory. References to on-die ECC describe the DDR5 device-level feature, not system-level ECC memory; classification remains pending human review."
+  }
+}

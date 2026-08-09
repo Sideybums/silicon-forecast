@@ -2,7 +2,7 @@
 
 ## Status
 
-Foundation and candidate-catalogue slices implemented while Phase 1 access decisions remain pending. This work does not activate a production region, source, methodology, worker, database-backed public page or editorial collector.
+Foundation and candidate-catalogue slices implemented while Phase 1 access decisions remain pending. Twelve additional exact-MPN records exist across two candidate fixtures, bringing the monitored-universe control-plane pilot to 16 products and seven manufacturers. An additive selected-product review now gives Corsair and Patriot fixture-only reviewed status, leaving the eight-product expansion and two ADATA records pending; Lexar is a documented normal-access evidence abstention rather than an active completion blocker. The total remains a research pilot rather than a target market universe or proven resilient basket. This work does not activate a production region, source, methodology, worker, database-backed public page or editorial collector.
 
 ## Objective
 
@@ -32,6 +32,10 @@ Create the smallest reproducible PostgreSQL foundation needed for later catalogu
 3. A disposable PostgreSQL 16 integration test that runs the migration against a fresh database and proves the main fail-closed constraints.
 4. A dormant editorial intelligence design contract for later milestone planning.
 5. A candidate 32GB DDR5 seed catalogue containing four exact-MPN products, four minimal factual evidence extracts with SHA-256 manifests, 20 labelled matching examples and deterministic SQL rendering into the disposable PostgreSQL test environment.
+
+6. A least-privilege additive review migration and deterministic renderer that apply the approved fixture review as superseding reviewed revisions, one approval/application record and attributable audit events without mutating draft history or weakening locks.
+7. A fixture-only resilience pilot that keeps 16 monitored products distinct from reviewed, baseline/reserve and basket states; validates synthetic effective-dated lifecycle transitions; renders deterministic manufacturer, family, speed and missing-target coverage; and binds canonical status to each exact catalogue content SHA-256 plus the exact approval artefact checksum for reviewed state, without claiming empirical lifecycle or methodology approval.
+8. A separate four-product Corsair/ADATA/Patriot diversification candidate tranche with independently retained first-party extracts, checksum-pinned evidence, explicit ADATA packaging inference caveats and runtime cross-tranche/provenance validation. An additive checksum-bound selection review approves Corsair and Patriot for fixture use only, holds both ADATA records pending stronger literal kit evidence and records Lexar as a normal-access evidence abstention. All remain ineligible for baseline, reserve or basket use.
 
 ## Explicitly excluded
 
@@ -65,7 +69,11 @@ The disposable database test deliberately applies the migration as the PostgreSQ
 
 - Managed MFA-capable authentication and role enforcement.
 - Narrow security-definer mutation functions and runtime database roles.
-- Apply the approved fixture review as additive reviewed database revisions through least-privilege human approval functions.
-- Broader manufacturer coverage where exact first-party evidence can be retained without bypassing access controls.
+- Production binding between authenticated human identities and the catalogue-review database role.
+- Broader manufacturer coverage where exact first-party evidence can be retained without bypassing access controls; Lexar is the remaining named first-party gap after the Corsair/ADATA/Patriot tranche.
+- Empirical effective-dated lifecycle decisions backed by retained first-party or approved-source evidence; the current lifecycle fixture is synthetic control-plane coverage only.
+- Reserve readiness and basket-vintage assignments after approved-source history exists; automatic promotion and basket mutation remain locked.
+- Additive EOL/successor proposals and fixtures with no automatic basket mutation or successor inheritance.
+- Manufacturer/family coverage reporting and candidate-pool diversification beyond the current seven-manufacturer, 16-product pilot.
 - Full audit coverage for administrative commands.
 - Threat-model exercises for untrusted source content.

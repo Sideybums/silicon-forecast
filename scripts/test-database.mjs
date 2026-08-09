@@ -1,15 +1,24 @@
 import { execFileSync, spawnSync } from "node:child_process";
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import { resolve } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const projectRoot = fileURLToPath(new URL("../", import.meta.url));
 const image = process.env.SF_POSTGRES_IMAGE ?? "postgres:16-alpine@sha256:57c72fd2a128e416c7fcc499958864df5301e940bca0a56f58fddf30ffc07777";
 const name = `silicon-forecast-postgres-test-${process.pid}`;
-const migration = readFileSync(resolve(projectRoot, "db/migrations/0001_foundation.sql"), "utf8");
+const migrationDir = resolve(projectRoot, "db/migrations");
+const migrations = readdirSync(migrationDir)
+  .filter((file) => /^\d{4}_[a-z0-9_]+\.sql$/u.test(file))
+  .sort()
+  .map((file) => ({ file, sql: readFileSync(resolve(migrationDir, file), "utf8") }));
 const candidateCatalogueSeed = execFileSync(
   process.execPath,
   [resolve(projectRoot, "scripts/render-catalogue-seed-sql.mjs")],
+  { encoding: "utf8", cwd: projectRoot },
+);
+const reviewedCatalogueSeed = execFileSync(
+  process.execPath,
+  [resolve(projectRoot, "scripts/render-catalogue-review-sql.mjs")],
   { encoding: "utf8", cwd: projectRoot },
 );
 const tests = readFileSync(resolve(projectRoot, "db/tests/foundation.sql"), "utf8");
@@ -56,19 +65,27 @@ try {
   ]).trim();
   console.log(`Started disposable PostgreSQL container ${containerId.slice(0, 12)} (${image})`);
 
-  let ready = false;
-  for (let attempt = 0; attempt < 30; attempt += 1) {
-    const result = spawnSync("docker", ["exec", name, "pg_isready", "-U", "postgres", "-d", "silicon_forecast"], { encoding: "utf8" });
-    if (result.status === 0) {
-      ready = true;
-      break;
-    }
-    await new Promise((resolveWait) => setTimeout(resolveWait, 500));
+  // The official image briefly exposes its bootstrap server before restarting
+  // PostgreSQL for normal operation. A single pg_isready success can therefore
+  // race the restart and make the first migration fail. Require three stable,
+  // real SQL connections instead of treating that transient socket as ready.
+  let consecutiveReadyChecks = 0;
+  for (let attempt = 0; attempt < 60 && consecutiveReadyChecks < 3; attempt += 1) {
+    const result = spawnSync(
+      "docker",
+      ["exec", name, "psql", "-X", "-U", "postgres", "-d", "silicon_forecast", "-c", "SELECT 1"],
+      { encoding: "utf8" },
+    );
+    consecutiveReadyChecks = result.status === 0 ? consecutiveReadyChecks + 1 : 0;
+    if (consecutiveReadyChecks < 3) await new Promise((resolveWait) => setTimeout(resolveWait, 500));
   }
-  if (!ready) throw new Error("PostgreSQL did not become ready within 15 seconds");
+  if (consecutiveReadyChecks < 3) throw new Error("PostgreSQL did not become stably ready within 30 seconds");
 
-  runSql(migration, "foundation migration");
+  for (const migration of migrations) {
+    runSql(migration.sql, `migration ${migration.file}`);
+  }
   runSql(candidateCatalogueSeed, "candidate catalogue seed");
+  runSql(reviewedCatalogueSeed, "reviewed catalogue seed");
   runSql(tests, "foundation integration tests");
   console.log("Disposable PostgreSQL verification completed successfully.");
 } finally {

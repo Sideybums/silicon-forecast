@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "evidence_type": "minimal_factual_product_extract",
+  "product_mpn": "FFRD532G6000HC30DC01",
+  "source": {
+    "publisher": "TEAMGROUP Inc.",
+    "url": "https://www.teamgroupinc.com/en/product-detail/memory/T-FORCE/delta-rgb-rog-certified-ddr5/delta-rgb-rog-certified-ddr5-FFRD532G6000HC30DC01/",
+    "retrieved_on": "2026-08-08",
+    "source_response_bytes": 222722,
+    "source_response_sha256": "75811bee6d6c142c3d3b0cee598fbc15d7fee869e87dbdcf486f475479a0b004"
+  },
+  "extraction": {
+    "recorded_at": "2026-08-08T09:13:58Z",
+    "method": "Deterministic factual extraction from the exact TEAMGROUP product table row and first-party product classification; source response was checksum-pinned before authored content was discarded.",
+    "authored_content_retained": false
+  },
+  "facts": {
+    "heading": "DELTA RGB DDR5 ROG CERTIFIED DESKTOP MEMORY 32GB(2x16GB) 6000MT/s CL30",
+    "memory_generation": "DDR5",
+    "total_capacity_gb": 32,
+    "module_count": 2,
+    "capacity_per_module_gb": 16,
+    "tested_speed_mt_s": 6000,
+    "module_type": "UDIMM",
+    "registered_or_unbuffered": "Unbuffered",
+    "ecc_classification_note": "The first-party product response classifies the product under memory/u-dimm/ddr5 and calls it desktop memory. References to on-die ECC describe the DDR5 device-level feature, not system-level ECC memory; classification remains pending human review."
+  }
+}

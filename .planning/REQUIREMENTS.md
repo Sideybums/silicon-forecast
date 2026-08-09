@@ -9,14 +9,15 @@
 
 - [ ] **SRC-01**: An operator can see a register of candidate sources, access basis, applicable terms, explicit restrictions, evidence policy and commercial-use status. Silence does not require a bespoke permission request for retention or derivation of factual public observations.
 - [ ] **SRC-02**: The first supported region has at least three approved, stable price sources or an explicitly approved reduced-source experimental designation.
-- [ ] **SRC-03**: The first regional methodology defines tax, delivery, currency, collection cut-off, product eligibility, coverage, outliers, baseline and missing-data behaviour.
+- [ ] **SRC-03**: The first regional methodology defines tax, delivery, currency, collection cut-off, product eligibility, basket construction, minimum resilience margin, coverage, outliers, baseline, product retirement/successor handling and missing-data behaviour.
 - [ ] **SRC-04**: Methodology and source-use policy changes are versioned, audited and blocked from production without approval.
 
 ### Canonical Catalogue
 
 - [ ] **CAT-01**: An operator can create and maintain canonical 32GB DDR5 desktop-kit records with manufacturer, model, MPN, capacity, module count and speed.
 - [ ] **CAT-02**: Canonical products and retailer listings have stable identifiers and append-only change history for material identity fields.
-- [ ] **CAT-03**: A reviewed seed catalogue and representative labelled listing set are available for matching evaluation.
+- [ ] **CAT-03**: A reviewed seed catalogue, representative labelled listing set and separately identified reserve-candidate pool are available for matching and basket-readiness evaluation. Catalogue approval does not imply basket or baseline approval.
+- [ ] **CAT-04**: Canonical products carry effective-dated lifecycle evidence and status. A discontinued, replaced or unavailable MPN remains historically identifiable; a successor is a distinct canonical product and cannot silently inherit basket membership or baseline.
 
 ### Ingestion and Provenance
 
@@ -38,10 +39,11 @@
 
 - [ ] **IDX-01**: Raw price observations are immutable and corrections are additive, attributable and publicly explainable when published.
 - [ ] **IDX-02**: Deterministic rules derive daily regional product prices from qualifying retailer observations.
-- [ ] **IDX-03**: Deterministic rules calculate one 32GB DDR5 regional basket median and baseline-relative index.
+- [ ] **IDX-03**: Deterministic rules calculate one 32GB DDR5 regional basket median and baseline-relative index from a human-approved basket vintage that satisfies the approved resilience margin.
 - [ ] **IDX-04**: Every derived value records exact input observations, basket membership, rule/calculation version, coverage and quality state.
 - [ ] **IDX-05**: Replaying a fixed input set and calculation version produces identical derived values.
 - [ ] **IDX-06**: Unknown tax, delivery, currency, provenance or minimum coverage prevents publication rather than inventing a value.
+- [ ] **IDX-07**: Baseline approval and production activation fail unless deterministic leave-one-product-out evaluation shows that losing any single basket MPN still satisfies every standard product, retailer/source, coverage and concentration gate.
 
 ### Private Product and Administration
 
@@ -49,6 +51,13 @@
 - [ ] **APP-02**: An authorised operator can review unmatched listings, anomalies, failed imports and proposed corrections.
 - [ ] **APP-03**: The private product displays methodology version, source limitations and visible gaps without implying unsupported certainty.
 - [ ] **APP-04**: Administrative actions use role-based access, MFA-capable authentication and an append-only audit log.
+
+### Public Research and Market Context
+
+- [x] **PUB-01**: A project-owner-approved public projection can display exact-MPN dated factual offer observations with source, channel, collection time and visible limitations without implying a current price or supported index.
+- [x] **PUB-02**: Every outbound product link displays its commercial status; the initial links are direct, unpaid and untracked, and commercial participation cannot determine inclusion or editorial interpretation.
+- [ ] **EVT-01**: Agents can discover and draft market-event records from registered sources while retaining quotations, provenance, uncertainty, alternative explanations and contradictory evidence.
+- [ ] **EVT-02**: An authorised editor can approve event classification, regional impact and causal language before publication.
 
 ### Autonomous Workers and Safety
 
@@ -62,17 +71,15 @@
 ### Reliability and Release
 
 - [ ] **OPS-01**: Scheduled ingestion and derivation run with observable heartbeats, freshness checks and actionable alerts.
-- [ ] **OPS-02**: Backup, restore and deterministic replay are tested with recorded evidence.
+- [ ] **OPS-02**: Backup, restore, deterministic replay and product-loss/EOL replay scenarios are tested with recorded evidence.
 - [ ] **OPS-03**: A private shadow run completes for at least 30 consecutive days without an unresolved severe data-integrity incident.
-- [ ] **OPS-04**: Human exception workload, source reliability, matching precision and anomaly performance are measured before scope expansion.
+- [ ] **OPS-04**: Human exception workload, source reliability, product-lifecycle coverage, manufacturer/family concentration, matching precision and anomaly performance are measured before scope expansion.
 - [ ] **OPS-05**: Public release remains blocked until source-use restrictions, security, accessibility, lineage, correction and incident-response gates are approved.
 
 ## v2 Requirements
 
-### Market Events and Forecasts
+### Forecasts
 
-- **EVT-01**: Agents can discover and draft market-event records from registered sources while retaining quotations, provenance and contradictory evidence.
-- **EVT-02**: An authorised editor can approve event classification, regional impact and causal language before publication.
 - **FRC-01**: Forecasts preserve publication time, horizon, expected direction/range, confidence, evidence, counterevidence and invalidation conditions.
 - **FRC-02**: Forecast outcomes are scored deterministically against locked historical index values and retained whether successful or not.
 - **FRC-03**: Forecasts and recommendations cannot be published without explicit approval until a later readiness decision.
@@ -109,20 +116,22 @@ The v1 milestone is complete only when all v1 requirements are implemented, test
 | SRC-02 | Phase 1 | Blocked — no approved three-source portfolio or experimental designation |
 | SRC-03 | Phase 1 | Executable UK draft complete; thresholds and activation unapproved |
 | SRC-04 | Phase 1 | Governance/evidence controls defined; application enforcement pending |
-| CAT-01, CAT-02, CAT-03 | Phase 2 | Catalogue schema exists; four-product candidate seed, retained first-party evidence and 20 labelled match fixtures validate in PostgreSQL; human review and operator workflow remain pending |
+| CAT-01, CAT-02, CAT-03, CAT-04 | Phase 2 | Four-product seed, evidence and 20 labelled fixtures are human-reviewed; eight further exact-MPN candidates remain pending additive review. Empirical basket readiness, lifecycle metadata, reserve candidates and single-product-loss resilience remain pending. Catalogue count is not treated as baseline eligibility. |
 | APP-04, AI-01, AI-03, AI-04 | Phase 2 | Pending |
+| PUB-01, PUB-02 | Public research-preview exception | Complete — checksum-bound projection of three exact-MPN dated marketplace observations, direct unpaid links and visible exclusions approved 2026-08-09 |
+| EVT-01, EVT-02 | Phase 6 | Public evidence workflow and first non-causal market note established; event discovery, source registry integration and editor approval contract pending |
 | ING-01, ING-02, ING-03, ING-04, ING-05 | Phase 3 | Pending |
 | MAT-01, MAT-02, MAT-03, MAT-04, MAT-05 | Phase 4 | Pending |
-| IDX-01, IDX-02, IDX-03, IDX-04, IDX-05, IDX-06 | Phase 5 | Pending |
+| IDX-01, IDX-02, IDX-03, IDX-04, IDX-05, IDX-06, IDX-07 | Phase 5 | Pending |
 | APP-01, APP-02, APP-03 | Phase 5 | Pending |
 | AI-02, AI-05, AI-06, OPS-01 | Phase 6 | Pending |
 | OPS-02, OPS-03, OPS-04, OPS-05 | Phase 7 | Pending |
 
 **Coverage:**
-- v1 requirements: 38 total
-- Mapped to phases: 38
+- v1 requirements: 44 total
+- Mapped to phases or approved preview exception: 44
 - Unmapped: 0
 
 ---
 *Requirements defined: 2026-08-05*
-*Last updated: 2026-08-05 after initial definition*
+*Last updated: 2026-08-09 after approving the bounded public price-observation preview and moving evidence-backed market context into v1*

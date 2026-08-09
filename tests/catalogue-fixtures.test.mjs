@@ -8,7 +8,10 @@ import {
   loadJson,
   normalizeMpn,
   validateCatalogue,
+  validateCatalogueEvidenceBinding,
   validateCatalogueReview,
+  validateCatalogueSelectionReview,
+  validateCombinedCatalogues,
   validateEvidenceExtract,
   validateEvidenceManifest,
   validateListingFixtures,
@@ -62,6 +65,202 @@ test("minimal factual evidence extracts match the checksum-pinned manifest", () 
   }
   assert.equal(manifestResult.files.size, manifest.items.length);
   assert.deepEqual([...productMpnByEvidence.keys()].sort(), [...manifestedPaths].sort(), "manifest and catalogue evidence references must be bidirectional");
+});
+
+test("catalogue expansion adds eight distinct first-party candidates without rewriting the reviewed seed", () => {
+  const seed = loadJson(cataloguePath);
+  const expansionPath = "data/catalogue/ddr5-32gb-expansion.v1.json";
+  const expansion = loadJson(expansionPath);
+  const expansionResult = validateCatalogue(expansion, { evidenceExists: existsSync });
+  assert.equal(expansionResult.productCount, 8);
+  assert.equal(seed.products.length + expansion.products.length, 12);
+
+  const scopedMpns = new Set();
+  for (const product of [...seed.products, ...expansion.products]) {
+    const scopedMpn = `${product.manufacturer.key}:${product.mpn_normalized}`;
+    assert.ok(!scopedMpns.has(scopedMpn), `duplicate manufacturer-scoped MPN: ${scopedMpn}`);
+    scopedMpns.add(scopedMpn);
+  }
+});
+
+test("expansion evidence is minimal, checksum-pinned and bidirectional", () => {
+  const expansion = loadJson("data/catalogue/ddr5-32gb-expansion.v1.json");
+  const evidenceDirectory = "research/evidence/catalogue-expansion-2026-08-08";
+  const manifest = loadJson(`${evidenceDirectory}/manifest.json`);
+  const manifestResult = validateEvidenceManifest(manifest);
+  const productMpnByEvidence = new Map();
+
+  for (const product of expansion.products) {
+    for (const reference of [...product.review.evidence_references, ...product.identifiers.map((identifier) => identifier.evidence_reference)]) {
+      const existing = productMpnByEvidence.get(reference);
+      assert.ok(!existing || existing === product.mpn_normalized, `${reference} cannot support two product MPNs`);
+      productMpnByEvidence.set(reference, product.mpn_normalized);
+    }
+  }
+
+  const manifestedPaths = new Set();
+  for (const item of manifest.items) {
+    const path = `${evidenceDirectory}/${item.file}`;
+    const bytes = readFileSync(path);
+    assert.equal(bytes.length, item.bytes, `${item.file} byte count changed`);
+    assert.equal(createHash("sha256").update(bytes).digest("hex"), item.sha256, `${item.file} checksum changed`);
+    const extract = loadJson(path);
+    validateEvidenceExtract(extract);
+    assert.equal(extract.product_mpn, item.product_mpn, `${item.file} MPN disagrees with manifest`);
+    assert.equal(extract.product_mpn, productMpnByEvidence.get(path), `${item.file} MPN disagrees with expansion candidate`);
+    manifestedPaths.add(path);
+  }
+
+  assert.equal(manifestResult.files.size, 8);
+  assert.deepEqual([...productMpnByEvidence.keys()].sort(), [...manifestedPaths].sort(), "expansion manifest and catalogue evidence references must be bidirectional");
+});
+
+test("manufacturer-diversification catalogue remains draft before its additive selected-product review", () => {
+  const catalogues = [
+    loadJson(cataloguePath),
+    loadJson("data/catalogue/ddr5-32gb-expansion.v1.json"),
+    loadJson("data/catalogue/ddr5-32gb-diversification.v1.json"),
+  ];
+  const diversification = catalogues[2];
+  const result = validateCatalogue(diversification, { evidenceExists: existsSync });
+  const combined = validateCombinedCatalogues(catalogues, { evidenceExists: existsSync });
+  assert.equal(result.productCount, 4);
+  assert.equal(combined.productKeys.size, 16);
+  assert.equal(combined.manufacturerMpns.size, 16);
+  assert.ok(diversification.products.every((product) => product.review.status === "draft"));
+
+  const scopedMpns = new Set();
+  for (const product of catalogues.flatMap((catalogue) => catalogue.products)) {
+    const scopedMpn = `${product.manufacturer.key}:${product.mpn_normalized}`;
+    assert.ok(!scopedMpns.has(scopedMpn), `duplicate manufacturer-scoped MPN: ${scopedMpn}`);
+    scopedMpns.add(scopedMpn);
+  }
+});
+
+test("diversification evidence is first-party, checksum-pinned, bidirectional and caveat-preserving", () => {
+  const catalogue = loadJson("data/catalogue/ddr5-32gb-diversification.v1.json");
+  const evidenceDirectory = "research/evidence/catalogue-diversification-2026-08-08";
+  const manifest = loadJson(`${evidenceDirectory}/manifest.json`);
+  const manifestResult = validateEvidenceManifest(manifest);
+  const productMpnByEvidence = new Map();
+  const evidenceByReference = new Map();
+
+  for (const product of catalogue.products) {
+    assert.match(product.review.evidence_note, /pending human acceptance|pending human review/i);
+    for (const reference of [...product.review.evidence_references, ...product.identifiers.map((identifier) => identifier.evidence_reference)]) {
+      const existing = productMpnByEvidence.get(reference);
+      assert.ok(!existing || existing === product.mpn_normalized, `${reference} cannot support two product MPNs`);
+      productMpnByEvidence.set(reference, product.mpn_normalized);
+    }
+  }
+
+  const manifestedPaths = new Set();
+  for (const item of manifest.items) {
+    const path = `${evidenceDirectory}/${item.file}`;
+    const bytes = readFileSync(path);
+    assert.equal(bytes.length, item.bytes, `${item.file} byte count changed`);
+    const sha256 = createHash("sha256").update(bytes).digest("hex");
+    assert.equal(sha256, item.sha256, `${item.file} checksum changed`);
+    const extract = loadJson(path);
+    evidenceByReference.set(path, bytes);
+    validateEvidenceExtract(extract);
+    assert.equal(extract.product_mpn, item.product_mpn, `${item.file} MPN disagrees with manifest`);
+    assert.equal(extract.product_mpn, productMpnByEvidence.get(path), `${item.file} MPN disagrees with catalogue candidate`);
+    manifestedPaths.add(path);
+  }
+
+  assert.equal(manifestResult.files.size, 4);
+  assert.deepEqual([...productMpnByEvidence.keys()].sort(), [...manifestedPaths].sort(), "diversification manifest and catalogue evidence references must be bidirectional");
+  assert.equal(validateCatalogueEvidenceBinding(catalogue, manifest, evidenceByReference), true);
+  const adataExtracts = manifest.items.filter((item) => item.product_mpn.startsWith("AD5U"));
+  assert.equal(adataExtracts.length, 2);
+  for (const item of adataExtracts) {
+    const extract = loadJson(`${evidenceDirectory}/${item.file}`);
+    assert.equal(extract.facts.package_type, "Dual Tray");
+    assert.match(extract.facts.module_configuration_note, /human-review caveat/);
+  }
+});
+
+test("selected diversification review approves Corsair and Patriot while holding ADATA and abstaining on Lexar", () => {
+  const catalogue = loadJson("data/catalogue/ddr5-32gb-diversification.v1.json");
+  const reviewPath = "data/reviews/ddr5-32gb-diversification-review-2026-08-09.json";
+  const reviewBytes = readFileSync(reviewPath);
+  assert.equal(createHash("sha256").update(reviewBytes).digest("hex"), "cf3bc35b88cb1bcee46459da82044c185b9e6148f5980a144b9646dec1876cf6");
+  const review = JSON.parse(reviewBytes.toString("utf8"));
+  const manifestBytes = readFileSync(review.evidence_manifest_reference);
+  const result = validateCatalogueSelectionReview(review, catalogue, { evidenceManifestBytes: manifestBytes });
+  assert.deepEqual([...result.approvedProductKeys].sort(), [
+    "corsair-vengeance-cmk32gx5m2b6000c36",
+    "patriot-viper-venom-amd-vv532g60c30ak",
+  ]);
+  assert.deepEqual([...result.heldProductKeys].sort(), [
+    "adata-ddr5-4800-ad5u480016g-dt",
+    "adata-ddr5-5600-ad5u560016g-dt",
+  ]);
+
+  const catalogueDrift = copy(catalogue);
+  catalogueDrift.products[0].specification.speed_mt_s = 6400;
+  assert.throws(() => validateCatalogueSelectionReview(review, catalogueDrift, { evidenceManifestBytes: manifestBytes }), /content checksum disagrees/);
+
+  const manifestDrift = Buffer.concat([manifestBytes, Buffer.from(" ")]);
+  assert.throws(() => validateCatalogueSelectionReview(review, catalogue, { evidenceManifestBytes: manifestDrift }), /manifest checksum disagrees/);
+
+  const overlappingApproval = copy(review);
+  overlappingApproval.approved_product_keys.push(overlappingApproval.held_product_keys[0]);
+  assert.throws(() => validateCatalogueSelectionReview(overlappingApproval, catalogue, { evidenceManifestBytes: manifestBytes }), /both approved and held/);
+
+  const weakenedAbstention = copy(review);
+  weakenedAbstention.abstentions[0].reason_code = "retailer_page_seen";
+  assert.throws(() => validateCatalogueSelectionReview(weakenedAbstention, catalogue, { evidenceManifestBytes: manifestBytes }), /unexpected Lexar abstention reason/);
+});
+
+test("combined catalogue and evidence bindings reject cross-tranche or provenance drift", () => {
+  const catalogues = [
+    loadJson(cataloguePath),
+    loadJson("data/catalogue/ddr5-32gb-expansion.v1.json"),
+    loadJson("data/catalogue/ddr5-32gb-diversification.v1.json"),
+  ];
+  const duplicateMpn = copy(catalogues[2]);
+  duplicateMpn.products[0].manufacturer = copy(catalogues[0].products[0].manufacturer);
+  duplicateMpn.products[0].mpn_raw = catalogues[0].products[0].mpn_raw;
+  duplicateMpn.products[0].mpn_normalized = catalogues[0].products[0].mpn_normalized;
+  duplicateMpn.products[0].identifiers[0].raw_value = catalogues[0].products[0].mpn_raw;
+  duplicateMpn.products[0].identifiers[0].normalized_value = catalogues[0].products[0].mpn_normalized;
+  assert.throws(() => validateCombinedCatalogues([catalogues[0], catalogues[1], duplicateMpn]), /duplicate manufacturer-scoped MPN/);
+
+  const catalogue = catalogues[2];
+  const evidenceDirectory = "research/evidence/catalogue-diversification-2026-08-08";
+  const manifest = loadJson(`${evidenceDirectory}/manifest.json`);
+  const evidenceByReference = new Map(manifest.items.map((item) => {
+    const path = `${evidenceDirectory}/${item.file}`;
+    return [path, readFileSync(path)];
+  }));
+
+  const wrongSpeed = copy(catalogue);
+  wrongSpeed.products[0].specification.speed_mt_s = 6400;
+  assert.throws(() => validateCatalogueEvidenceBinding(wrongSpeed, manifest, evidenceByReference), /speed disagrees/);
+
+  const wrongUrlManifest = copy(manifest);
+  wrongUrlManifest.items[0].source_urls = ["https://example.invalid/unrelated"];
+  assert.throws(() => validateCatalogueEvidenceBinding(catalogue, wrongUrlManifest, evidenceByReference), /source URLs disagree/);
+
+  const overclaimedAdata = new Map(evidenceByReference);
+  const adataReference = catalogue.products.find((product) => product.manufacturer.key === "adata-xpg").review.evidence_references[0];
+  const adataExtract = JSON.parse(overclaimedAdata.get(adataReference).toString("utf8"));
+  adataExtract.facts.total_capacity_gb = 32;
+  adataExtract.facts.module_count = 2;
+  const overclaimedAdataBytes = Buffer.from(`${JSON.stringify(adataExtract, null, 2)}\n`, "utf8");
+  assert.throws(() => validateCatalogueEvidenceBinding(catalogue, manifest, new Map(overclaimedAdata).set(adataReference, overclaimedAdataBytes)), /byte count disagrees|checksum disagrees/);
+
+  const staleManifestBinding = new Map(evidenceByReference);
+  const firstReference = catalogue.products[0].review.evidence_references[0];
+  const mutatedExtract = JSON.parse(staleManifestBinding.get(firstReference).toString("utf8"));
+  mutatedExtract.facts.tested_speed_mt_s = 6400;
+  const mutatedEvidenceBytes = Buffer.from(`${JSON.stringify(mutatedExtract, null, 2)}\n`, "utf8");
+  assert.throws(() => validateCatalogueEvidenceBinding(catalogue, manifest, new Map(staleManifestBinding).set(firstReference, mutatedEvidenceBytes)), /byte count disagrees|checksum disagrees/);
+
+  const truncatedEvidence = staleManifestBinding.get(firstReference).subarray(0, -1);
+  assert.throws(() => validateCatalogueEvidenceBinding(catalogue, manifest, new Map(staleManifestBinding).set(firstReference, truncatedEvidence)), /byte count disagrees/);
 });
 
 test("MPN normalisation is conservative and preserves punctuation", () => {
@@ -122,6 +321,16 @@ test("candidate SQL rendering is deterministic and independent of caller working
   const fromTemporaryDirectory = execFileSync(process.execPath, [script], { encoding: "utf8", cwd: "/tmp" });
   assert.equal(fromProject, fromTemporaryDirectory);
   assert.match(fromProject, /Fresh disposable database only/);
+  assert.doesNotMatch(fromProject, /ON CONFLICT/i);
+});
+
+test("reviewed catalogue SQL rendering is deterministic, validated and least-privilege", () => {
+  const script = fileURLToPath(new URL("../scripts/render-catalogue-review-sql.mjs", import.meta.url));
+  const fromProject = execFileSync(process.execPath, [script], { encoding: "utf8" });
+  const fromTemporaryDirectory = execFileSync(process.execPath, [script], { encoding: "utf8", cwd: "/tmp" });
+  assert.equal(fromProject, fromTemporaryDirectory);
+  assert.match(fromProject, /SET LOCAL ROLE silicon_forecast_catalogue_reviewer/);
+  assert.match(fromProject, /apply_approved_ddr5_seed_fixture_review\('[0-9a-f-]+'::uuid\)/);
   assert.doesNotMatch(fromProject, /ON CONFLICT/i);
 });
 

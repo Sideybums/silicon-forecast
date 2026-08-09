@@ -33,7 +33,9 @@ Produce one lawful, accurate and reproducible regional component-price index who
 - [ ] Calculate deterministic daily product prices and one reproducible regional index.
 - [ ] Expose source freshness, coverage, calculation version, quality state and corrections in a private dashboard.
 - [ ] Run bounded AI workers through explicit task contracts, audit logs, locks and measurable evaluation gates.
-- [ ] Demonstrate reliable scheduled operation and tested recovery before public launch.
+- [ ] Demonstrate reliable scheduled operation and tested recovery before publishing a supported index.
+- [x] Publish a bounded public research preview with exact-MPN dated offer observations, direct unpaid source links and explicit non-index limitations.
+- [ ] Connect reviewed news and research to observed index movements using facts, alternatives, counterevidence and human-approved causal language.
 
 ### Out of Scope
 
@@ -42,7 +44,7 @@ Produce one lawful, accurate and reproducible regional component-price index who
 - Used/refurbished-market indices — condition grading makes comparability substantially harder.
 - Public API and commercial data resale — require proven demand and explicit redistribution rights.
 - Automated AI-written publication or unapproved forecasts — incompatible with initial trust and accountability requirements.
-- Live public price/index publication remains deferred; a clearly labelled static pre-launch publisher-review site is permitted as an enabling artefact.
+- Supported live public index publication remains deferred; project-owner-approved bounded dated observations and direct unpaid source links are permitted as a public research-preview artefact.
 - User accounts, premium memberships and alerts — deferred until the core index proves useful.
 - Microservices — unnecessary operational complexity for the MVP.
 - Zero-human corporate operation — legal, security, methodology and publication accountability remain human-governed.
@@ -74,7 +76,8 @@ The technical reference architecture is a TypeScript/Next.js modular monolith ba
 | Make deterministic software own prices, indices and scoring | Public facts must be replayable and testable | — Pending |
 | Use agents for bounded work with hard external-action locks | Maximises leverage without outsourcing accountability | — Pending |
 | Keep forecasts human-approved initially | Causal interpretation and public recommendations carry disproportionate trust risk | — Pending |
-| Publish a static pre-launch publisher-review site | Affiliate-network diligence needs a legitimate public promotional space before live feeds exist | Approved for project, synthetic demonstration and policy content only |
+| Publish a public research-preview site | Affiliate-network diligence needs a legitimate public space with useful evidence before paid feeds exist | Synthetic demo replaced by a project-owner-approved bounded projection of three dated exact-MPN marketplace observations with direct unpaid links on 2026-08-09; supported index and current-price claims remain locked |
+| Publish direct unpaid links before affiliate acceptance | Useful public evidence should not wait for commission; commercial status must remain visible | Approved by David on 2026-08-09 for the exact checksum-bound publication projection; no tracking, commission, ranking or paid placement |
 | Treat public factual offer observations as usable absent an explicit applicable restriction | Prices, stock, identifiers and product attributes are evidence inputs; requiring bespoke affirmative grants for every silent analytical use would prevent the intended comparison product | Approved by David on 2026-08-06; affiliate/feed access terms and explicit restrictions still govern, and authored descriptions/images are excluded by default |
 
 ## Evolution

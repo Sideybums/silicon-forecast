@@ -1,0 +1,213 @@
+{
+  "schema_version": 1,
+  "snapshot_id": "sf-amazon-uk-candidate-2026-08-06T103140Z",
+  "status": "candidate_research_only",
+  "collected_at": "2026-08-06T10:31:40Z",
+  "region": "GB",
+  "currency": "GBP",
+  "source": {
+    "source_name": "Amazon UK public product pages",
+    "source_owner": "Amazon UK",
+    "collection_method": "bounded unauthenticated HTTP retrieval of four product-detail pages",
+    "authorisation_basis": "publicly observable factual offer data; no production source approval implied"
+  },
+  "governance": {
+    "production_import_allowed": false,
+    "publication_allowed": false,
+    "index_inclusion_allowed": false,
+    "automatic_matching_allowed": false,
+    "reason": "Candidate observations require source approval, VAT and delivery normalisation, exact product matching, and human review before any production use."
+  },
+  "observations": [
+    {
+      "observation_key": "amazon-uk-B0CYHC58P6-2026-08-06T103140Z",
+      "product_key": "kingston-fury-beast-kf560c30bbek2-32",
+      "mpn_expected": "KF560C30BBEK2-32",
+      "mpn_observed": "KF560C30BBEK2-32",
+      "match_status": "exact_mpn_in_page_title",
+      "source_url": "https://www.amazon.co.uk/dp/B0CYHC58P6",
+      "source_offer_id": "B0CYHC58P6",
+      "platform": "amazon_uk",
+      "channel": "MARKETPLACE_PRO",
+      "manufacturer_authorisation": "unverified",
+      "offer_basis": "ASK",
+      "condition_evidence": {
+        "raw": "New",
+        "classified": "NEW_OTHER",
+        "confidence": "explicit_seller_claim_without_sealed_evidence"
+      },
+      "listing_title": "Kingston FURY Beast Black DDR5 32GB (2x16GB) 6000MT/s CL30 DIMM Desktop Gaming Memory Kit of 2 AMD EXPO and Intel XMP - KF560C30BBEK2-32",
+      "seller": "CCL Computers",
+      "dispatches_from": "CCL Computers",
+      "condition": "new",
+      "display_price": {
+        "amount": "469.99",
+        "currency": "GBP",
+        "vat_inclusion": "not_explicitly_verified",
+        "delivery_inclusion": "not_explicitly_verified"
+      },
+      "availability": "in_stock",
+      "delivery": {
+        "amount": null,
+        "status": "not_verified_for_selected_offer"
+      },
+      "eligibility": "excluded_pending_review",
+      "exclusion_reasons": [
+        "source_not_approved_for_production",
+        "vat_inclusion_not_explicitly_verified",
+        "delivery_cost_not_verified"
+      ],
+      "evidence": [
+        "Page title contains the exact MPN KF560C30BBEK2-32.",
+        "Selected offer displays £469.99 and In stock.",
+        "Selected offer identifies CCL Computers as both dispatching party and seller."
+      ]
+    },
+    {
+      "observation_key": "amazon-uk-B0B72827G5-2026-08-06T103140Z",
+      "product_key": "kingston-fury-renegade-kf564c32rsk2-32",
+      "mpn_expected": "KF564C32RSK2-32",
+      "mpn_observed": "KF564C32RSK2-32",
+      "match_status": "exact_mpn_in_page_title",
+      "source_url": "https://www.amazon.co.uk/dp/B0B72827G5",
+      "source_offer_id": "B0B72827G5",
+      "platform": "amazon_uk",
+      "channel": "MARKETPLACE_PRO",
+      "manufacturer_authorisation": "unverified",
+      "offer_basis": "ASK",
+      "condition_evidence": {
+        "raw": "New",
+        "classified": "NEW_OTHER",
+        "confidence": "explicit_seller_claim_without_sealed_evidence"
+      },
+      "listing_title": "Kingston Fury Renegade DDR5 Silver/Black XMP 32GB 6400MT/s CL32 DIMM Desktop Gaming Memory (Kit of 2) - KF564C32RSK2-32",
+      "seller": "CCL Computers",
+      "dispatches_from": "CCL Computers",
+      "condition": "new",
+      "display_price": {
+        "amount": "450.94",
+        "currency": "GBP",
+        "vat_inclusion": "not_explicitly_verified",
+        "delivery_inclusion": "not_explicitly_verified"
+      },
+      "availability": "in_stock",
+      "delivery": {
+        "amount": null,
+        "status": "not_verified_for_selected_offer"
+      },
+      "eligibility": "excluded_pending_review",
+      "exclusion_reasons": [
+        "source_not_approved_for_production",
+        "vat_inclusion_not_explicitly_verified",
+        "delivery_cost_not_verified"
+      ],
+      "evidence": [
+        "Page title contains the exact MPN KF564C32RSK2-32.",
+        "Selected offer displays £450.94 and In stock.",
+        "Selected offer identifies CCL Computers as shipper and seller."
+      ]
+    },
+    {
+      "observation_key": "amazon-uk-B0BN4PPQ16-2026-08-06T103140Z",
+      "product_key": "gskill-flare-x5-f5-6000j3636f16gx2-fx5",
+      "mpn_expected": "F5-6000J3636F16GX2-FX5",
+      "mpn_observed": null,
+      "match_status": "needs_human_review_exact_mpn_absent",
+      "source_url": "https://www.amazon.co.uk/dp/B0BN4PPQ16",
+      "source_offer_id": "B0BN4PPQ16",
+      "platform": "amazon_uk",
+      "channel": "MARKETPLACE_PRO",
+      "manufacturer_authorisation": "unverified",
+      "offer_basis": "ASK",
+      "condition_evidence": {
+        "raw": "New",
+        "classified": "NEW_OTHER",
+        "confidence": "explicit_seller_claim_without_sealed_evidence"
+      },
+      "listing_title": "G.SKILL 32GB DDR5 Flare X5 6000MHz CL36 1.35V Dual Channel Kit (2x 16GB) AMD EXPO Matte Black",
+      "seller": "Amazon US",
+      "dispatches_from": "Amazon US",
+      "condition": "new",
+      "display_price": {
+        "amount": "453.75",
+        "currency": "GBP",
+        "vat_inclusion": "not_explicitly_verified",
+        "delivery_inclusion": "not_explicitly_verified"
+      },
+      "availability": "in_stock",
+      "delivery": {
+        "amount": null,
+        "status": "not_verified_for_selected_offer"
+      },
+      "import_charges": {
+        "amount": "76.72",
+        "currency": "GBP",
+        "status": "estimated_included_in_displayed_offer"
+      },
+      "eligibility": "excluded_pending_review",
+      "exclusion_reasons": [
+        "exact_mpn_not_present_in_retained_page_evidence",
+        "cross_border_offer",
+        "source_not_approved_for_production",
+        "vat_inclusion_not_explicitly_verified",
+        "delivery_cost_not_verified"
+      ],
+      "evidence": [
+        "Page title matches family, capacity, speed and latency but does not expose the exact MPN.",
+        "Selected offer displays £453.75, In stock, and £76.72 estimated import charges included.",
+        "Selected offer identifies Amazon US as shipper and seller."
+      ]
+    },
+    {
+      "observation_key": "amazon-uk-B0BF6ZQ8MY-2026-08-06T103140Z",
+      "product_key": "gskill-trident-z5-neo-rgb-f5-6000j3636f16gx2-tz5nr",
+      "mpn_expected": "F5-6000J3636F16GX2-TZ5NR",
+      "mpn_observed": "F5-6000J3636F16GX2-TZ5NR",
+      "match_status": "exact_mpn_in_page_title",
+      "source_url": "https://www.amazon.co.uk/dp/B0BF6ZQ8MY",
+      "source_offer_id": "B0BF6ZQ8MY",
+      "platform": "amazon_uk",
+      "channel": "MARKETPLACE_PRO",
+      "manufacturer_authorisation": "unverified",
+      "offer_basis": "ASK",
+      "condition_evidence": {
+        "raw": "New",
+        "classified": "NEW_OTHER",
+        "confidence": "explicit_seller_claim_without_sealed_evidence"
+      },
+      "listing_title": "G.Skill Trident Z5 NEO RGB Series (AMD Expo) 32GB (2 x 16GB) DDR5 6000 CL36-36-36-96 1.35V Dual Channel Desktop Memory F5-6000J3636F16GX2-TZ5NR (Matte Black)",
+      "seller": "UKZEZSTORE",
+      "dispatches_from": "UKZEZSTORE",
+      "condition": "new",
+      "display_price": {
+        "amount": "527.08",
+        "currency": "GBP",
+        "vat_inclusion": "not_explicitly_verified",
+        "delivery_inclusion": "free_delivery_displayed"
+      },
+      "availability": "usually_dispatched_within_5_to_6_days",
+      "delivery": {
+        "amount": "0.00",
+        "currency": "GBP",
+        "status": "free_delivery_displayed"
+      },
+      "eligibility": "excluded_pending_review",
+      "exclusion_reasons": [
+        "source_not_approved_for_production",
+        "vat_inclusion_not_explicitly_verified",
+        "availability_requires_policy_review"
+      ],
+      "evidence": [
+        "Page title contains the exact MPN F5-6000J3636F16GX2-TZ5NR.",
+        "Selected offer displays £527.08 and Usually dispatched within 5 to 6 days.",
+        "Offer evidence displays free delivery and identifies UKZEZSTORE as shipper and seller."
+      ]
+    }
+  ],
+  "collection_notes": [
+    "Amazon may show several offers on one product page; only the selected buy-box offer was retained where seller identity could be tied to it.",
+    "A separate Amazon page initially considered for KF560C30BBEK2-32 was rejected after its title proved it was KF564C32BBEAK2-32. This is deliberate abstention, not a failed match.",
+    "No raw Amazon HTML is retained because it contains transient session and request values; this fixture stores only minimal factual extracts and provenance.",
+    "Observed prices are unusually high and must not be interpreted as a regional index without broader source coverage and the locked methodology gates."
+  ]
+}

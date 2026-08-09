@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "evidence_type": "minimal_factual_product_extract",
+  "product_mpn": "KF560C36BBEK2-32",
+  "source": {
+    "publisher": "Kingston Technology",
+    "url": "https://www.kingston.com/datasheets/KF560C36BBEK2-32.pdf",
+    "retrieved_on": "2026-08-08",
+    "source_response_bytes": 628937,
+    "source_response_sha256": "2b55e24880c7d6dea56e1733ffa22eda8a2e534bf6c55047108a91687edf4076"
+  },
+  "extraction": {
+    "recorded_at": "2026-08-08T09:13:58Z",
+    "method": "Manual factual transcription from the exact first-party Kingston PDF datasheet; source response was checksum-pinned before authored content was discarded.",
+    "authored_content_retained": false
+  },
+  "facts": {
+    "heading": "Kingston FURY Beast DDR5-6000 CL36",
+    "total_capacity_gb": 32,
+    "module_count": 2,
+    "capacity_per_module_gb": 16,
+    "memory_generation": "DDR5",
+    "tested_speed_mt_s": 6000,
+    "pin_count": 288,
+    "module_classification_note": "Consumer Kingston FURY 288-pin DIMM kit. The datasheet lists DDR5 on-die ECC, which is internal to DDR5 devices and is not system-level ECC memory."
+  }
+}

@@ -1,0 +1,506 @@
+{
+  "schema_version": 1,
+  "fixture_set_id": "sf-ddr5-32gb-resilience-pilot-2026-08-08",
+  "status": "fixture_only_pending_human_review",
+  "catalogue_fixture_set_ids": [
+    "sf-ddr5-32gb-seed-2026-08-06",
+    "sf-ddr5-32gb-expansion-2026-08-08",
+    "sf-ddr5-32gb-diversification-2026-08-08"
+  ],
+  "catalogue_review_bindings": [
+    {
+      "catalogue_fixture_set_id": "sf-ddr5-32gb-seed-2026-08-06",
+      "catalogue_content_sha256": "47cc48dab0e5db1283c9161d5a1efe61f952f99e24980d00b0c15d3b488a9047",
+      "reviewed_product_keys": [
+        "kingston-fury-beast-kf560c30bbek2-32",
+        "kingston-fury-renegade-kf564c32rsk2-32",
+        "gskill-flare-x5-f5-6000j3636f16gx2-fx5",
+        "gskill-trident-z5-neo-rgb-f5-6000j3636f16gx2-tz5nr"
+      ],
+      "review_reference": "data/reviews/ddr5-32gb-seed-review-2026-08-06.json",
+      "review_sha256": "86fef1c0bd47279ece52be6dbbb03502138ea42dd5586a94c06a84beb6c7f801"
+    },
+    {
+      "catalogue_fixture_set_id": "sf-ddr5-32gb-expansion-2026-08-08",
+      "catalogue_content_sha256": "0aef6682b0f12a594ea37e906020353f53914c964f57d055530f96e543b798ba",
+      "reviewed_product_keys": [],
+      "review_reference": null,
+      "review_sha256": null
+    },
+    {
+      "catalogue_fixture_set_id": "sf-ddr5-32gb-diversification-2026-08-08",
+      "catalogue_content_sha256": "fa43e2c1913dcf02a765419641cf99311f92db6f7364e16363314fe46b23860e",
+      "reviewed_product_keys": [
+        "corsair-vengeance-cmk32gx5m2b6000c36",
+        "patriot-viper-venom-amd-vv532g60c30ak"
+      ],
+      "review_reference": "data/reviews/ddr5-32gb-diversification-review-2026-08-09.json",
+      "review_sha256": "cf3bc35b88cb1bcee46459da82044c185b9e6148f5980a144b9646dec1876cf6"
+    }
+  ],
+  "locks": {
+    "production_activation": "locked",
+    "methodology_change": "locked",
+    "automatic_pool_promotion": "locked",
+    "basket_mutation": "locked",
+    "source_approval": "locked",
+    "external_publication": "locked"
+  },
+  "research_coverage_targets": [
+    {
+      "manufacturer_key": "corsair",
+      "manufacturer_name": "Corsair",
+      "priority": "required_research"
+    },
+    {
+      "manufacturer_key": "kingston-technology",
+      "manufacturer_name": "Kingston Technology",
+      "priority": "required_research"
+    },
+    {
+      "manufacturer_key": "crucial",
+      "manufacturer_name": "Crucial",
+      "priority": "required_research"
+    },
+    {
+      "manufacturer_key": "gskill",
+      "manufacturer_name": "G.SKILL",
+      "priority": "required_research"
+    },
+    {
+      "manufacturer_key": "teamgroup",
+      "manufacturer_name": "TEAMGROUP",
+      "priority": "required_research"
+    },
+    {
+      "manufacturer_key": "adata-xpg",
+      "manufacturer_name": "ADATA / XPG",
+      "priority": "required_research"
+    },
+    {
+      "manufacturer_key": "patriot-viper",
+      "manufacturer_name": "Patriot / Viper",
+      "priority": "required_research"
+    },
+    {
+      "manufacturer_key": "lexar",
+      "manufacturer_name": "Lexar",
+      "priority": "required_research"
+    }
+  ],
+  "product_dimensions": [
+    {
+      "product_key": "kingston-fury-beast-kf560c30bbek2-32",
+      "family_key": "kingston-fury-beast",
+      "family_name": "Kingston FURY Beast"
+    },
+    {
+      "product_key": "kingston-fury-renegade-kf564c32rsk2-32",
+      "family_key": "kingston-fury-renegade",
+      "family_name": "Kingston FURY Renegade"
+    },
+    {
+      "product_key": "gskill-flare-x5-f5-6000j3636f16gx2-fx5",
+      "family_key": "gskill-flare-x5",
+      "family_name": "G.SKILL Flare X5"
+    },
+    {
+      "product_key": "gskill-trident-z5-neo-rgb-f5-6000j3636f16gx2-tz5nr",
+      "family_key": "gskill-trident-z5-neo-rgb",
+      "family_name": "G.SKILL Trident Z5 Neo RGB"
+    },
+    {
+      "product_key": "kingston-fury-beast-kf560c36bbek2-32",
+      "family_key": "kingston-fury-beast",
+      "family_name": "Kingston FURY Beast"
+    },
+    {
+      "product_key": "crucial-classic-ct2k16g56c46u5",
+      "family_key": "crucial-classic",
+      "family_name": "Crucial Classic"
+    },
+    {
+      "product_key": "crucial-pro-cp2k16g56c46u5",
+      "family_key": "crucial-pro",
+      "family_name": "Crucial Pro"
+    },
+    {
+      "product_key": "crucial-pro-oc-cp2k16g60c36u5b",
+      "family_key": "crucial-pro-oc",
+      "family_name": "Crucial Pro Overclocking"
+    },
+    {
+      "product_key": "crucial-pro-oc-cp2k16g64c38u5b",
+      "family_key": "crucial-pro-oc",
+      "family_name": "Crucial Pro Overclocking"
+    },
+    {
+      "product_key": "teamgroup-tforce-delta-rgb-ff3d532g6000hc30dc01",
+      "family_key": "teamgroup-tforce-delta-rgb",
+      "family_name": "TEAMGROUP T-FORCE DELTA RGB"
+    },
+    {
+      "product_key": "teamgroup-tforce-delta-rog-ffrd532g6000hc30dc01",
+      "family_key": "teamgroup-tforce-delta-rgb-rog-certified",
+      "family_name": "TEAMGROUP T-FORCE DELTA RGB ROG Certified"
+    },
+    {
+      "product_key": "teamgroup-tcreate-expert-ctced532g6400hc32adc01",
+      "family_key": "teamgroup-tcreate-expert",
+      "family_name": "TEAMGROUP T-CREATE EXPERT"
+    },
+    {
+      "product_key": "corsair-vengeance-cmk32gx5m2b6000c36",
+      "family_key": "corsair-vengeance",
+      "family_name": "Corsair VENGEANCE"
+    },
+    {
+      "product_key": "adata-ddr5-4800-ad5u480016g-dt",
+      "family_key": "adata-ddr5-u-dimm",
+      "family_name": "ADATA DDR5 U-DIMM"
+    },
+    {
+      "product_key": "adata-ddr5-5600-ad5u560016g-dt",
+      "family_key": "adata-ddr5-u-dimm",
+      "family_name": "ADATA DDR5 U-DIMM"
+    },
+    {
+      "product_key": "patriot-viper-venom-amd-vv532g60c30ak",
+      "family_key": "patriot-viper-venom-amd",
+      "family_name": "Patriot Viper Venom AMD"
+    }
+  ],
+  "pool_memberships": [
+    {
+      "product_key": "kingston-fury-beast-kf560c30bbek2-32",
+      "monitored_universe": true,
+      "canonical_catalogue_status": "reviewed_fixture",
+      "baseline_eligible": false,
+      "reserve_candidate": false,
+      "basket_vintage_ids": [],
+      "eligibility_blockers": [
+        "approved-source-history-missing",
+        "retailer-breadth-unproven",
+        "landed-price-completeness-unproven",
+        "baseline-history-missing"
+      ]
+    },
+    {
+      "product_key": "kingston-fury-renegade-kf564c32rsk2-32",
+      "monitored_universe": true,
+      "canonical_catalogue_status": "reviewed_fixture",
+      "baseline_eligible": false,
+      "reserve_candidate": false,
+      "basket_vintage_ids": [],
+      "eligibility_blockers": [
+        "approved-source-history-missing",
+        "retailer-breadth-unproven",
+        "landed-price-completeness-unproven",
+        "baseline-history-missing"
+      ]
+    },
+    {
+      "product_key": "gskill-flare-x5-f5-6000j3636f16gx2-fx5",
+      "monitored_universe": true,
+      "canonical_catalogue_status": "reviewed_fixture",
+      "baseline_eligible": false,
+      "reserve_candidate": false,
+      "basket_vintage_ids": [],
+      "eligibility_blockers": [
+        "approved-source-history-missing",
+        "retailer-breadth-unproven",
+        "landed-price-completeness-unproven",
+        "baseline-history-missing"
+      ]
+    },
+    {
+      "product_key": "gskill-trident-z5-neo-rgb-f5-6000j3636f16gx2-tz5nr",
+      "monitored_universe": true,
+      "canonical_catalogue_status": "reviewed_fixture",
+      "baseline_eligible": false,
+      "reserve_candidate": false,
+      "basket_vintage_ids": [],
+      "eligibility_blockers": [
+        "approved-source-history-missing",
+        "retailer-breadth-unproven",
+        "landed-price-completeness-unproven",
+        "baseline-history-missing"
+      ]
+    },
+    {
+      "product_key": "kingston-fury-beast-kf560c36bbek2-32",
+      "monitored_universe": true,
+      "canonical_catalogue_status": "candidate_pending_review",
+      "baseline_eligible": false,
+      "reserve_candidate": false,
+      "basket_vintage_ids": [],
+      "eligibility_blockers": [
+        "additive-catalogue-review-pending",
+        "approved-source-history-missing",
+        "retailer-breadth-unproven",
+        "landed-price-completeness-unproven",
+        "baseline-history-missing"
+      ]
+    },
+    {
+      "product_key": "crucial-classic-ct2k16g56c46u5",
+      "monitored_universe": true,
+      "canonical_catalogue_status": "candidate_pending_review",
+      "baseline_eligible": false,
+      "reserve_candidate": false,
+      "basket_vintage_ids": [],
+      "eligibility_blockers": [
+        "additive-catalogue-review-pending",
+        "approved-source-history-missing",
+        "retailer-breadth-unproven",
+        "landed-price-completeness-unproven",
+        "baseline-history-missing"
+      ]
+    },
+    {
+      "product_key": "crucial-pro-cp2k16g56c46u5",
+      "monitored_universe": true,
+      "canonical_catalogue_status": "candidate_pending_review",
+      "baseline_eligible": false,
+      "reserve_candidate": false,
+      "basket_vintage_ids": [],
+      "eligibility_blockers": [
+        "additive-catalogue-review-pending",
+        "approved-source-history-missing",
+        "retailer-breadth-unproven",
+        "landed-price-completeness-unproven",
+        "baseline-history-missing"
+      ]
+    },
+    {
+      "product_key": "crucial-pro-oc-cp2k16g60c36u5b",
+      "monitored_universe": true,
+      "canonical_catalogue_status": "candidate_pending_review",
+      "baseline_eligible": false,
+      "reserve_candidate": false,
+      "basket_vintage_ids": [],
+      "eligibility_blockers": [
+        "additive-catalogue-review-pending",
+        "approved-source-history-missing",
+        "retailer-breadth-unproven",
+        "landed-price-completeness-unproven",
+        "baseline-history-missing"
+      ]
+    },
+    {
+      "product_key": "crucial-pro-oc-cp2k16g64c38u5b",
+      "monitored_universe": true,
+      "canonical_catalogue_status": "candidate_pending_review",
+      "baseline_eligible": false,
+      "reserve_candidate": false,
+      "basket_vintage_ids": [],
+      "eligibility_blockers": [
+        "additive-catalogue-review-pending",
+        "approved-source-history-missing",
+        "retailer-breadth-unproven",
+        "landed-price-completeness-unproven",
+        "baseline-history-missing"
+      ]
+    },
+    {
+      "product_key": "teamgroup-tforce-delta-rgb-ff3d532g6000hc30dc01",
+      "monitored_universe": true,
+      "canonical_catalogue_status": "candidate_pending_review",
+      "baseline_eligible": false,
+      "reserve_candidate": false,
+      "basket_vintage_ids": [],
+      "eligibility_blockers": [
+        "additive-catalogue-review-pending",
+        "approved-source-history-missing",
+        "retailer-breadth-unproven",
+        "landed-price-completeness-unproven",
+        "baseline-history-missing"
+      ]
+    },
+    {
+      "product_key": "teamgroup-tforce-delta-rog-ffrd532g6000hc30dc01",
+      "monitored_universe": true,
+      "canonical_catalogue_status": "candidate_pending_review",
+      "baseline_eligible": false,
+      "reserve_candidate": false,
+      "basket_vintage_ids": [],
+      "eligibility_blockers": [
+        "additive-catalogue-review-pending",
+        "approved-source-history-missing",
+        "retailer-breadth-unproven",
+        "landed-price-completeness-unproven",
+        "baseline-history-missing"
+      ]
+    },
+    {
+      "product_key": "teamgroup-tcreate-expert-ctced532g6400hc32adc01",
+      "monitored_universe": true,
+      "canonical_catalogue_status": "candidate_pending_review",
+      "baseline_eligible": false,
+      "reserve_candidate": false,
+      "basket_vintage_ids": [],
+      "eligibility_blockers": [
+        "additive-catalogue-review-pending",
+        "approved-source-history-missing",
+        "retailer-breadth-unproven",
+        "landed-price-completeness-unproven",
+        "baseline-history-missing"
+      ]
+    },
+    {
+      "product_key": "corsair-vengeance-cmk32gx5m2b6000c36",
+      "monitored_universe": true,
+      "canonical_catalogue_status": "reviewed_fixture",
+      "baseline_eligible": false,
+      "reserve_candidate": false,
+      "basket_vintage_ids": [],
+      "eligibility_blockers": [
+        "approved-source-history-missing",
+        "retailer-breadth-unproven",
+        "landed-price-completeness-unproven",
+        "baseline-history-missing"
+      ]
+    },
+    {
+      "product_key": "adata-ddr5-4800-ad5u480016g-dt",
+      "monitored_universe": true,
+      "canonical_catalogue_status": "candidate_pending_review",
+      "baseline_eligible": false,
+      "reserve_candidate": false,
+      "basket_vintage_ids": [],
+      "eligibility_blockers": [
+        "additive-catalogue-review-pending",
+        "approved-source-history-missing",
+        "retailer-breadth-unproven",
+        "landed-price-completeness-unproven",
+        "baseline-history-missing"
+      ]
+    },
+    {
+      "product_key": "adata-ddr5-5600-ad5u560016g-dt",
+      "monitored_universe": true,
+      "canonical_catalogue_status": "candidate_pending_review",
+      "baseline_eligible": false,
+      "reserve_candidate": false,
+      "basket_vintage_ids": [],
+      "eligibility_blockers": [
+        "additive-catalogue-review-pending",
+        "approved-source-history-missing",
+        "retailer-breadth-unproven",
+        "landed-price-completeness-unproven",
+        "baseline-history-missing"
+      ]
+    },
+    {
+      "product_key": "patriot-viper-venom-amd-vv532g60c30ak",
+      "monitored_universe": true,
+      "canonical_catalogue_status": "reviewed_fixture",
+      "baseline_eligible": false,
+      "reserve_candidate": false,
+      "basket_vintage_ids": [],
+      "eligibility_blockers": [
+        "approved-source-history-missing",
+        "retailer-breadth-unproven",
+        "landed-price-completeness-unproven",
+        "baseline-history-missing"
+      ]
+    }
+  ],
+  "lifecycle_scenarios": [
+    {
+      "scenario_key": "availability-loss-to-discontinuation",
+      "fixture_scope": "synthetic_control_plane_only",
+      "events": [
+        {
+          "event_id": "fixture-eol-active",
+          "effective_at": "2026-01-01T00:00:00Z",
+          "recorded_at": "2026-08-08T13:00:00Z",
+          "from_state": null,
+          "to_state": "ACTIVE",
+          "supersedes_event_id": null,
+          "basis": "synthetic-control-plane-fixture",
+          "review_status": "draft",
+          "evidence_references": []
+        },
+        {
+          "event_id": "fixture-eol-at-risk",
+          "effective_at": "2026-02-01T00:00:00Z",
+          "recorded_at": "2026-08-08T13:00:01Z",
+          "from_state": "ACTIVE",
+          "to_state": "AVAILABILITY_AT_RISK",
+          "supersedes_event_id": "fixture-eol-active",
+          "basis": "synthetic-control-plane-fixture",
+          "review_status": "draft",
+          "evidence_references": []
+        },
+        {
+          "event_id": "fixture-eol-discontinued",
+          "effective_at": "2026-03-01T00:00:00Z",
+          "recorded_at": "2026-08-08T13:00:02Z",
+          "from_state": "AVAILABILITY_AT_RISK",
+          "to_state": "DISCONTINUED",
+          "supersedes_event_id": "fixture-eol-at-risk",
+          "basis": "synthetic-control-plane-fixture",
+          "review_status": "draft",
+          "evidence_references": []
+        }
+      ]
+    },
+    {
+      "scenario_key": "successor-candidate-validation",
+      "fixture_scope": "synthetic_control_plane_only",
+      "events": [
+        {
+          "event_id": "fixture-successor-candidate",
+          "effective_at": "2026-01-01T00:00:00Z",
+          "recorded_at": "2026-08-08T13:01:00Z",
+          "from_state": null,
+          "to_state": "SUCCESSOR_CANDIDATE",
+          "supersedes_event_id": null,
+          "basis": "synthetic-control-plane-fixture",
+          "review_status": "draft",
+          "evidence_references": []
+        },
+        {
+          "event_id": "fixture-successor-active",
+          "effective_at": "2026-02-01T00:00:00Z",
+          "recorded_at": "2026-08-08T13:01:01Z",
+          "from_state": "SUCCESSOR_CANDIDATE",
+          "to_state": "ACTIVE",
+          "supersedes_event_id": "fixture-successor-candidate",
+          "basis": "synthetic-control-plane-fixture",
+          "review_status": "draft",
+          "evidence_references": []
+        }
+      ]
+    },
+    {
+      "scenario_key": "identity-invalidation",
+      "fixture_scope": "synthetic_control_plane_only",
+      "events": [
+        {
+          "event_id": "fixture-identity-active",
+          "effective_at": "2026-01-01T00:00:00Z",
+          "recorded_at": "2026-08-08T13:02:00Z",
+          "from_state": null,
+          "to_state": "ACTIVE",
+          "supersedes_event_id": null,
+          "basis": "synthetic-control-plane-fixture",
+          "review_status": "draft",
+          "evidence_references": []
+        },
+        {
+          "event_id": "fixture-identity-invalid",
+          "effective_at": "2026-02-01T00:00:00Z",
+          "recorded_at": "2026-08-08T13:02:01Z",
+          "from_state": "ACTIVE",
+          "to_state": "IDENTITY_INVALID",
+          "supersedes_event_id": "fixture-identity-active",
+          "basis": "synthetic-control-plane-fixture",
+          "review_status": "draft",
+          "evidence_references": []
+        }
+      ]
+    }
+  ]
+}

@@ -1,3 +1,81 @@
-import type { Metadata } from "next"; import Link from "next/link"; import { ExampleChart } from "@/components/ExampleChart";
-export const metadata:Metadata={title:"Example price history",description:"A clearly labelled synthetic demonstration of Silicon Forecast's proposed UK DDR5 price-history view."};
-export default function Page(){return <div className="shell page-shell"><header className="page-header"><p className="eyebrow">Price history · Demonstration</p><h1>An example of the index—not an index pretending to be finished.</h1><p>This page demonstrates how Silicon Forecast intends to present movement, methodology and limitations. It contains no retailer feed data and no current prices.</p></header><div className="notice warning"><strong>Demonstration only</strong><span>All chart values are synthetic and exist solely to show the intended publishing format.</span></div><ExampleChart/><section className="content-grid"><div><p className="eyebrow">How to read it</p><h2>Movement relative to a baseline</h2></div><div className="prose"><p>An index value of 100 represents the starting baseline. A value of 95 would mean the eligible basket is 5% below that baseline under the same calculation rules; it does not mean a product costs £95.</p><p>Real observations will display their collection date, basket coverage, quality state and calculation version. Missing or untrusted inputs will remain gaps rather than being silently estimated.</p></div></section><section className="method-grid">{[["Exact eligibility","The first proposed basket is limited to new 32GB (2×16GB) DDR5 desktop UDIMM kits."],["Comparable price","VAT and delivery treatment must be deterministic and known before an offer qualifies."],["Visible coverage","An affiliate-observed sample will be described as such, with merchant and product coverage disclosed."],["Reproducible history","Calculation rules and corrections will be versioned so published values can be replayed."]].map(([h,p],i)=><article key={h}><span>0{i+1}</span><h3>{h}</h3><p>{p}</p></article>)}</section><section className="limitations"><p className="eyebrow">Current limitations</p><h2>What this page cannot tell you</h2><ul><li>It does not show current prices or deals.</li><li>It does not represent every UK retailer or product.</li><li>It does not provide purchasing advice.</li><li>It does not prove that source-permission or coverage gates have passed.</li></ul><Link href="/about">Read more about the project principles →</Link></section></div>}
+import type { Metadata } from "next";
+import Link from "next/link";
+import { ObservedPriceBoard } from "@/components/ObservedPriceBoard";
+
+export const metadata: Metadata = {
+  title: "Observed DDR5 prices",
+  description: "Dated, evidence-backed UK DDR5 marketplace observations with direct unpaid source links and visible limitations.",
+};
+
+export default function Page() {
+  return (
+    <div className="shell page-shell">
+      <header className="page-header">
+        <p className="eyebrow">Price observations · Public research preview</p>
+        <h1>Real observations, properly qualified.</h1>
+        <p>
+          This page publishes a bounded set of exact-MPN UK marketplace observations. The prices
+          and source links are real and dated; they are not current-price claims, a deal ranking
+          or the UK retail index.
+        </p>
+      </header>
+
+      <div className="notice warning">
+        <strong>Dated evidence—not a live comparison</strong>
+        <span>
+          Retail pages can change after collection. Check the source before acting, and expect the
+          current offer to differ from the observation shown here.
+        </span>
+      </div>
+
+      <ObservedPriceBoard />
+
+      <section className="content-grid">
+        <div>
+          <p className="eyebrow">Primary retail index</p>
+          <h2>Why these prices are visible but excluded.</h2>
+        </div>
+        <div className="prose">
+          <p>
+            Every published offer in this snapshot came from a professional third-party seller on
+            a marketplace. That makes it useful evidence of asking prices, residual stock or
+            scarcity—but not evidence of the comparable primary-retail price.
+          </p>
+          <p>
+            A qualifying retail index observation needs an exact product identity, a supported
+            source, known VAT treatment, mandatory delivery to the fixed UK destination and a
+            purchasable stock state. Unknown inputs remain unknown. Marketplace asking prices
+            never enter the primary-retail index.
+          </p>
+        </div>
+      </section>
+
+      <section className="method-grid">
+        {[
+          ["Identity", "Only observations whose retained page title contained the exact MPN are published in this snapshot."],
+          ["Channel", "Each offer is labelled as a professional marketplace ask rather than retailer-owned inventory."],
+          ["Time", "The observation time remains attached so an old price cannot quietly masquerade as current."],
+          ["Commercial status", "Every outbound source link is direct, unpaid and untracked. No commission is expected."],
+        ].map(([heading, body], index) => (
+          <article key={heading}>
+            <span>0{index + 1}</span>
+            <h3>{heading}</h3>
+            <p>{body}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="limitations">
+        <p className="eyebrow">What comes next</p>
+        <h2>From observations to explainable movement.</h2>
+        <ul>
+          <li>Broader, independently sourced UK retail observations.</li>
+          <li>Deterministic VAT, delivery, matching and coverage rules.</li>
+          <li>A reviewed basket and replayable baseline before any supported index is published.</li>
+          <li>Research notes that test possible explanations against the observed movement.</li>
+        </ul>
+        <Link href="/research">See how research will support future index swings →</Link>
+      </section>
+    </div>
+  );
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "evidence_type": "minimal_factual_product_extract",
+  "product_mpn": "CP2K16G56C46U5",
+  "source": {
+    "publisher": "Crucial",
+    "url": "https://www.crucial.com/memory/ddr5/CP2K16G56C46U5",
+    "retrieved_on": "2026-08-08",
+    "source_response_bytes": 258919,
+    "source_response_sha256": "1803016bf1b7c8f143b9cb1c6c7477e9df8f5c5bbf9bacb535243fe6ca37db66"
+  },
+  "extraction": {
+    "recorded_at": "2026-08-08T09:13:58Z",
+    "method": "Deterministic factual extraction from the exact first-party Crucial product response and embedded product specification; source response was checksum-pinned before authored content was discarded.",
+    "authored_content_retained": false
+  },
+  "facts": {
+    "heading": "Crucial Pro 32GB Kit (16GBx2) DDR5-5600 UDIMM",
+    "memory_generation": "DDR5",
+    "total_capacity_gb": 32,
+    "module_count": 2,
+    "capacity_per_module_gb": 16,
+    "tested_speed_mt_s": 5600,
+    "module_type": "UDIMM",
+    "registered_or_unbuffered": "Unbuffered",
+    "ecc_classification_note": "The first-party specification identifies DIMM type as Unbuffered and distinguishes UDIMM from EUDIMM (ECC unbuffered); this candidate is therefore classified as non-system-ECC pending human review."
+  }
+}

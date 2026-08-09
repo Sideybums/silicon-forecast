@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "evidence_type": "minimal_factual_product_extract",
+  "product_mpn": "CP2K16G64C38U5B",
+  "source": {
+    "publisher": "Crucial",
+    "url": "https://www.crucial.com/memory/ddr5/cp2k16g64c38u5b",
+    "retrieved_on": "2026-08-08",
+    "source_response_bytes": 276202,
+    "source_response_sha256": "3463c2f58757093404b5b47070f4f33468c76a06e7b02f2d41cea944695c17d0"
+  },
+  "extraction": {
+    "recorded_at": "2026-08-08T09:13:58Z",
+    "method": "Deterministic factual extraction from the exact first-party Crucial product response and embedded product specification; source response was checksum-pinned before authored content was discarded.",
+    "authored_content_retained": false
+  },
+  "facts": {
+    "heading": "Crucial Pro DDR5-6400 CL38 32GB Kit (16GBx2) UDIMM OC Gaming Memory Black",
+    "memory_generation": "DDR5",
+    "total_capacity_gb": 32,
+    "module_count": 2,
+    "capacity_per_module_gb": 16,
+    "tested_speed_mt_s": 6400,
+    "module_type": "UDIMM",
+    "registered_or_unbuffered": "Unbuffered",
+    "ecc_classification_note": "The first-party specification identifies DIMM type as Unbuffered and distinguishes UDIMM from EUDIMM (ECC unbuffered); this candidate is therefore classified as non-system-ECC pending human review."
+  }
+}

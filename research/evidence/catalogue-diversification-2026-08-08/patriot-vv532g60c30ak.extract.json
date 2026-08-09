@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "evidence_type": "minimal_factual_product_extract",
+  "product_mpn": "VV532G60C30AK",
+  "source": {
+    "publisher": "Patriot Memory",
+    "catalogue_url": "https://www.patriotmemory.com/products/viper-venom-amd-series-ddr5-performance-ram",
+    "specification_url": "https://patriot-cms-media.sgp1.cdn.digitaloceanspaces.com/VV_532_G60_C30_AK_sku_sheet_9490feb82b.pdf",
+    "retrieved_on": "2026-08-08",
+    "catalogue_response_bytes": 277922,
+    "catalogue_response_sha256": "7f6096c521d4272f2b3c70ef2f9a9b7f34f326ae1a4ea98f554dac22b704be44",
+    "specification_response_bytes": 526619,
+    "specification_response_sha256": "a4cbb551a8bbbb50449853f80f4b4fced449e6c4e216e697ad91cb0d651024d6"
+  },
+  "extraction": {
+    "recorded_at": "2026-08-08T18:23:49Z",
+    "method": "manual minimal factual extraction from independently retrieved first-party source",
+    "authored_content_retained": false
+  },
+  "facts": {
+    "heading": "VIPER VENOM DDR5 AMD RAM 32GB (2X16GB) 6000MT/s UDIMM KIT",
+    "memory_generation": "DDR5",
+    "total_capacity_gb": 32,
+    "module_count": 2,
+    "capacity_per_module_gb": 16,
+    "tested_speed_mt_s": 6000,
+    "module_type": "UDIMM",
+    "package_type": "Retail Box",
+    "ecc_classification_note": "The first-party SKU sheet states On-Die ECC and UDIMM KIT; on-die ECC is not treated as system-visible ECC, and UDIMM supports the unregistered/unbuffered classification pending human acceptance."
+  }
+}

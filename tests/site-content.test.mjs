@@ -9,8 +9,38 @@ test("affiliate verification is network-neutral and honest",()=>{
   assert.doesNotMatch(source,/<h2>Awin status<\/h2>/);
   assert.doesNotMatch(source,/Affiliate partnerships provided through/i);
 });
-test("demonstration cannot be mistaken for live data",()=>{assert.match(source,/Every value above is synthetic/);assert.match(source,/No live prices/i);assert.match(source,/does not yet compare current retailer offers/i)});
-test("required publisher routes exist",()=>{for(const route of ["about","contact","privacy","affiliate-disclosure","price-history"]){assert.ok(readFileSync(`app/${route}/page.tsx`,`utf8`).length>300)}});
+test("public research preview shows bounded dated prices without pretending they are a live index",()=>{
+  const home=readFileSync("app/page.tsx","utf8");
+  const priceHistory=readFileSync("app/price-history/page.tsx","utf8")+readFileSync("components/ObservedPriceBoard.tsx","utf8");
+  const disclosure=readFileSync("app/affiliate-disclosure/page.tsx","utf8");
+  assert.match(home,/Public research preview/);
+  assert.match(home,/Observed prices/);
+  assert.match(priceHistory,/Dated marketplace observations/);
+  assert.match(priceHistory,/not current-price claims/i);
+  assert.match(priceHistory,/or\s+the UK retail index/i);
+  assert.match(priceHistory,/Unpaid source link/);
+  assert.match(disclosure,/unpaid, untracked source links/i);
+  assert.doesNotMatch(home,/View the example chart|Published prices<\/dt><dd>None yet/);
+  assert.doesNotMatch(priceHistory,/Demonstration only|All chart values are synthetic/);
+});
+test("price channels are separated without weakening the headline index",()=>{
+  const priceHistory=readFileSync("app/price-history/page.tsx","utf8")+readFileSync("components/ObservedPriceBoard.tsx","utf8");
+  assert.match(priceHistory,/Marketplace · Asking prices/);
+  assert.match(priceHistory,/Primary retail index/);
+  assert.match(priceHistory,/Marketplace asking prices never enter the primary-retail index/);
+  assert.match(priceHistory,/Professional third-party seller/);
+  assert.match(priceHistory,/Observation time/);
+  assert.match(priceHistory,/VAT and delivery/);
+});
+test("research notes explain evidence-first context for future index movements",()=>{
+  const research=readFileSync("app/research/page.tsx","utf8");
+  assert.match(research,/Research and market notes/);
+  assert.match(research,/movement first, explanation second/i);
+  assert.match(research,/does not prove causation/i);
+  assert.match(research,/supporting\s+and\s+contradictory evidence/i);
+  assert.match(research,/Marketplace scarcity is not the retail index/);
+});
+test("required publisher routes exist",()=>{for(const route of ["about","contact","privacy","affiliate-disclosure","price-history","research"]){assert.ok(readFileSync(`app/${route}/page.tsx`,`utf8`).length>300)}});
 test("project email is operational",()=>{
   const contact=readFileSync("app/contact/page.tsx","utf8");
   assert.match(contact,/active project address/i);

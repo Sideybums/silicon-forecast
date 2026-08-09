@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "review_id": "sf-ddr5-32gb-diversification-human-review-2026-08-09",
+  "review_type": "human_catalogue_selection_review",
+  "catalogue_fixture_set_id": "sf-ddr5-32gb-diversification-2026-08-08",
+  "catalogue_content_sha256": "fa43e2c1913dcf02a765419641cf99311f92db6f7364e16363314fe46b23860e",
+  "evidence_manifest_reference": "research/evidence/catalogue-diversification-2026-08-08/manifest.json",
+  "evidence_manifest_sha256": "d0ae47f48437b3d350dc0eda2b613cc2ff685d2c231ed918970ae1ed5b6d8590",
+  "decision": "approved_selected_for_fixture_use",
+  "reviewed_by": {
+    "name": "David Sidebottom",
+    "role": "project_owner"
+  },
+  "reviewed_at": "2026-08-09T05:54:14Z",
+  "approved_product_keys": [
+    "corsair-vengeance-cmk32gx5m2b6000c36",
+    "patriot-viper-venom-amd-vv532g60c30ak"
+  ],
+  "held_product_keys": [
+    "adata-ddr5-4800-ad5u480016g-dt",
+    "adata-ddr5-5600-ad5u560016g-dt"
+  ],
+  "abstentions": [
+    {
+      "manufacturer": "Lexar",
+      "reason_code": "first_party_evidence_not_retainable_via_normal_access",
+      "note": "No Lexar candidate is approved or rejected. Research abstains until an exact-MPN first-party page, datasheet, catalogue or manufacturer confirmation can be retained without impersonating a search crawler or bypassing access controls."
+    }
+  ],
+  "confirmations": [
+    "corsair_exact_mpn_and_specification_checked",
+    "corsair_udimm_non_system_ecc_interpretation_accepted",
+    "patriot_exact_mpn_and_specification_checked",
+    "patriot_udimm_non_system_ecc_interpretation_accepted",
+    "adata_dual_tray_candidates_held_pending_stronger_kit_evidence",
+    "lexar_normal_access_abstention_accepted",
+    "automatic_matching_remains_locked"
+  ],
+  "limitations": [
+    "approved_selected_products_for_fixture_use_only",
+    "held_products_remain_candidate_pending_human_review",
+    "lexar_remains_a_documented_research_abstention",
+    "does_not_approve_production_activation",
+    "does_not_approve_index_methodology_or_baseline",
+    "does_not_approve_source_access_or_publication",
+    "does_not_grant_baseline_or_reserve_eligibility",
+    "does_not_create_basket_membership",
+    "does_not_enable_automatic_product_matching"
+  ]
+}

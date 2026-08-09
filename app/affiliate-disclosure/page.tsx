@@ -12,17 +12,18 @@ export default function Page() {
         <p className="eyebrow">Affiliate disclosure</p>
         <h1>Commercial links should be labelled, not camouflaged.</h1>
         <p>
-          Last updated 6 August 2026. Silicon Forecast is seeking to establish relationships
-          with suitable affiliate networks, advertisers and retailers. It is not yet publishing
-          live affiliate offers.
+          Last updated 9 August 2026. Silicon Forecast publishes a small number of dated
+          research observations with direct retailer or marketplace source links while seeking
+          relationships with suitable affiliate networks, advertisers and retailers.
         </p>
       </header>
 
       <div className="notice">
         <strong>Current position</strong>
         <span>
-          No affiliate product feeds, tracked retailer links, sponsored placements or
-          commission-bearing offers are active on this pre-launch site.
+          Current offer links are unpaid, untracked source links. Silicon Forecast receives no
+          commission from them, and they are not sponsored placements. No affiliate product feed
+          is active.
         </span>
       </div>
 

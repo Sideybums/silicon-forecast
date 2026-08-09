@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "evidence_type": "minimal_factual_product_extract",
+  "product_mpn": "CP2K16G60C36U5B",
+  "source": {
+    "publisher": "Crucial",
+    "url": "https://www.crucial.com/memory/ddr5/cp2k16g60c36u5b",
+    "retrieved_on": "2026-08-08",
+    "source_response_bytes": 276475,
+    "source_response_sha256": "f6e82bce4b199e9e35fefa49c8d73e4c109c33a4fa0309903fcf7593adc3ba23"
+  },
+  "extraction": {
+    "recorded_at": "2026-08-08T09:13:58Z",
+    "method": "Deterministic factual extraction from the exact first-party Crucial product response and embedded product specification; source response was checksum-pinned before authored content was discarded.",
+    "authored_content_retained": false
+  },
+  "facts": {
+    "heading": "Crucial Pro DDR5-6000 32GB Kit (16GBx2) UDIMM OC Gaming Memory Black",
+    "memory_generation": "DDR5",
+    "total_capacity_gb": 32,
+    "module_count": 2,
+    "capacity_per_module_gb": 16,
+    "tested_speed_mt_s": 6000,
+    "module_type": "UDIMM",
+    "registered_or_unbuffered": "Unbuffered",
+    "ecc_classification_note": "The first-party specification identifies DIMM type as Unbuffered and distinguishes UDIMM from EUDIMM (ECC unbuffered); this candidate is therefore classified as non-system-ECC pending human review."
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "schema_version": "1.0",
+  "approval_id": "sf-index-resilience-architecture-2026-08-08",
+  "recorded_at": "2026-08-08T12:27:07Z",
+  "approved_by": "David Sidebottom",
+  "decision": "approved",
+  "proposal": "research/INDEX-RESILIENCE-PROPOSAL.md",
+  "approved_scope": [
+    "Treat the 12-product exact-MPN set as a control-plane pilot rather than sufficient long-term market coverage or an approved index basket",
+    "Maintain separate monitored-universe, reviewed-catalogue, baseline-eligible/reserve-pool and effective-dated basket-vintage states",
+    "Expand major-brand research coverage beginning with Corsair and including Kingston, Crucial, G.SKILL, TEAMGROUP, ADATA/XPG, Patriot/Viper and Lexar, with further UK-visible brands determined empirically",
+    "Add effective-dated lifecycle and EOL/successor handling without deletion or silent substitution",
+    "Require leave-one-product-out resilience before baseline approval and design source/retailer-loss and churn stress tests",
+    "Keep news and editorial research separate from the numeric index; news may create coverage-gap investigations but cannot move the index directly",
+    "Continue fixture-only catalogue, lifecycle, reserve-pool and resilience work with existing production, publication and external-action locks engaged"
+  ],
+  "explicitly_not_approved": [
+    "Any exact numerical methodology threshold not already separately approved",
+    "Any basket-vintage chain-linking or rebasing formula",
+    "A production methodology, production region, source portfolio, basket or baseline",
+    "Automatic successor substitution or automatic basket mutation",
+    "Production ingestion, database mutation, publication, deployment or spend",
+    "Using news reports or editorial judgement as numeric index inputs",
+    "Second-hand or recommerce inclusion in the headline new-retail index"
+  ],
+  "evidence_note": "David stated: 'I approve this. Lets move forward with new context.' This record binds that approval to the immediately preceding resilience and market-universe proposal while preserving its explicit evidence and approval gates."
+}

@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "evidence_type": "minimal_factual_product_extract",
+  "product_mpn": "CMK32GX5M2B6000C36",
+  "source": {
+    "publisher": "Corsair",
+    "url": "https://www.corsair.com/us/en/p/memory/cmk32gx5m2b6000c36/vengeance-32gb-2x16gb-ddr5-dram-6000mhz-c36-memory-kit-black-cmk32gx5m2b6000c36",
+    "retrieved_on": "2026-08-08",
+    "source_response_bytes": 482535,
+    "source_response_sha256": "a831d57cec16cb9635d9cc1564b6515caac4885826178d4f5efbc70c1572f5f7"
+  },
+  "extraction": {
+    "recorded_at": "2026-08-08T18:23:49Z",
+    "method": "manual minimal factual extraction from independently retrieved first-party source",
+    "authored_content_retained": false
+  },
+  "facts": {
+    "heading": "VENGEANCE 32GB (2x16GB) DDR5 DRAM Up To 6000MT/s CL36 Memory Kit — Black",
+    "memory_generation": "DDR5",
+    "total_capacity_gb": 32,
+    "module_count": 2,
+    "capacity_per_module_gb": 16,
+    "tested_speed_mt_s": 6000,
+    "module_type": "UDIMM",
+    "pin_count": 288,
+    "ecc_classification_note": "The source establishes UDIMM but does not explicitly state system-ECC status; non-system-ECC treatment is a derived classification pending human acceptance."
+  }
+}

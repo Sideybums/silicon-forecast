@@ -42,7 +42,8 @@ BEGIN
   FROM silicon_forecast.canonical_product_identifier identifier
   JOIN silicon_forecast.canonical_product_revision revision
     ON revision.id = identifier.canonical_product_revision_id
-  WHERE revision.evidence_reference LIKE '%research/evidence/catalogue-2026-08-06/%'
+  WHERE revision.review_status = 'draft'
+    AND revision.evidence_reference LIKE '%research/evidence/catalogue-2026-08-06/%'
     AND identifier.identifier_type = 'MPN'
     AND identifier.is_primary;
   IF candidate_identifier_count <> 4 THEN
@@ -221,6 +222,63 @@ INSERT INTO silicon_forecast.canonical_product_identifier (
   'db/tests/foundation.sql#valid-fixture'
 );
 
+INSERT INTO silicon_forecast.canonical_product (id, stable_key)
+VALUES ('50000000-0000-0000-0000-000000000002', 'fixture-ddr5-kit-b');
+
+INSERT INTO silicon_forecast.canonical_product_revision (
+  id, canonical_product_id, revision_no, manufacturer_id, model, mpn_raw, mpn_normalized,
+  memory_generation, total_capacity_gb, module_count, capacity_per_module_gb,
+  speed_mt_s, form_factor, ecc, registered, buffering, review_status,
+  evidence_reference, created_by
+) VALUES (
+  '60000000-0000-0000-0000-000000000002',
+  '50000000-0000-0000-0000-000000000002', 1,
+  '40000000-0000-0000-0000-000000000001', 'Conflicting Fixture DDR5', 'FIX-32', 'FIX-32',
+  'DDR5', 32, 2, 16, 6000, 'UDIMM', false, false, 'unbuffered', 'draft',
+  'db/tests/foundation.sql#identifier-lineage-conflict', '00000000-0000-0000-0000-000000000001'
+);
+
+DO $$
+BEGIN
+  BEGIN
+    INSERT INTO silicon_forecast.canonical_product_identifier (
+      canonical_product_revision_id, manufacturer_id, identifier_type, raw_value,
+      normalized_value, is_primary, evidence_reference
+    ) VALUES (
+      '60000000-0000-0000-0000-000000000002',
+      '40000000-0000-0000-0000-000000000001', 'MPN', 'FIX-32', 'FIX-32', true,
+      'db/tests/foundation.sql#identifier-lineage-conflict'
+    );
+    RAISE EXCEPTION USING ERRCODE = 'P9999', MESSAGE = 'identifier ownership collision unexpectedly succeeded';
+  EXCEPTION WHEN unique_violation THEN
+    NULL;
+  END;
+END;
+$$;
+
+DO $$
+BEGIN
+  BEGIN
+    INSERT INTO silicon_forecast.canonical_product_revision (
+      canonical_product_id, revision_no, manufacturer_id, model, mpn_raw, mpn_normalized,
+      memory_generation, total_capacity_gb, module_count, capacity_per_module_gb,
+      speed_mt_s, form_factor, ecc, registered, buffering, review_status,
+      supersedes_revision_id, evidence_reference, reviewed_by, reviewed_at, created_by
+    ) VALUES (
+      '50000000-0000-0000-0000-000000000002', 2,
+      '40000000-0000-0000-0000-000000000001', 'Unauthorised Reviewed Fixture', 'FIX-33', 'FIX-33',
+      'DDR5', 32, 2, 16, 6000, 'UDIMM', false, false, 'unbuffered', 'reviewed',
+      '60000000-0000-0000-0000-000000000002', 'db/tests/foundation.sql#unauthorised-review',
+      '00000000-0000-0000-0000-000000000002', statement_timestamp(),
+      '00000000-0000-0000-0000-000000000002'
+    );
+    RAISE EXCEPTION USING ERRCODE = 'P9999', MESSAGE = 'unscoped reviewed revision unexpectedly succeeded';
+  EXCEPTION WHEN check_violation THEN
+    NULL;
+  END;
+END;
+$$;
+
 DO $$
 BEGIN
   BEGIN
@@ -263,5 +321,129 @@ BEGIN
   END;
 END;
 $$;
+
+DO $$
+DECLARE reviewed_count integer;
+DECLARE reviewed_identifier_count integer;
+DECLARE review_application_count integer;
+DECLARE review_audit_count integer;
+DECLARE lock_count integer;
+BEGIN
+  SELECT count(*) INTO reviewed_count
+  FROM silicon_forecast.canonical_product_revision reviewed
+  JOIN silicon_forecast.canonical_product_revision draft
+    ON draft.id = reviewed.supersedes_revision_id
+  WHERE reviewed.review_status = 'reviewed'
+    AND reviewed.authority_scope = 'fixture_only'
+    AND reviewed.fixture_review_application_id IS NOT NULL
+    AND reviewed.revision_no = draft.revision_no + 1
+    AND draft.review_status = 'draft'
+    AND reviewed.reviewed_by = '00000000-0000-0000-0000-000000000002'
+    AND reviewed.reviewed_at = '2026-08-06T09:21:11Z'::timestamptz
+    AND reviewed.evidence_reference::jsonb ->> 'fixture_review'
+      = 'data/reviews/ddr5-32gb-seed-review-2026-08-06.json';
+  IF reviewed_count <> 4 THEN
+    RAISE EXCEPTION 'expected four additive reviewed revisions, found %', reviewed_count;
+  END IF;
+
+  SELECT count(*) INTO reviewed_identifier_count
+  FROM silicon_forecast.canonical_product_identifier identifier
+  JOIN silicon_forecast.canonical_product_revision revision
+    ON revision.id = identifier.canonical_product_revision_id
+  WHERE revision.review_status = 'reviewed'
+    AND identifier.identifier_type = 'MPN'
+    AND identifier.is_primary;
+  IF reviewed_identifier_count <> 4 THEN
+    RAISE EXCEPTION 'expected four reviewed primary MPNs, found %', reviewed_identifier_count;
+  END IF;
+
+  SELECT count(*) INTO review_application_count
+  FROM silicon_forecast.catalogue_fixture_review_application application
+  JOIN silicon_forecast.approval_decision decision
+    ON decision.id = application.approval_decision_id
+  WHERE application.review_key = 'sf-ddr5-32gb-seed-human-review-2026-08-06'
+    AND application.catalogue_fixture_set_id = 'sf-ddr5-32gb-seed-2026-08-06'
+    AND application.catalogue_sha256 = '98572936896e59c83f90ba796f6c6c3a917e1a304530163744dabb63f572d568'
+    AND application.listing_fixture_set_id = 'sf-ddr5-listing-labels-2026-08-06'
+    AND application.listing_sha256 = '554627a43ab56578da9d39ba698fef6f66753ed57befa8638a35a287b84a7001'
+    AND application.evidence_sha256 = '86fef1c0bd47279ece52be6dbbb03502138ea42dd5586a94c06a84beb6c7f801'
+    AND EXISTS (
+      SELECT 1
+      FROM silicon_forecast.catalogue_fixture_set_manifest manifest
+      WHERE manifest.catalogue_fixture_set_id = application.catalogue_fixture_set_id
+        AND manifest.catalogue_sha256 = application.catalogue_sha256
+        AND manifest.listing_fixture_set_id = application.listing_fixture_set_id
+        AND manifest.listing_sha256 = application.listing_sha256
+    )
+    AND jsonb_array_length(application.product_keys) = 4
+    AND jsonb_array_length(application.listing_example_ids) = 20
+    AND application.limitations ? 'does_not_approve_production_activation'
+    AND application.limitations ? 'does_not_enable_automatic_product_matching'
+    AND decision.decision_type = 'catalogue_fixture_review'
+    AND decision.decision = 'approve';
+  IF review_application_count <> 1 THEN
+    RAISE EXCEPTION 'fixture review application or approval record is incomplete';
+  END IF;
+
+  SELECT count(*) INTO review_audit_count
+  FROM silicon_forecast.audit_event
+  WHERE action = 'catalogue_fixture_review_applied'
+    AND approval_decision_id = (
+      SELECT approval_decision_id
+      FROM silicon_forecast.catalogue_fixture_review_application
+      WHERE review_key = 'sf-ddr5-32gb-seed-human-review-2026-08-06'
+    );
+  IF review_audit_count <> 4 THEN
+    RAISE EXCEPTION 'expected four attributable catalogue review audit events, found %', review_audit_count;
+  END IF;
+
+  SELECT count(*) INTO lock_count
+  FROM silicon_forecast.current_governance_lock
+  WHERE state = 'locked';
+  IF lock_count <> 7 THEN
+    RAISE EXCEPTION 'fixture review changed a governance lock';
+  END IF;
+END;
+$$;
+
+DO $$
+BEGIN
+  BEGIN
+    UPDATE silicon_forecast.catalogue_fixture_review_application
+    SET catalogue_fixture_set_id = 'silently-mutated'
+    WHERE review_key = 'sf-ddr5-32gb-seed-human-review-2026-08-06';
+    RAISE EXCEPTION USING ERRCODE = 'P9999', MESSAGE = 'fixture review application mutation unexpectedly succeeded';
+  EXCEPTION WHEN SQLSTATE 'P0001' THEN
+    NULL;
+  END;
+END;
+$$;
+
+DO $$
+BEGIN
+  BEGIN
+    UPDATE silicon_forecast.catalogue_fixture_set_manifest
+    SET catalogue_sha256 = repeat('0', 64)
+    WHERE catalogue_fixture_set_id = 'sf-ddr5-32gb-seed-2026-08-06';
+    RAISE EXCEPTION USING ERRCODE = 'P9999', MESSAGE = 'fixture manifest mutation unexpectedly succeeded';
+  EXCEPTION WHEN SQLSTATE 'P0001' THEN
+    NULL;
+  END;
+END;
+$$;
+
+SET ROLE silicon_forecast_catalogue_reviewer;
+DO $$
+BEGIN
+  BEGIN
+    INSERT INTO silicon_forecast.canonical_product (stable_key)
+    VALUES ('reviewer-direct-write-must-fail');
+    RAISE EXCEPTION USING ERRCODE = 'P9999', MESSAGE = 'reviewer role gained direct catalogue write access';
+  EXCEPTION WHEN insufficient_privilege THEN
+    NULL;
+  END;
+END;
+$$;
+RESET ROLE;
 
 SELECT 'foundation database tests passed' AS result;
