@@ -14,10 +14,10 @@ const qualificationRules = [
 ] as const;
 
 const releaseGates = [
-  ["Retail source coverage", "Pending", "Enough independent UK retailers to avoid a one-shop index."],
-  ["Price normalisation", "Pending", "VAT and mandatory delivery resolved deterministically."],
-  ["Basket review", "Pending", "Products, reserves and effective dates explicitly approved."],
-  ["Replay verification", "Pending", "The same retained observations reproduce the same series."],
+  ["Retail source coverage", "Blocked · source breadth", "Enough independent UK retailers to avoid a one-shop index."],
+  ["Price normalisation", "Blocked · delivery rule", "VAT and mandatory delivery resolved deterministically."],
+  ["Basket review", "Awaiting approval", "Products, reserves and effective dates explicitly approved."],
+  ["Replay verification", "Not run · no baseline", "The same retained observations reproduce the same series."],
 ] as const;
 
 export default function Page() {
@@ -53,27 +53,48 @@ export default function Page() {
         <div className="panel-heading">
           <div>
             <p className="section-label">02 · Retail price history</p>
-            <h2 id="retail-history-title">No verified retail series yet.</h2>
+            <h2 id="retail-history-title">Collection started. The index has not.</h2>
           </div>
-          <span className="history-range">Base 100 · Daily · GBP</span>
+          <span className="history-range">State 0 · Collecting evidence</span>
         </div>
-        <div className="retail-chart-empty" role="img" aria-label="Empty retail price history chart awaiting verified data">
-          <div className="chart-axis chart-axis-y"><span>Index</span><i>110</i><i>100</i><i>90</i></div>
-          <div className="chart-grid" aria-hidden="true">
-            <i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i /><i />
+        <div className="collection-chart-shell">
+          <svg
+            className="collection-chart"
+            viewBox="0 0 1000 400"
+            role="img"
+            aria-labelledby="collection-chart-title collection-chart-description"
+            preserveAspectRatio="none"
+          >
+            <title id="collection-chart-title">UK DDR5 index collection-start state</title>
+            <desc id="collection-chart-description">
+              Collection is under way, but no publishable index point or active index scale exists.
+            </desc>
+            <rect className="collection-chart-field" x="0" y="0" width="1000" height="400" />
+            <g className="collection-chart-grid" aria-hidden="true">
+              <line x1="0" y1="100" x2="1000" y2="100" />
+              <line x1="0" y1="200" x2="1000" y2="200" />
+              <line x1="0" y1="300" x2="1000" y2="300" />
+              <line x1="250" y1="0" x2="250" y2="400" />
+              <line x1="500" y1="0" x2="500" y2="400" />
+              <line x1="750" y1="0" x2="750" y2="400" />
+            </g>
+            <g className="collection-start-marker" aria-hidden="true">
+              <rect x="78" y="54" width="8" height="292" />
+              <rect x="60" y="54" width="44" height="8" />
+            </g>
+          </svg>
+          <div className="collection-scale-note" aria-hidden="true">Index scale<br />not active</div>
+          <div className="collection-start-label" aria-hidden="true"><span>01</span> Collection started</div>
+          <div className="collection-empty-message">
+            <p className="collection-kicker">Evidence before numbers</p>
+            <strong>No publishable index point exists.</strong>
+            <p>The index scale begins only after the basket and baseline receive methodology approval.</p>
           </div>
-          <div className="chart-empty-message">
-            <span className="chart-empty-mark">SF</span>
-            <div>
-              <strong>Retail history begins after the release gates pass.</strong>
-              <p>We will not fill this space with sample prices that look suspiciously real.</p>
-            </div>
-          </div>
-          <div className="chart-axis chart-axis-x"><span>Observation date</span></div>
         </div>
-        <div className="history-explainer">
-          <p><strong>What this will show</strong> A replayable daily index and its coverage state.</p>
-          <p><strong>What it will not show</strong> Unsupported prices, rankings or recommendations.</p>
+        <div className="history-diagnostics" aria-label="Index publication diagnostics">
+          <div><span>Publishable points</span><strong>None · baseline unapproved</strong></div>
+          <div><span>Index scale</span><strong>Inactive · begins after approval</strong></div>
+          <div><span>Public scope</span><strong>Primary retail only</strong></div>
         </div>
       </section>
 
@@ -104,7 +125,7 @@ export default function Page() {
         <div className="panel-heading">
           <div>
             <p className="section-label">04 · Release gates</p>
-            <h2 id="release-gates-title">What must be true before the line appears.</h2>
+            <h2 id="release-gates-title">What must be true before the first index point.</h2>
           </div>
           <span className="gate-count">0 / 4 passed</span>
         </div>

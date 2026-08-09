@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "manifest_id": "sf-gb-historical-primary-retail-backfill-evidence-2026-08-09T145021Z-v1",
+  "status": "candidate_private_immutable",
+  "created_at": "2026-08-09T14:50:21Z",
+  "retention_policy": "Checksum-pinned minimal factual extracts are retained. Raw HTML and fetched wire/decoded response bytes are not retained; their byte counts and SHA-256 values are retained.",
+  "observation_artifact": {
+    "path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
+    "bytes": 12163,
+    "sha256": "c54210ddc8a607826fc229480eb88c31bbd974111c93f940d3835a12e72cace8"
+  },
+  "evidence": [
+    {
+      "path": "research/evidence/historical-primary-retail-backfill-2026-08-09/kingston-kf564c32rsk2-32-2022-08-11.extract.json",
+      "bytes": 1920,
+      "sha256": "45774228d50f791b8ea134c84d8c4eb2b560c3d3b01b7fc62be2c90dcf7d07ec",
+      "retrieved_at": "2026-08-09T14:50:16Z",
+      "response_wire_bytes": 52624,
+      "response_wire_sha256": "2cc7b3b31bef90dd0c591685f1dd3c955a545d71d55a50831c9bba1dd6c64334",
+      "response_decoded_bytes": 572026,
+      "response_decoded_sha256": "c79cb5d4971a267046605d70a83a2d542ef344ef3f4ad07187abdc7f70c485e4",
+      "response_bytes_retained": false
+    },
+    {
+      "path": "research/evidence/historical-primary-retail-backfill-2026-08-09/awd-it-f5-6000j3636f16gx2-fx5-2026-01-10.extract.json",
+      "bytes": 1885,
+      "sha256": "5ec402bec5ca6f26bd059fa583b8db257dd370197f3bb37115480a47ff1968d7",
+      "retrieved_at": "2026-08-09T14:50:17Z",
+      "response_wire_bytes": 84382,
+      "response_wire_sha256": "e516208093babbb07fb124d1c44ef8c91d32216899d16e63f0820754b1f63a00",
+      "response_decoded_bytes": 395059,
+      "response_decoded_sha256": "1fea0dd7583364e207d8e96e65fe89304f43e0c450daba1c8ce1d9bd5cfd7fcb",
+      "response_bytes_retained": false
+    },
+    {
+      "path": "research/evidence/historical-primary-retail-backfill-2026-08-09/awd-it-f5-6000j3636f16gx2-fx5-2026-01-17.extract.json",
+      "bytes": 1885,
+      "sha256": "f4006418f7d01049e30b24e885f028ac9d7b04412b3a1a339802853835cab206",
+      "retrieved_at": "2026-08-09T14:50:19Z",
+      "response_wire_bytes": 84768,
+      "response_wire_sha256": "e2e97fc8938ecac79f5e52711eb48d8a3ac1d360b527ffc780f49050ae37d285",
+      "response_decoded_bytes": 396265,
+      "response_decoded_sha256": "4c6012ba27c90da01e45c8003458bec1c7851e0134bc46f7361f423b64fcc625",
+      "response_bytes_retained": false
+    },
+    {
+      "path": "research/evidence/historical-primary-retail-backfill-2026-08-09/kingston-kf560c30bbek2-32-2026-03-09.extract.json",
+      "bytes": 2075,
+      "sha256": "26c9729de5ee00ae881b8a1565ea3736e6afd993ee7feab24cbfa6e076efabb9",
+      "retrieved_at": "2026-08-09T14:50:21Z",
+      "response_wire_bytes": 54730,
+      "response_wire_sha256": "e4a3e89a8d05dc0c3c70aec8a82b5a49cf3ce17324ff31a031c1294a4fd6a0df",
+      "response_decoded_bytes": 616478,
+      "response_decoded_sha256": "d2a2b192ee7584f34edcf5b16446235dfba00d69bfd558db83484aa59dbab82e",
+      "response_bytes_retained": false
+    }
+  ],
+  "governance": {
+    "source_approval_allowed": false,
+    "methodology_approval": false,
+    "production_import_allowed": false,
+    "production_activation_allowed": false,
+    "index_eligibility": false,
+    "publication_allowed": false
+  }
+}

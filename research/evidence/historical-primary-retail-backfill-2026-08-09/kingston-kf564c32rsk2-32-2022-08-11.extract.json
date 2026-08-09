@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "evidence_id": "sf-wayback-kms-kf564c32rsk2-32-2022-08-11T084020Z",
+  "evidence_class": "minimal_factual_extract",
+  "archive_url": "https://web.archive.org/web/20220811084020id_/https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm",
+  "original_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm",
+  "capture_timestamp": "2022-08-11T08:40:20Z",
+  "capture_time_semantics": "Archived observation evidence only; not evidence of retailer first-change time.",
+  "retrieved_at": "2026-08-09T14:50:16Z",
+  "retrieval_method": "Normal unauthenticated HTTPS GET with Accept-Encoding: gzip; gzip detected from response headers and magic bytes and decoded before factual extraction.",
+  "http_status": 200,
+  "response": {
+    "content_encoding": "gzip",
+    "wire_bytes": 52624,
+    "wire_sha256": "2cc7b3b31bef90dd0c591685f1dd3c955a545d71d55a50831c9bba1dd6c64334",
+    "decoded_bytes": 572026,
+    "decoded_sha256": "c79cb5d4971a267046605d70a83a2d542ef344ef3f4ad07187abdc7f70c485e4",
+    "bytes_retained": false
+  },
+  "retention_note": "Fetched wire and decoded response bytes are not retained; only this minimal factual extract and their byte counts and SHA-256 values are retained.",
+  "facts": {
+    "mpn": "KF564C32RSK2-32",
+    "price": { "amount_minor": 48799, "currency": "GBP", "vat_state": "included", "display": "£487.99 (inc. VAT)" },
+    "seller": { "display_name": "KingstonMemoryShop", "legal_name": "SweetCow Ltd t/a KingstonMemoryShop" },
+    "availability": { "display": "Available To Order (Est. 3-5 Day Delivery To UK)", "normalised": "available_to_order", "semantics": "ambiguous" },
+    "delivery": { "display": "Free UK Delivery", "amount_minor": 0, "destination_scope": "UK unspecified", "destination_verified": false }
+  }
+}

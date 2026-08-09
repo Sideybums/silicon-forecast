@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "evidence_id": "sf-wayback-awdit-f5-6000j3636f16gx2-fx5-2026-01-10T145607Z",
+  "evidence_class": "minimal_factual_extract",
+  "archive_url": "https://web.archive.org/web/20260110145607id_/https://www.awd-it.co.uk/g-skill-flare-x5-32gb-16gb-x2-ddr5-6000mt-s-cl36-memory-kit-black-f5-6000j3636f16gx2-fx5.html",
+  "original_url": "https://www.awd-it.co.uk/g-skill-flare-x5-32gb-16gb-x2-ddr5-6000mt-s-cl36-memory-kit-black-f5-6000j3636f16gx2-fx5.html",
+  "capture_timestamp": "2026-01-10T14:56:07Z",
+  "capture_time_semantics": "Archived observation evidence only; not evidence of retailer first-change time.",
+  "retrieved_at": "2026-08-09T14:50:17Z",
+  "retrieval_method": "Normal unauthenticated HTTPS GET with Accept-Encoding: gzip; gzip detected from response headers and magic bytes and decoded before factual extraction.",
+  "http_status": 200,
+  "response": {
+    "content_encoding": "gzip",
+    "wire_bytes": 84382,
+    "wire_sha256": "e516208093babbb07fb124d1c44ef8c91d32216899d16e63f0820754b1f63a00",
+    "decoded_bytes": 395059,
+    "decoded_sha256": "1fea0dd7583364e207d8e96e65fe89304f43e0c450daba1c8ce1d9bd5cfd7fcb",
+    "bytes_retained": false
+  },
+  "retention_note": "Fetched wire and decoded response bytes are not retained; only this minimal factual extract and their byte counts and SHA-256 values are retained.",
+  "facts": {
+    "mpn": "F5-6000J3636F16GX2-FX5",
+    "price": { "amount_minor": 39999, "currency": "GBP", "vat_state": "included", "display": "£399.99 Incl. Tax" },
+    "seller": { "display_name": "AWD-IT", "legal_name": "ADMI Limited" },
+    "availability": { "display": "In stock", "normalised": "in_stock", "semantics": "explicit" },
+    "delivery": { "display": "FREE UK Mainland Delivery / Free Delivery Available", "amount_minor": 0, "destination_scope": "UK mainland unspecified", "destination_verified": false }
+  }
+}

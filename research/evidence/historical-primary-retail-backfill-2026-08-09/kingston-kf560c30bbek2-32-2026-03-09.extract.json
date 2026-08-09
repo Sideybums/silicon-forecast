@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "evidence_id": "sf-wayback-kms-kf560c30bbek2-32-2026-03-09T113702Z",
+  "evidence_class": "minimal_factual_extract",
+  "archive_url": "https://web.archive.org/web/20260309113702id_/https://www.kingstonmemoryshop.co.uk/memory-ram/kingston-fury-beast-kf560c30bbek2-32-32gb-16gb-x2-ddr5-6000mt-s-black-memory-dimm-expo",
+  "original_url": "https://www.kingstonmemoryshop.co.uk/memory-ram/kingston-fury-beast-kf560c30bbek2-32-32gb-16gb-x2-ddr5-6000mt-s-black-memory-dimm-expo",
+  "capture_timestamp": "2026-03-09T11:37:02Z",
+  "capture_time_semantics": "Archived observation evidence only; not evidence of retailer first-change time.",
+  "retrieved_at": "2026-08-09T14:50:21Z",
+  "retrieval_method": "Normal unauthenticated HTTPS GET with Accept-Encoding: gzip; gzip detected from response headers and magic bytes and decoded before factual extraction.",
+  "http_status": 200,
+  "response": {
+    "content_encoding": "gzip",
+    "wire_bytes": 54730,
+    "wire_sha256": "e4a3e89a8d05dc0c3c70aec8a82b5a49cf3ce17324ff31a031c1294a4fd6a0df",
+    "decoded_bytes": 616478,
+    "decoded_sha256": "d2a2b192ee7584f34edcf5b16446235dfba00d69bfd558db83484aa59dbab82e",
+    "bytes_retained": false
+  },
+  "retention_note": "Fetched wire and decoded response bytes are not retained; only this minimal factual extract and their byte counts and SHA-256 values are retained.",
+  "facts": {
+    "mpn": "KF560C30BBEK2-32",
+    "price": { "amount_minor": 54728, "currency": "GBP", "vat_state": "included", "display": "£547.28 (inc. VAT)" },
+    "seller": { "display_name": "KingstonMemoryShop", "legal_name": "SweetCow Ltd t/a KingstonMemoryShop" },
+    "availability": { "display": "4 in stock", "normalised": "in_stock", "semantics": "explicit" },
+    "delivery": {
+      "display": "Next-business-day UK delivery via TNT/FedEx £6.99 shipping option; free delivery also available",
+      "amount_minor": null,
+      "currency": "GBP",
+      "destination_scope": "UK unspecified",
+      "destination_verified": false,
+      "mandatory_method_resolved": false
+    }
+  }
+}

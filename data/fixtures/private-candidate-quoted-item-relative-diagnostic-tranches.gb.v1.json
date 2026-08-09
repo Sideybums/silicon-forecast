@@ -1,0 +1,230 @@
+[
+  {
+    "schema_version": 1,
+    "tranche_id": "fixture-inception-2026-08-09-v1",
+    "status": "candidate_private_immutable",
+    "scope": "candidate_only",
+    "region": "GB",
+    "channel": "PRIMARY_RETAIL",
+    "created_at": "2026-08-09T12:00:00Z",
+    "governance": {
+      "production_import_allowed": false,
+      "production_activation_allowed": false,
+      "index_eligibility": false,
+      "methodology_approval": false,
+      "publication_allowed": false
+    },
+    "observations": [
+      {
+        "observation_id": "fixture-retailer-a-mpn-a-2026-08-09",
+        "status": "candidate_private_immutable",
+        "scope": "candidate_only",
+        "observed_at": "2026-08-09T09:00:00Z",
+        "source": {
+          "source_key": "retailer-a-fixture",
+          "source_url": "https://retailer-a.example.test/MPN-A",
+          "source_approved_for_production": false
+        },
+        "identity": { "mpn_expected": "MPN-A", "mpn_observed": "MPN-A", "match_basis": "exact_mpn" },
+        "seller": { "legal_name": "Fixture Retailer Legal Entity", "relationship": "retailer_owned" },
+        "item_price": { "amount_minor": 10000, "currency": "GBP", "vat_state": "included" },
+        "delivery": { "amount_minor": null, "currency": "GBP", "destination_verified": false },
+        "landed_price": { "amount_minor": null, "currency": "GBP", "eligibility": "abstain" },
+        "evidence": {
+          "extract_path": "fixture/evidence/retailer-a-mpn-a-2026-08-09.json",
+          "extract_sha256": "aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+          "response_sha256": "bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb",
+          "response_bytes_retained": false
+        },
+        "governance": {
+          "production_import_allowed": false,
+          "production_activation_allowed": false,
+          "index_eligibility": false,
+          "methodology_approval": false,
+          "publication_allowed": false
+        }
+      },
+      {
+        "observation_id": "fixture-retailer-b-mpn-b-2026-08-09",
+        "status": "candidate_private_immutable",
+        "scope": "candidate_only",
+        "observed_at": "2026-08-09T09:01:00Z",
+        "source": {
+          "source_key": "retailer-b-fixture",
+          "source_url": "https://retailer-b.example.test/MPN-B",
+          "source_approved_for_production": false
+        },
+        "identity": { "mpn_expected": "MPN-B", "mpn_observed": "MPN-B", "match_basis": "exact_mpn" },
+        "seller": { "legal_name": "Fixture Retailer Legal Entity", "relationship": "retailer_owned" },
+        "item_price": { "amount_minor": 20000, "currency": "GBP", "vat_state": "included" },
+        "delivery": { "amount_minor": 999, "currency": "GBP", "destination_verified": false },
+        "landed_price": { "amount_minor": null, "currency": "GBP", "eligibility": "abstain" },
+        "evidence": {
+          "extract_path": "fixture/evidence/retailer-b-mpn-b-2026-08-09.json",
+          "extract_sha256": "cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc",
+          "response_sha256": "dddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd",
+          "response_bytes_retained": false
+        },
+        "governance": {
+          "production_import_allowed": false,
+          "production_activation_allowed": false,
+          "index_eligibility": false,
+          "methodology_approval": false,
+          "publication_allowed": false
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "tranche_id": "fixture-inception-2026-08-16-v1",
+    "status": "candidate_private_immutable",
+    "scope": "candidate_only",
+    "region": "GB",
+    "channel": "PRIMARY_RETAIL",
+    "created_at": "2026-08-16T12:00:00Z",
+    "governance": {
+      "production_import_allowed": false,
+      "production_activation_allowed": false,
+      "index_eligibility": false,
+      "methodology_approval": false,
+      "publication_allowed": false
+    },
+    "observations": [
+      {
+        "observation_id": "fixture-retailer-a-mpn-a-2026-08-16",
+        "status": "candidate_private_immutable",
+        "scope": "candidate_only",
+        "observed_at": "2026-08-16T09:00:00Z",
+        "source": {
+          "source_key": "retailer-a-fixture",
+          "source_url": "https://retailer-a.example.test/MPN-A",
+          "source_approved_for_production": false
+        },
+        "identity": { "mpn_expected": "MPN-A", "mpn_observed": "MPN-A", "match_basis": "exact_mpn" },
+        "seller": { "legal_name": "Fixture Retailer Legal Entity", "relationship": "retailer_owned" },
+        "item_price": { "amount_minor": 11000, "currency": "GBP", "vat_state": "included" },
+        "delivery": { "amount_minor": null, "currency": "GBP", "destination_verified": false },
+        "landed_price": { "amount_minor": null, "currency": "GBP", "eligibility": "abstain" },
+        "evidence": {
+          "extract_path": "fixture/evidence/retailer-a-mpn-a-2026-08-16.json",
+          "extract_sha256": "eeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee",
+          "response_sha256": "ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff",
+          "response_bytes_retained": false
+        },
+        "governance": {
+          "production_import_allowed": false,
+          "production_activation_allowed": false,
+          "index_eligibility": false,
+          "methodology_approval": false,
+          "publication_allowed": false
+        }
+      },
+      {
+        "observation_id": "fixture-retailer-b-mpn-b-2026-08-16",
+        "status": "candidate_private_immutable",
+        "scope": "candidate_only",
+        "observed_at": "2026-08-16T09:01:00Z",
+        "source": {
+          "source_key": "retailer-b-fixture",
+          "source_url": "https://retailer-b.example.test/MPN-B",
+          "source_approved_for_production": false
+        },
+        "identity": { "mpn_expected": "MPN-B", "mpn_observed": "MPN-B", "match_basis": "exact_mpn" },
+        "seller": { "legal_name": "Fixture Retailer Legal Entity", "relationship": "retailer_owned" },
+        "item_price": { "amount_minor": 18000, "currency": "GBP", "vat_state": "included" },
+        "delivery": { "amount_minor": 5000, "currency": "GBP", "destination_verified": false },
+        "landed_price": { "amount_minor": null, "currency": "GBP", "eligibility": "abstain" },
+        "evidence": {
+          "extract_path": "fixture/evidence/retailer-b-mpn-b-2026-08-16.json",
+          "extract_sha256": "1111111111111111111111111111111111111111111111111111111111111111",
+          "response_sha256": "2222222222222222222222222222222222222222222222222222222222222222",
+          "response_bytes_retained": false
+        },
+        "governance": {
+          "production_import_allowed": false,
+          "production_activation_allowed": false,
+          "index_eligibility": false,
+          "methodology_approval": false,
+          "publication_allowed": false
+        }
+      }
+    ]
+  },
+  {
+    "schema_version": 1,
+    "tranche_id": "fixture-inception-2026-08-23-v1",
+    "status": "candidate_private_immutable",
+    "scope": "candidate_only",
+    "region": "GB",
+    "channel": "PRIMARY_RETAIL",
+    "created_at": "2026-08-23T12:00:00Z",
+    "governance": {
+      "production_import_allowed": false,
+      "production_activation_allowed": false,
+      "index_eligibility": false,
+      "methodology_approval": false,
+      "publication_allowed": false
+    },
+    "observations": [
+      {
+        "observation_id": "fixture-retailer-a-mpn-a-2026-08-23",
+        "status": "candidate_private_immutable",
+        "scope": "candidate_only",
+        "observed_at": "2026-08-23T09:00:00Z",
+        "source": {
+          "source_key": "retailer-a-fixture",
+          "source_url": "https://retailer-a.example.test/MPN-A",
+          "source_approved_for_production": false
+        },
+        "identity": { "mpn_expected": "MPN-A", "mpn_observed": "MPN-A", "match_basis": "exact_mpn" },
+        "seller": { "legal_name": "Fixture Retailer Legal Entity", "relationship": "retailer_owned" },
+        "item_price": { "amount_minor": 12000, "currency": "GBP", "vat_state": "included" },
+        "delivery": { "amount_minor": 99999, "currency": "GBP", "destination_verified": false },
+        "landed_price": { "amount_minor": null, "currency": "GBP", "eligibility": "abstain" },
+        "evidence": {
+          "extract_path": "fixture/evidence/retailer-a-mpn-a-2026-08-23.json",
+          "extract_sha256": "3333333333333333333333333333333333333333333333333333333333333333",
+          "response_sha256": "4444444444444444444444444444444444444444444444444444444444444444",
+          "response_bytes_retained": false
+        },
+        "governance": {
+          "production_import_allowed": false,
+          "production_activation_allowed": false,
+          "index_eligibility": false,
+          "methodology_approval": false,
+          "publication_allowed": false
+        }
+      },
+      {
+        "observation_id": "fixture-retailer-c-mpn-c-2026-08-23",
+        "status": "candidate_private_immutable",
+        "scope": "candidate_only",
+        "observed_at": "2026-08-23T09:02:00Z",
+        "source": {
+          "source_key": "retailer-c-fixture",
+          "source_url": "https://retailer-c.example.test/MPN-C",
+          "source_approved_for_production": false
+        },
+        "identity": { "mpn_expected": "MPN-C", "mpn_observed": "MPN-C", "match_basis": "exact_mpn" },
+        "seller": { "legal_name": "Fixture Retailer Legal Entity", "relationship": "retailer_owned" },
+        "item_price": { "amount_minor": 5000, "currency": "GBP", "vat_state": "included" },
+        "delivery": { "amount_minor": 0, "currency": "GBP", "destination_verified": false },
+        "landed_price": { "amount_minor": null, "currency": "GBP", "eligibility": "abstain" },
+        "evidence": {
+          "extract_path": "fixture/evidence/retailer-c-mpn-c-2026-08-23.json",
+          "extract_sha256": "5555555555555555555555555555555555555555555555555555555555555555",
+          "response_sha256": "6666666666666666666666666666666666666666666666666666666666666666",
+          "response_bytes_retained": false
+        },
+        "governance": {
+          "production_import_allowed": false,
+          "production_activation_allowed": false,
+          "index_eligibility": false,
+          "methodology_approval": false,
+          "publication_allowed": false
+        }
+      }
+    ]
+  }
+]

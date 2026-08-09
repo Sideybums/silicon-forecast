@@ -21,7 +21,7 @@ test("public frontend is retail-first and does not expose deferred channels",()=
   assert.doesNotMatch(publicSource,/marketplace|second-hand|resale/i);
   assert.doesNotMatch(publicSource,/ObservedPriceBoard|MarketChannelCharts/);
 });
-test("price history has four visually distinct retail sections and no invented series",()=>{
+test("price history has four visually distinct retail sections and an honest collection-start state",()=>{
   const priceHistory=readFileSync("app/price-history/page.tsx","utf8");
   for(const section of ["Retail tracking status","Retail price history","What qualifies as retail","Release gates"]){
     assert.match(priceHistory,new RegExp(section,"i"));
@@ -29,10 +29,25 @@ test("price history has four visually distinct retail sections and no invented s
   for(const className of ["retail-status-panel","retail-history-panel","retail-methodology-panel","retail-release-panel"]){
     assert.match(priceHistory,new RegExp(`className=\\"[^\\"]*${className}`));
   }
-  assert.match(priceHistory,/No verified retail series yet/);
+  assert.match(priceHistory,/Collection started\. The index has not\./);
+  assert.match(priceHistory,/No publishable index point exists/);
+  assert.match(priceHistory,/index scale begins only after the basket and baseline receive methodology approval/i);
+  assert.match(priceHistory,/Primary retail only/);
+  assert.match(priceHistory,/<svg[\s\S]*collection-chart-title[\s\S]*<\/svg>/);
+  assert.doesNotMatch(priceHistory,/>110<|>100<|>90<|Base 100 · Daily · GBP/);
+  assert.doesNotMatch(priceHistory,/<circle|<path|trend/i);
+  assert.doesNotMatch(priceHistory,/\["[^"]+",\s*"Pending"/);
   assert.match(priceHistory,/VAT-inclusive landed price/);
   assert.match(priceHistory,/Retailer-owned stock/);
   assert.doesNotMatch(priceHistory,/synthetic|demo series|asking price/i);
+});
+test("collection-start chart and diagnostics have explicit desktop and mobile structure",()=>{
+  const css=readFileSync("app/globals.css","utf8");
+  assert.match(css,/\.history-diagnostics\{[^}]*grid-template-columns:repeat\(3,1fr\)/);
+  assert.match(css,/@media\(max-width:650px\)[^{]*\{[^}]*[\s\S]*?\.history-diagnostics\{grid-template-columns:1fr\}/);
+  assert.match(css,/\.collection-chart-shell\{[^}]*min-height:25rem[^}]*overflow:hidden/);
+  assert.match(css,/\.collection-empty-message\{[^}]*width:min\(34rem,calc\(100% - 10rem\)\)/);
+  assert.match(css,/@media\(max-width:650px\)[\s\S]*\.collection-empty-message\{[^}]*width:calc\(100% - 5\.5rem\)/);
 });
 test("research notes explain evidence-first context for future index movements",()=>{
   const research=readFileSync("app/research/page.tsx","utf8");

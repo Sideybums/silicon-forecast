@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "timestamp": "2026-08-09T12:38:06Z",
+  "timestamp": "2026-08-09T15:17:59Z",
   "phase": "02",
   "phase_name": "platform-catalogue-control-plane",
   "phase_dir": ".planning/phases/02-platform-catalogue-control-plane",
@@ -48,9 +48,9 @@
     },
     {
       "id": 8,
-      "name": "Complete the private primary-retail observation series and approve a defensible movement rule",
+      "name": "Accumulate the prospective private primary-retail series and calibrate a defensible index methodology",
       "status": "in_progress",
-      "next_action": "Append a later-date immutable candidate tranche for the same AWD-IT and KingstonMemoryShop exact-MPN pages; preserve all changed, unchanged, failed and abstained observations, and derive no movement until fixed-destination delivery and availability semantics are resolved."
+      "next_action": "Append a later-date immutable tranche for the same three retailer+MPN lines and replay the private quoted-item diagnostic from its frozen 2026-08-09 inception. Keep historical backfill separate and keep the result explicitly not-an-index until landed-price, availability, source coverage, basket and methodology gates are approved."
     }
   ],
   "blockers": [
@@ -135,13 +135,36 @@
       "decision": "Retain current exact-MPN primary-retail item prices as append-only private research history even when landed-price qualification abstains; keep source authority separate from factual eligibility and keep all production, methodology, index and publication gates locked.",
       "source": "David approval plus independently verified 2026-08-09 candidate tranche",
       "gate": "phase-02 candidate retail history only"
+    },
+    {
+      "decision": "Start a prospective private quoted-item relative diagnostic now; do not backcast or publish it as the index",
+      "rationale": "The immutable 2026-08-09 tranche is sufficient to freeze an inception basket at 100 for deterministic future comparison. Four lawful archived observations provide useful private history, but their sparse captures, separate schema and unresolved landed-price semantics do not support silent rebasing or an official index.",
+      "phase": "02"
     }
   ],
-  "uncommitted_files": [],
-  "next_action": "Append a later-date immutable candidate tranche for the same AWD-IT and KingstonMemoryShop exact-MPN pages; preserve all changed, unchanged, failed and abstained observations, and derive no movement until fixed-destination delivery and availability semantics are resolved.",
-  "context_notes": "Second three-agent wave complete: three live primary-retail item prices are retained immutably with checksum-pinned minimal evidence; a private non-index report renderer and append-only locked PostgreSQL persistence now exist. Current tranche has one date per retailer-product line and all three observations abstain from landed-price eligibility due unresolved fixed-destination delivery, plus ambiguous Kingston available-to-order semantics.",
+  "uncommitted_files": [
+    ".planning/HANDOVER-2026-08-08.md",
+    ".planning/STATE.md",
+    "app/globals.css",
+    "app/price-history/page.tsx",
+    "package.json",
+    "tests/site-content.test.mjs",
+    "data/fixtures/private-candidate-quoted-item-relative-diagnostic-tranches.gb.v1.json",
+    "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
+    "lib/private-candidate-quoted-item-relative-diagnostic.mjs",
+    "lib/private-quoted-item-price-history.mjs",
+    "research/evidence/historical-primary-retail-backfill-2026-08-09/",
+    "research/reports/",
+    "scripts/render-private-quoted-item-price-history.mjs",
+    "tests/historical-primary-retail-backfill.test.mjs",
+    "tests/private-candidate-quoted-item-relative-diagnostic.test.mjs",
+    "tests/private-quoted-item-price-history.test.mjs",
+    "tests/public-boundary.test.mjs"
+  ],
+  "next_action": "Collect a second prospective immutable tranche for the same three retailer+MPN lines. Replay the private diagnostic from the frozen 2026-08-09 inception, but keep it private and explicitly not-an-index while fixed-destination delivery, availability treatment, retailer/source coverage, basket construction and methodology approval remain unresolved.",
+  "context_notes": "Four checksum-pinned Wayback observations plus three immutable current observations now render as seven private item-price points across three exact seller+MPN lines. A separate deterministic prospective diagnostic can start at 100 without inventing historical index values; historical backfill is excluded from that calculation by schema and later backdating fails closed.",
   "handover_document": ".planning/HANDOVER-2026-08-08.md",
-  "blocked_publications": "Public frontend is primary-retail only. No price series or outbound product links are public; non-retail evidence remains private/deferred and all supported-index/editorial publication locks remain on.",
-  "blocker_workaround_context": "Current normal-access observations are valuable private history but do not bypass source-use, delivery, availability, methodology or publication gates. Continue append-only re-fetches; do not edit prior tranches or infer movements from ineligible records.",
-  "verification_summary": "2026-08-09T12:38Z: 59/59 Node tests, ESLint, 14-page production build, JSON validation, git diff check and disposable PostgreSQL migrations/adversarial tests passed. Parent independently re-fetched all three live pages; Kingston response hashes matched retained evidence exactly and AWD-IT factual fields remained unchanged despite dynamic response-byte drift."
+  "blocked_publications": "Public frontend remains primary-retail only and shows an honest collection-start state with no publishable point or active scale. Private history and the quoted-item diagnostic are not approved indices and remain excluded from the public build.",
+  "blocker_workaround_context": "Continue prospective append-only collection now rather than waiting for perfect history. Archived observations may extend private context only; they cannot revise the prospective inception, resolve landed-price semantics or bypass source, methodology, basket, production or publication locks.",
+  "verification_summary": "2026-08-09T15:17Z: 85/85 Node tests, ESLint, TypeScript, 14-page static build, hardened public-boundary scans, deterministic report replay, git diff check and disposable PostgreSQL verification passed. Private report SHA-256: HTML ec30dbe6ef8d1277c8517359e83e97452ff85f37b453c841caad8f269605efec; SVG 307b3486559f5a5dc808f71cebae7651eaa1f7e6007d46382b18aaa770f6139a."
 }
