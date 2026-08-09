@@ -1,6 +1,6 @@
 {
   "version": "1.0",
-  "timestamp": "2026-08-09T06:01:50Z",
+  "timestamp": "2026-08-09T09:00:46Z",
   "phase": "02",
   "phase_name": "platform-catalogue-control-plane",
   "phase_dir": ".planning/phases/02-platform-catalogue-control-plane",
@@ -48,7 +48,7 @@
     },
     {
       "id": 8,
-      "name": "Expand the exact-MPN monitored universe and prepare lifecycle, reserve-pool and resilience fixtures",
+      "name": "Build empirical UK observation coverage, lifecycle evidence and candidate-only movement reporting; expand catalogue only where it unblocks the observed basket",
       "status": "in_progress"
     }
   ],
@@ -61,7 +61,7 @@
     {
       "description": "Methodology thresholds, production region, basket/baseline and activation remain unapproved",
       "type": "human_action",
-      "workaround": "Keep all production and publication locks engaged"
+      "workaround": "Keep supported-index, production, source and methodology activation locked while publishing only separately approved checksum-bound dated observations"
     }
   ],
   "async_jobs": [],
@@ -119,44 +119,20 @@
       "rationale": "Corsair and Patriot have strong exact-MPN first-party kit evidence. The ADATA Dual Tray records remain research-only until literal complete-kit evidence is retained. Lexar is neither approved nor rejected because normal-access first-party evidence could not be retained without questionable crawler impersonation.",
       "phase": "02",
       "approval_record": "data/reviews/ddr5-32gb-diversification-review-2026-08-09.json"
+    },
+    {
+      "decision": "Replace synthetic demo mode with a bounded public DDR5 research preview and direct unpaid source links",
+      "rationale": "Affiliate acceptance should not block useful evidence. The exact approved projection publishes three dated exact-MPN marketplace asking-price observations with source, channel and caveats; it cannot claim current prices, a supported index, recommendations, rankings, tracking or commission.",
+      "phase": "02",
+      "approval_record": "data/publications/ddr5-marketplace-observations-2026-08-09.v1.json"
     }
   ],
   "uncommitted_files": [
     ".planning/HANDOFF.json",
     ".planning/HANDOVER-2026-08-08.md",
-    ".planning/REQUIREMENTS.md",
-    ".planning/ROADMAP.md",
-    ".planning/STATE.md",
-    ".planning/phases/02-platform-catalogue-control-plane/PLAN.md",
-    "app/globals.css",
-    "app/price-history/page.tsx",
-    "components/MarketChannelCharts.tsx",
-    "data/catalogue/ddr5-32gb-diversification.v1.json",
-    "data/catalogue/ddr5-32gb-expansion.v1.json",
-    "data/fixtures/ddr5-32gb-resilience-pilot.v1.json",
-    "data/observations/candidate/amazon-uk-2026-08-06T103140Z.v1.json",
-    "data/reviews/ddr5-32gb-diversification-review-2026-08-09.json",
-    "data/reviews/index-resilience-architecture-review-2026-08-08.json",
-    "db/migrations/0002_catalogue_review_control.sql",
-    "db/tests/foundation.sql",
-    "docs/PRICE-CHANNEL-TAXONOMY.md",
-    "lib/catalogue-fixtures.mjs",
-    "lib/catalogue-resilience.mjs",
-    "research/INDEX-RESILIENCE-PROPOSAL.md",
-    "research/catalogue-diversification-review-2026-08-08.md",
-    "research/catalogue-expansion-review-2026-08-08.md",
-    "research/evidence/catalogue-diversification-2026-08-08/",
-    "research/evidence/catalogue-expansion-2026-08-08/",
-    "scripts/render-catalogue-coverage-report.mjs",
-    "scripts/render-catalogue-review-sql.mjs",
-    "scripts/render-catalogue-seed-sql.mjs",
-    "scripts/test-database.mjs",
-    "tests/candidate-observations.test.mjs",
-    "tests/catalogue-fixtures.test.mjs",
-    "tests/catalogue-resilience.test.mjs",
-    "tests/site-content.test.mjs"
+    ".planning/STATE.md"
   ],
-  "next_action": "Move Task 8 from named-manufacturer completion to empirical UK market coverage and first-party lifecycle/EOL evidence. The 16-product pilot now has six reviewed fixtures and ten pending/held candidates; Lexar is a documented normal-access evidence abstention rather than a blocker. Assess additional exact-MPN candidates only where retainable first-party evidence exists, then measure manufacturer/family/speed concentration. Do not infer baseline, reserve, basket, source, methodology, production or publication approval.",
-  "context_notes": "At 2026-08-06T09:44Z the live read-only Awin relationship counts were joined 0, pending 3, suspended 0 and rejected 0; pending programmes were Currys, Scan Computers and Overclockers UK. The additive review migration is exercised only in disposable PostgreSQL: four draft revisions remain immutable and four reviewed fixture revisions are added with copied identifiers, one approval/application record and four audit events. The approval is checksum-bound to the exact catalogue and listing fixture files through an append-only fixture manifest. At 2026-08-06T10:09Z npm run check:full passed (26 tests, static build and disposable PostgreSQL verification), git diff --check was clean, a heuristic scan of 102 repository text files found no likely secrets, and database assertions confirmed all seven governance locks remained engaged. David then approved gathering Silicon Forecast's own publicly observable price evidence while affiliate decisions remain pending. The first candidate-only Amazon UK snapshot at 2026-08-06T10:31:40Z retained four buy-box observations: three exact-MPN matches and one deliberate Flare X5 abstention because the exact MPN was absent. Every observation is excluded from production/index use pending source approval, VAT/delivery normalisation and human review; no raw Amazon HTML was retained because it contained transient request/session values. The draft price-channel taxonomy separates primary retail, professional marketplace asking prices, professional recommerce and private completed resale instead of blending them. The Amazon observations are classified as professional marketplace asks. The `/price-history` demonstration now preserves the new-retail index as the headline measure and shows separate synthetic marketplace-ask and private completed-resale graphs. Professional recommerce remains separate, secondary charts are descriptive rather than causal, and accessible trend descriptions/data tables are present. At 2026-08-06T13:04Z 29 tests, ESLint, TypeScript, the full 13-page static build and git diff --check passed; desktop Firefox visual inspection passed. The frontend was not deployed. No production, source, methodology, automatic-match or publication authority is granted. At 2026-08-08T09:14Z eight additional exact-MPN DDR5 32GB 2x16 candidates were prepared separately across Kingston, Crucial and TEAMGROUP with checksum-pinned minimal first-party evidence. The existing reviewed seed remains unchanged. The expansion passed 31/31 tests, lint, TypeScript, the 13-page static build and diff checks. Independent audit found the set suitable for human fixture review but highlighted inferred Kingston/TEAMGROUP module classification, intermittent Crucial replay and basket-concentration caveats; these are explicit in the review packet. No expansion approval has yet been recorded. At 2026-08-08T10:05Z David rejected treating 8–12 products as sufficient long-term coverage and highlighted a Corsair price-drop report as exactly the kind of market movement the project must not miss. Requirements and roadmap now separate the broad monitored universe, reviewed catalogue, reserve/baseline-eligible pool and effective-dated basket vintage; CAT-04 and IDX-07 add lifecycle history and leave-one-product-out resilience. The 12 products remain a control-plane pilot, the eight-product additive review is held for diversification, and no numerical methodology threshold or linking method was approved. News remains explanatory evidence, not a numeric index input. At 2026-08-08T12:27Z David explicitly approved the resilience architecture and asked for a new-session handover. Approval is recorded additively in data/reviews/index-resilience-architecture-review-2026-08-08.json and the proposal header now marks the architecture/planning direction approved. Scope is fixture-only market-universe, lifecycle, reserve-pool and resilience design. Numerical thresholds, linking/rebasing formula, production methodology, sources, basket, baseline, activation, deployment, publication and spend remain locked. Branch is main; changes are uncommitted and undeployed. At 2026-08-08T15:16Z the fixture-only resilience pilot was implemented in data/fixtures/ddr5-32gb-resilience-pilot.v1.json with 12 monitored products, four reviewed fixtures, eight pending candidates, zero baseline-eligible products, zero reserve candidates and zero basket memberships. Seven synthetic draft lifecycle events exercise ACTIVE, AVAILABILITY_AT_RISK, DISCONTINUED, SUCCESSOR_CANDIDATE and IDENTITY_INVALID without claiming empirical evidence. Deterministic reporting shows four manufacturers, ten families, speed counts 5600=2, 6000=7 and 6400=3, with required-research gaps for Corsair, ADATA/XPG, Patriot/Viper and Lexar. The Corsair CMK32GX5M2B6000C36 first-party page was visually inspected, but scripted retrieval returned HTTP 403 and no defensible source-response hash was retained, so no Corsair record was added. Full verification passed 36/36 Node tests, ESLint, TypeScript, the 13-page static build, disposable PostgreSQL and git diff --check. The PostgreSQL test harness now requires three stable SQL connections to avoid the official image bootstrap-server restart race and passed three consecutive database runs. At 2026-08-08T18:48Z the separate manufacturer-diversification tranche added four exact-MPN pending-review candidates across Corsair, ADATA and Patriot. Four independently re-fetched first-party factual extracts are SHA-256 pinned in research/evidence/catalogue-diversification-2026-08-08/; the ADATA extracts deliberately retain only 16GB-per-module, UDIMM and Dual Tray facts rather than falsely quoting a literal 32GB (2x16GB) statement. The resilience pilot now reports 16 monitored products, four reviewed fixtures, 12 pending candidates, seven manufacturers and thirteen families; Lexar remains the required-research gap. Runtime validation binds raw evidence bytes plus catalogue facts and source URLs to the checksum manifest, rejects cross-tranche identity drift, and binds each canonical status to the exact catalogue content SHA-256 plus the exact seed approval checksum for reviewed state. Source approval and external publication remain explicitly locked. Targeted catalogue/resilience tests passed 28/28 and npm run check:full passed 40/40 Node tests, ESLint, TypeScript, the 13-page static build and disposable PostgreSQL verification. At 2026-08-09T06:01Z David reconciled the diversification review: Corsair CMK32GX5M2B6000C36 and Patriot VV532G60C30AK are approved for fixture use only; both ADATA Dual Tray candidates are held; Lexar is a documented normal-access evidence abstention. Coverage is now 16 monitored, 6 reviewed and 10 pending/held, with zero baseline, reserve or basket memberships. The selected/held partition is bound to exact raw review bytes, catalogue content and evidence-manifest checksums. Full verification passed 41/41 Node tests and 29/29 targeted catalogue/resilience tests plus lint, build and disposable PostgreSQL.",
+  "next_action": "Produce a second immutable, channel-separated UK observation tranche for reviewed exact MPNs, prioritising primary new-retail pages with explicit VAT, stock and delivery evidence. Then implement deterministic candidate-only product-price and movement calculations and investigate the first observed movement against registered news/research sources with alternatives and counterevidence. Do not wait for affiliate commission, but require a separate checksum-bound human publication approval for every public projection.",
+  "context_notes": "The public site is no longer a synthetic demo. David approved an exact bounded public projection of three dated professional-marketplace asking-price observations and direct unpaid/untracked links. The projection is bound to the immutable source snapshot SHA-256 and excludes the missing-MPN abstention and all unapproved fields. PUB-01/PUB-02 are complete; EVT-01/EVT-02 are now v1 and pending. Full verification at 2026-08-09T09:00Z passed 43/43 Node tests, ESLint, TypeScript, a 14-page static build, disposable PostgreSQL, JSON parsing and diff checks. The Cloudflare deployment is live at https://siliconforecast.com; five routes returned HTTP 200, all three approved source URLs were present and reachable, and apex/www redirects returned HTTP 308. Supported-index, current-price, recommendation, paid-placement, source, methodology, production and automated-editorial gates remain locked.",
   "handover_document": ".planning/HANDOVER-2026-08-08.md"
 }
