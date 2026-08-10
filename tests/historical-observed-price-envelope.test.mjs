@@ -166,12 +166,31 @@ test("every contributing observation id resolves to a real observation", async (
   }
 });
 
-test("a hand-edited band value cannot survive re-derivation", async () => {
-  const golden = JSON.parse(await readFile(new URL("data/fixtures/historical-observed-price-envelope.v1.json", root), "utf8"));
-  const tampered = structuredClone(golden);
-  const target = tampered.periods.find((p) => p.state === "observed");
-  target.low.amount_minor -= 1;
-  assert.notEqual(canonicalEnvelopeBytes(tampered), canonicalEnvelopeBytes(buildEnvelopeFromRepository(root)));
+test("the envelope tracks source observations, so a hand-edited golden cannot survive", async () => {
+  // Property 1: the golden on disk equals a fresh derivation from source.
+  const golden = await readFile(new URL("data/fixtures/historical-observed-price-envelope.v1.json", root), "utf8");
+  assert.equal(canonicalEnvelopeBytes(buildEnvelopeFromRepository(root)), golden);
+
+  // Property 2: the derivation is sensitive to source data. Change one source
+  // amount and the envelope must move. Properties 1 and 2 together mean any
+  // hand-edit to the golden is detectable, which neither proves alone.
+  const records = [];
+  for (const tranche of ELIGIBLE_TRANCHES) {
+    const parsed = JSON.parse(await readFile(new URL(`data/observations/candidate/${tranche.file}`, root), "utf8"));
+    for (const raw of parsed.observations) {
+      records.push(normaliseObservation(raw, { sourceFile: tranche.file, captureKind: tranche.captureKind }));
+    }
+  }
+  const baseline = deriveObservedPriceEnvelope(records);
+  const observedPeriod = baseline.periods.find((p) => p.state === "observed");
+  const lowId = observedPeriod.low.observation_id;
+
+  const nudged = records.map((r) => (r.observation_id === lowId ? { ...r, amount_minor: r.amount_minor - 1 } : r));
+  const after = deriveObservedPriceEnvelope(nudged);
+  const afterPeriod = after.periods.find((p) => p.period_id === observedPeriod.period_id);
+
+  assert.equal(afterPeriod.low.amount_minor, observedPeriod.low.amount_minor - 1);
+  assert.notEqual(canonicalEnvelopeBytes(after), canonicalEnvelopeBytes(baseline));
 });
 
 test("a period cannot claim an observation outside its own quarter", async () => {
