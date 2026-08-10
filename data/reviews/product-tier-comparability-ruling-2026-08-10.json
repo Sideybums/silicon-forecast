@@ -6,15 +6,16 @@
   "decided_by": "David Sidebottom",
   "scope": "all_numeric_and_context_layers",
   "ruling": "Different product tiers must not be compared. A price range, movement or band that mixes tiers is not a market signal and throws the analysis off.",
-  "prompted_by": "The candidate observed-price envelope showed 2021-Q4 at GBP 185.99 (Crucial DDR5-4800, entry tier) and 2022-Q1 at GBP 569.99 (G.Skill Trident Z5 DDR5-6000 CL36, enthusiast tier). Both prices are correctly extracted and independently verified, but the apparent rise between the two quarters reflects which products were archived rather than any market movement.",
+  "prompted_by": "The candidate observed-price envelope showed 2021-Q4 at GBP 185.99 (Crucial DDR5-4800) and 2022-Q1 at GBP 569.99 (G.Skill Trident Z5 DDR5-6000 CL36). Both prices are correctly extracted and independently verified, but the apparent rise between the two quarters is not a price movement.",
+  "corrected_diagnosis": "The orchestrator initially attributed this to mixing product tiers. That was wrong. Measurement against the retained data shows the actual mechanism is product-set churn: consecutive observed quarters share almost no exact MPNs (2021-Q4 to 2022-Q1 share none, and most transitions share none or one), and only 7 of 52 distinct MPNs are ever observed more than once. The envelope computes each quarter's range over a different basket, so quarter-to-quarter band movement measures basket composition rather than price. Speed grade is a visible symptom of that churn, not its cause. All observations are in scope: 32GB (2x16GB) DDR5 desktop kits matched on exact MPN.",
   "consequences": [
-    "The observed-price envelope must not be read as a market level while it spans tiers.",
-    "A tier dimension must be carried on every observation before any band, range or movement is presented as comparable.",
-    "Tier must be established from evidence visible in captured bytes, not inferred from part-number naming conventions.",
-    "Cross-tier movements must not be derived, displayed or explained."
+    "Cross-product aggregation remains unsafe without an approved basket and linking rule. The existing fixture contract already sets aggregate_across_products to false; the envelope must be read consistently with that.",
+    "The valid comparison is the same exact MPN across dates, preferably at the same seller. Per-MPN movement records and the sparse graph already do this correctly and are unaffected by this ruling.",
+    "The observed-price envelope must not be presented as a price history while consecutive periods share almost no products.",
+    "Product characteristics used for any future grouping must be established from evidence visible in captured bytes, never inferred from part-number naming conventions."
   ],
   "implementation_state": "not_yet_implemented",
-  "implementation_note": "Observations currently record capacity, module count and memory type but not speed grade or tier. Speed is present in the archived retailer titles and specification fields already retained, so it can be extracted without new source classes. Until that work lands, the envelope is a coverage and integrity artefact only and must not be presented as a price history.",
+  "implementation_note": "The binding constraint is repeat coverage, not classification. A defensible period-over-period range needs the same MPNs observed in successive periods; today the evidence is broad (52 distinct MPNs) and shallow (7 repeat). Future acquisition should prioritise additional dates for MPNs already held over discovering further products. Carrying speed grade remains worthwhile for grouping and disclosure, and speed is present in archived titles already retained, but it does not by itself make disjoint baskets comparable.",
   "governance": {
     "methodology_approved": false,
     "aggregation_rule_approved": false,

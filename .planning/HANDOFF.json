@@ -119,7 +119,9 @@
       "decided_at": "2026-08-10",
       "record": "data/reviews/product-tier-comparability-ruling-2026-08-10.json",
       "state": "not_yet_implemented",
-      "consequence": "The observed-price envelope currently spans tiers and must not be presented as a price history until a tier dimension is carried on every observation and derived from visible captured bytes rather than part-number conventions."
+      "consequence": "The envelope must not be presented as a price history while consecutive periods share almost no products. Per-MPN movement records and the sparse graph are unaffected and remain the valid comparison.",
+      "corrected_diagnosis": "Initially attributed to mixing product tiers; that was wrong. Measured cause is product-set churn - consecutive observed quarters share almost no exact MPNs and only 7 of 52 MPNs are ever observed twice.",
+      "next_acquisition_priority": "Additional dates for MPNs already held, rather than discovery of further products. Coverage is currently broad (52 MPNs) and shallow (7 repeat)."
     }
   ],
   "next_action": {
