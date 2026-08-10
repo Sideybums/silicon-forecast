@@ -84,7 +84,11 @@ Verified VAT value distribution: Family A → `vat_state: "included"` ×12. Fami
 - Produces: `normaliseObservation(raw, context)` returning
   `{ observation_id, observed_at, mpn, seller_display_name, seller_legal_name, amount_minor, currency, vat_included, capture_kind, source_file }`
   where `vat_included` is `true | false | null` and `capture_kind` is `"archive_capture" | "prospective_capture"`.
-  Also `ENVELOPE_VERSION`, `loadTrancheObservations(trancheJson, sourceFile)`.
+  Also `ENVELOPE_VERSION` and `loadJson(path)`.
+
+  Note: tranche loading itself lives in `buildEnvelopeFromRepository` (Task 4), which iterates `parsed.observations` and calls `normaliseObservation` directly. Do not add a separate tranche-loader export — nothing would consume it.
+
+  Ordering requirement: detect the schema family BEFORE validating `observed_at`. An unrecognised shape must fail with `unrecognised observation schema`, not with a field-level error about a missing timestamp.
 
 - [ ] **Step 1: Write the failing test**
 
