@@ -5,7 +5,997 @@
   "created_at": "2026-08-10",
   "movements": [
     {
-      "movement_id": "movement-cmk32gx5m2b6000c36-sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z-sf-hist-scan-cmk32gx5m2b6000c36-2023-03-15T075907Z",
+      "movement_id": "movement-cmh32gx5m2b5200c40-sf-hist-scan-cmh32gx5m2b5200c40-20220812153213-sf-hist-scan-cmh32gx5m2b5200c40-20250918181846",
+      "mpn": "CMH32GX5M2B5200C40",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5200c40-20220812153213",
+        "observed_at": "2022-08-12T15:32:13Z",
+        "seller": "Scan Computers",
+        "amount_minor": 20899
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5200c40-20250918181846",
+        "observed_at": "2025-09-18T18:18:46Z",
+        "seller": "Scan Computers",
+        "amount_minor": 11099
+      },
+      "delta_minor": -9800,
+      "delta_basis_points": -4689,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b5200c40w-sf-hist-scan-cmh32gx5m2b5200c40w-20220812160616-sf-hist-scan-cmh32gx5m2b5200c40w-20250516053533",
+      "mpn": "CMH32GX5M2B5200C40W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5200c40w-20220812160616",
+        "observed_at": "2022-08-12T16:06:16Z",
+        "seller": "Scan Computers",
+        "amount_minor": 22799
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5200c40w-20250516053533",
+        "observed_at": "2025-05-16T05:35:33Z",
+        "seller": "Scan Computers",
+        "amount_minor": 8999
+      },
+      "delta_minor": -13800,
+      "delta_basis_points": -6053,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b5200z40k-sf-hist-scan-cmh32gx5m2b5200z40k-20240302195003-sf-hist-scan-cmh32gx5m2b5200z40k-20250519143203",
+      "mpn": "CMH32GX5M2B5200Z40K",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5200z40k-20240302195003",
+        "observed_at": "2024-03-02T19:50:03Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10699
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5200z40k-20250519143203",
+        "observed_at": "2025-05-19T14:32:03Z",
+        "seller": "Scan Computers",
+        "amount_minor": 9149
+      },
+      "delta_minor": -1550,
+      "delta_basis_points": -1449,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b5600c36k-sf-hist-scan-cmh32gx5m2b5600c36k-20230529222022-sf-hist-scan-cmh32gx5m2b5600c36k-20241114012639",
+      "mpn": "CMH32GX5M2B5600C36K",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5600c36k-20230529222022",
+        "observed_at": "2023-05-29T22:20:22Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10900
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5600c36k-20241114012639",
+        "observed_at": "2024-11-14T01:26:39Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10999
+      },
+      "delta_minor": 99,
+      "delta_basis_points": 91,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b5600c36wk-sf-hist-scan-cmh32gx5m2b5600c36wk-20230220081929-sf-hist-scan-cmh32gx5m2b5600c36wk-20241229111123",
+      "mpn": "CMH32GX5M2B5600C36WK",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5600c36wk-20230220081929",
+        "observed_at": "2023-02-20T08:19:29Z",
+        "seller": "Scan Computers",
+        "amount_minor": 16699
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5600c36wk-20241229111123",
+        "observed_at": "2024-12-29T11:11:23Z",
+        "seller": "Scan Computers",
+        "amount_minor": 11099
+      },
+      "delta_minor": -5600,
+      "delta_basis_points": -3353,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b5600c40k-sf-hist-scan-cmh32gx5m2b5600c40k-20230220081929-sf-hist-scan-cmh32gx5m2b5600c40k-20250425020451",
+      "mpn": "CMH32GX5M2B5600C40K",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5600c40k-20230220081929",
+        "observed_at": "2023-02-20T08:19:29Z",
+        "seller": "Scan Computers",
+        "amount_minor": 15499
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5600c40k-20250425020451",
+        "observed_at": "2025-04-25T02:04:51Z",
+        "seller": "Scan Computers",
+        "amount_minor": 9698
+      },
+      "delta_minor": -5801,
+      "delta_basis_points": -3743,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b5600c40w-sf-hist-scan-cmh32gx5m2b5600c40w-20240420063223-sf-hist-scan-cmh32gx5m2b5600c40w-20250916003546",
+      "mpn": "CMH32GX5M2B5600C40W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5600c40w-20240420063223",
+        "observed_at": "2024-04-20T06:32:23Z",
+        "seller": "Scan Computers",
+        "amount_minor": 11699
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5600c40w-20250916003546",
+        "observed_at": "2025-09-16T00:35:46Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10898
+      },
+      "delta_minor": -801,
+      "delta_basis_points": -685,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b5600z36k-sf-hist-scan-cmh32gx5m2b5600z36k-20230130025739-sf-hist-scan-cmh32gx5m2b5600z36k-20260513015732",
+      "mpn": "CMH32GX5M2B5600Z36K",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5600z36k-20230130025739",
+        "observed_at": "2023-01-30T02:57:39Z",
+        "seller": "Scan Computers",
+        "amount_minor": 15998
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5600z36k-20260513015732",
+        "observed_at": "2026-05-13T01:57:32Z",
+        "seller": "Scan Computers",
+        "amount_minor": 41498
+      },
+      "delta_minor": 25500,
+      "delta_basis_points": 15939,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b5600z40-sf-hist-scan-cmh32gx5m2b5600z40-20240229074345-sf-hist-scan-cmh32gx5m2b5600z40-20251216183218",
+      "mpn": "CMH32GX5M2B5600Z40",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5600z40-20240229074345",
+        "observed_at": "2024-02-29T07:43:45Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10598
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b5600z40-20251216183218",
+        "observed_at": "2025-12-16T18:32:18Z",
+        "seller": "Scan Computers",
+        "amount_minor": 33749
+      },
+      "delta_minor": 23151,
+      "delta_basis_points": 21845,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b6000c30-sf-hist-scan-cmh32gx5m2b6000c30-20231208161119-sf-hist-scan-cmh32gx5m2b6000c30-20260221062928",
+      "mpn": "CMH32GX5M2B6000C30",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6000c30-20231208161119",
+        "observed_at": "2023-12-08T16:11:19Z",
+        "seller": "Scan Computers",
+        "amount_minor": 12698
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6000c30-20260221062928",
+        "observed_at": "2026-02-21T06:29:28Z",
+        "seller": "Scan Computers",
+        "amount_minor": 50699
+      },
+      "delta_minor": 38001,
+      "delta_basis_points": 29927,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b6000c30w-sf-hist-scan-cmh32gx5m2b6000c30w-20240228033721-sf-hist-scan-cmh32gx5m2b6000c30w-20250917111645",
+      "mpn": "CMH32GX5M2B6000C30W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6000c30w-20240228033721",
+        "observed_at": "2024-02-28T03:37:21Z",
+        "seller": "Scan Computers",
+        "amount_minor": 13699
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6000c30w-20250917111645",
+        "observed_at": "2025-09-17T11:16:45Z",
+        "seller": "Scan Computers",
+        "amount_minor": 13799
+      },
+      "delta_minor": 100,
+      "delta_basis_points": 73,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b6000c36-sf-hist-scan-cmh32gx5m2b6000c36-20231208160859-sf-hist-scan-cmh32gx5m2b6000c36-20260329204151",
+      "mpn": "CMH32GX5M2B6000C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6000c36-20231208160859",
+        "observed_at": "2023-12-08T16:08:59Z",
+        "seller": "Scan Computers",
+        "amount_minor": 13448
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6000c36-20260329204151",
+        "observed_at": "2026-03-29T20:41:51Z",
+        "seller": "Scan Computers",
+        "amount_minor": 50249
+      },
+      "delta_minor": 36801,
+      "delta_basis_points": 27365,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b6000c36w-sf-hist-scan-cmh32gx5m2b6000c36w-20240228033721-sf-hist-scan-cmh32gx5m2b6000c36w-20260513015728",
+      "mpn": "CMH32GX5M2B6000C36W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6000c36w-20240228033721",
+        "observed_at": "2024-02-28T03:37:21Z",
+        "seller": "Scan Computers",
+        "amount_minor": 12998
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6000c36w-20260513015728",
+        "observed_at": "2026-05-13T01:57:28Z",
+        "seller": "Scan Computers",
+        "amount_minor": 50249
+      },
+      "delta_minor": 37251,
+      "delta_basis_points": 28659,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b6000c38-sf-hist-scan-cmh32gx5m2b6000c38-20240228033722-sf-hist-scan-cmh32gx5m2b6000c38-20250919170059",
+      "mpn": "CMH32GX5M2B6000C38",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6000c38-20240228033722",
+        "observed_at": "2024-02-28T03:37:22Z",
+        "seller": "Scan Computers",
+        "amount_minor": 11599
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6000c38-20250919170059",
+        "observed_at": "2025-09-19T17:00:59Z",
+        "seller": "Scan Computers",
+        "amount_minor": 11599
+      },
+      "delta_minor": 0,
+      "delta_basis_points": 0,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b6000c40-sf-hist-scan-cmh32gx5m2b6000c40-20220812150725-sf-hist-scan-cmh32gx5m2b6000c40-20240226110938",
+      "mpn": "CMH32GX5M2B6000C40",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6000c40-20220812150725",
+        "observed_at": "2022-08-12T15:07:25Z",
+        "seller": "Scan Computers",
+        "amount_minor": 27599
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6000c40-20240226110938",
+        "observed_at": "2024-02-26T11:09:38Z",
+        "seller": "Scan Computers",
+        "amount_minor": 12799
+      },
+      "delta_minor": -14800,
+      "delta_basis_points": -5363,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b6000c40w-sf-hist-scan-cmh32gx5m2b6000c40w-20220814132823-sf-hist-scan-cmh32gx5m2b6000c40w-20251202075405",
+      "mpn": "CMH32GX5M2B6000C40W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6000c40w-20220814132823",
+        "observed_at": "2022-08-14T13:28:23Z",
+        "seller": "Scan Computers",
+        "amount_minor": 27599
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6000c40w-20251202075405",
+        "observed_at": "2025-12-02T07:54:05Z",
+        "seller": "Scan Computers",
+        "amount_minor": 33899
+      },
+      "delta_minor": 6300,
+      "delta_basis_points": 2283,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b6000z30k-sf-hist-scan-cmh32gx5m2b6000z30k-20230116085723-sf-hist-scan-cmh32gx5m2b6000z30k-20260514184132",
+      "mpn": "CMH32GX5M2B6000Z30K",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6000z30k-20230116085723",
+        "observed_at": "2023-01-16T08:57:23Z",
+        "seller": "Scan Computers",
+        "amount_minor": 20999
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6000z30k-20260514184132",
+        "observed_at": "2026-05-14T18:41:32Z",
+        "seller": "Scan Computers",
+        "amount_minor": 39998
+      },
+      "delta_minor": 18999,
+      "delta_basis_points": 9048,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b6200c36-sf-hist-scan-cmh32gx5m2b6200c36-20220814134238-sf-hist-scan-cmh32gx5m2b6200c36-20251224003950",
+      "mpn": "CMH32GX5M2B6200C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6200c36-20220814134238",
+        "observed_at": "2022-08-14T13:42:38Z",
+        "seller": "Scan Computers",
+        "amount_minor": 28699
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6200c36-20251224003950",
+        "observed_at": "2025-12-24T00:39:50Z",
+        "seller": "Scan Computers",
+        "amount_minor": 39749
+      },
+      "delta_minor": 11050,
+      "delta_basis_points": 3850,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b6200c36w-sf-hist-scan-cmh32gx5m2b6200c36w-20220814122105-sf-hist-scan-cmh32gx5m2b6200c36w-20260507024917",
+      "mpn": "CMH32GX5M2B6200C36W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6200c36w-20220814122105",
+        "observed_at": "2022-08-14T12:21:05Z",
+        "seller": "Scan Computers",
+        "amount_minor": 28748
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6200c36w-20260507024917",
+        "observed_at": "2026-05-07T02:49:17Z",
+        "seller": "Scan Computers",
+        "amount_minor": 50699
+      },
+      "delta_minor": 21951,
+      "delta_basis_points": 7636,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b6400c32-sf-hist-scan-cmh32gx5m2b6400c32-20240115033228-sf-hist-scan-cmh32gx5m2b6400c32-20260611001809",
+      "mpn": "CMH32GX5M2B6400C32",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6400c32-20240115033228",
+        "observed_at": "2024-01-15T03:32:28Z",
+        "seller": "Scan Computers",
+        "amount_minor": 14249
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6400c32-20260611001809",
+        "observed_at": "2026-06-11T00:18:09Z",
+        "seller": "Scan Computers",
+        "amount_minor": 49999
+      },
+      "delta_minor": 35750,
+      "delta_basis_points": 25089,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b6400c32w-sf-hist-scan-cmh32gx5m2b6400c32w-20240211233718-sf-hist-scan-cmh32gx5m2b6400c32w-20260513003445",
+      "mpn": "CMH32GX5M2B6400C32W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6400c32w-20240211233718",
+        "observed_at": "2024-02-11T23:37:18Z",
+        "seller": "Scan Computers",
+        "amount_minor": 14099
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6400c32w-20260513003445",
+        "observed_at": "2026-05-13T00:34:45Z",
+        "seller": "Scan Computers",
+        "amount_minor": 47648
+      },
+      "delta_minor": 33549,
+      "delta_basis_points": 23795,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b6400c36-sf-hist-scan-cmh32gx5m2b6400c36-20231215142115-sf-hist-scan-cmh32gx5m2b6400c36-20260514191328",
+      "mpn": "CMH32GX5M2B6400C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6400c36-20231215142115",
+        "observed_at": "2023-12-15T14:21:15Z",
+        "seller": "Scan Computers",
+        "amount_minor": 12749
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6400c36-20260514191328",
+        "observed_at": "2026-05-14T19:13:28Z",
+        "seller": "Scan Computers",
+        "amount_minor": 45998
+      },
+      "delta_minor": 33249,
+      "delta_basis_points": 26080,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b6600c38-sf-hist-scan-cmh32gx5m2b6600c38-20240228033721-sf-hist-scan-cmh32gx5m2b6600c38-20250114140823",
+      "mpn": "CMH32GX5M2B6600C38",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6600c38-20240228033721",
+        "observed_at": "2024-02-28T03:37:21Z",
+        "seller": "Scan Computers",
+        "amount_minor": 13199
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6600c38-20250114140823",
+        "observed_at": "2025-01-14T14:08:23Z",
+        "seller": "Scan Computers",
+        "amount_minor": 12899
+      },
+      "delta_minor": -300,
+      "delta_basis_points": -227,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b6800c40-sf-hist-scan-cmh32gx5m2b6800c40-20240225061613-sf-hist-scan-cmh32gx5m2b6800c40-20260507024917",
+      "mpn": "CMH32GX5M2B6800C40",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6800c40-20240225061613",
+        "observed_at": "2024-02-25T06:16:13Z",
+        "seller": "Scan Computers",
+        "amount_minor": 14348
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b6800c40-20260507024917",
+        "observed_at": "2026-05-07T02:49:17Z",
+        "seller": "Scan Computers",
+        "amount_minor": 45299
+      },
+      "delta_minor": 30951,
+      "delta_basis_points": 21572,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2b7000c40-sf-hist-scan-cmh32gx5m2b7000c40-20231208192350-sf-hist-scan-cmh32gx5m2b7000c40-20260109074840",
+      "mpn": "CMH32GX5M2B7000C40",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b7000c40-20231208192350",
+        "observed_at": "2023-12-08T19:23:50Z",
+        "seller": "Scan Computers",
+        "amount_minor": 15299
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2b7000c40-20260109074840",
+        "observed_at": "2026-01-09T07:48:40Z",
+        "seller": "Scan Computers",
+        "amount_minor": 41399
+      },
+      "delta_minor": 26100,
+      "delta_basis_points": 17060,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2d6000c36-sf-hist-scan-cmh32gx5m2d6000c36-20230320105059-sf-hist-scan-cmh32gx5m2d6000c36-20250217104822",
+      "mpn": "CMH32GX5M2D6000C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2d6000c36-20230320105059",
+        "observed_at": "2023-03-20T10:50:59Z",
+        "seller": "Scan Computers",
+        "amount_minor": 15998
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2d6000c36-20250217104822",
+        "observed_at": "2025-02-17T10:48:22Z",
+        "seller": "Scan Computers",
+        "amount_minor": 12649
+      },
+      "delta_minor": -3349,
+      "delta_basis_points": -2093,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2d6000c36w-sf-hist-scan-cmh32gx5m2d6000c36w-20240115033139-sf-hist-scan-cmh32gx5m2d6000c36w-20250420061914",
+      "mpn": "CMH32GX5M2D6000C36W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2d6000c36w-20240115033139",
+        "observed_at": "2024-01-15T03:31:39Z",
+        "seller": "Scan Computers",
+        "amount_minor": 13099
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2d6000c36w-20250420061914",
+        "observed_at": "2025-04-20T06:19:14Z",
+        "seller": "Scan Computers",
+        "amount_minor": 12098
+      },
+      "delta_minor": -1001,
+      "delta_basis_points": -764,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2d6000z36k-sf-hist-scan-cmh32gx5m2d6000z36k-20240115033138-sf-hist-scan-cmh32gx5m2d6000z36k-20240905212800",
+      "mpn": "CMH32GX5M2D6000Z36K",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2d6000z36k-20240115033138",
+        "observed_at": "2024-01-15T03:31:38Z",
+        "seller": "Scan Computers",
+        "amount_minor": 11599
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2d6000z36k-20240905212800",
+        "observed_at": "2024-09-05T21:28:00Z",
+        "seller": "Scan Computers",
+        "amount_minor": 12199
+      },
+      "delta_minor": 600,
+      "delta_basis_points": 517,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2e6000c36-sf-hist-scan-cmh32gx5m2e6000c36-20231215142119-sf-hist-scan-cmh32gx5m2e6000c36-20260514184132",
+      "mpn": "CMH32GX5M2E6000C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2e6000c36-20231215142119",
+        "observed_at": "2023-12-15T14:21:19Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10998
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2e6000c36-20260514184132",
+        "observed_at": "2026-05-14T18:41:32Z",
+        "seller": "Scan Computers",
+        "amount_minor": 40799
+      },
+      "delta_minor": 29801,
+      "delta_basis_points": 27097,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2e6000c36w-sf-hist-scan-cmh32gx5m2e6000c36w-20231215142117-sf-hist-scan-cmh32gx5m2e6000c36w-20260507024917",
+      "mpn": "CMH32GX5M2E6000C36W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2e6000c36w-20231215142117",
+        "observed_at": "2023-12-15T14:21:17Z",
+        "seller": "Scan Computers",
+        "amount_minor": 11498
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2e6000c36w-20260507024917",
+        "observed_at": "2026-05-07T02:49:17Z",
+        "seller": "Scan Computers",
+        "amount_minor": 40799
+      },
+      "delta_minor": 29301,
+      "delta_basis_points": 25484,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2e6000z36-sf-hist-scan-cmh32gx5m2e6000z36-20240115033238-sf-hist-scan-cmh32gx5m2e6000z36-20260609134136",
+      "mpn": "CMH32GX5M2E6000Z36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2e6000z36-20240115033238",
+        "observed_at": "2024-01-15T03:32:38Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10598
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2e6000z36-20260609134136",
+        "observed_at": "2026-06-09T13:41:36Z",
+        "seller": "Scan Computers",
+        "amount_minor": 35999
+      },
+      "delta_minor": 25401,
+      "delta_basis_points": 23968,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2e6200c36-sf-hist-scan-cmh32gx5m2e6200c36-20240228033721-sf-hist-scan-cmh32gx5m2e6200c36-20251216183244",
+      "mpn": "CMH32GX5M2E6200C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2e6200c36-20240228033721",
+        "observed_at": "2024-02-28T03:37:21Z",
+        "seller": "Scan Computers",
+        "amount_minor": 11699
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2e6200c36-20251216183244",
+        "observed_at": "2025-12-16T18:32:44Z",
+        "seller": "Scan Computers",
+        "amount_minor": 36599
+      },
+      "delta_minor": 24900,
+      "delta_basis_points": 21284,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2x7000c34-sf-hist-scan-cmh32gx5m2x7000c34-20240228033722-sf-hist-scan-cmh32gx5m2x7000c34-20250428195806",
+      "mpn": "CMH32GX5M2X7000C34",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2x7000c34-20240228033722",
+        "observed_at": "2024-02-28T03:37:22Z",
+        "seller": "Scan Computers",
+        "amount_minor": 15299
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2x7000c34-20250428195806",
+        "observed_at": "2025-04-28T19:58:06Z",
+        "seller": "Scan Computers",
+        "amount_minor": 14599
+      },
+      "delta_minor": -700,
+      "delta_basis_points": -458,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmh32gx5m2x7200c34-sf-hist-scan-cmh32gx5m2x7200c34-20231211193142-sf-hist-scan-cmh32gx5m2x7200c34-20260611001809",
+      "mpn": "CMH32GX5M2X7200C34",
+      "from": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2x7200c34-20231211193142",
+        "observed_at": "2023-12-11T19:31:42Z",
+        "seller": "Scan Computers",
+        "amount_minor": 16549
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmh32gx5m2x7200c34-20260611001809",
+        "observed_at": "2026-06-11T00:18:09Z",
+        "seller": "Scan Computers",
+        "amount_minor": 53348
+      },
+      "delta_minor": 36799,
+      "delta_basis_points": 22236,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2a4800c40-sf-hist-scan-cmk32gx5m2a4800c40-20220118112909-sf-hist-scan-cmk32gx5m2a4800c40-20241230152824",
+      "mpn": "CMK32GX5M2A4800C40",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2a4800c40-20220118112909",
+        "observed_at": "2022-01-18T11:29:09Z",
+        "seller": "Scan Computers",
+        "amount_minor": 29999
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2a4800c40-20241230152824",
+        "observed_at": "2024-12-30T15:28:24Z",
+        "seller": "Scan Computers",
+        "amount_minor": 8599
+      },
+      "delta_minor": -21400,
+      "delta_basis_points": -7134,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b5200c40-sf-hist-scan-cmk32gx5m2b5200c40-20220309002440-sf-hist-scan-cmk32gx5m2b5200c40-20251211125826",
+      "mpn": "CMK32GX5M2B5200C40",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5200c40-20220309002440",
+        "observed_at": "2022-03-09T00:24:40Z",
+        "seller": "Scan Computers",
+        "amount_minor": 26498
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5200c40-20251211125826",
+        "observed_at": "2025-12-11T12:58:26Z",
+        "seller": "Scan Computers",
+        "amount_minor": 36799
+      },
+      "delta_minor": 10301,
+      "delta_basis_points": 3887,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b5200c40w-sf-hist-scan-cmk32gx5m2b5200c40w-20220705061107-sf-hist-scan-cmk32gx5m2b5200c40w-20260329204151",
+      "mpn": "CMK32GX5M2B5200C40W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5200c40w-20220705061107",
+        "observed_at": "2022-07-05T06:11:07Z",
+        "seller": "Scan Computers",
+        "amount_minor": 24548
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5200c40w-20260329204151",
+        "observed_at": "2026-03-29T20:41:51Z",
+        "seller": "Scan Computers",
+        "amount_minor": 38849
+      },
+      "delta_minor": 14301,
+      "delta_basis_points": 5826,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b5200z40-sf-hist-scan-cmk32gx5m2b5200z40-20240226115705-sf-hist-scan-cmk32gx5m2b5200z40-20250317131056",
+      "mpn": "CMK32GX5M2B5200Z40",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5200z40-20240226115705",
+        "observed_at": "2024-02-26T11:57:05Z",
+        "seller": "Scan Computers",
+        "amount_minor": 9649
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5200z40-20250317131056",
+        "observed_at": "2025-03-17T13:10:56Z",
+        "seller": "Scan Computers",
+        "amount_minor": 8099
+      },
+      "delta_minor": -1550,
+      "delta_basis_points": -1606,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b5600c36-sf-hist-scan-cmk32gx5m2b5600c36-20220120013036-sf-hist-scan-cmk32gx5m2b5600c36-20241007231203",
+      "mpn": "CMK32GX5M2B5600C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5600c36-20220120013036",
+        "observed_at": "2022-01-20T01:30:36Z",
+        "seller": "Scan Computers",
+        "amount_minor": 35999
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5600c36-20241007231203",
+        "observed_at": "2024-10-07T23:12:03Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10598
+      },
+      "delta_minor": -25401,
+      "delta_basis_points": -7056,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b5600c36w-sf-hist-scan-cmk32gx5m2b5600c36w-20220529043459-sf-hist-scan-cmk32gx5m2b5600c36w-20241229111123",
+      "mpn": "CMK32GX5M2B5600C36W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5600c36w-20220529043459",
+        "observed_at": "2022-05-29T04:34:59Z",
+        "seller": "Scan Computers",
+        "amount_minor": 26348
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5600c36w-20241229111123",
+        "observed_at": "2024-12-29T11:11:23Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10199
+      },
+      "delta_minor": -16149,
+      "delta_basis_points": -6129,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b5600c40-sf-hist-scan-cmk32gx5m2b5600c40-20240805030214-sf-hist-scan-cmk32gx5m2b5600c40-20250521021024",
+      "mpn": "CMK32GX5M2B5600C40",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5600c40-20240805030214",
+        "observed_at": "2024-08-05T03:02:14Z",
+        "seller": "Scan Computers",
+        "amount_minor": 9299
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5600c40-20250521021024",
+        "observed_at": "2025-05-21T02:10:24Z",
+        "seller": "Scan Computers",
+        "amount_minor": 8599
+      },
+      "delta_minor": -700,
+      "delta_basis_points": -753,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b5600c40w-sf-hist-scan-cmk32gx5m2b5600c40w-20240115033051-sf-hist-scan-cmk32gx5m2b5600c40w-20251015204719",
+      "mpn": "CMK32GX5M2B5600C40W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5600c40w-20240115033051",
+        "observed_at": "2024-01-15T03:30:51Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10448
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5600c40w-20251015204719",
+        "observed_at": "2025-10-15T20:47:19Z",
+        "seller": "Scan Computers",
+        "amount_minor": 12248
+      },
+      "delta_minor": 1800,
+      "delta_basis_points": 1723,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b5600z36-sf-hist-scan-cmk32gx5m2b5600z36-20230122135246-sf-hist-scan-cmk32gx5m2b5600z36-20260201090516",
+      "mpn": "CMK32GX5M2B5600Z36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5600z36-20230122135246",
+        "observed_at": "2023-01-22T13:52:46Z",
+        "seller": "Scan Computers",
+        "amount_minor": 15599
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5600z36-20260201090516",
+        "observed_at": "2026-02-01T09:05:16Z",
+        "seller": "Scan Computers",
+        "amount_minor": 38948
+      },
+      "delta_minor": 23349,
+      "delta_basis_points": 14968,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b5600z40-sf-hist-scan-cmk32gx5m2b5600z40-20240229080222-sf-hist-scan-cmk32gx5m2b5600z40-20260312094746",
+      "mpn": "CMK32GX5M2B5600Z40",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5600z40-20240229080222",
+        "observed_at": "2024-02-29T08:02:22Z",
+        "seller": "Scan Computers",
+        "amount_minor": 9698
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b5600z40-20260312094746",
+        "observed_at": "2026-03-12T09:47:46Z",
+        "seller": "Scan Computers",
+        "amount_minor": 38999
+      },
+      "delta_minor": 29301,
+      "delta_basis_points": 30213,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b6000c30-sf-hist-scan-cmk32gx5m2b6000c30-20230703222322-sf-hist-scan-cmk32gx5m2b6000c30-20260513015732",
+      "mpn": "CMK32GX5M2B6000C30",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6000c30-20230703222322",
+        "observed_at": "2023-07-03T22:23:22Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10598
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6000c30-20260513015732",
+        "observed_at": "2026-05-13T01:57:32Z",
+        "seller": "Scan Computers",
+        "amount_minor": 49199
+      },
+      "delta_minor": 38601,
+      "delta_basis_points": 36423,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b6000c36-sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z-sf-hist-scan-cmk32gx5m2b6000c36-20260729204105",
       "mpn": "CMK32GX5M2B6000C36",
       "from": {
         "observation_id": "sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z",
@@ -14,13 +1004,1047 @@
         "amount_minor": 27548
       },
       "to": {
-        "observation_id": "sf-hist-scan-cmk32gx5m2b6000c36-2023-03-15T075907Z",
-        "observed_at": "2023-03-15T07:59:07Z",
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6000c36-20260729204105",
+        "observed_at": "2026-07-29T20:41:05Z",
         "seller": "Scan Computers",
-        "amount_minor": 13000
+        "amount_minor": 52399
       },
-      "delta_minor": -14548,
-      "delta_basis_points": -5281,
+      "delta_minor": 24851,
+      "delta_basis_points": 9021,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b6000c40-sf-hist-scan-cmk32gx5m2b6000c40-20220816190754-sf-hist-scan-cmk32gx5m2b6000c40-20240302195046",
+      "mpn": "CMK32GX5M2B6000C40",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6000c40-20220816190754",
+        "observed_at": "2022-08-16T19:07:54Z",
+        "seller": "Scan Computers",
+        "amount_minor": 28748
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6000c40-20240302195046",
+        "observed_at": "2024-03-02T19:50:46Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10999
+      },
+      "delta_minor": -17749,
+      "delta_basis_points": -6174,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b6000z30-sf-hist-scan-cmk32gx5m2b6000z30-20240203174312-sf-hist-scan-cmk32gx5m2b6000z30-20260329204151",
+      "mpn": "CMK32GX5M2B6000Z30",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6000z30-20240203174312",
+        "observed_at": "2024-02-03T17:43:12Z",
+        "seller": "Scan Computers",
+        "amount_minor": 11498
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6000z30-20260329204151",
+        "observed_at": "2026-03-29T20:41:51Z",
+        "seller": "Scan Computers",
+        "amount_minor": 36998
+      },
+      "delta_minor": 25500,
+      "delta_basis_points": 22178,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b6200c36-sf-hist-scan-cmk32gx5m2b6200c36-20220525155152-sf-hist-scan-cmk32gx5m2b6200c36-20260310141510",
+      "mpn": "CMK32GX5M2B6200C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6200c36-20220525155152",
+        "observed_at": "2022-05-25T15:51:52Z",
+        "seller": "Scan Computers",
+        "amount_minor": 29999
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6200c36-20260310141510",
+        "observed_at": "2026-03-10T14:15:10Z",
+        "seller": "Scan Computers",
+        "amount_minor": 46399
+      },
+      "delta_minor": 16400,
+      "delta_basis_points": 5467,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b6400c32-sf-hist-scan-cmk32gx5m2b6400c32-20231210115011-sf-hist-scan-cmk32gx5m2b6400c32-20260514191218",
+      "mpn": "CMK32GX5M2B6400C32",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6400c32-20231210115011",
+        "observed_at": "2023-12-10T11:50:11Z",
+        "seller": "Scan Computers",
+        "amount_minor": 13499
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6400c32-20260514191218",
+        "observed_at": "2026-05-14T19:12:18Z",
+        "seller": "Scan Computers",
+        "amount_minor": 46649
+      },
+      "delta_minor": 33150,
+      "delta_basis_points": 24557,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b6400c32w-sf-hist-scan-cmk32gx5m2b6400c32w-20231215142115-sf-hist-scan-cmk32gx5m2b6400c32w-20250905220020",
+      "mpn": "CMK32GX5M2B6400C32W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6400c32w-20231215142115",
+        "observed_at": "2023-12-15T14:21:15Z",
+        "seller": "Scan Computers",
+        "amount_minor": 13199
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6400c32w-20250905220020",
+        "observed_at": "2025-09-05T22:00:20Z",
+        "seller": "Scan Computers",
+        "amount_minor": 12098
+      },
+      "delta_minor": -1101,
+      "delta_basis_points": -834,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b6400c36-sf-hist-scan-cmk32gx5m2b6400c36-20231025191524-sf-hist-scan-cmk32gx5m2b6400c36-20260513002040",
+      "mpn": "CMK32GX5M2B6400C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6400c36-20231025191524",
+        "observed_at": "2023-10-25T19:15:24Z",
+        "seller": "Scan Computers",
+        "amount_minor": 11599
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6400c36-20260513002040",
+        "observed_at": "2026-05-13T00:20:40Z",
+        "seller": "Scan Computers",
+        "amount_minor": 39449
+      },
+      "delta_minor": 27850,
+      "delta_basis_points": 24011,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b6600c38-sf-hist-scan-cmk32gx5m2b6600c38-20240119000317-sf-hist-scan-cmk32gx5m2b6600c38-20251201215138",
+      "mpn": "CMK32GX5M2B6600C38",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6600c38-20240119000317",
+        "observed_at": "2024-01-19T00:03:17Z",
+        "seller": "Scan Computers",
+        "amount_minor": 12199
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6600c38-20251201215138",
+        "observed_at": "2025-12-01T21:51:38Z",
+        "seller": "Scan Computers",
+        "amount_minor": 36749
+      },
+      "delta_minor": 24550,
+      "delta_basis_points": 20125,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b6800c40-sf-hist-scan-cmk32gx5m2b6800c40-20240228033721-sf-hist-scan-cmk32gx5m2b6800c40-20250428162822",
+      "mpn": "CMK32GX5M2B6800C40",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6800c40-20240228033721",
+        "observed_at": "2024-02-28T03:37:21Z",
+        "seller": "Scan Computers",
+        "amount_minor": 13049
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6800c40-20250428162822",
+        "observed_at": "2025-04-28T16:28:22Z",
+        "seller": "Scan Computers",
+        "amount_minor": 11849
+      },
+      "delta_minor": -1200,
+      "delta_basis_points": -920,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2b7000c40-sf-hist-scan-cmk32gx5m2b7000c40-20240228033721-sf-hist-scan-cmk32gx5m2b7000c40-20250612175600",
+      "mpn": "CMK32GX5M2B7000C40",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b7000c40-20240228033721",
+        "observed_at": "2024-02-28T03:37:21Z",
+        "seller": "Scan Computers",
+        "amount_minor": 13499
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b7000c40-20250612175600",
+        "observed_at": "2025-06-12T17:56:00Z",
+        "seller": "Scan Computers",
+        "amount_minor": 11849
+      },
+      "delta_minor": -1650,
+      "delta_basis_points": -1222,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2d6000c36-sf-hist-scan-cmk32gx5m2d6000c36-20220701045155-sf-hist-scan-cmk32gx5m2d6000c36-20250308092836",
+      "mpn": "CMK32GX5M2D6000C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2d6000c36-20220701045155",
+        "observed_at": "2022-07-01T04:51:55Z",
+        "seller": "Scan Computers",
+        "amount_minor": 27548
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2d6000c36-20250308092836",
+        "observed_at": "2025-03-08T09:28:36Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10649
+      },
+      "delta_minor": -16899,
+      "delta_basis_points": -6134,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2d6000c36w-sf-hist-scan-cmk32gx5m2d6000c36w-20231215142116-sf-hist-scan-cmk32gx5m2d6000c36w-20250317191255",
+      "mpn": "CMK32GX5M2D6000C36W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2d6000c36w-20231215142116",
+        "observed_at": "2023-12-15T14:21:16Z",
+        "seller": "Scan Computers",
+        "amount_minor": 12499
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2d6000c36w-20250317191255",
+        "observed_at": "2025-03-17T19:12:55Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10748
+      },
+      "delta_minor": -1751,
+      "delta_basis_points": -1401,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2d6000z36-sf-hist-scan-cmk32gx5m2d6000z36-20230915073622-sf-hist-scan-cmk32gx5m2d6000z36-20250608150942",
+      "mpn": "CMK32GX5M2D6000Z36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2d6000z36-20230915073622",
+        "observed_at": "2023-09-15T07:36:22Z",
+        "seller": "Scan Computers",
+        "amount_minor": 9098
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2d6000z36-20250608150942",
+        "observed_at": "2025-06-08T15:09:42Z",
+        "seller": "Scan Computers",
+        "amount_minor": 8498
+      },
+      "delta_minor": -600,
+      "delta_basis_points": -659,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2e6000c36-sf-hist-scan-cmk32gx5m2e6000c36-20240115033232-sf-hist-scan-cmk32gx5m2e6000c36-20260611001809",
+      "mpn": "CMK32GX5M2E6000C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2e6000c36-20240115033232",
+        "observed_at": "2024-01-15T03:32:32Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10099
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2e6000c36-20260611001809",
+        "observed_at": "2026-06-11T00:18:09Z",
+        "seller": "Scan Computers",
+        "amount_minor": 39799
+      },
+      "delta_minor": 29700,
+      "delta_basis_points": 29409,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2e6000c36w-sf-hist-scan-cmk32gx5m2e6000c36w-20240228033718-sf-hist-scan-cmk32gx5m2e6000c36w-20260611001809",
+      "mpn": "CMK32GX5M2E6000C36W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2e6000c36w-20240228033718",
+        "observed_at": "2024-02-28T03:37:18Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10699
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2e6000c36w-20260611001809",
+        "observed_at": "2026-06-11T00:18:09Z",
+        "seller": "Scan Computers",
+        "amount_minor": 40049
+      },
+      "delta_minor": 29350,
+      "delta_basis_points": 27432,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2e6000z36-sf-hist-scan-cmk32gx5m2e6000z36-20231215142116-sf-hist-scan-cmk32gx5m2e6000z36-20260514221753",
+      "mpn": "CMK32GX5M2E6000Z36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2e6000z36-20231215142116",
+        "observed_at": "2023-12-15T14:21:16Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10199
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2e6000z36-20260514221753",
+        "observed_at": "2026-05-14T22:17:53Z",
+        "seller": "Scan Computers",
+        "amount_minor": 33998
+      },
+      "delta_minor": 23799,
+      "delta_basis_points": 23335,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2e6200c36-sf-hist-scan-cmk32gx5m2e6200c36-20240414014148-sf-hist-scan-cmk32gx5m2e6200c36-20260306090330",
+      "mpn": "CMK32GX5M2E6200C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2e6200c36-20240414014148",
+        "observed_at": "2024-04-14T01:41:48Z",
+        "seller": "Scan Computers",
+        "amount_minor": 10999
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2e6200c36-20260306090330",
+        "observed_at": "2026-03-06T09:03:30Z",
+        "seller": "Scan Computers",
+        "amount_minor": 39299
+      },
+      "delta_minor": 28300,
+      "delta_basis_points": 25730,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2x6200c32-sf-hist-scan-cmk32gx5m2x6200c32-20240115033141-sf-hist-scan-cmk32gx5m2x6200c32-20250923170610",
+      "mpn": "CMK32GX5M2X6200C32",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2x6200c32-20240115033141",
+        "observed_at": "2024-01-15T03:31:41Z",
+        "seller": "Scan Computers",
+        "amount_minor": 12349
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2x6200c32-20250923170610",
+        "observed_at": "2025-09-23T17:06:10Z",
+        "seller": "Scan Computers",
+        "amount_minor": 13199
+      },
+      "delta_minor": 850,
+      "delta_basis_points": 688,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2x7000c34-sf-hist-scan-cmk32gx5m2x7000c34-20240228033721-sf-hist-scan-cmk32gx5m2x7000c34-20251011225710",
+      "mpn": "CMK32GX5M2X7000C34",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2x7000c34-20240228033721",
+        "observed_at": "2024-02-28T03:37:21Z",
+        "seller": "Scan Computers",
+        "amount_minor": 14249
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2x7000c34-20251011225710",
+        "observed_at": "2025-10-11T22:57:10Z",
+        "seller": "Scan Computers",
+        "amount_minor": 16099
+      },
+      "delta_minor": 1850,
+      "delta_basis_points": 1298,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmk32gx5m2x7200c34-sf-hist-scan-cmk32gx5m2x7200c34-20230404153723-sf-hist-scan-cmk32gx5m2x7200c34-20260329204259",
+      "mpn": "CMK32GX5M2X7200C34",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2x7200c34-20230404153723",
+        "observed_at": "2023-04-04T15:37:23Z",
+        "seller": "Scan Computers",
+        "amount_minor": 16999
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2x7200c34-20260329204259",
+        "observed_at": "2026-03-29T20:42:59Z",
+        "seller": "Scan Computers",
+        "amount_minor": 49349
+      },
+      "delta_minor": 32350,
+      "delta_basis_points": 19031,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmp32gx5m2b6000c30-sf-hist-scan-cmp32gx5m2b6000c30-20240228033721-sf-hist-scan-cmp32gx5m2b6000c30-20251203102449",
+      "mpn": "CMP32GX5M2B6000C30",
+      "from": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2b6000c30-20240228033721",
+        "observed_at": "2024-02-28T03:37:21Z",
+        "seller": "Scan Computers",
+        "amount_minor": 17099
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2b6000c30-20251203102449",
+        "observed_at": "2025-12-03T10:24:49Z",
+        "seller": "Scan Computers",
+        "amount_minor": 39749
+      },
+      "delta_minor": 22650,
+      "delta_basis_points": 13246,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmp32gx5m2b6000c30w-sf-hist-scan-cmp32gx5m2b6000c30w-20240228033721-sf-hist-scan-cmp32gx5m2b6000c30w-20260114075327",
+      "mpn": "CMP32GX5M2B6000C30W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2b6000c30w-20240228033721",
+        "observed_at": "2024-02-28T03:37:21Z",
+        "seller": "Scan Computers",
+        "amount_minor": 16999
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2b6000c30w-20260114075327",
+        "observed_at": "2026-01-14T07:53:27Z",
+        "seller": "Scan Computers",
+        "amount_minor": 53948
+      },
+      "delta_minor": 36949,
+      "delta_basis_points": 21736,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmp32gx5m2b6000z30-sf-hist-scan-cmp32gx5m2b6000z30-20240228033718-sf-hist-scan-cmp32gx5m2b6000z30-20260514184132",
+      "mpn": "CMP32GX5M2B6000Z30",
+      "from": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2b6000z30-20240228033718",
+        "observed_at": "2024-02-28T03:37:18Z",
+        "seller": "Scan Computers",
+        "amount_minor": 16999
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2b6000z30-20260514184132",
+        "observed_at": "2026-05-14T18:41:32Z",
+        "seller": "Scan Computers",
+        "amount_minor": 53948
+      },
+      "delta_minor": 36949,
+      "delta_basis_points": 21736,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmp32gx5m2b6400c32-sf-hist-scan-cmp32gx5m2b6400c32-20240228033722-sf-hist-scan-cmp32gx5m2b6400c32-20260113035918",
+      "mpn": "CMP32GX5M2B6400C32",
+      "from": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2b6400c32-20240228033722",
+        "observed_at": "2024-02-28T03:37:22Z",
+        "seller": "Scan Computers",
+        "amount_minor": 17999
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2b6400c32-20260113035918",
+        "observed_at": "2026-01-13T03:59:18Z",
+        "seller": "Scan Computers",
+        "amount_minor": 54998
+      },
+      "delta_minor": 36999,
+      "delta_basis_points": 20556,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmp32gx5m2b6400c32w-sf-hist-scan-cmp32gx5m2b6400c32w-20240124232746-sf-hist-scan-cmp32gx5m2b6400c32w-20260513003449",
+      "mpn": "CMP32GX5M2B6400C32W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2b6400c32w-20240124232746",
+        "observed_at": "2024-01-24T23:27:46Z",
+        "seller": "Scan Computers",
+        "amount_minor": 17999
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2b6400c32w-20260513003449",
+        "observed_at": "2026-05-13T00:34:49Z",
+        "seller": "Scan Computers",
+        "amount_minor": 57799
+      },
+      "delta_minor": 39800,
+      "delta_basis_points": 22112,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmp32gx5m2x6600c32-sf-hist-scan-cmp32gx5m2x6600c32-20240414020832-sf-hist-scan-cmp32gx5m2x6600c32-20260111065918",
+      "mpn": "CMP32GX5M2X6600C32",
+      "from": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2x6600c32-20240414020832",
+        "observed_at": "2024-04-14T02:08:32Z",
+        "seller": "Scan Computers",
+        "amount_minor": 18199
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2x6600c32-20260111065918",
+        "observed_at": "2026-01-11T06:59:18Z",
+        "seller": "Scan Computers",
+        "amount_minor": 52148
+      },
+      "delta_minor": 33949,
+      "delta_basis_points": 18654,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmp32gx5m2x6600c32w-sf-hist-scan-cmp32gx5m2x6600c32w-20240228033718-sf-hist-scan-cmp32gx5m2x6600c32w-20250524122854",
+      "mpn": "CMP32GX5M2X6600C32W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2x6600c32w-20240228033718",
+        "observed_at": "2024-02-28T03:37:18Z",
+        "seller": "Scan Computers",
+        "amount_minor": 18199
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2x6600c32w-20250524122854",
+        "observed_at": "2025-05-24T12:28:54Z",
+        "seller": "Scan Computers",
+        "amount_minor": 17099
+      },
+      "delta_minor": -1100,
+      "delta_basis_points": -604,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmp32gx5m2x7000c34-sf-hist-scan-cmp32gx5m2x7000c34-20231211191402-sf-hist-scan-cmp32gx5m2x7000c34-20250114131947",
+      "mpn": "CMP32GX5M2X7000C34",
+      "from": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2x7000c34-20231211191402",
+        "observed_at": "2023-12-11T19:14:02Z",
+        "seller": "Scan Computers",
+        "amount_minor": 20149
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2x7000c34-20250114131947",
+        "observed_at": "2025-01-14T13:19:47Z",
+        "seller": "Scan Computers",
+        "amount_minor": 18998
+      },
+      "delta_minor": -1151,
+      "delta_basis_points": -571,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmp32gx5m2x7000c34w-sf-hist-scan-cmp32gx5m2x7000c34w-20231215142117-sf-hist-scan-cmp32gx5m2x7000c34w-20260507024917",
+      "mpn": "CMP32GX5M2X7000C34W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2x7000c34w-20231215142117",
+        "observed_at": "2023-12-15T14:21:17Z",
+        "seller": "Scan Computers",
+        "amount_minor": 20149
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2x7000c34w-20260507024917",
+        "observed_at": "2026-05-07T02:49:17Z",
+        "seller": "Scan Computers",
+        "amount_minor": 56498
+      },
+      "delta_minor": 36349,
+      "delta_basis_points": 18040,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmp32gx5m2x7200c34-sf-hist-scan-cmp32gx5m2x7200c34-20240228033722-sf-hist-scan-cmp32gx5m2x7200c34-20251216183344",
+      "mpn": "CMP32GX5M2X7200C34",
+      "from": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2x7200c34-20240228033722",
+        "observed_at": "2024-02-28T03:37:22Z",
+        "seller": "Scan Computers",
+        "amount_minor": 20048
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2x7200c34-20251216183344",
+        "observed_at": "2025-12-16T18:33:44Z",
+        "seller": "Scan Computers",
+        "amount_minor": 42499
+      },
+      "delta_minor": 22451,
+      "delta_basis_points": 11199,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmp32gx5m2x7200c34w-sf-hist-scan-cmp32gx5m2x7200c34w-20240228033722-sf-hist-scan-cmp32gx5m2x7200c34w-20251204073600",
+      "mpn": "CMP32GX5M2X7200C34W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2x7200c34w-20240228033722",
+        "observed_at": "2024-02-28T03:37:22Z",
+        "seller": "Scan Computers",
+        "amount_minor": 19999
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmp32gx5m2x7200c34w-20251204073600",
+        "observed_at": "2025-12-04T07:36:00Z",
+        "seller": "Scan Computers",
+        "amount_minor": 42499
+      },
+      "delta_minor": 22500,
+      "delta_basis_points": 11251,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmsx32gx5m2a4800c40-sf-hist-scan-cmsx32gx5m2a4800c40-20220812125323-sf-hist-scan-cmsx32gx5m2a4800c40-20260412091135",
+      "mpn": "CMSX32GX5M2A4800C40",
+      "from": {
+        "observation_id": "sf-hist-scan-cmsx32gx5m2a4800c40-20220812125323",
+        "observed_at": "2022-08-12T12:53:23Z",
+        "seller": "Scan Computers",
+        "amount_minor": 20999
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmsx32gx5m2a4800c40-20260412091135",
+        "observed_at": "2026-04-12T09:11:35Z",
+        "seller": "Scan Computers",
+        "amount_minor": 32999
+      },
+      "delta_minor": 12000,
+      "delta_basis_points": 5715,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmsx32gx5m2a5600c48-sf-hist-scan-cmsx32gx5m2a5600c48-20231208171521-sf-hist-scan-cmsx32gx5m2a5600c48-20260722235848",
+      "mpn": "CMSX32GX5M2A5600C48",
+      "from": {
+        "observation_id": "sf-hist-scan-cmsx32gx5m2a5600c48-20231208171521",
+        "observed_at": "2023-12-08T17:15:21Z",
+        "seller": "Scan Computers",
+        "amount_minor": 11699
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmsx32gx5m2a5600c48-20260722235848",
+        "observed_at": "2026-07-22T23:58:48Z",
+        "seller": "Scan Computers",
+        "amount_minor": 39799
+      },
+      "delta_minor": 28100,
+      "delta_basis_points": 24019,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmt32gx5m2b5200c40-sf-hist-scan-cmt32gx5m2b5200c40-20220309035456-sf-hist-scan-cmt32gx5m2b5200c40-20251201175616",
+      "mpn": "CMT32GX5M2B5200C40",
+      "from": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2b5200c40-20220309035456",
+        "observed_at": "2022-03-09T03:54:56Z",
+        "seller": "Scan Computers",
+        "amount_minor": 28998
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2b5200c40-20251201175616",
+        "observed_at": "2025-12-01T17:56:16Z",
+        "seller": "Scan Computers",
+        "amount_minor": 36949
+      },
+      "delta_minor": 7951,
+      "delta_basis_points": 2742,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmt32gx5m2b5200c40w-sf-hist-scan-cmt32gx5m2b5200c40w-20220529060201-sf-hist-scan-cmt32gx5m2b5200c40w-20251208075102",
+      "mpn": "CMT32GX5M2B5200C40W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2b5200c40w-20220529060201",
+        "observed_at": "2022-05-29T06:02:01Z",
+        "seller": "Scan Computers",
+        "amount_minor": 28699
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2b5200c40w-20251208075102",
+        "observed_at": "2025-12-08T07:51:02Z",
+        "seller": "Scan Computers",
+        "amount_minor": 36949
+      },
+      "delta_minor": 8250,
+      "delta_basis_points": 2875,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmt32gx5m2b5600c36-sf-hist-scan-cmt32gx5m2b5600c36-20220309123534-sf-hist-scan-cmt32gx5m2b5600c36-20240917225606",
+      "mpn": "CMT32GX5M2B5600C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2b5600c36-20220309123534",
+        "observed_at": "2022-03-09T12:35:34Z",
+        "seller": "Scan Computers",
+        "amount_minor": 32899
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2b5600c36-20240917225606",
+        "observed_at": "2024-09-17T22:56:06Z",
+        "seller": "Scan Computers",
+        "amount_minor": 13298
+      },
+      "delta_minor": -19601,
+      "delta_basis_points": -5958,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmt32gx5m2b5600c36w-sf-hist-scan-cmt32gx5m2b5600c36w-20220504043958-sf-hist-scan-cmt32gx5m2b5600c36w-20240302210509",
+      "mpn": "CMT32GX5M2B5600C36W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2b5600c36w-20220504043958",
+        "observed_at": "2022-05-04T04:39:58Z",
+        "seller": "Scan Computers",
+        "amount_minor": 30998
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2b5600c36w-20240302210509",
+        "observed_at": "2024-03-02T21:05:09Z",
+        "seller": "Scan Computers",
+        "amount_minor": 14599
+      },
+      "delta_minor": -16399,
+      "delta_basis_points": -5290,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmt32gx5m2b5600z36-sf-hist-scan-cmt32gx5m2b5600z36-20230220081929-sf-hist-scan-cmt32gx5m2b5600z36-20250321052314",
+      "mpn": "CMT32GX5M2B5600Z36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2b5600z36-20230220081929",
+        "observed_at": "2023-02-20T08:19:29Z",
+        "seller": "Scan Computers",
+        "amount_minor": 18599
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2b5600z36-20250321052314",
+        "observed_at": "2025-03-21T05:23:14Z",
+        "seller": "Scan Computers",
+        "amount_minor": 12799
+      },
+      "delta_minor": -5800,
+      "delta_basis_points": -3118,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmt32gx5m2b6000c30-sf-hist-scan-cmt32gx5m2b6000c30-20231208161900-sf-hist-scan-cmt32gx5m2b6000c30-20260513003445",
+      "mpn": "CMT32GX5M2B6000C30",
+      "from": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2b6000c30-20231208161900",
+        "observed_at": "2023-12-08T16:19:00Z",
+        "seller": "Scan Computers",
+        "amount_minor": 16699
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2b6000c30-20260513003445",
+        "observed_at": "2026-05-13T00:34:45Z",
+        "seller": "Scan Computers",
+        "amount_minor": 54949
+      },
+      "delta_minor": 38250,
+      "delta_basis_points": 22906,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmt32gx5m2b6000z30k-sf-hist-scan-cmt32gx5m2b6000z30k-20231208191604-sf-hist-scan-cmt32gx5m2b6000z30k-20260507024917",
+      "mpn": "CMT32GX5M2B6000Z30K",
+      "from": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2b6000z30k-20231208191604",
+        "observed_at": "2023-12-08T19:16:04Z",
+        "seller": "Scan Computers",
+        "amount_minor": 16499
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2b6000z30k-20260507024917",
+        "observed_at": "2026-05-07T02:49:17Z",
+        "seller": "Scan Computers",
+        "amount_minor": 54949
+      },
+      "delta_minor": 38450,
+      "delta_basis_points": 23304,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmt32gx5m2b6400c32-sf-hist-scan-cmt32gx5m2b6400c32-20240115033138-sf-hist-scan-cmt32gx5m2b6400c32-20251216183340",
+      "mpn": "CMT32GX5M2B6400C32",
+      "from": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2b6400c32-20240115033138",
+        "observed_at": "2024-01-15T03:31:38Z",
+        "seller": "Scan Computers",
+        "amount_minor": 16949
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2b6400c32-20251216183340",
+        "observed_at": "2025-12-16T18:33:40Z",
+        "seller": "Scan Computers",
+        "amount_minor": 42899
+      },
+      "delta_minor": 25950,
+      "delta_basis_points": 15311,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmt32gx5m2d6000z36-sf-hist-scan-cmt32gx5m2d6000z36-20240724215252-sf-hist-scan-cmt32gx5m2d6000z36-20250316225335",
+      "mpn": "CMT32GX5M2D6000Z36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2d6000z36-20240724215252",
+        "observed_at": "2024-07-24T21:52:52Z",
+        "seller": "Scan Computers",
+        "amount_minor": 15599
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2d6000z36-20250316225335",
+        "observed_at": "2025-03-16T22:53:35Z",
+        "seller": "Scan Computers",
+        "amount_minor": 14348
+      },
+      "delta_minor": -1251,
+      "delta_basis_points": -802,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmt32gx5m2e6000c36-sf-hist-scan-cmt32gx5m2e6000c36-20231208170157-sf-hist-scan-cmt32gx5m2e6000c36-20251201225009",
+      "mpn": "CMT32GX5M2E6000C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2e6000c36-20231208170157",
+        "observed_at": "2023-12-08T17:01:57Z",
+        "seller": "Scan Computers",
+        "amount_minor": 14849
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2e6000c36-20251201225009",
+        "observed_at": "2025-12-01T22:50:09Z",
+        "seller": "Scan Computers",
+        "amount_minor": 35498
+      },
+      "delta_minor": 20649,
+      "delta_basis_points": 13906,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmt32gx5m2e6200c36-sf-hist-scan-cmt32gx5m2e6200c36-20231215142116-sf-hist-scan-cmt32gx5m2e6200c36-20260329094810",
+      "mpn": "CMT32GX5M2E6200C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2e6200c36-20231215142116",
+        "observed_at": "2023-12-15T14:21:16Z",
+        "seller": "Scan Computers",
+        "amount_minor": 16699
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2e6200c36-20260329094810",
+        "observed_at": "2026-03-29T09:48:10Z",
+        "seller": "Scan Computers",
+        "amount_minor": 51098
+      },
+      "delta_minor": 34399,
+      "delta_basis_points": 20599,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmt32gx5m2x5600c36-sf-hist-scan-cmt32gx5m2x5600c36-20220120020631-sf-hist-scan-cmt32gx5m2x5600c36-20220704213916",
+      "mpn": "CMT32GX5M2X5600C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2x5600c36-20220120020631",
+        "observed_at": "2022-01-20T02:06:31Z",
+        "seller": "Scan Computers",
+        "amount_minor": 41999
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2x5600c36-20220704213916",
+        "observed_at": "2022-07-04T21:39:16Z",
+        "seller": "Scan Computers",
+        "amount_minor": 30998
+      },
+      "delta_minor": -11001,
+      "delta_basis_points": -2619,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmt32gx5m2x6000c36-sf-hist-scan-cmt32gx5m2x6000c36-20220517182945-sf-hist-scan-cmt32gx5m2x6000c36-20250911173102",
+      "mpn": "CMT32GX5M2X6000C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2x6000c36-20220517182945",
+        "observed_at": "2022-05-17T18:29:45Z",
+        "seller": "Scan Computers",
+        "amount_minor": 41648
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2x6000c36-20250911173102",
+        "observed_at": "2025-09-11T17:31:02Z",
+        "seller": "Scan Computers",
+        "amount_minor": 14849
+      },
+      "delta_minor": -26799,
+      "delta_basis_points": -6435,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmt32gx5m2x6200c36w-sf-hist-scan-cmt32gx5m2x6200c36w-20220704145017-sf-hist-scan-cmt32gx5m2x6200c36w-20260101135319",
+      "mpn": "CMT32GX5M2X6200C36W",
+      "from": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2x6200c36w-20220704145017",
+        "observed_at": "2022-07-04T14:50:17Z",
+        "seller": "Scan Computers",
+        "amount_minor": 34999
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2x6200c36w-20260101135319",
+        "observed_at": "2026-01-01T13:53:19Z",
+        "seller": "Scan Computers",
+        "amount_minor": 40298
+      },
+      "delta_minor": 5299,
+      "delta_basis_points": 1514,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-cmt32gx5m2x7200c34-sf-hist-scan-cmt32gx5m2x7200c34-20231028165210-sf-hist-scan-cmt32gx5m2x7200c34-20251006210946",
+      "mpn": "CMT32GX5M2X7200C34",
+      "from": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2x7200c34-20231028165210",
+        "observed_at": "2023-10-28T16:52:10Z",
+        "seller": "Scan Computers",
+        "amount_minor": 19949
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmt32gx5m2x7200c34-20251006210946",
+        "observed_at": "2025-10-06T21:09:46Z",
+        "seller": "Scan Computers",
+        "amount_minor": 20699
+      },
+      "delta_minor": 750,
+      "delta_basis_points": 376,
       "comparison_basis": "within_seller",
       "vat_state_from": "included",
       "vat_state_to": "included",

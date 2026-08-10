@@ -33,9 +33,30 @@ const observed = periods.filter((p) => p.state === "observed");
 const maxMinor = Math.max(...observed.map((p) => p.high.amount_minor));
 const scale = (minor) => (minor / maxMinor) * 100;
 
-// A period whose evidence comes from a single seller cannot distinguish a
-// market move from a change in which shelf was sampled. Flag it explicitly.
-const thin = (p) => p.state === "observed" && (p.distinct_seller_count < 2 || p.observation_count < 3);
+// Comparability between adjacent periods depends on how many of the SAME exact
+// MPNs appear in both. A single seller is not a weakness — comparing one
+// retailer with itself is the fairest available basis. Thin means few
+// observations or little product overlap with the preceding period.
+const mpnsByPeriod = new Map();
+for (const o of observations) {
+  const q = quarterIdForTimestamp(o.observed_at);
+  if (!mpnsByPeriod.has(q)) mpnsByPeriod.set(q, new Set());
+  mpnsByPeriod.get(q).add(o.mpn);
+}
+const overlapWithPrevious = (periodId) => {
+  const ordered = periods.filter((x) => x.state === "observed").map((x) => x.period_id);
+  const i = ordered.indexOf(periodId);
+  if (i <= 0) return null;
+  const a = mpnsByPeriod.get(ordered[i - 1]);
+  const b = mpnsByPeriod.get(periodId);
+  if (!a || !b) return null;
+  return [...b].filter((m) => a.has(m)).length;
+};
+const thin = (p) => {
+  if (p.state !== "observed") return false;
+  const shared = overlapWithPrevious(p.period_id);
+  return p.observation_count < 5 || (shared !== null && shared < 3);
+};
 
 const columns = periods
   .map((p) => {
@@ -55,7 +76,7 @@ const columns = periods
         <div class="hi" style="bottom:${scale(p.high.amount_minor)}%">£${pounds(p.high.amount_minor)}</div>
         <div class="lo" style="bottom:${bottom}%">£${pounds(p.low.amount_minor)}</div>
       </div>
-      <div class="label">${p.period_id}<span class="n">n=${p.observation_count} · ${p.distinct_mpn_count} MPN · ${p.distinct_seller_count} seller${p.distinct_seller_count === 1 ? "" : "s"}${thin(p) ? " ⚠" : ""}</span></div>
+      <div class="label">${p.period_id}<span class="n">n=${p.observation_count} · ${p.distinct_mpn_count} MPN · ${p.distinct_seller_count} seller${p.distinct_seller_count === 1 ? "" : "s"}${thin(p) ? " ⚠" : ""}${overlapWithPrevious(p.period_id) !== null ? ` · ${overlapWithPrevious(p.period_id)} shared` : ""}</span></div>
     </div>`;
   })
   .join("");
@@ -64,7 +85,7 @@ const rows = observed
   .map(
     (p) => `<tr${thin(p) ? ' class="warn"' : ""}>
       <td>${p.period_id}</td><td class="num">£${pounds(p.low.amount_minor)}</td><td class="num">£${pounds(p.high.amount_minor)}</td>
-      <td class="num">${p.observation_count}</td><td class="num">${p.distinct_mpn_count}</td><td class="num">${p.distinct_seller_count}</td>
+      <td class="num">${p.observation_count}</td><td class="num">${p.distinct_mpn_count}</td><td class="num">${p.distinct_seller_count}</td><td class="num">${overlapWithPrevious(p.period_id) ?? "—"}</td>
       <td class="mono">${escape(p.low.mpn)} <span class="muted">@ ${escape(p.low.seller)}</span></td>
       <td class="mono">${escape(p.high.mpn)} <span class="muted">@ ${escape(p.high.seller)}</span></td>
     </tr>`,
@@ -114,11 +135,11 @@ footer{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--line);color
 <div class="legend">
   <span><span class="key" style="background:var(--band);opacity:.34"></span>observed low–high range</span>
   <span><span class="key" style="background:var(--dot);border-radius:50%"></span>individual observation</span>
-  <span>⚠ single-seller or fewer than 3 observations</span>
+  <span>⚠ fewer than 5 observations, or fewer than 3 MPNs shared with the previous quarter</span>
   <span>empty column = no evidence retained (a real gap, never interpolated)</span>
 </div>
 
-<table><thead><tr><th>Quarter</th><th class="num">Low</th><th class="num">High</th><th class="num">Obs</th><th class="num">MPNs</th><th class="num">Sellers</th><th>Low driven by</th><th>High driven by</th></tr></thead><tbody>${rows}</tbody></table>
+<table><thead><tr><th>Quarter</th><th class="num">Low</th><th class="num">High</th><th class="num">Obs</th><th class="num">MPNs</th><th class="num">Sellers</th><th class="num">Shared w/ prev</th><th>Low driven by</th><th>High driven by</th></tr></thead><tbody>${rows}</tbody></table>
 
 <footer>Private candidate research artefact. No source, methodology, basket, reference period, deflator, aggregation rule or publication is approved. Archive capture timestamps are not retailer price-change times. Every point traces to an immutable observation in <code>data/observations/candidate/</code>.</footer>
 </div></body></html>`;
