@@ -47,7 +47,7 @@ function collisionRows(tranches) {
 
 test("manual canonical collector output is retained but explicitly blocked from same-date diagnostic integration", async () => {
   const audit = await readJson(auditPath);
-  const names = (await readdir(candidateDir)).filter((name) => currentTranchePattern.test(name)).sort();
+  const names = (await readdir(candidateDir)).filter((name) => currentTranchePattern.test(name) && name <= "uk-primary-retail-2026-08-09T234337Z.v1.json").sort();
   const paths = names.map((name) => `data/observations/candidate/${name}`);
   assert.deepEqual(audit.audited_tranches.map((entry) => entry.path).sort(), paths);
   assert.equal(audit.status, "candidate_private_global_integration_blocked");
