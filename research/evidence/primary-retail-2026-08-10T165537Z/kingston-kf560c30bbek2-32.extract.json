@@ -1,0 +1,39 @@
+{
+  "schema_version": 1,
+  "evidence_id": "sf-retail-kingston-kf560c30bbek2-32-2026-08-10T165537Z",
+  "evidence_class": "minimal_factual_extract",
+  "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-beast-kf560c30bbek2-32-32gb-16gb-x2-ddr5-6000mt-s-black-memory-dimm-expo",
+  "retrieved_at": "2026-08-10T16:55:36Z",
+  "http_status": 200,
+  "final_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-beast-kf560c30bbek2-32-32gb-16gb-x2-ddr5-6000mt-s-black-memory-dimm-expo",
+  "source_url_status": "http_200",
+  "response_sha256": "80821700c97b6726ca85c0db2bec61fe9a2f139790892930ddbeb4d74de1be2a",
+  "response_bytes": 594607,
+  "response_bytes_retained": false,
+  "retention_note": "The fetched response bytes are not retained; only this minimal factual extract, response byte count, and response SHA-256 are retained.",
+  "facts": {
+    "mpn": "KF560C30BBEK2-32",
+    "price": {
+      "amount_minor": 60690,
+      "currency": "GBP",
+      "vat_state": "included",
+      "display": "£606.90 (inc. VAT)"
+    },
+    "seller": {
+      "display_name": "KingstonMemoryShop",
+      "legal_name": "SweetCow Ltd t/a KingstonMemoryShop"
+    },
+    "availability": {
+      "schema": "InStock",
+      "display": "Available To Order - 4-5 Business Day Delivery*",
+      "normalised": "available_to_order",
+      "semantics": "ambiguous_for_eligibility"
+    },
+    "delivery": {
+      "display": "FREE UK Delivery & Returns",
+      "amount_minor": 0,
+      "destination_scope": "UK unspecified",
+      "destination_verified": false
+    }
+  }
+}

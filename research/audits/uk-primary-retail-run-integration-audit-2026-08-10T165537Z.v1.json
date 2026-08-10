@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "audit_id": "sf-gb-primary-retail-run-integration-audit-2026-08-10T165537Z-v1",
+  "status": "candidate_private_global_integration_blocked",
+  "scope": "candidate_only",
+  "collector": {
+    "run_started_at": "2026-08-10T16:55:31Z",
+    "run_completed_at": "2026-08-10T16:55:37Z",
+    "base_commit": "dfcca730336481ad51411494c2caec7aef3578bb"
+  },
+  "selection": {
+    "method": "parsed schema plus observed timestamp",
+    "required_scope": "candidate_only",
+    "required_channel": "PRIMARY_RETAIL",
+    "historical_backfill_explicitly_excluded": true,
+    "source_tranche_path": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
+    "new_tranche_path": "data/observations/candidate/uk-primary-retail-2026-08-10T165537Z.v1.json"
+  },
+  "audited_tranches": [
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-09T122437Z.v1.json",
+      "sha256": "efe276384a828f32b86891422c9519c6b3e15cb4640c0bbc2095edcca4564fb6"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
+      "sha256": "41fd88e7e48cbb343254522d46d3ec74c999f494169da34ecfeefb3ed667428e"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-10T165537Z.v1.json",
+      "sha256": "484361e044d5ed74bb6aaae7c21b32f99141a61e39e15525135e0f04a2b98b10"
+    }
+  ],
+  "collision_key": "seller_legal_name + exact_mpn + utc_calendar_date",
+  "collisions": [
+    {
+      "seller_legal_name": "ADMI Limited",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "utc_date": "2026-08-09",
+      "observation_ids": [
+        "awdit-f5-6000j3636f16gx2-fx5-2026-08-09T122437Z",
+        "awdit-f5-6000j3636f16gx2-fx5-2026-08-09t234337z"
+      ],
+      "item_price_amount_minor": [
+        46999,
+        46999
+      ]
+    },
+    {
+      "seller_legal_name": "SweetCow Ltd t/a KingstonMemoryShop",
+      "mpn": "KF560C30BBEK2-32",
+      "utc_date": "2026-08-09",
+      "observation_ids": [
+        "kms-kf560c30bbek2-32-2026-08-09T122553Z",
+        "kms-kf560c30bbek2-32-2026-08-09t234337z"
+      ],
+      "item_price_amount_minor": [
+        61144,
+        61144
+      ]
+    },
+    {
+      "seller_legal_name": "SweetCow Ltd t/a KingstonMemoryShop",
+      "mpn": "KF564C32RSK2-32",
+      "utc_date": "2026-08-09",
+      "observation_ids": [
+        "kms-kf564c32rsk2-32-2026-08-09T122554Z",
+        "kms-kf564c32rsk2-32-2026-08-09t234337z"
+      ],
+      "item_price_amount_minor": [
+        62026,
+        62026
+      ]
+    }
+  ],
+  "price_comparison": {
+    "basis": "new tranche versus immediately previous prospective tranche by seller legal name + exact MPN",
+    "comparable_lines": 3,
+    "changed_lines": 2,
+    "unchanged_lines": 1,
+    "changes": [
+      {
+        "seller_legal_name": "ADMI Limited",
+        "mpn": "F5-6000J3636F16GX2-FX5",
+        "previous_amount_minor": 46999,
+        "current_amount_minor": 46999,
+        "delta_amount_minor": 0,
+        "direction": "unchanged"
+      },
+      {
+        "seller_legal_name": "SweetCow Ltd t/a KingstonMemoryShop",
+        "mpn": "KF560C30BBEK2-32",
+        "previous_amount_minor": 61144,
+        "current_amount_minor": 60690,
+        "delta_amount_minor": -454,
+        "direction": "down"
+      },
+      {
+        "seller_legal_name": "SweetCow Ltd t/a KingstonMemoryShop",
+        "mpn": "KF564C32RSK2-32",
+        "previous_amount_minor": 62026,
+        "current_amount_minor": 61566,
+        "delta_amount_minor": -460,
+        "direction": "down"
+      }
+    ]
+  },
+  "integration": {
+    "raw_candidate_evidence_retained": true,
+    "date_level_diagnostic_integration_allowed": false,
+    "approved_same_date_selection_rule": false,
+    "approved_intraday_aggregation_rule": false,
+    "reason_code": "BLOCKED_DUPLICATE_SELLER_MPN_UTC_DATE"
+  },
+  "report_boundary": {
+    "candidate_report_scope": "tranche_local",
+    "global_date_coverage_claimed": false
+  },
+  "governance": {
+    "production_import_allowed": false,
+    "production_activation_allowed": false,
+    "index_eligibility": false,
+    "methodology_approval": false,
+    "publication_allowed": false
+  }
+}

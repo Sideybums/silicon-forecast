@@ -1,0 +1,223 @@
+{
+  "schema_version": 1,
+  "tranche_id": "sf-gb-primary-retail-2026-08-10T165537Z-v1",
+  "status": "candidate_private_immutable",
+  "scope": "candidate_only",
+  "region": "GB",
+  "channel": "PRIMARY_RETAIL",
+  "created_at": "2026-08-10T16:55:37Z",
+  "immutability_policy": "Append-only candidate observation tranche; do not edit in place. Corrections require a new additive artifact.",
+  "evidence_policy": "Minimal factual extracts, source URL/status, response byte counts and response SHA-256 values are retained. Fetched response bytes are not retained.",
+  "governance": {
+    "production_import_allowed": false,
+    "production_activation_allowed": false,
+    "index_eligibility": false,
+    "methodology_approval": false,
+    "publication_allowed": false
+  },
+  "observations": [
+    {
+      "observation_id": "awdit-f5-6000j3636f16gx2-fx5-2026-08-10t16:55:31z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-08-10T16:55:31Z",
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/g-skill-flare-x5-32gb-16gb-x2-ddr5-6000mt-s-cl36-memory-kit-black-f5-6000j3636f16gx2-fx5.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "normal unauthenticated HTTP retrieval",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "F5-6000J3636F16GX2-FX5",
+        "mpn_observed": "F5-6000J3636F16GX2-FX5",
+        "match_basis": "exact_mpn"
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": "ADMI Limited",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 46999,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "in_stock",
+        "schema": "InStock",
+        "display": "In stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": 0,
+        "currency": "GBP",
+        "claim": "FREE UK Mainland Delivery / Free Delivery Available",
+        "destination_basis": "UK mainland unspecified",
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "reasons": [
+          "delivery_destination_not_fixed"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-2026-08-10T165537Z/awd-it-f5-6000j3636f16gx2-fx5.extract.json",
+        "extract_sha256": "5084043fd3ac534e01d3b2c8c5383deb8b5d8ffad7ad3c748558943a5b0ddc1c",
+        "response_sha256": "3907c29c23523affd6fe2fdbf48f75f1f9d4d4c69bc7bea2b312b36fe9c44bd7",
+        "response_bytes": 425013,
+        "response_bytes_retained": false
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "kms-kf560c30bbek2-32-2026-08-10t16:55:36z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-08-10T16:55:36Z",
+      "source": {
+        "source_key": "kingston-memory-shop-uk-public-page",
+        "source_name": "KingstonMemoryShop public product page",
+        "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-beast-kf560c30bbek2-32-32gb-16gb-x2-ddr5-6000mt-s-black-memory-dimm-expo",
+        "supplied_url_status": "http_200",
+        "collection_method": "normal unauthenticated HTTP retrieval",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "KF560C30BBEK2-32",
+        "mpn_observed": "KF560C30BBEK2-32",
+        "match_basis": "exact_mpn"
+      },
+      "seller": {
+        "display_name": "KingstonMemoryShop",
+        "legal_name": "SweetCow Ltd t/a KingstonMemoryShop",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 60690,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "available_to_order",
+        "schema": "InStock",
+        "display": "Available To Order - 4-5 Business Day Delivery*",
+        "eligibility_semantics": "ambiguous"
+      },
+      "delivery": {
+        "amount_minor": 0,
+        "currency": "GBP",
+        "claim": "FREE UK Delivery & Returns",
+        "destination_basis": "UK unspecified",
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "reasons": [
+          "availability_semantics_ambiguous",
+          "delivery_destination_not_fixed"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-2026-08-10T165537Z/kingston-kf560c30bbek2-32.extract.json",
+        "extract_sha256": "4e72eb8770b4f98997999bb7332578363b24ec9e51b22cf75b3905ca2fefa3ae",
+        "response_sha256": "80821700c97b6726ca85c0db2bec61fe9a2f139790892930ddbeb4d74de1be2a",
+        "response_bytes": 594607,
+        "response_bytes_retained": false
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "kms-kf564c32rsk2-32-2026-08-10t16:55:37z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-08-10T16:55:37Z",
+      "source": {
+        "source_key": "kingston-memory-shop-uk-public-page",
+        "source_name": "KingstonMemoryShop public product page",
+        "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm",
+        "supplied_url_status": "http_200",
+        "collection_method": "normal unauthenticated HTTP retrieval",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "KF564C32RSK2-32",
+        "mpn_observed": "KF564C32RSK2-32",
+        "match_basis": "exact_mpn"
+      },
+      "seller": {
+        "display_name": "KingstonMemoryShop",
+        "legal_name": "SweetCow Ltd t/a KingstonMemoryShop",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 61566,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "available_to_order",
+        "schema": "InStock",
+        "display": "Available To Order - 4-5 Business Day Delivery*",
+        "eligibility_semantics": "ambiguous"
+      },
+      "delivery": {
+        "amount_minor": 0,
+        "currency": "GBP",
+        "claim": "FREE UK Delivery & Returns",
+        "destination_basis": "UK unspecified",
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "reasons": [
+          "availability_semantics_ambiguous",
+          "delivery_destination_not_fixed"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-2026-08-10T165537Z/kingston-kf564c32rsk2-32.extract.json",
+        "extract_sha256": "e24738c8db6f7b5cdb0202cfc94f0430c51e0eed540219ae18f46649233ceec5",
+        "response_sha256": "e2dd37e5861ff7efe90c6b6007e17c61e0de3a95943f4b249d83380f9c78156c",
+        "response_bytes": 594266,
+        "response_bytes_retained": false
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    }
+  ]
+}
