@@ -136,3 +136,32 @@ test("derivation is deterministic regardless of input order, including on both l
   // high is tied at 9000 between mmm and bbb; smallest observation_id must win.
   assert.equal(forward.periods[0].high.observation_id, "bbb");
 });
+
+import { readFile } from "node:fs/promises";
+import { buildEnvelopeFromRepository, canonicalEnvelopeBytes, ELIGIBLE_TRANCHES } from "../lib/historical-observed-price-envelope.mjs";
+
+const root = new URL("../", import.meta.url);
+
+test("the marketplace tranche is excluded from the envelope", () => {
+  assert.equal(ELIGIBLE_TRANCHES.some((t) => t.file.includes("amazon")), false);
+});
+
+test("the golden fixture re-derives byte-for-byte from immutable observations", async () => {
+  const golden = await readFile(new URL("data/fixtures/historical-observed-price-envelope.v1.json", root), "utf8");
+  const rederived = canonicalEnvelopeBytes(buildEnvelopeFromRepository(root));
+  assert.equal(rederived, golden);
+});
+
+test("every contributing observation id resolves to a real observation", async () => {
+  const golden = JSON.parse(await readFile(new URL("data/fixtures/historical-observed-price-envelope.v1.json", root), "utf8"));
+  const known = new Set();
+  for (const tranche of ELIGIBLE_TRANCHES) {
+    const raw = JSON.parse(await readFile(new URL(`data/observations/candidate/${tranche.file}`, root), "utf8"));
+    for (const o of raw.observations) known.add(o.observation_id);
+  }
+  for (const period of golden.periods) {
+    for (const id of period.contributing_observation_ids) assert.equal(known.has(id), true, `dangling observation id: ${id}`);
+    if (period.low) assert.equal(known.has(period.low.observation_id), true);
+    if (period.high) assert.equal(known.has(period.high.observation_id), true);
+  }
+});
