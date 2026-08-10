@@ -98,3 +98,102 @@ test("one seller with a pair beats other sellers holding single observations", (
   assert.equal(movement.from.seller, "Paired Seller");
   assert.equal(movement.to.seller, "Paired Seller");
 });
+
+import { validateExplanationLedger } from "../lib/historical-movement-explanations.mjs";
+
+const movement = {
+  movement_id: "m1", mpn: "X",
+  from: { observation_id: "a", observed_at: "2023-01-28T07:42:17Z", seller: "Crucial UK", amount_minor: 14879 },
+  to: { observation_id: "b", observed_at: "2023-08-15T14:08:13Z", seller: "Crucial UK", amount_minor: 9239 },
+  delta_minor: -5640, delta_basis_points: -3791, comparison_basis: "within_seller",
+  vat_state_from: "included", vat_state_to: "included", vat_disclosure_required: false,
+};
+
+const explanation = (overrides = {}) => ({
+  explanation_id: "e1",
+  movement_id: "m1",
+  published_at: "2023-06-01T00:00:00Z",
+  publisher: "Example Trade Press",
+  url: "https://example.invalid/report",
+  response_sha256: "0".repeat(64),
+  response_bytes: 1234,
+  minimal_quote: "Memory makers cut output through the first half of the year.",
+  proposed_mechanism: "Reported oversupply and inventory correction may have reduced consumer kit prices.",
+  causal_language_level: "contributory_hypothesis",
+  counterevidence_search: { performed: true, result: "none_identified", searched_at: "2026-08-10T00:00:00Z" },
+  ...overrides,
+});
+
+test("a well-formed ledger validates", () => {
+  const result = validateExplanationLedger({ movements: [movement], explanations: [explanation()] }, [movement]);
+  assert.deepEqual(result, { movement_count: 1, explanation_count: 1 });
+});
+
+test("an explanation carrying a numeric override is rejected", () => {
+  assert.throws(
+    () => validateExplanationLedger({ movements: [movement], explanations: [explanation({ amount_minor: 100 })] }, [movement]),
+    /forbidden numeric field/,
+  );
+});
+
+test("causal language above contributory_hypothesis is rejected", () => {
+  assert.throws(
+    () => validateExplanationLedger({ movements: [movement], explanations: [explanation({ causal_language_level: "causal_conclusion" })] }, [movement]),
+    /causal_language_level/,
+  );
+});
+
+test("a missing counterevidence search is rejected", () => {
+  assert.throws(
+    () => validateExplanationLedger({ movements: [movement], explanations: [explanation({ counterevidence_search: { performed: false } })] }, [movement]),
+    /counterevidence search/,
+  );
+});
+
+test("claiming no counterevidence exists is rejected; only none_identified is permitted", () => {
+  assert.throws(
+    () => validateExplanationLedger(
+      { movements: [movement], explanations: [explanation({ counterevidence_search: { performed: true, result: "none_exists", searched_at: "2026-08-10T00:00:00Z" } })] },
+      [movement],
+    ),
+    /counterevidence search/,
+  );
+});
+
+test("an explanation referencing an unknown movement is rejected", () => {
+  assert.throws(
+    () => validateExplanationLedger({ movements: [movement], explanations: [explanation({ movement_id: "nope" })] }, [movement]),
+    /unknown movement/,
+  );
+});
+
+test("ledger movements must match derived movements exactly", () => {
+  const drifted = { ...movement, delta_minor: -1 };
+  assert.throws(() => validateExplanationLedger({ movements: [drifted], explanations: [] }, [movement]), /movement drift/);
+});
+
+import {
+  ELIGIBLE_TRANCHES,
+  normaliseObservation,
+  applyVatResolutions,
+  VAT_RESOLUTION_FILE,
+} from "../lib/historical-observed-price-envelope.mjs";
+
+test("the on-disk movement ledger matches freshly derived movements", async () => {
+  const ledger = await readJson("research/evidence/historical-movement-explanations-2026-08-10/ledger.v1.json");
+
+  const records = [];
+  for (const tranche of ELIGIBLE_TRANCHES) {
+    const parsed = await readJson(`data/observations/candidate/${tranche.file}`);
+    for (const raw of parsed.observations) {
+      records.push(normaliseObservation(raw, { sourceFile: tranche.file, captureKind: tranche.captureKind }));
+    }
+  }
+  const resolution = await readJson(VAT_RESOLUTION_FILE);
+  const movements = deriveHistoricalMovements(applyVatResolutions(records, resolution.resolutions, resolution.resolution_id));
+
+  const result = validateExplanationLedger(ledger, movements);
+  assert.equal(result.movement_count, 7);
+  assert.equal(result.explanation_count, 0);
+  assert.deepEqual(Object.values(ledger.governance), Object.values(ledger.governance).map(() => false));
+});
