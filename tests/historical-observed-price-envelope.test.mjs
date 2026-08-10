@@ -165,3 +165,50 @@ test("every contributing observation id resolves to a real observation", async (
     if (period.high) assert.equal(known.has(period.high.observation_id), true);
   }
 });
+
+test("a hand-edited band value cannot survive re-derivation", async () => {
+  const golden = JSON.parse(await readFile(new URL("data/fixtures/historical-observed-price-envelope.v1.json", root), "utf8"));
+  const tampered = structuredClone(golden);
+  const target = tampered.periods.find((p) => p.state === "observed");
+  target.low.amount_minor -= 1;
+  assert.notEqual(canonicalEnvelopeBytes(tampered), canonicalEnvelopeBytes(buildEnvelopeFromRepository(root)));
+});
+
+test("a period cannot claim an observation outside its own quarter", async () => {
+  const golden = JSON.parse(await readFile(new URL("data/fixtures/historical-observed-price-envelope.v1.json", root), "utf8"));
+  const byId = new Map();
+  for (const tranche of ELIGIBLE_TRANCHES) {
+    const raw = JSON.parse(await readFile(new URL(`data/observations/candidate/${tranche.file}`, root), "utf8"));
+    for (const o of raw.observations) byId.set(o.observation_id, o.observed_at);
+  }
+  for (const period of golden.periods) {
+    for (const id of period.contributing_observation_ids) {
+      assert.equal(quarterIdForTimestamp(byId.get(id)), period.period_id);
+    }
+  }
+});
+
+test("every period carries VAT disclosure counts that sum to its observation count", async () => {
+  const golden = JSON.parse(await readFile(new URL("data/fixtures/historical-observed-price-envelope.v1.json", root), "utf8"));
+  for (const period of golden.periods) {
+    assert.equal(period.vat_resolved_count + period.vat_unresolved_count, period.observation_count);
+  }
+});
+
+test("a Q4 quarter's exclusive end rolls into January of the next year", () => {
+  assert.deepEqual(quarterBounds("2023-Q4"), {
+    start: "2023-10-01T00:00:00Z",
+    end: "2024-01-01T00:00:00Z",
+  });
+  assert.equal(quarterIdForTimestamp("2023-12-31T23:59:59Z"), "2023-Q4");
+  assert.equal(quarterIdForTimestamp("2024-01-01T00:00:00Z"), "2024-Q1");
+});
+
+test("no period fabricates a value for an empty quarter", async () => {
+  const golden = JSON.parse(await readFile(new URL("data/fixtures/historical-observed-price-envelope.v1.json", root), "utf8"));
+  for (const period of golden.periods.filter((p) => p.state === "no_eligible_evidence")) {
+    assert.equal(period.low, null);
+    assert.equal(period.high, null);
+    assert.deepEqual(period.contributing_observation_ids, []);
+  }
+});
