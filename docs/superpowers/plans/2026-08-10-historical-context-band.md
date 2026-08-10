@@ -684,6 +684,15 @@ test("every period carries VAT disclosure counts that sum to its observation cou
   }
 });
 
+test("a Q4 quarter's exclusive end rolls into January of the next year", () => {
+  assert.deepEqual(quarterBounds("2023-Q4"), {
+    start: "2023-10-01T00:00:00Z",
+    end: "2024-01-01T00:00:00Z",
+  });
+  assert.equal(quarterIdForTimestamp("2023-12-31T23:59:59Z"), "2023-Q4");
+  assert.equal(quarterIdForTimestamp("2024-01-01T00:00:00Z"), "2024-Q1");
+});
+
 test("no period fabricates a value for an empty quarter", async () => {
   const golden = JSON.parse(await readFile(new URL("data/fixtures/historical-observed-price-envelope.v1.json", root), "utf8"));
   for (const period of golden.periods.filter((p) => p.state === "no_eligible_evidence")) {
@@ -697,7 +706,7 @@ test("no period fabricates a value for an empty quarter", async () => {
 - [ ] **Step 2: Run tests**
 
 Run: `node --test tests/historical-observed-price-envelope.test.mjs`
-Expected: PASS, 19 tests. (These assert properties the implementation already satisfies; if any fails, the derivation is wrong — fix `lib/`, not the test.)
+Expected: PASS, 20 tests. (These assert properties the implementation already satisfies; if any fails, the derivation is wrong — fix `lib/`, not the test.)
 
 - [ ] **Step 3: Commit**
 
