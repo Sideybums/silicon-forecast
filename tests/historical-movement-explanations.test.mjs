@@ -197,3 +197,13 @@ test("the on-disk movement ledger matches freshly derived movements", async () =
   assert.equal(result.explanation_count, 0);
   assert.deepEqual(Object.values(ledger.governance), Object.values(ledger.governance).map(() => false));
 });
+
+test("a forbidden numeric field nested inside an explanation is rejected", () => {
+  const nested = explanation({
+    counterevidence_search: { performed: true, result: "none_identified", searched_at: "2026-08-10T00:00:00Z", amount_minor: 100 },
+  });
+  assert.throws(
+    () => validateExplanationLedger({ movements: [movement], explanations: [nested] }, [movement]),
+    /forbidden numeric field/,
+  );
+});
