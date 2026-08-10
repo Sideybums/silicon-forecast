@@ -129,7 +129,9 @@ UK consumer-facing prices must include VAT under the Price Marking Order 2004, s
 
 The discriminating signal is therefore the seller's audience and the display mode present in the captured bytes. Where the archived page shows an explicit VAT statement or a toggle state, it is recorded. Where it does not, VAT remains unresolved and is disclosed as such.
 
-Scan's two retained captures, £275.48 and £130.00, are noted as reading unlike consumer marketing price points. This is recorded as an observation prompting display-mode review, not as a determination.
+Scan's two retained captures, £275.48 and £130.00, were resolved on 2026-08-10 by parent re-fetch. Both archived pages return byte-identical to their ledger hashes and both contain a `vatToggle` control carrying `data-exvat="false"`, meaning the rendered page was not in ex-VAT mode and the control offers to switch to it. Both also carry microdata `itemprop="price"` values matching the displayed figures. Both Scan observations are therefore VAT-inclusive.
+
+The earlier suspicion that these read as trade ex-VAT figures was wrong. The `data-exvat` attribute is a machine-readable display-mode indicator present on Scan product pages, so Scan captures resolve deterministically rather than defaulting to unresolved. This correction is applied additively via `research/evidence/scan-vat-display-resolution-2026-08-10/resolution.v1.json`; the immutable tranche is not edited.
 
 ### Governance record
 
@@ -225,4 +227,4 @@ The collector remains the sole prospective fetcher. Its next scheduled run is 20
 
 - Whether the collector job `7e98d1467473` is genuinely still scheduled could not be confirmed from this session; `CronList` reports only jobs created in the current session. Verify independently before relying on the 13:45 run.
 - `.planning/HANDOFF.json` records `verification.wave_2_commit: "a58ea71"`, which is a dangling commit left by an amend. The reachable Wave 2 commit is `dfcca73`. Correct as bookkeeping.
-- Scan Computers display-mode review, to determine whether the two unresolved captures were ex-VAT trade displays.
+- Scan Computers display-mode review: RESOLVED 2026-08-10. Both captures are VAT-inclusive, established from the archived `data-exvat="false"` toggle state. Applied additively.

@@ -815,6 +815,158 @@ git commit -m "docs: record approved context-layer comparability decisions"
 
 ---
 
+### Task 6B: Additive Scan VAT resolution
+
+**Files:**
+- Create: `research/evidence/scan-vat-display-resolution-2026-08-10/resolution.v1.json`
+- Modify: `lib/historical-observed-price-envelope.mjs`
+- Test: `tests/historical-observed-price-envelope.test.mjs`
+
+**Background (verified 2026-08-10, parent re-fetch):** both archived Scan pages re-fetch byte-identical to the wave-2 ledger hashes (`cb30d619…` and `a41b7213…`) and both contain:
+
+```html
+<li class="vatToggle"><button data-action="vatToggle" data-exvat="false">Show <strong>Ex Vat</strong> Prices</button>
+```
+
+`data-exvat="false"` means the rendered page was not in ex-VAT mode; the control offers to switch to ex-VAT. Both pages also carry `itemprop="price" content="275.48"` / `content="130.00"`, matching the displayed figures. Both Scan observations are therefore **VAT-inclusive**.
+
+The immutable tranche is NOT edited. An additive resolution artefact overrides VAT state at load time, matching the project rule that corrections are additive.
+
+**Interfaces:**
+- Consumes: `normaliseObservation` from Task 1.
+- Produces: `applyVatResolutions(records, resolutions)` → records with `vat_included` overridden and `vat_resolution_source` set; `VAT_RESOLUTIONS` loaded inside `buildEnvelopeFromRepository`.
+
+- [ ] **Step 1: Write the resolution artefact**
+
+```json
+{
+  "schema_version": 1,
+  "resolution_id": "sf-scan-vat-display-resolution-2026-08-10",
+  "status": "candidate_private_additive_correction",
+  "created_at": "2026-08-10",
+  "method": "machine_readable_vat_toggle_state_in_archived_bytes",
+  "rationale": "Scan product pages carry a vatToggle control whose data-exvat attribute records the rendered display mode. data-exvat=\"false\" means the page was not showing ex-VAT prices and the control offers to switch to them. The microdata itemprop=\"price\" value matches the displayed figure in both captures.",
+  "does_not_mutate_source_tranche": true,
+  "resolutions": [
+    {
+      "observation_id": "sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z",
+      "response_sha256": "cb30d619cc6072387df0795dd7f0995a99fdaeb722d7d8eb4d3fc86043d62765",
+      "evidence_marker": "<li class=\"vatToggle\"><button data-action=\"vatToggle\" data-exvat=\"false\">Show <strong>Ex Vat</strong> Prices</button>",
+      "microdata_price": "275.48",
+      "vat_included_before": null,
+      "vat_included_after": true
+    },
+    {
+      "observation_id": "sf-hist-scan-cmk32gx5m2b6000c36-2023-03-15T075907Z",
+      "response_sha256": "a41b72131ad98883fe3ca29477e91659bcf4c06fb41638df9089799ecd46a39b",
+      "evidence_marker": "<li class=\"vatToggle\"><button data-action=\"vatToggle\" data-exvat=\"false\">Show <strong>Ex Vat</strong> Prices</button>",
+      "microdata_price": "130.00",
+      "vat_included_before": null,
+      "vat_included_after": true
+    }
+  ],
+  "governance": {
+    "source_approved": false,
+    "methodology_approved": false,
+    "index_eligible": false,
+    "production_eligible": false,
+    "publication_eligible": false
+  }
+}
+```
+
+- [ ] **Step 2: Write the failing test**
+
+```javascript
+// append to tests/historical-observed-price-envelope.test.mjs
+import { applyVatResolutions } from "../lib/historical-observed-price-envelope.mjs";
+
+test("an additive resolution overrides VAT state and records its source", () => {
+  const records = [{
+    observation_id: "sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z",
+    vat_included: null, amount_minor: 27548,
+  }];
+  const [out] = applyVatResolutions(records, [{
+    observation_id: "sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z",
+    vat_included_before: null, vat_included_after: true,
+  }]);
+  assert.equal(out.vat_included, true);
+  assert.equal(out.vat_resolution_source, "sf-scan-vat-display-resolution-2026-08-10");
+});
+
+test("a resolution whose before-state disagrees with the observation fails closed", () => {
+  assert.throws(() => applyVatResolutions(
+    [{ observation_id: "a", vat_included: true }],
+    [{ observation_id: "a", vat_included_before: null, vat_included_after: true }],
+  ), /resolution before-state mismatch/);
+});
+
+test("a resolution for an unknown observation fails closed", () => {
+  assert.throws(() => applyVatResolutions(
+    [{ observation_id: "a", vat_included: null }],
+    [{ observation_id: "ghost", vat_included_before: null, vat_included_after: true }],
+  ), /unknown observation/);
+});
+
+test("the Scan observations resolve to VAT-inclusive in the golden fixture", async () => {
+  const golden = JSON.parse(await readFile(new URL("data/fixtures/historical-observed-price-envelope.v1.json", root), "utf8"));
+  const q = golden.periods.find((p) => p.period_id === "2022-Q3");
+  assert.equal(q.vat_unresolved_count, 0);
+});
+```
+
+- [ ] **Step 3: Run test to verify it fails**
+
+Run: `node --test tests/historical-observed-price-envelope.test.mjs`
+Expected: FAIL — `applyVatResolutions is not a function`
+
+- [ ] **Step 4: Write minimal implementation**
+
+```javascript
+// append to lib/historical-observed-price-envelope.mjs
+export const VAT_RESOLUTION_FILE = "research/evidence/scan-vat-display-resolution-2026-08-10/resolution.v1.json";
+
+export function applyVatResolutions(records, resolutions, resolutionId = "sf-scan-vat-display-resolution-2026-08-10") {
+  const byId = new Map(records.map((r) => [r.observation_id, r]));
+  for (const resolution of resolutions) {
+    const record = byId.get(resolution.observation_id);
+    invariant(record, `unknown observation in VAT resolution: ${resolution.observation_id}`);
+    invariant(
+      record.vat_included === resolution.vat_included_before,
+      `resolution before-state mismatch for ${resolution.observation_id}`,
+    );
+    record.vat_included = resolution.vat_included_after;
+    record.vat_resolution_source = resolutionId;
+  }
+  return records;
+}
+```
+
+Then wire it into `buildEnvelopeFromRepository`, immediately before `deriveObservedPriceEnvelope(records)`:
+
+```javascript
+  const resolution = JSON.parse(readFileSync(new URL(VAT_RESOLUTION_FILE, root), "utf8"));
+  applyVatResolutions(records, resolution.resolutions, resolution.resolution_id);
+```
+
+- [ ] **Step 5: Regenerate the fixture and run tests**
+
+Run: `node scripts/render-historical-observed-price-envelope.mjs && node --test tests/historical-observed-price-envelope.test.mjs`
+Expected: PASS. 2022-Q3 and 2023-Q1 now report `vat_unresolved_count: 0`.
+
+- [ ] **Step 6: Add the Scan VAT marker to future acquisition briefs**
+
+In Task 8's worker briefs, add: for Scan captures, extract the `vatToggle` element's `data-exvat` attribute as the VAT display-mode indicator. `data-exvat="false"` means displayed prices are VAT-inclusive.
+
+- [ ] **Step 7: Commit**
+
+```bash
+git add research/evidence/scan-vat-display-resolution-2026-08-10/ lib/historical-observed-price-envelope.mjs data/fixtures/historical-observed-price-envelope.v1.json tests/historical-observed-price-envelope.test.mjs
+git commit -m "fix: resolve Scan VAT state from archived toggle evidence"
+```
+
+---
+
 ### Task 7: Movement derivation
 
 **Files:**
