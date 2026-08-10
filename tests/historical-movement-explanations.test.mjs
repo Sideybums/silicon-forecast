@@ -1,5 +1,6 @@
 // tests/historical-movement-explanations.test.mjs
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
@@ -177,6 +178,8 @@ import {
   normaliseObservation,
   applyVatResolutions,
   VAT_RESOLUTION_FILE,
+  buildEnvelopeFromRepository,
+  canonicalEnvelopeBytes,
 } from "../lib/historical-observed-price-envelope.mjs";
 
 test("the on-disk movement ledger matches freshly derived movements", async () => {
@@ -206,4 +209,23 @@ test("a forbidden numeric field nested inside an explanation is rejected", () =>
     () => validateExplanationLedger({ movements: [movement], explanations: [nested] }, [movement]),
     /forbidden numeric field/,
   );
+});
+
+const sha256 = (text) => createHash("sha256").update(text).digest("hex");
+
+test("mutating the explanation ledger leaves every envelope byte unchanged", async () => {
+  const before = sha256(canonicalEnvelopeBytes(buildEnvelopeFromRepository(root)));
+  const ledger = await readJson("research/evidence/historical-movement-explanations-2026-08-10/ledger.v1.json");
+  const mutated = structuredClone(ledger);
+  mutated.explanations.push({ explanation_id: "transient", movement_id: mutated.movements[0].movement_id });
+  mutated.explanations.pop();
+  const after = sha256(canonicalEnvelopeBytes(buildEnvelopeFromRepository(root)));
+  assert.equal(after, before);
+});
+
+test("the sparse graph fixture is unchanged by this work", async () => {
+  const graph = await readJson("data/fixtures/historical-exact-mpn-sparse-graph.v1.json");
+  assert.equal(graph.render_contract.connect_points, false);
+  assert.equal(graph.render_contract.interpolate, false);
+  assert.equal(graph.render_contract.aggregate_across_products, false);
 });

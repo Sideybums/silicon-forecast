@@ -1,9 +1,9 @@
 {
   "schema_version": "silicon-forecast-handoff.v2",
-  "generated_at": "2026-08-10T07:05:57Z",
+  "generated_at": "2026-08-10T13:00:00Z",
   "project": "Silicon Forecast",
-  "branch": "main",
-  "handoff_state": "historical_acquisition_wave2_committed_and_verified",
+  "branch": "historical-context-band",
+  "handoff_state": "historical_context_band_wave3_movements_and_immutability_proof_committed_and_verified",
   "authority": {
     "parent_orchestrator": "Jarvis",
     "worker_outputs_trusted_without_parent_review": false,
@@ -20,13 +20,14 @@
     "job_id": "7e98d1467473",
     "name": "Silicon Forecast recurring UK primary-retail collector",
     "enabled": true,
-    "state_observed": "scheduled",
+    "state_observed": "missed_scheduled_run_no_longer_listed_as_scheduled",
     "last_run_at": "2026-08-10T00:46:29.452051+01:00",
     "last_status": "ok",
     "last_commit": "fbdbba3ea8841525b0b00f6c36897ebe3857c3a2",
-    "next_run_at": "2026-08-10T13:45:00+01:00",
+    "scheduled_run_missed_at": "2026-08-10T13:45:00+01:00",
     "sole_prospective_fetcher": true,
-    "instruction": "Keep this job as the sole prospective fetcher. Every run must create an additive global run-integration audit. Same seller+MPN+UTC-date collisions remain raw candidate evidence but are blocked from date-level diagnostic integration unless a separate rule is explicitly approved."
+    "open_item": "The job did not run at its scheduled 2026-08-10T13:45+01:00 slot: no new commit and no new observation file exist after that time, and a live scheduler check (CronList) reports no scheduled jobs. It appears to no longer be scheduled. This is significant because it is the sole prospective fetcher; it requires investigation and re-scheduling before it can be relied on again.",
+    "instruction": "Keep this job as the sole prospective fetcher once rescheduled. Every run must create an additive global run-integration audit. Same seller+MPN+UTC-date collisions remain raw candidate evidence but are blocked from date-level diagnostic integration unless a separate rule is explicitly approved."
   },
   "completed_waves": {
     "wave_0": "Git, scheduler, two immutable observation tranches, seven extract hashes, all locks and baseline tests verified.",
@@ -36,13 +37,22 @@
     "wave_4": "Three independent read-only audits completed. SEV-2 findings were reproduced and fixed; parent adversarial tests and the full suite passed. Remaining runtime concerns are inactive prerequisites, not enabled capabilities.",
     "wave_5": "Seven separate non-approving decision packets produced; governing records and verification evidence updated.",
     "historical_wave_1": "Bounded archive/editorial research retained two parent-verified exact-MPN 2025 CCL observations and five 2021-2022 editorial anchors; 2023-2024 exact UK retailer coverage remains an explicit gap.",
-    "historical_wave_2": "Three bounded read-only workers produced six parent-verified exact-MPN archived storefront observations across Corsair and Crucial, five separate editorial anchors and three held URL-only MPN leads; sparse graph expanded to 15 points across six products with explicit VAT state and no aggregation."
+    "historical_wave_2": "Three bounded read-only workers produced six parent-verified exact-MPN archived storefront observations across Corsair and Crucial, five separate editorial anchors and three held URL-only MPN leads; sparse graph expanded to 15 points across six products with explicit VAT state and no aggregation.",
+    "historical_wave_3": "A third bounded acquisition retained 47 observations from three archived UK retailer category/subcategory pages (Overclockers UK 2023-12-03: 29, Ebuyer 2024-11-02: 16, Novatech 2022-01-25: 2) in uk-primary-retail-historical-backfill-2026-08-10T130500Z.v1.json. The observed-price envelope now derives 20 UTC calendar quarters (2021-Q4 to 2026-Q3) from 65 total observations across six tranches: 12 observed, 8 explicit gaps, 0 VAT-unresolved. Newly filled quarters: 2022-Q1, 2023-Q4, 2024-Q4. deriveHistoricalMovements over all 65 observations yields 7 movements (6 within-seller, 1 cross-seller), recorded in a retrospective explanation ledger with 0 explanations (research deferred, not because no counterevidence exists) and a passing numeric-immutability proof: mutating the ledger's explanations array leaves every canonical envelope byte unchanged."
   },
   "retained_evidence": {
-    "candidate_tranches": 5,
-    "observations": 18,
+    "candidate_tranches": 6,
+    "observations": 65,
     "exact_seller_mpn_lines": 6,
-    "historical_research_result": "wave2_added_six_parent_verified_exact_mpn_storefront_observations_five_separate_editorial_anchors_and_explicit_remaining_gaps",
+    "envelope_quarters": 20,
+    "envelope_quarters_observed": 12,
+    "envelope_quarters_gap": 8,
+    "envelope_vat_unresolved_observations": 0,
+    "derived_movements": 7,
+    "derived_movements_within_seller": 6,
+    "derived_movements_cross_seller": 1,
+    "movement_explanations_recorded": 0,
+    "historical_research_result": "wave3_added_47_category_page_observations_expanding_envelope_to_65_observations_and_20_quarters_with_a_passing_numeric_immutability_proof",
     "immutable_observation_files_changed_by_big_push": false,
     "all_source_approval_flags": false,
     "all_production_eligibility_flags": false,
@@ -64,7 +74,9 @@
     "v1_requirements_mapped_exactly_once": 50,
     "full_check": "historical Wave 2 passed lint, 146 Node tests, TypeScript, 14-page static build, public-boundary tests, 65 governed JSON parses and disposable PostgreSQL verification",
     "post_collector_audit_check": "passed 138 of 138 Node tests, lint, TypeScript, 14-page static build, disposable PostgreSQL verification, 130 Phase 1 checks, 59 current/tracked JSON parses, diff hygiene and high-confidence new-artifact secret scan",
-    "wave_2_commit": "a58ea71",
+    "wave_2_commit": "dfcca73",
+    "wave_2_commit_correction": "the previously recorded a58ea71 is a commit object left dangling and unreachable by a git commit --amend; it is not on this branch and was replaced with the reachable dfcca73 (research: integrate verified historical DDR5 wave two)",
+    "task_11_check": "npm test passed 190/190 Node tests, npm run lint passed, npx tsc --noEmit passed with no output, npm run build passed (14-page static Next.js build plus public-boundary tests), npm run test:db passed disposable PostgreSQL verification, and git diff --check was clean; the generated tsconfig.tsbuildinfo was deleted before commit",
     "parent_wave_4_adversary": "passed",
     "retail_report_sha256": "57b70c5818acceffc34bdf3b939c2c63f2dc97e32c6d81bca136877e8b2e740a",
     "quoted_history_html_sha256": "f47d71ba22b8761f9729d4ccbe22d899908fd2dd0ff184552caa1a4c9bda4bcd",
@@ -89,15 +101,29 @@
     "price_changes": 0,
     "selection_or_aggregation_rule_approved": false
   },
+  "open_items": [
+    {
+      "id": "collector_missed_scheduled_run",
+      "summary": "Canonical collector job 7e98d1467473 did not run at its scheduled 2026-08-10T13:45+01:00 slot: no new commit, no new observation file, and CronList reports no scheduled jobs. It appears to no longer be scheduled. This is significant because it is the sole prospective fetcher.",
+      "resolved": false
+    },
+    {
+      "id": "movement_explanation_research_deferred",
+      "summary": "The movement-explanation ledger has 7 movement records and 0 explanations. The research half was deferred for session capacity, not because no counterevidence exists.",
+      "resolved": false
+    }
+  ],
   "next_action": {
     "path": ".planning/HANDOVER-2026-08-10.md",
-    "when": "after the next canonical collector run or next bounded historical evidence wave",
+    "when": "after the collector schedule is investigated and restored, and/or the next bounded historical evidence wave",
     "steps": [
+      "Investigate why canonical collector job 7e98d1467473 is no longer scheduled and restore its daily 13:45 local run before trusting it as the sole prospective fetcher again.",
       "Require the job to start from a clean branch aligned with origin/main and remain the sole prospective writer.",
       "Verify its additive tranche, evidence, manifest and global run-integration audit bytes independently.",
       "Keep all same-date collisions blocked; do not select or aggregate intraday values without separate approval.",
-      "Continue historical acquisition only with archives or dated editorial evidence that cannot compete with the canonical prospective collector; prioritise the 2023-2024 exact-MPN UK gap.",
+      "Continue historical acquisition only with archives or dated editorial evidence that cannot compete with the canonical prospective collector; prioritise remaining exact-MPN UK gaps (2022-Q2, 2023-Q2, 2024-Q1 through 2024-Q3, 2025-Q1, 2025-Q4, 2026-Q2).",
       "Keep weekly as an acquisition preference and monthly/quarterly as honest fallbacks; do not interpolate, connect or aggregate sparse points without approval.",
+      "Research and record dated, sourced explanations for the 7 derived movements in the explanation ledger, including a genuine counterevidence search for each, before treating the ledger as complete.",
       "Do not approve methodology, sources, references, baskets, production actions or publication."
     ]
   }
