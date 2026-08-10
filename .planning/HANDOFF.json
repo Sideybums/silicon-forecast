@@ -111,6 +111,15 @@
       "id": "movement_explanation_research_deferred",
       "summary": "The movement-explanation ledger has 7 movement records and 0 explanations. The research half was deferred for session capacity, not because no counterevidence exists.",
       "resolved": false
+    },
+    {
+      "item": "product_tier_comparability_ruling",
+      "ruling": "Different product tiers must not be compared; a band or movement spanning tiers is not a market signal.",
+      "decided_by": "David Sidebottom",
+      "decided_at": "2026-08-10",
+      "record": "data/reviews/product-tier-comparability-ruling-2026-08-10.json",
+      "state": "not_yet_implemented",
+      "consequence": "The observed-price envelope currently spans tiers and must not be presented as a price history until a tier dimension is carried on every observation and derived from visible captured bytes rather than part-number conventions."
     }
   ],
   "next_action": {
