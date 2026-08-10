@@ -5,9 +5,10 @@ import { normaliseObservation } from "../lib/historical-observed-price-envelope.
 const familyB = {
   observation_id: "sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z",
   observed_at: "2022-07-03T17:34:38Z",
-  product: { mpn: "CMK32GX5M2B6000C36" },
+  product: { mpn: "CMK32GX5M2B6000C36", capacity_gb: 32, module_count: 2, memory_type: "DDR5" },
   price: { item_price_minor: 27548, currency: "GBP", vat_included: null },
   seller: { display_name: "Scan Computers", legal_name: null },
+  eligibility: { identity_exact: true },
 };
 
 const familyA = {
@@ -51,14 +52,46 @@ test("a non-GBP amount fails closed", () => {
 test("a non-UTC or variable-width timestamp fails closed, protecting chronological sorting", () => {
   const base = {
     observation_id: "x", observed_at: "2022-07-03T17:34:38Z",
-    product: { mpn: "M" }, price: { item_price_minor: 100, currency: "GBP", vat_included: true },
+    product: { mpn: "M", capacity_gb: 32, module_count: 2, memory_type: "DDR5" },
+    price: { item_price_minor: 100, currency: "GBP", vat_included: true },
     seller: { display_name: "S", legal_name: null },
+    eligibility: { identity_exact: true },
   };
   const ctx = { sourceFile: "t.json", captureKind: "archive_capture" };
   assert.equal(normaliseObservation(base, ctx).observed_at, "2022-07-03T17:34:38Z");
   for (const bad of ["2022-07-03T17:34:38+01:00", "2022-7-3T17:34:38Z", "2022-07-03 17:34:38Z", "2022-07-03T17:34:38.500Z"]) {
     assert.throws(() => normaliseObservation({ ...base, observed_at: bad }, ctx), /fixed-width UTC instant/, `should reject ${bad}`);
   }
+});
+
+test("a 16GB Family B kit fails closed on capacity", () => {
+  const bad = { ...familyB, product: { ...familyB.product, capacity_gb: 16 } };
+  assert.throws(() => normaliseObservation(bad, ctx), /capacity_gb must be 32/);
+});
+
+test("a 64GB Family B kit fails closed on capacity", () => {
+  const bad = { ...familyB, product: { ...familyB.product, capacity_gb: 64 } };
+  assert.throws(() => normaliseObservation(bad, ctx), /capacity_gb must be 32/);
+});
+
+test("a Family B DDR4 part fails closed on memory type", () => {
+  const bad = { ...familyB, product: { ...familyB.product, memory_type: "DDR4" } };
+  assert.throws(() => normaliseObservation(bad, ctx), /memory_type must be DDR5/);
+});
+
+test("a non-2-module Family B kit fails closed on module count", () => {
+  const bad = { ...familyB, product: { ...familyB.product, module_count: 1 } };
+  assert.throws(() => normaliseObservation(bad, ctx), /module_count must be 2/);
+});
+
+test("a Family B row that is not an exact identity match fails closed", () => {
+  const bad = { ...familyB, eligibility: { identity_exact: false } };
+  assert.throws(() => normaliseObservation(bad, ctx), /identity_exact must be true/);
+});
+
+test("an unrecognised Family A vat_state fails closed rather than silently becoming unresolved", () => {
+  const bad = { ...familyA, item_price: { ...familyA.item_price, vat_state: "exlcuded" } };
+  assert.throws(() => normaliseObservation(bad, ctx), /vat_state must be "included" or "excluded"/);
 });
 
 import { quarterIdForTimestamp, quarterBounds, quarterRange } from "../lib/historical-observed-price-envelope.mjs";
@@ -131,7 +164,19 @@ test("the envelope asserts no central tendency", () => {
   assert.equal(envelope.render_contract.central_tendency, false);
   assert.equal(envelope.render_contract.median_state, "UNAVAILABLE_AGGREGATION_NOT_APPROVED");
   assert.equal(JSON.stringify(envelope).includes("median_value"), false);
-  assert.deepEqual(Object.values(envelope.governance), [false, false, false, false, false, false, false]);
+  const expectedGovernanceKeys = [
+    "methodology_approval",
+    "aggregation_rule_approval",
+    "reference_period_approval",
+    "basket_approval",
+    "source_approval",
+    "index_eligibility",
+    "publication_allowed",
+  ].sort();
+  assert.deepEqual(Object.keys(envelope.governance).sort(), expectedGovernanceKeys);
+  for (const [flag, value] of Object.entries(envelope.governance)) {
+    assert.equal(value, false, `governance flag ${flag} must be false`);
+  }
 });
 
 test("derivation is deterministic regardless of input order, including on both low and high ties", () => {

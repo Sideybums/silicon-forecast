@@ -198,7 +198,18 @@ test("the on-disk movement ledger matches freshly derived movements", async () =
   const result = validateExplanationLedger(ledger, movements);
   assert.equal(result.movement_count, 7);
   assert.equal(result.explanation_count, 0);
-  assert.deepEqual(Object.values(ledger.governance), Object.values(ledger.governance).map(() => false));
+  const expectedGovernanceKeys = [
+    "research_performed",
+    "sources_fetched",
+    "sources_hashed",
+    "counterevidence_search_performed",
+    "causal_language_reviewed",
+    "publication_eligible",
+  ].sort();
+  assert.deepEqual(Object.keys(ledger.governance).sort(), expectedGovernanceKeys);
+  for (const [flag, value] of Object.entries(ledger.governance)) {
+    assert.equal(value, false, `governance flag ${flag} must be false`);
+  }
 });
 
 test("a forbidden numeric field nested inside an explanation is rejected", () => {
@@ -213,14 +224,38 @@ test("a forbidden numeric field nested inside an explanation is rejected", () =>
 
 const sha256 = (text) => createHash("sha256").update(text).digest("hex");
 
-test("mutating the explanation ledger leaves every envelope byte unchanged", async () => {
-  const before = sha256(canonicalEnvelopeBytes(buildEnvelopeFromRepository(root)));
-  const ledger = await readJson("research/evidence/historical-movement-explanations-2026-08-10/ledger.v1.json");
-  const mutated = structuredClone(ledger);
-  mutated.explanations.push({ explanation_id: "transient", movement_id: mutated.movements[0].movement_id });
-  mutated.explanations.pop();
-  const after = sha256(canonicalEnvelopeBytes(buildEnvelopeFromRepository(root)));
-  assert.equal(after, before);
+test("adding an explanation to the on-disk ledger leaves envelope and sparse-graph bytes identical", async () => {
+  const { readFileSync, writeFileSync } = await import("node:fs");
+  const ledgerUrl = new URL("research/evidence/historical-movement-explanations-2026-08-10/ledger.v1.json", root);
+  const graphUrl = new URL("data/fixtures/historical-exact-mpn-sparse-graph.v1.json", root);
+  const original = readFileSync(ledgerUrl, "utf8");
+
+  const envelopeBefore = sha256(canonicalEnvelopeBytes(buildEnvelopeFromRepository(root)));
+  const graphBefore = sha256(readFileSync(graphUrl, "utf8"));
+
+  try {
+    const mutated = JSON.parse(original);
+    mutated.explanations.push({
+      explanation_id: "transient-probe",
+      movement_id: mutated.movements[0].movement_id,
+      published_at: "2023-06-01T00:00:00Z",
+      publisher: "Transient Probe",
+      url: "https://example.invalid/probe",
+      response_sha256: "0".repeat(64),
+      response_bytes: 1,
+      minimal_quote: "probe",
+      proposed_mechanism: "probe",
+      causal_language_level: "contributory_hypothesis",
+      counterevidence_search: { performed: true, result: "none_identified", searched_at: "2026-08-10T00:00:00Z" },
+    });
+    writeFileSync(ledgerUrl, `${JSON.stringify(mutated, null, 2)}\n`);
+
+    assert.equal(sha256(canonicalEnvelopeBytes(buildEnvelopeFromRepository(root))), envelopeBefore);
+    assert.equal(sha256(readFileSync(graphUrl, "utf8")), graphBefore);
+  } finally {
+    writeFileSync(ledgerUrl, original);
+  }
+  assert.equal(readFileSync(ledgerUrl, "utf8"), original);
 });
 
 test("the sparse graph fixture is unchanged by this work", async () => {
