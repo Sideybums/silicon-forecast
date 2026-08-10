@@ -244,3 +244,38 @@ test("no period fabricates a value for an empty quarter", async () => {
     assert.deepEqual(period.contributing_observation_ids, []);
   }
 });
+
+import { applyVatResolutions } from "../lib/historical-observed-price-envelope.mjs";
+
+test("an additive resolution overrides VAT state and records its source", () => {
+  const records = [{
+    observation_id: "sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z",
+    vat_included: null, amount_minor: 27548,
+  }];
+  const [out] = applyVatResolutions(records, [{
+    observation_id: "sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z",
+    vat_included_before: null, vat_included_after: true,
+  }]);
+  assert.equal(out.vat_included, true);
+  assert.equal(out.vat_resolution_source, "sf-scan-vat-display-resolution-2026-08-10");
+});
+
+test("a resolution whose before-state disagrees with the observation fails closed", () => {
+  assert.throws(() => applyVatResolutions(
+    [{ observation_id: "a", vat_included: true }],
+    [{ observation_id: "a", vat_included_before: null, vat_included_after: true }],
+  ), /resolution before-state mismatch/);
+});
+
+test("a resolution for an unknown observation fails closed", () => {
+  assert.throws(() => applyVatResolutions(
+    [{ observation_id: "a", vat_included: null }],
+    [{ observation_id: "ghost", vat_included_before: null, vat_included_after: true }],
+  ), /unknown observation/);
+});
+
+test("the Scan observations resolve to VAT-inclusive in the golden fixture", async () => {
+  const golden = JSON.parse(await readFile(new URL("data/fixtures/historical-observed-price-envelope.v1.json", root), "utf8"));
+  const q = golden.periods.find((p) => p.period_id === "2022-Q3");
+  assert.equal(q.vat_unresolved_count, 0);
+});

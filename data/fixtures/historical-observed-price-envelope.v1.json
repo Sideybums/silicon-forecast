@@ -105,8 +105,8 @@
       "observation_count": 2,
       "distinct_mpn_count": 2,
       "distinct_seller_count": 2,
-      "vat_resolved_count": 1,
-      "vat_unresolved_count": 1,
+      "vat_resolved_count": 2,
+      "vat_unresolved_count": 0,
       "contributing_observation_ids": [
         "sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z",
         "wayback-kms-kf564c32rsk2-32-2022-08-11T084020Z"
@@ -158,8 +158,8 @@
       "observation_count": 2,
       "distinct_mpn_count": 2,
       "distinct_seller_count": 2,
-      "vat_resolved_count": 1,
-      "vat_unresolved_count": 1,
+      "vat_resolved_count": 2,
+      "vat_unresolved_count": 0,
       "contributing_observation_ids": [
         "sf-hist-crucial-ct2k16g56c46u5-2023-01-28T074217Z",
         "sf-hist-scan-cmk32gx5m2b6000c36-2023-03-15T075907Z"
