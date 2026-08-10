@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Silicon Forecast — candidate observed-price envelope (private)</title>
+<style>
+:root{color-scheme:light dark;--bg:#fbfbfa;--fg:#1a1a19;--mut:#6b6b66;--line:#e0e0dc;--band:#3d6b8e;--dot:#c2703d;--warn:#a8541f;--warnbg:#fdf6ef}
+@media(prefers-color-scheme:dark){:root{--bg:#16161a;--fg:#e8e8e4;--mut:#9a9a94;--line:#2e2e34;--band:#6fa3cc;--dot:#e0925c;--warn:#e0a06a;--warnbg:#241c14}}
+*{box-sizing:border-box}body{margin:0;padding:2rem 1.5rem 4rem;background:var(--bg);color:var(--fg);font:15px/1.55 ui-sans-serif,-apple-system,system-ui,sans-serif}
+.wrap{max-width:1180px;margin:0 auto}h1{font-size:1.45rem;margin:0 0 .3rem;letter-spacing:-.01em}
+.sub{color:var(--mut);margin:0 0 1.4rem;font-size:.92rem}
+.note{border-left:3px solid var(--warn);background:var(--warnbg);padding:.85rem 1rem;margin:0 0 1.6rem;font-size:.9rem;border-radius:0 4px 4px 0}
+.note b{color:var(--warn)}
+.chart{display:flex;gap:3px;height:340px;align-items:flex-end;border-bottom:1px solid var(--line);padding-bottom:0;overflow-x:auto}
+.col{flex:1;min-width:44px;display:flex;flex-direction:column;height:100%}
+.track{position:relative;flex:1;border-left:1px dotted transparent}
+.band{position:absolute;left:22%;right:22%;background:var(--band);opacity:.34;border-radius:2px}
+.col.thin .band{opacity:.16;background:repeating-linear-gradient(45deg,var(--band),var(--band) 3px,transparent 3px,transparent 6px)}
+.dots i{position:absolute;left:50%;width:6px;height:6px;margin-left:-3px;border-radius:50%;background:var(--dot);opacity:.9}
+.hi,.lo{position:absolute;left:0;right:0;text-align:center;font-size:9.5px;color:var(--mut);white-space:nowrap}
+.hi{transform:translateY(-115%)}.lo{transform:translateY(115%)}
+.nodata{position:absolute;bottom:0;left:0;right:0;text-align:center;font-size:9px;color:var(--mut);opacity:.5;writing-mode:vertical-rl;height:100%;display:flex;align-items:center;justify-content:center}
+.label{padding-top:.45rem;text-align:center;font-size:10px;color:var(--mut);white-space:nowrap}
+.label .n{display:block;font-size:8.5px;opacity:.75}
+.col.gap .label{opacity:.45}
+table{border-collapse:collapse;width:100%;margin-top:2.2rem;font-size:.88rem}
+th,td{padding:.42rem .6rem;border-bottom:1px solid var(--line);text-align:left}
+th{font-weight:600;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:var(--mut)}
+td.num{text-align:right;font-variant-numeric:tabular-nums}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:.79rem}
+.muted{color:var(--mut)}tr.warn{background:var(--warnbg)}
+.legend{display:flex;gap:1.3rem;margin-top:1rem;font-size:.82rem;color:var(--mut);flex-wrap:wrap}
+.key{display:inline-block;width:11px;height:11px;border-radius:2px;vertical-align:-1px;margin-right:.35rem}
+footer{margin-top:2.5rem;padding-top:1rem;border-top:1px solid var(--line);color:var(--mut);font-size:.82rem}
+</style></head><body><div class="wrap">
+<h1>Candidate observed-price envelope — UK 32GB (2×16GB) DDR5</h1>
+<p class="sub">12 of 20 quarters have evidence · 65 observations · all VAT-resolved · generated 2026-08-10</p>
+
+<div class="note"><b>Read this before reading the chart.</b> The band is the <em>lowest and highest price actually observed</em> in each quarter — not an average, not an index, and not a market level. No central tendency is calculated because that would need an approved methodology this project does not have. Quarters marked ⚠ (hatched) rest on a single seller or fewer than three observations: in those, a change in band position may reflect <em>which products were archived</em> rather than any market movement. 2022-Q1 is the clearest example — its only evidence is two halo-tier G.Skill kits from one retailer, while 2021-Q4's single point is an entry-tier Crucial kit. The apparent rise between them is a sampling artefact, not a price rise.</div>
+
+<div class="chart"><div class="col thin">
+      <div class="track">
+        <div class="band" style="bottom:29.98581240125109%;height:0.6%"></div>
+        <div class="dots"><i style="bottom:29.98581240125109%" title="CT2K16G48C40U5 — Crucial UK — £185.99"></i></div>
+        <div class="hi" style="bottom:29.98581240125109%">£185.99</div>
+        <div class="lo" style="bottom:29.98581240125109%">£185.99</div>
+      </div>
+      <div class="label">2021-Q4<span class="n">n=1 · 1 MPN · 1 seller ⚠</span></div>
+    </div><div class="col thin">
+      <div class="track">
+        <div class="band" style="bottom:91.89533421468417%;height:0.6%"></div>
+        <div class="dots"><i style="bottom:91.89533421468417%" title="F5-6000J3636F16GX2-TZ5K — Novatech — £569.99"></i><i style="bottom:91.89533421468417%" title="F5-6000U3636E16GX2-TZ5S — Novatech — £569.99"></i></div>
+        <div class="hi" style="bottom:91.89533421468417%">£569.99</div>
+        <div class="lo" style="bottom:91.89533421468417%">£569.99</div>
+      </div>
+      <div class="label">2022-Q1<span class="n">n=2 · 2 MPN · 1 seller ⚠</span></div>
+    </div><div class="col gap"><div class="track"><div class="nodata">no evidence</div></div><div class="label">2022-Q2</div></div><div class="col thin">
+      <div class="track">
+        <div class="band" style="bottom:44.413632992615995%;height:34.261438751491305%"></div>
+        <div class="dots"><i style="bottom:78.6750717441073%" title="KF564C32RSK2-32 — KingstonMemoryShop — £487.99"></i><i style="bottom:44.413632992615995%" title="CMK32GX5M2B6000C36 — Scan Computers — £275.48"></i></div>
+        <div class="hi" style="bottom:78.6750717441073%">£487.99</div>
+        <div class="lo" style="bottom:44.413632992615995%">£275.48</div>
+      </div>
+      <div class="label">2022-Q3<span class="n">n=2 · 2 MPN · 2 sellers ⚠</span></div>
+    </div><div class="col thin">
+      <div class="track">
+        <div class="band" style="bottom:30.759681423918998%;height:0.6%"></div>
+        <div class="dots"><i style="bottom:30.759681423918998%" title="CT2K16G48C40U5 — Crucial UK — £190.79"></i></div>
+        <div class="hi" style="bottom:30.759681423918998%">£190.79</div>
+        <div class="lo" style="bottom:30.759681423918998%">£190.79</div>
+      </div>
+      <div class="label">2022-Q4<span class="n">n=1 · 1 MPN · 1 seller ⚠</span></div>
+    </div><div class="col thin">
+      <div class="track">
+        <div class="band" style="bottom:20.958952697255988%;height:3.029374778318772%"></div>
+        <div class="dots"><i style="bottom:20.958952697255988%" title="CMK32GX5M2B6000C36 — Scan Computers — £130.00"></i><i style="bottom:23.98832747557476%" title="CT2K16G56C46U5 — Crucial UK — £148.79"></i></div>
+        <div class="hi" style="bottom:23.98832747557476%">£148.79</div>
+        <div class="lo" style="bottom:20.958952697255988%">£130.00</div>
+      </div>
+      <div class="label">2023-Q1<span class="n">n=2 · 2 MPN · 2 sellers ⚠</span></div>
+    </div><div class="col gap"><div class="track"><div class="nodata">no evidence</div></div><div class="label">2023-Q2</div></div><div class="col thin">
+      <div class="track">
+        <div class="band" style="bottom:14.895366459226775%;height:0.6%"></div>
+        <div class="dots"><i style="bottom:14.895366459226775%" title="CT2K16G56C46U5 — Crucial UK — £92.39"></i></div>
+        <div class="hi" style="bottom:14.895366459226775%">£92.39</div>
+        <div class="lo" style="bottom:14.895366459226775%">£92.39</div>
+      </div>
+      <div class="label">2023-Q3<span class="n">n=1 · 1 MPN · 1 seller ⚠</span></div>
+    </div><div class="col thin">
+      <div class="track">
+        <div class="band" style="bottom:17.732886209009123%;height:45.14235965562828%"></div>
+        <div class="dots"><i style="bottom:29.018476122916198%" title="CMH32GX5M2B6200C36W — Overclockers UK — £179.99"></i><i style="bottom:24.181794731241737%" title="CMH32GX5M2B6400C32 — Overclockers UK — £149.99"></i><i style="bottom:32.242930384032505%" title="CMH32GX5M2X6600C32 — Overclockers UK — £199.99"></i><i style="bottom:25.632799148744073%" title="CMH32GX5M2X7200C34 — Overclockers UK — £158.99"></i><i style="bottom:20.151226904846357%" title="CMK32GX5M2B6000C30 — Overclockers UK — £124.99"></i><i style="bottom:24.181794731241737%" title="CMK32GX5M2X7200C34 — Overclockers UK — £149.99"></i><i style="bottom:33.85515751459066%" title="CMP32GX5M2X7200C34 — Overclockers UK — £209.99"></i><i style="bottom:33.85515751459066%" title="CMP32GX5M2X7200C34W — Overclockers UK — £209.99"></i><i style="bottom:22.569567600683584%" title="CMT32GX5M2B5200C40 — Overclockers UK — £139.99"></i><i style="bottom:21.763454035404507%" title="CMT32GX5M2B5200Z40 — Overclockers UK — £134.99"></i><i style="bottom:29.018476122916198%" title="CMT32GX5M2B6000Z30K — Overclockers UK — £179.99"></i><i style="bottom:27.406248992358044%" title="CMT32GX5M2D6000Z36 — Overclockers UK — £169.99"></i><i style="bottom:30.469480540418537%" title="CMT32GX5M2X6200C36 — Overclockers UK — £188.99"></i><i style="bottom:32.242930384032505%" title="CMT32GX5M2X6600C32 — Overclockers UK — £199.99"></i><i style="bottom:19.345113339567277%" title="FF3D532G6400HC40BDC01 — Overclockers UK — £119.99"></i><i style="bottom:19.345113339567277%" title="FF4D532G6400HC40BDC01 — Overclockers UK — £119.99"></i><i style="bottom:56.4263373424048%" title="FF5D532G5200HC40CDC01 — Overclockers UK — £349.99"></i><i style="bottom:48.36520168961403%" title="FLBD532G5200HC40CDC01 — Overclockers UK — £299.99"></i><i style="bottom:62.87524586463741%" title="GOSG532GB5200C34ADC — Overclockers UK — £389.99"></i><i style="bottom:62.87524586463741%" title="GOSR532GB5200C34ADC — Overclockers UK — £389.99"></i><i style="bottom:62.87524586463741%" title="GOSW532GB5200C34ADC — Overclockers UK — £389.99"></i><i style="bottom:17.732886209009123%" title="KF548C38BBK2-32 — Overclockers UK — £109.99"></i><i style="bottom:18.86144520039983%" title="KF552C40BBK2-32 — Overclockers UK — £116.99"></i><i style="bottom:20.796117757069617%" title="KF556C36BBEAK2-32 — Overclockers UK — £128.99"></i><i style="bottom:20.151226904846357%" title="KF556C40BBAK2-32 — Overclockers UK — £124.99"></i><i style="bottom:20.796117757069617%" title="KF560C32RSK2-32 — Overclockers UK — £128.99"></i><i style="bottom:22.569567600683584%" title="KF560C36BBEAK2-32 — Overclockers UK — £139.99"></i><i style="bottom:22.569567600683584%" title="KF560C40BBAK2-32 — Overclockers UK — £139.99"></i><i style="bottom:20.796117757069617%" title="KF560C40BBK2-32 — Overclockers UK — £128.99"></i></div>
+        <div class="hi" style="bottom:62.87524586463741%">£389.99</div>
+        <div class="lo" style="bottom:17.732886209009123%">£109.99</div>
+      </div>
+      <div class="label">2023-Q4<span class="n">n=29 · 29 MPN · 1 seller ⚠</span></div>
+    </div><div class="col gap"><div class="track"><div class="nodata">no evidence</div></div><div class="label">2024-Q1</div></div><div class="col gap"><div class="track"><div class="nodata">no evidence</div></div><div class="label">2024-Q2</div></div><div class="col gap"><div class="track"><div class="nodata">no evidence</div></div><div class="label">2024-Q3</div></div><div class="col thin">
+      <div class="track">
+        <div class="band" style="bottom:12.73498210427885%;height:6.2876858091768%"></div>
+        <div class="dots"><i style="bottom:17.731273981878566%" title="CMH32GX5M2B6000Z30K — Ebuyer — £109.98"></i><i style="bottom:18.859832973269274%" title="CMH32GX5M2D6000C36W — Ebuyer — £116.98"></i><i style="bottom:16.925160416599493%" title="CMH32GX5M2E6000C36 — Ebuyer — £104.98"></i><i style="bottom:16.12065907845097%" title="CMH32GX5M2E6000Z36 — Ebuyer — £99.99"></i><i style="bottom:16.12065907845097%" title="CMK32GX5M2B6000Z30 — Ebuyer — £99.99"></i><i style="bottom:16.12065907845097%" title="CMK32GX5M2E6000C36 — Ebuyer — £99.99"></i><i style="bottom:13.861928868539%" title="CMK32GX5M2E6000Z36 — Ebuyer — £85.98"></i><i style="bottom:12.73498210427885%" title="CP2K16G60C36U5B — Ebuyer — £78.99"></i><i style="bottom:13.702318382613743%" title="CP2K16G60C36U5W — Ebuyer — £84.99"></i><i style="bottom:18.5389997742882%" title="F5-6000J3038F16GX2-TZ5N — Ebuyer — £114.99"></i><i style="bottom:19.02266791345565%" title="F5-6000J3038F16GX2-TZ5NR — Ebuyer — £117.99"></i><i style="bottom:18.37616483410183%" title="KF560C32RSAK2-32 — Ebuyer — £113.98"></i><i style="bottom:12.894592590204107%" title="KF560C36BBE2AK2-32 — Ebuyer — £79.98"></i><i style="bottom:14.506819720762262%" title="KF560C36BBE2K2-32 — Ebuyer — £89.98"></i><i style="bottom:16.278657337245672%" title="KF560C36BBEAK2-32 — Ebuyer — £100.97"></i><i style="bottom:12.894592590204107%" title="PVVR532G600C36K — Ebuyer — £79.98"></i></div>
+        <div class="hi" style="bottom:19.02266791345565%">£117.99</div>
+        <div class="lo" style="bottom:12.73498210427885%">£78.99</div>
+      </div>
+      <div class="label">2024-Q4<span class="n">n=16 · 16 MPN · 1 seller ⚠</span></div>
+    </div><div class="col gap"><div class="track"><div class="nodata">no evidence</div></div><div class="label">2025-Q1</div></div><div class="col thin">
+      <div class="track">
+        <div class="band" style="bottom:18.377777061232386%;height:0.6%"></div>
+        <div class="dots"><i style="bottom:18.377777061232386%" title="KF564C32RSK2-32 — CCL Computers — £113.99"></i></div>
+        <div class="hi" style="bottom:18.377777061232386%">£113.99</div>
+        <div class="lo" style="bottom:18.377777061232386%">£113.99</div>
+      </div>
+      <div class="label">2025-Q2<span class="n">n=1 · 1 MPN · 1 seller ⚠</span></div>
+    </div><div class="col thin">
+      <div class="track">
+        <div class="band" style="bottom:18.377777061232386%;height:0.6%"></div>
+        <div class="dots"><i style="bottom:18.377777061232386%" title="KF560C30BBEK2-32 — CCL Computers — £113.99"></i></div>
+        <div class="hi" style="bottom:18.377777061232386%">£113.99</div>
+        <div class="lo" style="bottom:18.377777061232386%">£113.99</div>
+      </div>
+      <div class="label">2025-Q3<span class="n">n=1 · 1 MPN · 1 seller ⚠</span></div>
+    </div><div class="col gap"><div class="track"><div class="nodata">no evidence</div></div><div class="label">2025-Q4</div></div><div class="col">
+      <div class="track">
+        <div class="band" style="bottom:64.48747299519556%;height:23.746493405991046%"></div>
+        <div class="dots"><i style="bottom:64.48747299519556%" title="F5-6000J3636F16GX2-FX5 — AWD-IT — £399.99"></i><i style="bottom:64.48747299519556%" title="F5-6000J3636F16GX2-FX5 — AWD-IT — £399.99"></i><i style="bottom:88.2339664011866%" title="KF560C30BBEK2-32 — KingstonMemoryShop — £547.28"></i></div>
+        <div class="hi" style="bottom:88.2339664011866%">£547.28</div>
+        <div class="lo" style="bottom:64.48747299519556%">£399.99</div>
+      </div>
+      <div class="label">2026-Q1<span class="n">n=3 · 2 MPN · 2 sellers</span></div>
+    </div><div class="col gap"><div class="track"><div class="nodata">no evidence</div></div><div class="label">2026-Q2</div></div><div class="col">
+      <div class="track">
+        <div class="band" style="bottom:75.77306290910263%;height:24.226937090897366%"></div>
+        <div class="dots"><i style="bottom:98.5780156708477%" title="KF560C30BBEK2-32 — KingstonMemoryShop — £611.44"></i><i style="bottom:100%" title="KF564C32RSK2-32 — KingstonMemoryShop — £620.26"></i><i style="bottom:75.77306290910263%" title="F5-6000J3636F16GX2-FX5 — AWD-IT — £469.99"></i><i style="bottom:75.77306290910263%" title="F5-6000J3636F16GX2-FX5 — AWD-IT — £469.99"></i><i style="bottom:98.5780156708477%" title="KF560C30BBEK2-32 — KingstonMemoryShop — £611.44"></i><i style="bottom:100%" title="KF564C32RSK2-32 — KingstonMemoryShop — £620.26"></i></div>
+        <div class="hi" style="bottom:100%">£620.26</div>
+        <div class="lo" style="bottom:75.77306290910263%">£469.99</div>
+      </div>
+      <div class="label">2026-Q3<span class="n">n=6 · 3 MPN · 2 sellers</span></div>
+    </div></div>
+<div class="legend">
+  <span><span class="key" style="background:var(--band);opacity:.34"></span>observed low–high range</span>
+  <span><span class="key" style="background:var(--dot);border-radius:50%"></span>individual observation</span>
+  <span>⚠ single-seller or fewer than 3 observations</span>
+  <span>empty column = no evidence retained (a real gap, never interpolated)</span>
+</div>
+
+<table><thead><tr><th>Quarter</th><th class="num">Low</th><th class="num">High</th><th class="num">Obs</th><th class="num">MPNs</th><th class="num">Sellers</th><th>Low driven by</th><th>High driven by</th></tr></thead><tbody><tr class="warn">
+      <td>2021-Q4</td><td class="num">£185.99</td><td class="num">£185.99</td>
+      <td class="num">1</td><td class="num">1</td><td class="num">1</td>
+      <td class="mono">CT2K16G48C40U5 <span class="muted">@ Crucial UK</span></td>
+      <td class="mono">CT2K16G48C40U5 <span class="muted">@ Crucial UK</span></td>
+    </tr><tr class="warn">
+      <td>2022-Q1</td><td class="num">£569.99</td><td class="num">£569.99</td>
+      <td class="num">2</td><td class="num">2</td><td class="num">1</td>
+      <td class="mono">F5-6000J3636F16GX2-TZ5K <span class="muted">@ Novatech</span></td>
+      <td class="mono">F5-6000J3636F16GX2-TZ5K <span class="muted">@ Novatech</span></td>
+    </tr><tr class="warn">
+      <td>2022-Q3</td><td class="num">£275.48</td><td class="num">£487.99</td>
+      <td class="num">2</td><td class="num">2</td><td class="num">2</td>
+      <td class="mono">CMK32GX5M2B6000C36 <span class="muted">@ Scan Computers</span></td>
+      <td class="mono">KF564C32RSK2-32 <span class="muted">@ KingstonMemoryShop</span></td>
+    </tr><tr class="warn">
+      <td>2022-Q4</td><td class="num">£190.79</td><td class="num">£190.79</td>
+      <td class="num">1</td><td class="num">1</td><td class="num">1</td>
+      <td class="mono">CT2K16G48C40U5 <span class="muted">@ Crucial UK</span></td>
+      <td class="mono">CT2K16G48C40U5 <span class="muted">@ Crucial UK</span></td>
+    </tr><tr class="warn">
+      <td>2023-Q1</td><td class="num">£130.00</td><td class="num">£148.79</td>
+      <td class="num">2</td><td class="num">2</td><td class="num">2</td>
+      <td class="mono">CMK32GX5M2B6000C36 <span class="muted">@ Scan Computers</span></td>
+      <td class="mono">CT2K16G56C46U5 <span class="muted">@ Crucial UK</span></td>
+    </tr><tr class="warn">
+      <td>2023-Q3</td><td class="num">£92.39</td><td class="num">£92.39</td>
+      <td class="num">1</td><td class="num">1</td><td class="num">1</td>
+      <td class="mono">CT2K16G56C46U5 <span class="muted">@ Crucial UK</span></td>
+      <td class="mono">CT2K16G56C46U5 <span class="muted">@ Crucial UK</span></td>
+    </tr><tr class="warn">
+      <td>2023-Q4</td><td class="num">£109.99</td><td class="num">£389.99</td>
+      <td class="num">29</td><td class="num">29</td><td class="num">1</td>
+      <td class="mono">KF548C38BBK2-32 <span class="muted">@ Overclockers UK</span></td>
+      <td class="mono">GOSG532GB5200C34ADC <span class="muted">@ Overclockers UK</span></td>
+    </tr><tr class="warn">
+      <td>2024-Q4</td><td class="num">£78.99</td><td class="num">£117.99</td>
+      <td class="num">16</td><td class="num">16</td><td class="num">1</td>
+      <td class="mono">CP2K16G60C36U5B <span class="muted">@ Ebuyer</span></td>
+      <td class="mono">F5-6000J3038F16GX2-TZ5NR <span class="muted">@ Ebuyer</span></td>
+    </tr><tr class="warn">
+      <td>2025-Q2</td><td class="num">£113.99</td><td class="num">£113.99</td>
+      <td class="num">1</td><td class="num">1</td><td class="num">1</td>
+      <td class="mono">KF564C32RSK2-32 <span class="muted">@ CCL Computers</span></td>
+      <td class="mono">KF564C32RSK2-32 <span class="muted">@ CCL Computers</span></td>
+    </tr><tr class="warn">
+      <td>2025-Q3</td><td class="num">£113.99</td><td class="num">£113.99</td>
+      <td class="num">1</td><td class="num">1</td><td class="num">1</td>
+      <td class="mono">KF560C30BBEK2-32 <span class="muted">@ CCL Computers</span></td>
+      <td class="mono">KF560C30BBEK2-32 <span class="muted">@ CCL Computers</span></td>
+    </tr><tr>
+      <td>2026-Q1</td><td class="num">£399.99</td><td class="num">£547.28</td>
+      <td class="num">3</td><td class="num">2</td><td class="num">2</td>
+      <td class="mono">F5-6000J3636F16GX2-FX5 <span class="muted">@ AWD-IT</span></td>
+      <td class="mono">KF560C30BBEK2-32 <span class="muted">@ KingstonMemoryShop</span></td>
+    </tr><tr>
+      <td>2026-Q3</td><td class="num">£469.99</td><td class="num">£620.26</td>
+      <td class="num">6</td><td class="num">3</td><td class="num">2</td>
+      <td class="mono">F5-6000J3636F16GX2-FX5 <span class="muted">@ AWD-IT</span></td>
+      <td class="mono">KF564C32RSK2-32 <span class="muted">@ KingstonMemoryShop</span></td>
+    </tr></tbody></table>
+
+<footer>Private candidate research artefact. No source, methodology, basket, reference period, deflator, aggregation rule or publication is approved. Archive capture timestamps are not retailer price-change times. Every point traces to an immutable observation in <code>data/observations/candidate/</code>.</footer>
+</div></body></html>
