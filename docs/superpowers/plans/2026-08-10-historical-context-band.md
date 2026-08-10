@@ -416,13 +416,17 @@ test("the envelope asserts no central tendency", () => {
   assert.deepEqual(Object.values(envelope.governance), [false, false, false, false, false, false, false]);
 });
 
-test("ties break deterministically on observation id", () => {
-  const envelope = deriveObservedPriceEnvelope([
+test("derivation is deterministic regardless of input order", () => {
+  const records = [
     obs("zzz", "2024-05-01T00:00:00Z", "X", "Box", 5000, true),
     obs("aaa", "2024-05-02T00:00:00Z", "Y", "CCL", 5000, true),
-  ]);
-  assert.equal(envelope.periods[0].low.observation_id, "aaa");
-  assert.equal(envelope.periods[0].high.observation_id, "aaa");
+    obs("mmm", "2024-06-01T00:00:00Z", "Z", "Scan Computers", 7000, true),
+  ];
+  const forward = deriveObservedPriceEnvelope(records);
+  const reversed = deriveObservedPriceEnvelope(records.slice().reverse());
+  assert.equal(JSON.stringify(reversed), JSON.stringify(forward));
+  assert.equal(forward.periods[0].low.observation_id, "aaa");
+  assert.equal(forward.periods[0].high.observation_id, "aaa");
 });
 ```
 
@@ -435,11 +439,14 @@ Expected: FAIL — `deriveObservedPriceEnvelope is not a function`
 
 ```javascript
 // append to lib/historical-observed-price-envelope.mjs
+// Records arrive pre-sorted ascending by observation_id, which is what makes
+// selection deterministic: on an amount tie the strict comparator leaves `best`
+// unchanged, so the lexicographically smallest id wins. Do NOT add a separate
+// id tie-break branch here — given the pre-sort it is unreachable dead code.
 function extremeBy(records, pick) {
   let best = records[0];
   for (const record of records.slice(1)) {
     if (pick(record, best)) best = record;
-    else if (record.amount_minor === best.amount_minor && record.observation_id < best.observation_id) best = record;
   }
   return { amount_minor: best.amount_minor, observation_id: best.observation_id, mpn: best.mpn, seller: best.seller_display_name };
 }
