@@ -90,6 +90,30 @@ The sparse graph fixture now contains 15 markers across six exact MPNs. Every po
 
 A separate second editorial ledger retains five parent-verified exact-MPN statements from 2022–2024. Three URL-only MPN leads remain held pending a separate URL-binding extract. Editorial statements remain outside the storefront graph and all numerical series.
 
+## Historical acquisition Wave 3 — 2026-08-10
+
+A third bounded acquisition retained 47 observations from three archived UK retailer category/subcategory pages in `data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T130500Z.v1.json`:
+
+| Storefront | Captured page | Capture date | Observations |
+|---|---|---|---:|
+| Overclockers UK | Archived DDR5 category page | 2023-12-03 | 29 |
+| Ebuyer | Archived DDR5-6000 subcategory page | 2024-11-02 | 16 |
+| Novatech | Archived DDR5 PC5-48000 6000MHz category page | 2022-01-25 | 2 |
+
+This is the first wave built from category-page captures rather than single-product-page captures, and it is the largest single tranche retained to date. Six candidate tranches now feed the envelope: two prospective 2026-08-09 tranches and four historical-backfill tranches, together retaining 65 observations. All source-approval, methodology, index-eligibility, production-eligibility and publication-eligibility flags on the new tranche remain false. Minimal factual extracts and source-response checksums are retained under `research/evidence/historical-primary-retail-backfill-2026-08-10-wave3/`.
+
+### Observed-price envelope quarter coverage
+
+`buildEnvelopeFromRepository` (`lib/historical-observed-price-envelope.mjs`) derives a candidate quarter-grain envelope from the six eligible tranches. It spans 20 UTC calendar quarters from 2021-Q4 to 2026-Q3: 12 quarters carry at least one observation and 8 remain explicit gaps (`no_eligible_evidence`), with no interpolation, forward fill, backcast or connecting line across them. Every one of the 65 contributing observations has a resolved VAT state; the envelope reports 0 VAT-unresolved observations.
+
+Wave 3 newly filled three previously gapped quarters: 2022-Q1 (Novatech, 2 observations), 2023-Q4 (Overclockers UK, 29 observations) and 2024-Q4 (Ebuyer, 16 observations). The remaining 8 gap quarters are 2022-Q2, 2023-Q2, 2024-Q1, 2024-Q2, 2024-Q3, 2025-Q1, 2025-Q4 and 2026-Q2.
+
+### Honest limitations introduced by category-page capture
+
+- A category-page capture contributes many products at a single instant, while a product-page capture contributes one product at one instant. Band width for a quarter therefore partly reflects which capture method happened to survive in the Wayback archive for that period, not necessarily market price movement. The 2023-Q4 and 2024-Q4 quarters are dense mainly because a category page was captured then, not because those quarters saw more genuine price activity than neighbouring gap quarters.
+- Scan Computers and CCL Online appear to have been crawled by Wayback almost exclusively at product-page level rather than category level across the period examined. Category-page density is therefore uneven across retailers, and any future comparison of retailer coverage must account for this crawl-frequency artifact rather than treating it as a market signal.
+- Overclockers UK and Ebuyer both expose machine-readable VAT state in their captured category pages: Overclockers UK via a `price-incl-vat-info` element, and Ebuyer via separate `inc-vat`/`ex-vat` blocks. This is the same category of explicit, parseable VAT signal that Scan Computers exposes via its `data-exvat` attribute, and it is why the wave 3 observations resolve to a definite VAT state rather than requiring the separate VAT-display resolution procedure used for Scan's product pages.
+
 ## Next targeted acquisition gaps
 
 1. Find lawful 2023 and 2024 UK evidence for several exact mainstream 32GB DDR5 MPNs, especially Corsair, Crucial and Kingston.

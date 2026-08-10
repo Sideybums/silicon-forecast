@@ -1,0 +1,172 @@
+{
+  "schema_version": 1,
+  "ledger_id": "sf-historical-movement-explanations-2026-08-10",
+  "status": "candidate_private_immutable",
+  "created_at": "2026-08-10",
+  "movements": [
+    {
+      "movement_id": "movement-cmk32gx5m2b6000c36-sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z-sf-hist-scan-cmk32gx5m2b6000c36-2023-03-15T075907Z",
+      "mpn": "CMK32GX5M2B6000C36",
+      "from": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z",
+        "observed_at": "2022-07-03T17:34:38Z",
+        "seller": "Scan Computers",
+        "amount_minor": 27548
+      },
+      "to": {
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6000c36-2023-03-15T075907Z",
+        "observed_at": "2023-03-15T07:59:07Z",
+        "seller": "Scan Computers",
+        "amount_minor": 13000
+      },
+      "delta_minor": -14548,
+      "delta_basis_points": -5281,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-ct2k16g48c40u5-sf-hist-crucial-ct2k16g48c40u5-2021-11-02T171837Z-sf-hist-crucial-ct2k16g48c40u5-2022-10-07T191921Z",
+      "mpn": "CT2K16G48C40U5",
+      "from": {
+        "observation_id": "sf-hist-crucial-ct2k16g48c40u5-2021-11-02T171837Z",
+        "observed_at": "2021-11-02T17:18:37Z",
+        "seller": "Crucial UK",
+        "amount_minor": 18599
+      },
+      "to": {
+        "observation_id": "sf-hist-crucial-ct2k16g48c40u5-2022-10-07T191921Z",
+        "observed_at": "2022-10-07T19:19:21Z",
+        "seller": "Crucial UK",
+        "amount_minor": 19079
+      },
+      "delta_minor": 480,
+      "delta_basis_points": 258,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-ct2k16g56c46u5-sf-hist-crucial-ct2k16g56c46u5-2023-01-28T074217Z-sf-hist-crucial-ct2k16g56c46u5-2023-08-15T140813Z",
+      "mpn": "CT2K16G56C46U5",
+      "from": {
+        "observation_id": "sf-hist-crucial-ct2k16g56c46u5-2023-01-28T074217Z",
+        "observed_at": "2023-01-28T07:42:17Z",
+        "seller": "Crucial UK",
+        "amount_minor": 14879
+      },
+      "to": {
+        "observation_id": "sf-hist-crucial-ct2k16g56c46u5-2023-08-15T140813Z",
+        "observed_at": "2023-08-15T14:08:13Z",
+        "seller": "Crucial UK",
+        "amount_minor": 9239
+      },
+      "delta_minor": -5640,
+      "delta_basis_points": -3791,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-f5-6000j3636f16gx2-fx5-wayback-awdit-f5-6000j3636f16gx2-fx5-2026-01-10T145607Z-awdit-f5-6000j3636f16gx2-fx5-2026-08-09t234337z",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "from": {
+        "observation_id": "wayback-awdit-f5-6000j3636f16gx2-fx5-2026-01-10T145607Z",
+        "observed_at": "2026-01-10T14:56:07Z",
+        "seller": "AWD-IT",
+        "amount_minor": 39999
+      },
+      "to": {
+        "observation_id": "awdit-f5-6000j3636f16gx2-fx5-2026-08-09t234337z",
+        "observed_at": "2026-08-09T23:43:37Z",
+        "seller": "AWD-IT",
+        "amount_minor": 46999
+      },
+      "delta_minor": 7000,
+      "delta_basis_points": 1750,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-kf560c30bbek2-32-wayback-kms-kf560c30bbek2-32-2026-03-09T113702Z-kms-kf560c30bbek2-32-2026-08-09t234337z",
+      "mpn": "KF560C30BBEK2-32",
+      "from": {
+        "observation_id": "wayback-kms-kf560c30bbek2-32-2026-03-09T113702Z",
+        "observed_at": "2026-03-09T11:37:02Z",
+        "seller": "KingstonMemoryShop",
+        "amount_minor": 54728
+      },
+      "to": {
+        "observation_id": "kms-kf560c30bbek2-32-2026-08-09t234337z",
+        "observed_at": "2026-08-09T23:43:37Z",
+        "seller": "KingstonMemoryShop",
+        "amount_minor": 61144
+      },
+      "delta_minor": 6416,
+      "delta_basis_points": 1172,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-kf560c36bbeak2-32-sf-hist-overclockersuk-kf560c36bbeak2-32-20231203231653-sf-hist-ebuyer-kf560c36bbeak2-32-20241102202606",
+      "mpn": "KF560C36BBEAK2-32",
+      "from": {
+        "observation_id": "sf-hist-overclockersuk-kf560c36bbeak2-32-20231203231653",
+        "observed_at": "2023-12-03T23:16:53Z",
+        "seller": "Overclockers UK",
+        "amount_minor": 13999
+      },
+      "to": {
+        "observation_id": "sf-hist-ebuyer-kf560c36bbeak2-32-20241102202606",
+        "observed_at": "2024-11-02T20:26:06Z",
+        "seller": "Ebuyer",
+        "amount_minor": 10097
+      },
+      "delta_minor": -3902,
+      "delta_basis_points": -2787,
+      "comparison_basis": "cross_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    },
+    {
+      "movement_id": "movement-kf564c32rsk2-32-wayback-kms-kf564c32rsk2-32-2022-08-11T084020Z-kms-kf564c32rsk2-32-2026-08-09t234337z",
+      "mpn": "KF564C32RSK2-32",
+      "from": {
+        "observation_id": "wayback-kms-kf564c32rsk2-32-2022-08-11T084020Z",
+        "observed_at": "2022-08-11T08:40:20Z",
+        "seller": "KingstonMemoryShop",
+        "amount_minor": 48799
+      },
+      "to": {
+        "observation_id": "kms-kf564c32rsk2-32-2026-08-09t234337z",
+        "observed_at": "2026-08-09T23:43:37Z",
+        "seller": "KingstonMemoryShop",
+        "amount_minor": 62026
+      },
+      "delta_minor": 13227,
+      "delta_basis_points": 2711,
+      "comparison_basis": "within_seller",
+      "vat_state_from": "included",
+      "vat_state_to": "included",
+      "vat_disclosure_required": false
+    }
+  ],
+  "explanations": [],
+  "explanations_pending_reason": "The research half of this task (locating, fetching, hashing and evaluating dated reportable sources for each movement, and running a genuine counterevidence search) was deferred deliberately for session capacity reasons. It is not deferred because no counterevidence exists, and it is not a signal that the movements above are unexplained by anything real. The empty explanations array reflects work not yet attempted, not a completed null result.",
+  "governance": {
+    "research_performed": false,
+    "sources_fetched": false,
+    "sources_hashed": false,
+    "counterevidence_search_performed": false,
+    "causal_language_reviewed": false,
+    "publication_eligible": false
+  }
+}

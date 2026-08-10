@@ -84,7 +84,11 @@ Verified VAT value distribution: Family A → `vat_state: "included"` ×12. Fami
 - Produces: `normaliseObservation(raw, context)` returning
   `{ observation_id, observed_at, mpn, seller_display_name, seller_legal_name, amount_minor, currency, vat_included, capture_kind, source_file }`
   where `vat_included` is `true | false | null` and `capture_kind` is `"archive_capture" | "prospective_capture"`.
-  Also `ENVELOPE_VERSION`, `loadTrancheObservations(trancheJson, sourceFile)`.
+  Also `ENVELOPE_VERSION` and `loadJson(path)`.
+
+  Note: tranche loading itself lives in `buildEnvelopeFromRepository` (Task 4), which iterates `parsed.observations` and calls `normaliseObservation` directly. Do not add a separate tranche-loader export — nothing would consume it.
+
+  Ordering requirement: detect the schema family BEFORE validating `observed_at`. An unrecognised shape must fail with `unrecognised observation schema`, not with a field-level error about a missing timestamp.
 
 - [ ] **Step 1: Write the failing test**
 
@@ -412,13 +416,20 @@ test("the envelope asserts no central tendency", () => {
   assert.deepEqual(Object.values(envelope.governance), [false, false, false, false, false, false, false]);
 });
 
-test("ties break deterministically on observation id", () => {
-  const envelope = deriveObservedPriceEnvelope([
+test("derivation is deterministic regardless of input order, including on both low and high ties", () => {
+  const records = [
     obs("zzz", "2024-05-01T00:00:00Z", "X", "Box", 5000, true),
     obs("aaa", "2024-05-02T00:00:00Z", "Y", "CCL", 5000, true),
-  ]);
-  assert.equal(envelope.periods[0].low.observation_id, "aaa");
-  assert.equal(envelope.periods[0].high.observation_id, "aaa");
+    obs("mmm", "2024-06-01T00:00:00Z", "Z", "Scan Computers", 9000, true),
+    obs("bbb", "2024-06-02T00:00:00Z", "W", "AWD-IT", 9000, true),
+  ];
+  const forward = deriveObservedPriceEnvelope(records);
+  const reversed = deriveObservedPriceEnvelope(records.slice().reverse());
+  assert.equal(JSON.stringify(reversed), JSON.stringify(forward));
+  // low is tied at 5000 between zzz and aaa; smallest observation_id must win.
+  assert.equal(forward.periods[0].low.observation_id, "aaa");
+  // high is tied at 9000 between mmm and bbb; smallest observation_id must win.
+  assert.equal(forward.periods[0].high.observation_id, "bbb");
 });
 ```
 
@@ -431,11 +442,14 @@ Expected: FAIL — `deriveObservedPriceEnvelope is not a function`
 
 ```javascript
 // append to lib/historical-observed-price-envelope.mjs
+// Records arrive pre-sorted ascending by observation_id, which is what makes
+// selection deterministic: on an amount tie the strict comparator leaves `best`
+// unchanged, so the lexicographically smallest id wins. Do NOT add a separate
+// id tie-break branch here — given the pre-sort it is unreachable dead code.
 function extremeBy(records, pick) {
   let best = records[0];
   for (const record of records.slice(1)) {
     if (pick(record, best)) best = record;
-    else if (record.amount_minor === best.amount_minor && record.observation_id < best.observation_id) best = record;
   }
   return { amount_minor: best.amount_minor, observation_id: best.observation_id, mpn: best.mpn, seller: best.seller_display_name };
 }
@@ -651,12 +665,51 @@ git commit -m "feat: pin observed-price envelope to a re-derivable golden fixtur
 
 ```javascript
 // append to tests/historical-observed-price-envelope.test.mjs
-test("a hand-edited band value cannot survive re-derivation", async () => {
-  const golden = JSON.parse(await readFile(new URL("data/fixtures/historical-observed-price-envelope.v1.json", root), "utf8"));
-  const tampered = structuredClone(golden);
-  const target = tampered.periods.find((p) => p.state === "observed");
-  target.low.amount_minor -= 1;
-  assert.notEqual(canonicalEnvelopeBytes(tampered), canonicalEnvelopeBytes(buildEnvelopeFromRepository(root)));
+// Do NOT write this as "clone the golden, decrement a field, assert it differs
+// from a fresh derivation" — that reduces to proving x-1 !== x. Nor as "decrement
+// the already-selected low" — decrementing a selected minimum can never change
+// which record is selected, so it proves value pass-through, not selection.
+// The property that matters is that an UNSELECTED observation dropped below the
+// current low takes over as low. Both weaker forms were written and both passed
+// against a deliberately amount-blind implementation.
+test("the envelope's low tracks the actual minimum, not a fixed position", async () => {
+  const golden = await readFile(new URL("data/fixtures/historical-observed-price-envelope.v1.json", root), "utf8");
+  assert.equal(canonicalEnvelopeBytes(buildEnvelopeFromRepository(root)), golden);
+
+  const records = [];
+  for (const tranche of ELIGIBLE_TRANCHES) {
+    const parsed = JSON.parse(await readFile(new URL(`data/observations/candidate/${tranche.file}`, root), "utf8"));
+    for (const raw of parsed.observations) {
+      records.push(normaliseObservation(raw, { sourceFile: tranche.file, captureKind: tranche.captureKind }));
+    }
+  }
+  const baseline = deriveObservedPriceEnvelope(records);
+
+  // Pick a challenger that is neither the current low nor the id-sorted first
+  // entry, so an amount-blind implementation returning the sorted-first record
+  // fails this test rather than passing it by coincidence.
+  let period = null;
+  let challengerId = null;
+  for (const candidatePeriod of baseline.periods.filter((p) => p.observation_count >= 2)) {
+    const candidate = candidatePeriod.contributing_observation_ids.find(
+      (id, index) => index > 0 && id !== candidatePeriod.low.observation_id,
+    );
+    if (candidate) {
+      period = candidatePeriod;
+      challengerId = candidate;
+      break;
+    }
+  }
+  assert.ok(period && challengerId, "expected a period with a non-first, non-low observation");
+
+  const undercut = period.low.amount_minor - 1;
+  const nudged = records.map((r) => (r.observation_id === challengerId ? { ...r, amount_minor: undercut } : r));
+  const after = deriveObservedPriceEnvelope(nudged);
+  const afterPeriod = after.periods.find((p) => p.period_id === period.period_id);
+
+  assert.equal(afterPeriod.low.observation_id, challengerId);
+  assert.equal(afterPeriod.low.amount_minor, undercut);
+  assert.notEqual(afterPeriod.low.observation_id, period.low.observation_id);
 });
 
 test("a period cannot claim an observation outside its own quarter", async () => {
@@ -680,6 +733,15 @@ test("every period carries VAT disclosure counts that sum to its observation cou
   }
 });
 
+test("a Q4 quarter's exclusive end rolls into January of the next year", () => {
+  assert.deepEqual(quarterBounds("2023-Q4"), {
+    start: "2023-10-01T00:00:00Z",
+    end: "2024-01-01T00:00:00Z",
+  });
+  assert.equal(quarterIdForTimestamp("2023-12-31T23:59:59Z"), "2023-Q4");
+  assert.equal(quarterIdForTimestamp("2024-01-01T00:00:00Z"), "2024-Q1");
+});
+
 test("no period fabricates a value for an empty quarter", async () => {
   const golden = JSON.parse(await readFile(new URL("data/fixtures/historical-observed-price-envelope.v1.json", root), "utf8"));
   for (const period of golden.periods.filter((p) => p.state === "no_eligible_evidence")) {
@@ -693,7 +755,7 @@ test("no period fabricates a value for an empty quarter", async () => {
 - [ ] **Step 2: Run tests**
 
 Run: `node --test tests/historical-observed-price-envelope.test.mjs`
-Expected: PASS, 19 tests. (These assert properties the implementation already satisfies; if any fails, the derivation is wrong — fix `lib/`, not the test.)
+Expected: PASS, 20 tests. (These assert properties the implementation already satisfies; if any fails, the derivation is wrong — fix `lib/`, not the test.)
 
 - [ ] **Step 3: Commit**
 

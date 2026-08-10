@@ -1,0 +1,2094 @@
+{
+  "schema_version": 1,
+  "tranche_id": "sf-gb-historical-primary-retail-backfill-2026-08-10T130500Z-v1",
+  "status": "candidate_private_immutable",
+  "scope": "candidate_only_historical_backfill",
+  "created_at": "2026-08-10T13:05:00Z",
+  "observation_count": 47,
+  "evidence_ledger": "research/evidence/historical-primary-retail-backfill-2026-08-10-wave3/ledger.v1.json",
+  "capture_basis": {
+    "observed_at_semantics": "Internet Archive capture timestamp; not asserted retailer price-change time",
+    "acquisition_method": "archived retailer category/listing pages; identity, capacity and module count read from visible labelled fields, never from URL slugs or part-number naming conventions",
+    "historical_interval_values_derived": false,
+    "gaps_preserved": true,
+    "sampling_caveat": "A category-page capture contributes many products at one instant while a product-page capture contributes one. Period breadth counts must be read alongside any envelope derived from this tranche."
+  },
+  "observations": [
+    {
+      "observation_id": "sf-hist-ebuyer-cmh32gx5m2b6000z30k-20241102202606",
+      "observed_at": "2024-11-02T20:26:06Z",
+      "product": {
+        "mpn": "CMH32GX5M2B6000Z30K",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "ebuyer-uk-wayback-category",
+        "display_name": "Archived Ebuyer DDR5-6000 subcategory page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-ebuyer-cmh32gx5m2b6000z30k-20241102202606"
+      },
+      "seller": {
+        "display_name": "Ebuyer",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 10998,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-ebuyer-cmh32gx5m2d6000c36w-20241102202606",
+      "observed_at": "2024-11-02T20:26:06Z",
+      "product": {
+        "mpn": "CMH32GX5M2D6000C36W",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "ebuyer-uk-wayback-category",
+        "display_name": "Archived Ebuyer DDR5-6000 subcategory page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-ebuyer-cmh32gx5m2d6000c36w-20241102202606"
+      },
+      "seller": {
+        "display_name": "Ebuyer",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 11698,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-ebuyer-cmh32gx5m2e6000c36-20241102202606",
+      "observed_at": "2024-11-02T20:26:06Z",
+      "product": {
+        "mpn": "CMH32GX5M2E6000C36",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "ebuyer-uk-wayback-category",
+        "display_name": "Archived Ebuyer DDR5-6000 subcategory page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-ebuyer-cmh32gx5m2e6000c36-20241102202606"
+      },
+      "seller": {
+        "display_name": "Ebuyer",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 10498,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-ebuyer-cmh32gx5m2e6000z36-20241102202606",
+      "observed_at": "2024-11-02T20:26:06Z",
+      "product": {
+        "mpn": "CMH32GX5M2E6000Z36",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "ebuyer-uk-wayback-category",
+        "display_name": "Archived Ebuyer DDR5-6000 subcategory page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-ebuyer-cmh32gx5m2e6000z36-20241102202606"
+      },
+      "seller": {
+        "display_name": "Ebuyer",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 9999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-ebuyer-cmk32gx5m2b6000z30-20241102202606",
+      "observed_at": "2024-11-02T20:26:06Z",
+      "product": {
+        "mpn": "CMK32GX5M2B6000Z30",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "ebuyer-uk-wayback-category",
+        "display_name": "Archived Ebuyer DDR5-6000 subcategory page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-ebuyer-cmk32gx5m2b6000z30-20241102202606"
+      },
+      "seller": {
+        "display_name": "Ebuyer",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 9999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-ebuyer-cmk32gx5m2e6000c36-20241102202606",
+      "observed_at": "2024-11-02T20:26:06Z",
+      "product": {
+        "mpn": "CMK32GX5M2E6000C36",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "ebuyer-uk-wayback-category",
+        "display_name": "Archived Ebuyer DDR5-6000 subcategory page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-ebuyer-cmk32gx5m2e6000c36-20241102202606"
+      },
+      "seller": {
+        "display_name": "Ebuyer",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 9999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-ebuyer-cmk32gx5m2e6000z36-20241102202606",
+      "observed_at": "2024-11-02T20:26:06Z",
+      "product": {
+        "mpn": "CMK32GX5M2E6000Z36",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "ebuyer-uk-wayback-category",
+        "display_name": "Archived Ebuyer DDR5-6000 subcategory page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-ebuyer-cmk32gx5m2e6000z36-20241102202606"
+      },
+      "seller": {
+        "display_name": "Ebuyer",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 8598,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-ebuyer-cp2k16g60c36u5b-20241102202606",
+      "observed_at": "2024-11-02T20:26:06Z",
+      "product": {
+        "mpn": "CP2K16G60C36U5B",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "ebuyer-uk-wayback-category",
+        "display_name": "Archived Ebuyer DDR5-6000 subcategory page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-ebuyer-cp2k16g60c36u5b-20241102202606"
+      },
+      "seller": {
+        "display_name": "Ebuyer",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 7899,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-ebuyer-cp2k16g60c36u5w-20241102202606",
+      "observed_at": "2024-11-02T20:26:06Z",
+      "product": {
+        "mpn": "CP2K16G60C36U5W",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "ebuyer-uk-wayback-category",
+        "display_name": "Archived Ebuyer DDR5-6000 subcategory page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-ebuyer-cp2k16g60c36u5w-20241102202606"
+      },
+      "seller": {
+        "display_name": "Ebuyer",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 8499,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-ebuyer-f5-6000j3038f16gx2-tz5n-20241102202606",
+      "observed_at": "2024-11-02T20:26:06Z",
+      "product": {
+        "mpn": "F5-6000J3038F16GX2-TZ5N",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "ebuyer-uk-wayback-category",
+        "display_name": "Archived Ebuyer DDR5-6000 subcategory page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-ebuyer-f5-6000j3038f16gx2-tz5n-20241102202606"
+      },
+      "seller": {
+        "display_name": "Ebuyer",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 11499,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-ebuyer-f5-6000j3038f16gx2-tz5nr-20241102202606",
+      "observed_at": "2024-11-02T20:26:06Z",
+      "product": {
+        "mpn": "F5-6000J3038F16GX2-TZ5NR",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "ebuyer-uk-wayback-category",
+        "display_name": "Archived Ebuyer DDR5-6000 subcategory page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-ebuyer-f5-6000j3038f16gx2-tz5nr-20241102202606"
+      },
+      "seller": {
+        "display_name": "Ebuyer",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 11799,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-ebuyer-kf560c32rsak2-32-20241102202606",
+      "observed_at": "2024-11-02T20:26:06Z",
+      "product": {
+        "mpn": "KF560C32RSAK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "ebuyer-uk-wayback-category",
+        "display_name": "Archived Ebuyer DDR5-6000 subcategory page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-ebuyer-kf560c32rsak2-32-20241102202606"
+      },
+      "seller": {
+        "display_name": "Ebuyer",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 11398,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-ebuyer-kf560c36bbe2ak2-32-20241102202606",
+      "observed_at": "2024-11-02T20:26:06Z",
+      "product": {
+        "mpn": "KF560C36BBE2AK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "ebuyer-uk-wayback-category",
+        "display_name": "Archived Ebuyer DDR5-6000 subcategory page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-ebuyer-kf560c36bbe2ak2-32-20241102202606"
+      },
+      "seller": {
+        "display_name": "Ebuyer",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 7998,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-ebuyer-kf560c36bbe2k2-32-20241102202606",
+      "observed_at": "2024-11-02T20:26:06Z",
+      "product": {
+        "mpn": "KF560C36BBE2K2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "ebuyer-uk-wayback-category",
+        "display_name": "Archived Ebuyer DDR5-6000 subcategory page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-ebuyer-kf560c36bbe2k2-32-20241102202606"
+      },
+      "seller": {
+        "display_name": "Ebuyer",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 8998,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-ebuyer-kf560c36bbeak2-32-20241102202606",
+      "observed_at": "2024-11-02T20:26:06Z",
+      "product": {
+        "mpn": "KF560C36BBEAK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "ebuyer-uk-wayback-category",
+        "display_name": "Archived Ebuyer DDR5-6000 subcategory page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-ebuyer-kf560c36bbeak2-32-20241102202606"
+      },
+      "seller": {
+        "display_name": "Ebuyer",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 10097,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-ebuyer-pvvr532g600c36k-20241102202606",
+      "observed_at": "2024-11-02T20:26:06Z",
+      "product": {
+        "mpn": "PVVR532G600C36K",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "ebuyer-uk-wayback-category",
+        "display_name": "Archived Ebuyer DDR5-6000 subcategory page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-ebuyer-pvvr532g600c36k-20241102202606"
+      },
+      "seller": {
+        "display_name": "Ebuyer",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 7998,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-novatech-f5-6000j3636f16gx2-tz5k-20220125015030",
+      "observed_at": "2022-01-25T01:50:30Z",
+      "product": {
+        "mpn": "F5-6000J3636F16GX2-TZ5K",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "novatech-uk-wayback-category",
+        "display_name": "Archived Novatech DDR5 PC5-48000 6000MHz category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-novatech-f5-6000j3636f16gx2-tz5k-20220125015030"
+      },
+      "seller": {
+        "display_name": "Novatech",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 56999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-novatech-f5-6000u3636e16gx2-tz5s-20220125015030",
+      "observed_at": "2022-01-25T01:50:30Z",
+      "product": {
+        "mpn": "F5-6000U3636E16GX2-TZ5S",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "novatech-uk-wayback-category",
+        "display_name": "Archived Novatech DDR5 PC5-48000 6000MHz category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-novatech-f5-6000u3636e16gx2-tz5s-20220125015030"
+      },
+      "seller": {
+        "display_name": "Novatech",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 56999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-cmh32gx5m2b6200c36w-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "CMH32GX5M2B6200C36W",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-cmh32gx5m2b6200c36w-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 17999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-cmh32gx5m2b6400c32-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "CMH32GX5M2B6400C32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-cmh32gx5m2b6400c32-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 14999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-cmh32gx5m2x6600c32-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "CMH32GX5M2X6600C32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-cmh32gx5m2x6600c32-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 19999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-cmh32gx5m2x7200c34-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "CMH32GX5M2X7200C34",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-cmh32gx5m2x7200c34-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 15899,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-cmk32gx5m2b6000c30-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "CMK32GX5M2B6000C30",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-cmk32gx5m2b6000c30-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 12499,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-cmk32gx5m2x7200c34-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "CMK32GX5M2X7200C34",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-cmk32gx5m2x7200c34-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 14999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-cmp32gx5m2x7200c34-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "CMP32GX5M2X7200C34",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-cmp32gx5m2x7200c34-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 20999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-cmp32gx5m2x7200c34w-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "CMP32GX5M2X7200C34W",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-cmp32gx5m2x7200c34w-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 20999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-cmt32gx5m2b5200c40-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "CMT32GX5M2B5200C40",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-cmt32gx5m2b5200c40-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 13999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-cmt32gx5m2b5200z40-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "CMT32GX5M2B5200Z40",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-cmt32gx5m2b5200z40-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 13499,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-cmt32gx5m2b6000z30k-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "CMT32GX5M2B6000Z30K",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-cmt32gx5m2b6000z30k-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 17999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-cmt32gx5m2d6000z36-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "CMT32GX5M2D6000Z36",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-cmt32gx5m2d6000z36-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 16999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-cmt32gx5m2x6200c36-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "CMT32GX5M2X6200C36",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-cmt32gx5m2x6200c36-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 18899,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-cmt32gx5m2x6600c32-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "CMT32GX5M2X6600C32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-cmt32gx5m2x6600c32-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 19999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-ff3d532g6400hc40bdc01-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "FF3D532G6400HC40BDC01",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-ff3d532g6400hc40bdc01-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 11999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-ff4d532g6400hc40bdc01-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "FF4D532G6400HC40BDC01",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-ff4d532g6400hc40bdc01-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 11999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-ff5d532g5200hc40cdc01-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "FF5D532G5200HC40CDC01",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-ff5d532g5200hc40cdc01-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 34999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-flbd532g5200hc40cdc01-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "FLBD532G5200HC40CDC01",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-flbd532g5200hc40cdc01-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 29999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-gosg532gb5200c34adc-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "GOSG532GB5200C34ADC",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-gosg532gb5200c34adc-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 38999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-gosr532gb5200c34adc-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "GOSR532GB5200C34ADC",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-gosr532gb5200c34adc-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 38999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-gosw532gb5200c34adc-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "GOSW532GB5200C34ADC",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-gosw532gb5200c34adc-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 38999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-kf548c38bbk2-32-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "KF548C38BBK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-kf548c38bbk2-32-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 10999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-kf552c40bbk2-32-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "KF552C40BBK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-kf552c40bbk2-32-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 11699,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-kf556c36bbeak2-32-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "KF556C36BBEAK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-kf556c36bbeak2-32-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 12899,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-kf556c40bbak2-32-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "KF556C40BBAK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-kf556c40bbak2-32-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 12499,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-kf560c32rsk2-32-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "KF560C32RSK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-kf560c32rsk2-32-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 12899,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-kf560c36bbeak2-32-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "KF560C36BBEAK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-kf560c36bbeak2-32-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 13999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-kf560c40bbak2-32-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "KF560C40BBAK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-kf560c40bbak2-32-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 13999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-hist-overclockersuk-kf560c40bbk2-32-20231203231653",
+      "observed_at": "2023-12-03T23:16:53Z",
+      "product": {
+        "mpn": "KF560C40BBK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "overclockers-uk-wayback-category",
+        "display_name": "Archived Overclockers UK DDR5 category page",
+        "source_class": "archived_primary_retail_storefront",
+        "evidence_id": "sf-wayback-overclockersuk-kf560c40bbk2-32-20231203231653"
+      },
+      "seller": {
+        "display_name": "Overclockers UK",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 12899,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_from_visible_labelled_field": true,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "AVAILABILITY_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    }
+  ],
+  "governance": {
+    "source_approved": false,
+    "methodology_approved": false,
+    "index_eligible": false,
+    "production_eligible": false,
+    "publication_eligible": false,
+    "public_claim_approved": false
+  }
+}

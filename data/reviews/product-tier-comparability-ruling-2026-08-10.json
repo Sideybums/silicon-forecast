@@ -1,0 +1,29 @@
+{
+  "schema_version": 1,
+  "review_id": "sf-product-tier-comparability-ruling-2026-08-10",
+  "status": "human_ruling_additive",
+  "decided_at": "2026-08-10",
+  "decided_by": "David Sidebottom",
+  "scope": "all_numeric_and_context_layers",
+  "ruling": "Different product tiers must not be compared. A price range, movement or band that mixes tiers is not a market signal and throws the analysis off.",
+  "prompted_by": "The candidate observed-price envelope showed 2021-Q4 at GBP 185.99 (Crucial DDR5-4800, entry tier) and 2022-Q1 at GBP 569.99 (G.Skill Trident Z5 DDR5-6000 CL36, enthusiast tier). Both prices are correctly extracted and independently verified, but the apparent rise between the two quarters reflects which products were archived rather than any market movement.",
+  "consequences": [
+    "The observed-price envelope must not be read as a market level while it spans tiers.",
+    "A tier dimension must be carried on every observation before any band, range or movement is presented as comparable.",
+    "Tier must be established from evidence visible in captured bytes, not inferred from part-number naming conventions.",
+    "Cross-tier movements must not be derived, displayed or explained."
+  ],
+  "implementation_state": "not_yet_implemented",
+  "implementation_note": "Observations currently record capacity, module count and memory type but not speed grade or tier. Speed is present in the archived retailer titles and specification fields already retained, so it can be extracted without new source classes. Until that work lands, the envelope is a coverage and integrity artefact only and must not be presented as a price history.",
+  "governance": {
+    "methodology_approved": false,
+    "aggregation_rule_approved": false,
+    "tier_definition_approved": false,
+    "source_approved": false,
+    "basket_approved": false,
+    "reference_period_approved": false,
+    "index_eligible": false,
+    "production_eligible": false,
+    "publication_eligible": false
+  }
+}

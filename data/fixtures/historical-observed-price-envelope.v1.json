@@ -1,0 +1,512 @@
+{
+  "schema_version": 1,
+  "fixture_id": "sf-gb-ddr5-32gb-observed-price-envelope-v1",
+  "status": "candidate_private_fixture",
+  "version": "historical-observed-price-envelope-v1",
+  "region": "GB",
+  "channel": "PRIMARY_RETAIL",
+  "currency": "GBP",
+  "price_basis": "quoted_item_price_with_per_period_vat_disclosure_not_landed_price",
+  "render_contract": {
+    "mark": "range_band_with_evidence_scatter",
+    "central_tendency": false,
+    "median_state": "UNAVAILABLE_AGGREGATION_NOT_APPROVED",
+    "connect_periods": false,
+    "interpolate": false,
+    "forward_fill": false,
+    "backcast": false,
+    "minimum_observation_threshold": null,
+    "evidence_counts_must_be_visible": true,
+    "vat_disclosure_must_be_visible": true,
+    "gaps_must_be_visible": true,
+    "scatter_must_show_every_contributing_observation": true
+  },
+  "governance": {
+    "methodology_approval": false,
+    "aggregation_rule_approval": false,
+    "reference_period_approval": false,
+    "basket_approval": false,
+    "source_approval": false,
+    "index_eligibility": false,
+    "publication_allowed": false
+  },
+  "periods": [
+    {
+      "period_id": "2021-Q4",
+      "start": "2021-10-01T00:00:00Z",
+      "end": "2022-01-01T00:00:00Z",
+      "state": "observed",
+      "low": {
+        "amount_minor": 18599,
+        "observation_id": "sf-hist-crucial-ct2k16g48c40u5-2021-11-02T171837Z",
+        "mpn": "CT2K16G48C40U5",
+        "seller": "Crucial UK"
+      },
+      "high": {
+        "amount_minor": 18599,
+        "observation_id": "sf-hist-crucial-ct2k16g48c40u5-2021-11-02T171837Z",
+        "mpn": "CT2K16G48C40U5",
+        "seller": "Crucial UK"
+      },
+      "observation_count": 1,
+      "distinct_mpn_count": 1,
+      "distinct_seller_count": 1,
+      "vat_resolved_count": 1,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": [
+        "sf-hist-crucial-ct2k16g48c40u5-2021-11-02T171837Z"
+      ]
+    },
+    {
+      "period_id": "2022-Q1",
+      "start": "2022-01-01T00:00:00Z",
+      "end": "2022-04-01T00:00:00Z",
+      "state": "observed",
+      "low": {
+        "amount_minor": 56999,
+        "observation_id": "sf-hist-novatech-f5-6000j3636f16gx2-tz5k-20220125015030",
+        "mpn": "F5-6000J3636F16GX2-TZ5K",
+        "seller": "Novatech"
+      },
+      "high": {
+        "amount_minor": 56999,
+        "observation_id": "sf-hist-novatech-f5-6000j3636f16gx2-tz5k-20220125015030",
+        "mpn": "F5-6000J3636F16GX2-TZ5K",
+        "seller": "Novatech"
+      },
+      "observation_count": 2,
+      "distinct_mpn_count": 2,
+      "distinct_seller_count": 1,
+      "vat_resolved_count": 2,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": [
+        "sf-hist-novatech-f5-6000j3636f16gx2-tz5k-20220125015030",
+        "sf-hist-novatech-f5-6000u3636e16gx2-tz5s-20220125015030"
+      ]
+    },
+    {
+      "period_id": "2022-Q2",
+      "start": "2022-04-01T00:00:00Z",
+      "end": "2022-07-01T00:00:00Z",
+      "state": "no_eligible_evidence",
+      "low": null,
+      "high": null,
+      "observation_count": 0,
+      "distinct_mpn_count": 0,
+      "distinct_seller_count": 0,
+      "vat_resolved_count": 0,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": []
+    },
+    {
+      "period_id": "2022-Q3",
+      "start": "2022-07-01T00:00:00Z",
+      "end": "2022-10-01T00:00:00Z",
+      "state": "observed",
+      "low": {
+        "amount_minor": 27548,
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z",
+        "mpn": "CMK32GX5M2B6000C36",
+        "seller": "Scan Computers"
+      },
+      "high": {
+        "amount_minor": 48799,
+        "observation_id": "wayback-kms-kf564c32rsk2-32-2022-08-11T084020Z",
+        "mpn": "KF564C32RSK2-32",
+        "seller": "KingstonMemoryShop"
+      },
+      "observation_count": 2,
+      "distinct_mpn_count": 2,
+      "distinct_seller_count": 2,
+      "vat_resolved_count": 2,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": [
+        "sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z",
+        "wayback-kms-kf564c32rsk2-32-2022-08-11T084020Z"
+      ]
+    },
+    {
+      "period_id": "2022-Q4",
+      "start": "2022-10-01T00:00:00Z",
+      "end": "2023-01-01T00:00:00Z",
+      "state": "observed",
+      "low": {
+        "amount_minor": 19079,
+        "observation_id": "sf-hist-crucial-ct2k16g48c40u5-2022-10-07T191921Z",
+        "mpn": "CT2K16G48C40U5",
+        "seller": "Crucial UK"
+      },
+      "high": {
+        "amount_minor": 19079,
+        "observation_id": "sf-hist-crucial-ct2k16g48c40u5-2022-10-07T191921Z",
+        "mpn": "CT2K16G48C40U5",
+        "seller": "Crucial UK"
+      },
+      "observation_count": 1,
+      "distinct_mpn_count": 1,
+      "distinct_seller_count": 1,
+      "vat_resolved_count": 1,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": [
+        "sf-hist-crucial-ct2k16g48c40u5-2022-10-07T191921Z"
+      ]
+    },
+    {
+      "period_id": "2023-Q1",
+      "start": "2023-01-01T00:00:00Z",
+      "end": "2023-04-01T00:00:00Z",
+      "state": "observed",
+      "low": {
+        "amount_minor": 13000,
+        "observation_id": "sf-hist-scan-cmk32gx5m2b6000c36-2023-03-15T075907Z",
+        "mpn": "CMK32GX5M2B6000C36",
+        "seller": "Scan Computers"
+      },
+      "high": {
+        "amount_minor": 14879,
+        "observation_id": "sf-hist-crucial-ct2k16g56c46u5-2023-01-28T074217Z",
+        "mpn": "CT2K16G56C46U5",
+        "seller": "Crucial UK"
+      },
+      "observation_count": 2,
+      "distinct_mpn_count": 2,
+      "distinct_seller_count": 2,
+      "vat_resolved_count": 2,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": [
+        "sf-hist-crucial-ct2k16g56c46u5-2023-01-28T074217Z",
+        "sf-hist-scan-cmk32gx5m2b6000c36-2023-03-15T075907Z"
+      ]
+    },
+    {
+      "period_id": "2023-Q2",
+      "start": "2023-04-01T00:00:00Z",
+      "end": "2023-07-01T00:00:00Z",
+      "state": "no_eligible_evidence",
+      "low": null,
+      "high": null,
+      "observation_count": 0,
+      "distinct_mpn_count": 0,
+      "distinct_seller_count": 0,
+      "vat_resolved_count": 0,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": []
+    },
+    {
+      "period_id": "2023-Q3",
+      "start": "2023-07-01T00:00:00Z",
+      "end": "2023-10-01T00:00:00Z",
+      "state": "observed",
+      "low": {
+        "amount_minor": 9239,
+        "observation_id": "sf-hist-crucial-ct2k16g56c46u5-2023-08-15T140813Z",
+        "mpn": "CT2K16G56C46U5",
+        "seller": "Crucial UK"
+      },
+      "high": {
+        "amount_minor": 9239,
+        "observation_id": "sf-hist-crucial-ct2k16g56c46u5-2023-08-15T140813Z",
+        "mpn": "CT2K16G56C46U5",
+        "seller": "Crucial UK"
+      },
+      "observation_count": 1,
+      "distinct_mpn_count": 1,
+      "distinct_seller_count": 1,
+      "vat_resolved_count": 1,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": [
+        "sf-hist-crucial-ct2k16g56c46u5-2023-08-15T140813Z"
+      ]
+    },
+    {
+      "period_id": "2023-Q4",
+      "start": "2023-10-01T00:00:00Z",
+      "end": "2024-01-01T00:00:00Z",
+      "state": "observed",
+      "low": {
+        "amount_minor": 10999,
+        "observation_id": "sf-hist-overclockersuk-kf548c38bbk2-32-20231203231653",
+        "mpn": "KF548C38BBK2-32",
+        "seller": "Overclockers UK"
+      },
+      "high": {
+        "amount_minor": 38999,
+        "observation_id": "sf-hist-overclockersuk-gosg532gb5200c34adc-20231203231653",
+        "mpn": "GOSG532GB5200C34ADC",
+        "seller": "Overclockers UK"
+      },
+      "observation_count": 29,
+      "distinct_mpn_count": 29,
+      "distinct_seller_count": 1,
+      "vat_resolved_count": 29,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": [
+        "sf-hist-overclockersuk-cmh32gx5m2b6200c36w-20231203231653",
+        "sf-hist-overclockersuk-cmh32gx5m2b6400c32-20231203231653",
+        "sf-hist-overclockersuk-cmh32gx5m2x6600c32-20231203231653",
+        "sf-hist-overclockersuk-cmh32gx5m2x7200c34-20231203231653",
+        "sf-hist-overclockersuk-cmk32gx5m2b6000c30-20231203231653",
+        "sf-hist-overclockersuk-cmk32gx5m2x7200c34-20231203231653",
+        "sf-hist-overclockersuk-cmp32gx5m2x7200c34-20231203231653",
+        "sf-hist-overclockersuk-cmp32gx5m2x7200c34w-20231203231653",
+        "sf-hist-overclockersuk-cmt32gx5m2b5200c40-20231203231653",
+        "sf-hist-overclockersuk-cmt32gx5m2b5200z40-20231203231653",
+        "sf-hist-overclockersuk-cmt32gx5m2b6000z30k-20231203231653",
+        "sf-hist-overclockersuk-cmt32gx5m2d6000z36-20231203231653",
+        "sf-hist-overclockersuk-cmt32gx5m2x6200c36-20231203231653",
+        "sf-hist-overclockersuk-cmt32gx5m2x6600c32-20231203231653",
+        "sf-hist-overclockersuk-ff3d532g6400hc40bdc01-20231203231653",
+        "sf-hist-overclockersuk-ff4d532g6400hc40bdc01-20231203231653",
+        "sf-hist-overclockersuk-ff5d532g5200hc40cdc01-20231203231653",
+        "sf-hist-overclockersuk-flbd532g5200hc40cdc01-20231203231653",
+        "sf-hist-overclockersuk-gosg532gb5200c34adc-20231203231653",
+        "sf-hist-overclockersuk-gosr532gb5200c34adc-20231203231653",
+        "sf-hist-overclockersuk-gosw532gb5200c34adc-20231203231653",
+        "sf-hist-overclockersuk-kf548c38bbk2-32-20231203231653",
+        "sf-hist-overclockersuk-kf552c40bbk2-32-20231203231653",
+        "sf-hist-overclockersuk-kf556c36bbeak2-32-20231203231653",
+        "sf-hist-overclockersuk-kf556c40bbak2-32-20231203231653",
+        "sf-hist-overclockersuk-kf560c32rsk2-32-20231203231653",
+        "sf-hist-overclockersuk-kf560c36bbeak2-32-20231203231653",
+        "sf-hist-overclockersuk-kf560c40bbak2-32-20231203231653",
+        "sf-hist-overclockersuk-kf560c40bbk2-32-20231203231653"
+      ]
+    },
+    {
+      "period_id": "2024-Q1",
+      "start": "2024-01-01T00:00:00Z",
+      "end": "2024-04-01T00:00:00Z",
+      "state": "no_eligible_evidence",
+      "low": null,
+      "high": null,
+      "observation_count": 0,
+      "distinct_mpn_count": 0,
+      "distinct_seller_count": 0,
+      "vat_resolved_count": 0,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": []
+    },
+    {
+      "period_id": "2024-Q2",
+      "start": "2024-04-01T00:00:00Z",
+      "end": "2024-07-01T00:00:00Z",
+      "state": "no_eligible_evidence",
+      "low": null,
+      "high": null,
+      "observation_count": 0,
+      "distinct_mpn_count": 0,
+      "distinct_seller_count": 0,
+      "vat_resolved_count": 0,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": []
+    },
+    {
+      "period_id": "2024-Q3",
+      "start": "2024-07-01T00:00:00Z",
+      "end": "2024-10-01T00:00:00Z",
+      "state": "no_eligible_evidence",
+      "low": null,
+      "high": null,
+      "observation_count": 0,
+      "distinct_mpn_count": 0,
+      "distinct_seller_count": 0,
+      "vat_resolved_count": 0,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": []
+    },
+    {
+      "period_id": "2024-Q4",
+      "start": "2024-10-01T00:00:00Z",
+      "end": "2025-01-01T00:00:00Z",
+      "state": "observed",
+      "low": {
+        "amount_minor": 7899,
+        "observation_id": "sf-hist-ebuyer-cp2k16g60c36u5b-20241102202606",
+        "mpn": "CP2K16G60C36U5B",
+        "seller": "Ebuyer"
+      },
+      "high": {
+        "amount_minor": 11799,
+        "observation_id": "sf-hist-ebuyer-f5-6000j3038f16gx2-tz5nr-20241102202606",
+        "mpn": "F5-6000J3038F16GX2-TZ5NR",
+        "seller": "Ebuyer"
+      },
+      "observation_count": 16,
+      "distinct_mpn_count": 16,
+      "distinct_seller_count": 1,
+      "vat_resolved_count": 16,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": [
+        "sf-hist-ebuyer-cmh32gx5m2b6000z30k-20241102202606",
+        "sf-hist-ebuyer-cmh32gx5m2d6000c36w-20241102202606",
+        "sf-hist-ebuyer-cmh32gx5m2e6000c36-20241102202606",
+        "sf-hist-ebuyer-cmh32gx5m2e6000z36-20241102202606",
+        "sf-hist-ebuyer-cmk32gx5m2b6000z30-20241102202606",
+        "sf-hist-ebuyer-cmk32gx5m2e6000c36-20241102202606",
+        "sf-hist-ebuyer-cmk32gx5m2e6000z36-20241102202606",
+        "sf-hist-ebuyer-cp2k16g60c36u5b-20241102202606",
+        "sf-hist-ebuyer-cp2k16g60c36u5w-20241102202606",
+        "sf-hist-ebuyer-f5-6000j3038f16gx2-tz5n-20241102202606",
+        "sf-hist-ebuyer-f5-6000j3038f16gx2-tz5nr-20241102202606",
+        "sf-hist-ebuyer-kf560c32rsak2-32-20241102202606",
+        "sf-hist-ebuyer-kf560c36bbe2ak2-32-20241102202606",
+        "sf-hist-ebuyer-kf560c36bbe2k2-32-20241102202606",
+        "sf-hist-ebuyer-kf560c36bbeak2-32-20241102202606",
+        "sf-hist-ebuyer-pvvr532g600c36k-20241102202606"
+      ]
+    },
+    {
+      "period_id": "2025-Q1",
+      "start": "2025-01-01T00:00:00Z",
+      "end": "2025-04-01T00:00:00Z",
+      "state": "no_eligible_evidence",
+      "low": null,
+      "high": null,
+      "observation_count": 0,
+      "distinct_mpn_count": 0,
+      "distinct_seller_count": 0,
+      "vat_resolved_count": 0,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": []
+    },
+    {
+      "period_id": "2025-Q2",
+      "start": "2025-04-01T00:00:00Z",
+      "end": "2025-07-01T00:00:00Z",
+      "state": "observed",
+      "low": {
+        "amount_minor": 11399,
+        "observation_id": "wayback-ccl-kf564c32rsk2-32-2025-06-19T063721Z",
+        "mpn": "KF564C32RSK2-32",
+        "seller": "CCL Computers"
+      },
+      "high": {
+        "amount_minor": 11399,
+        "observation_id": "wayback-ccl-kf564c32rsk2-32-2025-06-19T063721Z",
+        "mpn": "KF564C32RSK2-32",
+        "seller": "CCL Computers"
+      },
+      "observation_count": 1,
+      "distinct_mpn_count": 1,
+      "distinct_seller_count": 1,
+      "vat_resolved_count": 1,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": [
+        "wayback-ccl-kf564c32rsk2-32-2025-06-19T063721Z"
+      ]
+    },
+    {
+      "period_id": "2025-Q3",
+      "start": "2025-07-01T00:00:00Z",
+      "end": "2025-10-01T00:00:00Z",
+      "state": "observed",
+      "low": {
+        "amount_minor": 11399,
+        "observation_id": "wayback-ccl-kf560c30bbek2-32-2025-09-07T203052Z",
+        "mpn": "KF560C30BBEK2-32",
+        "seller": "CCL Computers"
+      },
+      "high": {
+        "amount_minor": 11399,
+        "observation_id": "wayback-ccl-kf560c30bbek2-32-2025-09-07T203052Z",
+        "mpn": "KF560C30BBEK2-32",
+        "seller": "CCL Computers"
+      },
+      "observation_count": 1,
+      "distinct_mpn_count": 1,
+      "distinct_seller_count": 1,
+      "vat_resolved_count": 1,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": [
+        "wayback-ccl-kf560c30bbek2-32-2025-09-07T203052Z"
+      ]
+    },
+    {
+      "period_id": "2025-Q4",
+      "start": "2025-10-01T00:00:00Z",
+      "end": "2026-01-01T00:00:00Z",
+      "state": "no_eligible_evidence",
+      "low": null,
+      "high": null,
+      "observation_count": 0,
+      "distinct_mpn_count": 0,
+      "distinct_seller_count": 0,
+      "vat_resolved_count": 0,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": []
+    },
+    {
+      "period_id": "2026-Q1",
+      "start": "2026-01-01T00:00:00Z",
+      "end": "2026-04-01T00:00:00Z",
+      "state": "observed",
+      "low": {
+        "amount_minor": 39999,
+        "observation_id": "wayback-awdit-f5-6000j3636f16gx2-fx5-2026-01-10T145607Z",
+        "mpn": "F5-6000J3636F16GX2-FX5",
+        "seller": "AWD-IT"
+      },
+      "high": {
+        "amount_minor": 54728,
+        "observation_id": "wayback-kms-kf560c30bbek2-32-2026-03-09T113702Z",
+        "mpn": "KF560C30BBEK2-32",
+        "seller": "KingstonMemoryShop"
+      },
+      "observation_count": 3,
+      "distinct_mpn_count": 2,
+      "distinct_seller_count": 2,
+      "vat_resolved_count": 3,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": [
+        "wayback-awdit-f5-6000j3636f16gx2-fx5-2026-01-10T145607Z",
+        "wayback-awdit-f5-6000j3636f16gx2-fx5-2026-01-17T214832Z",
+        "wayback-kms-kf560c30bbek2-32-2026-03-09T113702Z"
+      ]
+    },
+    {
+      "period_id": "2026-Q2",
+      "start": "2026-04-01T00:00:00Z",
+      "end": "2026-07-01T00:00:00Z",
+      "state": "no_eligible_evidence",
+      "low": null,
+      "high": null,
+      "observation_count": 0,
+      "distinct_mpn_count": 0,
+      "distinct_seller_count": 0,
+      "vat_resolved_count": 0,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": []
+    },
+    {
+      "period_id": "2026-Q3",
+      "start": "2026-07-01T00:00:00Z",
+      "end": "2026-10-01T00:00:00Z",
+      "state": "observed",
+      "low": {
+        "amount_minor": 46999,
+        "observation_id": "awdit-f5-6000j3636f16gx2-fx5-2026-08-09T122437Z",
+        "mpn": "F5-6000J3636F16GX2-FX5",
+        "seller": "AWD-IT"
+      },
+      "high": {
+        "amount_minor": 62026,
+        "observation_id": "kms-kf564c32rsk2-32-2026-08-09T122554Z",
+        "mpn": "KF564C32RSK2-32",
+        "seller": "KingstonMemoryShop"
+      },
+      "observation_count": 6,
+      "distinct_mpn_count": 3,
+      "distinct_seller_count": 2,
+      "vat_resolved_count": 6,
+      "vat_unresolved_count": 0,
+      "contributing_observation_ids": [
+        "awdit-f5-6000j3636f16gx2-fx5-2026-08-09T122437Z",
+        "awdit-f5-6000j3636f16gx2-fx5-2026-08-09t234337z",
+        "kms-kf560c30bbek2-32-2026-08-09T122553Z",
+        "kms-kf560c30bbek2-32-2026-08-09t234337z",
+        "kms-kf564c32rsk2-32-2026-08-09T122554Z",
+        "kms-kf564c32rsk2-32-2026-08-09t234337z"
+      ]
+    }
+  ]
+}

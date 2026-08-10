@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "review_id": "sf-historical-context-comparability-2026-08-10",
+  "status": "human_approved_additive_decision",
+  "decided_at": "2026-08-10",
+  "decided_by": "David Sidebottom",
+  "scope": "context_layer_only",
+  "design_reference": "docs/superpowers/specs/2026-08-10-historical-context-band-design.md",
+  "decisions": [
+    {
+      "decision_id": "cross-seller-comparison-permitted-as-fallback",
+      "rule_relaxed": "movement comparison previously required the same seller legal entity plus exact MPN",
+      "approved": true,
+      "rationale": "The object of interest is the market price level, not any individual retailer's conduct. Where the same MPN cannot be found at the same retailer at two separated dates, a cross-seller pairing is more informative than no evidence.",
+      "constraints": [
+        "within_seller pairing must be attempted first",
+        "every movement record carries comparison_basis",
+        "cross_seller movements must be disclosed wherever rendered"
+      ],
+      "known_cost": "A cross-seller movement conflates seller price-level differences with change over time; the number is a real comparison of two real observed prices but its cause is mixed."
+    },
+    {
+      "decision_id": "vat-unresolved-points-admitted-with-disclosure",
+      "rule_relaxed": "VAT-unresolved points were excluded from comparison and aggregation",
+      "approved": true,
+      "rationale": "Excluding unresolved points discards real observed prices. Disclosure carries the honesty instead of exclusion.",
+      "constraints": [
+        "every period records vat_resolved_count and vat_unresolved_count",
+        "any period containing unresolved points renders a visible disclosure",
+        "the per-product exact-MPN sparse graph retains its existing stricter contract"
+      ],
+      "known_cost": "Periods mixing VAT-inclusive and VAT-unresolved points have a wider and less comparable envelope than the counts alone imply."
+    },
+    {
+      "decision_id": "vat-must-not-be-inferred-from-price-endings",
+      "rule_relaxed": "none; this records a determination method",
+      "approved": true,
+      "rationale": "UK consumer-facing prices must include VAT under the Price Marking Order 2004, so inc-VAT is the default for consumer retailers regardless of price ending. Endings such as .99 and .95 are marketing price points appearing in both inc- and ex-VAT displays. Trade-oriented sellers have historically offered an ex/inc-VAT display toggle.",
+      "constraints": [
+        "VAT state is read from an explicit statement or display-mode indicator in captured bytes",
+        "where absent, VAT remains unresolved and is disclosed",
+        "price endings are never used to infer VAT state"
+      ],
+      "known_cost": "Scan Computers captures of GBP 275.48 and GBP 130.00 read unlike consumer marketing price points, which prompts display-mode review rather than a determination."
+    }
+  ],
+  "governance": {
+    "methodology_approved": false,
+    "aggregation_rule_approved": false,
+    "source_approved": false,
+    "basket_approved": false,
+    "reference_period_approved": false,
+    "index_eligible": false,
+    "production_eligible": false,
+    "publication_eligible": false
+  }
+}
