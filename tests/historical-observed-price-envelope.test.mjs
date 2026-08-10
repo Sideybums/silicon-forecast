@@ -166,14 +166,10 @@ test("every contributing observation id resolves to a real observation", async (
   }
 });
 
-test("the envelope tracks source observations, so a hand-edited golden cannot survive", async () => {
-  // Property 1: the golden on disk equals a fresh derivation from source.
+test("the envelope's low tracks the actual minimum, not a fixed position", async () => {
   const golden = await readFile(new URL("data/fixtures/historical-observed-price-envelope.v1.json", root), "utf8");
   assert.equal(canonicalEnvelopeBytes(buildEnvelopeFromRepository(root)), golden);
 
-  // Property 2: the derivation is sensitive to source data. Change one source
-  // amount and the envelope must move. Properties 1 and 2 together mean any
-  // hand-edit to the golden is detectable, which neither proves alone.
   const records = [];
   for (const tranche of ELIGIBLE_TRANCHES) {
     const parsed = JSON.parse(await readFile(new URL(`data/observations/candidate/${tranche.file}`, root), "utf8"));
@@ -182,15 +178,32 @@ test("the envelope tracks source observations, so a hand-edited golden cannot su
     }
   }
   const baseline = deriveObservedPriceEnvelope(records);
-  const observedPeriod = baseline.periods.find((p) => p.state === "observed");
-  const lowId = observedPeriod.low.observation_id;
 
-  const nudged = records.map((r) => (r.observation_id === lowId ? { ...r, amount_minor: r.amount_minor - 1 } : r));
+  // Pick a challenger that is neither the current low nor the id-sorted first
+  // entry, so an amount-blind implementation returning the sorted-first record
+  // fails this test rather than passing it by coincidence.
+  let period = null;
+  let challengerId = null;
+  for (const candidatePeriod of baseline.periods.filter((p) => p.observation_count >= 2)) {
+    const candidate = candidatePeriod.contributing_observation_ids.find(
+      (id, index) => index > 0 && id !== candidatePeriod.low.observation_id,
+    );
+    if (candidate) {
+      period = candidatePeriod;
+      challengerId = candidate;
+      break;
+    }
+  }
+  assert.ok(period && challengerId, "expected a period with a non-first, non-low observation");
+
+  const undercut = period.low.amount_minor - 1;
+  const nudged = records.map((r) => (r.observation_id === challengerId ? { ...r, amount_minor: undercut } : r));
   const after = deriveObservedPriceEnvelope(nudged);
-  const afterPeriod = after.periods.find((p) => p.period_id === observedPeriod.period_id);
+  const afterPeriod = after.periods.find((p) => p.period_id === period.period_id);
 
-  assert.equal(afterPeriod.low.amount_minor, observedPeriod.low.amount_minor - 1);
-  assert.notEqual(canonicalEnvelopeBytes(after), canonicalEnvelopeBytes(baseline));
+  assert.equal(afterPeriod.low.observation_id, challengerId);
+  assert.equal(afterPeriod.low.amount_minor, undercut);
+  assert.notEqual(afterPeriod.low.observation_id, period.low.observation_id);
 });
 
 test("a period cannot claim an observation outside its own quarter", async () => {
