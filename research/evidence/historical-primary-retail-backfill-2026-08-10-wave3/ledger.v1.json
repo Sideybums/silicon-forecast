@@ -1,0 +1,957 @@
+{
+  "schema_version": 1,
+  "ledger_id": "sf-historical-primary-retail-backfill-wave3-2026-08-10-v1",
+  "status": "candidate_private_immutable",
+  "created_at": "2026-08-10T13:05:00Z",
+  "parent_verification": "Every capture was independently re-fetched by the parent orchestrator. Response bytes are hashed here but intentionally not retained in the repository.",
+  "entry_count": 47,
+  "entries": [
+    {
+      "evidence_id": "sf-wayback-ebuyer-cmh32gx5m2b6000z30k-20241102202606",
+      "archive_url": "https://web.archive.org/web/20241102202606id_/https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "original_url": "https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "archive_captured_at": "2024-11-02T20:26:06Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 857706,
+      "response_sha256": "d432ddc788f7c44be8cdd4a2d55818726d108cca5a9408e44880c39eb0ed2d27",
+      "vat_determination": "separate div.inc-vat and div.ex-vat price blocks; inc-vat value retained",
+      "facts": {
+        "mpn": "CMH32GX5M2B6000Z30K",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 10998,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "SKU: CMH32GX5M2B6000Z30K — Memory: 32GB (2x16GB) — Form Factor: DDR5 UDIMM — £109.98 inc. vat"
+    },
+    {
+      "evidence_id": "sf-wayback-ebuyer-cmh32gx5m2d6000c36w-20241102202606",
+      "archive_url": "https://web.archive.org/web/20241102202606id_/https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "original_url": "https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "archive_captured_at": "2024-11-02T20:26:06Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 857706,
+      "response_sha256": "d432ddc788f7c44be8cdd4a2d55818726d108cca5a9408e44880c39eb0ed2d27",
+      "vat_determination": "separate div.inc-vat and div.ex-vat price blocks; inc-vat value retained",
+      "facts": {
+        "mpn": "CMH32GX5M2D6000C36W",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 11698,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "SKU: CMH32GX5M2D6000C36W — Memory: 32GB (2x16GB) — Form Factor: DDR5 UDIMM — £116.98 inc. vat"
+    },
+    {
+      "evidence_id": "sf-wayback-ebuyer-cmh32gx5m2e6000c36-20241102202606",
+      "archive_url": "https://web.archive.org/web/20241102202606id_/https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "original_url": "https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "archive_captured_at": "2024-11-02T20:26:06Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 857706,
+      "response_sha256": "d432ddc788f7c44be8cdd4a2d55818726d108cca5a9408e44880c39eb0ed2d27",
+      "vat_determination": "separate div.inc-vat and div.ex-vat price blocks; inc-vat value retained",
+      "facts": {
+        "mpn": "CMH32GX5M2E6000C36",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 10498,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "SKU: CMH32GX5M2E6000C36 — Memory: 32GB (2x16GB) — Form Factor: DDR5 UDIMM — £104.98 inc. vat"
+    },
+    {
+      "evidence_id": "sf-wayback-ebuyer-cmh32gx5m2e6000z36-20241102202606",
+      "archive_url": "https://web.archive.org/web/20241102202606id_/https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "original_url": "https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "archive_captured_at": "2024-11-02T20:26:06Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 857706,
+      "response_sha256": "d432ddc788f7c44be8cdd4a2d55818726d108cca5a9408e44880c39eb0ed2d27",
+      "vat_determination": "separate div.inc-vat and div.ex-vat price blocks; inc-vat value retained",
+      "facts": {
+        "mpn": "CMH32GX5M2E6000Z36",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 9999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "SKU: CMH32GX5M2E6000Z36 — Memory: 32GB (2x16GB) — Form Factor: DDR5 UDIMM — £99.99 inc. vat"
+    },
+    {
+      "evidence_id": "sf-wayback-ebuyer-cmk32gx5m2b6000z30-20241102202606",
+      "archive_url": "https://web.archive.org/web/20241102202606id_/https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "original_url": "https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "archive_captured_at": "2024-11-02T20:26:06Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 857706,
+      "response_sha256": "d432ddc788f7c44be8cdd4a2d55818726d108cca5a9408e44880c39eb0ed2d27",
+      "vat_determination": "separate div.inc-vat and div.ex-vat price blocks; inc-vat value retained",
+      "facts": {
+        "mpn": "CMK32GX5M2B6000Z30",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 9999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "SKU: CMK32GX5M2B6000Z30 — Memory: 32GB (2x16GB) — Form Factor: DDR5 UDIMM — £99.99 inc. vat"
+    },
+    {
+      "evidence_id": "sf-wayback-ebuyer-cmk32gx5m2e6000c36-20241102202606",
+      "archive_url": "https://web.archive.org/web/20241102202606id_/https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "original_url": "https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "archive_captured_at": "2024-11-02T20:26:06Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 857706,
+      "response_sha256": "d432ddc788f7c44be8cdd4a2d55818726d108cca5a9408e44880c39eb0ed2d27",
+      "vat_determination": "separate div.inc-vat and div.ex-vat price blocks; inc-vat value retained",
+      "facts": {
+        "mpn": "CMK32GX5M2E6000C36",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 9999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "SKU: CMK32GX5M2E6000C36 — Memory: 32GB (2x16GB) — Form Factor: DDR5 UDIMM — £99.99 inc. vat"
+    },
+    {
+      "evidence_id": "sf-wayback-ebuyer-cmk32gx5m2e6000z36-20241102202606",
+      "archive_url": "https://web.archive.org/web/20241102202606id_/https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "original_url": "https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "archive_captured_at": "2024-11-02T20:26:06Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 857706,
+      "response_sha256": "d432ddc788f7c44be8cdd4a2d55818726d108cca5a9408e44880c39eb0ed2d27",
+      "vat_determination": "separate div.inc-vat and div.ex-vat price blocks; inc-vat value retained",
+      "facts": {
+        "mpn": "CMK32GX5M2E6000Z36",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 8598,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "SKU: CMK32GX5M2E6000Z36 — Memory: 32GB (2x16GB) — Form Factor: DDR5 UDIMM — £85.98 inc. vat"
+    },
+    {
+      "evidence_id": "sf-wayback-ebuyer-cp2k16g60c36u5b-20241102202606",
+      "archive_url": "https://web.archive.org/web/20241102202606id_/https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "original_url": "https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "archive_captured_at": "2024-11-02T20:26:06Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 857706,
+      "response_sha256": "d432ddc788f7c44be8cdd4a2d55818726d108cca5a9408e44880c39eb0ed2d27",
+      "vat_determination": "separate div.inc-vat and div.ex-vat price blocks; inc-vat value retained",
+      "facts": {
+        "mpn": "CP2K16G60C36U5B",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 7899,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "SKU: CP2K16G60C36U5B — Memory: 32GB (2x16GB) — Form Factor: DDR5 UDIMM — £78.99 inc. vat"
+    },
+    {
+      "evidence_id": "sf-wayback-ebuyer-cp2k16g60c36u5w-20241102202606",
+      "archive_url": "https://web.archive.org/web/20241102202606id_/https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "original_url": "https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "archive_captured_at": "2024-11-02T20:26:06Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 857706,
+      "response_sha256": "d432ddc788f7c44be8cdd4a2d55818726d108cca5a9408e44880c39eb0ed2d27",
+      "vat_determination": "separate div.inc-vat and div.ex-vat price blocks; inc-vat value retained",
+      "facts": {
+        "mpn": "CP2K16G60C36U5W",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 8499,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "SKU: CP2K16G60C36U5W — Memory: 32GB (2x16GB) — Form Factor: DDR5 UDIMM — £84.99 inc. vat"
+    },
+    {
+      "evidence_id": "sf-wayback-ebuyer-f5-6000j3038f16gx2-tz5n-20241102202606",
+      "archive_url": "https://web.archive.org/web/20241102202606id_/https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "original_url": "https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "archive_captured_at": "2024-11-02T20:26:06Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 857706,
+      "response_sha256": "d432ddc788f7c44be8cdd4a2d55818726d108cca5a9408e44880c39eb0ed2d27",
+      "vat_determination": "separate div.inc-vat and div.ex-vat price blocks; inc-vat value retained",
+      "facts": {
+        "mpn": "F5-6000J3038F16GX2-TZ5N",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 11499,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "SKU: F5-6000J3038F16GX2-TZ5N — Memory: 32GB (2x16GB) — Form Factor: DDR5 UDIMM — £114.99 inc. vat"
+    },
+    {
+      "evidence_id": "sf-wayback-ebuyer-f5-6000j3038f16gx2-tz5nr-20241102202606",
+      "archive_url": "https://web.archive.org/web/20241102202606id_/https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "original_url": "https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "archive_captured_at": "2024-11-02T20:26:06Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 857706,
+      "response_sha256": "d432ddc788f7c44be8cdd4a2d55818726d108cca5a9408e44880c39eb0ed2d27",
+      "vat_determination": "separate div.inc-vat and div.ex-vat price blocks; inc-vat value retained",
+      "facts": {
+        "mpn": "F5-6000J3038F16GX2-TZ5NR",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 11799,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "SKU: F5-6000J3038F16GX2-TZ5NR — Memory: 32GB (2x16GB) — Form Factor: DDR5 UDIMM — £117.99 inc. vat"
+    },
+    {
+      "evidence_id": "sf-wayback-ebuyer-kf560c32rsak2-32-20241102202606",
+      "archive_url": "https://web.archive.org/web/20241102202606id_/https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "original_url": "https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "archive_captured_at": "2024-11-02T20:26:06Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 857706,
+      "response_sha256": "d432ddc788f7c44be8cdd4a2d55818726d108cca5a9408e44880c39eb0ed2d27",
+      "vat_determination": "separate div.inc-vat and div.ex-vat price blocks; inc-vat value retained",
+      "facts": {
+        "mpn": "KF560C32RSAK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 11398,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "SKU: KF560C32RSAK2-32 — Memory: 32GB (2x16GB) — Form Factor: DDR5 UDIMM — £113.98 inc. vat"
+    },
+    {
+      "evidence_id": "sf-wayback-ebuyer-kf560c36bbe2ak2-32-20241102202606",
+      "archive_url": "https://web.archive.org/web/20241102202606id_/https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "original_url": "https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "archive_captured_at": "2024-11-02T20:26:06Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 857706,
+      "response_sha256": "d432ddc788f7c44be8cdd4a2d55818726d108cca5a9408e44880c39eb0ed2d27",
+      "vat_determination": "separate div.inc-vat and div.ex-vat price blocks; inc-vat value retained",
+      "facts": {
+        "mpn": "KF560C36BBE2AK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 7998,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "SKU: KF560C36BBE2AK2-32 — Memory: 32GB (2x16GB) — Form Factor: DDR5 UDIMM — £79.98 inc. vat"
+    },
+    {
+      "evidence_id": "sf-wayback-ebuyer-kf560c36bbe2k2-32-20241102202606",
+      "archive_url": "https://web.archive.org/web/20241102202606id_/https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "original_url": "https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "archive_captured_at": "2024-11-02T20:26:06Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 857706,
+      "response_sha256": "d432ddc788f7c44be8cdd4a2d55818726d108cca5a9408e44880c39eb0ed2d27",
+      "vat_determination": "separate div.inc-vat and div.ex-vat price blocks; inc-vat value retained",
+      "facts": {
+        "mpn": "KF560C36BBE2K2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 8998,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "SKU: KF560C36BBE2K2-32 — Memory: 32GB (2x16GB) — Form Factor: DDR5 UDIMM — £89.98 inc. vat"
+    },
+    {
+      "evidence_id": "sf-wayback-ebuyer-kf560c36bbeak2-32-20241102202606",
+      "archive_url": "https://web.archive.org/web/20241102202606id_/https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "original_url": "https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "archive_captured_at": "2024-11-02T20:26:06Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 857706,
+      "response_sha256": "d432ddc788f7c44be8cdd4a2d55818726d108cca5a9408e44880c39eb0ed2d27",
+      "vat_determination": "separate div.inc-vat and div.ex-vat price blocks; inc-vat value retained",
+      "facts": {
+        "mpn": "KF560C36BBEAK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 10097,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "SKU: KF560C36BBEAK2-32 — Memory: 32GB (2x16GB) — Form Factor: DDR5 UDIMM — £100.97 inc. vat"
+    },
+    {
+      "evidence_id": "sf-wayback-ebuyer-pvvr532g600c36k-20241102202606",
+      "archive_url": "https://web.archive.org/web/20241102202606id_/https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "original_url": "https://www.ebuyer.com/store/Components/cat/Memory---PC/subcat/DDR5-6000MHz",
+      "archive_captured_at": "2024-11-02T20:26:06Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 857706,
+      "response_sha256": "d432ddc788f7c44be8cdd4a2d55818726d108cca5a9408e44880c39eb0ed2d27",
+      "vat_determination": "separate div.inc-vat and div.ex-vat price blocks; inc-vat value retained",
+      "facts": {
+        "mpn": "PVVR532G600C36K",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 7998,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "SKU: PVVR532G600C36K — Memory: 32GB (2x16GB) — Form Factor: DDR5 UDIMM — £79.98 inc. vat"
+    },
+    {
+      "evidence_id": "sf-wayback-novatech-f5-6000j3636f16gx2-tz5k-20220125015030",
+      "archive_url": "https://web.archive.org/web/20220125015030id_/https://www.novatech.co.uk/products/components/memory-pc/ddr5memory/ddr5pc5-480006000mhz/",
+      "original_url": "https://www.novatech.co.uk/products/components/memory-pc/ddr5memory/ddr5pc5-480006000mhz/",
+      "archive_captured_at": "2022-01-25T01:50:30Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 185450,
+      "response_sha256": "315a5a58828c7528e804ba62247d10e80043eb702add9efa2a9af3f233ca1fa8",
+      "vat_determination": "price stated twice in visible text as \"inc vat\" and \"ex vat\"; inc vat value retained",
+      "facts": {
+        "mpn": "F5-6000J3636F16GX2-TZ5K",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 56999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": " — Manf Code: F5-6000J3636F16GX2-TZ5K — £569.99 inc vat"
+    },
+    {
+      "evidence_id": "sf-wayback-novatech-f5-6000u3636e16gx2-tz5s-20220125015030",
+      "archive_url": "https://web.archive.org/web/20220125015030id_/https://www.novatech.co.uk/products/components/memory-pc/ddr5memory/ddr5pc5-480006000mhz/",
+      "original_url": "https://www.novatech.co.uk/products/components/memory-pc/ddr5memory/ddr5pc5-480006000mhz/",
+      "archive_captured_at": "2022-01-25T01:50:30Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 185450,
+      "response_sha256": "315a5a58828c7528e804ba62247d10e80043eb702add9efa2a9af3f233ca1fa8",
+      "vat_determination": "price stated twice in visible text as \"inc vat\" and \"ex vat\"; inc vat value retained",
+      "facts": {
+        "mpn": "F5-6000U3636E16GX2-TZ5S",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 56999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": " — Manf Code: F5-6000U3636E16GX2-TZ5S — £569.99 inc vat"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-cmh32gx5m2b6200c36w-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "CMH32GX5M2B6200C36W",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 17999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Corsair Vengeance RGB 32GB (2X16GB) DDR5 PC5-49600C36 6200MHz Dual Channel Kit - White (CMH32GX5M2B6200C36W) — CMH32GX5M2B6200C36W, 6200MHz RAM Speed, CAS 36-39-39-76 Timings, 1.30v VDIMM, Lifetime War — £179.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-cmh32gx5m2b6400c32-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "CMH32GX5M2B6400C32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 14999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Corsair Vengeance RGB 32GB (2x16GB) DDR5 PC5-51200C32 6400MHz Dual Channel Kit — CMH32GX5M2B6400C32, 6400MHz RAM Speed, CAS 32-38-38-76 Timings, 1.40v VDIMM, Lifetime Warr — £149.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-cmh32gx5m2x6600c32-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "CMH32GX5M2X6600C32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 19999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Corsair Vengeance RGB 32GB (2X16GB) DDR5 PC5-52000C32 6600MHz Dual Channel Kit - Black (CMH32GX5M2X6600C32) — CMH32GX5M2X6600C32, 6600MHz RAM Speed, CAS 32-39-39-76 Timings, 1.40v VDIMM, Lifetime Warr — £199.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-cmh32gx5m2x7200c34-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "CMH32GX5M2X7200C34",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 15899,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Corsair Vengeance RGB 32GB (2x16GB) DDR5 PC5-57600C34 7200MHz Dual Channel Kit — CMH32GX5M2X7200C34, 7200MHz RAM Speed, CAS 34-44-44-96 Timings, 1.45v VDIMM, Lifetime Warr — £158.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-cmk32gx5m2b6000c30-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "CMK32GX5M2B6000C30",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 12499,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Corsair Vengeance 32GB (2X16GB) DDR5 PC5-48000C30 6000MHz Dual Channel — CMK32GX5M2B6000C30, 6000MHz RAM Speed, CAS 30-36-36-76 Timings, 1.40v VDIMM, Lifetime Warr — £124.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-cmk32gx5m2x7200c34-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "CMK32GX5M2X7200C34",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 14999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Corsair Vengeance LPX 32GB (2x16GB) DDR5 PC5-57600C34 7200MHz Dual Channel Kit — CMK32GX5M2X7200C34, 7200MHz RAM Speed, CAS 34-44-44-96 Timings, 1.45v VDIMM, Lifetime Warr — £149.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-cmp32gx5m2x7200c34-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "CMP32GX5M2X7200C34",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 20999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Corsair Dominator Titanium RGB 32GB (2x16GB) DDR5 PC5-57600C34 7200MHz Dual Kit — CMP32GX5M2X7200C34, 7200MHz RAM Speed, CAS 34-44-44-96 Timings, 1.45v VDIMM, Lifetime Warr — £209.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-cmp32gx5m2x7200c34w-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "CMP32GX5M2X7200C34W",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 20999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Corsair Dominator Titanium RGB 32GB (2x16GB) DDR5 PC5-57600C34 7200MHz Dual Kit White — CMP32GX5M2X7200C34W, 7200MHz RAM Speed, CAS 34-44-44-96 Timings, 1.45v VDIMM, Lifetime War — £209.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-cmt32gx5m2b5200c40-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "CMT32GX5M2B5200C40",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 13999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Corsair Dominator Platinum RGB 32GB (2X16GB) DDR5 PC5-41600C40 5200MHz Dual Channel Kit - Black (CMT32GX5M2B5200C40) — CMT32GX5M2B5200C40, 5200MHz RAM Speed, CAS 40-40-40-77 Timings, 1.25v VDIMM, Lifetime Warr — £139.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-cmt32gx5m2b5200z40-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "CMT32GX5M2B5200Z40",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 13499,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Corsair Dominator Platinum RGB EXPO 32GB (2X16GB) DDR5 PC5-41600C40 5200MHz Dual Channel Kit - Black (CMT32GX5M2B5200Z40) — CMT32GX5M2B5200Z40, 5200MHz RAM Speed, CAS 40-40-40-77 Timings, 1.25v VDIMM, Lifetime Warr — £134.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-cmt32gx5m2b6000z30k-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "CMT32GX5M2B6000Z30K",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 17999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Corsair Dominator Platinum RGB EXPO 32GB (2X16GB) DDR5 PC5-48000C30 6000MHz Dual Channel Kit - Black (CMT32GX5M2B6000Z30K) — CMT32GX5M2B6000Z30K, 6000MHz RAM Speed, CAS 30-36-36-76 Timings, 1.40v VDIMM, Lifetime War — £179.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-cmt32gx5m2d6000z36-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "CMT32GX5M2D6000Z36",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 16999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Corsair Dominator Platinum RGB EXPO 32GB (2X16GB) DDR5 PC5-48000C36 6000MHz Dual Channel Kit - Black (CMT32GX5M2D6000Z36) — CMT32GX5M2D6000Z36, 6000MHz RAM Speed, CAS 36-36-36-76 Timings, 1.35v VDIMM, Lifetime Warr — £169.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-cmt32gx5m2x6200c36-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "CMT32GX5M2X6200C36",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 18899,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Corsair Dominator Platinum RGB 32GB (2X16GB) DDR5 PC5-49600C36 6200MHz Dual Channel Kit - Black (CMT32GX5M2X6200C36) — CMT32GX5M2X6200C36, 6200MHz RAM Speed, CAS 36-39-39-76 Timings, 1.30v VDIMM, Lifetime Warr — £188.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-cmt32gx5m2x6600c32-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "CMT32GX5M2X6600C32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 19999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Corsair Dominator Platinum RGB 32GB (2X16GB) DDR5 PC5-52000C32 6600MHz Dual Channel Kit - Black (CMT32GX5M2X6600C32) — CMT32GX5M2X6600C32, 6600MHz RAM Speed, CAS 32-39-39-76 Timings, 1.40v VDIMM, Lifetime Warr — £199.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-ff3d532g6400hc40bdc01-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "FF3D532G6400HC40BDC01",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 11999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "TeamGroup Delta RGB 32GB (2X16GB) DDR5 PC5-51200C40 6400MHz Dual Channel Ki — FF3D532G6400HC40BDC01, 6400MHz RAM Speed, CAS 40-40-40-84 Timings, 1.35v VDIMM, Lifetime W — £119.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-ff4d532g6400hc40bdc01-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "FF4D532G6400HC40BDC01",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 11999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "TeamGroup Delta RGB 32GB (2X16GB) DDR5 PC5-51200C40 6400MHz Dual Channel Kit - White — FF4D532G6400HC40BDC01, 6400MHz RAM Speed, CAS 40-40-40-84 Timings, 1.35v VDIMM, Lifetime W — £119.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-ff5d532g5200hc40cdc01-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "FF5D532G5200HC40CDC01",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 34999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "TeamGroup T-Force Delta TUF RGB 32GB (2X16GB) DDR5 PC5-41600C40 5200MHz Dual Channel Kit — FF5D532G5200HC40CDC01 — £349.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-flbd532g5200hc40cdc01-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "FLBD532G5200HC40CDC01",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 29999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "TeamGroup 32GB (2X16GB) DDR5 PC5-41600C40 5200MHz Dual Channel Kit - Black — FLBD532G5200HC40CDC01 — £299.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-gosg532gb5200c34adc-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "GOSG532GB5200C34ADC",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 38999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "GeIL Polaris RGB 32GB (2X16GB) DDR5 PC5-41600C34 5200MHz Dual Channel Kit — GOSG532GB5200C34ADC — £389.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-gosr532gb5200c34adc-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "GOSR532GB5200C34ADC",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 38999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "GeIL Polaris RGB 32GB (2X16GB) DDR5 PC5-41600C34 5200MHz Dual Channel Kit — GOSR532GB5200C34ADC — £389.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-gosw532gb5200c34adc-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "GOSW532GB5200C34ADC",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 38999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "GeIL Polaris RGB 32GB (2X16GB) DDR5 PC5-41600C34 5200MHz Dual Channel Kit — GOSW532GB5200C34ADC — £389.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-kf548c38bbk2-32-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "KF548C38BBK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 10999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Kingston FURY Beast 32GB (2x16GB) DDR5 PC5-38400C38 4800MHz Dual Channel Kit — KF548C38BBK2-32, 4800MHz RAM Speed, CAS 38-40-40-77 Timings, 1.25v VDIMM, Lifetime Warrant — £109.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-kf552c40bbk2-32-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "KF552C40BBK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 11699,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Kingston FURY Beast 32GB (2x16GB) DDR5 PC5-41600C40 5200MHz Dual Channel Kit — KF552C40BBK2-32, 5200MHz RAM Speed, CAS 40-40-40-77 Timings, 1.25v VDIMM, Lifetime Warrant — £116.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-kf556c36bbeak2-32-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "KF556C36BBEAK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 12899,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Kingston FURY Beast EXPO RGB 32GB (2x16GB) DDR5 PC5-44800C36 5600MHz Dual Channel Kit (KF556C36BBEAK2-32) — KF556C36BBEAK2-32, 5600MHz RAM Speed, CAS 36-36-36-76 Timings, 1.35v VDIMM, EXPO, XMP3.0,  — £128.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-kf556c40bbak2-32-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "KF556C40BBAK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 12499,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Kingston FURY Beast RGB 32GB (2x16GB) DDR5 PC5-44800C40 5600MHz Dual Channel Kit — KF556C40BBAK2-32, 5600MHz RAM Speed, CAS 40-40-40-77 Timings, 1.25v VDIMM, Lifetime Warran — £124.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-kf560c32rsk2-32-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "KF560C32RSK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 12899,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Kingston FURY Renegade 32GB (2x16GB) DDR5 PC5-48000C32 6000MHz Dual Channel Kit — KF560C32RSK2-32, 6000MHz RAM Speed, CAS 32-38-38-76 Timings, 1.35v VDIMM, Lifetime Warrant — £128.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-kf560c36bbeak2-32-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "KF560C36BBEAK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 13999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Kingston FURY Beast EXPO RGB 32GB (2x16GB) DDR5 PC5-48000C36 6000MHz Dual Channel Kit (KF560C36BBEAK2-32) — KF560C36BBEAK2-32, 6000MHz RAM Speed, CAS 36-38-38-76 Timings, 1.35v VDIMM, EXPO, XMP3.0,  — £139.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-kf560c40bbak2-32-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "KF560C40BBAK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 13999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Kingston FURY Beast RGB 32GB (2x16GB) DDR5 PC5-48000C40 6000MHz Dual Channel Kit — KF560C40BBAK2-32, 6000MHz RAM Speed, CAS 40-40-40-77 Timings, 1.30v VDIMM, Lifetime Warran — £139.99 (incl. VAT)"
+    },
+    {
+      "evidence_id": "sf-wayback-overclockersuk-kf560c40bbk2-32-20231203231653",
+      "archive_url": "https://web.archive.org/web/20231203231653id_/https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "original_url": "https://www.overclockers.co.uk/pc-components/memory/ddr5-ram",
+      "archive_captured_at": "2023-12-03T23:16:53Z",
+      "retrieved_at": "2026-08-10T13:05:00Z",
+      "http_status": 200,
+      "response_bytes": 740028,
+      "response_sha256": "61d667b3235d7f48d672040f6d076a80768944b6fd1aab36d05386bc1217b770",
+      "vat_determination": "price block labelled data-qa=\"price-incl-vat-info\" reading \"(incl. VAT)\"",
+      "facts": {
+        "mpn": "KF560C40BBK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 12899,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Kingston FURY Beast 32GB (2x16GB) DDR5 PC5-48000C40 6000MHz Dual Channel Kit — KF560C40BBK2-32, 6000MHz RAM Speed, CAS 40-40-40-77 Timings, 1.30v VDIMM, Lifetime Warrant — £128.99 (incl. VAT)"
+    }
+  ],
+  "authority": {
+    "source_approved": false,
+    "methodology_approved": false,
+    "index_eligible": false,
+    "production_eligible": false,
+    "publication_eligible": false
+  }
+}
