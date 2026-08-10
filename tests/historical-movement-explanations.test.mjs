@@ -11,7 +11,20 @@ test("the comparability review is additive, scoped and approves no production ca
   assert.equal(review.status, "human_approved_additive_decision");
   assert.equal(review.scope, "context_layer_only");
   assert.equal(review.decisions.length, 3);
-  assert.deepEqual(Object.values(review.governance), [false, false, false, false, false, false, false, false]);
+  const expectedGovernanceKeys = [
+    "methodology_approved",
+    "aggregation_rule_approved",
+    "source_approved",
+    "basket_approved",
+    "reference_period_approved",
+    "index_eligible",
+    "production_eligible",
+    "publication_eligible",
+  ].sort();
+  assert.deepEqual(Object.keys(review.governance).sort(), expectedGovernanceKeys);
+  for (const [flag, value] of Object.entries(review.governance)) {
+    assert.equal(value, false, `governance flag ${flag} must be false`);
+  }
   for (const decision of review.decisions) {
     assert.ok(decision.rationale.length > 0);
     assert.ok(decision.known_cost.length > 0);
