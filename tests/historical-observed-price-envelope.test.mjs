@@ -47,3 +47,23 @@ test("a non-GBP amount fails closed", () => {
   const bad = { ...familyB, price: { ...familyB.price, currency: "USD" } };
   assert.throws(() => normaliseObservation(bad, ctx), /currency must be GBP/);
 });
+
+import { quarterIdForTimestamp, quarterBounds, quarterRange } from "../lib/historical-observed-price-envelope.mjs";
+
+test("timestamps bucket into UTC calendar quarters", () => {
+  assert.equal(quarterIdForTimestamp("2021-11-02T17:18:37Z"), "2021-Q4");
+  assert.equal(quarterIdForTimestamp("2023-01-28T07:42:17Z"), "2023-Q1");
+  assert.equal(quarterIdForTimestamp("2023-08-15T14:08:13Z"), "2023-Q3");
+  assert.equal(quarterIdForTimestamp("2026-08-09T23:43:37Z"), "2026-Q3");
+});
+
+test("quarter bounds are half-open UTC instants", () => {
+  assert.deepEqual(quarterBounds("2023-Q1"), {
+    start: "2023-01-01T00:00:00Z",
+    end: "2023-04-01T00:00:00Z",
+  });
+});
+
+test("quarter range is inclusive, ordered and gapless", () => {
+  assert.deepEqual(quarterRange("2022-Q3", "2023-Q2"), ["2022-Q3", "2022-Q4", "2023-Q1", "2023-Q2"]);
+});
