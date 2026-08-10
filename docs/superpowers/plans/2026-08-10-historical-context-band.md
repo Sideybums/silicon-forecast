@@ -628,7 +628,7 @@ process.stdout.write(`wrote ${envelope.periods.length} quarters (${observed} obs
 - [ ] **Step 4: Generate the fixture, then run tests**
 
 Run: `node scripts/render-historical-observed-price-envelope.mjs && node --test tests/historical-observed-price-envelope.test.mjs`
-Expected: script reports 24 quarters spanning 2021-Q4 to 2026-Q3; tests PASS, 15 tests.
+Expected: script reports 20 quarters spanning 2021-Q4 to 2026-Q3 (verified: `2026*4+2 - (2021*4+3) + 1 = 20`); tests PASS, 15 tests.
 
 - [ ] **Step 5: Commit**
 
@@ -1417,7 +1417,7 @@ test("the sparse graph fixture is unchanged by this work", async () => {
 - [ ] **Step 2: Run the full suite**
 
 Run: `node --test tests/*.test.mjs`
-Expected: PASS. Baseline before this plan was 146 tests; expect roughly 146 + 33 new.
+Expected: PASS. Baseline before this plan was 146 tests; this plan adds roughly 38, so expect approximately 184. Treat the count as a sanity check, not an exact assertion.
 
 - [ ] **Step 3: Run the standing verification bar**
 
