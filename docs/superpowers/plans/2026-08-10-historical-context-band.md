@@ -416,17 +416,20 @@ test("the envelope asserts no central tendency", () => {
   assert.deepEqual(Object.values(envelope.governance), [false, false, false, false, false, false, false]);
 });
 
-test("derivation is deterministic regardless of input order", () => {
+test("derivation is deterministic regardless of input order, including on both low and high ties", () => {
   const records = [
     obs("zzz", "2024-05-01T00:00:00Z", "X", "Box", 5000, true),
     obs("aaa", "2024-05-02T00:00:00Z", "Y", "CCL", 5000, true),
-    obs("mmm", "2024-06-01T00:00:00Z", "Z", "Scan Computers", 7000, true),
+    obs("mmm", "2024-06-01T00:00:00Z", "Z", "Scan Computers", 9000, true),
+    obs("bbb", "2024-06-02T00:00:00Z", "W", "AWD-IT", 9000, true),
   ];
   const forward = deriveObservedPriceEnvelope(records);
   const reversed = deriveObservedPriceEnvelope(records.slice().reverse());
   assert.equal(JSON.stringify(reversed), JSON.stringify(forward));
+  // low is tied at 5000 between zzz and aaa; smallest observation_id must win.
   assert.equal(forward.periods[0].low.observation_id, "aaa");
-  assert.equal(forward.periods[0].high.observation_id, "aaa");
+  // high is tied at 9000 between mmm and bbb; smallest observation_id must win.
+  assert.equal(forward.periods[0].high.observation_id, "bbb");
 });
 ```
 
