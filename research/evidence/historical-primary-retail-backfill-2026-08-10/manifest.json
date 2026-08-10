@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "manifest_id": "sf-gb-historical-primary-retail-backfill-evidence-2026-08-10T040544Z-v1",
+  "status": "candidate_private_immutable",
+  "created_at": "2026-08-10T04:05:44Z",
+  "retention_policy": "Checksum-pinned minimal factual extracts are retained. Raw HTML and fetched response bytes are not retained; their byte counts and SHA-256 values are retained.",
+  "observation_artifact": {
+    "path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T040544Z.v1.json",
+    "bytes": 7753,
+    "sha256": "d8fd61d59de4f41f440a7bdacc8cae8af714423ceceabaed430957d8b23efa5e"
+  },
+  "evidence": [
+    {
+      "path": "research/evidence/historical-primary-retail-backfill-2026-08-10/ccl-kf560c30bbek2-32-2025-09-07.extract.json",
+      "bytes": 2656,
+      "sha256": "ca39aaf0b95af807d0596fc6ed5274312cbb26e023eae7a5882a15ff5f05f784",
+      "retrieved_at": "2026-08-10T04:05:44Z",
+      "response_wire_bytes": 343975,
+      "response_wire_sha256": "0828c22c1c764688029565ef5cf243724994fba39d8f7883f5a41d32d1816824",
+      "response_decoded_bytes": 343975,
+      "response_decoded_sha256": "0828c22c1c764688029565ef5cf243724994fba39d8f7883f5a41d32d1816824",
+      "response_bytes_retained": false
+    },
+    {
+      "path": "research/evidence/historical-primary-retail-backfill-2026-08-10/ccl-kf564c32rsk2-32-2025-06-19.extract.json",
+      "bytes": 2662,
+      "sha256": "54681a10ea3a1aff40d779d4da82e222bf8e6a78d120eb41f4cc0032d27a65fa",
+      "retrieved_at": "2026-08-10T04:05:44Z",
+      "response_wire_bytes": 413168,
+      "response_wire_sha256": "374f2453a4447e6f9dcc3d5f55cc587d37e3b21befe7f24fd6d1156844875787",
+      "response_decoded_bytes": 413168,
+      "response_decoded_sha256": "374f2453a4447e6f9dcc3d5f55cc587d37e3b21befe7f24fd6d1156844875787",
+      "response_bytes_retained": false
+    }
+  ],
+  "governance": {
+    "source_approval_allowed": false,
+    "methodology_approval": false,
+    "production_import_allowed": false,
+    "production_activation_allowed": false,
+    "index_eligibility": false,
+    "publication_allowed": false
+  }
+}

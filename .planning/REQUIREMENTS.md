@@ -26,6 +26,7 @@
 - [ ] **ING-03**: Imports are validated, idempotent, concurrency-safe and safely replayable from fixtures or preserved inputs.
 - [ ] **ING-04**: Every import run records counts, duration, status, warnings and failure reason.
 - [ ] **ING-05**: Stale, incomplete or structurally changed sources fail closed and generate a deduplicated operational alert.
+- [ ] **HIS-01**: Candidate historical evidence can be retained from DDR5 launch onward with exact product identity where available, source URL/locator, publication or archive timestamp, retrieval timestamp, price basis and provenance. Archive-capture time is never silently represented as the retailer's exact price-change time, and missing periods remain gaps.
 
 ### Product Matching
 
@@ -46,6 +47,7 @@
 - [ ] **IDX-07**: Baseline approval and production activation fail unless deterministic leave-one-product-out evaluation shows that losing any single basket MPN still satisfies every standard product, retailer/source, coverage and concentration gate.
 - [ ] **IDX-08**: A separately approved historical reference period may rescale the linked nominal series to 100 only after an evidence packet and sensitivity report pass review. The reference is distinct from each basket vintage's internal calculation scale; neither scale is labelled "normal", "affordable" or equivalent without evidence supporting that claim.
 - [ ] **IDX-09**: A monthly constant-price series is derived only from complete linked nominal months and one specifically approved official UK deflator series. Every point records deflator provider, series identifier, observation period/status, release date, retrieval/capture checksum, release-vintage ID and formula version; missing or unapproved inputs produce an explicit unavailable state and no value.
+- [ ] **HIS-02**: Product and category histories can expose daily prospective evidence and sparser historical evidence at deterministic daily, weekly or monthly display intervals without fabricating unsupported points. Weekly is preferred where evidence supports it; monthly is an acceptable fallback; every gap, contributing observation and source-coverage state remains inspectable, and no interval aggregation rule activates without approval.
 
 ### Private Product and Administration
 
@@ -144,17 +146,19 @@ Before the relevant v1 requirements can pass:
 | PUB-01, PUB-02 | Public research-preview exception | Complete — retail-first frontend exposes scope and release gates; no verified series, deferred channels or outbound product links are public |
 | EVT-01, EVT-02, EVT-03, EVT-04 | Phase 6 | Design contract established and event/numeric separation specified; live discovery, first movement note, source-registry integration, editor workflow and any public event display remain pending and locked |
 | ING-01, ING-02, ING-03, ING-04, ING-05 | Phase 3 | Pending |
+| HIS-01 | Phase 3 | Pending; governed launch-to-present historical acquisition begins with candidate-only archive/editorial evidence and explicit gaps |
 | MAT-01, MAT-02, MAT-03, MAT-04, MAT-05 | Phase 4 | Pending |
 | IDX-01, IDX-02, IDX-03, IDX-04, IDX-05, IDX-06, IDX-07, IDX-08, IDX-09 | Phase 5 | Pending; methodology v1.0 draft defines the layer boundaries and unavailable states, while reference evidence, deflator choice, thresholds and linking remain unapproved |
+| HIS-02 | Phase 5 | Pending; weekly-preferred/monthly-fallback display direction is approved, but completeness and aggregation rules remain unapproved |
 | APP-01, APP-02, APP-03 | Phase 5 | Pending |
 | AI-02, AI-05, AI-06, OPS-01 | Phase 6 | Pending |
 | OPS-02, OPS-03, OPS-04, OPS-05 | Phase 7 | Pending |
 
 **Coverage:**
-- v1 requirements: 48 total
-- Mapped to phases or approved preview exception: 48
+- v1 requirements: 50 total
+- Mapped to phases or approved preview exception: 50
 - Unmapped: 0
 
 ---
 *Requirements defined: 2026-08-05*
-*Last updated: 2026-08-09 after defining the stock-market-style graph and governed event-overlay experience*
+*Last updated: 2026-08-10 after making launch-to-present sparse historical coverage a v1 requirement*

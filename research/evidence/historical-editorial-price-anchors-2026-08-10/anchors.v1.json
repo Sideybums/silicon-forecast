@@ -1,0 +1,71 @@
+{
+  "schema_version": 1,
+  "ledger_id": "sf-ddr5-historical-editorial-price-anchors-2026-08-10T041926Z-v1",
+  "status": "candidate_private_immutable",
+  "scope": "candidate_only_historical_editorial_anchors",
+  "created_at": "2026-08-10T04:19:26Z",
+  "retention_policy": "Minimal factual extracts and parent-fetched response byte counts and SHA-256 fingerprints are retained. Source page bytes are not retained.",
+  "time_policy": "Publication time dates the editorial statement; it is not the retailer's exact price-change time and does not imply continuous coverage.",
+  "governance": {
+    "source_approval_allowed": false,
+    "methodology_approval": false,
+    "production_import_allowed": false,
+    "production_activation_allowed": false,
+    "index_eligibility": false,
+    "publication_allowed": false,
+    "causal_claim_allowed": false
+  },
+  "anchors": [
+    {
+      "anchor_id": "editorial-kitguru-cmt32gx5m2b5200c36fe-2021-11-26",
+      "published_at": "2021-11-26T15:20:45Z",
+      "modified_at": "2022-04-06T08:03:03Z",
+      "identity": { "basis": "exact_mpn", "mpn": "CMT32GX5M2B5200C36FE" },
+      "product": { "brand": "Corsair", "name": "Dominator Platinum RGB", "capacity_gb": 32, "module_count": 2, "memory_generation": "DDR5", "speed_mt_s": 5200, "timings": "36-38-38-74" },
+      "price_statement": { "amount_minor": 31499, "currency": "GBP", "vat_state": "unknown", "basis": "editorial_report_of_corsair_store_price", "promotion_state": "unknown", "availability": "practically_nonexistent_as_reported" },
+      "source": { "publisher": "KitGuru", "url": "https://www.kitguru.net/components/memory/luke-hill/corsair-dominator-platinum-rgb-ddr5-5200mhz-32gb-review/", "retrieved_at": "2026-08-10T04:19:26Z", "http_status": 200, "response_bytes": 128363, "response_sha256": "1ea89574af7c38f0d21321ed565b166a99241aa837e7b96ef454617ec842afb8", "response_bytes_retained": false },
+      "minimal_quote": "UK pricing for this CMT32GX5M2B5200C36FE review kit is £314.99 on the Corsair store, though availability is still practically non-existent as has been the case for all DDR5 since Intel's Z690 platform launch."
+    },
+    {
+      "anchor_id": "editorial-gadgetpilipinas-kingston-fury-beast-5200-2021-12-24",
+      "published_at": "2021-12-23T23:20:43Z",
+      "modified_at": "2022-11-22T18:35:09Z",
+      "identity": { "basis": "matched_specification_only", "mpn": null, "abstention_reason": "article_does_not_state_exact_mpn" },
+      "product": { "brand": "Kingston", "name": "FURY Beast", "capacity_gb": 32, "module_count": 2, "memory_generation": "DDR5", "speed_mt_s": 5200, "timings": "CL40" },
+      "price_statement": { "amount_minor": 1799500, "currency": "PHP", "vat_state": "unknown", "basis": "editorial_market_price_statement", "promotion_state": "unknown", "availability": "available_as_reported" },
+      "source": { "publisher": "Gadget Pilipinas", "url": "https://www.gadgetpilipinas.net/2021/12/kingston-fury-beast-32gb-ddr5-5200-review/", "retrieved_at": "2026-08-10T04:19:26Z", "http_status": 200, "response_bytes": 218274, "response_sha256": "630acbf9f022990a0a2334fe2b328a6216d4b53d288a77414965220a080481ae", "response_bytes_retained": false },
+      "minimal_quote": "Its price of Php 17,995 sets it at a Php 1,000 premium over the vanilla DDR5-4800 models in the market and is currently the cheapest 5,200MHz kit available (again, as of writing)."
+    },
+    {
+      "anchor_id": "editorial-tomshardware-f5-6400j3239g16gx2-tz5rk-2022-05-08",
+      "published_at": "2022-05-08T12:00:55Z",
+      "modified_at": "2022-05-08T12:00:55Z",
+      "identity": { "basis": "exact_mpn", "mpn": "F5-6400J3239G16GX2-TZ5RK" },
+      "product": { "brand": "G.SKILL", "name": "Trident Z5 RGB", "capacity_gb": 32, "module_count": 2, "memory_generation": "DDR5", "speed_mt_s": 6400, "timings": "32-39-39-102" },
+      "price_statement": { "amount_minor": 44999, "currency": "USD", "vat_state": "unknown", "basis": "editorial_current_retail_price_statement", "promotion_state": "unknown", "availability": "unknown" },
+      "source": { "publisher": "Tom's Hardware", "url": "https://www.tomshardware.com/reviews/gskill-trident-z5-rgb-ddr5-6400-c32-review", "retrieved_at": "2026-08-10T04:19:26Z", "http_status": 200, "response_bytes": 2385277, "response_sha256": "975d9d77899c426990eac46a5571ff51b6d7ede4d0ae988a05725e1047554dd3", "response_bytes_retained": false },
+      "minimal_quote": "The Trident Z5 RGB DDR5-6400 C32 currently retails for $449.99."
+    },
+    {
+      "anchor_id": "editorial-tomshardware-crucial-ddr5-4800-32gb-2022-07-12",
+      "published_at": "2022-07-12T21:52:49Z",
+      "modified_at": "2022-07-12T22:24:09Z",
+      "identity": { "basis": "matched_specification_only", "mpn": null, "abstention_reason": "article_does_not_state_exact_mpn" },
+      "product": { "brand": "Crucial", "name": "DDR5-4800", "capacity_gb": 32, "module_count": 2, "memory_generation": "DDR5", "speed_mt_s": 4800, "timings": "40-39-39-77" },
+      "price_statement": { "amount_minor": 14499, "currency": "USD", "vat_state": "unknown", "basis": "editorial_report_of_amazon_prime_day_price", "promotion_state": "explicit_prime_day_deal", "previous_or_typical_amount_minor": 19293, "availability": "unknown" },
+      "source": { "publisher": "Tom's Hardware", "url": "https://www.tomshardware.com/news/jump-on-the-ddr5-train-with-this-cheap-32gb-ddr5-4800-kit", "retrieved_at": "2026-08-10T04:19:26Z", "http_status": 200, "response_bytes": 2166897, "response_sha256": "dc09665e1b36f9dbb70286ad9de3fa03cdd7d5a443f0f3acd2e1a6f1d26f2861", "response_bytes_retained": false },
+      "minimal_quote": "The company's DDR5-4800 32GB (2x16GB) memory kit typically retails for $192.93, but it's down to $144.99 for Prime Day."
+    },
+    {
+      "anchor_id": "editorial-kitguru-ff4d532g6400hc40bdc01-2022-08-26",
+      "published_at": "2022-08-26T11:00:41Z",
+      "modified_at": null,
+      "identity": { "basis": "exact_mpn", "mpn": "FF4D532G6400HC40BDC01" },
+      "product": { "brand": "TEAMGROUP", "name": "T-FORCE DELTA RGB", "capacity_gb": 32, "module_count": 2, "memory_generation": "DDR5", "speed_mt_s": 6400, "timings": "40-40-40-84" },
+      "price_statement": { "amount_minor": 44999, "currency": "GBP", "vat_state": "unknown", "basis": "editorial_report_of_overclockers_uk_price", "promotion_state": "unknown", "availability": "unknown" },
+      "secondary_price_statement": { "amount_minor": 34999, "currency": "USD", "vat_state": "unknown", "basis": "editorial_report_of_amazon_us_price", "promotion_state": "possibly_temporary_reduction", "previous_or_typical_amount_minor": 44000 },
+      "source": { "publisher": "KitGuru", "url": "https://www.kitguru.net/components/memory/luke-hill/teamgroup-t-force-delta-rgb-32gb-6400mhz-review/", "retrieved_at": "2026-08-10T04:19:26Z", "http_status": 200, "response_bytes": 125191, "response_sha256": "db3ea79bb46a62c817804253875644846428626a1c7b286a7bf616efe0adee4c", "response_bytes_retained": false },
+      "minimal_quote": "Pricing of the TeamGroup T-Force Delta RGB 32GB 6400MHz CL40 kit is extremely high in the UK at £449.99 on Overclockers UK."
+    }
+  ]
+}

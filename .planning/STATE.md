@@ -79,10 +79,16 @@ See `.planning/PROJECT.md` (last updated 2026-08-09).
 - The private worker harness is deliberately validation-only. It has five exact fixture profiles/jobs, validates repository-local input bytes twice, rejects schema/action/path/hash drift and exports no dispatch or executor API. Default CLI invocation fails closed; future runtime execution requires a new isolated, ledgered, scheduler-aware design and separate approval.
 - Seven separate, non-approving decision packets are indexed at `research/decision-packets/2026-08-09-big-push/`. Evidence, link method, historical reference, deflator/release policy, harness runtime, event workflow and final approval decisions remain independent.
 - Final big-push verification passed 130 Phase 1 checks, parsed 53 tracked JSON files, mapped all 48 v1 requirements exactly once, reproduced all private report bytes twice, passed the parent Wave 4 adversary and completed `npm run check:full` with 135 Node tests, lint, TypeScript, the 14-page static build and disposable PostgreSQL verification. The high-confidence tracked-text secret scan and `git diff --check` were clean.
+- David clarified that the useful public product must show meaningful pre-surge history rather than framing the current elevated market as normative index 100. `HIS-01` and `HIS-02` now require candidate evidence from DDR5 launch onward, weekly display where supported, monthly fallback where necessary and visible gaps without interpolation. No historical reference, aggregation rule, source, basket or threshold was selected.
+- The first bounded historical-acquisition push retained two new parent-verified exact-MPN CCL Wayback observations in `data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T040544Z.v1.json`: Kingston `KF564C32RSK2-32` at £113.99 including VAT on 2025-06-19 and `KF560C30BBEK2-32` at £113.99 including VAT on 2025-09-07. Both remain seller-legal-name and delivery unresolved, landed-price-ineligible, source-unapproved, private and index-ineligible. A third AWD-IT worker lead was rejected because parent-fetched bytes did not expose the claimed MPN or price.
+- Five parent-verified 2021–2022 editorial price anchors are checksum-fingerprinted under `research/evidence/historical-editorial-price-anchors-2026-08-10/`: three exact-MPN and two matched-specification-only. They are dated reportable statements, not primary-retail observations; current widgets were excluded and no MSRP, VAT, representative-market or index meaning was inferred.
+- `data/fixtures/historical-exact-mpn-sparse-graph.v1.json` provides nine exact-MPN GBP item-price markers across three products. It hard-disables connecting lines, interpolation, forward fill, backcasting and cross-product/seller aggregation; every marker resolves to immutable evidence and every unobserved interval remains visible. The source/coverage matrix records that bounded 2023–2024 archive searches produced no replayable exact-MPN UK retailer captures.
+- David's private Patriot Viper Steel receipt correction remains only in the private Obsidian research note; DDR4 remains outside the public DDR5 MVP.
+- Historical-push verification at 2026-08-10T04:24Z passed 143/143 Node tests, ESLint, TypeScript, the 14-page static build, public-boundary tests, 61 governed JSON parses, `git diff --check` and disposable PostgreSQL verification.
 
 ## Current Phase
 
-Phase 1 — Source and Methodology Gate remains **evidence-complete but access/methodology-blocked**. The governed big push is complete and verified as a private candidate/fixture slice. The repository is now waiting for the canonical recurring collector's first scheduled run; completion of that run will trigger a separate fail-closed audit/integration gate, not automatic acceptance. Phase 2 is still incomplete and no Phase 1 gate has been bypassed.
+Phase 1 — Source and Methodology Gate remains **evidence-expanded but access/methodology-blocked**. The governed launch-to-present historical workstream has begun with candidate-only archives, editorial anchors and a sparse graph fixture. Daily prospective collection remains separate and canonical. Phase 2 is still incomplete and no Phase 1 gate has been bypassed.
 
 ## Decision
 
@@ -109,7 +115,7 @@ Phase 1 — Source and Methodology Gate remains **evidence-complete but access/m
 
 ## Next Action
 
-Allow recurring collector job `7e98d1467473` to run at its restored daily `13:45` local schedule as the sole prospective fetcher. Independently verify every additive tranche, evidence manifest and run-integration audit. Require global seller-legal-entity + exact-MPN + UTC-date collision detection before accepting the run commit. The two `2026-08-09` prospective tranches remain raw immutable evidence but are blocked as a combined date-level diagnostic input; do not choose between them or aggregate them without separate human approval. Continue to quarantine path reuse, identity disagreement, checksum mismatch, missing run lineage or governance drift. Do not coerce schemas, mutate retained artefacts, approve, activate or publish. The exact handoff is machine-readable in `.planning/HANDOFF.json`.
+Allow recurring collector job `7e98d1467473` to run at its restored daily `13:45` local schedule as the sole prospective fetcher. Independently verify every additive tranche, evidence manifest and run-integration audit. In parallel only when it cannot compete with that run, continue bounded historical archive/editorial acquisition, prioritising the unresolved 2023–2024 UK exact-MPN gap and additional products/sellers. Preserve weekly evidence where supported, accept monthly/quarterly anchors or explicit gaps where not, and keep editorial anchors separate from primary-retail observations. Do not choose an interval aggregation, historical reference, source portfolio, basket, threshold or causal claim. The exact handoff is machine-readable in `.planning/HANDOFF.json`.
 
 ## Safety Note
 
@@ -117,4 +123,4 @@ The completed Phase 1 work and parallel foundation slice are Tier 1/Tier 2 resea
 
 ---
 *State created: 2026-08-05*
-*Last updated: 2026-08-10 after independently auditing the first canonical collector run, blocking its same-UTC-date diagnostic collision and hardening the recurring job*
+*Last updated: 2026-08-10 after the first governed launch-to-present historical acquisition and sparse-graph integration*

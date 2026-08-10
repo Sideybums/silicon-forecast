@@ -48,6 +48,7 @@ A narrow public research-preview site is an approved enabling exception to that 
 - Raw/evidence storage with checksums and retention policy.
 - Validation, idempotency, locking, replay fixtures and structured run records.
 - Staleness/schema-drift detection and deduplicated alerts.
+- Candidate historical-evidence contract and acquisition tooling for DDR5 launch onward, preserving exact archive/publication/retrieval times, price basis, provenance and visible gaps without backcasting.
 
 **Exit criteria:** Repeated and concurrent test imports do not duplicate observations; a fixed preserved input replays identically; malformed or changed input fails closed.
 
@@ -83,6 +84,7 @@ A narrow public research-preview site is an approved enabling exception to that 
 - Optional earnings-relative affordability design kept separate and unavailable until its official earnings concept, vintage and policy are approved.
 - Additive correction mechanism and replay tests.
 - Private dated product/category graphs for nominal, approved-reference and monthly real views, with source health, quality state, gaps and exact-point lineage. The graph contract exposes a read-only overlay boundary, but Phase 5 does not depend on event records or editorial activation.
+- Deterministic interval views that retain daily prospective evidence and render historical evidence weekly where supported or monthly where necessary; no interpolation, carry-forward or interval aggregation is activated without its approved rule and complete lineage.
 
 **Exit criteria:** Fixed inputs reproduce bit-for-bit equivalent native, linked nominal and release-vintage real values; gaps remain gaps; every displayed point resolves to exact source observations, statistical release inputs and a calculation version. Basket-vintage scale and historical reference are demonstrably separate. A baseline/reference cannot be approved without its evidence and sensitivity report, and a basket cannot be approved unless every single-product-loss counterfactual passes all standard quality gates under the approved resilience threshold.
 

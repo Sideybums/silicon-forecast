@@ -1,9 +1,9 @@
 {
   "schema_version": "silicon-forecast-handoff.v2",
-  "generated_at": "2026-08-09T23:51:30Z",
+  "generated_at": "2026-08-10T04:24:27Z",
   "project": "Silicon Forecast",
   "branch": "main",
-  "handoff_state": "canonical_collector_run_audited_raw_evidence_retained_date_level_integration_blocked",
+  "handoff_state": "historical_acquisition_started_sparse_graph_verified_canonical_collector_unchanged",
   "authority": {
     "parent_orchestrator": "Jarvis",
     "worker_outputs_trusted_without_parent_review": false,
@@ -34,32 +34,34 @@
     "wave_2": "Candidate basket-link, reference/real-series and event-overlay fixtures implemented with external synthetic approval envelopes bound to exact strategy, implementation and input bytes; numeric/event separation retained.",
     "wave_3": "Private worker harness reduced to inactive validation-only manifest preparation. It resolves and hashes repository-local fixture bytes and exports no dispatcher or executor.",
     "wave_4": "Three independent read-only audits completed. SEV-2 findings were reproduced and fixed; parent adversarial tests and the full suite passed. Remaining runtime concerns are inactive prerequisites, not enabled capabilities.",
-    "wave_5": "Seven separate non-approving decision packets produced; governing records and verification evidence updated."
+    "wave_5": "Seven separate non-approving decision packets produced; governing records and verification evidence updated.",
+    "historical_wave_1": "Bounded archive/editorial research retained two parent-verified exact-MPN 2025 CCL observations and five 2021-2022 editorial anchors; 2023-2024 exact UK retailer coverage remains an explicit gap."
   },
   "retained_evidence": {
-    "candidate_tranches": 3,
-    "observations": 10,
+    "candidate_tranches": 4,
+    "observations": 12,
     "exact_seller_mpn_lines": 3,
-    "historical_research_result": "no_new_evidence",
+    "historical_research_result": "two_new_exact_mpn_ccl_archive_observations_five_editorial_anchors_and_explicit_2023_2024_gap",
     "immutable_observation_files_changed_by_big_push": false,
     "all_source_approval_flags": false,
     "all_production_eligibility_flags": false,
     "all_publication_eligibility_flags": false
   },
   "private_contracts": {
-    "quoted_item_history": "seven dated non-interpolated points with visible lineage, gaps and abstentions; exact seller legal entity plus MPN line identity",
+    "quoted_item_history": "existing fixed report remains seven points; additive sparse graph fixture contains nine exact-MPN markers with seller-visible lineage, explicit gaps and every connecting/fill/aggregation behaviour disabled",
     "quoted_item_relative_diagnostic": "private not_an_index; preserves prefix; source-key migration cannot split seller+MPN identity",
     "basket_vintage_linking": "synthetic candidate only; closed internal implementation; exact approval and input binding; no method selected",
     "reference_real_series": "synthetic candidate only; exact release-vintage and monthly checks; deterministic series/revision/input/output hashes; no reference or deflator selected",
     "event_overlay": "synthetic private only; checksum-bound retained captures and claims; independent human-review transition; numeric bytes immutable",
-    "worker_harness": "validation_only_no_dispatch; five fixture jobs; exact schemas and allowlists; repository input bytes verified twice; default CLI refusal"
+    "worker_harness": "validation_only_no_dispatch; five fixture jobs; exact schemas and allowlists; repository input bytes verified twice; default CLI refusal",
+    "historical_acquisition": "DDR5 launch onward; weekly preferred, monthly fallback, gaps preserved; editorial and primary-retail evidence separated; no interval rule, source, reference or basket approved"
   },
   "decision_packets": "research/decision-packets/2026-08-09-big-push/",
   "verification": {
     "phase_1_checks": 130,
-    "tracked_json_files_parsed": 59,
-    "v1_requirements_mapped_exactly_once": 48,
-    "full_check": "big-push baseline passed lint, 135 Node tests, TypeScript, 14-page static build and disposable PostgreSQL verification; post-collector audit verification is recorded separately",
+    "tracked_json_files_parsed": 61,
+    "v1_requirements_mapped_exactly_once": 50,
+    "full_check": "historical push passed lint, 143 Node tests, TypeScript, 14-page static build, public-boundary tests, 61 governed JSON parses and disposable PostgreSQL verification",
     "post_collector_audit_check": "passed 138 of 138 Node tests, lint, TypeScript, 14-page static build, disposable PostgreSQL verification, 130 Phase 1 checks, 59 current/tracked JSON parses, diff hygiene and high-confidence new-artifact secret scan",
     "parent_wave_4_adversary": "passed",
     "retail_report_sha256": "57b70c5818acceffc34bdf3b939c2c63f2dc97e32c6d81bca136877e8b2e740a",
@@ -86,11 +88,13 @@
     "selection_or_aggregation_rule_approved": false
   },
   "next_action": {
-    "when": "after the next canonical collector run",
+    "when": "after the next canonical collector run or next bounded historical evidence wave",
     "steps": [
       "Require the job to start from a clean branch aligned with origin/main and remain the sole prospective writer.",
       "Verify its additive tranche, evidence, manifest and global run-integration audit bytes independently.",
       "Keep all same-date collisions blocked; do not select or aggregate intraday values without separate approval.",
+      "Continue historical acquisition only with archives or dated editorial evidence that cannot compete with the canonical prospective collector; prioritise the 2023-2024 exact-MPN UK gap.",
+      "Keep weekly as an acquisition preference and monthly/quarterly as honest fallbacks; do not interpolate, connect or aggregate sparse points without approval.",
       "Do not approve methodology, sources, references, baskets, production actions or publication."
     ]
   }

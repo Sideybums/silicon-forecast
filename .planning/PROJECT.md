@@ -29,6 +29,7 @@ Let people follow trustworthy UK component-price graphs over time, inspect dated
 - [ ] Define and version the first regional methodology, including tax, delivery, basket vintages, linking, historical-reference selection, nominal and real presentation, coverage, unavailable states and outlier rules.
 - [ ] Maintain a reviewed canonical catalogue for 32GB DDR5 desktop-memory kits.
 - [ ] Preserve immutable raw observations and complete provenance for every derived value.
+- [ ] Build candidate historical evidence from DDR5 launch onward, preferring weekly coverage and accepting honest monthly coverage or visible gaps where source history is sparse.
 - [ ] Match listings conservatively, with exact identifiers first and an auditable exception queue.
 - [ ] Calculate deterministic daily product prices, a basket-vintage-linked nominal history and an approved-reference presentation; calculate monthly constant-price history only from an approved official UK deflator release vintage.
 - [ ] Expose source freshness, coverage, calculation version, quality state and corrections in a private dashboard.
@@ -36,6 +37,7 @@ Let people follow trustworthy UK component-price graphs over time, inspect dated
 - [ ] Demonstrate reliable scheduled operation and tested recovery before publishing a supported index.
 - [x] Publish a retail-first public research preview that explains tracking status, qualification rules and release gates without exposing deferred price channels.
 - [ ] Connect reviewed news and research to observed movements using facts, alternatives, counterevidence and human-approved causal language; event overlays remain mathematically separate annotations and never alter, fill or weight numeric series.
+- [ ] Let users compare present prices with meaningful pre-surge history; the public product must not present collection-inception 100 as a normative historical level.
 
 ### Out of Scope
 
@@ -84,6 +86,7 @@ The technical reference architecture is a TypeScript/Next.js modular monolith ba
 | Use a defensible historical reference rather than collection inception as 100 | The product should explain shortage-era purchasing power, not imply that the first observed day is normal | Product direction clarified 2026-08-09; the reference period and all selection thresholds remain `PROPOSED_LOCKED` pending evidence and approval |
 | Separate nominal, constant-price, affordability and event layers | Inflation adjustment, earnings comparison and editorial context answer different questions and must remain auditable | Nominal linked history is primary; monthly real history requires an approved official UK deflator/release vintage; earnings-relative affordability is optional; event overlays never change numbers |
 | Make dated price graphs the target experience | Users should follow components as they would a stock and inspect evidence-backed context without confusing correlation with causation | Stock-market-like describes the graph interaction and attention model, not speculative pricing; overlays remain mathematically separate |
+| Treat launch-to-present history as minimum useful context | Buyers remember component prices from before prospective collection and need to judge whether the current market is elevated | Weekly historical points are preferred and monthly points are acceptable where evidence is sparse; gaps remain visible, and no reference, interpolation or aggregation rule is approved by this direction |
 
 ## Evolution
 
@@ -97,4 +100,4 @@ After each phase transition:
 5. Recheck that the description and core value have not drifted.
 
 ---
-*Last updated: 2026-08-09 after clarifying the stock-market-style graph experience and governed agent execution model*
+*Last updated: 2026-08-10 after requiring meaningful pre-surge DDR5 history and rejecting current-market inception as the public reference*

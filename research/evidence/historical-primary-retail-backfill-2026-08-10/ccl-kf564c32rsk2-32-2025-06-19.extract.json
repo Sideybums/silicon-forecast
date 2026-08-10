@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "evidence_id": "sf-wayback-ccl-kf564c32rsk2-32-2025-06-19T063721Z",
+  "evidence_class": "minimal_factual_extract",
+  "archive_url": "https://web.archive.org/web/20250619063721id_/https://www.cclonline.com/kf564c32rsk2-32-kingston-fury-renegade-32gb-2x16gb-6400mhz-ddr5-memory-kit-390326/",
+  "original_url": "https://www.cclonline.com/kf564c32rsk2-32-kingston-fury-renegade-32gb-2x16gb-6400mhz-ddr5-memory-kit-390326/",
+  "capture_timestamp": "2025-06-19T06:37:21Z",
+  "capture_time_semantics": "Archived observation evidence only; not evidence of retailer first-change time.",
+  "retrieved_at": "2026-08-10T04:05:44Z",
+  "retrieval_method": "Normal unauthenticated Wayback HTTPS GET using the id_ archive representation; parent independently fetched and inspected the returned bytes.",
+  "http_status": 200,
+  "response": {
+    "content_encoding": "identity_as_returned_to_client",
+    "wire_bytes": 413168,
+    "wire_sha256": "374f2453a4447e6f9dcc3d5f55cc587d37e3b21befe7f24fd6d1156844875787",
+    "decoded_bytes": 413168,
+    "decoded_sha256": "374f2453a4447e6f9dcc3d5f55cc587d37e3b21befe7f24fd6d1156844875787",
+    "bytes_retained": false
+  },
+  "retention_note": "Fetched response bytes are not retained; only this minimal factual extract and their byte count and SHA-256 fingerprint are retained.",
+  "minimal_text_extract": "Kingston FURY Renegade 32GB (2x16GB) 6400MT/s DDR5 Memory Kit KF564C32RSK2-32 Was £136.85 SAVE £22 Now only £113.99 inc VAT Available for delivery from Tomorrow or Click & Collect from Today Hurry, only 1 left!",
+  "structured_extract": {
+    "mpn": "KF564C32RSK2-32",
+    "priceCurrency": "GBP",
+    "price": 113.99,
+    "itemCondition": "NewCondition",
+    "availability": "InStock"
+  },
+  "facts": {
+    "mpn": "KF564C32RSK2-32",
+    "product": { "capacity_gb": 32, "module_count": 2, "module_capacity_gb": 16, "memory_generation": "DDR5", "speed_mt_s": 6400, "latency": "CL32" },
+    "price": { "amount_minor": 11399, "currency": "GBP", "vat_state": "included", "display": "£113.99 inc VAT" },
+    "seller": { "display_name": "CCL Computers", "legal_name": null, "company_number": "15489941", "legal_name_state": "not_extracted_from_archived_page" },
+    "availability": { "display": "Hurry, only 1 left!", "normalised": "in_stock", "semantics": "explicit" },
+    "delivery": { "display": "Available for delivery from Tomorrow or Click & Collect from Today", "amount_minor": null, "destination_scope": "unknown", "destination_verified": false },
+    "promotion": { "state": "explicit_markdown", "previous_price_amount_minor": 13685, "display": "Was £136.85 SAVE £22 Now only £113.99" }
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "schema_version": 1,
+  "evidence_id": "sf-wayback-ccl-kf560c30bbek2-32-2025-09-07T203052Z",
+  "evidence_class": "minimal_factual_extract",
+  "archive_url": "https://web.archive.org/web/20250907203052id_/https://www.cclonline.com/kf560c30bbek2-32-kingston-fury-beast-32gb-2x16gb-6000mt-s-ddr5-memory-kit/",
+  "original_url": "https://www.cclonline.com/kf560c30bbek2-32-kingston-fury-beast-32gb-2x16gb-6000mt-s-ddr5-memory-kit/",
+  "capture_timestamp": "2025-09-07T20:30:52Z",
+  "capture_time_semantics": "Archived observation evidence only; not evidence of retailer first-change time.",
+  "retrieved_at": "2026-08-10T04:05:44Z",
+  "retrieval_method": "Normal unauthenticated Wayback HTTPS GET using the id_ archive representation; parent independently fetched and inspected the returned bytes.",
+  "http_status": 200,
+  "response": {
+    "content_encoding": "identity_as_returned_to_client",
+    "wire_bytes": 343975,
+    "wire_sha256": "0828c22c1c764688029565ef5cf243724994fba39d8f7883f5a41d32d1816824",
+    "decoded_bytes": 343975,
+    "decoded_sha256": "0828c22c1c764688029565ef5cf243724994fba39d8f7883f5a41d32d1816824",
+    "bytes_retained": false
+  },
+  "retention_note": "Fetched response bytes are not retained; only this minimal factual extract and their byte count and SHA-256 fingerprint are retained.",
+  "minimal_text_extract": "Kingston FURY Beast 32GB (2x16GB) 6000MT/s DDR5 Memory Kit KF560C30BBEK2-32 £113.99 inc VAT Add to Basket Available for delivery from Tuesday 9th September or Click & Collect from Tomorrow 10+ In Stock Now",
+  "structured_extract": {
+    "mpn": "KF560C30BBEK2-32",
+    "priceCurrency": "GBP",
+    "price": 113.99,
+    "itemCondition": "NewCondition",
+    "availability": "InStock"
+  },
+  "facts": {
+    "mpn": "KF560C30BBEK2-32",
+    "product": { "capacity_gb": 32, "module_count": 2, "module_capacity_gb": 16, "memory_generation": "DDR5", "speed_mt_s": 6000, "latency": "CL30" },
+    "price": { "amount_minor": 11399, "currency": "GBP", "vat_state": "included", "display": "£113.99 inc VAT" },
+    "seller": { "display_name": "CCL Computers", "legal_name": null, "company_number": "15489941", "legal_name_state": "not_extracted_from_archived_page" },
+    "availability": { "display": "10+ In Stock Now", "normalised": "in_stock", "semantics": "explicit" },
+    "delivery": { "display": "Available for delivery from Tuesday 9th September or Click & Collect from Tomorrow", "amount_minor": null, "destination_scope": "unknown", "destination_verified": false },
+    "promotion": { "state": "not_applied", "note": "A separate page promotion had embedded end date 2025-08-31, before this archive capture." }
+  }
+}

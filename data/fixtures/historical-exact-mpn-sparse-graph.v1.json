@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "fixture_id": "sf-gb-ddr5-32gb-exact-mpn-sparse-history-v1",
+  "status": "candidate_private_fixture",
+  "purpose": "Exercise an honest dated graph with exact-MPN quoted item-price markers and explicit coverage gaps before any historical index or aggregation rule is approved.",
+  "region": "GB",
+  "channel": "PRIMARY_RETAIL",
+  "currency": "GBP",
+  "price_basis": "vat_inclusive_item_price_only_not_landed_price",
+  "render_contract": {
+    "mark": "point",
+    "connect_points": false,
+    "interpolate": false,
+    "forward_fill": false,
+    "backcast": false,
+    "aggregate_across_products": false,
+    "aggregate_across_sellers": false,
+    "x_axis": "evidenced_observation_timestamp",
+    "y_axis": "item_price_amount_minor",
+    "seller_must_be_visible": true,
+    "source_lineage_must_be_inspectable": true,
+    "gaps_must_be_visible": true
+  },
+  "governance": {
+    "methodology_approval": false,
+    "reference_period_approval": false,
+    "basket_approval": false,
+    "source_approval": false,
+    "index_eligibility": false,
+    "production_activation_allowed": false,
+    "publication_allowed": false
+  },
+  "series": [
+    {
+      "mpn": "KF564C32RSK2-32",
+      "display_name": "Kingston FURY Renegade 32GB DDR5-6400 CL32",
+      "points": [
+        {
+          "observed_at": "2022-08-11T08:40:20Z",
+          "seller": "KingstonMemoryShop",
+          "amount_minor": 48799,
+          "evidence_kind": "wayback_capture",
+          "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
+          "observation_id": "wayback-kms-kf564c32rsk2-32-2022-08-11T084020Z"
+        },
+        {
+          "observed_at": "2025-06-19T06:37:21Z",
+          "seller": "CCL Computers",
+          "amount_minor": 11399,
+          "evidence_kind": "wayback_capture",
+          "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T040544Z.v1.json",
+          "observation_id": "wayback-ccl-kf564c32rsk2-32-2025-06-19T063721Z"
+        },
+        {
+          "observed_at": "2026-08-09T23:43:37Z",
+          "seller": "KingstonMemoryShop",
+          "amount_minor": 62026,
+          "evidence_kind": "prospective_capture",
+          "source_artifact": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
+          "observation_id": "kms-kf564c32rsk2-32-2026-08-09t234337z"
+        }
+      ],
+      "coverage_gaps": [
+        { "after": "2022-08-11T08:40:20Z", "before": "2025-06-19T06:37:21Z", "state": "unobserved" },
+        { "after": "2025-06-19T06:37:21Z", "before": "2026-08-09T23:43:37Z", "state": "unobserved" }
+      ]
+    },
+    {
+      "mpn": "KF560C30BBEK2-32",
+      "display_name": "Kingston FURY Beast 32GB DDR5-6000 CL30",
+      "points": [
+        {
+          "observed_at": "2025-09-07T20:30:52Z",
+          "seller": "CCL Computers",
+          "amount_minor": 11399,
+          "evidence_kind": "wayback_capture",
+          "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T040544Z.v1.json",
+          "observation_id": "wayback-ccl-kf560c30bbek2-32-2025-09-07T203052Z"
+        },
+        {
+          "observed_at": "2026-03-09T11:37:02Z",
+          "seller": "KingstonMemoryShop",
+          "amount_minor": 54728,
+          "evidence_kind": "wayback_capture",
+          "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
+          "observation_id": "wayback-kms-kf560c30bbek2-32-2026-03-09T113702Z"
+        },
+        {
+          "observed_at": "2026-08-09T23:43:37Z",
+          "seller": "KingstonMemoryShop",
+          "amount_minor": 61144,
+          "evidence_kind": "prospective_capture",
+          "source_artifact": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
+          "observation_id": "kms-kf560c30bbek2-32-2026-08-09t234337z"
+        }
+      ],
+      "coverage_gaps": [
+        { "after": "2025-09-07T20:30:52Z", "before": "2026-03-09T11:37:02Z", "state": "unobserved" },
+        { "after": "2026-03-09T11:37:02Z", "before": "2026-08-09T23:43:37Z", "state": "unobserved" }
+      ]
+    },
+    {
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "display_name": "G.SKILL Flare X5 32GB DDR5-6000 CL36",
+      "points": [
+        {
+          "observed_at": "2026-01-10T14:56:07Z",
+          "seller": "AWD-IT",
+          "amount_minor": 39999,
+          "evidence_kind": "wayback_capture",
+          "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
+          "observation_id": "wayback-awdit-f5-6000j3636f16gx2-fx5-2026-01-10T145607Z"
+        },
+        {
+          "observed_at": "2026-01-17T21:48:32Z",
+          "seller": "AWD-IT",
+          "amount_minor": 39999,
+          "evidence_kind": "wayback_capture",
+          "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
+          "observation_id": "wayback-awdit-f5-6000j3636f16gx2-fx5-2026-01-17T214832Z"
+        },
+        {
+          "observed_at": "2026-08-09T23:43:37Z",
+          "seller": "AWD-IT",
+          "amount_minor": 46999,
+          "evidence_kind": "prospective_capture",
+          "source_artifact": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
+          "observation_id": "awdit-f5-6000j3636f16gx2-fx5-2026-08-09t234337z"
+        }
+      ],
+      "coverage_gaps": [
+        { "after": "2026-01-10T14:56:07Z", "before": "2026-01-17T21:48:32Z", "state": "unobserved" },
+        { "after": "2026-01-17T21:48:32Z", "before": "2026-08-09T23:43:37Z", "state": "unobserved" }
+      ]
+    }
+  ]
+}
