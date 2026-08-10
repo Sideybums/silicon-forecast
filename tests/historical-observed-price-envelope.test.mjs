@@ -279,3 +279,14 @@ test("the Scan observations resolve to VAT-inclusive in the golden fixture", asy
   const q = golden.periods.find((p) => p.period_id === "2022-Q3");
   assert.equal(q.vat_unresolved_count, 0);
 });
+
+test("applying a VAT resolution does not mutate the caller's records", () => {
+  const original = [{ observation_id: "a", vat_included: null, amount_minor: 100 }];
+  const out = applyVatResolutions(original, [
+    { observation_id: "a", vat_included_before: null, vat_included_after: true },
+  ]);
+  assert.equal(original[0].vat_included, null, "input record must be untouched");
+  assert.equal(original[0].vat_resolution_source, undefined);
+  assert.equal(out[0].vat_included, true);
+  assert.notEqual(out[0], original[0], "must return a new object, not the same reference");
+});
