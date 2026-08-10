@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "manifest_id": "sf-gb-historical-storefront-wave2-manifest-2026-08-10T065616Z-v1",
+  "status": "candidate_private_immutable",
+  "created_at": "2026-08-10T06:56:16Z",
+  "files": [
+    {
+      "path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T065616Z.v1.json",
+      "bytes": 7281,
+      "sha256": "f0d12da95e4d906b96c76de19bc8e229b9a59234325bdf41bb9f6f153667df69"
+    },
+    {
+      "path": "research/evidence/historical-primary-retail-backfill-2026-08-10-wave2/ledger.v1.json",
+      "bytes": 6010,
+      "sha256": "1c01f584b94248d0e86ee810d50e603381d33fb760e73dcfab6c9ef3b58fdca5"
+    }
+  ],
+  "response_fingerprints": [
+    {"evidence_id": "sf-wayback-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z", "bytes": 92039, "sha256": "cb30d619cc6072387df0795dd7f0995a99fdaeb722d7d8eb4d3fc86043d62765"},
+    {"evidence_id": "sf-wayback-scan-cmk32gx5m2b6000c36-2023-03-15T075907Z", "bytes": 96813, "sha256": "a41b72131ad98883fe3ca29477e91659bcf4c06fb41638df9089799ecd46a39b"},
+    {"evidence_id": "sf-wayback-crucial-ct2k16g48c40u5-2021-11-02T171837Z", "bytes": 179236, "sha256": "3709b81d2b476ad28a856f1988cd0882de788c4b4b3151e0ee3cd96f67fc17e5"},
+    {"evidence_id": "sf-wayback-crucial-ct2k16g48c40u5-2022-10-07T191921Z", "bytes": 205867, "sha256": "1f508ae791feb5e54fbd48cb890d48dd0b43b65c9ab276eefcb1ba1d3adffeb6"},
+    {"evidence_id": "sf-wayback-crucial-ct2k16g56c46u5-2023-01-28T074217Z", "bytes": 214084, "sha256": "6c1e8d6eb1ad3d146189d446bd0af70ade225d428bff3b05f1995acdf5bd38db"},
+    {"evidence_id": "sf-wayback-crucial-ct2k16g56c46u5-2023-08-15T140813Z", "bytes": 252606, "sha256": "37162d2c45aec05f9655681fc4f19120cbbe0cea1e7ff3941a64b7b578d06385"}
+  ],
+  "authority": {"source_approved": false, "methodology_approved": false, "index_eligible": false, "production_eligible": false, "publication_eligible": false}
+}

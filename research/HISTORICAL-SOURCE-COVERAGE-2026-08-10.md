@@ -76,6 +76,20 @@ It is a frontend/integrity fixture, not an index or representative market histor
 - VAT, delivery and promotion semantics are often unstated in editorial prose.
 - A retailer archive timestamp is evidence that the displayed state existed at capture time, not the exact date it began.
 
+## Historical acquisition Wave 2 — 2026-08-10
+
+Parent verification added six exact-MPN archived UK storefront observations:
+
+| Product | Storefront | Captures | Price evidence | VAT state |
+|---|---|---:|---|---|
+| Corsair `CMK32GX5M2B6000C36` | Scan Computers | 2022-07-03, 2023-03-15 | £275.48, £130.00 | unresolved |
+| Crucial `CT2K16G48C40U5` | Crucial UK | 2021-11-02, 2022-10-07 | £185.99, £190.79 | explicitly included |
+| Crucial `CT2K16G56C46U5` | Crucial UK | 2023-01-28, 2023-08-15 | £148.79, £92.39 | explicitly included |
+
+The sparse graph fixture now contains 15 markers across six exact MPNs. Every point carries an explicit VAT state. The Scan points may be displayed as unresolved quoted prices but cannot be compared with or aggregated into VAT-inclusive points.
+
+A separate second editorial ledger retains five parent-verified exact-MPN statements from 2022–2024. Three URL-only MPN leads remain held pending a separate URL-binding extract. Editorial statements remain outside the storefront graph and all numerical series.
+
 ## Next targeted acquisition gaps
 
 1. Find lawful 2023 and 2024 UK evidence for several exact mainstream 32GB DDR5 MPNs, especially Corsair, Crucial and Kingston.

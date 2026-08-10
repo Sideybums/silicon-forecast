@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "ledger_id": "sf-gb-historical-storefront-wave2-2026-08-10T065616Z-v1",
+  "status": "candidate_private_immutable",
+  "created_at": "2026-08-10T06:56:16Z",
+  "capture_contract": {
+    "archive_timestamp_is_price_change_timestamp": false,
+    "current_widgets_used": false,
+    "missing_facts_inferred": false,
+    "raw_response_retained": false,
+    "response_hash_is_provenance_fingerprint_not_replay_guarantee": true
+  },
+  "entries": [
+    {
+      "evidence_id": "sf-wayback-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z",
+      "archive_url": "https://web.archive.org/web/20220703173438id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v",
+      "original_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v",
+      "archive_captured_at": "2022-07-03T17:34:38Z",
+      "retrieved_at": "2026-08-10T06:56:16Z",
+      "http_status": 200,
+      "response_bytes": 92039,
+      "response_sha256": "cb30d619cc6072387df0795dd7f0995a99fdaeb722d7d8eb4d3fc86043d62765",
+      "facts": {"mpn": "CMK32GX5M2B6000C36", "capacity_gb": 32, "module_count": 2, "item_price_minor": 27548, "currency": "GBP", "vat_included": null, "availability_text": "In stock"},
+      "minimal_quote": "Corsair Vengeance Black 32GB 6000MHz DDR5 Memory Kit £275.48 Add To Basket ... In stock; Manufacturer code: CMK32GX5M2B6000C36; 32GB (2x16GB)."
+    },
+    {
+      "evidence_id": "sf-wayback-scan-cmk32gx5m2b6000c36-2023-03-15T075907Z",
+      "archive_url": "https://web.archive.org/web/20230315075907id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v",
+      "original_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v",
+      "archive_captured_at": "2023-03-15T07:59:07Z",
+      "retrieved_at": "2026-08-10T06:56:16Z",
+      "http_status": 200,
+      "response_bytes": 96813,
+      "response_sha256": "a41b72131ad98883fe3ca29477e91659bcf4c06fb41638df9089799ecd46a39b",
+      "facts": {"mpn": "CMK32GX5M2B6000C36", "capacity_gb": 32, "module_count": 2, "item_price_minor": 13000, "was_price_minor": 14399, "currency": "GBP", "vat_included": null, "availability_text": "In stock"},
+      "minimal_quote": "Corsair Vengeance Black 32GB 6000MHz DDR5 Memory Kit Was: £143.99 £130.00 Add To Basket ... In stock; Manufacturer code: CMK32GX5M2B6000C36; 32GB (2x16GB)."
+    },
+    {
+      "evidence_id": "sf-wayback-crucial-ct2k16g48c40u5-2021-11-02T171837Z",
+      "archive_url": "https://web.archive.org/web/20211102171837id_/https://uk.crucial.com/memory/ddr5/ct2k16g48c40u5",
+      "original_url": "https://uk.crucial.com/memory/ddr5/ct2k16g48c40u5",
+      "archive_captured_at": "2021-11-02T17:18:37Z",
+      "retrieved_at": "2026-08-10T06:56:16Z",
+      "http_status": 200,
+      "response_bytes": 179236,
+      "response_sha256": "3709b81d2b476ad28a856f1988cd0882de788c4b4b3151e0ee3cd96f67fc17e5",
+      "facts": {"mpn": "CT2K16G48C40U5", "capacity_gb": 32, "module_count": 2, "item_price_minor": 18599, "currency": "GBP", "vat_included": true, "availability_text": null},
+      "minimal_quote": "Crucial 32GB Kit (2 x 16GB) DDR5-4800 UDIMM CT2K16G48C40U5; £185.99 Inc. Vat*."
+    },
+    {
+      "evidence_id": "sf-wayback-crucial-ct2k16g48c40u5-2022-10-07T191921Z",
+      "archive_url": "https://web.archive.org/web/20221007191921id_/https://uk.crucial.com/memory/ddr5/ct2k16g48c40u5",
+      "original_url": "https://uk.crucial.com/memory/ddr5/ct2k16g48c40u5",
+      "archive_captured_at": "2022-10-07T19:19:21Z",
+      "retrieved_at": "2026-08-10T06:56:16Z",
+      "http_status": 200,
+      "response_bytes": 205867,
+      "response_sha256": "1f508ae791feb5e54fbd48cb890d48dd0b43b65c9ab276eefcb1ba1d3adffeb6",
+      "facts": {"mpn": "CT2K16G48C40U5", "capacity_gb": 32, "module_count": 2, "item_price_minor": 19079, "currency": "GBP", "vat_included": true, "availability_text": null},
+      "minimal_quote": "Crucial 32GB Kit (2 x 16GB) DDR5-4800 UDIMM CT2K16G48C40U5; £190.79 Inc. Vat*."
+    },
+    {
+      "evidence_id": "sf-wayback-crucial-ct2k16g56c46u5-2023-01-28T074217Z",
+      "archive_url": "https://web.archive.org/web/20230128074217id_/https://uk.crucial.com/memory/ddr5/ct2k16g56c46u5",
+      "original_url": "https://uk.crucial.com/memory/ddr5/ct2k16g56c46u5",
+      "archive_captured_at": "2023-01-28T07:42:17Z",
+      "retrieved_at": "2026-08-10T06:56:16Z",
+      "http_status": 200,
+      "response_bytes": 214084,
+      "response_sha256": "6c1e8d6eb1ad3d146189d446bd0af70ade225d428bff3b05f1995acdf5bd38db",
+      "facts": {"mpn": "CT2K16G56C46U5", "capacity_gb": 32, "module_count": 2, "item_price_minor": 14879, "currency": "GBP", "vat_included": true, "availability_text": null},
+      "minimal_quote": "Crucial 32GB Kit (2 x 16GB) DDR5-5600 UDIMM CT2K16G56C46U5; £148.79 Inc. Vat*."
+    },
+    {
+      "evidence_id": "sf-wayback-crucial-ct2k16g56c46u5-2023-08-15T140813Z",
+      "archive_url": "https://web.archive.org/web/20230815140813id_/https://uk.crucial.com/memory/ddr5/ct2k16g56c46u5",
+      "original_url": "https://uk.crucial.com/memory/ddr5/ct2k16g56c46u5",
+      "archive_captured_at": "2023-08-15T14:08:13Z",
+      "retrieved_at": "2026-08-10T06:56:16Z",
+      "http_status": 200,
+      "response_bytes": 252606,
+      "response_sha256": "37162d2c45aec05f9655681fc4f19120cbbe0cea1e7ff3941a64b7b578d06385",
+      "facts": {"mpn": "CT2K16G56C46U5", "capacity_gb": 32, "module_count": 2, "item_price_minor": 9239, "currency": "GBP", "vat_included": true, "availability_text": null},
+      "minimal_quote": "Crucial 32GB Kit (2 x 16GB) DDR5-5600 UDIMM CT2K16G56C46U5; £92.39 Inc. Vat*."
+    }
+  ],
+  "authority": {"source_approved": false, "methodology_approved": false, "index_eligible": false, "production_eligible": false, "publication_eligible": false}
+}

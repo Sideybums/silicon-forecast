@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "tranche_id": "sf-gb-historical-primary-retail-backfill-2026-08-10T065616Z-v1",
+  "status": "candidate_private_immutable",
+  "scope": "candidate_only_historical_backfill",
+  "created_at": "2026-08-10T06:56:16Z",
+  "observation_count": 6,
+  "evidence_ledger": "research/evidence/historical-primary-retail-backfill-2026-08-10-wave2/ledger.v1.json",
+  "capture_basis": {
+    "observed_at_semantics": "Internet Archive capture timestamp; not asserted retailer price-change time",
+    "historical_interval_values_derived": false,
+    "gaps_preserved": true
+  },
+  "observations": [
+    {
+      "observation_id": "sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z",
+      "observed_at": "2022-07-03T17:34:38Z",
+      "product": {"manufacturer": "Corsair", "mpn": "CMK32GX5M2B6000C36", "capacity_gb": 32, "module_count": 2, "memory_type": "DDR5", "speed_mt_s": 6000},
+      "source": {"source_key": "scan-wayback", "display_name": "Scan Computers archive", "source_class": "archived_primary_retail_storefront", "evidence_id": "sf-wayback-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z"},
+      "seller": {"display_name": "Scan Computers", "legal_name": null, "legal_name_state": "not_established_from_retained_extract"},
+      "price": {"item_price_minor": 27548, "currency": "GBP", "vat_included": null, "delivery_minor": null, "landed_price_minor": null},
+      "availability": {"state": "available_at_capture", "raw_text": "In stock"},
+      "eligibility": {"identity_exact": true, "historical_item_price_retained": true, "landed_price_eligible": false, "reason_codes": ["SELLER_LEGAL_NAME_UNRESOLVED", "VAT_UNRESOLVED", "DELIVERY_UNRESOLVED", "SOURCE_UNAPPROVED"]}
+    },
+    {
+      "observation_id": "sf-hist-scan-cmk32gx5m2b6000c36-2023-03-15T075907Z",
+      "observed_at": "2023-03-15T07:59:07Z",
+      "product": {"manufacturer": "Corsair", "mpn": "CMK32GX5M2B6000C36", "capacity_gb": 32, "module_count": 2, "memory_type": "DDR5", "speed_mt_s": 6000},
+      "source": {"source_key": "scan-wayback", "display_name": "Scan Computers archive", "source_class": "archived_primary_retail_storefront", "evidence_id": "sf-wayback-scan-cmk32gx5m2b6000c36-2023-03-15T075907Z"},
+      "seller": {"display_name": "Scan Computers", "legal_name": null, "legal_name_state": "not_established_from_retained_extract"},
+      "price": {"item_price_minor": 13000, "was_price_minor": 14399, "currency": "GBP", "vat_included": null, "delivery_minor": null, "landed_price_minor": null},
+      "availability": {"state": "available_at_capture", "raw_text": "In stock"},
+      "eligibility": {"identity_exact": true, "historical_item_price_retained": true, "landed_price_eligible": false, "reason_codes": ["SELLER_LEGAL_NAME_UNRESOLVED", "VAT_UNRESOLVED", "DELIVERY_UNRESOLVED", "SOURCE_UNAPPROVED"]}
+    },
+    {
+      "observation_id": "sf-hist-crucial-ct2k16g48c40u5-2021-11-02T171837Z",
+      "observed_at": "2021-11-02T17:18:37Z",
+      "product": {"manufacturer": "Crucial", "mpn": "CT2K16G48C40U5", "capacity_gb": 32, "module_count": 2, "memory_type": "DDR5", "speed_mt_s": 4800},
+      "source": {"source_key": "crucial-uk-wayback", "display_name": "Crucial UK archive", "source_class": "archived_manufacturer_storefront", "evidence_id": "sf-wayback-crucial-ct2k16g48c40u5-2021-11-02T171837Z"},
+      "seller": {"display_name": "Crucial UK", "legal_name": null, "legal_name_state": "not_established_from_retained_extract"},
+      "price": {"item_price_minor": 18599, "currency": "GBP", "vat_included": true, "delivery_minor": null, "landed_price_minor": null},
+      "availability": {"state": "unknown", "raw_text": null},
+      "eligibility": {"identity_exact": true, "historical_item_price_retained": true, "landed_price_eligible": false, "reason_codes": ["SELLER_LEGAL_NAME_UNRESOLVED", "AVAILABILITY_UNRESOLVED", "DELIVERY_UNRESOLVED", "SOURCE_UNAPPROVED"]}
+    },
+    {
+      "observation_id": "sf-hist-crucial-ct2k16g48c40u5-2022-10-07T191921Z",
+      "observed_at": "2022-10-07T19:19:21Z",
+      "product": {"manufacturer": "Crucial", "mpn": "CT2K16G48C40U5", "capacity_gb": 32, "module_count": 2, "memory_type": "DDR5", "speed_mt_s": 4800},
+      "source": {"source_key": "crucial-uk-wayback", "display_name": "Crucial UK archive", "source_class": "archived_manufacturer_storefront", "evidence_id": "sf-wayback-crucial-ct2k16g48c40u5-2022-10-07T191921Z"},
+      "seller": {"display_name": "Crucial UK", "legal_name": null, "legal_name_state": "not_established_from_retained_extract"},
+      "price": {"item_price_minor": 19079, "currency": "GBP", "vat_included": true, "delivery_minor": null, "landed_price_minor": null},
+      "availability": {"state": "unknown", "raw_text": null},
+      "eligibility": {"identity_exact": true, "historical_item_price_retained": true, "landed_price_eligible": false, "reason_codes": ["SELLER_LEGAL_NAME_UNRESOLVED", "AVAILABILITY_UNRESOLVED", "DELIVERY_UNRESOLVED", "SOURCE_UNAPPROVED"]}
+    },
+    {
+      "observation_id": "sf-hist-crucial-ct2k16g56c46u5-2023-01-28T074217Z",
+      "observed_at": "2023-01-28T07:42:17Z",
+      "product": {"manufacturer": "Crucial", "mpn": "CT2K16G56C46U5", "capacity_gb": 32, "module_count": 2, "memory_type": "DDR5", "speed_mt_s": 5600},
+      "source": {"source_key": "crucial-uk-wayback", "display_name": "Crucial UK archive", "source_class": "archived_manufacturer_storefront", "evidence_id": "sf-wayback-crucial-ct2k16g56c46u5-2023-01-28T074217Z"},
+      "seller": {"display_name": "Crucial UK", "legal_name": null, "legal_name_state": "not_established_from_retained_extract"},
+      "price": {"item_price_minor": 14879, "currency": "GBP", "vat_included": true, "delivery_minor": null, "landed_price_minor": null},
+      "availability": {"state": "unknown", "raw_text": null},
+      "eligibility": {"identity_exact": true, "historical_item_price_retained": true, "landed_price_eligible": false, "reason_codes": ["SELLER_LEGAL_NAME_UNRESOLVED", "AVAILABILITY_UNRESOLVED", "DELIVERY_UNRESOLVED", "SOURCE_UNAPPROVED"]}
+    },
+    {
+      "observation_id": "sf-hist-crucial-ct2k16g56c46u5-2023-08-15T140813Z",
+      "observed_at": "2023-08-15T14:08:13Z",
+      "product": {"manufacturer": "Crucial", "mpn": "CT2K16G56C46U5", "capacity_gb": 32, "module_count": 2, "memory_type": "DDR5", "speed_mt_s": 5600},
+      "source": {"source_key": "crucial-uk-wayback", "display_name": "Crucial UK archive", "source_class": "archived_manufacturer_storefront", "evidence_id": "sf-wayback-crucial-ct2k16g56c46u5-2023-08-15T140813Z"},
+      "seller": {"display_name": "Crucial UK", "legal_name": null, "legal_name_state": "not_established_from_retained_extract"},
+      "price": {"item_price_minor": 9239, "currency": "GBP", "vat_included": true, "delivery_minor": null, "landed_price_minor": null},
+      "availability": {"state": "unknown", "raw_text": null},
+      "eligibility": {"identity_exact": true, "historical_item_price_retained": true, "landed_price_eligible": false, "reason_codes": ["SELLER_LEGAL_NAME_UNRESOLVED", "AVAILABILITY_UNRESOLVED", "DELIVERY_UNRESOLVED", "SOURCE_UNAPPROVED"]}
+    }
+  ],
+  "governance": {"source_approved": false, "methodology_approved": false, "index_eligible": false, "production_eligible": false, "publication_eligible": false, "public_claim_approved": false}
+}

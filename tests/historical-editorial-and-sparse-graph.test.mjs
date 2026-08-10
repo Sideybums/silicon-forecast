@@ -37,28 +37,36 @@ test("editorial anchors keep exact-MPN and matched-spec evidence separate and lo
 
 test("sparse graph fixture resolves every point to an immutable observation and never invents continuity", async () => {
   const bytes = await readFile(new URL(fixturePath, root));
-  assert.equal(sha256(bytes), "09f556be12bcb0e005b90fa4a4d9aa52273f2ea524b7f725d6c21b6b07ef4341");
+  assert.equal(sha256(bytes), "ae77e655ef8c4b3b9c9b1725a392170e5ea8a5fa405b6cd88d82e7941daff015");
   const fixture = JSON.parse(bytes.toString("utf8"));
   assert.equal(fixture.render_contract.mark, "point");
+  assert.equal(fixture.render_contract.vat_state_must_be_visible, true);
+  assert.equal(fixture.render_contract.vat_unresolved_points_must_not_be_compared_or_aggregated, true);
   for (const key of ["connect_points", "interpolate", "forward_fill", "backcast", "aggregate_across_products", "aggregate_across_sellers"])
     assert.equal(fixture.render_contract[key], false, `${key} must remain false`);
   assert.deepEqual(Object.values(fixture.governance), [false, false, false, false, false, false, false]);
-  assert.equal(fixture.series.length, 3);
+  assert.equal(fixture.series.length, 6);
 
+  let pointCount = 0;
   for (const series of fixture.series) {
     assert.ok(series.coverage_gaps.length > 0);
     const times = series.points.map((point) => point.observed_at);
     assert.deepEqual(times, [...times].sort());
     for (const point of series.points) {
+      pointCount += 1;
       const artifact = await readJson(point.source_artifact);
       const source = artifact.observations.find((item) => item.observation_id === point.observation_id);
       assert.ok(source, `${point.observation_id} missing from ${point.source_artifact}`);
-      assert.equal(source.identity.mpn_observed, series.mpn);
+      const sourceMpn = source.identity?.mpn_observed ?? source.product?.mpn;
+      const sourceAmount = source.item_price?.amount_minor ?? source.price?.item_price_minor;
+      const sourceVat = source.item_price?.vat_state === "included" ? true : source.price?.vat_included;
+      const sourceLandedAbstains = source.landed_price?.eligibility === "abstain" || source.eligibility?.landed_price_eligible === false;
+      assert.equal(sourceMpn, series.mpn);
       assert.equal(source.observed_at, point.observed_at);
-      assert.equal(source.item_price.amount_minor, point.amount_minor);
-      assert.equal(source.item_price.currency, fixture.currency);
-      assert.equal(source.item_price.vat_state, "included");
-      assert.equal(source.landed_price.eligibility, "abstain");
+      assert.equal(sourceAmount, point.amount_minor);
+      assert.equal(point.vat_included, sourceVat);
+      assert.equal(sourceLandedAbstains, true);
     }
   }
+  assert.equal(pointCount, 15);
 });

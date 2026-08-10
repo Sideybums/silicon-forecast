@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "ledger_id": "sf-ddr5-historical-editorial-price-anchors-wave2-2026-08-10-v1",
+  "status": "candidate_private_immutable",
+  "created_at": "2026-08-10T06:56:16Z",
+  "anchors": [
+    {
+      "anchor_id": "kg-f5-6000j3636f16gx2-tz5rs-2022-05-05",
+      "published_at": "2022-05-05T11:00:18+01:00",
+      "source": {"publisher": "KitGuru", "url": "https://www.kitguru.net/components/memory/luke-hill/g-skill-trident-z5-rgb-32gb-6000mhz-review/", "http_status": 200, "response_bytes": 125260, "response_sha256": "aa2a76872e445a33e08fcb0bf4c91c5fb9ad26b82bbe572f3c14f705d345c7fa"},
+      "identity": {"basis": "exact_mpn", "mpn": "F5-6000J3636F16GX2-TZ5RS", "capacity_gb": 32, "module_count": 2},
+      "price_statement": {"amount_minor": 41999, "currency": "GBP", "basis": "exact_linguistic_value_penny_under_420", "retailer": null, "vat_included": null, "observed_storefront_offer": false},
+      "minimal_quote": "Pricing of the 6GHz G.SKILL kit is certainly hefty at a penny under £420 in the UK."
+    },
+    {
+      "anchor_id": "kg-kf560c36bbeak2-32-ocuk-2023-03-01",
+      "published_at": "2023-03-01T14:00:19+00:00",
+      "source": {"publisher": "KitGuru", "url": "https://www.kitguru.net/components/memory/luke-hill/ddr5-round-up-crucial-g-skill-kingston-klevv-tested/all/1/", "http_status": 200, "response_bytes": 187688, "response_sha256": "d7b69e3ece3a90d3f7f04c831d3f55941afdc6ececd0865c7908852632b710e7"},
+      "identity": {"basis": "exact_mpn", "mpn": "KF560C36BBEAK2-32", "capacity_gb": 32, "module_count": 2},
+      "price_statement": {"amount_minor": 18900, "currency": "GBP", "basis": "time_of_writing_editorial_statement", "retailer": "Overclockers UK", "vat_included": null, "observed_storefront_offer": false},
+      "minimal_quote": "It is currently £189 at Overclockers UK, though it was £200 just a few days ago, so watch out for quick price changes."
+    },
+    {
+      "anchor_id": "kg-kf560c36bbeak2-32-amazon-2023-03-01",
+      "published_at": "2023-03-01T14:00:19+00:00",
+      "source": {"publisher": "KitGuru", "url": "https://www.kitguru.net/components/memory/luke-hill/ddr5-round-up-crucial-g-skill-kingston-klevv-tested/all/1/", "http_status": 200, "response_bytes": 187688, "response_sha256": "d7b69e3ece3a90d3f7f04c831d3f55941afdc6ececd0865c7908852632b710e7"},
+      "identity": {"basis": "exact_mpn", "mpn": "KF560C36BBEAK2-32", "capacity_gb": 32, "module_count": 2},
+      "price_statement": {"amount_minor": 16100, "currency": "GBP", "basis": "time_of_writing_editorial_statement", "retailer": "Amazon UK", "vat_included": null, "observed_storefront_offer": false},
+      "minimal_quote": "And the kit is £161 at Amazon at the time of writing this script."
+    },
+    {
+      "anchor_id": "kg-kd5agua80-60e400s-2023-03-01",
+      "published_at": "2023-03-01T14:00:19+00:00",
+      "source": {"publisher": "KitGuru", "url": "https://www.kitguru.net/components/memory/luke-hill/ddr5-round-up-crucial-g-skill-kingston-klevv-tested/all/1/", "http_status": 200, "response_bytes": 187688, "response_sha256": "d7b69e3ece3a90d3f7f04c831d3f55941afdc6ececd0865c7908852632b710e7"},
+      "identity": {"basis": "exact_mpn", "mpn": "KD5AGUA80-60E400S", "capacity_gb": 32, "module_count": 2},
+      "price_statement": {"amount_minor": 15300, "currency": "GBP", "basis": "time_of_writing_editorial_offer_statement", "retailer": "Amazon UK", "vat_included": null, "observed_storefront_offer": false},
+      "minimal_quote": "Currently priced at £153 on offer, this puts our tested KLEVV kit only a small amount of money below the Kingston competitor."
+    },
+    {
+      "anchor_id": "kg-rg33d516gx2-7200c36b-2024-11-20",
+      "published_at": "2024-11-20T09:01:55+00:00",
+      "source": {"publisher": "KitGuru", "url": "https://www.kitguru.net/components/memory/simon-crisp/thermaltake-toughram-xg-rgb-d5-7200mt-s-32gb-review/", "http_status": 200, "response_bytes": 121617, "response_sha256": "5bdc9ff5631c5697f1883f64c45c72396a1532ee64ca1059c734ab3dc5e5db54"},
+      "identity": {"basis": "exact_mpn", "mpn": "RG33D516GX2-7200C36B", "capacity_gb": 32, "module_count": 2},
+      "price_statement": {"amount_minor": 15999, "currency": "GBP", "basis": "prospective_retail_price_statement", "retailer": null, "vat_included": null, "observed_storefront_offer": false},
+      "minimal_quote": "We test a 7200 MT/s kit that is set to retail for $199.99, or £159.99 for UK buyers."
+    }
+  ],
+  "held_leads": [
+    {"mpn": "F5-5600J2834F16GX2-TZ5NR", "reason": "exact MPN appears through linked retailer URL rather than parent-verified visible article text; separate URL-binding extract required"},
+    {"mpn": "FLABD532G6000HC38ADC01", "reason": "exact MPN appears through linked retailer URL rather than parent-verified visible article text; separate URL-binding extract required"},
+    {"mpn": "FF4D532G6400HC40BDC01", "reason": "already represented in the earlier editorial ledger; no duplicate retained"}
+  ],
+  "governance": {"source_approved": false, "methodology_approved": false, "index_eligible": false, "production_eligible": false, "publication_eligible": false, "causal_claim_approved": false}
+}

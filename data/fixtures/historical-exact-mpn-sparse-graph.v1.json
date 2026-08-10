@@ -6,7 +6,7 @@
   "region": "GB",
   "channel": "PRIMARY_RETAIL",
   "currency": "GBP",
-  "price_basis": "vat_inclusive_item_price_only_not_landed_price",
+  "price_basis": "quoted_item_price_with_per_point_vat_state_not_landed_price",
   "render_contract": {
     "mark": "point",
     "connect_points": false,
@@ -18,6 +18,8 @@
     "x_axis": "evidenced_observation_timestamp",
     "y_axis": "item_price_amount_minor",
     "seller_must_be_visible": true,
+    "vat_state_must_be_visible": true,
+    "vat_unresolved_points_must_not_be_compared_or_aggregated": true,
     "source_lineage_must_be_inspectable": true,
     "gaps_must_be_visible": true
   },
@@ -39,6 +41,7 @@
           "observed_at": "2022-08-11T08:40:20Z",
           "seller": "KingstonMemoryShop",
           "amount_minor": 48799,
+          "vat_included": true,
           "evidence_kind": "wayback_capture",
           "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
           "observation_id": "wayback-kms-kf564c32rsk2-32-2022-08-11T084020Z"
@@ -47,6 +50,7 @@
           "observed_at": "2025-06-19T06:37:21Z",
           "seller": "CCL Computers",
           "amount_minor": 11399,
+          "vat_included": true,
           "evidence_kind": "wayback_capture",
           "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T040544Z.v1.json",
           "observation_id": "wayback-ccl-kf564c32rsk2-32-2025-06-19T063721Z"
@@ -55,6 +59,7 @@
           "observed_at": "2026-08-09T23:43:37Z",
           "seller": "KingstonMemoryShop",
           "amount_minor": 62026,
+          "vat_included": true,
           "evidence_kind": "prospective_capture",
           "source_artifact": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
           "observation_id": "kms-kf564c32rsk2-32-2026-08-09t234337z"
@@ -73,6 +78,7 @@
           "observed_at": "2025-09-07T20:30:52Z",
           "seller": "CCL Computers",
           "amount_minor": 11399,
+          "vat_included": true,
           "evidence_kind": "wayback_capture",
           "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T040544Z.v1.json",
           "observation_id": "wayback-ccl-kf560c30bbek2-32-2025-09-07T203052Z"
@@ -81,6 +87,7 @@
           "observed_at": "2026-03-09T11:37:02Z",
           "seller": "KingstonMemoryShop",
           "amount_minor": 54728,
+          "vat_included": true,
           "evidence_kind": "wayback_capture",
           "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
           "observation_id": "wayback-kms-kf560c30bbek2-32-2026-03-09T113702Z"
@@ -89,6 +96,7 @@
           "observed_at": "2026-08-09T23:43:37Z",
           "seller": "KingstonMemoryShop",
           "amount_minor": 61144,
+          "vat_included": true,
           "evidence_kind": "prospective_capture",
           "source_artifact": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
           "observation_id": "kms-kf560c30bbek2-32-2026-08-09t234337z"
@@ -107,6 +115,7 @@
           "observed_at": "2026-01-10T14:56:07Z",
           "seller": "AWD-IT",
           "amount_minor": 39999,
+          "vat_included": true,
           "evidence_kind": "wayback_capture",
           "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
           "observation_id": "wayback-awdit-f5-6000j3636f16gx2-fx5-2026-01-10T145607Z"
@@ -115,6 +124,7 @@
           "observed_at": "2026-01-17T21:48:32Z",
           "seller": "AWD-IT",
           "amount_minor": 39999,
+          "vat_included": true,
           "evidence_kind": "wayback_capture",
           "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
           "observation_id": "wayback-awdit-f5-6000j3636f16gx2-fx5-2026-01-17T214832Z"
@@ -123,6 +133,7 @@
           "observed_at": "2026-08-09T23:43:37Z",
           "seller": "AWD-IT",
           "amount_minor": 46999,
+          "vat_included": true,
           "evidence_kind": "prospective_capture",
           "source_artifact": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
           "observation_id": "awdit-f5-6000j3636f16gx2-fx5-2026-08-09t234337z"
@@ -131,6 +142,87 @@
       "coverage_gaps": [
         { "after": "2026-01-10T14:56:07Z", "before": "2026-01-17T21:48:32Z", "state": "unobserved" },
         { "after": "2026-01-17T21:48:32Z", "before": "2026-08-09T23:43:37Z", "state": "unobserved" }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2B6000C36",
+      "display_name": "Corsair Vengeance 32GB DDR5-6000 CL36",
+      "points": [
+        {
+          "observed_at": "2022-07-03T17:34:38Z",
+          "seller": "Scan Computers",
+          "amount_minor": 27548,
+          "vat_included": null,
+          "evidence_kind": "wayback_capture",
+          "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T065616Z.v1.json",
+          "observation_id": "sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z"
+        },
+        {
+          "observed_at": "2023-03-15T07:59:07Z",
+          "seller": "Scan Computers",
+          "amount_minor": 13000,
+          "vat_included": null,
+          "evidence_kind": "wayback_capture",
+          "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T065616Z.v1.json",
+          "observation_id": "sf-hist-scan-cmk32gx5m2b6000c36-2023-03-15T075907Z"
+        }
+      ],
+      "coverage_gaps": [
+        { "after": "2022-07-03T17:34:38Z", "before": "2023-03-15T07:59:07Z", "state": "unobserved" }
+      ]
+    },
+    {
+      "mpn": "CT2K16G48C40U5",
+      "display_name": "Crucial 32GB DDR5-4800",
+      "points": [
+        {
+          "observed_at": "2021-11-02T17:18:37Z",
+          "seller": "Crucial UK",
+          "amount_minor": 18599,
+          "vat_included": true,
+          "evidence_kind": "wayback_capture",
+          "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T065616Z.v1.json",
+          "observation_id": "sf-hist-crucial-ct2k16g48c40u5-2021-11-02T171837Z"
+        },
+        {
+          "observed_at": "2022-10-07T19:19:21Z",
+          "seller": "Crucial UK",
+          "amount_minor": 19079,
+          "vat_included": true,
+          "evidence_kind": "wayback_capture",
+          "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T065616Z.v1.json",
+          "observation_id": "sf-hist-crucial-ct2k16g48c40u5-2022-10-07T191921Z"
+        }
+      ],
+      "coverage_gaps": [
+        { "after": "2021-11-02T17:18:37Z", "before": "2022-10-07T19:19:21Z", "state": "unobserved" }
+      ]
+    },
+    {
+      "mpn": "CT2K16G56C46U5",
+      "display_name": "Crucial 32GB DDR5-5600",
+      "points": [
+        {
+          "observed_at": "2023-01-28T07:42:17Z",
+          "seller": "Crucial UK",
+          "amount_minor": 14879,
+          "vat_included": true,
+          "evidence_kind": "wayback_capture",
+          "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T065616Z.v1.json",
+          "observation_id": "sf-hist-crucial-ct2k16g56c46u5-2023-01-28T074217Z"
+        },
+        {
+          "observed_at": "2023-08-15T14:08:13Z",
+          "seller": "Crucial UK",
+          "amount_minor": 9239,
+          "vat_included": true,
+          "evidence_kind": "wayback_capture",
+          "source_artifact": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T065616Z.v1.json",
+          "observation_id": "sf-hist-crucial-ct2k16g56c46u5-2023-08-15T140813Z"
+        }
+      ],
+      "coverage_gaps": [
+        { "after": "2023-01-28T07:42:17Z", "before": "2023-08-15T14:08:13Z", "state": "unobserved" }
       ]
     }
   ]

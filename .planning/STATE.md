@@ -85,6 +85,8 @@ See `.planning/PROJECT.md` (last updated 2026-08-09).
 - `data/fixtures/historical-exact-mpn-sparse-graph.v1.json` provides nine exact-MPN GBP item-price markers across three products. It hard-disables connecting lines, interpolation, forward fill, backcasting and cross-product/seller aggregation; every marker resolves to immutable evidence and every unobserved interval remains visible. The source/coverage matrix records that bounded 2023–2024 archive searches produced no replayable exact-MPN UK retailer captures.
 - David's private Patriot Viper Steel receipt correction remains only in the private Obsidian research note; DDR4 remains outside the public DDR5 MVP.
 - Historical-push verification at 2026-08-10T04:24Z passed 143/143 Node tests, ESLint, TypeScript, the 14-page static build, public-boundary tests, 61 governed JSON parses, `git diff --check` and disposable PostgreSQL verification.
+- Wave 2 historical acquisition at 2026-08-10T07:05Z added six parent-verified exact-MPN archived storefront observations across Corsair and Crucial, five separate editorial anchors and three held URL-only MPN leads. The sparse graph now contains 15 exact-MPN points across six products, with explicit per-point VAT state and all continuity/aggregation behaviour disabled. Focused Wave 2 tests passed 5/5; the full suite passed 146/146, lint, TypeScript, the 14-page build, public-boundary tests, 65 governed JSON parses and disposable PostgreSQL verification.
+- Detailed continuation instructions are recorded in `.planning/HANDOVER-2026-08-10.md`. The canonical collector remains enabled and is the sole prospective fetcher; no competing fetch occurred.
 
 ## Current Phase
 
