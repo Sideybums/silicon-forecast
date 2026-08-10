@@ -48,6 +48,19 @@ test("a non-GBP amount fails closed", () => {
   assert.throws(() => normaliseObservation(bad, ctx), /currency must be GBP/);
 });
 
+test("a non-UTC or variable-width timestamp fails closed, protecting chronological sorting", () => {
+  const base = {
+    observation_id: "x", observed_at: "2022-07-03T17:34:38Z",
+    product: { mpn: "M" }, price: { item_price_minor: 100, currency: "GBP", vat_included: true },
+    seller: { display_name: "S", legal_name: null },
+  };
+  const ctx = { sourceFile: "t.json", captureKind: "archive_capture" };
+  assert.equal(normaliseObservation(base, ctx).observed_at, "2022-07-03T17:34:38Z");
+  for (const bad of ["2022-07-03T17:34:38+01:00", "2022-7-3T17:34:38Z", "2022-07-03 17:34:38Z", "2022-07-03T17:34:38.500Z"]) {
+    assert.throws(() => normaliseObservation({ ...base, observed_at: bad }, ctx), /fixed-width UTC instant/, `should reject ${bad}`);
+  }
+});
+
 import { quarterIdForTimestamp, quarterBounds, quarterRange } from "../lib/historical-observed-price-envelope.mjs";
 
 test("timestamps bucket into UTC calendar quarters", () => {

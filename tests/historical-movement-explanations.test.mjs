@@ -75,3 +75,26 @@ test("an unresolved VAT state at either end requires disclosure", () => {
 test("a single observation for an MPN yields no movement", () => {
   assert.deepEqual(deriveHistoricalMovements([obs("a", "2024-01-01T00:00:00Z", "X", "Box", 100, true)]), []);
 });
+
+test("the widest within-seller pair wins when several sellers qualify", () => {
+  const [movement] = deriveHistoricalMovements([
+    obs("n1", "2023-01-01T00:00:00Z", "M", "Narrow Seller", 1000, true),
+    obs("n2", "2023-02-01T00:00:00Z", "M", "Narrow Seller", 1100, true),
+    obs("w1", "2022-01-01T00:00:00Z", "M", "Wide Seller", 2000, true),
+    obs("w2", "2024-01-01T00:00:00Z", "M", "Wide Seller", 2500, true),
+  ]);
+  assert.equal(movement.comparison_basis, "within_seller");
+  assert.equal(movement.from.observation_id, "w1");
+  assert.equal(movement.to.observation_id, "w2");
+});
+
+test("one seller with a pair beats other sellers holding single observations", () => {
+  const [movement] = deriveHistoricalMovements([
+    obs("a1", "2023-01-01T00:00:00Z", "M", "Paired Seller", 1000, true),
+    obs("a2", "2023-06-01T00:00:00Z", "M", "Paired Seller", 1200, true),
+    obs("b1", "2021-01-01T00:00:00Z", "M", "Lone Seller", 5000, true),
+  ]);
+  assert.equal(movement.comparison_basis, "within_seller");
+  assert.equal(movement.from.seller, "Paired Seller");
+  assert.equal(movement.to.seller, "Paired Seller");
+});
