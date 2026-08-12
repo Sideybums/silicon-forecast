@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "ledger_id": "sf-canonical-collector-run-ledger-v1",
+  "status": "candidate_private_immutable",
+  "policy": "Append-only. Every attempted run is recorded whether it succeeded or not, and every scheduled slot that passed without a run is recorded as an unobserved gap for the operator to review after the fact. Entries are never edited or removed; corrections are additive.",
+  "acknowledgement_rule": "operator_acknowledged marks that a human has seen and accepted a gap. It never creates, infers or backfills an observation for the missed day, and a gap remains a gap in every derived series whether acknowledged or not.",
+  "schedule": {
+    "hour": 13,
+    "minute": 45,
+    "cadence": "daily"
+  },
+  "runs": [
+    {
+      "run_id": "sf-collection-run-20260809T122554Z",
+      "collector_version": null,
+      "started_at": "2026-08-09T12:25:54Z",
+      "completed_at": "2026-08-09T12:25:54Z",
+      "outcome": "completed",
+      "performed_by": "orchestrated_session_before_scheduled_collector_existed",
+      "targets_attempted": 3,
+      "observations_retained": 3,
+      "abstentions": 0,
+      "abstention_reasons": {},
+      "tranche_file": "data/observations/candidate/uk-primary-retail-2026-08-09T122437Z.v1.json",
+      "evidence_ledger": null,
+      "reconstructed": true,
+      "reconstruction_note": "Recorded retrospectively from the tranche this run produced. Attempt counts reflect retained observations only; what else may have been tried is not recoverable."
+    },
+    {
+      "run_id": "sf-collection-run-20260809T234337Z",
+      "collector_version": null,
+      "started_at": "2026-08-09T23:43:37Z",
+      "completed_at": "2026-08-09T23:43:37Z",
+      "outcome": "completed",
+      "performed_by": "orchestrated_session_before_scheduled_collector_existed",
+      "targets_attempted": 3,
+      "observations_retained": 3,
+      "abstentions": 0,
+      "abstention_reasons": {},
+      "tranche_file": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
+      "evidence_ledger": null,
+      "reconstructed": true,
+      "reconstruction_note": "Recorded retrospectively from the tranche this run produced. Attempt counts reflect retained observations only; what else may have been tried is not recoverable."
+    },
+    {
+      "run_id": "sf-collection-run-20260810T165537Z",
+      "collector_version": null,
+      "started_at": "2026-08-10T16:55:37Z",
+      "completed_at": "2026-08-10T16:55:37Z",
+      "outcome": "completed",
+      "performed_by": "orchestrated_session_before_scheduled_collector_existed",
+      "targets_attempted": 3,
+      "observations_retained": 3,
+      "abstentions": 0,
+      "abstention_reasons": {},
+      "tranche_file": "data/observations/candidate/uk-primary-retail-2026-08-10T165537Z.v1.json",
+      "evidence_ledger": null,
+      "reconstructed": true,
+      "reconstruction_note": "Recorded retrospectively from the tranche this run produced. Attempt counts reflect retained observations only; what else may have been tried is not recoverable."
+    },
+    {
+      "run_id": "sf-collection-run-20260812T114904Z",
+      "collector_version": 1,
+      "started_at": "2026-08-12T11:49:04Z",
+      "completed_at": "2026-08-12T11:49:31Z",
+      "outcome": "completed",
+      "targets_attempted": 8,
+      "observations_retained": 4,
+      "abstentions": 4,
+      "abstention_reasons": {
+        "CAPACITY_NOT_VISIBLE": 1,
+        "HTTP_403": 3
+      },
+      "tranche_file": "data/observations/candidate/uk-primary-retail-20260812T114904Z.v1.json",
+      "evidence_ledger": "research/evidence/primary-retail-20260812T114904Z/ledger.v1.json"
+    }
+  ],
+  "missed_slots": [
+    {
+      "scheduled_for": "2026-08-11T13:45:00",
+      "state": "unobserved_no_run",
+      "detected_at": "2026-08-12T11:48:20Z",
+      "detected_by_run": "sf-collection-run-ledger-seed",
+      "operator_acknowledged": false,
+      "note": "No collection run occurred at this scheduled slot. No observation exists for it and none may be inferred; the gap is recorded so it can be reviewed rather than passing unnoticed."
+    }
+  ]
+}

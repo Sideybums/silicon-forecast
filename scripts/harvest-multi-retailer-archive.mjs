@@ -49,11 +49,14 @@ function poundsToMinor(text) {
 
 // Kit shape must be stated in the page's own visible text.
 function kitShapeFrom(text, out) {
-  // Retailers word this as "32GB (2x16GB)" but also "32GB Kit (2 x 16GB)", so a
-  // short run of plain words is tolerated between the two figures. Digits and
-  // brackets are excluded from that gap so the match cannot straddle a
-  // neighbouring product's capacity.
-  if (/\b32\s*GB\b[^()\d]{0,12}\(?\s*2\s*x\s*16\s*GB\s*\)?/i.test(text)) {
+  // Retailers word this as "32GB (2x16GB)", "32GB Kit (2 x 16GB)" and — AWD-IT
+  // and KingstonMemoryShop among them — with the factors reversed as
+  // "32GB (16GB x2)". Both orderings must be accepted: requiring only the first
+  // silently rejected live AWD-IT pages that state the kit shape perfectly
+  // clearly. A short run of plain words is tolerated between the two figures,
+  // with digits and brackets excluded from that gap so the match cannot
+  // straddle a neighbouring product's capacity.
+  if (/\b32\s*GB\b[^()\d]{0,12}\(?\s*(?:2\s*x\s*16\s*GB|16\s*GB\s*x\s*2)\s*\)?/i.test(text)) {
     out.capacity_gb = 32;
     out.module_count = 2;
   } else out.reasons.push("CAPACITY_NOT_VISIBLE");

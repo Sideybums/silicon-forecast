@@ -33,3 +33,4 @@ data/private-worker-runs/
 # IDE
 .vscode/
 .idea/
+logs/

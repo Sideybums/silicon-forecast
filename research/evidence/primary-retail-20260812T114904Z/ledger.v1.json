@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "ledger_id": "sf-primary-retail-20260812T114904Z-v1",
+  "status": "candidate_private_immutable",
+  "created_at": "2026-08-12T11:49:04Z",
+  "run_id": "sf-collection-run-20260812T114904Z",
+  "entry_count": 4,
+  "entries": [
+    {
+      "evidence_id": "sf-collect-evidence-kf560c30bbek2-32-kingstonmemoryshop-20260812T114904Z",
+      "seller_display_name": "KingstonMemoryShop",
+      "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-beast-kf560c30bbek2-32-32gb-16gb-x2-ddr5-6000mt-s-black-memory-dimm-expo",
+      "final_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-beast-kf560c30bbek2-32-32gb-16gb-x2-ddr5-6000mt-s-black-memory-dimm-expo",
+      "retrieved_at": "2026-08-12T11:49:04Z",
+      "http_status": 200,
+      "response_bytes": 620190,
+      "response_sha256": "94ea7e7a1956ad5220166d760e6277f8196ff97cb5d4bf0ba956fdcc622fcd99",
+      "response_bytes_retained": false,
+      "retention_note": "Fetched response bytes are not retained; only this minimal factual extract, the response byte count and the response SHA-256 are kept.",
+      "vat_determination": "labelled_inc_vat_within_offer_scope",
+      "facts": {
+        "mpn": "KF560C30BBEK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 60690,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "32GB (16GB x2) Kingston FURY Beast KF560C30BBEK2-32 DDR5 6000MT/s Memory DIMM - Black — GBP 606.90"
+    },
+    {
+      "evidence_id": "sf-collect-evidence-kf564c32rsk2-32-kingstonmemoryshop-20260812T114904Z",
+      "seller_display_name": "KingstonMemoryShop",
+      "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm",
+      "final_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm",
+      "retrieved_at": "2026-08-12T11:49:04Z",
+      "http_status": 200,
+      "response_bytes": 619852,
+      "response_sha256": "4d5cb00e7fa0c744959663e002141036ed6e0d040bb7692fa76e416a3ffd733c",
+      "response_bytes_retained": false,
+      "retention_note": "Fetched response bytes are not retained; only this minimal factual extract, the response byte count and the response SHA-256 are kept.",
+      "vat_determination": "labelled_inc_vat_within_offer_scope",
+      "facts": {
+        "mpn": "KF564C32RSK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 61566,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "32GB (16GB x2) Kingston FURY Renegade KF564C32RSK2-32 DDR5 6400MT/s Memory DIMM - Silver/Black — GBP 615.66"
+    },
+    {
+      "evidence_id": "sf-collect-evidence-cmh32gx5m2b5600c40k-awdit-20260812T114904Z",
+      "seller_display_name": "AWD-IT",
+      "source_url": "https://www.awd-it.co.uk/corsair-vengeance-rgb-32gb-2x16gb-ddr5-ram-5600mhz-c40-memory-kit-black-cmh32gx5m2b5600c40k.html",
+      "final_url": "https://www.awd-it.co.uk/corsair-vengeance-rgb-32gb-2x16gb-ddr5-ram-5600mhz-c40-memory-kit-black-cmh32gx5m2b5600c40k.html",
+      "retrieved_at": "2026-08-12T11:49:04Z",
+      "http_status": 200,
+      "response_bytes": 426468,
+      "response_sha256": "5edf662c6f4bab603ef4825602c195dd3f3d62744f827eefa5c4d0ca4e6c07cd",
+      "response_bytes_retained": false,
+      "retention_note": "Fetched response bytes are not retained; only this minimal factual extract, the response byte count and the response SHA-256 are kept.",
+      "vat_determination": "inclusive_exclusive_pair_reconciled",
+      "facts": {
+        "mpn": "CMH32GX5M2B5600C40K",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 45099,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Corsair Vengeance RGB 32GB (2x16GB) DDR5 RAM 5600MHz C40 Memory Kit - Black - CMH32GX5M2B5600C40K — GBP 450.99"
+    },
+    {
+      "evidence_id": "sf-collect-evidence-cmh32gx5m2e6000c36w-awdit-20260812T114904Z",
+      "seller_display_name": "AWD-IT",
+      "source_url": "https://www.awd-it.co.uk/corsair-vengeance-rgb-32gb-2x16gb-ddr5-ram-6000mhz-c36-white-cmh32gx5m2e6000c36w.html",
+      "final_url": "https://www.awd-it.co.uk/corsair-vengeance-rgb-32gb-2x16gb-ddr5-ram-6000mhz-c36-white-cmh32gx5m2e6000c36w.html",
+      "retrieved_at": "2026-08-12T11:49:04Z",
+      "http_status": 200,
+      "response_bytes": 400957,
+      "response_sha256": "954e8211a1de759a68385cf31b5ef37d1fc94fe950f8f9d24ab5d2cdf085d6de",
+      "response_bytes_retained": false,
+      "retention_note": "Fetched response bytes are not retained; only this minimal factual extract, the response byte count and the response SHA-256 are kept.",
+      "vat_determination": "inclusive_exclusive_pair_reconciled",
+      "facts": {
+        "mpn": "CMH32GX5M2E6000C36W",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 41999,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Corsair Vengeance RGB 32GB (2x16GB) DDR5 RAM 6000MHz C36 White - CMH32GX5M2E6000C36W — GBP 419.99"
+    }
+  ],
+  "authority": {
+    "source_approved": false,
+    "methodology_approved": false,
+    "index_eligible": false,
+    "publication_eligible": false
+  }
+}
