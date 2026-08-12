@@ -1,0 +1,169 @@
+{
+  "index_version": 1,
+  "parameters": {
+    "frequency": "quarterly",
+    "formula": "jevons_geometric_mean_of_price_relatives",
+    "minimum_matched_products_per_link": 10,
+    "reference_period": "2024Q1",
+    "reference_value": 100,
+    "weighting": "unweighted_equal_product_weight",
+    "weighting_basis": "No expenditure, volume or market-share data exists for any observed retailer, so no weighted formula is available. Every matched product contributes equally, and that must be stated wherever the index is shown rather than left implicit.",
+    "gap_policy": "stop_chain",
+    "gap_policy_basis": "A link resting on fewer than the required matched products is not computed, and the chain stops rather than bridging across the gap. Bridging would silently compare two non-adjacent periods as though they were consecutive, which is exactly the composition effect this index exists to exclude.",
+    "selected_by": "operator",
+    "approved": false
+  },
+  "coverage": {
+    "first_period": "2023Q4",
+    "last_period": "2026Q2",
+    "observed_period_count": 11,
+    "periods_with_evidence_outside_chain": 9,
+    "total_periods_with_observations": 20
+  },
+  "periods": [
+    {
+      "period_id": "2023Q3",
+      "state": "insufficient_matched_evidence",
+      "index_value": null,
+      "link": null,
+      "matched_product_count": 3,
+      "relative_min": 0.8823,
+      "relative_median": 1,
+      "relative_max": 1.1463,
+      "distinct_products_in_period": 11
+    },
+    {
+      "period_id": "2023Q4",
+      "state": "observed",
+      "index_value": 103.568,
+      "link": null,
+      "matched_product_count": 27,
+      "relative_min": 0.7667,
+      "relative_median": 0.9738,
+      "relative_max": 1.0294,
+      "distinct_products_in_period": 55
+    },
+    {
+      "period_id": "2024Q1",
+      "state": "observed",
+      "index_value": 100,
+      "link": null,
+      "matched_product_count": null,
+      "relative_min": null,
+      "relative_median": null,
+      "relative_max": null,
+      "distinct_products_in_period": 86,
+      "reference_period": true
+    },
+    {
+      "period_id": "2024Q2",
+      "state": "observed",
+      "index_value": 101.91,
+      "link": 1.0191,
+      "matched_product_count": 26,
+      "relative_min": 0.9,
+      "relative_median": 1,
+      "relative_max": 1.2963,
+      "distinct_products_in_period": 57
+    },
+    {
+      "period_id": "2024Q3",
+      "state": "observed",
+      "index_value": 95.54,
+      "link": 0.9375,
+      "matched_product_count": 12,
+      "relative_min": 0.8451,
+      "relative_median": 0.9365,
+      "relative_max": 1.0679,
+      "distinct_products_in_period": 55
+    },
+    {
+      "period_id": "2024Q4",
+      "state": "observed",
+      "index_value": 89.619,
+      "link": 0.938,
+      "matched_product_count": 37,
+      "relative_min": 0.3158,
+      "relative_median": 0.978,
+      "relative_max": 1.0889,
+      "distinct_products_in_period": 127
+    },
+    {
+      "period_id": "2025Q1",
+      "state": "observed",
+      "index_value": 89.182,
+      "link": 0.9951,
+      "matched_product_count": 80,
+      "relative_min": 0.8333,
+      "relative_median": 1,
+      "relative_max": 1.3752,
+      "distinct_products_in_period": 129
+    },
+    {
+      "period_id": "2025Q2",
+      "state": "observed",
+      "index_value": 85.67,
+      "link": 0.9606,
+      "matched_product_count": 64,
+      "relative_min": 0.6827,
+      "relative_median": 0.9704,
+      "relative_max": 1.2638,
+      "distinct_products_in_period": 106
+    },
+    {
+      "period_id": "2025Q3",
+      "state": "observed",
+      "index_value": 88.342,
+      "link": 1.0312,
+      "matched_product_count": 52,
+      "relative_min": 0.6968,
+      "relative_median": 1.0268,
+      "relative_max": 1.3895,
+      "distinct_products_in_period": 82
+    },
+    {
+      "period_id": "2025Q4",
+      "state": "observed",
+      "index_value": 203.567,
+      "link": 2.3043,
+      "matched_product_count": 47,
+      "relative_min": 1,
+      "relative_median": 2.5963,
+      "relative_max": 4.1934,
+      "distinct_products_in_period": 87
+    },
+    {
+      "period_id": "2026Q1",
+      "state": "observed",
+      "index_value": 334.833,
+      "link": 1.6448,
+      "matched_product_count": 35,
+      "relative_min": 1.0377,
+      "relative_median": 1.4251,
+      "relative_max": 3.4422,
+      "distinct_products_in_period": 59
+    },
+    {
+      "period_id": "2026Q2",
+      "state": "observed",
+      "index_value": 335.221,
+      "link": 1.0012,
+      "matched_product_count": 20,
+      "relative_min": 0.7889,
+      "relative_median": 1.0174,
+      "relative_max": 1.1745,
+      "distinct_products_in_period": 34
+    },
+    {
+      "period_id": "2026Q3",
+      "state": "insufficient_matched_evidence",
+      "index_value": null,
+      "link": null,
+      "matched_product_count": 2,
+      "relative_min": 1.0166,
+      "relative_median": 1.065,
+      "relative_max": 1.065,
+      "distinct_products_in_period": 7
+    }
+  ]
+}
