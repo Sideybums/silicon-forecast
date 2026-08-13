@@ -34,7 +34,10 @@ for (const f of readdirSync(candidateDir).filter((x) => /^uk-primary-retail-\d/u
 
 const lastRun = ledger.runs.at(-1) ?? null;
 const blocked = Object.entries(lastRun?.abstention_reasons ?? {}).filter(([k]) => /^HTTP_4\d\d$/u.test(k));
-const openGaps = ledger.missed_slots.filter((m) => !m.operator_acknowledged);
+// Acknowledgement is derived from the appended records, which are the
+// authority; the boolean on each slot is only a cached view of them.
+const acknowledged = new Map((ledger.acknowledgements ?? []).map((a) => [a.scheduled_for, a]));
+const openGaps = ledger.missed_slots.filter((m) => !acknowledged.has(m.scheduled_for));
 
 const esc = (s) => String(s).replace(/[&<>"]/gu, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 const when = (iso) => (iso ? `${iso.slice(0, 10)} ${iso.slice(11, 16)}` : "—");
@@ -59,11 +62,15 @@ const gapRows = ledger.missed_slots.length
       .slice()
       .reverse()
       .map(
-        (m) => `<tr class="${m.operator_acknowledged ? "" : "open"}">
+        (m) => `<tr class="${acknowledged.has(m.scheduled_for) ? "" : "open"}">
         <td class="mono">${esc(m.scheduled_for.replace("T", " ").slice(0, 16))}</td>
         <td>${esc(m.state)}</td>
         <td class="mono">${when(m.detected_at)}</td>
-        <td>${m.operator_acknowledged ? "<span class='pill ok'>acknowledged</span>" : "<span class='pill warn'>awaiting you</span>"}</td>
+        <td>${
+          acknowledged.has(m.scheduled_for)
+            ? `<span class='pill ok'>acknowledged</span> <span class="muted">${esc(acknowledged.get(m.scheduled_for).acknowledged_by)}, ${acknowledged.get(m.scheduled_for).acknowledged_at.slice(0, 10)}</span>`
+            : "<span class='pill warn'>awaiting you</span>"
+        }</td>
       </tr>`,
       )
       .join("")
@@ -142,8 +149,8 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule2);color:
 
 ${
   openGaps.length
-    ? `<div class="notice"><strong>Days with no observation</strong><p>${openGaps.length} scheduled ${openGaps.length === 1 ? "day" : "days"} passed with no collection run. Nothing was observed on ${openGaps.length === 1 ? "that day" : "those days"} and nothing may be inferred for ${openGaps.length === 1 ? "it" : "them"} — acknowledging a gap records that you have seen it, and never creates or backfills a price. Mark one acknowledged by setting <code>operator_acknowledged</code> to true in <code>data/collection-runs/ledger.v1.json</code>.</p></div>`
-    : `<div class="notice info"><strong>No open gaps</strong><p>Every scheduled slot since the first recorded run has been served.</p></div>`
+    ? `<div class="notice"><strong>Days with no observation</strong><p>${openGaps.length} scheduled ${openGaps.length === 1 ? "day" : "days"} passed with no collection run. Nothing was observed on ${openGaps.length === 1 ? "that day" : "those days"} and nothing may be inferred for ${openGaps.length === 1 ? "it" : "them"} — acknowledging a gap records that you have seen it, and never creates or backfills a price. Acknowledge one with <code>node scripts/acknowledge-collection-gap.mjs --slot &lt;scheduled_for&gt;</code>, which appends a record of who accepted it and when. The ledger is append-only, so acknowledgement is added rather than toggled.</p></div>`
+    : `<div class="notice info"><strong>No open gaps</strong><p>${ledger.missed_slots.length ? `Every recorded gap has been acknowledged. ${ledger.missed_slots.length} unobserved slot${ledger.missed_slots.length === 1 ? " remains a gap" : "s remain gaps"} in the data — acknowledgement records review, it never fills them.` : "Every scheduled slot since the first recorded run has been served."}</p></div>`
 }
 
 <h2>Scheduled days with no run</h2>

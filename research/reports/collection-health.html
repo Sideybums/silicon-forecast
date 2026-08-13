@@ -49,18 +49,18 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule2);color:
 <div class="cards">
   <div><span>Last run</span><strong>2026-08-13</strong><em>0 observations</em></div>
   <div><span>Runs recorded</span><strong>6</strong><em>schedule 13:45 daily</em></div>
-  <div class="alert"><span>Gaps awaiting you</span><strong>1</strong><em>1 recorded in total</em></div>
+  <div class=""><span>Gaps awaiting you</span><strong>0</strong><em>1 recorded in total</em></div>
   <div><span>Targets</span><strong>416</strong><em>242 products, 6 retailers</em></div>
 </div>
 
-<div class="notice"><strong>Days with no observation</strong><p>1 scheduled day passed with no collection run. Nothing was observed on that day and nothing may be inferred for it — acknowledging a gap records that you have seen it, and never creates or backfills a price. Mark one acknowledged by setting <code>operator_acknowledged</code> to true in <code>data/collection-runs/ledger.v1.json</code>.</p></div>
+<div class="notice info"><strong>No open gaps</strong><p>Every recorded gap has been acknowledged. 1 unobserved slot remains a gap in the data — acknowledgement records review, it never fills them.</p></div>
 
 <h2>Scheduled days with no run</h2>
-<table><thead><tr><th>Scheduled for</th><th>State</th><th>Detected</th><th>Review</th></tr></thead><tbody><tr class="open">
+<table><thead><tr><th>Scheduled for</th><th>State</th><th>Detected</th><th>Review</th></tr></thead><tbody><tr class="">
         <td class="mono">2026-08-11 13:45</td>
         <td>unobserved_no_run</td>
         <td class="mono">2026-08-12 11:48</td>
-        <td><span class='pill warn'>awaiting you</span></td>
+        <td><span class='pill ok'>acknowledged</span> <span class="muted">David Sidebottom, 2026-08-13</span></td>
       </tr></tbody></table>
 
 <h2>Retailer reachability</h2>
