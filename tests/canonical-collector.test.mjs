@@ -234,3 +234,102 @@ test("both orderings of the kit shape are recognised", async () => {
   const wrong = extractAwdit(page("G.SKILL FLARE X5 64GB (16GB x4) DDR5 6000MT/s CL36 - F5-6000J3636F16GX2-FX5"), url);
   assert.ok(wrong.reasons.includes("CAPACITY_NOT_VISIBLE"));
 });
+
+// --- established kit shape --------------------------------------------------
+
+const SCAN_NO_SHAPE = `
+<h1 itemprop="name">CORSAIR Vengeance Black 32GB 6000MHz DDR5 Memory Kit</h1>
+<span itemprop="mpn">CMK32GX5M2B6000C36</span> Manufacturer code: CMK32GX5M2B6000C36
+<span itemprop="price" content="523.99"></span>
+<a data-action="vatToggle" data-exvat="false">inc VAT</a>
+<div>In stock</div>`;
+
+const shapes = () =>
+  new Map([["CMK32GX5M2B6000C36", { capacity_gb: 32, module_count: 2, established_by: "sf-hist-scan-x-2023" }]]);
+
+test("a shape established for the MPN rescues a page that no longer states it", async () => {
+  // Scan's live template dropped the module count. Without carry-forward every
+  // Scan target abstains forever despite Scan being the largest source.
+  const r = await collectTarget(
+    { mpn: "CMK32GX5M2B6000C36", seller_display_name: "Scan Computers", url: "https://www.scan.co.uk/products/x" },
+    { fetchImpl: async () => reply(SCAN_NO_SHAPE), robotsFor: async () => "", establishedShapes: shapes() },
+  );
+  assert.equal(r.usable, true);
+  assert.equal(r.capacity_gb, 32);
+  assert.equal(r.capacity_basis, "established_for_mpn_from_prior_evidence");
+  assert.equal(r.capacity_basis_reference, "sf-hist-scan-x-2023");
+  // The waiver stays auditable rather than vanishing.
+  assert.ok(r.shape_reasons_waived.includes("CAPACITY_NOT_VISIBLE"));
+});
+
+test("a page that states the shape itself is recorded as having done so", async () => {
+  const withShape = SCAN_NO_SHAPE.replace(
+    "<h1 itemprop=\"name\">CORSAIR Vengeance Black 32GB",
+    "<h2 itemprop=\"description\">32GB (2x16GB) CORSAIR DDR5 Vengeance</h2><h1 itemprop=\"name\">CORSAIR Vengeance Black 32GB",
+  );
+  const r = await collectTarget(
+    { mpn: "CMK32GX5M2B6000C36", seller_display_name: "Scan Computers", url: "https://www.scan.co.uk/products/x" },
+    { fetchImpl: async () => reply(withShape), robotsFor: async () => "", establishedShapes: shapes() },
+  );
+  assert.equal(r.capacity_basis, "visible_on_page");
+  assert.equal(r.shape_reasons_waived, undefined);
+});
+
+test("an MPN with no established shape still abstains", async () => {
+  const r = await collectTarget(
+    { mpn: "CMK32GX5M2B6000C36", seller_display_name: "Scan Computers", url: "https://www.scan.co.uk/products/x" },
+    { fetchImpl: async () => reply(SCAN_NO_SHAPE), robotsFor: async () => "", establishedShapes: new Map() },
+  );
+  assert.equal(r.usable, false);
+  assert.ok(r.reasons.includes("CAPACITY_NOT_VISIBLE"));
+  assert.equal(r.capacity_basis, null);
+});
+
+test("a moved URL cannot inherit the shape of the product that used to be there", async () => {
+  // Identity is checked before any carry-forward, so a re-slugged page serving
+  // a different product can never borrow the target's established shape.
+  const r = await collectTarget(
+    { mpn: "SOME-OTHER-MPN-32", seller_display_name: "Scan Computers", url: "https://www.scan.co.uk/products/x" },
+    { fetchImpl: async () => reply(SCAN_NO_SHAPE), robotsFor: async () => "", establishedShapes: shapes() },
+  );
+  assert.equal(r.usable, false);
+  assert.ok(r.reasons.includes("MPN_MISMATCH_URL_MAY_HAVE_MOVED"));
+  assert.equal(r.capacity_basis, null);
+});
+
+test("the waiver never rescues a page with a different problem", async () => {
+  // Only the two shape reasons may be waived. A missing price must still fail.
+  const noPrice = SCAN_NO_SHAPE.replace('<span itemprop="price" content="523.99"></span>', "");
+  const r = await collectTarget(
+    { mpn: "CMK32GX5M2B6000C36", seller_display_name: "Scan Computers", url: "https://www.scan.co.uk/products/x" },
+    { fetchImpl: async () => reply(noPrice), robotsFor: async () => "", establishedShapes: shapes() },
+  );
+  assert.equal(r.usable, false);
+  assert.ok(r.reasons.includes("PRICE_NOT_VISIBLE"), `reasons were ${JSON.stringify(r.reasons)}`);
+  assert.equal(r.capacity_basis, null, "shape must not be carried forward past an unrelated failure");
+});
+
+test("only evidence that saw the shape on the page may establish it", async () => {
+  const { buildEstablishedKitShapes } = await import("../lib/canonical-collector.mjs");
+  const shapeMap = buildEstablishedKitShapes([
+    {
+      observations: [
+        {
+          observation_id: "seen",
+          observed_at: "2023-01-01T00:00:00Z",
+          product: { mpn: "SEEN-32", capacity_gb: 32, module_count: 2 },
+          eligibility: { capacity_basis: "visible_on_page" },
+        },
+        {
+          observation_id: "inherited",
+          observed_at: "2023-01-01T00:00:00Z",
+          product: { mpn: "INHERITED-32", capacity_gb: 32, module_count: 2 },
+          // Already carried forward once; must not become a source of truth.
+          eligibility: { capacity_basis: "established_from_sibling_capture" },
+        },
+      ],
+    },
+  ]);
+  assert.ok(shapeMap.has("SEEN-32"));
+  assert.ok(!shapeMap.has("INHERITED-32"), "a carried-forward shape must not re-establish itself");
+});

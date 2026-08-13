@@ -46,14 +46,27 @@ for (const o of load(activeTranche).observations) {
 
 // 2. Archive-derived targets. Each URL was carrying the stated MPN at the
 //    stated retailer when the Internet Archive captured it.
-const ledger = load("research/evidence/historical-primary-retail-multi-retailer-2026-08-11/ledger.v1.json");
+//
+//    Both archive ledgers are read. An earlier version of this script used only
+//    the multi-retailer ledger and therefore omitted Scan Computers entirely —
+//    the single largest source in the project at 604 captures over 96 MPNs.
+//    Scan's ledger predates the seller_display_name field, so its seller is
+//    supplied here rather than read from the entry.
 const SOURCE_KEYS = {
   "CCL Online": "ccl-uk-public-page",
   "AWD-IT": "awd-it-uk-public-page",
   Novatech: "novatech-uk-public-page",
   "Overclockers UK": "ocuk-uk-public-page",
+  "Scan Computers": "scan-uk-public-page",
 };
-for (const e of ledger.entries) {
+const archiveEntries = [
+  ...load("research/evidence/historical-primary-retail-multi-retailer-2026-08-11/ledger.v1.json").entries,
+  ...load("research/evidence/historical-primary-retail-scan-depth-2026-08-10/ledger.v1.json").entries.map((e) => ({
+    ...e,
+    seller_display_name: "Scan Computers",
+  })),
+];
+for (const e of archiveEntries) {
   const k = key(e.facts.mpn, e.seller_display_name);
   const existing = targets.get(k);
   if (existing?.provenance === "active_collection") continue;

@@ -73,6 +73,22 @@
       },
       "tranche_file": "data/observations/candidate/uk-primary-retail-20260812T114904Z.v1.json",
       "evidence_ledger": "research/evidence/primary-retail-20260812T114904Z/ledger.v1.json"
+    },
+    {
+      "run_id": "sf-collection-run-20260812T124505Z",
+      "collector_version": 1,
+      "started_at": "2026-08-12T12:45:05Z",
+      "completed_at": "2026-08-12T12:47:20Z",
+      "outcome": "completed",
+      "targets_attempted": 45,
+      "observations_retained": 17,
+      "abstentions": 28,
+      "abstention_reasons": {
+        "HTTP_403": 22,
+        "MPN_NOT_VISIBLE": 6
+      },
+      "tranche_file": "data/observations/candidate/uk-primary-retail-20260812T124505Z.v1.json",
+      "evidence_ledger": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json"
     }
   ],
   "missed_slots": [

@@ -1,0 +1,775 @@
+{
+  "schema_version": 1,
+  "tranche_id": "sf-gb-primary-retail-20260812T124505Z-v1",
+  "status": "candidate_private_immutable",
+  "scope": "candidate_only",
+  "region": "GB",
+  "channel": "PRIMARY_RETAIL",
+  "created_at": "2026-08-12T12:45:05Z",
+  "observation_count": 17,
+  "evidence_ledger": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+  "immutability_policy": "Append-only candidate observation tranche; do not edit in place. Corrections require a new additive artifact.",
+  "capture_basis": {
+    "observed_at_semantics": "Time of retrieval by the canonical collector; the retailer's own price-change time is not observed.",
+    "acquisition_method": "Scheduled unattended retrieval of exact-MPN product pages listed in data/catalogue/collection-targets.v1.json. One request at a time with a delay between requests, an identifying user-agent, and robots.txt honoured per host.",
+    "run_id": "sf-collection-run-20260812T124505Z"
+  },
+  "observations": [
+    {
+      "observation_id": "sf-collect-awdit-f5-6000j3636f16gx2-fx5-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "F5-6000J3636F16GX2-FX5",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "display_name": "AWD-IT public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-f5-6000j3636f16gx2-fx5-awdit-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 46999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "stated_at_capture",
+        "raw_text": "Out of stock"
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-collect-kingstonmemoryshop-kf560c30bbek2-32-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "KF560C30BBEK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "kingstonmemoryshop-uk-public-page",
+        "display_name": "KingstonMemoryShop public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-kf560c30bbek2-32-kingstonmemoryshop-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "KingstonMemoryShop",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 60690,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "stated_at_capture",
+        "raw_text": "In stock"
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-collect-kingstonmemoryshop-kf564c32rsk2-32-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "KF564C32RSK2-32",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "kingstonmemoryshop-uk-public-page",
+        "display_name": "KingstonMemoryShop public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-kf564c32rsk2-32-kingstonmemoryshop-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "KingstonMemoryShop",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 61566,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "stated_at_capture",
+        "raw_text": "In stock"
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-collect-awdit-cmh32gx5m2b5600c40k-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "CMH32GX5M2B5600C40K",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "display_name": "AWD-IT public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-cmh32gx5m2b5600c40k-awdit-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 45099,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "stated_at_capture",
+        "raw_text": "Out of stock"
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-collect-awdit-cmh32gx5m2e6000c36w-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "CMH32GX5M2E6000C36W",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "display_name": "AWD-IT public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-cmh32gx5m2e6000c36w-awdit-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 41999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "stated_at_capture",
+        "raw_text": "Out of stock"
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-collect-awdit-cmk32gx5m2e6000c36-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "CMK32GX5M2E6000C36",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "display_name": "AWD-IT public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-cmk32gx5m2e6000c36-awdit-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 43999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "stated_at_capture",
+        "raw_text": "Out of stock"
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-collect-novatech-cmk32gx5m2e6000z36-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "CMK32GX5M2E6000Z36",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "novatech-uk-public-page",
+        "display_name": "Novatech public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-cmk32gx5m2e6000z36-novatech-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "Novatech",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 33998,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-collect-awdit-cp2k16g60c36u5w-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "CP2K16G60C36U5W",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "display_name": "AWD-IT public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-cp2k16g60c36u5w-awdit-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 37499,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "stated_at_capture",
+        "raw_text": "Out of stock"
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-collect-awdit-cp2k16g64c38u5w-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "CP2K16G64C38U5W",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "display_name": "AWD-IT public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-cp2k16g64c38u5w-awdit-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 35999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "stated_at_capture",
+        "raw_text": "Out of stock"
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-collect-awdit-ff3d532g6000hc38adc01-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "FF3D532G6000HC38ADC01",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "display_name": "AWD-IT public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-ff3d532g6000hc38adc01-awdit-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 53499,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "stated_at_capture",
+        "raw_text": "Out of stock"
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-collect-awdit-ax5u6400c3216g-dclarbk-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "AX5U6400C3216G-DCLARBK",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "display_name": "AWD-IT public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-ax5u6400c3216g-dclarbk-awdit-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 58599,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "stated_at_capture",
+        "raw_text": "Out of stock"
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-collect-awdit-ax5u6400c3216g-dtlabbk-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "AX5U6400C3216G-DTLABBK",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "display_name": "AWD-IT public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-ax5u6400c3216g-dtlabbk-awdit-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 55499,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "stated_at_capture",
+        "raw_text": "Out of stock"
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-collect-awdit-cmh32gx5m2e6200c36-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "CMH32GX5M2E6200C36",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "display_name": "AWD-IT public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-cmh32gx5m2e6200c36-awdit-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 49599,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "stated_at_capture",
+        "raw_text": "Out of stock"
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-collect-novatech-f5-5600j3636c16gx2-tz5rk-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "F5-5600J3636C16GX2-TZ5RK",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "novatech-uk-public-page",
+        "display_name": "Novatech public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-f5-5600j3636c16gx2-tz5rk-novatech-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "Novatech",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 42998,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "unknown",
+        "raw_text": null
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-collect-awdit-ff3d532g8000hc38ddc01-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "FF3D532G8000HC38DDC01",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "display_name": "AWD-IT public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-ff3d532g8000hc38ddc01-awdit-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 47499,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "stated_at_capture",
+        "raw_text": "Out of stock"
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-collect-awdit-ra50d516gx2-5600c36a-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "RA50D516GX2-5600C36A",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "display_name": "AWD-IT public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-ra50d516gx2-5600c36a-awdit-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 39999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "stated_at_capture",
+        "raw_text": "Out of stock"
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    },
+    {
+      "observation_id": "sf-collect-awdit-rg30d516gx2-5600c36a-20260812T124505Z",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "product": {
+        "mpn": "RG30D516GX2-5600C36A",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5"
+      },
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "display_name": "AWD-IT public product page",
+        "source_class": "live_primary_retail_storefront",
+        "evidence_id": "sf-collect-evidence-rg30d516gx2-5600c36a-awdit-20260812T124505Z"
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract"
+      },
+      "price": {
+        "item_price_minor": 32999,
+        "currency": "GBP",
+        "vat_included": true,
+        "delivery_minor": null,
+        "landed_price_minor": null
+      },
+      "availability": {
+        "state": "stated_at_capture",
+        "raw_text": "Out of stock"
+      },
+      "eligibility": {
+        "identity_exact": true,
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null,
+        "historical_item_price_retained": true,
+        "landed_price_eligible": false,
+        "reason_codes": [
+          "SELLER_LEGAL_NAME_UNRESOLVED",
+          "DELIVERY_UNRESOLVED",
+          "SOURCE_UNAPPROVED"
+        ]
+      }
+    }
+  ],
+  "governance": {
+    "source_approved": false,
+    "methodology_approved": false,
+    "index_eligible": false,
+    "production_eligible": false,
+    "publication_eligible": false,
+    "public_claim_approved": false
+  }
+}

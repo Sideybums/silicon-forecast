@@ -14,7 +14,8 @@
 import { createHash } from "node:crypto";
 import { mkdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import process from "node:process";
-import { COLLECTOR_VERSION, SCHEDULE, detectMissedSlots, runCollection } from "../lib/canonical-collector.mjs";
+import { COLLECTOR_VERSION, SCHEDULE, buildEstablishedKitShapes, detectMissedSlots, runCollection } from "../lib/canonical-collector.mjs";
+import { readdirSync } from "node:fs";
 
 const repo = new URL("../", import.meta.url);
 const LEDGER = new URL("data/collection-runs/ledger.v1.json", repo);
@@ -78,8 +79,19 @@ if (dryRun) {
   process.exit(0);
 }
 
+// Kit shapes established by evidence that saw them on the page, so retailers
+// whose templates no longer state the module count can still be collected.
+const candidateDir = new URL("data/observations/candidate/", repo);
+const establishedShapes = buildEstablishedKitShapes(
+  readdirSync(candidateDir)
+    .filter((f) => f.endsWith(".json"))
+    .map((f) => JSON.parse(readFileSync(new URL(f, candidateDir), "utf8"))),
+);
+process.stdout.write(`  kit shapes:   ${establishedShapes.size} MPNs established from prior evidence\n`);
+
 const results = await runCollection(targets, {
   delayMs: 2500,
+  establishedShapes,
   onProgress: (i, total, r) => {
     const state = r.usable ? "ok" : (r.reasons[0] ?? "unusable");
     process.stdout.write(`  [${String(i).padStart(3)}/${total}] ${r.seller_display_name} ${r.mpn_expected} — ${state}\n`);
@@ -102,8 +114,8 @@ const observations = usable.map((r) => ({
   availability: { state: r.availability ? "stated_at_capture" : "unknown", raw_text: r.availability ?? null },
   eligibility: {
     identity_exact: true,
-    capacity_basis: "visible_on_page",
-    capacity_basis_reference: null,
+    capacity_basis: r.capacity_basis,
+    capacity_basis_reference: r.capacity_basis_reference ?? null,
     historical_item_price_retained: true,
     landed_price_eligible: false,
     reason_codes: ["SELLER_LEGAL_NAME_UNRESOLVED", "DELIVERY_UNRESOLVED", "SOURCE_UNAPPROVED"],

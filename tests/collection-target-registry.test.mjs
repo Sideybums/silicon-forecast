@@ -13,6 +13,7 @@ const HOSTS = {
   Novatech: "novatech.co.uk",
   "Overclockers UK": "overclockers.co.uk",
   KingstonMemoryShop: "kingstonmemoryshop.co.uk",
+  "Scan Computers": "scan.co.uk",
 };
 
 test("every target is completely specified", () => {
@@ -87,6 +88,21 @@ test("the registry disclaims being an index basket and approves nothing", () => 
     production_eligible: false,
     publication_eligible: false,
   });
+});
+
+test("Scan Computers is present, being the project's largest evidence source", () => {
+  // An earlier build read only the multi-retailer ledger and silently omitted
+  // Scan, which supplied 604 of the archive captures.
+  const scan = registry.targets.filter((t) => t.seller_display_name === "Scan Computers");
+  assert.ok(scan.length >= 50, `expected Scan targets, found ${scan.length}`);
+});
+
+test("every seller with an archive ledger can actually be collected", async () => {
+  // A target whose seller has no extractor would abstain on every run forever.
+  const { EXTRACTORS } = await import("../lib/canonical-collector.mjs");
+  for (const seller of Object.keys(registry.targets_by_seller)) {
+    assert.ok(EXTRACTORS[seller], `no extractor wired for ${seller}`);
+  }
 });
 
 test("the registry materially widens collection beyond the three live targets", () => {
