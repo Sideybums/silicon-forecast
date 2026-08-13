@@ -1,5 +1,5 @@
 import type { EventsDataset, EventMarker } from "@/lib/public-data";
-import { permilleAcross } from "./geometry";
+import { edgeAnchor, permilleAcross } from "./geometry";
 
 // The rail of news and research markers sitting under a chart.
 //
@@ -14,10 +14,10 @@ import { permilleAcross } from "./geometry";
 const TEMPORAL_NOTE =
   "Reported around this period. Temporal association only — this is not a claim that the article explains the move.";
 
-function Marker({ marker, left }: { marker: EventMarker; left: number }) {
+function Marker({ marker, left, anchor }: { marker: EventMarker; left: number; anchor: number }) {
   const { source } = marker;
   return (
-    <li className="event-marker" style={{ ["--x" as string]: left }}>
+    <li className="event-marker" style={{ ["--x" as string]: left, ["--anchor" as string]: anchor }}>
       <a className="event-marker-anchor" href={source.url} target="_blank" rel="nofollow noopener external">
         <span className="event-marker-dot" aria-hidden="true" />
         <span className="event-marker-label">{source.title}</span>
@@ -48,7 +48,14 @@ export function EventLine({ events, periods }: { events: EventsDataset; periods:
         {events.markers.map((marker) => {
           const i = indexOf(marker.period_id);
           if (i < 0) return null;
-          return <Marker key={marker.marker_id} marker={marker} left={permilleAcross(i, periods.length)} />;
+          return (
+            <Marker
+              key={marker.marker_id}
+              marker={marker}
+              left={permilleAcross(i, periods.length)}
+              anchor={edgeAnchor(i, periods.length)}
+            />
+          );
         })}
       </ul>
 

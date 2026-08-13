@@ -129,3 +129,19 @@ export function permilleAcross(index: number, count: number): number {
   if (count <= 1) return 500;
   return Math.round((index / (count - 1)) * 1000);
 }
+
+/**
+ * How far a label sitting at a slot should be pulled back over its own width.
+ *
+ * A label centred on the first or last slot hangs half its width off the end of
+ * the chart, which at a phone width pushes the whole page sideways. The first
+ * slot's label is left-aligned to the point, the last is right-aligned, and
+ * everything between stays centred. It is expressed as a percentage the
+ * stylesheet negates, so like every other overlay position it serialises as an
+ * integer.
+ */
+export function edgeAnchor(index: number, count: number): number {
+  if (index === 0) return 0;
+  if (index === count - 1) return 100;
+  return 50;
+}

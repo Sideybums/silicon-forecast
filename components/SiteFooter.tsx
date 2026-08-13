@@ -15,8 +15,9 @@ export function SiteFooter() {
         </div>
         <div>
           <p className="footer-label">Research</p>
-          <Link href="/price-history">Retail price history</Link>
-          <Link href="/research">Market notes</Link>
+          <Link href="/price-history/">Retail price history</Link>
+          <Link href="/research/">Research and sources</Link>
+          <Link href="/methodology/">Methodology</Link>
           <Link href="/about">About the project</Link>
         </div>
         <div>
