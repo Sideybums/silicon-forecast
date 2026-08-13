@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "review_id": "sf-part-number-disclosure-ruling-2026-08-13-v1",
+  "status": "candidate_private_immutable",
+  "decided_by": "David Sidebottom",
+  "decided_at": "2026-08-13T00:00:00Z",
+  "implementation_state": "implemented_in_public_boundary_test",
+  "subject": "Whether a manufacturer part number may appear in public output",
+  "question": "The public boundary control banned every value recorded under mpn_expected or mpn_observed from appearing anywhere in public source or the static build. A frontend that shows per-product price series cannot identify a product without naming it. Should the ban stand?",
+  "ruling": "The ban is narrowed. A manufacturer part number may appear in public output. The matching state the ban actually protected must still not appear, and is protected by explicit replacement assertions rather than by suppressing the identifier itself.",
+  "rationale": [
+    "A manufacturer part number is public data. Every retailer prints it on the product page it was read from, manufacturers publish it on their own datasheets, and it is the identifier a reader needs to check our work against a shop.",
+    "The control was written to stop matching state leaking — what identity was expected against what identity was observed, and the eligibility reasoning attached to that comparison. That is genuinely private working state. The part number itself is not.",
+    "The ban was also becoming unworkable for a reason unrelated to its purpose. Only the prospective collector records mpn_expected and mpn_observed; the historical backfill records product.mpn, which was never covered. So the banned set grew with every collection run, and 9 of the 71 products meeting the current coverage floor already collided — including the two with the deepest history at 18 months each. The control was on a path to forbidding publication of exactly the products it had the most evidence for."
+  ],
+  "narrowed": {
+    "removed_from_banned_key_regex": ["mpn_expected", "mpn_observed"],
+    "unchanged_banned_key_regex": [
+      "tranche_id",
+      "observation_id",
+      "source_key",
+      "source_url",
+      "archive_url",
+      "original_url",
+      "extract_path",
+      "extract_sha256",
+      "response_sha256",
+      "observed_at",
+      "legal_name",
+      "review_id",
+      "approval_id"
+    ],
+    "unchanged_other_controls": [
+      "Retained item prices above GBP 1.00 remain banned in their pound, bare-decimal and GBP-prefixed renderings.",
+      "The five private candidate status markers remain banned.",
+      "Every string of twelve characters or more in an untracked worker run remains banned."
+    ]
+  },
+  "replacement_assertions": [
+    {
+      "assertion": "no_expected_and_observed_pair_in_public_output",
+      "detail": "Public output identifies a product by a single part number. A node carrying both an expected and an observed part number would expose the comparison itself, which is the working state this control protects."
+    },
+    {
+      "assertion": "no_matching_or_eligibility_reason_codes_in_public_output",
+      "detail": "The collector's abstention and eligibility vocabulary must not reach public output. These describe how confident we were and why, which is private working state and would also read as a claim about a retailer."
+    },
+    {
+      "assertion": "no_match_basis_or_identity_exact_in_public_output",
+      "detail": "Both fields describe the identity decision rather than the product, and neither may project."
+    }
+  ],
+  "explicitly_not_approved": [
+    "Publication of any price, index or series. This ruling concerns identifiers only and grants no publication authority.",
+    "Any relaxation of the retained-price ban.",
+    "Inference of product characteristics from part-number naming conventions, which remains forbidden by the product tier comparability ruling of 2026-08-10.",
+    "Publication of seller identity per observation."
+  ],
+  "governance": {
+    "source_approved": false,
+    "methodology_approved": false,
+    "basket_approved": false,
+    "index_eligible": false,
+    "production_eligible": false,
+    "publication_eligible": false,
+    "public_claim_approved": false,
+    "external_publish_unlocked": false
+  }
+}
