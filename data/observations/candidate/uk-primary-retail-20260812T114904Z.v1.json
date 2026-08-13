@@ -16,179 +16,315 @@
   },
   "observations": [
     {
-      "observation_id": "sf-collect-kingstonmemoryshop-kf560c30bbek2-32-20260812T114904Z",
+      "observation_id": "kingstonmemoryshop-kf560c30bbek2-32-2026-08-12t11:49:04z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T11:49:04Z",
-      "product": {
-        "mpn": "KF560C30BBEK2-32",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "kf560c30bbek2-32",
       "source": {
         "source_key": "kingstonmemoryshop-uk-public-page",
-        "display_name": "KingstonMemoryShop public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-kf560c30bbek2-32-kingstonmemoryshop-20260812T114904Z"
+        "source_name": "KingstonMemoryShop public product page",
+        "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-beast-kf560c30bbek2-32-32gb-16gb-x2-ddr5-6000mt-s-black-memory-dimm-expo",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "KF560C30BBEK2-32",
+        "mpn_observed": "KF560C30BBEK2-32",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "KingstonMemoryShop",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "SweetCow Ltd t/a KingstonMemoryShop",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 60690,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "in_stock",
+        "schema": "In stock",
+        "display": "In stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 60690,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "In stock"
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T114904Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "94ea7e7a1956ad5220166d760e6277f8196ff97cb5d4bf0ba956fdcc622fcd99",
+        "response_bytes": 620190,
+        "response_bytes_retained": false,
+        "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-beast-kf560c30bbek2-32-32gb-16gb-x2-ddr5-6000mt-s-black-memory-dimm-expo"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-kingstonmemoryshop-kf564c32rsk2-32-20260812T114904Z",
+      "observation_id": "kingstonmemoryshop-kf564c32rsk2-32-2026-08-12t11:49:04z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T11:49:04Z",
-      "product": {
-        "mpn": "KF564C32RSK2-32",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "kf564c32rsk2-32",
       "source": {
         "source_key": "kingstonmemoryshop-uk-public-page",
-        "display_name": "KingstonMemoryShop public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-kf564c32rsk2-32-kingstonmemoryshop-20260812T114904Z"
+        "source_name": "KingstonMemoryShop public product page",
+        "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "KF564C32RSK2-32",
+        "mpn_observed": "KF564C32RSK2-32",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "KingstonMemoryShop",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "SweetCow Ltd t/a KingstonMemoryShop",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 61566,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "in_stock",
+        "schema": "In stock",
+        "display": "In stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 61566,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "In stock"
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T114904Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "4d5cb00e7fa0c744959663e002141036ed6e0d040bb7692fa76e416a3ffd733c",
+        "response_bytes": 619852,
+        "response_bytes_retained": false,
+        "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-awdit-cmh32gx5m2b5600c40k-20260812T114904Z",
+      "observation_id": "awd-it-cmh32gx5m2b5600c40k-2026-08-12t11:49:04z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T11:49:04Z",
-      "product": {
-        "mpn": "CMH32GX5M2B5600C40K",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "cmh32gx5m2b5600c40k",
       "source": {
         "source_key": "awd-it-uk-public-page",
-        "display_name": "AWD-IT public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-cmh32gx5m2b5600c40k-awdit-20260812T114904Z"
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/corsair-vengeance-rgb-32gb-2x16gb-ddr5-ram-5600mhz-c40-memory-kit-black-cmh32gx5m2b5600c40k.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMH32GX5M2B5600C40K",
+        "mpn_observed": "CMH32GX5M2B5600C40K",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "AWD-IT",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 45099,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "other",
+        "schema": "Out of stock",
+        "display": "Out of stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 45099,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "Out of stock"
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T114904Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "5edf662c6f4bab603ef4825602c195dd3f3d62744f827eefa5c4d0ca4e6c07cd",
+        "response_bytes": 426468,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/corsair-vengeance-rgb-32gb-2x16gb-ddr5-ram-5600mhz-c40-memory-kit-black-cmh32gx5m2b5600c40k.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-awdit-cmh32gx5m2e6000c36w-20260812T114904Z",
+      "observation_id": "awd-it-cmh32gx5m2e6000c36w-2026-08-12t11:49:04z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T11:49:04Z",
-      "product": {
-        "mpn": "CMH32GX5M2E6000C36W",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "cmh32gx5m2e6000c36w",
       "source": {
         "source_key": "awd-it-uk-public-page",
-        "display_name": "AWD-IT public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-cmh32gx5m2e6000c36w-awdit-20260812T114904Z"
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/corsair-vengeance-rgb-32gb-2x16gb-ddr5-ram-6000mhz-c36-white-cmh32gx5m2e6000c36w.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMH32GX5M2E6000C36W",
+        "mpn_observed": "CMH32GX5M2E6000C36W",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "AWD-IT",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
-        "item_price_minor": 41999,
+      "item_price": {
+        "amount_minor": 41999,
         "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
+        "vat_state": "included"
       },
       "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "Out of stock"
+        "normalised": "other",
+        "schema": "Out of stock",
+        "display": "Out of stock",
+        "eligibility_semantics": "explicit"
       },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 41999,
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T114904Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "954e8211a1de759a68385cf31b5ef37d1fc94fe950f8f9d24ab5d2cdf085d6de",
+        "response_bytes": 400957,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/corsair-vengeance-rgb-32gb-2x16gb-ddr5-ram-6000mhz-c36-white-cmh32gx5m2e6000c36w.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     }
   ],
@@ -199,5 +335,12 @@
     "production_eligible": false,
     "publication_eligible": false,
     "public_claim_approved": false
+  },
+  "reissued_from_schema": {
+    "original_schema": "historical_backfill_observation_shape",
+    "reissued_at": "2026-08-13T00:00:00Z",
+    "reason": "Collector v1 emitted the historical-backfill observation shape, which the prospective audit and collision machinery cannot read. Re-serialised into the established prospective schema so this collector's output is actually covered by those controls.",
+    "facts_preserved": "Every price, MPN, timestamp, byte count and response hash is carried across unchanged and the evidence ledger is untouched. No observation was added, removed or revalued.",
+    "never_published": "Neither tranche had been merged to main or published when it was reissued."
   }
 }

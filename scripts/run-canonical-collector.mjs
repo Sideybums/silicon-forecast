@@ -14,10 +14,12 @@
 import { createHash } from "node:crypto";
 import { mkdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import process from "node:process";
-import { COLLECTOR_VERSION, SCHEDULE, buildEstablishedKitShapes, detectMissedSlots, runCollection } from "../lib/canonical-collector.mjs";
+import { execFileSync } from "node:child_process";
+import { COLLECTOR_VERSION, SCHEDULE, buildEstablishedKitShapes, buildProspectiveObservation, detectMissedSlots, runCollection } from "../lib/canonical-collector.mjs";
 import { readdirSync } from "node:fs";
 
 const repo = new URL("../", import.meta.url);
+const repoPath = new URL(".", repo).pathname;
 const LEDGER = new URL("data/collection-runs/ledger.v1.json", repo);
 
 const args = new Map();
@@ -99,28 +101,13 @@ const results = await runCollection(targets, {
 });
 
 const usable = results.filter((r) => r.usable);
-const observations = usable.map((r) => ({
-  observation_id: `sf-collect-${r.seller_display_name.toLowerCase().replace(/[^a-z0-9]/gu, "")}-${r.mpn.toLowerCase()}-${stamp}`,
-  observed_at: iso,
-  product: { mpn: r.mpn, capacity_gb: 32, module_count: 2, memory_type: "DDR5" },
-  source: {
-    source_key: `${r.seller_display_name.toLowerCase().replace(/[^a-z0-9]/gu, "-")}-uk-public-page`,
-    display_name: `${r.seller_display_name} public product page`,
-    source_class: "live_primary_retail_storefront",
-    evidence_id: `sf-collect-evidence-${r.mpn.toLowerCase()}-${r.seller_display_name.toLowerCase().replace(/[^a-z0-9]/gu, "")}-${stamp}`,
-  },
-  seller: { display_name: r.seller_display_name, legal_name: null, legal_name_state: "not_established_from_retained_extract" },
-  price: { item_price_minor: r.amount_minor, currency: "GBP", vat_included: true, delivery_minor: null, landed_price_minor: null },
-  availability: { state: r.availability ? "stated_at_capture" : "unknown", raw_text: r.availability ?? null },
-  eligibility: {
-    identity_exact: true,
-    capacity_basis: r.capacity_basis,
-    capacity_basis_reference: r.capacity_basis_reference ?? null,
-    historical_item_price_retained: true,
-    landed_price_eligible: false,
-    reason_codes: ["SELLER_LEGAL_NAME_UNRESOLVED", "DELIVERY_UNRESOLVED", "SOURCE_UNAPPROVED"],
-  },
-}));
+const observations = usable.map((r) =>
+  buildProspectiveObservation(r, {
+    observedAt: iso,
+    stamp,
+    evidencePath: `research/evidence/primary-retail-${stamp}/ledger.v1.json`,
+  }),
+);
 
 const evidence = usable.map((r) => ({
   evidence_id: `sf-collect-evidence-${r.mpn.toLowerCase()}-${r.seller_display_name.toLowerCase().replace(/[^a-z0-9]/gu, "")}-${stamp}`,
@@ -166,6 +153,7 @@ if (observations.length) {
     channel: "PRIMARY_RETAIL",
     created_at: iso,
     observation_count: observations.length,
+    collector_version: COLLECTOR_VERSION,
     evidence_ledger: runRecord.evidence_ledger,
     immutability_policy: "Append-only candidate observation tranche; do not edit in place. Corrections require a new additive artifact.",
     capture_basis: {
@@ -212,3 +200,47 @@ process.stdout.write(`\nretained ${observations.length} observations, ${runRecor
 process.stdout.write(`reasons: ${JSON.stringify(runRecord.abstention_reasons)}\n`);
 if (observations.length) process.stdout.write(`tranche: ${runRecord.tranche_file}\n`);
 process.stdout.write(`run ledger: data/collection-runs/ledger.v1.json (${ledger.runs.length} runs, ${ledger.missed_slots.length} recorded gaps)\n`);
+
+// Commit and push what this run produced.
+//
+// Only the collector's own output paths are staged. A scheduled unattended job
+// must never sweep up whatever else happens to be in the working tree, and a
+// failure to commit must not discard a successful collection — the data is
+// already on disk, so any git problem is reported and the run still counts.
+const paths = [
+  "data/collection-runs/ledger.v1.json",
+  runRecord.tranche_file,
+  runRecord.evidence_ledger ? `research/evidence/primary-retail-${stamp}/` : null,
+].filter(Boolean);
+
+const git = (args) => execFileSync("git", args, { cwd: repoPath, encoding: "utf8" }).trim();
+try {
+  git(["add", "--", ...paths]);
+  const staged = git(["diff", "--cached", "--name-only"]);
+  if (!staged) {
+    process.stdout.write("git: nothing to commit\n");
+  } else {
+    const summary = observations.length
+      ? `${observations.length} observations from ${new Set(observations.map((o) => o.seller.display_name)).size} retailers`
+      : "no usable readings";
+    const gaps = missed.length ? `\n\nRecorded ${missed.length} scheduled slot(s) with no run: ${missed.join(", ")}.` : "";
+    git([
+      "commit",
+      "-q",
+      "-m",
+      `data: collection run ${stamp}`,
+      "-m",
+      `Automated canonical collector run. ${summary}; ${runRecord.abstentions} abstentions.${gaps}\n\nNo source, methodology or publication is approved.`,
+    ]);
+    const branch = git(["rev-parse", "--abbrev-ref", "HEAD"]);
+    process.stdout.write(`git: committed ${git(["rev-parse", "--short", "HEAD"])} on ${branch}\n`);
+    try {
+      git(["push", "--quiet", "origin", branch]);
+      process.stdout.write(`git: pushed to origin/${branch}\n`);
+    } catch (error) {
+      process.stdout.write(`git: PUSH FAILED (${String(error.message).slice(0, 120)}) — commit is local only\n`);
+    }
+  }
+} catch (error) {
+  process.stdout.write(`git: COMMIT FAILED (${String(error.message).slice(0, 160)}) — data is written but uncommitted\n`);
+}

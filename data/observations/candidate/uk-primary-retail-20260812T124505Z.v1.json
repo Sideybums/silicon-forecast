@@ -16,751 +16,1331 @@
   },
   "observations": [
     {
-      "observation_id": "sf-collect-awdit-f5-6000j3636f16gx2-fx5-20260812T124505Z",
+      "observation_id": "awd-it-f5-6000j3636f16gx2-fx5-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "F5-6000J3636F16GX2-FX5",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "f5-6000j3636f16gx2-fx5",
       "source": {
         "source_key": "awd-it-uk-public-page",
-        "display_name": "AWD-IT public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-f5-6000j3636f16gx2-fx5-awdit-20260812T124505Z"
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/g-skill-flare-x5-32gb-16gb-x2-ddr5-6000mt-s-cl36-memory-kit-black-f5-6000j3636f16gx2-fx5.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "F5-6000J3636F16GX2-FX5",
+        "mpn_observed": "F5-6000J3636F16GX2-FX5",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "AWD-IT",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 46999,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "other",
+        "schema": "Out of stock",
+        "display": "Out of stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 46999,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "Out of stock"
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "b1c56b9dcbeef6987ca9d31a28998f146ddeeee2f2e038bf30548d7d9cee1c2c",
+        "response_bytes": 434483,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/g-skill-flare-x5-32gb-16gb-x2-ddr5-6000mt-s-cl36-memory-kit-black-f5-6000j3636f16gx2-fx5.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-kingstonmemoryshop-kf560c30bbek2-32-20260812T124505Z",
+      "observation_id": "kingstonmemoryshop-kf560c30bbek2-32-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "KF560C30BBEK2-32",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "kf560c30bbek2-32",
       "source": {
         "source_key": "kingstonmemoryshop-uk-public-page",
-        "display_name": "KingstonMemoryShop public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-kf560c30bbek2-32-kingstonmemoryshop-20260812T124505Z"
+        "source_name": "KingstonMemoryShop public product page",
+        "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-beast-kf560c30bbek2-32-32gb-16gb-x2-ddr5-6000mt-s-black-memory-dimm-expo",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "KF560C30BBEK2-32",
+        "mpn_observed": "KF560C30BBEK2-32",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "KingstonMemoryShop",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "SweetCow Ltd t/a KingstonMemoryShop",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 60690,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "in_stock",
+        "schema": "In stock",
+        "display": "In stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 60690,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "In stock"
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "8026526118f5875476da7cb9238daae2ba448d15fe1c2358855ca728147d7860",
+        "response_bytes": 623700,
+        "response_bytes_retained": false,
+        "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-beast-kf560c30bbek2-32-32gb-16gb-x2-ddr5-6000mt-s-black-memory-dimm-expo"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-kingstonmemoryshop-kf564c32rsk2-32-20260812T124505Z",
+      "observation_id": "kingstonmemoryshop-kf564c32rsk2-32-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "KF564C32RSK2-32",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "kf564c32rsk2-32",
       "source": {
         "source_key": "kingstonmemoryshop-uk-public-page",
-        "display_name": "KingstonMemoryShop public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-kf564c32rsk2-32-kingstonmemoryshop-20260812T124505Z"
+        "source_name": "KingstonMemoryShop public product page",
+        "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "KF564C32RSK2-32",
+        "mpn_observed": "KF564C32RSK2-32",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "KingstonMemoryShop",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "SweetCow Ltd t/a KingstonMemoryShop",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 61566,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "in_stock",
+        "schema": "In stock",
+        "display": "In stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 61566,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "In stock"
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "c6943ce40331e2823b859805a807cab547c9c4415f99ac652fc20d410b228a64",
+        "response_bytes": 623362,
+        "response_bytes_retained": false,
+        "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-awdit-cmh32gx5m2b5600c40k-20260812T124505Z",
+      "observation_id": "awd-it-cmh32gx5m2b5600c40k-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "CMH32GX5M2B5600C40K",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "cmh32gx5m2b5600c40k",
       "source": {
         "source_key": "awd-it-uk-public-page",
-        "display_name": "AWD-IT public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-cmh32gx5m2b5600c40k-awdit-20260812T124505Z"
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/corsair-vengeance-rgb-32gb-2x16gb-ddr5-ram-5600mhz-c40-memory-kit-black-cmh32gx5m2b5600c40k.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMH32GX5M2B5600C40K",
+        "mpn_observed": "CMH32GX5M2B5600C40K",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "AWD-IT",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 45099,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "other",
+        "schema": "Out of stock",
+        "display": "Out of stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 45099,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "Out of stock"
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "fcc447069e3c1918e168fe457287919568b5373b2cc0582035e3c90b7f19bcf9",
+        "response_bytes": 426468,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/corsair-vengeance-rgb-32gb-2x16gb-ddr5-ram-5600mhz-c40-memory-kit-black-cmh32gx5m2b5600c40k.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-awdit-cmh32gx5m2e6000c36w-20260812T124505Z",
+      "observation_id": "awd-it-cmh32gx5m2e6000c36w-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "CMH32GX5M2E6000C36W",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "cmh32gx5m2e6000c36w",
       "source": {
         "source_key": "awd-it-uk-public-page",
-        "display_name": "AWD-IT public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-cmh32gx5m2e6000c36w-awdit-20260812T124505Z"
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/corsair-vengeance-rgb-32gb-2x16gb-ddr5-ram-6000mhz-c36-white-cmh32gx5m2e6000c36w.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMH32GX5M2E6000C36W",
+        "mpn_observed": "CMH32GX5M2E6000C36W",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "AWD-IT",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 41999,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "other",
+        "schema": "Out of stock",
+        "display": "Out of stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 41999,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "Out of stock"
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "5b34aede7b66294c5abc032779f7150c8f9d1c8130c36186154a9e4a31873a24",
+        "response_bytes": 400957,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/corsair-vengeance-rgb-32gb-2x16gb-ddr5-ram-6000mhz-c36-white-cmh32gx5m2e6000c36w.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-awdit-cmk32gx5m2e6000c36-20260812T124505Z",
+      "observation_id": "awd-it-cmk32gx5m2e6000c36-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "CMK32GX5M2E6000C36",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "cmk32gx5m2e6000c36",
       "source": {
         "source_key": "awd-it-uk-public-page",
-        "display_name": "AWD-IT public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-cmk32gx5m2e6000c36-awdit-20260812T124505Z"
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/corsair-vengeance-32gb-2x16gb-ddr5-dram-6000mhz-c36-memory-kit-black-cmk32gx5m2e6000c36.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMK32GX5M2E6000C36",
+        "mpn_observed": "CMK32GX5M2E6000C36",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "AWD-IT",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 43999,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "other",
+        "schema": "Out of stock",
+        "display": "Out of stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 43999,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "Out of stock"
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "dcfd64b4faaef9a0c3bb4ae4070481be607bf610cc21bca8a71c61cc97b7641a",
+        "response_bytes": 406737,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/corsair-vengeance-32gb-2x16gb-ddr5-dram-6000mhz-c36-memory-kit-black-cmk32gx5m2e6000c36.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-novatech-cmk32gx5m2e6000z36-20260812T124505Z",
+      "observation_id": "novatech-cmk32gx5m2e6000z36-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "CMK32GX5M2E6000Z36",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "cmk32gx5m2e6000z36",
       "source": {
         "source_key": "novatech-uk-public-page",
-        "display_name": "Novatech public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-cmk32gx5m2e6000z36-novatech-20260812T124505Z"
+        "source_name": "Novatech public product page",
+        "source_url": "https://www.novatech.co.uk/products/corsair-vengeance-32gb-2x16gb-ddr5-6000mhz-cl36-dual-channel-memory-ram-kit/cmk32gx5m2e6000z36.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMK32GX5M2E6000Z36",
+        "mpn_observed": "CMK32GX5M2E6000Z36",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "Novatech",
         "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name_state": "not_established_from_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 33998,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "unknown",
+        "schema": null,
+        "display": null,
+        "eligibility_semantics": "unknown"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 33998,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "unknown",
-        "raw_text": null
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector",
+          "seller_legal_name_unresolved"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "adf132581b55ce283a7873be52cda572fe36b95261bae0da9bcd5f0b7b50cfec",
+        "response_bytes": 192912,
+        "response_bytes_retained": false,
+        "source_url": "https://www.novatech.co.uk/products/corsair-vengeance-32gb-2x16gb-ddr5-6000mhz-cl36-dual-channel-memory-ram-kit/cmk32gx5m2e6000z36.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-awdit-cp2k16g60c36u5w-20260812T124505Z",
+      "observation_id": "awd-it-cp2k16g60c36u5w-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "CP2K16G60C36U5W",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "cp2k16g60c36u5w",
       "source": {
         "source_key": "awd-it-uk-public-page",
-        "display_name": "AWD-IT public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-cp2k16g60c36u5w-awdit-20260812T124505Z"
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/crucial-pro-overclocking-32gb-2x16gb-6000mt-s-ddr5-memory-kit-cp2k16g60c36u5w.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CP2K16G60C36U5W",
+        "mpn_observed": "CP2K16G60C36U5W",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "AWD-IT",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 37499,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "other",
+        "schema": "Out of stock",
+        "display": "Out of stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 37499,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "Out of stock"
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "ce8c930d158a382150c0b0ba8b1041d28e96bb6ac1cc535e31b6f3a7b0a9e55b",
+        "response_bytes": 437656,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/crucial-pro-overclocking-32gb-2x16gb-6000mt-s-ddr5-memory-kit-cp2k16g60c36u5w.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-awdit-cp2k16g64c38u5w-20260812T124505Z",
+      "observation_id": "awd-it-cp2k16g64c38u5w-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "CP2K16G64C38U5W",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "cp2k16g64c38u5w",
       "source": {
         "source_key": "awd-it-uk-public-page",
-        "display_name": "AWD-IT public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-cp2k16g64c38u5w-awdit-20260812T124505Z"
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/crucial-pro-32gb-2x16gb-ddr5-6400mhz-cl38-desktop-ram-kit-white-cp2k16g64c38u5w.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CP2K16G64C38U5W",
+        "mpn_observed": "CP2K16G64C38U5W",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "AWD-IT",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 35999,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "other",
+        "schema": "Out of stock",
+        "display": "Out of stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 35999,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "Out of stock"
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "1b37f45c01e747de78b9050b5e2d0dc2ed36190bda7a4130d531e19a4c69247e",
+        "response_bytes": 426977,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/crucial-pro-32gb-2x16gb-ddr5-6400mhz-cl38-desktop-ram-kit-white-cp2k16g64c38u5w.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-awdit-ff3d532g6000hc38adc01-20260812T124505Z",
+      "observation_id": "awd-it-ff3d532g6000hc38adc01-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "FF3D532G6000HC38ADC01",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "ff3d532g6000hc38adc01",
       "source": {
         "source_key": "awd-it-uk-public-page",
-        "display_name": "AWD-IT public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-ff3d532g6000hc38adc01-awdit-20260812T124505Z"
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/teamgroup-delta-rgb-32gb-2x16gb-6000mhz-c38-ddr5-memory-kit-ff3d532g6000hc38adc01.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "FF3D532G6000HC38ADC01",
+        "mpn_observed": "FF3D532G6000HC38ADC01",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "AWD-IT",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 53499,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "other",
+        "schema": "Out of stock",
+        "display": "Out of stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 53499,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "Out of stock"
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "28bd4499f6f6bb63c36ab9acf8a184041faa2e58f9f67f51dc025e151d38182f",
+        "response_bytes": 402196,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/teamgroup-delta-rgb-32gb-2x16gb-6000mhz-c38-ddr5-memory-kit-ff3d532g6000hc38adc01.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-awdit-ax5u6400c3216g-dclarbk-20260812T124505Z",
+      "observation_id": "awd-it-ax5u6400c3216g-dclarbk-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "AX5U6400C3216G-DCLARBK",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "ax5u6400c3216g-dclarbk",
       "source": {
         "source_key": "awd-it-uk-public-page",
-        "display_name": "AWD-IT public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-ax5u6400c3216g-dclarbk-awdit-20260812T124505Z"
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/adata-xpg-lancer-rgb-32gb-kit-2-x-16gb-6400mhz-ddr5-cl32-memory-ax5u6400c3216g-dclarbk.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "AX5U6400C3216G-DCLARBK",
+        "mpn_observed": "AX5U6400C3216G-DCLARBK",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "AWD-IT",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 58599,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "other",
+        "schema": "Out of stock",
+        "display": "Out of stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 58599,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "Out of stock"
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "e8531519ff60a1e670b9a4bbb6856b79da352d2b6d2bbf0fefff10036a4cb611",
+        "response_bytes": 400323,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/adata-xpg-lancer-rgb-32gb-kit-2-x-16gb-6400mhz-ddr5-cl32-memory-ax5u6400c3216g-dclarbk.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-awdit-ax5u6400c3216g-dtlabbk-20260812T124505Z",
+      "observation_id": "awd-it-ax5u6400c3216g-dtlabbk-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "AX5U6400C3216G-DTLABBK",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "ax5u6400c3216g-dtlabbk",
       "source": {
         "source_key": "awd-it-uk-public-page",
-        "display_name": "AWD-IT public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-ax5u6400c3216g-dtlabbk-awdit-20260812T124505Z"
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/adata-xpg-lancer-blade-32gb-kit-2-x-16gb-6400mhz-ddr5-cl32-memory-ax5u6400c3216g-dtlabbk.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "AX5U6400C3216G-DTLABBK",
+        "mpn_observed": "AX5U6400C3216G-DTLABBK",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "AWD-IT",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 55499,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "other",
+        "schema": "Out of stock",
+        "display": "Out of stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 55499,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "Out of stock"
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "d19e4b71249a14d85955d250b2b12413a6420ca34e1c35c78b22a938c636f6e5",
+        "response_bytes": 415453,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/adata-xpg-lancer-blade-32gb-kit-2-x-16gb-6400mhz-ddr5-cl32-memory-ax5u6400c3216g-dtlabbk.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-awdit-cmh32gx5m2e6200c36-20260812T124505Z",
+      "observation_id": "awd-it-cmh32gx5m2e6200c36-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "CMH32GX5M2E6200C36",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "cmh32gx5m2e6200c36",
       "source": {
         "source_key": "awd-it-uk-public-page",
-        "display_name": "AWD-IT public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-cmh32gx5m2e6200c36-awdit-20260812T124505Z"
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/corsair-vengeance-32gb-2x16gb-6200mhz-c36-ddr5-ram-black-cmh32gx5m2e6200c36.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMH32GX5M2E6200C36",
+        "mpn_observed": "CMH32GX5M2E6200C36",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "AWD-IT",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
-        "item_price_minor": 49599,
+      "item_price": {
+        "amount_minor": 49599,
         "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
+        "vat_state": "included"
       },
       "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "Out of stock"
+        "normalised": "other",
+        "schema": "Out of stock",
+        "display": "Out of stock",
+        "eligibility_semantics": "explicit"
       },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 49599,
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "785f27ace988e3e3c28d356700c0bf1f69fa7c1fad71e558ad5c7676fdbfd3bd",
+        "response_bytes": 401176,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/corsair-vengeance-32gb-2x16gb-6200mhz-c36-ddr5-ram-black-cmh32gx5m2e6200c36.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-novatech-f5-5600j3636c16gx2-tz5rk-20260812T124505Z",
+      "observation_id": "novatech-f5-5600j3636c16gx2-tz5rk-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "F5-5600J3636C16GX2-TZ5RK",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "f5-5600j3636c16gx2-tz5rk",
       "source": {
         "source_key": "novatech-uk-public-page",
-        "display_name": "Novatech public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-f5-5600j3636c16gx2-tz5rk-novatech-20260812T124505Z"
+        "source_name": "Novatech public product page",
+        "source_url": "https://www.novatech.co.uk/products/g-skill-trident-z5-rgb-black-32gb-2x16gb-ddr5-5600mhz-cl36-memory-ram-kit/f5-5600j3636c16gx2-tz5rk.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "F5-5600J3636C16GX2-TZ5RK",
+        "mpn_observed": "F5-5600J3636C16GX2-TZ5RK",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "Novatech",
         "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name_state": "not_established_from_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 42998,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "unknown",
+        "schema": null,
+        "display": null,
+        "eligibility_semantics": "unknown"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 42998,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "unknown",
-        "raw_text": null
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector",
+          "seller_legal_name_unresolved"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "093c7b2d7319a476ce54be4f28f8b57eb61001b4ff59885e165e20edafa554d2",
+        "response_bytes": 195685,
+        "response_bytes_retained": false,
+        "source_url": "https://www.novatech.co.uk/products/g-skill-trident-z5-rgb-black-32gb-2x16gb-ddr5-5600mhz-cl36-memory-ram-kit/f5-5600j3636c16gx2-tz5rk.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-awdit-ff3d532g8000hc38ddc01-20260812T124505Z",
+      "observation_id": "awd-it-ff3d532g8000hc38ddc01-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "FF3D532G8000HC38DDC01",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "ff3d532g8000hc38ddc01",
       "source": {
         "source_key": "awd-it-uk-public-page",
-        "display_name": "AWD-IT public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-ff3d532g8000hc38ddc01-awdit-20260812T124505Z"
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/teamgroup-delta-rgb-32gb-2x16gb-8000mhz-c38-ddr5-memory-kit-ff3d532g8000hc38ddc01.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "FF3D532G8000HC38DDC01",
+        "mpn_observed": "FF3D532G8000HC38DDC01",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "AWD-IT",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 47499,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "other",
+        "schema": "Out of stock",
+        "display": "Out of stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 47499,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "Out of stock"
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "d8b990db95d23d63fac72ac1937130362b8317a2baefe942d007ec935f6bfef3",
+        "response_bytes": 431746,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/teamgroup-delta-rgb-32gb-2x16gb-8000mhz-c38-ddr5-memory-kit-ff3d532g8000hc38ddc01.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-awdit-ra50d516gx2-5600c36a-20260812T124505Z",
+      "observation_id": "awd-it-ra50d516gx2-5600c36a-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "RA50D516GX2-5600C36A",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "ra50d516gx2-5600c36a",
       "source": {
         "source_key": "awd-it-uk-public-page",
-        "display_name": "AWD-IT public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-ra50d516gx2-5600c36a-awdit-20260812T124505Z"
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/thermaltake-toughram-rc-d5-32gb-2x16gb-ddr5-5600mt-s-c36-memory-ra50d516gx2-5600c36a.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "RA50D516GX2-5600C36A",
+        "mpn_observed": "RA50D516GX2-5600C36A",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "AWD-IT",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
+      "item_price": {
+        "amount_minor": 39999,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "other",
+        "schema": "Out of stock",
+        "display": "Out of stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
         "item_price_minor": 39999,
-        "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
-      },
-      "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "Out of stock"
-      },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "09e7a9273eb248b000eea41cacaf348007939338c6c99356e343afe64f59f2d7",
+        "response_bytes": 432200,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/thermaltake-toughram-rc-d5-32gb-2x16gb-ddr5-5600mt-s-c36-memory-ra50d516gx2-5600c36a.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     },
     {
-      "observation_id": "sf-collect-awdit-rg30d516gx2-5600c36a-20260812T124505Z",
+      "observation_id": "awd-it-rg30d516gx2-5600c36a-2026-08-12t12:45:05z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
       "observed_at": "2026-08-12T12:45:05Z",
-      "product": {
-        "mpn": "RG30D516GX2-5600C36A",
-        "capacity_gb": 32,
-        "module_count": 2,
-        "memory_type": "DDR5"
-      },
+      "product_key": "rg30d516gx2-5600c36a",
       "source": {
         "source_key": "awd-it-uk-public-page",
-        "display_name": "AWD-IT public product page",
-        "source_class": "live_primary_retail_storefront",
-        "evidence_id": "sf-collect-evidence-rg30d516gx2-5600c36a-awdit-20260812T124505Z"
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/thermaltake-toughram-z-one-rgb-d5-32gb-2x16gb-5600mt-s-cl36-ddr5-memory-rg30d516gx2-5600c36a.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "RG30D516GX2-5600C36A",
+        "mpn_observed": "RG30D516GX2-5600C36A",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
       },
       "seller": {
         "display_name": "AWD-IT",
-        "legal_name": null,
-        "legal_name_state": "not_established_from_retained_extract"
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
       },
-      "price": {
-        "item_price_minor": 32999,
+      "item_price": {
+        "amount_minor": 32999,
         "currency": "GBP",
-        "vat_included": true,
-        "delivery_minor": null,
-        "landed_price_minor": null
+        "vat_state": "included"
       },
       "availability": {
-        "state": "stated_at_capture",
-        "raw_text": "Out of stock"
+        "normalised": "other",
+        "schema": "Out of stock",
+        "display": "Out of stock",
+        "eligibility_semantics": "explicit"
       },
-      "eligibility": {
-        "identity_exact": true,
-        "capacity_basis": "visible_on_page",
-        "capacity_basis_reference": null,
-        "historical_item_price_retained": true,
-        "landed_price_eligible": false,
-        "reason_codes": [
-          "SELLER_LEGAL_NAME_UNRESOLVED",
-          "DELIVERY_UNRESOLVED",
-          "SOURCE_UNAPPROVED"
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 32999,
+        "reasons": [
+          "delivery_not_read_by_collector"
         ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "7b9b15c9911628c53f68c425badbcb7f598a8a75b37f3f936da481f70647f342",
+        "response_bytes": 437096,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/thermaltake-toughram-z-one-rgb-d5-32gb-2x16gb-5600mt-s-cl36-ddr5-memory-rg30d516gx2-5600c36a.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
       }
     }
   ],
@@ -771,5 +1351,12 @@
     "production_eligible": false,
     "publication_eligible": false,
     "public_claim_approved": false
+  },
+  "reissued_from_schema": {
+    "original_schema": "historical_backfill_observation_shape",
+    "reissued_at": "2026-08-13T00:00:00Z",
+    "reason": "Collector v1 emitted the historical-backfill observation shape, which the prospective audit and collision machinery cannot read. Re-serialised into the established prospective schema so this collector's output is actually covered by those controls.",
+    "facts_preserved": "Every price, MPN, timestamp, byte count and response hash is carried across unchanged and the evidence ledger is untouched. No observation was added, removed or revalued.",
+    "never_published": "Neither tranche had been merged to main or published when it was reissued."
   }
 }
