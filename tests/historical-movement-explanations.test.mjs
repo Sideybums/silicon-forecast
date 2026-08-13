@@ -122,6 +122,16 @@ const explanation = (overrides = {}) => ({
   proposed_mechanism: "Reported oversupply and inventory correction may have reduced consumer kit prices.",
   causal_language_level: "contributory_hypothesis",
   counterevidence_search: { performed: true, result: "none_identified", searched_at: "2026-08-10T00:00:00Z" },
+  // Attribution the public event marker renders. An explanation points at
+  // somebody else's work and must credit it.
+  source: {
+    title: "Memory makers trim output as inventories build",
+    author: "A Writer",
+    publisher: "Example Trade Press",
+    url: "https://example.test/report",
+    published_on: "2023-06-01",
+    accessed_on: "2026-08-10",
+  },
   ...overrides,
 });
 
@@ -272,4 +282,76 @@ test("the sparse graph fixture is unchanged by this work", async () => {
   assert.equal(graph.render_contract.connect_points, false);
   assert.equal(graph.render_contract.interpolate, false);
   assert.equal(graph.render_contract.aggregate_across_products, false);
+});
+
+// --- attribution ------------------------------------------------------------
+//
+// An event marker points at somebody else's work. These pin that a marker can
+// never be rendered without the credit that makes it honest.
+
+test("an explanation must credit the work it points at", async () => {
+  const { validateExplanationLedger, AUTHOR_NOT_STATED } = await import("../lib/historical-movement-explanations.mjs");
+  const movement = { movement_id: "m-1" };
+  const base = {
+    explanation_id: "exp-1",
+    movement_id: "m-1",
+    causal_language_level: "temporal_association",
+    counterevidence_search: { performed: true, result: "none_identified", searched_at: "2026-08-13T00:00:00Z" },
+    response_sha256: "a".repeat(64),
+    minimal_quote: "a short retained extract",
+    source: {
+      title: "Memory prices climb through the autumn",
+      author: "A Writer",
+      publisher: "Example Trade Press",
+      url: "https://example.test/story",
+      published_on: "2025-11-04",
+      accessed_on: "2025-11-05",
+    },
+  };
+  const ledger = (source) => ({ movements: [movement], explanations: [{ ...base, source }] });
+  const derived = [movement];
+
+  assert.equal(validateExplanationLedger(ledger(base.source), derived).explanation_count, 1);
+
+  // A publisher that names nobody is recorded as such, never left blank and
+  // never guessed at.
+  assert.equal(
+    validateExplanationLedger(ledger({ ...base.source, author: AUTHOR_NOT_STATED }), derived).explanation_count,
+    1,
+  );
+
+  for (const [field, value, pattern] of [
+    ["title", "", /source\.title is required/u],
+    ["title", "   ", /source\.title is required/u],
+    ["publisher", "", /source\.publisher is required/u],
+    ["author", "", /source\.author is required/u],
+    ["url", "http://example.test/x", /must be an https URL/u],
+    ["published_on", "Nov 2025", /must be a YYYY-MM-DD date/u],
+    ["accessed_on", "", /must be a YYYY-MM-DD date/u],
+  ]) {
+    assert.throws(() => validateExplanationLedger(ledger({ ...base.source, [field]: value }), derived), pattern, `${field}=${value}`);
+  }
+
+  assert.throws(() => validateExplanationLedger({ movements: [movement], explanations: [{ ...base, source: undefined }] }, derived), /has no source block/u);
+});
+
+test("a synthetic fixture URL can never become a real citation", async () => {
+  const { validateExplanationLedger } = await import("../lib/historical-movement-explanations.mjs");
+  const movement = { movement_id: "m-1" };
+  const explanation = {
+    explanation_id: "exp-1",
+    movement_id: "m-1",
+    causal_language_level: "temporal_association",
+    counterevidence_search: { performed: true, result: "none_identified", searched_at: "2026-08-13T00:00:00Z" },
+    response_sha256: "a".repeat(64),
+    minimal_quote: "extract",
+    source: {
+      title: "Synthetic", author: "Nobody", publisher: "Fixture",
+      url: "https://news.fixture.invalid/story", published_on: "2025-11-04", accessed_on: "2025-11-05",
+    },
+  };
+  assert.throws(
+    () => validateExplanationLedger({ movements: [movement], explanations: [explanation] }, [movement]),
+    /synthetic fixture host/u,
+  );
 });
