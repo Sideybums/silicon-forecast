@@ -23,6 +23,10 @@ jobs:
       - run: npm run check
         env:
           NEXT_PUBLIC_BASE_PATH: /silicon-forecast
+          # Second lever on the publication gate, in the closing direction only.
+          # The committed config already withholds the series; this makes the
+          # Pages preview withhold it regardless of what is committed.
+          SF_PUBLIC_SERIES: withheld
       - uses: actions/upload-pages-artifact@v3
         with:
           path: out
