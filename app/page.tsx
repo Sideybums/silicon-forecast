@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CategoryGrid } from "@/components/CategoryGrid";
 import { EmptyStateChart } from "@/components/EmptyStateChart";
 import { IndexChart, IndexHeadline } from "@/components/chart/IndexChart";
 import { ProductSparkline } from "@/components/chart/ProductSparkline";
@@ -78,19 +79,7 @@ export default function Home() {
           <span>02</span>
           <p>Component categories</p>
         </div>
-        <div className="category-board">
-          {components.map((entry, i) => (
-            <Link key={entry.slug} className="category-row" href={`/price-history/${entry.slug}/`}>
-              <span className="category-index">{String(i + 1).padStart(2, "0")}</span>
-              <strong>{entry.shortName}</strong>
-              <span>{entry.summary}</span>
-              <em data-status={entry.dataset ? "tracking" : "planned"}>
-                {entry.dataset ? entry.scopeNote : "No observations collected"}
-              </em>
-              <span aria-hidden="true">→</span>
-            </Link>
-          ))}
-        </div>
+        <CategoryGrid />
         <p className="after-chart">
           {trackedComponents.length} of {components.length} categories have observations ·{" "}
           <Link href="/methodology/">How this is measured →</Link>

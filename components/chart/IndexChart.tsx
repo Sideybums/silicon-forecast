@@ -3,7 +3,7 @@ import { formatIndex, formatPermilleRatio } from "@/lib/public-data";
 import { ChartCaveat } from "./ChartCaveat";
 import { EventLine } from "./EventLine";
 import type { EventsDataset } from "@/lib/public-data";
-import { VIEWBOX, bounds, contiguousRuns, niceTicks, path, permilleAcross, plotArea, xFor, yFor } from "./geometry";
+import { VIEWBOX, bounds, contiguousRuns, edgeAnchor, niceTicks, path, permilleAcross, plotArea, xFor, yFor } from "./geometry";
 
 // The headline chart. A server component: everything renders at build time, and
 // the hover behaviour is CSS, so nothing here depends on JavaScript running.
@@ -113,7 +113,10 @@ export function IndexChart({
         <ul className="index-chart-gaps" aria-label="Quarters with too little matched evidence">
           {periods.map((p, i) =>
             p.index_milli === null ? (
-              <li key={p.period_id} style={{ ["--x" as string]: permilleAcross(i, periods.length) }}>
+              <li
+                key={p.period_id}
+                style={{ ["--x" as string]: permilleAcross(i, periods.length), ["--anchor" as string]: edgeAnchor(i, periods.length) }}
+              >
                 <span>
                   {p.period_id}: only {p.matched_product_count} product{p.matched_product_count === 1 ? "" : "s"} carried across
                 </span>

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/build-public-site-data.mjs --check && next build && node --test tests/public-boundary.test.mjs",
+    "build": "node scripts/build-public-site-data.mjs --check && next build && node --test tests/public-boundary.test.mjs tests/site-content.test.mjs",
     "build:data": "node scripts/build-public-site-data.mjs",
     "start": "next start",
     "lint": "eslint .",

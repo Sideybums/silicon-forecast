@@ -1,82 +1,91 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { categories } from "@/lib/site";
+import { componentFor, components } from "@/lib/components-registry";
+
+// Kept because it is a linked, indexable route, but it is no longer where the
+// data lives. Everything with a number on it is at /price-history/[slug]/; this
+// page describes the category and sends the reader there.
+
+export const dynamicParams = false;
 
 export function generateStaticParams() {
-  return categories.map(({ slug }) => ({ slug }));
+  return components.map(({ slug }) => ({ slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
-  const category = categories.find((candidate) => candidate.slug === slug);
-  return category ? {
-    title: category.name,
-    description: `${category.name} retail price-history coverage status at Silicon Forecast.`,
-  } : {};
+  const entry = componentFor(slug);
+  return entry
+    ? { title: entry.name, description: `${entry.name} coverage scope and price-history status at Silicon Forecast.` }
+    : {};
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const category = categories.find((candidate) => candidate.slug === slug);
-  if (!category) notFound();
-  const isRam = category.slug === "ram";
+  const entry = componentFor(slug);
+  if (!entry) notFound();
 
   return (
     <div className="shell page-shell">
       <header className="category-header">
         <div>
           <p className="eyebrow">Component category</p>
-          <h1>{category.name}</h1>
-          <p>{category.summary}</p>
+          <h1>{entry.name}</h1>
+          <p>{entry.summary}</p>
         </div>
-        <div className="category-state"><span>{category.status}</span><strong>{category.marker}</strong></div>
+        <div className="category-state">
+          <span>{entry.dataset ? "Observations collected" : "Nothing collected"}</span>
+          <strong>{entry.scopeNote}</strong>
+        </div>
       </header>
 
-      <div className="notice">
-        <strong>{isRam ? "Retail tracking in progress" : "Planned coverage"}</strong>
-        <span>{isRam
-          ? "Exact product identities are under review; no verified retail price series has been released."
-          : "This category has no tracked or published retail prices."}</span>
-      </div>
-
-      {isRam && (
-        <section className="category-tracking-panel" aria-labelledby="ram-tracking-title">
-          <div className="panel-heading">
-            <div>
-              <p className="section-label">Current tracking scope</p>
-              <h2 id="ram-tracking-title">One specification. Clear boundaries.</h2>
-            </div>
-            <span className="status-badge status-badge-building">Evidence build</span>
-          </div>
-          <div className="category-tracking-grid">
-            <article><span>Specification</span><strong>32GB · 2×16GB</strong><p>Desktop DDR5 UDIMM kits only.</p></article>
-            <article><span>Monitored identities</span><strong>16 kits</strong><p>Exact-MPN control-plane pilot.</p></article>
-            <article><span>Reviewed identities</span><strong>6 kits</strong><p>Fixture review, not retail eligibility.</p></article>
-            <article><span>Published retail series</span><strong>None yet</strong><p>Coverage and methodology gates remain open.</p></article>
-          </div>
-          <Link href="/price-history">View retail tracking and release gates →</Link>
+      {entry.dataset ? (
+        <div className="notice">
+          <strong>This category has observed price history</strong>
+          <p>
+            The series, its coverage limits and every product behind it are on the price-history page for this category.
+          </p>
+          <Link href={`/price-history/${entry.slug}/`}>Open the {entry.shortName} series →</Link>
+        </div>
+      ) : (
+        <section className="no-data-card">
+          <strong>No observations collected</strong>
+          <p>
+            Nothing has been collected for this category. There is no chart, no index and no product history, and this
+            page will keep saying so until that changes.
+          </p>
         </section>
       )}
 
       <section className="content-grid">
-        <div><p className="eyebrow">Active scope</p><h2>Like-for-like before large numbers.</h2></div>
+        <div>
+          <p className="eyebrow">Active scope</p>
+          <h2>Like-for-like before large numbers.</h2>
+        </div>
         <div className="prose">
-          <p>{category.detail}</p>
-          {isRam && <p>Retail observations must identify the exact kit, retailer-owned stock, VAT-inclusive landed price and purchasable state.</p>}
+          <p>{entry.detail}</p>
+          <Link href={`/price-history/${entry.slug}/`}>Price history for {entry.shortName} →</Link>
         </div>
       </section>
 
       <section className="considerations">
         <p className="eyebrow">Comparison considerations</p>
-        <div>{category.considerations.map((value, index) => <article key={value}><span>0{index + 1}</span><p>{value}</p></article>)}</div>
+        <div>
+          {entry.considerations.map((value, i) => (
+            <article key={value}>
+              <span>0{i + 1}</span>
+              <p>{value}</p>
+            </article>
+          ))}
+        </div>
       </section>
 
       <section className="category-disclosure">
         <strong>Affiliate and coverage note</strong>
         <p>
-          No outbound product links are currently published. Future affiliate feeds would provide
-          a panel of participating retailers, not automatic evidence of the complete UK market.
+          No outbound product links are currently published. Future affiliate feeds would provide a panel of
+          participating retailers, not automatic evidence of the complete UK market.
         </p>
         <Link href="/affiliate-disclosure">Full disclosure →</Link>
       </section>

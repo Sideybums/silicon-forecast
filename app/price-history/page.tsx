@@ -1,148 +1,112 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { components } from "@/lib/components-registry";
+import { eventsFor, indexFor, productsFor } from "@/lib/public-data";
+import { seriesIsPublic } from "@/lib/publication-gate";
 
 export const metadata: Metadata = {
-  title: "UK DDR5 retail price history",
-  description: "Retail-first tracking status, methodology boundaries and release gates for the Silicon Forecast UK DDR5 price index.",
+  title: "Price history",
+  description: "Which UK PC component categories have observed price history, how far back it goes and what is still uncollected.",
 };
 
-const qualificationRules = [
-  ["Retailer", "The seller owns the stock and is the retailer of record."],
-  ["Identity", "The exact manufacturer part number matches a reviewed 32GB (2×16GB) DDR5 kit."],
-  ["Price", "A VAT-inclusive landed price can be calculated for the fixed UK destination."],
-  ["Availability", "The exact product is purchasable at collection time, not merely listed."],
-] as const;
-
-const releaseGates = [
-  ["Retail source coverage", "Blocked · source breadth", "Enough independent UK retailers to avoid a one-shop index."],
-  ["Price normalisation", "Blocked · delivery rule", "VAT and mandatory delivery resolved deterministically."],
-  ["Basket review", "Awaiting approval", "Products, reserves and effective dates explicitly approved."],
-  ["Replay verification", "Not run · no baseline", "The same retained observations reproduce the same series."],
-] as const;
-
+// The dataset overview: what exists, how much of it, and where to go next.
+//
+// The route is unchanged because it is in the navigation, the footer and the
+// sitemap, but the page no longer argues methodology at the reader. That lives
+// at /methodology, and every claim about how the number is built is made there
+// once.
 export default function Page() {
+  const isPublic = seriesIsPublic();
+
   return (
-    <div className="shell page-shell price-history-page">
-      <header className="page-header price-history-header">
-        <p className="eyebrow">UK DDR5 · Primary retail</p>
-        <h1>One clean retail series.</h1>
+    <div className="shell page-shell">
+      <header className="page-header">
+        <p className="eyebrow">UK · Primary retail only</p>
+        <h1>What has been collected so far.</h1>
         <p>
-          This page is reserved for comparable UK retail prices for exact 32GB DDR5 desktop kits.
-          The series remains unpublished until source coverage, landed-price rules and replay checks
-          are strong enough to defend it.
+          One category has observed price history. The rest are listed so their absence is a stated fact rather than a
+          gap you have to notice. Nothing here is estimated, back-filled or carried across a period where the evidence
+          ran out.
         </p>
       </header>
 
-      <section className="retail-status-panel" aria-labelledby="retail-status-title">
-        <div className="panel-heading">
-          <div>
-            <p className="section-label">01 · Retail tracking status</p>
-            <h2 id="retail-status-title">Collection is active. Publication is not.</h2>
-          </div>
-          <span className="status-badge status-badge-building">Building evidence</span>
+      {isPublic ? null : (
+        <div className="notice">
+          <strong>The series is built but not published</strong>
+          <p>
+            Collection and derivation run on every change, and the results are checked in and reviewable. No index point
+            is published while the basket and baseline remain unapproved, so the charts below stay closed.
+          </p>
         </div>
-        <div className="retail-status-grid">
-          <div><span>Region</span><strong>United Kingdom</strong></div>
-          <div><span>Specification</span><strong>32GB DDR5 · 2×16GB</strong></div>
-          <div><span>Channel</span><strong>Retailer-owned stock</strong></div>
-          <div><span>Published series</span><strong>Not released</strong></div>
-        </div>
-      </section>
+      )}
 
-      <section className="retail-history-panel" aria-labelledby="retail-history-title">
-        <div className="panel-heading">
-          <div>
-            <p className="section-label">02 · Retail price history</p>
-            <h2 id="retail-history-title">Collection started. The index has not.</h2>
-          </div>
-          <span className="history-range">State 0 · Collecting evidence</span>
-        </div>
-        <div className="collection-chart-shell">
-          <svg
-            className="collection-chart"
-            viewBox="0 0 1000 400"
-            role="img"
-            aria-labelledby="collection-chart-title collection-chart-description"
-            preserveAspectRatio="none"
-          >
-            <title id="collection-chart-title">UK DDR5 index collection-start state</title>
-            <desc id="collection-chart-description">
-              Collection is under way, but no publishable index point or active index scale exists.
-            </desc>
-            <rect className="collection-chart-field" x="0" y="0" width="1000" height="400" />
-            <g className="collection-chart-grid" aria-hidden="true">
-              <line x1="0" y1="100" x2="1000" y2="100" />
-              <line x1="0" y1="200" x2="1000" y2="200" />
-              <line x1="0" y1="300" x2="1000" y2="300" />
-              <line x1="250" y1="0" x2="250" y2="400" />
-              <line x1="500" y1="0" x2="500" y2="400" />
-              <line x1="750" y1="0" x2="750" y2="400" />
-            </g>
-            <g className="collection-start-marker" aria-hidden="true">
-              <rect x="78" y="54" width="8" height="292" />
-              <rect x="60" y="54" width="44" height="8" />
-            </g>
-          </svg>
-          <div className="collection-scale-note" aria-hidden="true">Index scale<br />not active</div>
-          <div className="collection-start-label" aria-hidden="true"><span>01</span> Collection started</div>
-          <div className="collection-empty-message">
-            <p className="collection-kicker">Evidence before numbers</p>
-            <strong>No publishable index point exists.</strong>
-            <p>The index scale begins only after the basket and baseline receive methodology approval.</p>
-          </div>
-        </div>
-        <div className="history-diagnostics" aria-label="Index publication diagnostics">
-          <div><span>Publishable points</span><strong>None · baseline unapproved</strong></div>
-          <div><span>Index scale</span><strong>Inactive · begins after approval</strong></div>
-          <div><span>Public scope</span><strong>Primary retail only</strong></div>
-        </div>
-      </section>
+      <section className="dataset-list" aria-label="Component datasets">
+        {components.map((entry) => {
+          const index = indexFor(entry.dataset);
+          const products = productsFor(entry.dataset);
+          const events = eventsFor(entry.dataset);
 
-      <section className="retail-methodology-panel" aria-labelledby="retail-method-title">
-        <div className="panel-heading">
-          <div>
-            <p className="section-label">03 · What qualifies as retail</p>
-            <h2 id="retail-method-title">Four checks before one price enters.</h2>
-          </div>
-          <Link href="/about">Why the rules matter →</Link>
-        </div>
-        <div className="qualification-grid">
-          {qualificationRules.map(([heading, body], index) => (
-            <article key={heading}>
-              <span>0{index + 1}</span>
-              <h3>{heading}</h3>
-              <p>{body}</p>
+          if (!entry.dataset || !index) {
+            return (
+              <article className="dataset-card is-empty" key={entry.slug}>
+                <div className="dataset-card-head">
+                  <h2>{entry.name}</h2>
+                  <span className="dataset-state" data-status="planned">
+                    No observations collected
+                  </span>
+                </div>
+                <p>{entry.detail}</p>
+                <Link href={`/price-history/${entry.slug}/`}>What would need to be true →</Link>
+              </article>
+            );
+          }
+
+          return (
+            <article className="dataset-card" key={entry.slug}>
+              <div className="dataset-card-head">
+                <h2>{entry.name}</h2>
+                <span className="dataset-state" data-status="tracking">
+                  {entry.scopeNote}
+                </span>
+              </div>
+              <p>{entry.detail}</p>
+              <dl className="dataset-figures">
+                <div>
+                  <dt>Quarters of history</dt>
+                  <dd>{index.coverage.observed_period_count}</dd>
+                  <p>
+                    {index.coverage.first_period} to {index.coverage.last_period}
+                  </p>
+                </div>
+                <div>
+                  <dt>Products followed individually</dt>
+                  <dd>{products?.product_count ?? 0}</dd>
+                  <p>Each seen for at least {products?.floor.min_months ?? 0} months across {products?.floor.min_sellers ?? 0} retailers.</p>
+                </div>
+                <div>
+                  <dt>Movements measured</dt>
+                  <dd>{events?.movement_count ?? 0}</dd>
+                  <p>{events?.explained_movement_count ?? 0} have a reviewed explanation.</p>
+                </div>
+                <div>
+                  <dt>Quarters with a break</dt>
+                  <dd>{index.periods.filter((p) => p.index_milli === null).length}</dd>
+                  <p>Too few products carried across for a comparison to mean anything.</p>
+                </div>
+              </dl>
+              <Link href={`/price-history/${entry.slug}/`}>Open the {entry.shortName} series →</Link>
             </article>
-          ))}
-        </div>
-        <div className="landed-price-rule">
-          <strong>Comparison basis</strong>
-          <p>VAT-inclusive landed price = item price + mandatory delivery to the fixed UK destination.</p>
-        </div>
+          );
+        })}
       </section>
 
-      <section className="retail-release-panel" aria-labelledby="release-gates-title">
-        <div className="panel-heading">
-          <div>
-            <p className="section-label">04 · Release gates</p>
-            <h2 id="release-gates-title">What must be true before the first index point.</h2>
-          </div>
-          <span className="gate-count">0 / 4 passed</span>
-        </div>
-        <div className="release-gate-list">
-          {releaseGates.map(([name, state, detail], index) => (
-            <article key={name}>
-              <span className="gate-number">0{index + 1}</span>
-              <div><h3>{name}</h3><p>{detail}</p></div>
-              <span className="gate-state">{state}</span>
-            </article>
-          ))}
-        </div>
-        <footer className="release-footer">
-          <p>Research commentary starts only after a reproducible retail movement exists.</p>
-          <Link href="/research">See the evidence workflow →</Link>
-        </footer>
-      </section>
+      <div className="page-nav-note">
+        <p>
+          Every rule behind these figures — what counts as a retail price, how quarters are chained, why nothing is
+          weighted — is stated in one place.
+        </p>
+        <Link href="/methodology/">Read the methodology →</Link>
+      </div>
     </div>
   );
 }
