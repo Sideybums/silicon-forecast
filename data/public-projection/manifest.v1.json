@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "generated_by": "scripts/build-public-site-data.mjs",
+  "datasets": [
+    "events-ram.v1.json",
+    "index-ram.v1.json",
+    "products-ram.v1.json"
+  ],
+  "coverage_note": "Derived from archived and collected retailer observations. Gaps are preserved and never interpolated; a period with too little matched evidence carries no value at all.",
+  "approval_note": "No source, methodology, basket or publication is approved. These files exist so the public site can be built and reviewed against real data; whether any of it renders publicly is controlled separately by config/public-release.v1.json."
+}
