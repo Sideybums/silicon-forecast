@@ -1,128 +1,100 @@
 import Link from "next/link";
-import { CategoryGrid } from "@/components/CategoryGrid";
+import { EmptyStateChart } from "@/components/EmptyStateChart";
+import { IndexChart, IndexHeadline } from "@/components/chart/IndexChart";
+import { ProductSparkline } from "@/components/chart/ProductSparkline";
+import { components, trackedComponents } from "@/lib/components-registry";
+import { eventsFor, formatPermilleChange, indexFor, productsFor } from "@/lib/public-data";
+import { seriesIsPublic } from "@/lib/publication-gate";
 
+export const metadata = {
+  title: "Silicon Forecast — UK PC component price trends",
+  description: "Evidence-backed views of UK PC component prices over time. Primary retail only.",
+};
+
+// The homepage is the graphs. Methodology lives at /methodology for anyone who
+// wants it; putting it here would bury the thing people actually came for.
 export default function Home() {
+  const isPublic = seriesIsPublic();
+  const dataset = "ram";
+  const index = indexFor(dataset);
+  const events = eventsFor(dataset);
+  const products = productsFor(dataset);
+
+  // The largest movers over each product's own observed span. Sorted by size of
+  // move rather than by level, because there are no levels here.
+  const movers = (products?.products ?? [])
+    .filter((p) => p.change_permille !== null && p.month_count >= 8)
+    .sort((a, b) => Math.abs(b.change_permille as number) - Math.abs(a.change_permille as number))
+    .slice(0, 3);
+
   return (
     <>
-      <section className="hero shell">
-        <div>
-          <p className="eyebrow">UK PC component price intelligence</p>
-          <h1>Retail prices, with the receipts.</h1>
-          <p className="hero-copy">
-            Silicon Forecast is building a reproducible view of UK component prices over time—
-            starting with retailer-owned 32GB DDR5 kits and a deliberately narrow evidence chain.
-          </p>
-          <div className="button-row">
-            <Link className="button primary" href="/price-history">
-              View retail price history <span>→</span>
-            </Link>
-            <Link className="button secondary" href="/research">
-              Read the research method
-            </Link>
-          </div>
-        </div>
-        <aside className="hero-status">
-          <p className="eyebrow">Public research preview · Retail-first</p>
-          <strong>Primary retail only</strong>
-          <dl>
-            <div><dt>Market</dt><dd>United Kingdom</dd></div>
-            <div><dt>First category</dt><dd>32GB DDR5 RAM</dd></div>
-            <div><dt>Retail series</dt><dd>In preparation</dd></div>
-            <div><dt>Affiliate feeds</dt><dd>Not connected</dd></div>
-          </dl>
-          <p>
-            We are validating retailer identity, exact MPNs, VAT, delivery and stock before a price
-            series is released. No invented line dressed up as progress. Tempting, but no.
-          </p>
-        </aside>
-      </section>
+      <section className="shell price-lead">
+        <p className="eyebrow">UK · Primary retail only</p>
+        <h1>Are component prices going up or down?</h1>
+        <p className="hero-copy">
+          Memory prices are tracked against exact manufacturer part numbers, so the line moves when prices move — not
+          when the shops change what they stock. Retail series in preparation.
+        </p>
 
-      <section className="shell section">
-        <div className="section-kicker"><span>01</span><p>Retail index status</p></div>
-        <div className="retail-home-panel">
-          <div className="retail-home-heading">
-            <div>
-              <p className="eyebrow">First tracked specification</p>
-              <h2>32GB DDR5 desktop kits.</h2>
-            </div>
-            <span className="status-badge status-badge-building">Retail series in preparation</span>
-          </div>
-          <div className="retail-home-grid">
-            <article>
-              <span>01</span>
-              <strong>Identify</strong>
-              <p>Match exact manufacturer part numbers. Approximate titles are not good enough.</p>
-            </article>
-            <article>
-              <span>02</span>
-              <strong>Normalise</strong>
-              <p>Resolve VAT, mandatory UK delivery, stock state and retailer-owned inventory.</p>
-            </article>
-            <article>
-              <span>03</span>
-              <strong>Publish</strong>
-              <p>Release a replayable retail series only when coverage and methodology gates pass.</p>
-            </article>
-          </div>
-          <div className="retail-home-footer">
-            <p>No verified retail series has been released yet.</p>
-            <Link href="/price-history">See the tracking status and release gates →</Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="ink-section">
-        <div className="shell">
-          <div className="section-kicker inverse"><span>02</span><p>The evidence chain</p></div>
-          <div className="building-grid">
-            <div>
-              <p className="eyebrow">What makes this useful</p>
-              <h2>Movement first. Explanation second. Evidence throughout.</h2>
-              <p className="muted-light">
-                Price intelligence should show what moved before looking for a convincing story.
-                News, manufacturer announcements and supply research can then support, qualify or
-                contradict an observed swing—never manufacture one.
+        {isPublic && index ? (
+          <>
+            <IndexHeadline dataset={index} />
+            <IndexChart dataset={index} events={events} title="UK 32GB DDR5 index by quarter" />
+          </>
+        ) : (
+          <>
+            <div className="notice">
+              <strong>Not yet published</strong>
+              <p>
+                Collection is under way and the series is built and checked on every change, but no index point is
+                published while the basket and baseline remain unapproved.
               </p>
             </div>
-            <ol className="process-list">
-              <li><span>01</span><div><strong>Observe</strong><p>Record exact products, retailers, landed prices and collection times.</p></div></li>
-              <li><span>02</span><div><strong>Calculate</strong><p>Apply deterministic rules and expose coverage gaps.</p></div></li>
-              <li><span>03</span><div><strong>Investigate</strong><p>Attach reviewed research, alternatives and counterevidence.</p></div></li>
-            </ol>
+            <EmptyStateChart id="home-collection-chart" />
+          </>
+        )}
+
+        {isPublic && movers.length ? (
+          <div className="movers-strip">
+            {movers.map((product) => (
+              <article key={product.mpn}>
+                <h3>
+                  <Link href={`/price-history/${dataset}/${encodeURIComponent(product.mpn)}/`}>{product.mpn}</Link>
+                </h3>
+                <ProductSparkline product={product} />
+                <p className="movers-meta">
+                  {formatPermilleChange(product.change_permille)} across {product.month_count} months ·{" "}
+                  {product.seller_count} retailers
+                </p>
+              </article>
+            ))}
           </div>
-          <div className="not-yet">
-            <strong>Still deliberately withheld</strong>
-            <span>Unsupported live index</span>
-            <span>Automated recommendations</span>
-            <span>Paid placement</span>
-            <span>Invented coverage</span>
-          </div>
-        </div>
+        ) : null}
       </section>
 
       <section className="shell section">
-        <div className="section-kicker"><span>03</span><p>Component categories</p></div>
-        <div className="section-title">
-          <div><p className="eyebrow">Coverage roadmap</p><h2>Start narrow. Earn the right to expand.</h2></div>
-          <p>
-            RAM is the active research category. GPUs, CPUs and SSDs follow only after the DDR5
-            retail evidence chain proves dependable.
-          </p>
+        <div className="section-kicker">
+          <span>02</span>
+          <p>Component categories</p>
         </div>
-        <CategoryGrid />
-      </section>
-
-      <section className="shell disclosure-band">
-        <p className="eyebrow">Commercial transparency</p>
-        <div>
-          <h2>Retail links will be useful before they are profitable.</h2>
-          <p>
-            No outbound product links are currently published. When verified retail observations
-            are ready, direct unpaid links can appear before affiliate relationships exist. Any
-            future commission will be labelled and will not alter inclusion or ranking.
-          </p>
-          <Link href="/affiliate-disclosure">Read the affiliate disclosure →</Link>
+        <div className="category-board">
+          {components.map((entry, i) => (
+            <Link key={entry.slug} className="category-row" href={`/price-history/${entry.slug}/`}>
+              <span className="category-index">{String(i + 1).padStart(2, "0")}</span>
+              <strong>{entry.shortName}</strong>
+              <span>{entry.summary}</span>
+              <em data-status={entry.dataset ? "tracking" : "planned"}>
+                {entry.dataset ? entry.scopeNote : "No observations collected"}
+              </em>
+              <span aria-hidden="true">→</span>
+            </Link>
+          ))}
         </div>
+        <p className="after-chart">
+          {trackedComponents.length} of {components.length} categories have observations ·{" "}
+          <Link href="/methodology/">How this is measured →</Link>
+        </p>
       </section>
     </>
   );

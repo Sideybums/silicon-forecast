@@ -2,11 +2,15 @@
 //
 // Every coordinate this module produces is an integer, and that is a safety
 // property rather than a stylistic one. A retained retailer price rendered to
-// two decimals is a banned substring anywhere in public output, and the banned
-// set currently includes 100.00, 200.00, 120.00 and 50.00 — exactly the values
-// a chart generator emits for gridlines and axis positions. Working in an
-// integer user space means a geometry string cannot contain a decimal point at
-// all, so the collision is impossible rather than merely unlikely.
+// two decimal places is a banned substring anywhere in public output, and
+// several of those banned values are round numbers of exactly the kind a chart
+// generator emits for gridlines and axis positions. Working in an integer user
+// space means a geometry string cannot contain a decimal point at all, so the
+// collision is impossible rather than merely unlikely.
+//
+// (This comment deliberately describes those values rather than listing them:
+// an earlier draft spelled them out and tripped the very check it was
+// explaining, because the scanner reads this file too.)
 //
 // The viewBox is large so that integer rounding is visually irrelevant: at
 // 1440 units wide, a rounded coordinate is well under a tenth of a pixel on a
@@ -14,11 +18,14 @@
 
 export const VIEWBOX = { width: 1440, height: 560 } as const;
 
-export const PADDING = { top: 32, right: 28, bottom: 64, left: 92 } as const;
+export type Padding = { top: number; right: number; bottom: number; left: number };
+export type ViewBox = { width: number; height: number };
+
+export const PADDING: Padding = { top: 32, right: 28, bottom: 64, left: 92 };
 
 export type Point = { x: number; y: number };
 
-export function plotArea(viewBox: { width: number; height: number } = VIEWBOX, padding = PADDING) {
+export function plotArea(viewBox: ViewBox = VIEWBOX, padding: Padding = PADDING) {
   return {
     left: padding.left,
     right: viewBox.width - padding.right,
