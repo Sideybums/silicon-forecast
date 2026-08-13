@@ -1,0 +1,198 @@
+{
+  "schema_version": 1,
+  "audit_id": "sf-uk-primary-retail-global-integration-audit-2026-08-13T000000Z-v1",
+  "status": "candidate_private_immutable",
+  "created_at": "2026-08-13T00:00:00Z",
+  "scope": "Every prospective PRIMARY_RETAIL candidate tranche in the repository at the time of writing. Historical backfill tranches are deliberately excluded; they are a different acquisition channel with different timestamp semantics.",
+  "selection": {
+    "historical_backfill_explicitly_excluded": true,
+    "discovered_by": "parsed schema, not filename"
+  },
+  "audited_tranches": [
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-09T122437Z.v1.json",
+      "sha256": "efe276384a828f32b86891422c9519c6b3e15cb4640c0bbc2095edcca4564fb6",
+      "created_at": "2026-08-09T12:25:54Z",
+      "observation_count": 3,
+      "collector_version": null
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
+      "sha256": "41fd88e7e48cbb343254522d46d3ec74c999f494169da34ecfeefb3ed667428e",
+      "created_at": "2026-08-09T23:43:37Z",
+      "observation_count": 3,
+      "collector_version": null
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-10T165537Z.v1.json",
+      "sha256": "484361e044d5ed74bb6aaae7c21b32f99141a61e39e15525135e0f04a2b98b10",
+      "created_at": "2026-08-10T16:55:37Z",
+      "observation_count": 3,
+      "collector_version": null
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260812T114904Z.v1.json",
+      "sha256": "2c18dabff9b2c77ceca36aa391bd17d41f4cb445d4facb8e97963ac3f511d51d",
+      "created_at": "2026-08-12T11:49:04Z",
+      "observation_count": 4,
+      "collector_version": null
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260812T124505Z.v1.json",
+      "sha256": "5db7317e3096a3f7709410d7b0564a663501c20edcc8509ce1f5dbf499488b04",
+      "created_at": "2026-08-12T12:45:05Z",
+      "observation_count": 17,
+      "collector_version": null
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-12T124750Z.prospective.v1.json",
+      "sha256": "1f900e20ca1fd2a5e9acff79970ba5b76ef04b924ba3b7dede00a289ccc4bc2a",
+      "created_at": "2026-08-12T12:47:50Z",
+      "observation_count": 3,
+      "collector_version": null
+    }
+  ],
+  "collision_rule": "A collision is the same seller and exact MPN observed more than once on the same UTC date. Seller identity uses the legal entity where established, and the display name where it is not, so that several retailers with unresolved entities are not merged into one.",
+  "collisions": [
+    {
+      "seller": "ADMI Limited",
+      "seller_identity_basis": "legal_name",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "utc_date": "2026-08-09",
+      "observation_count": 2,
+      "observation_ids": [
+        "awdit-f5-6000j3636f16gx2-fx5-2026-08-09T122437Z",
+        "awdit-f5-6000j3636f16gx2-fx5-2026-08-09t234337z"
+      ],
+      "tranches": [
+        "data/observations/candidate/uk-primary-retail-2026-08-09T122437Z.v1.json",
+        "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json"
+      ]
+    },
+    {
+      "seller": "SweetCow Ltd t/a KingstonMemoryShop",
+      "seller_identity_basis": "legal_name",
+      "mpn": "KF560C30BBEK2-32",
+      "utc_date": "2026-08-09",
+      "observation_count": 2,
+      "observation_ids": [
+        "kms-kf560c30bbek2-32-2026-08-09T122553Z",
+        "kms-kf560c30bbek2-32-2026-08-09t234337z"
+      ],
+      "tranches": [
+        "data/observations/candidate/uk-primary-retail-2026-08-09T122437Z.v1.json",
+        "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json"
+      ]
+    },
+    {
+      "seller": "SweetCow Ltd t/a KingstonMemoryShop",
+      "seller_identity_basis": "legal_name",
+      "mpn": "KF564C32RSK2-32",
+      "utc_date": "2026-08-09",
+      "observation_count": 2,
+      "observation_ids": [
+        "kms-kf564c32rsk2-32-2026-08-09T122554Z",
+        "kms-kf564c32rsk2-32-2026-08-09t234337z"
+      ],
+      "tranches": [
+        "data/observations/candidate/uk-primary-retail-2026-08-09T122437Z.v1.json",
+        "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json"
+      ]
+    },
+    {
+      "seller": "ADMI Limited",
+      "seller_identity_basis": "legal_name",
+      "mpn": "CMH32GX5M2B5600C40K",
+      "utc_date": "2026-08-12",
+      "observation_count": 2,
+      "observation_ids": [
+        "awd-it-cmh32gx5m2b5600c40k-2026-08-12t11:49:04z",
+        "awd-it-cmh32gx5m2b5600c40k-2026-08-12t12:45:05z"
+      ],
+      "tranches": [
+        "data/observations/candidate/uk-primary-retail-20260812T114904Z.v1.json",
+        "data/observations/candidate/uk-primary-retail-20260812T124505Z.v1.json"
+      ]
+    },
+    {
+      "seller": "ADMI Limited",
+      "seller_identity_basis": "legal_name",
+      "mpn": "CMH32GX5M2E6000C36W",
+      "utc_date": "2026-08-12",
+      "observation_count": 2,
+      "observation_ids": [
+        "awd-it-cmh32gx5m2e6000c36w-2026-08-12t11:49:04z",
+        "awd-it-cmh32gx5m2e6000c36w-2026-08-12t12:45:05z"
+      ],
+      "tranches": [
+        "data/observations/candidate/uk-primary-retail-20260812T114904Z.v1.json",
+        "data/observations/candidate/uk-primary-retail-20260812T124505Z.v1.json"
+      ]
+    },
+    {
+      "seller": "ADMI Limited",
+      "seller_identity_basis": "legal_name",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "utc_date": "2026-08-12",
+      "observation_count": 2,
+      "observation_ids": [
+        "awd-it-f5-6000j3636f16gx2-fx5-2026-08-12t12:45:05z",
+        "awdit-f5-6000j3636f16gx2-fx5-2026-08-12t12:47:11z"
+      ],
+      "tranches": [
+        "data/observations/candidate/uk-primary-retail-2026-08-12T124750Z.prospective.v1.json",
+        "data/observations/candidate/uk-primary-retail-20260812T124505Z.v1.json"
+      ]
+    },
+    {
+      "seller": "SweetCow Ltd t/a KingstonMemoryShop",
+      "seller_identity_basis": "legal_name",
+      "mpn": "KF560C30BBEK2-32",
+      "utc_date": "2026-08-12",
+      "observation_count": 3,
+      "observation_ids": [
+        "kingstonmemoryshop-kf560c30bbek2-32-2026-08-12t11:49:04z",
+        "kingstonmemoryshop-kf560c30bbek2-32-2026-08-12t12:45:05z",
+        "kms-kf560c30bbek2-32-2026-08-12t12:47:38z"
+      ],
+      "tranches": [
+        "data/observations/candidate/uk-primary-retail-2026-08-12T124750Z.prospective.v1.json",
+        "data/observations/candidate/uk-primary-retail-20260812T114904Z.v1.json",
+        "data/observations/candidate/uk-primary-retail-20260812T124505Z.v1.json"
+      ]
+    },
+    {
+      "seller": "SweetCow Ltd t/a KingstonMemoryShop",
+      "seller_identity_basis": "legal_name",
+      "mpn": "KF564C32RSK2-32",
+      "utc_date": "2026-08-12",
+      "observation_count": 3,
+      "observation_ids": [
+        "kingstonmemoryshop-kf564c32rsk2-32-2026-08-12t11:49:04z",
+        "kingstonmemoryshop-kf564c32rsk2-32-2026-08-12t12:45:05z",
+        "kms-kf564c32rsk2-32-2026-08-12t12:47:50z"
+      ],
+      "tranches": [
+        "data/observations/candidate/uk-primary-retail-2026-08-12T124750Z.prospective.v1.json",
+        "data/observations/candidate/uk-primary-retail-20260812T114904Z.v1.json",
+        "data/observations/candidate/uk-primary-retail-20260812T124505Z.v1.json"
+      ]
+    }
+  ],
+  "seller_identity_unresolved": [
+    "Novatech"
+  ],
+  "integration": {
+    "date_level_diagnostic_integration_allowed": false,
+    "reason_code": "BLOCKED_DUPLICATE_SELLER_MPN_UTC_DATE",
+    "detail": "Some seller and MPN pairs are observed more than once on the same UTC date, including days on which both the retired collector and the current one ran. No intraday selection or aggregation rule is approved, so no date-level value may be derived from those days."
+  },
+  "note_on_retired_collector": "The previously orchestrated collector was suspended on 2026-08-13. Same-date duplicates on 2026-08-12 arise from the overlap of that collector with the scheduled one, and from a bounded verification run performed the same day. They are retained as evidence and blocked from date-level integration rather than being deleted.",
+  "governance": {
+    "production_import_allowed": false,
+    "production_activation_allowed": false,
+    "index_eligibility": false,
+    "methodology_approval": false,
+    "publication_allowed": false
+  }
+}

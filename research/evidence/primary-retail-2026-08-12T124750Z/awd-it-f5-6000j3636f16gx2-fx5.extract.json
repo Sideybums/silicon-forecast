@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "evidence_id": "sf-retail-awd-it-f5-6000j3636f16gx2-fx5-2026-08-12T124711Z",
+  "evidence_class": "minimal_factual_extract",
+  "source_url": "https://www.awd-it.co.uk/g-skill-flare-x5-32gb-16gb-x2-ddr5-6000mt-s-cl36-memory-kit-black-f5-6000j3636f16gx2-fx5.html",
+  "retrieved_at": "2026-08-12T12:47:11Z",
+  "http_status": 200,
+  "final_url": "https://www.awd-it.co.uk/g-skill-flare-x5-32gb-16gb-x2-ddr5-6000mt-s-cl36-memory-kit-black-f5-6000j3636f16gx2-fx5.html",
+  "source_url_status": "http_200",
+  "response_sha256": "d40136451266f0530cfb44378058030baff15932d2ed5e743b35e55f13c9eb05",
+  "response_bytes": 434483,
+  "response_bytes_retained": false,
+  "retention_note": "The fetched response bytes are not retained; only this minimal factual extract, response byte count, and response SHA-256 are retained.",
+  "facts": {
+    "mpn": "F5-6000J3636F16GX2-FX5",
+    "price": { "amount_minor": 46999, "currency": "GBP", "vat_state": "included", "display": "£469.99" },
+    "seller": { "display_name": "AWD-IT", "legal_name": "ADMI Limited" },
+    "availability": { "schema": "InStock", "display": "In stock", "normalised": "in_stock", "semantics": "explicit" },
+    "delivery": { "display": "FREE UK Mainland Delivery / Free Delivery Available", "amount_minor": 0, "destination_scope": "UK mainland unspecified", "destination_verified": false }
+  }
+}
