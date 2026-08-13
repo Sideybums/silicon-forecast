@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "public_series_release": "withheld",
+  "approval_ref": null,
+  "product_rebasing": {
+    "basis": "first_observed_month_equals_1000_permille",
+    "selected_by": "operator"
+  },
+  "notes": "Charts are built and tested against real data on every run. Nothing renders publicly until public_series_release is set to approved AND approval_ref names a signed record in data/reviews/ carrying decided_by and decided_at. The environment variable SF_PUBLIC_SERIES can force this closed but can never open it.",
+  "what_opening_this_would_publish": "A quarterly matched-model index for UK 32GB DDR5, per-product relative price movement for products meeting the coverage floor, and the count of price movements for which no explanation has been researched. No retained price and no seller identity is published in any case.",
+  "still_locked_regardless": [
+    "external_publish",
+    "source_approval",
+    "editorial_activation",
+    "methodology_change",
+    "production_activation"
+  ]
+}
