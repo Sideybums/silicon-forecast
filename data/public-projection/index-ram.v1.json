@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "dataset_id": "ram",
+  "derived_from": "matched_model_chained_index",
+  "parameters_public": {
+    "frequency": "quarterly",
+    "formula": "jevons_geometric_mean_of_price_relatives",
+    "minimum_matched_products_per_link": 10,
+    "reference_period": "2024Q1",
+    "reference_value": 100,
+    "weighting": "unweighted_equal_product_weight",
+    "weighting_basis": "No expenditure, volume or market-share data exists for any observed retailer, so no weighted formula is available. Every matched product contributes equally, and that must be stated wherever the index is shown rather than left implicit.",
+    "gap_policy": "stop_chain",
+    "gap_policy_basis": "A link resting on fewer than the required matched products is not computed, and the chain stops rather than bridging across the gap. Bridging would silently compare two non-adjacent periods as though they were consecutive, which is exactly the composition effect this index exists to exclude.",
+    "approved": false
+  },
+  "coverage": {
+    "first_period": "2023Q4",
+    "last_period": "2026Q2",
+    "observed_period_count": 11,
+    "periods_with_evidence_outside_chain": 9,
+    "total_periods_with_observations": 20
+  },
+  "summary": {
+    "latest_period": "2026Q2",
+    "latest_index_milli": 335221,
+    "change_from_reference_permille": 2352,
+    "direction": "higher"
+  },
+  "periods": [
+    {
+      "period_id": "2023Q3",
+      "state": "insufficient_matched_evidence",
+      "index_milli": null,
+      "link_permille": null,
+      "change_permille": null,
+      "matched_product_count": 3,
+      "dispersion_permille": {
+        "min": 882,
+        "median": 1000,
+        "max": 1146
+      },
+      "distinct_products_in_period": 11,
+      "is_reference": false
+    },
+    {
+      "period_id": "2023Q4",
+      "state": "observed",
+      "index_milli": 103568,
+      "link_permille": null,
+      "change_permille": null,
+      "matched_product_count": 27,
+      "dispersion_permille": {
+        "min": 767,
+        "median": 974,
+        "max": 1029
+      },
+      "distinct_products_in_period": 55,
+      "is_reference": false
+    },
+    {
+      "period_id": "2024Q1",
+      "state": "observed",
+      "index_milli": 100000,
+      "link_permille": null,
+      "change_permille": null,
+      "matched_product_count": null,
+      "dispersion_permille": {
+        "min": null,
+        "median": null,
+        "max": null
+      },
+      "distinct_products_in_period": 86,
+      "is_reference": true
+    },
+    {
+      "period_id": "2024Q2",
+      "state": "observed",
+      "index_milli": 101910,
+      "link_permille": 1019,
+      "change_permille": 19,
+      "matched_product_count": 26,
+      "dispersion_permille": {
+        "min": 900,
+        "median": 1000,
+        "max": 1296
+      },
+      "distinct_products_in_period": 57,
+      "is_reference": false
+    },
+    {
+      "period_id": "2024Q3",
+      "state": "observed",
+      "index_milli": 95540,
+      "link_permille": 938,
+      "change_permille": -62,
+      "matched_product_count": 12,
+      "dispersion_permille": {
+        "min": 845,
+        "median": 937,
+        "max": 1068
+      },
+      "distinct_products_in_period": 55,
+      "is_reference": false
+    },
+    {
+      "period_id": "2024Q4",
+      "state": "observed",
+      "index_milli": 89619,
+      "link_permille": 938,
+      "change_permille": -62,
+      "matched_product_count": 37,
+      "dispersion_permille": {
+        "min": 316,
+        "median": 978,
+        "max": 1089
+      },
+      "distinct_products_in_period": 127,
+      "is_reference": false
+    },
+    {
+      "period_id": "2025Q1",
+      "state": "observed",
+      "index_milli": 89182,
+      "link_permille": 995,
+      "change_permille": -5,
+      "matched_product_count": 80,
+      "dispersion_permille": {
+        "min": 833,
+        "median": 1000,
+        "max": 1375
+      },
+      "distinct_products_in_period": 129,
+      "is_reference": false
+    },
+    {
+      "period_id": "2025Q2",
+      "state": "observed",
+      "index_milli": 85670,
+      "link_permille": 961,
+      "change_permille": -39,
+      "matched_product_count": 64,
+      "dispersion_permille": {
+        "min": 683,
+        "median": 970,
+        "max": 1264
+      },
+      "distinct_products_in_period": 106,
+      "is_reference": false
+    },
+    {
+      "period_id": "2025Q3",
+      "state": "observed",
+      "index_milli": 88342,
+      "link_permille": 1031,
+      "change_permille": 31,
+      "matched_product_count": 52,
+      "dispersion_permille": {
+        "min": 697,
+        "median": 1027,
+        "max": 1390
+      },
+      "distinct_products_in_period": 82,
+      "is_reference": false
+    },
+    {
+      "period_id": "2025Q4",
+      "state": "observed",
+      "index_milli": 203567,
+      "link_permille": 2304,
+      "change_permille": 1304,
+      "matched_product_count": 47,
+      "dispersion_permille": {
+        "min": 1000,
+        "median": 2596,
+        "max": 4193
+      },
+      "distinct_products_in_period": 87,
+      "is_reference": false
+    },
+    {
+      "period_id": "2026Q1",
+      "state": "observed",
+      "index_milli": 334833,
+      "link_permille": 1645,
+      "change_permille": 645,
+      "matched_product_count": 35,
+      "dispersion_permille": {
+        "min": 1038,
+        "median": 1425,
+        "max": 3442
+      },
+      "distinct_products_in_period": 59,
+      "is_reference": false
+    },
+    {
+      "period_id": "2026Q2",
+      "state": "observed",
+      "index_milli": 335221,
+      "link_permille": 1001,
+      "change_permille": 1,
+      "matched_product_count": 20,
+      "dispersion_permille": {
+        "min": 789,
+        "median": 1017,
+        "max": 1175
+      },
+      "distinct_products_in_period": 34,
+      "is_reference": false
+    },
+    {
+      "period_id": "2026Q3",
+      "state": "insufficient_matched_evidence",
+      "index_milli": null,
+      "link_permille": null,
+      "change_permille": null,
+      "matched_product_count": 2,
+      "dispersion_permille": {
+        "min": 1017,
+        "median": 1065,
+        "max": 1065
+      },
+      "distinct_products_in_period": 7,
+      "is_reference": false
+    }
+  ]
+}

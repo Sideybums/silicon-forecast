@@ -1,0 +1,5274 @@
+{
+  "schema_version": 1,
+  "dataset_id": "ram",
+  "derived_from": "per_mpn_monthly_median_across_retailers",
+  "floor": {
+    "min_months": 6,
+    "min_sellers": 2
+  },
+  "product_count": 71,
+  "excluded_below_floor_count": 180,
+  "rebasing": {
+    "basis": "first_observed_month_equals_1000_permille",
+    "selected_by": "operator"
+  },
+  "products": [
+    {
+      "mpn": "CMK32GX5M2B6000Z30",
+      "month_count": 21,
+      "seller_count": 5,
+      "multi_seller_month_count": 3,
+      "first_month": "2024-02",
+      "last_month": "2026-03",
+      "change_permille": 2218,
+      "points": [
+        {
+          "month": "2024-02",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 1026,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-08",
+          "relative_permille": 957,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 965,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-10",
+          "relative_permille": 1035,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 883,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 783,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 867,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 783,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 939,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 1044,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 852,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 939,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-07",
+          "relative_permille": 931,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-08",
+          "relative_permille": 931,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 957,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 1130,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-11",
+          "relative_permille": 3044,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-01",
+          "relative_permille": 4348,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-02",
+          "relative_permille": 3827,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 3218,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2B5200C40",
+      "month_count": 19,
+      "seller_count": 5,
+      "multi_seller_month_count": 7,
+      "first_month": "2022-03",
+      "last_month": "2025-12",
+      "change_permille": 389,
+      "points": [
+        {
+          "month": "2022-03",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-05",
+          "relative_permille": 952,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2022-07",
+          "relative_permille": 821,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2022-10",
+          "relative_permille": 665,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-11",
+          "relative_permille": 491,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-01",
+          "relative_permille": 506,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-03",
+          "relative_permille": 517,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2023-06",
+          "relative_permille": 358,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-03",
+          "relative_permille": 340,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-05",
+          "relative_permille": 355,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 323,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 322,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 342,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 340,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 315,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 302,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-07",
+          "relative_permille": 302,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 377,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 1389,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2B6400C32",
+      "month_count": 18,
+      "seller_count": 3,
+      "multi_seller_month_count": 2,
+      "first_month": "2023-12",
+      "last_month": "2026-06",
+      "change_permille": 2333,
+      "points": [
+        {
+          "month": "2023-12",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-01",
+          "relative_permille": 950,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 975,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-03",
+          "relative_permille": 933,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 860,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-10",
+          "relative_permille": 827,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 887,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 867,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 800,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 800,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 897,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 860,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 897,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-07",
+          "relative_permille": 900,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 867,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 2733,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-01",
+          "relative_permille": 3177,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-06",
+          "relative_permille": 3333,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2E6000C36",
+      "month_count": 18,
+      "seller_count": 5,
+      "multi_seller_month_count": 2,
+      "first_month": "2023-12",
+      "last_month": "2026-05",
+      "change_permille": 2710,
+      "points": [
+        {
+          "month": "2023-12",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 1009,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-03",
+          "relative_permille": 1009,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 1009,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-07",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 955,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-10",
+          "relative_permille": 955,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 977,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 986,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 900,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 900,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 936,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 900,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-07",
+          "relative_permille": 818,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 1046,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2026-02",
+          "relative_permille": 3637,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 2728,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-05",
+          "relative_permille": 3710,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2E6000Z36",
+      "month_count": 18,
+      "seller_count": 5,
+      "multi_seller_month_count": 3,
+      "first_month": "2023-12",
+      "last_month": "2026-06",
+      "change_permille": 1941,
+      "points": [
+        {
+          "month": "2023-12",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-03",
+          "relative_permille": 1029,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 1044,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 882,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-10",
+          "relative_permille": 990,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 843,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 778,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 814,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 784,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 1010,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-08",
+          "relative_permille": 843,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 833,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-11",
+          "relative_permille": 2647,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 3530,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-02",
+          "relative_permille": 3824,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-04",
+          "relative_permille": 3726,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-05",
+          "relative_permille": 3432,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2026-06",
+          "relative_permille": 2941,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2A4800C40",
+      "month_count": 17,
+      "seller_count": 5,
+      "multi_seller_month_count": 1,
+      "first_month": "2022-01",
+      "last_month": "2025-07",
+      "change_permille": -713,
+      "points": [
+        {
+          "month": "2022-01",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-04",
+          "relative_permille": 800,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-06",
+          "relative_permille": 752,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-07",
+          "relative_permille": 700,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-08",
+          "relative_permille": 619,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-02",
+          "relative_permille": 450,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-03",
+          "relative_permille": 425,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2023-09",
+          "relative_permille": 328,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-12",
+          "relative_permille": 328,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-08",
+          "relative_permille": 300,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 292,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 300,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 287,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 300,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 300,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 287,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-07",
+          "relative_permille": 287,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2B5600C36",
+      "month_count": 17,
+      "seller_count": 5,
+      "multi_seller_month_count": 3,
+      "first_month": "2022-01",
+      "last_month": "2025-04",
+      "change_permille": -726,
+      "points": [
+        {
+          "month": "2022-01",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-05",
+          "relative_permille": 722,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-06",
+          "relative_permille": 681,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-07",
+          "relative_permille": 674,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2023-01",
+          "relative_permille": 444,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-02",
+          "relative_permille": 418,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-03",
+          "relative_permille": 389,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-01",
+          "relative_permille": 303,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 333,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 304,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-08",
+          "relative_permille": 306,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 306,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-10",
+          "relative_permille": 294,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 278,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 290,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 300,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 274,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2B5600Z36K",
+      "month_count": 16,
+      "seller_count": 4,
+      "multi_seller_month_count": 1,
+      "first_month": "2022-11",
+      "last_month": "2026-05",
+      "change_permille": 886,
+      "points": [
+        {
+          "month": "2022-11",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-01",
+          "relative_permille": 727,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-02",
+          "relative_permille": 705,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-03",
+          "relative_permille": 668,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 518,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-07",
+          "relative_permille": 591,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 516,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-10",
+          "relative_permille": 475,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 500,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 454,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 477,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 477,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 445,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-07",
+          "relative_permille": 445,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 364,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-05",
+          "relative_permille": 1886,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2B6200C36W",
+      "month_count": 15,
+      "seller_count": 4,
+      "multi_seller_month_count": 0,
+      "first_month": "2022-08",
+      "last_month": "2026-05",
+      "change_permille": 764,
+      "points": [
+        {
+          "month": "2022-08",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-02",
+          "relative_permille": 661,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-12",
+          "relative_permille": 626,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-01",
+          "relative_permille": 480,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 480,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 449,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 459,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 417,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 421,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 430,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 466,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 626,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 1405,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 1764,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-05",
+          "relative_permille": 1764,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2E6000Z36",
+      "month_count": 15,
+      "seller_count": 4,
+      "multi_seller_month_count": 0,
+      "first_month": "2024-01",
+      "last_month": "2026-06",
+      "change_permille": 2397,
+      "points": [
+        {
+          "month": "2024-01",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-03",
+          "relative_permille": 1038,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 1321,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 943,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 877,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 849,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 849,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 849,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 943,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 840,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-07",
+          "relative_permille": 943,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 1113,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 3302,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-02",
+          "relative_permille": 3774,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-06",
+          "relative_permille": 3397,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMT32GX5M2B5200C40",
+      "month_count": 15,
+      "seller_count": 3,
+      "multi_seller_month_count": 2,
+      "first_month": "2022-03",
+      "last_month": "2025-12",
+      "change_permille": 274,
+      "points": [
+        {
+          "month": "2022-03",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-05",
+          "relative_permille": 1078,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-06",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-07",
+          "relative_permille": 1035,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-12",
+          "relative_permille": 483,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 457,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-08",
+          "relative_permille": 431,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 400,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 414,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 430,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 431,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 397,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-07",
+          "relative_permille": 414,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 479,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 1274,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2B6400C32",
+      "month_count": 14,
+      "seller_count": 4,
+      "multi_seller_month_count": 2,
+      "first_month": "2023-12",
+      "last_month": "2026-05",
+      "change_permille": 2594,
+      "points": [
+        {
+          "month": "2023-12",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 1042,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-03",
+          "relative_permille": 1002,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 867,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 1002,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 886,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 847,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 847,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 917,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-08",
+          "relative_permille": 924,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 948,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 3159,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 3594,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-05",
+          "relative_permille": 3594,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2E6000C36",
+      "month_count": 14,
+      "seller_count": 5,
+      "multi_seller_month_count": 1,
+      "first_month": "2024-01",
+      "last_month": "2026-06",
+      "change_permille": 2941,
+      "points": [
+        {
+          "month": "2024-01",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-03",
+          "relative_permille": 990,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-07",
+          "relative_permille": 1025,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 1025,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 990,
+          "seller_count": 3,
+          "single_seller": false
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 891,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 990,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 990,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-08",
+          "relative_permille": 990,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 990,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 3466,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 4951,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-04",
+          "relative_permille": 3941,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-06",
+          "relative_permille": 3941,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "KF556C36BBEAK2-32",
+      "month_count": 14,
+      "seller_count": 3,
+      "multi_seller_month_count": 0,
+      "first_month": "2022-11",
+      "last_month": "2026-01",
+      "change_permille": 1031,
+      "points": [
+        {
+          "month": "2022-11",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-12",
+          "relative_permille": 940,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-01",
+          "relative_permille": 1013,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-02",
+          "relative_permille": 743,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-12",
+          "relative_permille": 728,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-07",
+          "relative_permille": 587,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 564,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 564,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 457,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 457,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 559,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 677,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-11",
+          "relative_permille": 1128,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-01",
+          "relative_permille": 2031,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2B5600C40K",
+      "month_count": 13,
+      "seller_count": 4,
+      "multi_seller_month_count": 1,
+      "first_month": "2023-02",
+      "last_month": "2026-05",
+      "change_permille": 2310,
+      "points": [
+        {
+          "month": "2023-02",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-01",
+          "relative_permille": 684,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 684,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-07",
+          "relative_permille": 774,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-10",
+          "relative_permille": 684,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 645,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 687,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 703,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 626,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 612,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 661,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 903,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-05",
+          "relative_permille": 3310,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2B6000Z30K",
+      "month_count": 13,
+      "seller_count": 4,
+      "multi_seller_month_count": 3,
+      "first_month": "2023-01",
+      "last_month": "2026-05",
+      "change_permille": 905,
+      "points": [
+        {
+          "month": "2023-01",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-11",
+          "relative_permille": 690,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-12",
+          "relative_permille": 619,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-01",
+          "relative_permille": 619,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-03",
+          "relative_permille": 590,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 524,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 476,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 524,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 524,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 552,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 1755,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-02",
+          "relative_permille": 2414,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-05",
+          "relative_permille": 1905,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2B6000C36",
+      "month_count": 13,
+      "seller_count": 2,
+      "multi_seller_month_count": 0,
+      "first_month": "2024-01",
+      "last_month": "2026-07",
+      "change_permille": 3898,
+      "points": [
+        {
+          "month": "2024-01",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 1019,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 1065,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 1122,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 1122,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 953,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 1009,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-11",
+          "relative_permille": 2804,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 3407,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-02",
+          "relative_permille": 4327,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 4524,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-05",
+          "relative_permille": 4598,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-07",
+          "relative_permille": 4898,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2B6200C36",
+      "month_count": 13,
+      "seller_count": 3,
+      "multi_seller_month_count": 2,
+      "first_month": "2022-05",
+      "last_month": "2026-03",
+      "change_permille": 547,
+      "points": [
+        {
+          "month": "2022-05",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-07",
+          "relative_permille": 940,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 400,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 382,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 377,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 377,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 387,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 387,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 372,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 377,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 1222,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-01",
+          "relative_permille": 1548,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 1547,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2X7200C34",
+      "month_count": 13,
+      "seller_count": 2,
+      "multi_seller_month_count": 0,
+      "first_month": "2023-04",
+      "last_month": "2026-03",
+      "change_permille": 1903,
+      "points": [
+        {
+          "month": "2023-04",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-07",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-12",
+          "relative_permille": 882,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-01",
+          "relative_permille": 876,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 876,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 824,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 847,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 847,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 832,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-08",
+          "relative_permille": 824,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 2259,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-01",
+          "relative_permille": 2903,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 2903,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMT32GX5M2B5600C36",
+      "month_count": 13,
+      "seller_count": 4,
+      "multi_seller_month_count": 0,
+      "first_month": "2022-03",
+      "last_month": "2025-05",
+      "change_permille": -630,
+      "points": [
+        {
+          "month": "2022-03",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-05",
+          "relative_permille": 1020,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-07",
+          "relative_permille": 967,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-08",
+          "relative_permille": 912,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-02",
+          "relative_permille": 570,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-05",
+          "relative_permille": 498,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-09",
+          "relative_permille": 399,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 404,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 404,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-10",
+          "relative_permille": 416,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 404,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 426,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 370,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "F5-6000J3038F16GX2-TZ5NR",
+      "month_count": 13,
+      "seller_count": 4,
+      "multi_seller_month_count": 2,
+      "first_month": "2024-06",
+      "last_month": "2025-12",
+      "change_permille": 1357,
+      "points": [
+        {
+          "month": "2024-06",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-08",
+          "relative_permille": 914,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 893,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 893,
+          "seller_count": 3,
+          "single_seller": false
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 875,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 857,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 857,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 857,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 928,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-07",
+          "relative_permille": 857,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-08",
+          "relative_permille": 857,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 857,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 2357,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "KF552C40BBK2-32",
+      "month_count": 13,
+      "seller_count": 3,
+      "multi_seller_month_count": 2,
+      "first_month": "2022-08",
+      "last_month": "2026-01",
+      "change_permille": 1027,
+      "points": [
+        {
+          "month": "2022-08",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-10",
+          "relative_permille": 975,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-11",
+          "relative_permille": 830,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-01",
+          "relative_permille": 643,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-02",
+          "relative_permille": 643,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-12",
+          "relative_permille": 632,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-01",
+          "relative_permille": 632,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 454,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 486,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 481,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 486,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 422,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-01",
+          "relative_permille": 2027,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "KF564C32RSK2-32",
+      "month_count": 13,
+      "seller_count": 4,
+      "multi_seller_month_count": 1,
+      "first_month": "2022-08",
+      "last_month": "2026-08",
+      "change_permille": 271,
+      "points": [
+        {
+          "month": "2022-08",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-01",
+          "relative_permille": 309,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-09",
+          "relative_permille": 309,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 307,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-10",
+          "relative_permille": 268,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 266,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 266,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 256,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 256,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 250,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 256,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-02",
+          "relative_permille": 840,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-08",
+          "relative_permille": 1271,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2E6000C36W",
+      "month_count": 12,
+      "seller_count": 4,
+      "multi_seller_month_count": 3,
+      "first_month": "2023-12",
+      "last_month": "2026-05",
+      "change_permille": 2601,
+      "points": [
+        {
+          "month": "2023-12",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-03",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-07",
+          "relative_permille": 996,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 974,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 913,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-07",
+          "relative_permille": 870,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 957,
+          "seller_count": 3,
+          "single_seller": false
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 1304,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-01",
+          "relative_permille": 3479,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 2653,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-05",
+          "relative_permille": 3601,
+          "seller_count": 2,
+          "single_seller": false
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2B5200C40",
+      "month_count": 11,
+      "seller_count": 3,
+      "multi_seller_month_count": 1,
+      "first_month": "2022-08",
+      "last_month": "2025-09",
+      "change_permille": -469,
+      "points": [
+        {
+          "month": "2022-08",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-01",
+          "relative_permille": 681,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-03",
+          "relative_permille": 622,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-09",
+          "relative_permille": 486,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 507,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 498,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-10",
+          "relative_permille": 464,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 474,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 440,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-08",
+          "relative_permille": 431,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 531,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2B5200C40W",
+      "month_count": 11,
+      "seller_count": 4,
+      "multi_seller_month_count": 2,
+      "first_month": "2022-08",
+      "last_month": "2025-10",
+      "change_permille": -434,
+      "points": [
+        {
+          "month": "2022-08",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-03",
+          "relative_permille": 456,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-05",
+          "relative_permille": 456,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 425,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 428,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 438,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 438,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 403,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 406,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-08",
+          "relative_permille": 416,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 566,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2B5200Z40",
+      "month_count": 11,
+      "seller_count": 5,
+      "multi_seller_month_count": 2,
+      "first_month": "2023-02",
+      "last_month": "2025-10",
+      "change_permille": -385,
+      "points": [
+        {
+          "month": "2023-02",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-03",
+          "relative_permille": 1014,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-12",
+          "relative_permille": 724,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 699,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 623,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 641,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 579,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 648,
+          "seller_count": 3,
+          "single_seller": false
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 586,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 652,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 615,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2B5600Z40",
+      "month_count": 11,
+      "seller_count": 3,
+      "multi_seller_month_count": 0,
+      "first_month": "2024-02",
+      "last_month": "2026-03",
+      "change_permille": 3021,
+      "points": [
+        {
+          "month": "2024-02",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 1134,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-10",
+          "relative_permille": 979,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 979,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 979,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 1005,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 953,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-08",
+          "relative_permille": 887,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 876,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 3697,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 4021,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2B6000C30",
+      "month_count": 11,
+      "seller_count": 3,
+      "multi_seller_month_count": 3,
+      "first_month": "2023-07",
+      "last_month": "2026-05",
+      "change_permille": 3642,
+      "points": [
+        {
+          "month": "2023-07",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-12",
+          "relative_permille": 1146,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 1212,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 1090,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 1113,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 1113,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 1038,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-07",
+          "relative_permille": 1038,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 1179,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 4246,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-05",
+          "relative_permille": 4642,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2B6400C36",
+      "month_count": 11,
+      "seller_count": 2,
+      "multi_seller_month_count": 0,
+      "first_month": "2023-10",
+      "last_month": "2026-05",
+      "change_permille": 2401,
+      "points": [
+        {
+          "month": "2023-10",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-12",
+          "relative_permille": 1022,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 987,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-07",
+          "relative_permille": 974,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 819,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 914,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 948,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 1190,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-01",
+          "relative_permille": 3401,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 3535,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-05",
+          "relative_permille": 3401,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMT32GX5M2B6000Z30K",
+      "month_count": 11,
+      "seller_count": 2,
+      "multi_seller_month_count": 2,
+      "first_month": "2023-12",
+      "last_month": "2026-05",
+      "change_permille": 2186,
+      "points": [
+        {
+          "month": "2023-12",
+          "relative_permille": 1000,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 957,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-10",
+          "relative_permille": 852,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 922,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 922,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 907,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 858,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 858,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 1043,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 3078,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-05",
+          "relative_permille": 3186,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMT32GX5M2X6200C36",
+      "month_count": 11,
+      "seller_count": 3,
+      "multi_seller_month_count": 2,
+      "first_month": "2022-05",
+      "last_month": "2025-10",
+      "change_permille": -619,
+      "points": [
+        {
+          "month": "2022-05",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-07",
+          "relative_permille": 837,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-12",
+          "relative_permille": 440,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 372,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 360,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 384,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 384,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 360,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 360,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 335,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 381,
+          "seller_count": 2,
+          "single_seller": false
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2B5600Z36",
+      "month_count": 10,
+      "seller_count": 4,
+      "multi_seller_month_count": 1,
+      "first_month": "2023-01",
+      "last_month": "2026-02",
+      "change_permille": 1497,
+      "points": [
+        {
+          "month": "2023-01",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-03",
+          "relative_permille": 865,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 731,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 609,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 593,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 640,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 593,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-08",
+          "relative_permille": 640,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 2327,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-02",
+          "relative_permille": 2497,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2D6000Z36",
+      "month_count": 10,
+      "seller_count": 3,
+      "multi_seller_month_count": 3,
+      "first_month": "2023-09",
+      "last_month": "2025-08",
+      "change_permille": 209,
+      "points": [
+        {
+          "month": "2023-09",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 1385,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-10",
+          "relative_permille": 1209,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 1286,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 1184,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 1291,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 1099,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 934,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 934,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-08",
+          "relative_permille": 1209,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMP32GX5M2X7200C34",
+      "month_count": 10,
+      "seller_count": 4,
+      "multi_seller_month_count": 1,
+      "first_month": "2023-12",
+      "last_month": "2025-12",
+      "change_permille": 1024,
+      "points": [
+        {
+          "month": "2023-12",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 955,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 881,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 914,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 810,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 810,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 905,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 929,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 968,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 2024,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CP2K16G56C46U5",
+      "month_count": 10,
+      "seller_count": 3,
+      "multi_seller_month_count": 1,
+      "first_month": "2024-05",
+      "last_month": "2025-12",
+      "change_permille": 1727,
+      "points": [
+        {
+          "month": "2024-05",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 909,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 891,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 895,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 900,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 916,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 916,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 818,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 1136,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 2727,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2B5200Z40K",
+      "month_count": 9,
+      "seller_count": 4,
+      "multi_seller_month_count": 2,
+      "first_month": "2023-03",
+      "last_month": "2025-10",
+      "change_permille": -401,
+      "points": [
+        {
+          "month": "2023-03",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-03",
+          "relative_permille": 713,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-07",
+          "relative_permille": 733,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-10",
+          "relative_permille": 647,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 633,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 600,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 600,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 610,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 599,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2B6000C30",
+      "month_count": 9,
+      "seller_count": 2,
+      "multi_seller_month_count": 0,
+      "first_month": "2023-12",
+      "last_month": "2026-02",
+      "change_permille": 2993,
+      "points": [
+        {
+          "month": "2023-12",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 1181,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-06",
+          "relative_permille": 961,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 984,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 984,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 1016,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 3142,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-02",
+          "relative_permille": 3993,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMP32GX5M2B6000C30W",
+      "month_count": 9,
+      "seller_count": 2,
+      "multi_seller_month_count": 1,
+      "first_month": "2024-02",
+      "last_month": "2026-01",
+      "change_permille": 2174,
+      "points": [
+        {
+          "month": "2024-02",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-03",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 935,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 918,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 932,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 923,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 941,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 2532,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-01",
+          "relative_permille": 3174,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMP32GX5M2X7000C34W",
+      "month_count": 9,
+      "seller_count": 2,
+      "multi_seller_month_count": 1,
+      "first_month": "2023-12",
+      "last_month": "2026-05",
+      "change_permille": 1804,
+      "points": [
+        {
+          "month": "2023-12",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 983,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 948,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 932,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 893,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 916,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 1124,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 2804,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-05",
+          "relative_permille": 2804,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMP32GX5M2X7200C34W",
+      "month_count": 9,
+      "seller_count": 4,
+      "multi_seller_month_count": 0,
+      "first_month": "2023-12",
+      "last_month": "2025-12",
+      "change_permille": 1024,
+      "points": [
+        {
+          "month": "2023-12",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 952,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-08",
+          "relative_permille": 938,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 952,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 881,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 881,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 905,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 900,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 2024,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2B5600Z40",
+      "month_count": 8,
+      "seller_count": 3,
+      "multi_seller_month_count": 0,
+      "first_month": "2024-02",
+      "last_month": "2025-12",
+      "change_permille": 2184,
+      "points": [
+        {
+          "month": "2024-02",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-07",
+          "relative_permille": 1132,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 977,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 934,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-07",
+          "relative_permille": 1034,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 943,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 1321,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 3184,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2B6400C36",
+      "month_count": 8,
+      "seller_count": 2,
+      "multi_seller_month_count": 0,
+      "first_month": "2023-12",
+      "last_month": "2026-05",
+      "change_permille": 2608,
+      "points": [
+        {
+          "month": "2023-12",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 965,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 847,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 878,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 784,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 1247,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 3137,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-05",
+          "relative_permille": 3608,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2E6200C36",
+      "month_count": 8,
+      "seller_count": 2,
+      "multi_seller_month_count": 1,
+      "first_month": "2024-02",
+      "last_month": "2026-03",
+      "change_permille": 2419,
+      "points": [
+        {
+          "month": "2024-02",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 949,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 880,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 927,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 875,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-08",
+          "relative_permille": 880,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 3128,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 3419,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2B5200C40W",
+      "month_count": 8,
+      "seller_count": 2,
+      "multi_seller_month_count": 0,
+      "first_month": "2022-07",
+      "last_month": "2026-03",
+      "change_permille": 583,
+      "points": [
+        {
+          "month": "2022-07",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-03",
+          "relative_permille": 399,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 367,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 330,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 430,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 438,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 1334,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 1583,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2B5600C40",
+      "month_count": 8,
+      "seller_count": 5,
+      "multi_seller_month_count": 1,
+      "first_month": "2024-02",
+      "last_month": "2025-08",
+      "change_permille": -155,
+      "points": [
+        {
+          "month": "2024-02",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-07",
+          "relative_permille": 955,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-08",
+          "relative_permille": 845,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 845,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 864,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 823,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 782,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-08",
+          "relative_permille": 845,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2E6200C36",
+      "month_count": 8,
+      "seller_count": 3,
+      "multi_seller_month_count": 1,
+      "first_month": "2024-04",
+      "last_month": "2026-03",
+      "change_permille": 2468,
+      "points": [
+        {
+          "month": "2024-04",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 927,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 955,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 854,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-08",
+          "relative_permille": 891,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 891,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 3096,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 3468,
+          "seller_count": 2,
+          "single_seller": false
+        }
+      ]
+    },
+    {
+      "mpn": "CMP32GX5M2B6000C30",
+      "month_count": 8,
+      "seller_count": 2,
+      "multi_seller_month_count": 1,
+      "first_month": "2024-02",
+      "last_month": "2025-12",
+      "change_permille": 1325,
+      "points": [
+        {
+          "month": "2024-02",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-05",
+          "relative_permille": 1012,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 947,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 927,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 947,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 918,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 1031,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 2325,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMP32GX5M2B6400C32W",
+      "month_count": 8,
+      "seller_count": 2,
+      "multi_seller_month_count": 0,
+      "first_month": "2024-01",
+      "last_month": "2026-05",
+      "change_permille": 2211,
+      "points": [
+        {
+          "month": "2024-01",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 972,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 964,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 916,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 1122,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 2467,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 3045,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-05",
+          "relative_permille": 3211,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CP2K16G60C36U5B",
+      "month_count": 8,
+      "seller_count": 3,
+      "multi_seller_month_count": 0,
+      "first_month": "2024-05",
+      "last_month": "2025-09",
+      "change_permille": -109,
+      "points": [
+        {
+          "month": "2024-05",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 718,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 782,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 900,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 900,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 736,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-08",
+          "relative_permille": 891,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 891,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "F5-6000J3038F16GX2-TZ5N",
+      "month_count": 8,
+      "seller_count": 4,
+      "multi_seller_month_count": 3,
+      "first_month": "2024-01",
+      "last_month": "2025-05",
+      "change_permille": -136,
+      "points": [
+        {
+          "month": "2024-01",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-06",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-08",
+          "relative_permille": 1004,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 884,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 876,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 876,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 876,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 864,
+          "seller_count": 2,
+          "single_seller": false
+        }
+      ]
+    },
+    {
+      "mpn": "KF560C30BBEK2-32",
+      "month_count": 8,
+      "seller_count": 4,
+      "multi_seller_month_count": 1,
+      "first_month": "2025-01",
+      "last_month": "2026-08",
+      "change_permille": 5117,
+      "points": [
+        {
+          "month": "2025-01",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 1100,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-07",
+          "relative_permille": 1100,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 1195,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 1591,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-03",
+          "relative_permille": 5476,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-08",
+          "relative_permille": 6117,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2B6000C40W",
+      "month_count": 7,
+      "seller_count": 2,
+      "multi_seller_month_count": 0,
+      "first_month": "2022-08",
+      "last_month": "2025-12",
+      "change_permille": 228,
+      "points": [
+        {
+          "month": "2022-08",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 464,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-08",
+          "relative_permille": 460,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 399,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 417,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 507,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 1228,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2X7200C34",
+      "month_count": 7,
+      "seller_count": 2,
+      "multi_seller_month_count": 1,
+      "first_month": "2023-12",
+      "last_month": "2026-06",
+      "change_permille": 2288,
+      "points": [
+        {
+          "month": "2023-12",
+          "relative_permille": 1000,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-01",
+          "relative_permille": 974,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 974,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 928,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-08",
+          "relative_permille": 931,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 2416,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-06",
+          "relative_permille": 3288,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMK32GX5M2B5600C40W",
+      "month_count": 7,
+      "seller_count": 2,
+      "multi_seller_month_count": 0,
+      "first_month": "2024-01",
+      "last_month": "2025-10",
+      "change_permille": 172,
+      "points": [
+        {
+          "month": "2024-01",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-06",
+          "relative_permille": 991,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 909,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 909,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 861,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 861,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 1172,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMT32GX5M2D6000Z36",
+      "month_count": 7,
+      "seller_count": 3,
+      "multi_seller_month_count": 0,
+      "first_month": "2023-12",
+      "last_month": "2025-10",
+      "change_permille": 353,
+      "points": [
+        {
+          "month": "2023-12",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-07",
+          "relative_permille": 918,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 824,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 882,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 844,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 688,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 1353,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CT2K16G48C40U5",
+      "month_count": 7,
+      "seller_count": 3,
+      "multi_seller_month_count": 0,
+      "first_month": "2021-11",
+      "last_month": "2025-05",
+      "change_permille": -591,
+      "points": [
+        {
+          "month": "2021-11",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-10",
+          "relative_permille": 1026,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-03",
+          "relative_permille": 920,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-01",
+          "relative_permille": 484,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-03",
+          "relative_permille": 935,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 473,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 409,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "F5-6000J3036F16GX2-TZ5NRW",
+      "month_count": 7,
+      "seller_count": 3,
+      "multi_seller_month_count": 2,
+      "first_month": "2024-08",
+      "last_month": "2025-12",
+      "change_permille": 1374,
+      "points": [
+        {
+          "month": "2024-08",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 928,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 928,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 924,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 928,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 921,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 2374,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "F5-7200J3445G16GX2-TZ5RK",
+      "month_count": 7,
+      "seller_count": 2,
+      "multi_seller_month_count": 3,
+      "first_month": "2024-07",
+      "last_month": "2026-01",
+      "change_permille": 2067,
+      "points": [
+        {
+          "month": "2024-07",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-08",
+          "relative_permille": 997,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-10",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 923,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 933,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 933,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-01",
+          "relative_permille": 3067,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "KF548C38BBK2-32",
+      "month_count": 7,
+      "seller_count": 3,
+      "multi_seller_month_count": 0,
+      "first_month": "2022-08",
+      "last_month": "2024-12",
+      "change_permille": -471,
+      "points": [
+        {
+          "month": "2022-08",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-12",
+          "relative_permille": 734,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-02",
+          "relative_permille": 1358,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-03",
+          "relative_permille": 1274,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-06",
+          "relative_permille": 588,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-12",
+          "relative_permille": 647,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 529,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "KF556C40BBK2-32",
+      "month_count": 7,
+      "seller_count": 2,
+      "multi_seller_month_count": 0,
+      "first_month": "2023-03",
+      "last_month": "2026-02",
+      "change_permille": 1575,
+      "points": [
+        {
+          "month": "2023-03",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-12",
+          "relative_permille": 888,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 709,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 709,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 709,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 945,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-02",
+          "relative_permille": 2575,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "KF560C36BBEAK2-32",
+      "month_count": 7,
+      "seller_count": 3,
+      "multi_seller_month_count": 1,
+      "first_month": "2023-01",
+      "last_month": "2024-11",
+      "change_permille": -261,
+      "points": [
+        {
+          "month": "2023-01",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-02",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-03",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-12",
+          "relative_permille": 981,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 898,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 939,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 739,
+          "seller_count": 2,
+          "single_seller": false
+        }
+      ]
+    },
+    {
+      "mpn": "KF560C36BBEK2-32",
+      "month_count": 7,
+      "seller_count": 2,
+      "multi_seller_month_count": 0,
+      "first_month": "2023-01",
+      "last_month": "2025-01",
+      "change_permille": -312,
+      "points": [
+        {
+          "month": "2023-01",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-02",
+          "relative_permille": 882,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-04",
+          "relative_permille": 770,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-05",
+          "relative_permille": 757,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-01",
+          "relative_permille": 787,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-08",
+          "relative_permille": 688,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 688,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2B5600C36K",
+      "month_count": 6,
+      "seller_count": 2,
+      "multi_seller_month_count": 0,
+      "first_month": "2023-03",
+      "last_month": "2024-11",
+      "change_permille": -312,
+      "points": [
+        {
+          "month": "2023-03",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-05",
+          "relative_permille": 681,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-08",
+          "relative_permille": 581,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 750,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-05",
+          "relative_permille": 750,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 688,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMH32GX5M2D6000Z36K",
+      "month_count": 6,
+      "seller_count": 2,
+      "multi_seller_month_count": 0,
+      "first_month": "2024-01",
+      "last_month": "2025-09",
+      "change_permille": 10,
+      "points": [
+        {
+          "month": "2024-01",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 1026,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 1052,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 1026,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-04",
+          "relative_permille": 1010,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-09",
+          "relative_permille": 1010,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMP32GX5M2B6400C32",
+      "month_count": 6,
+      "seller_count": 2,
+      "multi_seller_month_count": 1,
+      "first_month": "2024-02",
+      "last_month": "2026-01",
+      "change_permille": 2056,
+      "points": [
+        {
+          "month": "2024-02",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-06",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 964,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 1076,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-12",
+          "relative_permille": 2295,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-01",
+          "relative_permille": 3056,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "CMT32GX5M2B5600Z36",
+      "month_count": 6,
+      "seller_count": 2,
+      "multi_seller_month_count": 1,
+      "first_month": "2023-02",
+      "last_month": "2025-03",
+      "change_permille": -312,
+      "points": [
+        {
+          "month": "2023-02",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-02",
+          "relative_permille": 694,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 796,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 718,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 591,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-03",
+          "relative_permille": 688,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "FF3D532G6000HC38ADC01",
+      "month_count": 6,
+      "seller_count": 3,
+      "multi_seller_month_count": 1,
+      "first_month": "2022-10",
+      "last_month": "2026-02",
+      "change_permille": -216,
+      "points": [
+        {
+          "month": "2022-10",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-10",
+          "relative_permille": 230,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 229,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2025-02",
+          "relative_permille": 226,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-01",
+          "relative_permille": 830,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-02",
+          "relative_permille": 784,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "KF560C32RSAK2-32",
+      "month_count": 6,
+      "seller_count": 4,
+      "multi_seller_month_count": 1,
+      "first_month": "2022-11",
+      "last_month": "2025-06",
+      "change_permille": -505,
+      "points": [
+        {
+          "month": "2022-11",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-09",
+          "relative_permille": 505,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2024-11",
+          "relative_permille": 513,
+          "seller_count": 3,
+          "single_seller": false
+        },
+        {
+          "month": "2024-12",
+          "relative_permille": 531,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 513,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-06",
+          "relative_permille": 495,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "KF560C36BBE2K2-32",
+      "month_count": 6,
+      "seller_count": 3,
+      "multi_seller_month_count": 0,
+      "first_month": "2024-11",
+      "last_month": "2026-02",
+      "change_permille": 2112,
+      "points": [
+        {
+          "month": "2024-11",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 1100,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-05",
+          "relative_permille": 1089,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-10",
+          "relative_permille": 1111,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-01",
+          "relative_permille": 4056,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2026-02",
+          "relative_permille": 3112,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    },
+    {
+      "mpn": "KF560C40BBK2-32",
+      "month_count": 6,
+      "seller_count": 3,
+      "multi_seller_month_count": 1,
+      "first_month": "2022-08",
+      "last_month": "2025-01",
+      "change_permille": -536,
+      "points": [
+        {
+          "month": "2022-08",
+          "relative_permille": 1000,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2022-11",
+          "relative_permille": 827,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-03",
+          "relative_permille": 665,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2023-12",
+          "relative_permille": 508,
+          "seller_count": 2,
+          "single_seller": false
+        },
+        {
+          "month": "2024-04",
+          "relative_permille": 516,
+          "seller_count": 1,
+          "single_seller": true
+        },
+        {
+          "month": "2025-01",
+          "relative_permille": 464,
+          "seller_count": 1,
+          "single_seller": true
+        }
+      ]
+    }
+  ]
+}
