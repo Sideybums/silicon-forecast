@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { EventList } from "@/components/chart/EventLine";
-import { ProductSparkline } from "@/components/chart/ProductSparkline";
+import { ProductSparkline, monthDomain } from "@/components/chart/ProductSparkline";
 import { componentFor, trackedComponents } from "@/lib/components-registry";
 import type { Product } from "@/lib/public-data";
 import { eventsFor, formatPermilleChange, productFor, productsFor } from "@/lib/public-data";
@@ -70,6 +70,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string;
   if (!entry || !product) notFound();
 
   const events = eventsFor(entry.dataset);
+  const domain = monthDomain(productsFor(entry.dataset)?.products ?? []);
   const gaps = missingMonths(product);
   const singleSellerMonths = product.points.filter((point) => point.single_seller).length;
 
@@ -88,7 +89,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string;
       </header>
 
       <figure className="product-figure">
-        <ProductSparkline product={product} label={false} />
+        <ProductSparkline product={product} domain={domain} label={false} />
         <figcaption>
           <dl className="method-figures">
             <div>

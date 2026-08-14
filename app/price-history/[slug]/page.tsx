@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { EmptyStateChart } from "@/components/EmptyStateChart";
 import { EventList } from "@/components/chart/EventLine";
 import { IndexChart, IndexHeadline } from "@/components/chart/IndexChart";
-import { ProductSparkline } from "@/components/chart/ProductSparkline";
+import { ProductSparkline, monthDomain } from "@/components/chart/ProductSparkline";
 import { componentFor, components } from "@/lib/components-registry";
 import { eventsFor, formatIndex, formatPermilleChange, formatPermilleRatio, indexFor, productsFor } from "@/lib/public-data";
 import { seriesIsPublic } from "@/lib/publication-gate";
@@ -44,6 +44,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const products = productsFor(entry.dataset);
   const events = eventsFor(entry.dataset);
 
+  const domain = monthDomain(products?.products ?? []);
   const ranked = [...(products?.products ?? [])].sort(
     (a, b) => Math.abs(b.change_permille ?? 0) - Math.abs(a.change_permille ?? 0),
   );
@@ -168,7 +169,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
               <li key={product.mpn}>
                 <Link href={`/price-history/${entry.slug}/${product.mpn}/`}>
                   <strong>{product.mpn}</strong>
-                  <ProductSparkline product={product} label={false} />
+                  <ProductSparkline product={product} domain={domain} label={false} />
                   <span className="product-list-meta">
                     <span className={(product.change_permille ?? 0) > 0 ? "is-higher" : "is-lower"}>
                       {formatPermilleChange(product.change_permille)}
