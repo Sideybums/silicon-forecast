@@ -130,6 +130,18 @@ export function permilleAcross(index: number, count: number): number {
   return Math.round((index / (count - 1)) * 1000);
 }
 
+/** Months from `first` to `month`, both `YYYY-MM`. Negative if earlier. */
+export function monthOffset(month: string, first: string): number {
+  const [year, index] = month.split("-").map(Number);
+  const [firstYear, firstIndex] = first.split("-").map(Number);
+  return (year - firstYear) * 12 + (index - firstIndex);
+}
+
+/** Count of months from `first` to `last` inclusive. */
+export function monthSpan(first: string, last: string): number {
+  return monthOffset(last, first) + 1;
+}
+
 /**
  * How far a label sitting at a slot should be pulled back over its own width.
  *

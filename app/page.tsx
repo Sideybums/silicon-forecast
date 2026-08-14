@@ -2,9 +2,9 @@ import Link from "next/link";
 import { CategoryGrid } from "@/components/CategoryGrid";
 import { EmptyStateChart } from "@/components/EmptyStateChart";
 import { IndexChart, IndexHeadline } from "@/components/chart/IndexChart";
-import { ProductSparkline } from "@/components/chart/ProductSparkline";
+import { ProductSparkline, monthDomain } from "@/components/chart/ProductSparkline";
 import { components, trackedComponents } from "@/lib/components-registry";
-import { eventsFor, formatPermilleChange, indexFor, productsFor } from "@/lib/public-data";
+import { eventsFor, indexFor, productsFor } from "@/lib/public-data";
 import { seriesIsPublic } from "@/lib/publication-gate";
 
 export const metadata = {
@@ -21,8 +21,11 @@ export default function Home() {
   const events = eventsFor(dataset);
   const products = productsFor(dataset);
 
-  // The largest movers over each product's own observed span. Sorted by size of
-  // move rather than by level, because there are no levels here.
+  // The largest movers, by size of move rather than by level, because there are
+  // no levels here. Every sparkline is drawn on the dataset's full span, so a
+  // product that stopped being observed shows an empty stretch rather than a
+  // line that appears to run to today.
+  const domain = monthDomain(products?.products ?? []);
   const movers = (products?.products ?? [])
     .filter((p) => p.change_permille !== null && p.month_count >= 8)
     .sort((a, b) => Math.abs(b.change_permille as number) - Math.abs(a.change_permille as number))
@@ -63,9 +66,9 @@ export default function Home() {
                 <h3>
                   <Link href={`/price-history/${dataset}/${encodeURIComponent(product.mpn)}/`}>{product.mpn}</Link>
                 </h3>
-                <ProductSparkline product={product} />
+                <ProductSparkline product={product} domain={domain} />
                 <p className="movers-meta">
-                  {formatPermilleChange(product.change_permille)} across {product.month_count} months ·{" "}
+                  {product.first_month} to {product.last_month} · {product.month_count} months ·{" "}
                   {product.seller_count} retailers
                 </p>
               </article>

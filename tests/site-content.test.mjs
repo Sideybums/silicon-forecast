@@ -28,12 +28,39 @@ const PROJECTION_FILES = globSync("data/public-projection/**/*.json");
 
 const isPublic = seriesIsPublic();
 
+/**
+ * Whether `out/` was built from the sources and gate config as they stand now.
+ *
+ * These assertions compare a rendered build against the gate that produced it,
+ * so a build left over from a different gate state would fail them for the wrong
+ * reason — reporting a leak where there is only a stale artefact. `npm run
+ * build` rebuilds immediately before running this file, so there the check is
+ * always fresh and the invariants run for real. A bare `npm test` may find an
+ * old directory, and says so rather than crying wolf.
+ */
+function buildIsStale() {
+  if (!existsSync("out/index.html")) return true;
+  const built = statSync("out/index.html").mtimeMs;
+  const inputs = globSync([
+    "app/**/*",
+    "components/**/*",
+    "lib/**/*",
+    "config/*.json",
+    "data/public-projection/*.json",
+  ]).filter((file) => statSync(file).isFile());
+  return inputs.some((file) => statSync(file).mtimeMs > built);
+}
+
 const htmlFiles = existsSync("out")
   ? globSync("out/**/*.html").filter((file) => statSync(file).isFile())
   : [];
 const pages = new Map(htmlFiles.map((file) => [file, readFileSync(file, "utf8")]));
 const allHtml = [...pages.values()].join("\n");
-const needsBuild = htmlFiles.length === 0 ? "static build not present" : false;
+const needsBuild = htmlFiles.length === 0
+  ? "static build not present"
+  : buildIsStale()
+    ? "static build is older than its inputs — run npm run build"
+    : false;
 
 /** The empty state the site must show wherever a withheld chart would go. */
 const EMPTY_STATE = [
@@ -323,6 +350,38 @@ test("the number of product pages equals the number of products exactly", { skip
     PRODUCTS.products.map((product) => product.mpn).sort(),
     "product pages and products have drifted apart",
   );
+});
+
+test("a product whose observations stopped early says so wherever it is drawn", { skip: needsBuild }, () => {
+  if (!isPublic) return;
+
+  // 15 of the 20 products showing a fall stop being observed before the 2025
+  // surge. Drawn on their own span they looked identical to a product still
+  // being followed, so a series that ended before the market moved read as a
+  // price that had fallen and stayed down. Every sparkline is now drawn on the
+  // dataset's full span and the unobserved stretch is shaded, but the visual
+  // alone is not enough: the fact must survive in text.
+  const latest = PRODUCTS.products
+    .map((product) => product.last_month)
+    .filter(Boolean)
+    .sort()
+    .at(-1);
+  const stale = PRODUCTS.products.filter((product) => product.last_month && product.last_month < latest);
+  assert.ok(stale.length > 0, "expected some products to have stopped being observed");
+
+  for (const product of stale) {
+    const page = pages.get(`out/price-history/ram/${product.mpn}/index.html`);
+    assert.ok(page, `no page for ${product.mpn}`);
+    assert.ok(
+      page.includes(product.last_month),
+      `${product.mpn} never states the month its observations stop`,
+    );
+  }
+
+  // And the shared axis is genuinely shared: a stale series must be marked in
+  // the markup, not merely drawn slightly shorter.
+  const listing = pages.get("out/price-history/ram/index.html");
+  assert.match(listing, /data-ends-early="true"/u, "no product is marked as having stopped early");
 });
 
 // ---------------------------------------------------------------------------
