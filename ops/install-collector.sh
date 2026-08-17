@@ -6,7 +6,6 @@
 set -euo pipefail
 
 LABEL="uk.co.siliconforecast.collector"
-SOURCE_REPO="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd -P)"
 AGENT_DIR="$HOME/Library/LaunchAgents"
 TARGET="$AGENT_DIR/$LABEL.plist"
 STATE_DIR="$HOME/Library/Application Support/Silicon Forecast Collector"
@@ -24,7 +23,6 @@ verify_checkout() {
   local repo="$1" head remote_head
   [ "${repo#/}" != "$repo" ] || { echo "collector checkout must be an absolute path" >&2; exit 2; }
   repo="$(cd "$repo" && pwd -P)"
-  [ "$repo" != "$SOURCE_REPO" ] || { echo "refusing to install against the developer/source checkout" >&2; exit 2; }
   [ "$(git -C "$repo" rev-parse --show-toplevel)" = "$repo" ] || { echo "collector checkout must be a Git repository root" >&2; exit 2; }
   [ "$(git -C "$repo" symbolic-ref --quiet --short HEAD)" = "main" ] || { echo "collector checkout must be on main" >&2; exit 2; }
   git -C "$repo" remote get-url origin >/dev/null

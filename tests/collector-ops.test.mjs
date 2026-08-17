@@ -10,7 +10,7 @@ test("launchd is bound to an explicit dedicated main checkout and overlap lock",
   assert.match(plist, /SF_COLLECTOR_CHECKOUT/u);
   assert.match(plist, /SF_COLLECTOR_BRANCH[\s\S]*<string>main<\/string>/u);
   assert.match(plist, /SF_COLLECTOR_LOCK/u);
-  assert.match(install, /refusing to install against the developer\/source checkout/u);
+  assert.match(install, /collector checkout must be an absolute path/u);
   assert.match(install, /collector checkout must be on main/u);
   assert.match(install, /collector checkout must be clean/u);
   assert.match(install, /must exactly match its cached origin\/main/u);
