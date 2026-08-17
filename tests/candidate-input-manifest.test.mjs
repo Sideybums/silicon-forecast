@@ -5,14 +5,14 @@ import { tmpdir } from "node:os";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
 import test from "node:test";
-import { loadCandidateInputManifest } from "../lib/candidate-input-manifest.mjs";
+import { appendExcludedProspectiveCandidate, loadCandidateInputManifest } from "../lib/candidate-input-manifest.mjs";
 
 const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex");
 
 test("the private candidate manifest classifies every candidate observation exactly once", () => {
   const root = new URL("../", import.meta.url);
   const manifest = loadCandidateInputManifest(root);
-  assert.equal(manifest.entries.length, 17);
+  assert.equal(manifest.entries.length, 18);
   assert.equal(manifest.publication_eligible, false);
   assert.ok(manifest.entries.every((entry) => entry.reason.length > 20));
 });
@@ -24,7 +24,7 @@ test("an unclassified candidate file or byte drift fails closed", () => {
     const manifestDir = path.join(dir, "data/derived/private-candidate");
     mkdirSync(candidateDir, { recursive: true });
     mkdirSync(manifestDir, { recursive: true });
-    const bytes = Buffer.from('{"schema_version":1,"scope":"candidate_only","channel":"PRIMARY_RETAIL","observations":[]}\n');
+    const bytes = Buffer.from('{"schema_version":1,"status":"candidate_private_immutable","scope":"candidate_only","channel":"PRIMARY_RETAIL","observations":[]}\n');
     writeFileSync(path.join(candidateDir, "one.json"), bytes);
     const manifest = {
       schema_version: 1,
@@ -61,6 +61,11 @@ test("an unclassified candidate file or byte drift fails closed", () => {
     writeFileSync(path.join(candidateDir, "two.json"), bytes);
     assert.throws(() => loadCandidateInputManifest(root), /classify every candidate observation/u);
     rmSync(path.join(candidateDir, "two.json"));
+    const canonicalTwo = "data/observations/candidate/uk-primary-retail-20260817T103006Z.v1.json";
+    writeFileSync(path.join(candidateDir, "uk-primary-retail-20260817T103006Z.v1.json"), bytes);
+    const appended = appendExcludedProspectiveCandidate(root, canonicalTwo);
+    assert.equal(appended.decision, "excluded_private_candidate");
+    assert.doesNotThrow(() => loadCandidateInputManifest(root));
     writeFileSync(path.join(candidateDir, "one.json"), `${bytes.toString()} `);
     assert.throws(() => loadCandidateInputManifest(root), /hash mismatch/u);
   } finally {

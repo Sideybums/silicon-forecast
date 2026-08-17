@@ -18,6 +18,7 @@ import { fileURLToPath } from "node:url";
 import { COLLECTOR_VERSION, SCHEDULE, buildEstablishedKitShapes, buildProspectiveObservation, detectMissedSlots, runCollection } from "../lib/canonical-collector.mjs";
 import { acquireCollectorLock, gitCommand, pushCollectorCommit, synchroniseCollectorCheckout } from "../lib/collector-runtime.mjs";
 import { buildGlobalIntegrationAudit, discoverProspectiveTranches, writeGlobalIntegrationAudit } from "../lib/global-integration-audit.mjs";
+import { appendExcludedProspectiveCandidate, CANDIDATE_INPUT_MANIFEST } from "../lib/candidate-input-manifest.mjs";
 import { readdirSync } from "node:fs";
 
 const repo = new URL("../", import.meta.url);
@@ -191,6 +192,7 @@ if (observations.length) {
     },
   };
   writeFileSync(new URL(runRecord.tranche_file, repo), `${JSON.stringify(tranche, null, 2)}\n`);
+  appendExcludedProspectiveCandidate(repo, runRecord.tranche_file);
   mkdirSync(new URL(`research/evidence/primary-retail-${stamp}/`, repo), { recursive: true });
   writeFileSync(
     new URL(runRecord.evidence_ledger, repo),
@@ -231,6 +233,7 @@ process.stdout.write(`run ledger: data/collection-runs/ledger.v1.json (${ledger.
 // already on disk, so any git problem is reported and the run still counts.
 const paths = [
   "data/collection-runs/ledger.v1.json",
+  observations.length ? CANDIDATE_INPUT_MANIFEST : null,
   runRecord.tranche_file,
   runRecord.evidence_ledger ? `research/evidence/primary-retail-${stamp}/` : null,
   globalAuditPath,
