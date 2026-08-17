@@ -146,7 +146,7 @@ The public frontend is now **built but gated**. A complete graphs-first site exi
 
 ## Next Action
 
-Complete recovery verification and integrate the reviewed branch with every public gate withheld. Then create a clean dedicated `main` checkout for launchd, install `uk.co.siliconforecast.collector` against that checkout, and verify its 13:45 local ownership without manually triggering a fetch. Every future run must be independently checked for additive observation, evidence-manifest and global-audit bytes. Do not restore Hermes scheduling or select methodology, sources, thresholds, references, deflators, baskets or public claims. The exact handoff is machine-readable in `.planning/HANDOFF.json`.
+Recovery is integrated on `main`. launchd label `uk.co.siliconforecast.collector` is installed against `/Users/weetoddy/Desktop/Projects/Silicon_Forecast_Collector`, loaded idle with `RunAtLoad` false and zero runs; no manual retailer fetch was triggered and no Hermes collector job exists. Audit the next naturally scheduled 13:45 local run for additive observation, evidence-manifest, ledger, global-audit, local-commit and push outcomes. Do not restore Hermes scheduling or select methodology, sources, thresholds, references, deflators, baskets or public claims. The exact handoff is machine-readable in `.planning/HANDOFF.json`.
 
 ## Safety Note
 
