@@ -26,13 +26,29 @@ const publicSourceFiles = globSync([
   "lib/components-registry.ts",
   "lib/publication-gate.ts",
   "data/public-projection/**/*",
+  "data/public-offers/**/*",
 ]).filter((file) => statSync(file).isFile());
 
 const publicBuildFiles = existsSync("out")
   ? globSync("out/**/*").filter((file) => statSync(file).isFile())
   : [];
 
-const projectionFiles = globSync("data/public-projection/**/*.json");
+const projectionFiles = globSync(["data/public-projection/**/*.json", "data/public-offers/**/*.json"]);
+const releasedOffers = JSON.parse(readFileSync("data/public-offers/offers-ram.v1.json", "utf8"));
+
+function unreleasedPrivateTokens() {
+  const tokens = repositoryPrivateTokens();
+  const approvedPublicContent = JSON.stringify(releasedOffers);
+  for (const token of tokens) if (approvedPublicContent.includes(token)) tokens.delete(token);
+  for (const observation of releasedOffers.observations) {
+    tokens.delete(observation.source_url);
+    tokens.delete(observation.observed_at);
+    tokens.delete(`£${(observation.item_price_minor / 100).toFixed(2)}`);
+    tokens.delete((observation.item_price_minor / 100).toFixed(2));
+    tokens.delete(`GBP ${(observation.item_price_minor / 100).toFixed(2)}`);
+  }
+  return tokens;
+}
 
 function readJoined(files) {
   return files.map((file) => readFileSync(file).toString("utf8")).join("\n");
@@ -49,17 +65,17 @@ function assertFilesExcludePrivateMaterial(files, privateTokens, scope) {
   assertContentExcludesPrivateMaterial(readJoined(files), privateTokens, scope);
 }
 
-test("private candidate/review identifiers, prices, and worker-run values stay out of public app code", () => {
+test("unreleased private identifiers, prices, and worker-run values stay out of public app code", () => {
   assert.ok(privateJsonFiles().length > 0, "expected private candidate fixtures, observations, or reviews");
-  const privateTokens = repositoryPrivateTokens();
+  const privateTokens = unreleasedPrivateTokens();
   assert.ok(privateTokens.size > 0, "expected private boundary tokens");
   assertFilesExcludePrivateMaterial(publicSourceFiles, privateTokens, "public app source");
 });
 
-test("private candidate/review identifiers, prices, and worker-run values stay out of the static build when present", {
+test("unreleased private identifiers, prices, and worker-run values stay out of the static build when present", {
   skip: publicBuildFiles.length === 0 ? "static build not present" : false,
 }, () => {
-  assertFilesExcludePrivateMaterial(publicBuildFiles, repositoryPrivateTokens(), "static public build");
+  assertFilesExcludePrivateMaterial(publicBuildFiles, unreleasedPrivateTokens(), "static public build");
 });
 
 // --- replacements for the narrowed part-number ban ---------------------------

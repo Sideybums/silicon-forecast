@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "approval_id": "sf-observation-first-deployment-2026-08-17T160421Z",
+  "status": "approved",
+  "decision": "deploy_observation_first_public_preview",
+  "approved_by": {
+    "name": "David Sidebottom",
+    "role": "project_owner"
+  },
+  "approved_at": "2026-08-17T16:04:21Z",
+  "approval_record": {
+    "channel": "interactive_project_session",
+    "response": "I approve lets deploy and get this working"
+  },
+  "targets": [
+    "siliconforecast.com",
+    "www.siliconforecast.com"
+  ],
+  "scope": {
+    "factual_offers": true,
+    "retailer_links": true,
+    "raw_exact_mpn_history": true,
+    "aggregate_index": false,
+    "methodology": false,
+    "basket": false,
+    "baseline": false,
+    "historical_reference": false,
+    "deflator": false,
+    "research_publication": false,
+    "recommendations": false,
+    "paid_affiliate_tracking": false
+  },
+  "bindings": {
+    "policy": {
+      "path": "config/factual-offer-publication-policy.v1.json",
+      "sha256": "c5ede45b38d2cf20fefeb8891f9b01e96a2a8197d917a8f9f08523404461062f"
+    },
+    "manifest": {
+      "path": "data/derived/private-candidate/public-offers-manifest.v1.json",
+      "sha256": "fd34ede923af7e8973b36d873fd1b5dd4d5217590595af6f65a1357eb898b9d9"
+    },
+    "payload": {
+      "path": "data/public-offers/offers-ram.v1.json",
+      "sha256": "8319c030c16fa73d5bfb30bb681a395b6ffee015c6547bd64789d57cd2256524"
+    },
+    "deployment_surface_sha256": "84427c1e82f8021f4488fe404f7da5645c9844c0ec7fc20fe38d047e820e30ec"
+  },
+  "notes": "This approval permits deployment of the exact bound observation-first preview only. Any bound artefact or reviewed deployment-surface change fails closed and requires a new approval."
+}

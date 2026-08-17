@@ -58,8 +58,8 @@
 
 ### Public Research and Market Context
 
-- [x] **PUB-01**: The public frontend exposes the primary-retail tracking scope, qualification rules, release gates and explicit absence of a verified series; only separately approved qualifying retail observations may be displayed.
-- [x] **PUB-02**: Every future outbound product link must display its commercial status, and commercial participation cannot determine inclusion or editorial interpretation; no outbound product links are currently public.
+- [x] **PUB-01**: The public frontend exposes primary-retail scope, qualification rules and release gates and may display only checksum-bound qualifying dated retail observations that survive the approved factual-offer contract; aggregate indexes remain explicitly absent.
+- [x] **PUB-02**: Every outbound retailer or archive link displays its direct-versus-archived and uncompensated commercial status. Commercial participation cannot determine inclusion, ranking or editorial interpretation.
 - [ ] **EVT-01**: Agents can discover and draft market-event records from registered sources while retaining quotations, provenance, uncertainty, alternative explanations and contradictory evidence.
 - [ ] **EVT-02**: An authorised editor can approve event classification, regional impact and causal language before publication.
 - [ ] **EVT-03**: Event overlays reference dated event revisions and numeric-series revisions but remain separate annotation records; creating, editing, approving or removing an event cannot alter a price, weight, link factor, reference, deflator value, gap or quality state.
@@ -80,7 +80,7 @@
 - [ ] **OPS-02**: Backup, restore, deterministic replay, product-loss/EOL, basket-link, deflator-release-vintage and unavailable-state replay scenarios are tested with recorded evidence.
 - [ ] **OPS-03**: A private shadow run completes for at least 30 consecutive days without an unresolved severe data-integrity incident.
 - [ ] **OPS-04**: Human exception workload, source reliability, product-lifecycle coverage, manufacturer/family concentration, matching precision and anomaly performance are measured before scope expansion.
-- [ ] **OPS-05**: Public release remains blocked until source-use restrictions, security, accessibility, lineage, correction and incident-response gates are approved.
+- [ ] **OPS-05**: Aggregate-index release remains blocked until source-use restrictions, security, accessibility, lineage, correction and incident-response gates are approved. Any narrower factual publication class requires its own exact approval and fail-closed release contract.
 
 ## v2 Requirements
 

@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { CategoryGrid } from "@/components/CategoryGrid";
+import { OfferCard } from "@/components/offers/OfferCard";
 import { componentFor } from "@/lib/components-registry";
-import { categoryViewFor } from "@/lib/public-data";
+import { categoryViewFor, latestOffersByProduct, offersFor } from "@/lib/public-data";
 
 export const metadata = {
   title: "Silicon Forecast — UK PC component price research",
@@ -12,15 +13,17 @@ export default function Home() {
   const ram = componentFor("ram");
   if (!ram) throw new Error("RAM category registry entry is required");
   const ramView = categoryViewFor(ram);
+  const ramOffers = offersFor(ram.dataset);
+  const latestRamOffers = latestOffersByProduct(ram.dataset);
 
   return (
     <>
       <section className="shell product-hero">
         <div className="product-hero-copy">
           <p className="eyebrow">UK component intelligence · Primary retail only</p>
-          <h1>See the market move without changing the products underneath it.</h1>
+          <h1>See real UK RAM prices—and the evidence behind every point.</h1>
           <p>
-            Silicon Forecast is building reproducible price history for PC components. It begins with exact-product DDR5 memory research, visible gaps and a hard line between evidence, calculation and explanation.
+            Compare dated primary-retail observations for exact DDR5 kits, follow source links and inspect raw product history. No fuzzy product substitutions, smoothed gaps or decorative mystery lines.
           </p>
           <div className="hero-actions">
             <Link className="button-link" href="/price-history/ram/">Explore the RAM workspace →</Link>
@@ -32,12 +35,20 @@ export default function Home() {
           <strong>DDR5 memory</strong>
           <p>{ram.scopeNote}</p>
           <dl>
-            <div><dt>Research</dt><dd>{ramView.state === "uncollected" ? "Not started" : "Active"}</dd></div>
-            <div><dt>Public numbers</dt><dd>{ramView.state === "public" ? "Released" : "Withheld"}</dd></div>
-            <div><dt>Buying links</dt><dd>None</dd></div>
+            <div><dt>Observed prices</dt><dd>{ramOffers ? "Public" : "Withheld"}</dd></div>
+            <div><dt>Aggregate index</dt><dd>{ramView.state === "public" ? "Released" : "Withheld"}</dd></div>
+            <div><dt>Retailer links</dt><dd>{ramOffers ? "Published" : "None"}</dd></div>
           </dl>
         </aside>
       </section>
+
+      {ramOffers ? (
+        <section className="shell section homepage-offers" aria-labelledby="homepage-offers-title">
+          <div className="section-heading-row"><div><p className="section-label">Latest retained prices</p><h2 id="homepage-offers-title">Start with the products, not a promise.</h2></div><p>Observed through {ramOffers.latest_observed_at.slice(0, 10)}. VAT included; delivery excluded. Check the retailer before buying.</p></div>
+          <div className="offer-grid">{latestRamOffers.map(({ product, observation }) => <OfferCard key={product.mpn} dataset="ram" product={product} observation={observation} />)}</div>
+          <div className="retail-home-footer"><p>{ramOffers.observations.length} released observations across {ramOffers.products.length} exact products.</p><Link href="/price-history/ram/">See all RAM evidence →</Link></div>
+        </section>
+      ) : null}
 
       <section className="shell section product-proof" aria-labelledby="why-title">
         <div className="retail-home-panel">
@@ -65,8 +76,8 @@ export default function Home() {
         </div>
         <div className="ram-feature-grid">
           <article><span>Scope</span><strong>{ram.scopeNote}</strong></article>
-          <article><span>History</span><strong>{ramView.state === "public" ? "Public series available" : "Workspace ready · series withheld"}</strong></article>
-          <article><span>Research</span><strong>Human-reviewed context only</strong></article>
+          <article><span>Prices</span><strong>{ramOffers ? `${ramOffers.products.length} exact products · source links live` : "No factual release"}</strong></article>
+          <article><span>Index</span><strong>{ramView.state === "public" ? "Public series available" : "Aggregate series withheld"}</strong></article>
         </div>
         <div className="ram-feature-actions">
           <Link className="button-link" href="/categories/ram/">View RAM research →</Link>

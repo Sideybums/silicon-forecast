@@ -1,0 +1,368 @@
+{
+  "schema_version": 1,
+  "queue_id": "sf-public-offer-exceptions-v1",
+  "policy_id": "sf-factual-offer-publication-v1",
+  "private_review_queue": true,
+  "routine_observations_published": 44,
+  "exception_count": 33,
+  "items": [
+    {
+      "observation_id": "sf-hist-scan-cmk32gx5m2b6000c36-2022-07-03T173438Z",
+      "input_path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T065616Z.v1.json",
+      "mpn": "CMK32GX5M2B6000C36",
+      "observed_at": "2022-07-03T17:34:38Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "vat_not_explicitly_included",
+        "availability_not_explicitly_orderable",
+        "evidence_facts_mismatch"
+      ]
+    },
+    {
+      "observation_id": "wayback-kms-kf564c32rsk2-32-2022-08-11T084020Z",
+      "input_path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
+      "mpn": "KF564C32RSK2-32",
+      "observed_at": "2022-08-11T08:40:20Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "archived_identity_not_exact",
+        "availability_not_explicitly_orderable",
+        "missing_evidence_ledger_entry",
+        "record_specific_ambiguity_restriction_or_rejection"
+      ]
+    },
+    {
+      "observation_id": "sf-hist-scan-cmk32gx5m2b6000c36-2023-03-15T075907Z",
+      "input_path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T065616Z.v1.json",
+      "mpn": "CMK32GX5M2B6000C36",
+      "observed_at": "2023-03-15T07:59:07Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "vat_not_explicitly_included",
+        "availability_not_explicitly_orderable",
+        "evidence_facts_mismatch"
+      ]
+    },
+    {
+      "observation_id": "sf-hist-awdit-kf564c32rsk2-32-20241117091251",
+      "input_path": "data/observations/candidate/uk-primary-retail-multi-retailer-2026-08-11T090000Z.v1.json",
+      "mpn": "KF564C32RSK2-32",
+      "observed_at": "2024-11-17T09:12:51Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable"
+      ]
+    },
+    {
+      "observation_id": "sf-hist-awdit-kf564c32rsk2-32-20241201062250",
+      "input_path": "data/observations/candidate/uk-primary-retail-multi-retailer-2026-08-11T090000Z.v1.json",
+      "mpn": "KF564C32RSK2-32",
+      "observed_at": "2024-12-01T06:22:50Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable"
+      ]
+    },
+    {
+      "observation_id": "sf-hist-awdit-kf560c30bbek2-32-20250617035231",
+      "input_path": "data/observations/candidate/uk-primary-retail-multi-retailer-2026-08-11T090000Z.v1.json",
+      "mpn": "KF560C30BBEK2-32",
+      "observed_at": "2025-06-17T03:52:31Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable"
+      ]
+    },
+    {
+      "observation_id": "wayback-ccl-kf564c32rsk2-32-2025-06-19T063721Z",
+      "input_path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T040544Z.v1.json",
+      "mpn": "KF564C32RSK2-32",
+      "observed_at": "2025-06-19T06:37:21Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "archived_identity_not_exact",
+        "missing_evidence_ledger_entry"
+      ]
+    },
+    {
+      "observation_id": "sf-hist-awdit-kf564c32rsk2-32-20250619224321",
+      "input_path": "data/observations/candidate/uk-primary-retail-multi-retailer-2026-08-11T090000Z.v1.json",
+      "mpn": "KF564C32RSK2-32",
+      "observed_at": "2025-06-19T22:43:21Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable"
+      ]
+    },
+    {
+      "observation_id": "sf-hist-awdit-kf560c30bbek2-32-20250706145436",
+      "input_path": "data/observations/candidate/uk-primary-retail-multi-retailer-2026-08-11T090000Z.v1.json",
+      "mpn": "KF560C30BBEK2-32",
+      "observed_at": "2025-07-06T14:54:36Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable"
+      ]
+    },
+    {
+      "observation_id": "sf-hist-awdit-kf560c30bbek2-32-20250907075120",
+      "input_path": "data/observations/candidate/uk-primary-retail-multi-retailer-2026-08-11T090000Z.v1.json",
+      "mpn": "KF560C30BBEK2-32",
+      "observed_at": "2025-09-07T07:51:20Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable"
+      ]
+    },
+    {
+      "observation_id": "wayback-ccl-kf560c30bbek2-32-2025-09-07T203052Z",
+      "input_path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T040544Z.v1.json",
+      "mpn": "KF560C30BBEK2-32",
+      "observed_at": "2025-09-07T20:30:52Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "archived_identity_not_exact",
+        "missing_evidence_ledger_entry"
+      ]
+    },
+    {
+      "observation_id": "sf-hist-ocuk-cmk32gx5m2b6000c36-20251130041400",
+      "input_path": "data/observations/candidate/uk-primary-retail-multi-retailer-2026-08-11T090000Z.v1.json",
+      "mpn": "CMK32GX5M2B6000C36",
+      "observed_at": "2025-11-30T04:14:00Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable"
+      ]
+    },
+    {
+      "observation_id": "wayback-awdit-f5-6000j3636f16gx2-fx5-2026-01-10T145607Z",
+      "input_path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "observed_at": "2026-01-10T14:56:07Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "archived_identity_not_exact",
+        "missing_evidence_ledger_entry"
+      ]
+    },
+    {
+      "observation_id": "wayback-awdit-f5-6000j3636f16gx2-fx5-2026-01-17T214832Z",
+      "input_path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "observed_at": "2026-01-17T21:48:32Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "archived_identity_not_exact",
+        "missing_evidence_ledger_entry"
+      ]
+    },
+    {
+      "observation_id": "wayback-kms-kf560c30bbek2-32-2026-03-09T113702Z",
+      "input_path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
+      "mpn": "KF560C30BBEK2-32",
+      "observed_at": "2026-03-09T11:37:02Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "archived_identity_not_exact",
+        "missing_evidence_ledger_entry"
+      ]
+    },
+    {
+      "observation_id": "awdit-f5-6000j3636f16gx2-fx5-2026-08-09T122437Z",
+      "input_path": "data/observations/candidate/uk-primary-retail-2026-08-09T122437Z.v1.json",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "observed_at": "2026-08-09T12:24:37Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "missing_evidence_ledger_entry"
+      ]
+    },
+    {
+      "observation_id": "kms-kf560c30bbek2-32-2026-08-09T122553Z",
+      "input_path": "data/observations/candidate/uk-primary-retail-2026-08-09T122437Z.v1.json",
+      "mpn": "KF560C30BBEK2-32",
+      "observed_at": "2026-08-09T12:25:53Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable",
+        "missing_evidence_ledger_entry",
+        "record_specific_ambiguity_restriction_or_rejection"
+      ]
+    },
+    {
+      "observation_id": "kms-kf564c32rsk2-32-2026-08-09T122554Z",
+      "input_path": "data/observations/candidate/uk-primary-retail-2026-08-09T122437Z.v1.json",
+      "mpn": "KF564C32RSK2-32",
+      "observed_at": "2026-08-09T12:25:54Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable",
+        "missing_evidence_ledger_entry",
+        "record_specific_ambiguity_restriction_or_rejection"
+      ]
+    },
+    {
+      "observation_id": "awdit-f5-6000j3636f16gx2-fx5-2026-08-09t234337z",
+      "input_path": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "observed_at": "2026-08-09T23:43:37Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "missing_evidence_ledger_entry"
+      ]
+    },
+    {
+      "observation_id": "kms-kf560c30bbek2-32-2026-08-09t234337z",
+      "input_path": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
+      "mpn": "KF560C30BBEK2-32",
+      "observed_at": "2026-08-09T23:43:37Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable",
+        "missing_evidence_ledger_entry",
+        "record_specific_ambiguity_restriction_or_rejection"
+      ]
+    },
+    {
+      "observation_id": "kms-kf564c32rsk2-32-2026-08-09t234337z",
+      "input_path": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
+      "mpn": "KF564C32RSK2-32",
+      "observed_at": "2026-08-09T23:43:37Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable",
+        "missing_evidence_ledger_entry",
+        "record_specific_ambiguity_restriction_or_rejection"
+      ]
+    },
+    {
+      "observation_id": "awdit-f5-6000j3636f16gx2-fx5-2026-08-10t16:55:31z",
+      "input_path": "data/observations/candidate/uk-primary-retail-2026-08-10T165537Z.v1.json",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "observed_at": "2026-08-10T16:55:31Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "missing_evidence_ledger_entry"
+      ]
+    },
+    {
+      "observation_id": "kms-kf560c30bbek2-32-2026-08-10t16:55:36z",
+      "input_path": "data/observations/candidate/uk-primary-retail-2026-08-10T165537Z.v1.json",
+      "mpn": "KF560C30BBEK2-32",
+      "observed_at": "2026-08-10T16:55:36Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable",
+        "missing_evidence_ledger_entry",
+        "record_specific_ambiguity_restriction_or_rejection"
+      ]
+    },
+    {
+      "observation_id": "kms-kf564c32rsk2-32-2026-08-10t16:55:37z",
+      "input_path": "data/observations/candidate/uk-primary-retail-2026-08-10T165537Z.v1.json",
+      "mpn": "KF564C32RSK2-32",
+      "observed_at": "2026-08-10T16:55:37Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable",
+        "missing_evidence_ledger_entry",
+        "record_specific_ambiguity_restriction_or_rejection"
+      ]
+    },
+    {
+      "observation_id": "awd-it-f5-6000j3636f16gx2-fx5-2026-08-12t12:45:05z",
+      "input_path": "data/observations/candidate/uk-primary-retail-20260812T124505Z.v1.json",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "observed_at": "2026-08-12T12:45:05Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable"
+      ]
+    },
+    {
+      "observation_id": "awdit-f5-6000j3636f16gx2-fx5-2026-08-12t12:47:11z",
+      "input_path": "data/observations/candidate/uk-primary-retail-2026-08-12T124750Z.prospective.v1.json",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "observed_at": "2026-08-12T12:47:11Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "missing_evidence_ledger_entry"
+      ]
+    },
+    {
+      "observation_id": "kms-kf560c30bbek2-32-2026-08-12t12:47:38z",
+      "input_path": "data/observations/candidate/uk-primary-retail-2026-08-12T124750Z.prospective.v1.json",
+      "mpn": "KF560C30BBEK2-32",
+      "observed_at": "2026-08-12T12:47:38Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable",
+        "missing_evidence_ledger_entry",
+        "record_specific_ambiguity_restriction_or_rejection"
+      ]
+    },
+    {
+      "observation_id": "kms-kf564c32rsk2-32-2026-08-12t12:47:50z",
+      "input_path": "data/observations/candidate/uk-primary-retail-2026-08-12T124750Z.prospective.v1.json",
+      "mpn": "KF564C32RSK2-32",
+      "observed_at": "2026-08-12T12:47:50Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable",
+        "missing_evidence_ledger_entry",
+        "record_specific_ambiguity_restriction_or_rejection"
+      ]
+    },
+    {
+      "observation_id": "awd-it-f5-6000j3636f16gx2-fx5-2026-08-13t12:45:05z",
+      "input_path": "data/observations/candidate/uk-primary-retail-20260813T124505Z.v1.json",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "observed_at": "2026-08-13T12:45:05Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable"
+      ]
+    },
+    {
+      "observation_id": "awd-it-f5-6000j3636f16gx2-fx5-2026-08-14t12:45:04z",
+      "input_path": "data/observations/candidate/uk-primary-retail-20260814T124504Z.v1.json",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "observed_at": "2026-08-14T12:45:04Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable"
+      ]
+    },
+    {
+      "observation_id": "awd-it-f5-6000j3636f16gx2-fx5-2026-08-15t12:45:05z",
+      "input_path": "data/observations/candidate/uk-primary-retail-20260815T124505Z.v1.json",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "observed_at": "2026-08-15T12:45:05Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable"
+      ]
+    },
+    {
+      "observation_id": "awd-it-f5-6000j3636f16gx2-fx5-2026-08-16t12:45:06z",
+      "input_path": "data/observations/candidate/uk-primary-retail-20260816T124506Z.v1.json",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "observed_at": "2026-08-16T12:45:06Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable"
+      ]
+    },
+    {
+      "observation_id": "awd-it-f5-6000j3636f16gx2-fx5-2026-08-17t10:30:06z",
+      "input_path": "data/observations/candidate/uk-primary-retail-20260817T103006Z.v1.json",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "observed_at": "2026-08-17T10:30:06Z",
+      "disposition": "excluded_pending_review",
+      "reasons": [
+        "availability_not_explicitly_orderable"
+      ]
+    }
+  ]
+}

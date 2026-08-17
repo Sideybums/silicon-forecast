@@ -1,15 +1,15 @@
 {
   "schema_version": 3,
-  "updated_at": "2026-08-17T11:32:43Z",
+  "updated_at": "2026-08-17T16:04:21Z",
   "project": "Silicon Forecast",
   "north_star": "Prove one lawful, accurate, reproducible regional DDR5 price index before expanding scope.",
   "recovery": {
     "status": "completed_integrated_and_scheduler_verified",
     "worktree": "/Users/weetoddy/Desktop/Projects/Silicon_Forecast_Recovery",
-    "branch": "main",
+    "branch": "feat/observation-first-publication",
     "base": "origin/main",
     "preserved_original_branch": "feat/graphs-first-frontend",
-    "public_numerical_release": "structurally_withheld"
+    "public_numerical_release": "factual_observations_approved_aggregate_withheld"
   },
   "scheduler": {
     "sole_scheduler": "launchd",
@@ -61,24 +61,34 @@
     "integration_policy": "additive exact-byte audit; collisions and gaps remain explicit"
   },
   "governance": {
-    "publication_activation_implemented": false,
+    "publication_activation_implemented": "factual_observation_class_only",
     "public_data_bridge_exposes_candidate_series": false,
-    "production_deploy_enabled": false,
+    "production_deploy_enabled": "exact_surface_checksum_bound_approval_only",
     "github_pages_deploy_enabled": false,
     "projection_datasets_sha256_bound": true,
     "source_approved": false,
     "methodology_approved": false,
     "basket_approved": false,
     "historical_reference_approved": false,
-    "publication_approved": false,
+    "publication_approved": "qualifying_factual_primary_retail_observations_only",
     "production_activation_approved": false,
     "prohibited_assumptions": [
       "no interpolation, forward-fill, backcast or fabricated continuity",
       "no archive date treated as an exact price-change date",
       "no editorial anchor enters a numerical series",
-      "no private candidate can open a public gate",
-      "no methodology, source, threshold, reference, deflator, basket or public claim is approved by recovery"
-    ]
+      "no factual observation approval opens the aggregate index gate",
+      "no methodology, source family, threshold, reference, deflator, basket, recommendation or research claim is approved by the factual release or deployment"
+    ],
+    "aggregate_index_approved": false,
+    "deployment_approval": "config/factual-offer-deployment-approval.v1.json",
+    "factual_publication_policy": "config/factual-offer-publication-policy.v1.json",
+    "public_offer_payload": "data/public-offers/offers-ram.v1.json",
+    "public_offer_manifest": "data/derived/private-candidate/public-offers-manifest.v1.json",
+    "public_offer_counts": {
+      "observations": 44,
+      "products": 3,
+      "private_exceptions": 33
+    }
   },
   "collector_safety": {
     "clean_main_required": true,
@@ -90,27 +100,25 @@
     "installer_transaction": "validate target revision and rendered plist before bootout; restore prior plist/job/checkout metadata on failure"
   },
   "verification": {
-    "completed_at": "2026-08-17T11:32:43Z",
-    "npm_check": "passed",
-    "node_tests": "345 discovered; 333 passed before build, 12 build-dependent skipped; 34/34 post-build public-boundary and generated-content tests passed",
-    "next_build": "passed; 20 static routes generated",
+    "completed_at": "2026-08-17T16:20:00Z",
+    "npm_check_full": "passed",
+    "node_tests": "361 discovered; 346 pre-build passed and 15 build-dependent skipped; 50/50 post-build release and boundary tests passed",
+    "next_build": "passed; 22 static routes generated including three exact-MPN histories",
     "postgresql": "passed in disposable postgres:16-alpine container",
-    "projection_replay": "passed",
-    "json_parse": "117 governed JSON files passed",
-    "plist_lint": "passed",
-    "shell_and_node_syntax": "passed",
+    "projection_replay": "passed for factual offers and aggregate public projection",
+    "wrangler_dry_run": "passed; 141 static assets packaged without external mutation",
+    "deployment_approval_check": "passed",
     "git_diff_check": "passed",
-    "secret_shape_scan": "passed",
-    "independent_audits": "two bounded frontend review passes completed; reproduced public-copy, metadata, visual-direction and contrast findings were remediated and parent-verified",
     "remaining_warning": "Node MODULE_TYPELESS_PACKAGE_JSON performance warning only; no functional failure"
   },
   "next_steps": [
-    "Implement Wave R0 of .planning/RESEARCH-AGENT-PLAN.md using synthetic fixtures only: exact worker contracts, run ledger, stop controls and evaluation cases.",
-    "Keep live network discovery disabled until David explicitly approves one bounded run; workers do not select or approve source families.",
-    "Continue natural 11:30 launchd collection as the sole prospective fetcher and independently audit its manifest integration."
+    "Complete full release verification, commit and push the observation-first feature, then fast-forward main.",
+    "Allow the canonical Cloudflare Git build to run the exact checksum-bound deployment and verify production apex/www routes, product histories, links, redirects and security headers.",
+    "Continue natural 11:30 launchd collection as the sole prospective fetcher; do not trigger a competing fetch.",
+    "After production verification, implement Phase 6 Wave R0 with synthetic fixtures only; live discovery remains disabled pending separate approval."
   ],
   "public_preview": {
-    "ram_product_template": "implemented_and_verified",
+    "ram_product_template": "observation_first_implemented_and_release_verified",
     "category_states": [
       "public",
       "withheld_active_research",
@@ -120,11 +128,15 @@
       "/",
       "/categories/[slug]",
       "/price-history",
-      "/price-history/[slug]"
+      "/price-history/[slug]",
+      "/price-history/[slug]/[product]"
     ],
     "desktop_render": "verified",
     "mobile_390px_render": "verified",
-    "publication_gate": "structurally_withheld",
-    "production_deploy": "disabled"
+    "publication_gate": "factual_observation_contract_open_aggregate_gate_withheld",
+    "production_deploy": "approved_exact_surface_pending_release_transaction",
+    "public_observations": 44,
+    "public_products": 3,
+    "private_exceptions": 33
   }
 }

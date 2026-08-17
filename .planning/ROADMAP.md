@@ -11,10 +11,11 @@ A narrow public research-preview site is an approved enabling exception to that 
 **Status:** Implemented and verified on 2026-08-17.
 
 - The homepage, category landing pages and price-history workspaces now share one registry-driven category state model: `public`, active research with no public series, or not collecting.
-- RAM is the complete visual vertical slice. Its withheld state has a finished chart workspace without numerical geometry, implied trend, product identifiers, private counts or purchasing links.
+- RAM is the complete observation-first vertical slice. Its public state contains only checksum-bound qualifying dated item-price observations, exact-MPN sparse histories and disclosed retailer/archive evidence links; no line joins points and no aggregate index is exposed.
+- The current approved payload contains 44 observations across three products; 33 exceptions remain private and a fourth approved identity has no route because no observation survives the release contract.
 - GPU, CPU and SSD routes use the same template but remain explicit uncollected states. A ready page does not approve collection, methodology or category expansion.
 - Desktop and 390px mobile renders are verified; the static build, accessibility-sensitive contrast and public-boundary tests pass.
-- The next roadmap-aligned product slice is the bounded Phase 6 research-source and event-drafting harness described in `.planning/RESEARCH-AGENT-PLAN.md`. It cannot publish, mutate numerical data or select sources and claims by itself.
+- David approved deployment of this exact surface through the checksum-bound Cloudflare gate. Future bound changes require new approval; Phase 6 remains synthetic-only after production verification.
 
 ## Phase 1 — Source and Methodology Gate
 

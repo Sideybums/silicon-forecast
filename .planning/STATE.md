@@ -5,9 +5,19 @@
 See `.planning/PROJECT.md` (last updated 2026-08-09).
 
 **Core value:** Let people follow dated UK component-price graphs as they would a stock, with reviewed market/news overlays explaining possible effects while deterministic calculations and complete lineage remain authoritative.
-**Current focus:** The governed collector is operating from its dedicated checkout and the RAM public research-preview template is complete. The immediate next slice is the bounded Phase 6 research/news worker harness: source discovery, claim extraction, counterevidence search and private draft assembly, with numerical mutation and automated publication structurally unavailable.
+**Current focus:** Ship and verify the approved observation-first RAM preview: checksum-bound qualifying UK primary-retail prices, retailer/archive evidence links and sparse exact-MPN histories. The aggregate index, methodology, basket, baseline, reference, deflator, recommendations and automated research publication remain unavailable.
 
 ## Status
+
+### Observation-first factual release and deployment approval — 2026-08-17
+
+- David approved publication of qualifying dated UK primary-retail factual observations, exact-MPN raw histories and disclosed retailer/archive links. Routine future records may enter only after the same deterministic validation; ambiguous or conflicting records abstain into a private exception queue.
+- `config/factual-offer-publication-policy.v1.json` is the closed publication contract. The generated public payload currently contains 44 observations across three products; 33 nonconforming or duplicate records remain private. An approved fourth identity has no qualifying observation and therefore no public route.
+- Every released observation is bound to reviewed exact identity, catalogue scope, immutable evidence-ledger facts, response hash/length/status, strict timestamps, VAT and availability semantics, and a fixed retailer-host relationship. Conflicting same-retailer/timestamp facts suppress the whole key; points are never joined or interpolated.
+- `data/derived/private-candidate/public-offers-manifest.v1.json` binds policy, inputs, evidence, catalogue/reviews, generator, build script and payload bytes. Public cards and exact-MPN pages distinguish direct retailer observations from archived snapshots and make no current-price, recommendation, ranking or complete-market claim.
+- David separately approved deployment of this exact reviewed preview. `config/factual-offer-deployment-approval.v1.json` binds the policy, manifest, payload and deployment-surface digest. Any bound change fails closed and requires new approval.
+- Cloudflare Workers Static Assets is the canonical target for `siliconforecast.com` and `www.siliconforecast.com`. GitHub Pages remains manual, withheld and incapable of deployment.
+- Aggregate index publication, methodology, basket, baseline, historical reference, deflator, research/editorial publication, recommendations, paid affiliate tracking, source-family approval and production database mutation remain locked.
 
 ### RAM product-template update — 2026-08-17
 
@@ -15,8 +25,8 @@ See `.planning/PROJECT.md` (last updated 2026-08-09).
 - `/`, `/categories/[slug]`, `/price-history` and `/price-history/[slug]` use a reusable registry-driven category state. The same component structure can support later categories without implying that their collection or methodology has been approved.
 - The RAM price-history workspace has a finished non-numerical withheld state, separate research rail, comparison standard and release panel. It draws no chart geometry or directional trend while the public series is closed.
 - Desktop and 390px mobile renders were inspected. The primary RAM CTA measures 6.14:1 contrast, and the no-product sentinel is a noindex 404 with no private metadata.
-- Full verification passes with 345 tests discovered, 333 pre-build passes and 12 build-dependent tests, followed by 34/34 public-boundary and generated-content tests after the static build.
-- Production deployment, numerical release, affiliate claims, source approval, methodology decisions and automated editorial publication remain locked.
+- Final release verification discovered 361 tests: 346 pre-build passes with 15 build-dependent skips, then 50/50 post-build public-offer, boundary and rendered-content tests. The 22-route static build, deterministic replay, disposable PostgreSQL suite and 141-asset Wrangler dry run all passed.
+- Aggregate numerical release, affiliate claims, source approval, methodology decisions and automated editorial publication remain locked; the factual-offer deployment is governed separately above.
 
 ### Recovery update — 2026-08-17
 
@@ -126,17 +136,17 @@ See `.planning/PROJECT.md` (last updated 2026-08-09).
 
 Phase 1 — Source and Methodology Gate remains **evidence-expanded but access/methodology-blocked**. The governed launch-to-present historical workstream has begun with candidate-only archives, editorial anchors and a sparse graph fixture. Daily prospective collection remains separate and canonical. Phase 2 is still incomplete and no Phase 1 gate has been bypassed.
 
-The public frontend is now **built but gated**. A complete graphs-first site exists against real derived data and is reviewable in full, and it deploys today in exactly the state it deployed in before: an honest empty collection-start chart. Going public is a one-line config change plus a signed approval record, which is a deliberate separation — the work of building the thing and the decision to publish it are no longer the same act.
+The public frontend now has two deliberately separate states: the checksum-bound factual observation preview is approved for deployment, while the aggregate index remains structurally withheld. Dated observations and evidence links do not constitute a supported live index, recommendation or complete-market comparison.
 
 ## Decision
 
 - Selected diligence region: United Kingdom.
 - Approved production region: none.
 - Production collection/index: no-go.
-- Public/commercial price display: no current price series; only separately approved qualifying primary-retail observations may be considered. Supported/current index, recommendations, rankings and automated publication remain no-go.
+- Public/commercial price display: qualifying checksum-bound factual observations, exact-MPN raw history and ordinary disclosed evidence links are approved. Supported/current index, recommendations, rankings, paid affiliate tracking and automated publication remain no-go.
 - First diligence target: authorised UK affiliate publisher feeds, beginning with Awin and then Webgains; CJ Affiliate is an optional supplement.
-- Source-use posture: factual public offer observations may be retained for private research unless an explicit applicable restriction says otherwise. Public display is separately governed and currently limited to qualifying primary-retail observations.
-- Public research site: primary-retail only. No product price or outbound product link is public until an exact retail observation and its publication scope receive explicit approval; deferred-channel evidence remains private.
+- Source-use posture: factual public offer observations may be retained for private research unless an explicit applicable restriction says otherwise. Public display is separately governed by the exact observation-first policy and validator.
+- Public research site: primary-retail only. Only records surviving the approved deterministic contract receive routes or links; deferred-channel evidence remains private.
 - Germany is the quantitative fallback if the UK continuation test fails; its higher score does not override solute/billiger.de's explicit 24-hour retention conflict.
 
 ## Blockers
@@ -150,19 +160,19 @@ The public frontend is now **built but gated**. A complete graphs-first site exi
 - No current candidate has been proven baseline-eligible against approved production feeds, and no leave-one-product-out, leave-one-retailer or EOL resilience assessment exists yet. Catalogue count alone cannot satisfy basket readiness.
 - No historical reference period or selection evidence is approved; collection inception must not be shown as normal or affordable.
 - No official UK deflator series, release-vintage policy, nominal monthly completeness rule, basket-vintage link rule or optional earnings measure is approved. Each dependent output must remain explicitly unavailable.
-- The public numerical boundary is structurally shut. `config/public-release.v1.json` remains withheld/private-candidate, but configuration changes cannot open it. `research/PUBLIC-RELEASE-SIGNOFF-2026-08-13.md` is explicitly superseded and is not an activation runbook.
+- The aggregate numerical boundary is structurally shut. `config/public-release.v1.json` remains withheld/private-candidate and cannot be opened by configuration, the factual-offer approval or the bounded deployment approval. `research/PUBLIC-RELEASE-SIGNOFF-2026-08-13.md` is explicitly superseded and is not an activation runbook.
 - The explanation ledger holds zero explanations against 99 measured movements, so the event line ships empty. This is a stated absence rather than a defect: no marker will exist until an explanation is researched, attributed and reviewed.
 
 ## Next Action
 
-Recovery is integrated on `main`. launchd label `uk.co.siliconforecast.collector` is installed against `/Users/weetoddy/Desktop/Projects/Silicon_Forecast_Collector`, loaded idle with `RunAtLoad` false and one successful natural run; no manual retailer fetch was triggered and no Hermes collector job exists. The daily slot was amended from the inherited 13:45 time to 11:30 local on David's instruction. Run `sf-collection-run-20260817T103006Z` retained 36 observations from 45 targets with 9 abstentions and pushed evidence commit `b4f0396`. Parent replay then failed closed because the new tranche lacked an exhaustive private-input classification; repair `0fa33f8` now appends future tranches atomically as `excluded_private_candidate`. Verify that behaviour on the next natural run. Do not restore Hermes scheduling or select methodology, sources, thresholds, references, deflators, baskets or public claims. The exact handoff is machine-readable in `.planning/HANDOFF.json`.
+Complete the observation-first release transaction: run full verification, commit and push the reviewed feature, fast-forward `main`, allow the canonical Cloudflare Git build to invoke the checksum-bound deployment command, then verify the live apex/www routes, exact-MPN histories, approved outbound links, redirects and security headers. Keep launchd as the sole prospective fetcher and do not trigger collection during release work. After production verification, resume synthetic-only Phase 6 Wave R0; live discovery still requires separate approval.
 
 ## Safety Note
 
-The completed Phase 1 work and parallel foundation slice are Tier 1/Tier 2 research, documentation, fixture data and local/test infrastructure. David separately approved the Currys programme application and acceptance of its captured terms. The later API state also shows Scan Computers and Overclockers UK pending, but this read-only check does not establish who submitted those applications or expand any production authority. No production-source activation, live news collection, spend, methodology change or public price/index/editorial publication is authorised.
+The completed Phase 1 work and parallel foundation slice are Tier 1/Tier 2 research, documentation, fixture data and local/test infrastructure. David separately approved the Currys programme application and acceptance of its captured terms. The later API state also shows Scan Computers and Overclockers UK pending, but this read-only check does not establish who submitted those applications or expand production-source authority. Qualifying observation-first factual publication and its exact deployment are separately approved; production-source activation, live news collection, spend, methodology change, aggregate index publication and editorial publication are not.
 
-The 2026-08-13 frontend rebuild changed no authority. It generates and commits a public projection and builds a complete site against it, but publication stays gated shut and the deployed output is unchanged. Two governance changes were made deliberately and are recorded rather than assumed: David approved narrowing the part-number ban, which is implemented additively with three replacement assertions and a signed ruling; and `tests/site-content.test.mjs` — a governance control written as a test — was rewritten, which is the act that makes publication *possible* rather than the act of publishing. The gate, not the test, is what still holds the series closed.
+The observation-first change adds a separate, additive factual publication class. It does not open the aggregate projection gate or reinterpret old private candidates wholesale: every public record must independently survive the exact bound validator. David's deployment approval is likewise narrow and byte-bound; it permits this reviewed static preview on the canonical Cloudflare targets and nothing else.
 
 ---
 *State created: 2026-08-05*
-*Last updated: 2026-08-17 after governed recovery, launchd installation, the first observed 11:30 run and the prospective-manifest integration repair. Publication and production deployment remain structurally locked.*
+*Last updated: 2026-08-17 after approval of the checksum-bound observation-first factual release and exact-surface Cloudflare deployment. Aggregate publication and all unrelated production authorities remain locked.*

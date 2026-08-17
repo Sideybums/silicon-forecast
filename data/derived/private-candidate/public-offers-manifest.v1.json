@@ -1,0 +1,207 @@
+{
+  "schema_version": 1,
+  "release_id": "sf-factual-ram-offers-through-20260817T103006Z-v1",
+  "claim_class": "dated_factual_primary_retail_offer_observation",
+  "policy": {
+    "path": "config/factual-offer-publication-policy.v1.json",
+    "sha256": "c5ede45b38d2cf20fefeb8891f9b01e96a2a8197d917a8f9f08523404461062f"
+  },
+  "generator": {
+    "path": "lib/public-offers.mjs",
+    "version": 1,
+    "sha256": "89cc8ac9027de6f49dbda333c5038cf9e594c05f1396d039230ebe47ae9eb638",
+    "byte_length": 27806
+  },
+  "build_script": {
+    "path": "scripts/build-public-offers.mjs",
+    "sha256": "38537dfd83987d2ba6d50269b86c32634cebabb826a65714b2222ee4275b38ec",
+    "byte_length": 1522
+  },
+  "inputs": [
+    {
+      "path": "config/factual-offer-publication-policy.v1.json",
+      "sha256": "c5ede45b38d2cf20fefeb8891f9b01e96a2a8197d917a8f9f08523404461062f",
+      "byte_length": 5076
+    },
+    {
+      "path": "data/catalogue/ddr5-32gb-diversification.v1.json",
+      "sha256": "91efc53c43d804c4d17783a328c326ae8062ce5a1f58d95667b7b6c7e5089421",
+      "byte_length": 6330
+    },
+    {
+      "path": "data/catalogue/ddr5-32gb-seed.v1.json",
+      "sha256": "98572936896e59c83f90ba796f6c6c3a917e1a304530163744dabb63f572d568",
+      "byte_length": 6324
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-09T122437Z.v1.json",
+      "sha256": "efe276384a828f32b86891422c9519c6b3e15cb4640c0bbc2095edcca4564fb6",
+      "byte_length": 7369
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
+      "sha256": "41fd88e7e48cbb343254522d46d3ec74c999f494169da34ecfeefb3ed667428e",
+      "byte_length": 8302
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-10T165537Z.v1.json",
+      "sha256": "484361e044d5ed74bb6aaae7c21b32f99141a61e39e15525135e0f04a2b98b10",
+      "byte_length": 8308
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-12T124750Z.prospective.v1.json",
+      "sha256": "1f900e20ca1fd2a5e9acff79970ba5b76ef04b924ba3b7dede00a289ccc4bc2a",
+      "byte_length": 7580
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260812T114904Z.v1.json",
+      "sha256": "2c18dabff9b2c77ceca36aa391bd17d41f4cb445d4facb8e97963ac3f511d51d",
+      "byte_length": 13203
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260812T124505Z.v1.json",
+      "sha256": "5db7317e3096a3f7709410d7b0564a663501c20edcc8509ce1f5dbf499488b04",
+      "byte_length": 49589
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260813T124505Z.v1.json",
+      "sha256": "bb7510f8dd29e8727f5aca1aafc527c9516c7f910821eadb378a9c54fa3db6bf",
+      "byte_length": 105209
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260814T124504Z.v1.json",
+      "sha256": "4336f22150dde5f0ab0cd17196fe34520767cd9434018dbc12df7f029d55c8ac",
+      "byte_length": 105213
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260815T124505Z.v1.json",
+      "sha256": "ae3a665eea20a3fbd28d3a9328531c060cdd4c74b14ec2a40c7bf824b7252d99",
+      "byte_length": 105237
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260816T124506Z.v1.json",
+      "sha256": "00a4953a25c0beb81ba9328e71b79bbd46753a7b934fbf2319a97f403e7c7835",
+      "byte_length": 105237
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260817T103006Z.v1.json",
+      "sha256": "a7d3f34d5ebc962a7348a2da9032df3fe7a21b68443c7ea33c0278edbaa97a6a",
+      "byte_length": 105237
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
+      "sha256": "c54210ddc8a607826fc229480eb88c31bbd974111c93f940d3835a12e72cace8",
+      "byte_length": 12163
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T040544Z.v1.json",
+      "sha256": "d8fd61d59de4f41f440a7bdacc8cae8af714423ceceabaed430957d8b23efa5e",
+      "byte_length": 7753
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T065616Z.v1.json",
+      "sha256": "f0d12da95e4d906b96c76de19bc8e229b9a59234325bdf41bb9f6f153667df69",
+      "byte_length": 7281
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T130500Z.v1.json",
+      "sha256": "ce2619249b189206a33f18e3d99b1652d984e944318b612ef70651093ea94d5f",
+      "byte_length": 67193
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-multi-retailer-2026-08-11T090000Z.v1.json",
+      "sha256": "a1fbc37f47ff053c8afa6631cb87ae4c8ab3905e0c580d4075af15a7b663c23e",
+      "byte_length": 1014177
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-scan-depth-2026-08-10T173000Z.v1.json",
+      "sha256": "32bc43f8714779f55d563d269316bd138f9dca283cabdffe9154f7c4a1c53d6f",
+      "byte_length": 854818
+    },
+    {
+      "path": "data/reviews/ddr5-32gb-diversification-review-2026-08-09.json",
+      "sha256": "cf3bc35b88cb1bcee46459da82044c185b9e6148f5980a144b9646dec1876cf6",
+      "byte_length": 2215
+    },
+    {
+      "path": "data/reviews/ddr5-32gb-seed-review-2026-08-06.json",
+      "sha256": "86fef1c0bd47279ece52be6dbbb03502138ea42dd5586a94c06a84beb6c7f801",
+      "byte_length": 1855
+    },
+    {
+      "path": "research/evidence/historical-primary-retail-backfill-2026-08-10-wave2/ledger.v1.json",
+      "sha256": "1c01f584b94248d0e86ee810d50e603381d33fb760e73dcfab6c9ef3b58fdca5",
+      "byte_length": 6010
+    },
+    {
+      "path": "research/evidence/historical-primary-retail-backfill-2026-08-10-wave3/ledger.v1.json",
+      "sha256": "c37e25a0823acf5ce2d196322dd59972ed443034eed45d87fbcd2eb07d97fb20",
+      "byte_length": 51160
+    },
+    {
+      "path": "research/evidence/historical-primary-retail-multi-retailer-2026-08-11/ledger.v1.json",
+      "sha256": "773a083f90e9f2b9e5d4f7e97a2ded9526b354efd5f6aeaa96d209a3a17e8301",
+      "byte_length": 1105305
+    },
+    {
+      "path": "research/evidence/historical-primary-retail-scan-depth-2026-08-10/ledger.v1.json",
+      "sha256": "aa0baa9888ac61198402ac2bbe3ebb4fe99b0c8641a595da7e00ac41ba5b907c",
+      "byte_length": 890143
+    },
+    {
+      "path": "research/evidence/primary-retail-20260812T114904Z/ledger.v1.json",
+      "sha256": "5f79aa890eafb28a04f0b431c0e622228bac039434c0e03ae0c3f797c8e6128f",
+      "byte_length": 5356
+    },
+    {
+      "path": "research/evidence/primary-retail-20260812T124505Z/ledger.v1.json",
+      "sha256": "12714bc852fb2d45bc333b83dcdf028b85139eb5b5b730a638cdbadceb5d8580",
+      "byte_length": 21238
+    },
+    {
+      "path": "research/evidence/primary-retail-20260813T124505Z/ledger.v1.json",
+      "sha256": "29e9882cc34c89fd25cfd174653c6d3f23e6bd984074aa8607e92958f5907ac6",
+      "byte_length": 43407
+    },
+    {
+      "path": "research/evidence/primary-retail-20260814T124504Z/ledger.v1.json",
+      "sha256": "0294f8cedf153d2887acc8b7d5a9a9fa91f36a7c369db5c7db98ee6147e1d669",
+      "byte_length": 43411
+    },
+    {
+      "path": "research/evidence/primary-retail-20260815T124505Z/ledger.v1.json",
+      "sha256": "d4de05b6a32b3173082116d49de920f012e14f44eb76bf9e69c30581116ef9ed",
+      "byte_length": 43435
+    },
+    {
+      "path": "research/evidence/primary-retail-20260816T124506Z/ledger.v1.json",
+      "sha256": "d14744867f8d87af9e08dfa28eb5fd534b9b2ca82e8825be0669a88a47c354c6",
+      "byte_length": 43435
+    },
+    {
+      "path": "research/evidence/primary-retail-20260817T103006Z/ledger.v1.json",
+      "sha256": "24d8680c6263a6e3870882feb64aabf093c111e0a3f066c0baf6f774b6e4fbf5",
+      "byte_length": 43435
+    }
+  ],
+  "payload": {
+    "path": "data/public-offers/offers-ram.v1.json",
+    "sha256": "8319c030c16fa73d5bfb30bb681a395b6ffee015c6547bd64789d57cd2256524",
+    "byte_length": 29631,
+    "record_count": 44
+  },
+  "authority": {
+    "factual_observations": true,
+    "routine_future_observations_after_validation": true,
+    "retailer_links": true,
+    "raw_exact_mpn_history": true,
+    "aggregate_index": false,
+    "methodology": false,
+    "basket": false,
+    "baseline": false,
+    "historical_reference": false,
+    "deflator": false,
+    "research_publication": false,
+    "production_deployment": false
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "policy_id": "sf-factual-offer-publication-v1",
+  "status": "approved",
+  "decision": "approve_observation_first_publication",
+  "approved_by": {
+    "name": "David Sidebottom",
+    "role": "project_owner"
+  },
+  "approved_at": "2026-08-17T14:48:04Z",
+  "approval_record": {
+    "channel": "interactive_project_session",
+    "response": "approved",
+    "approved_scope": "Publish qualifying UK primary-retail factual prices, exact-MPN product history and disclosed outbound retailer links. Routine observations may publish automatically after deterministic validation. Ambiguous matches and research commentary remain subject to human review."
+  },
+  "claim_class": "dated_factual_primary_retail_offer_observation",
+  "dataset_id": "ram",
+  "region": "GB",
+  "currency": "GBP",
+  "approved_products": [
+    {
+      "mpn": "CMK32GX5M2B6000C36",
+      "catalogue_review_id": "sf-ddr5-32gb-diversification-human-review-2026-08-09"
+    },
+    {
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "catalogue_review_id": "sf-ddr5-32gb-seed-human-review-2026-08-06"
+    },
+    {
+      "mpn": "KF560C30BBEK2-32",
+      "catalogue_review_id": "sf-ddr5-32gb-seed-human-review-2026-08-06"
+    },
+    {
+      "mpn": "KF564C32RSK2-32",
+      "catalogue_review_id": "sf-ddr5-32gb-seed-human-review-2026-08-06"
+    }
+  ],
+  "required_predicates": [
+    "exact_mpn_matches_an_approved_product",
+    "captured_product_is_32gb_two_module_desktop_ddr5",
+    "source_is_uk_primary_retail",
+    "seller_is_the_retailer",
+    "item_price_is_positive_integer_minor_units",
+    "currency_is_gbp",
+    "vat_is_explicitly_included",
+    "availability_is_explicitly_in_stock_or_available_to_order",
+    "observation_time_is_valid_utc",
+    "source_or_archive_url_is_https",
+    "no_explicit_applicable_publication_restriction",
+    "output_replays_byte_for_byte"
+  ],
+  "public_fields": [
+    "public_observation_id",
+    "observed_at",
+    "observation_kind",
+    "mpn",
+    "retailer_id",
+    "retailer_name",
+    "item_price_minor",
+    "currency",
+    "vat_state",
+    "availability",
+    "delivery_state",
+    "source_url"
+  ],
+  "required_labels": [
+    "Dated observation; not a live-price claim",
+    "VAT included where explicitly established; delivery excluded",
+    "Not an index, recommendation, market average or complete-market comparison"
+  ],
+  "retailer_identity_contract": [
+    { "retailer_id": "awd-it", "display_name": "AWD-IT", "accepted_input_names": ["AWD-IT"], "https_hosts": ["www.awd-it.co.uk"] },
+    { "retailer_id": "ccl", "display_name": "CCL", "accepted_input_names": ["CCL Computers", "CCL Online"], "https_hosts": ["www.cclonline.com"] },
+    { "retailer_id": "kingston-memory-shop", "display_name": "KingstonMemoryShop", "accepted_input_names": ["KingstonMemoryShop"], "https_hosts": ["www.kingstonmemoryshop.co.uk"] },
+    { "retailer_id": "overclockers-uk", "display_name": "Overclockers UK", "accepted_input_names": ["Overclockers UK"], "https_hosts": ["www.overclockers.co.uk"] },
+    { "retailer_id": "scan-computers", "display_name": "Scan Computers", "accepted_input_names": ["Scan Computers"], "https_hosts": ["www.scan.co.uk"] }
+  ],
+  "candidate_lock_supersession": {
+    "enabled": true,
+    "scope": "dated_factual_primary_retail_offer_observation_only",
+    "blanket_false_flags": ["publication_allowed", "source_approved_for_production", "source_approval_allowed"],
+    "record_specific_ambiguity_restriction_or_rejection_remains_binding": true,
+    "does_not_approve_sources_indexes_methodology_baskets_or_deployment": true
+  },
+  "catalogue_identity_reuse": {
+    "enabled": true,
+    "scope": "exact_mpn_and_catalogue_specification_for_factual_offer_validation_only",
+    "review_ids": [
+      "sf-ddr5-32gb-seed-human-review-2026-08-06",
+      "sf-ddr5-32gb-diversification-human-review-2026-08-09"
+    ],
+    "does_not_enable_automatic_matching": true,
+    "does_not_approve_sources_indexes_methodology_baskets_or_deployment": true
+  },
+  "exception_policy": "Omit nonconforming observations and place approved-product failures in the private exception queue. No exception may be inferred as approved.",
+  "hard_prohibitions": [
+    "aggregate_or_index_claim",
+    "basket_baseline_reference_or_deflator_approval",
+    "representativeness_or_complete_market_claim",
+    "current_price_or_current_stock_claim_without_a_separate_freshness_contract",
+    "recommendation_best_deal_or_ranking_claim",
+    "automatic_research_or_causal_claim_publication",
+    "source_family_or_index_inclusion_approval",
+    "copied_authored_description_image_logo_or_creative",
+    "unknown_public_field",
+    "unbound_or_mutated_input"
+  ],
+  "authority": {
+    "factual_observations": true,
+    "routine_future_observations_after_validation": true,
+    "retailer_links": true,
+    "raw_exact_mpn_history": true,
+    "aggregate_index": false,
+    "methodology": false,
+    "basket": false,
+    "baseline": false,
+    "historical_reference": false,
+    "deflator": false,
+    "research_publication": false,
+    "production_deployment": false
+  }
+}

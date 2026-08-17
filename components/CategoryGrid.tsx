@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { components } from "@/lib/components-registry";
-import { categoryViewFor } from "@/lib/public-data";
+import { categoryViewFor, offersFor } from "@/lib/public-data";
 
 export function CategoryGrid() {
   return (
@@ -12,7 +12,7 @@ export function CategoryGrid() {
       </div>
       {components.map((entry, index) => {
         const view = categoryViewFor(entry);
-        const status = view.state === "public" ? "Public series" : view.state === "withheld" ? "Active research · numbers withheld" : "Not collecting";
+        const status = offersFor(entry.dataset) ? "Observed prices public · index withheld" : view.state === "public" ? "Public series" : view.state === "withheld" ? "Active research · numbers withheld" : "Not collecting";
         return (
           <Link className="category-row" href={`/categories/${entry.slug}/`} key={entry.slug} data-programme={entry.programme}>
             <span className="category-index">{String(index + 1).padStart(2, "0")}</span>

@@ -35,7 +35,7 @@ Let people follow trustworthy UK component-price graphs over time, inspect dated
 - [ ] Expose source freshness, coverage, calculation version, quality state and corrections in a private dashboard.
 - [ ] Run bounded AI workers through explicit task contracts, audit logs, locks and measurable evaluation gates.
 - [ ] Demonstrate reliable scheduled operation and tested recovery before publishing a supported index.
-- [x] Publish a retail-first public research preview that explains tracking status, qualification rules and release gates without exposing deferred price channels.
+- [x] Publish a retail-first observation preview containing only deterministically validated, checksum-bound factual prices, exact-MPN sparse histories and disclosed evidence links; keep deferred channels and aggregate indexes unavailable.
 - [ ] Connect reviewed news and research to observed movements using facts, alternatives, counterevidence and human-approved causal language; event overlays remain mathematically separate annotations and never alter, fill or weight numeric series.
 - [ ] Let users compare present prices with meaningful pre-surge history; the public product must not present collection-inception 100 as a normative historical level.
 
@@ -80,7 +80,7 @@ The technical reference architecture is a TypeScript/Next.js modular monolith ba
 | Make deterministic software own prices, indices and scoring | Public facts must be replayable and testable | — Pending |
 | Use agents for bounded work with hard external-action locks | Maximises leverage without outsourcing accountability | — Pending |
 | Keep forecasts human-approved initially | Causal interpretation and public recommendations carry disproportionate trust risk | — Pending |
-| Publish a public research-preview site | Affiliate-network diligence needs a legitimate public space with useful evidence before paid feeds exist | Retail-first frontend now explains scope, qualification and release gates; no price series or outbound product links are currently public |
+| Publish a public research-preview site | Affiliate-network diligence needs a legitimate public space with useful evidence before paid feeds exist | Observation-first preview approved on 2026-08-17: 44 exact-contract observations across three RAM products with ordinary uncompensated retailer/archive links; aggregate index and recommendations remain withheld |
 | Keep the public frontend primary-retail only | The first product must prove one comparable retail index before adding noisier channels | Corrected by David on 2026-08-09; previously approved non-retail projection remains an immutable private audit artefact, not public UI |
 | Treat public factual offer observations as usable absent an explicit applicable restriction | Prices, stock, identifiers and product attributes are evidence inputs; requiring bespoke affirmative grants for every silent analytical use would prevent the intended comparison product | Approved by David on 2026-08-06; affiliate/feed access terms and explicit restrictions still govern, and authored descriptions/images are excluded by default |
 | Use a defensible historical reference rather than collection inception as 100 | The product should explain shortage-era purchasing power, not imply that the first observed day is normal | Product direction clarified 2026-08-09; the reference period and all selection thresholds remain `PROPOSED_LOCKED` pending evidence and approval |

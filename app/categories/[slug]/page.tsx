@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { CategoryStatusPanel } from "@/components/category/CategoryStatusPanel";
 import { ComparisonConsiderations } from "@/components/category/ComparisonConsiderations";
 import { componentFor, components } from "@/lib/components-registry";
-import { categoryViewFor } from "@/lib/public-data";
+import { categoryViewFor, offersFor } from "@/lib/public-data";
 
 export const dynamicParams = false;
 
@@ -23,6 +23,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const entry = componentFor(slug);
   if (!entry) notFound();
   const view = categoryViewFor(entry);
+  const offers = offersFor(entry.dataset);
 
   return (
     <div className="shell page-shell category-landing">
@@ -33,7 +34,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           <p>{entry.summary}</p>
         </div>
         <div className="category-state">
-          <span>{view.state === "public" ? "Public series available" : view.state === "withheld" ? "Research programme active" : "Not collecting"}</span>
+          <span>{view.state === "public" ? "Public series available" : offers ? "Observed prices public" : view.state === "withheld" ? "Research programme active" : "Not collecting"}</span>
           <strong>{entry.scopeNote}</strong>
         </div>
       </header>
@@ -55,7 +56,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         <div>
           <p className="section-label">Canonical workspace</p>
           <h2>{entry.shortName} price history</h2>
-          <p>{view.state === "withheld" ? "Explore the finished research template, its evidence standard and the deliberately withheld chart region." : view.state === "public" ? "Open the dated category series, coverage gaps, exact-product histories and reviewed context." : "See the category template and its honest not-collecting state."}</p>
+          <p>{offers ? `Browse ${offers.observations.length} released dated observations across ${offers.products.length} exact products, with raw history and retailer source links. The aggregate index remains separately withheld.` : view.state === "withheld" ? "Explore the research template, evidence standard and deliberately withheld chart region." : view.state === "public" ? "Open the dated category series, coverage gaps, exact-product histories and reviewed context." : "See the category template and its honest not-collecting state."}</p>
         </div>
         <Link className="button-link" href={`/price-history/${entry.slug}/`}>Open {entry.shortName} workspace →</Link>
       </section>
@@ -63,8 +64,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       <ComparisonConsiderations entry={entry} />
 
       <section className="category-disclosure">
-        <strong>No purchasing recommendation is published.</strong>
-        <p>There are no outbound product links on this category. Any future commercial relationship must be disclosed without changing the evidence or ranking logic.</p>
+        <strong>No purchasing recommendation or complete-market ranking is published.</strong>
+        <p>{offers ? "Outbound links identify the source retailer. They are ordinary, unpaid links unless explicitly labelled otherwise, and the observed price may have changed since capture." : "No outbound product links are published for this category."}</p>
         <Link href="/affiliate-disclosure/">Read the disclosure →</Link>
       </section>
     </div>

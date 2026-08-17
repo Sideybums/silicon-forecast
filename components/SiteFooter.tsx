@@ -9,8 +9,8 @@ export function SiteFooter() {
           <p className="footer-brand">Silicon Forecast</p>
           <p>PC component prices, observed over time.</p>
           <p className="fine-print">
-            The verified retail series is still in preparation. Nothing shown here is a purchasing
-            recommendation or a supported current-price comparison.
+            Dated validated retail observations are public. Nothing shown here is a purchasing
+            recommendation or a complete live-market comparison.
           </p>
         </div>
         <div>

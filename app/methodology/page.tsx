@@ -213,8 +213,8 @@ export default function Page() {
         </div>
         <footer className="release-footer">
           <p>
-            The private candidate series is built and checked on every change. Publication activation is not implemented:
-            repository configuration and review files cannot open the public boundary, and production deployment is locked.
+            The aggregate candidate series is built and checked on every change, but its publication activation is not implemented:
+            repository configuration and review files cannot open that boundary. The separately approved factual-offer preview is deployed through an exact, checksum-bound release gate.
           </p>
           <Link href="/price-history/">See what is being collected →</Link>
         </footer>

@@ -8,6 +8,7 @@
 import indexRam from "@/data/public-projection/index-ram.v1.json";
 import productsRam from "@/data/public-projection/products-ram.v1.json";
 import eventsRam from "@/data/public-projection/events-ram.v1.json";
+import offersRam from "@/data/public-offers/offers-ram.v1.json";
 import type { ComponentEntry } from "@/lib/components-registry";
 import { seriesIsPublic } from "@/lib/publication-gate";
 
@@ -94,6 +95,79 @@ export type EventsDataset = {
   unexplained_movement_count: number;
   pending_reason: string | null;
 };
+
+export type PublicOfferProduct = {
+  mpn: string;
+  manufacturer: string;
+  model: string;
+  memory_type: string;
+  capacity_gb: number;
+  module_count: number;
+  speed_mt_s: number;
+  form_factor: string;
+};
+
+export type PublicOfferObservation = {
+  public_observation_id: string;
+  observed_at: string;
+  observation_kind: "archived_retail_observation" | "direct_retail_observation";
+  mpn: string;
+  retailer_id: string;
+  retailer_name: string;
+  item_price_minor: number;
+  currency: "GBP";
+  vat_state: "included";
+  availability: "in_stock" | "available_to_order";
+  delivery_state: "excluded_not_verified";
+  source_url: string;
+};
+
+export type PublicOffersDataset = {
+  schema_version: number;
+  dataset_id: string;
+  market: string;
+  currency: "GBP";
+  latest_observed_at: string;
+  price_basis: string;
+  labels: { observation: string; price: string; scope: string };
+  products: PublicOfferProduct[];
+  retailers: Array<{ retailer_id: string; display_name: string }>;
+  observations: PublicOfferObservation[];
+};
+
+const OFFER_DATASETS: Record<string, PublicOffersDataset> = {
+  ram: offersRam as PublicOffersDataset,
+};
+
+export function offersFor(dataset: string | null): PublicOffersDataset | null {
+  return dataset ? (OFFER_DATASETS[dataset] ?? null) : null;
+}
+
+export function offerProductFor(dataset: string | null, mpn: string): PublicOfferProduct | null {
+  return offersFor(dataset)?.products.find((product) => product.mpn === mpn) ?? null;
+}
+
+export function offerHistoryFor(dataset: string | null, mpn: string): PublicOfferObservation[] {
+  return (offersFor(dataset)?.observations ?? []).filter((observation) => observation.mpn === mpn);
+}
+
+export function latestOfferForProduct(dataset: string | null, mpn: string): PublicOfferObservation | null {
+  const history = offerHistoryFor(dataset, mpn);
+  return history.length ? history[history.length - 1] : null;
+}
+
+export function latestOffersByProduct(dataset: string | null): Array<{ product: PublicOfferProduct; observation: PublicOfferObservation }> {
+  const offers = offersFor(dataset);
+  if (!offers) return [];
+  return offers.products.flatMap((product) => {
+    const observation = latestOfferForProduct(dataset, product.mpn);
+    return observation ? [{ product, observation }] : [];
+  });
+}
+
+export function formatGbpMinor(amountMinor: number): string {
+  return new Intl.NumberFormat("en-GB", { style: "currency", currency: "GBP" }).format(amountMinor / 100);
+}
 
 export type PublicDatasetBundle = {
   index: IndexDataset;

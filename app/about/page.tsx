@@ -50,10 +50,11 @@ export default function Page() {
         <div><p className="eyebrow">Current status</p><h2>Publishing evidence, not pretending the index is finished.</h2></div>
         <div className="prose">
           <p>
-            The public site now focuses only on the planned UK retail index and its evidence gates.
-            No verified retail series or outbound product links are currently published, and no
-            affiliate product feed is connected. Catalogue fixtures and research records do not
-            imply retail eligibility, recommendations or real-time comparison.
+            The public site publishes selected factual retail observations and their source links
+            while the aggregate UK retail index remains withheld. Those source links are currently
+            ordinary, uncompensated links, not affiliate links. Any future affiliate link will be
+            clearly labelled. Publication does not imply a retailer recommendation or real-time
+            comparison.
           </p>
           <p>
             The next work is broader primary-retail evidence, deterministic index calculation and

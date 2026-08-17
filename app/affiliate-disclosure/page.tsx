@@ -12,17 +12,17 @@ export default function Page() {
         <p className="eyebrow">Affiliate disclosure</p>
         <h1>Commercial links should be labelled, not camouflaged.</h1>
         <p>
-          Last updated 9 August 2026. Silicon Forecast is building a retail-first UK component
-          price index while seeking relationships with suitable affiliate networks, advertisers
-          and retailers.
+          Last updated 17 August 2026. Silicon Forecast publishes source links alongside selected
+          factual retail observations and is building a retail-first UK component price record.
         </p>
       </header>
 
       <div className="notice">
         <strong>Current position</strong>
         <span>
-          No outbound product links are currently published. Silicon Forecast receives no
-          commission and has no sponsored placements or active affiliate product feed.
+          Published retailer source links are currently ordinary, uncompensated links. Silicon
+          Forecast receives no commission from them and has no sponsored placements or active
+          affiliate product feed. Any future affiliate link will be clearly labelled as such.
         </span>
       </div>
 

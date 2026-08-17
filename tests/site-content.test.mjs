@@ -22,6 +22,7 @@ const REGISTRY = readFileSync("lib/components-registry.ts", "utf8");
 const INDEX = JSON.parse(readFileSync("data/public-projection/index-ram.v1.json", "utf8"));
 const PRODUCTS = JSON.parse(readFileSync("data/public-projection/products-ram.v1.json", "utf8"));
 const EVENTS = JSON.parse(readFileSync("data/public-projection/events-ram.v1.json", "utf8"));
+const OFFERS = JSON.parse(readFileSync("data/public-offers/offers-ram.v1.json", "utf8"));
 const PROJECTION_FILES = globSync("data/public-projection/**/*.json");
 
 const isPublic = seriesIsPublic();
@@ -45,6 +46,7 @@ function buildIsStale() {
     "lib/**/*",
     "config/*.json",
     "data/public-projection/*.json",
+    "data/public-offers/*.json",
   ]).filter((file) => statSync(file).isFile());
   return inputs.some((file) => statSync(file).mtimeMs > built);
 }
@@ -60,22 +62,21 @@ const needsBuild = htmlFiles.length === 0
     ? "static build is older than its inputs — run npm run build"
     : false;
 
+// Local source-only test runs remain convenient, but a release caller can make
+// rendered assertions mandatory. In that mode stale or absent output is an
+// error, never a skip that can accidentally bless yesterday's export.
+const requireFreshBuild = process.env.SF_REQUIRE_FRESH_BUILD === "1";
+const renderedSkip = requireFreshBuild ? false : needsBuild;
+test("release-mode rendered checks have a fresh static build", () => {
+  if (!requireFreshBuild) return;
+  assert.equal(needsBuild, false, needsBuild || "expected a fresh static build");
+});
+
 /** The empty state the site must show wherever a withheld chart would go. */
 const EMPTY_STATE = [
   "No publishable index point exists",
   "No invented baseline. No filled gaps. No implied trend.",
 ];
-
-/**
- * Every string form an index level could plausibly reach the page as.
- *
- * The site formats to one decimal place, but the point of this list is to catch
- * a level that escaped through some *other* route — a stray toFixed(2), a raw
- * integer dumped into an attribute — so it covers more than the site emits.
- */
-function renderings(milli) {
-  return [(milli / 1000).toFixed(1), (milli / 1000).toFixed(2), String(milli)];
-}
 
 function pagesUnder(prefix) {
   return [...pages].filter(([file]) => file.startsWith(prefix));
@@ -85,36 +86,16 @@ function pagesUnder(prefix) {
 // 1. Gate honesty, measured by absence
 // ---------------------------------------------------------------------------
 
-test("a withheld series leaves no index level anywhere in the build", { skip: needsBuild }, () => {
+test("a withheld aggregate series renders no index geometry or period-labelled levels", { skip: renderedSkip }, () => {
   if (isPublic) {
-    // The mirror image: an open gate must actually show the number, otherwise
-    // "no index level found" would pass for the wrong reason forever.
-    const latest = renderings(INDEX.summary.latest_index_milli)[0];
-    assert.ok(allHtml.includes(latest), `an open gate must render the latest level ${latest}`);
-    for (const phrase of EMPTY_STATE) {
-      assert.equal(allHtml.includes(phrase), false, `an open gate must not still claim: ${phrase}`);
-    }
+    assert.ok(allHtml.includes("index-chart"), "an open aggregate gate must render its chart");
     return;
   }
-
+  assert.equal(allHtml.includes("index-chart"), false, "the aggregate gate is closed but index geometry rendered");
   for (const period of INDEX.periods) {
-    if (period.index_milli === null) continue;
-    for (const form of renderings(period.index_milli)) {
-      assert.equal(
-        allHtml.includes(form),
-        false,
-        `${period.period_id} rendered as ${form} while the series is withheld`,
-      );
-    }
+    assert.equal(allHtml.includes(period.period_id), false, `${period.period_id} leaked from the withheld aggregate series`);
   }
-  for (const phrase of EMPTY_STATE) {
-    assert.ok(allHtml.includes(phrase), `a withheld build must state: ${phrase}`);
-  }
-  // Per-product movement is derived from retained prices and is withheld with
-  // the index, so no part number may be rendered either.
-  for (const product of PRODUCTS.products) {
-    assert.equal(allHtml.includes(product.mpn), false, `${product.mpn} rendered while the series is withheld`);
-  }
+  for (const phrase of EMPTY_STATE) assert.ok(allHtml.includes(phrase), `a withheld aggregate build must state: ${phrase}`);
 });
 
 // ---------------------------------------------------------------------------
@@ -161,7 +142,7 @@ test("no event marker claims that an article explains a price movement", () => {
   assert.match(eventCopy, /Temporal association only/u);
 });
 
-test("no page uses causal language of its own", { skip: needsBuild }, () => {
+test("no page uses causal language of its own", { skip: renderedSkip }, () => {
   const quoted = EVENTS.markers.flatMap((m) => [m.source.title, m.source.publisher, m.source.author]);
   for (const [file, content] of pages) {
     const ours = quoted.reduce((text, phrase) => text.split(phrase).join(" "), content);
@@ -188,7 +169,7 @@ test("every marker credits a title, a publisher and an author or its explicit ab
   }
 });
 
-test("outbound source links and markers correspond exactly", { skip: needsBuild }, () => {
+test("outbound source links and markers correspond exactly", { skip: renderedSkip }, () => {
   const linked = new Set();
   for (const content of pages.values()) {
     for (const match of content.matchAll(/<a[^>]*href="([^"]+)"[^>]*rel="nofollow noopener external"/gu)) {
@@ -214,7 +195,7 @@ test("explained and unexplained movements account for every movement", () => {
   assert.equal(EVENTS.explained_movement_count, EVENTS.markers.length);
 });
 
-test("private candidate movement counts are withheld with the closed series", { skip: needsBuild }, () => {
+test("private candidate movement counts are withheld with the closed series", { skip: renderedSkip }, () => {
   const research = pages.get("out/research/index.html");
   assert.ok(research, "expected the research page");
   assert.match(research, /No event-line data is public yet/iu);
@@ -234,22 +215,24 @@ test("no two-decimal value exists in the public projection", () => {
   }
 });
 
-test("no rendered chart geometry contains a two-decimal value", { skip: needsBuild }, () => {
-  let svgCount = 0;
-  for (const [file, content] of pages) {
-    for (const match of content.matchAll(/<svg[\s\S]*?<\/svg>/gu)) {
-      svgCount += 1;
-      assert.doesNotMatch(match[0], TWO_DECIMALS, `${file} renders a two-decimal value inside an svg`);
-      assert.match(match[0], /viewBox="/u, `${file} has an svg with no viewBox`);
-      assert.doesNotMatch(match[0], /<svg[^>]*\swidth="/u, `${file} has an svg with a fixed width`);
-    }
+test("factual observation charts render points without invented connecting geometry", { skip: renderedSkip }, () => {
+  const productPages = pagesUnder("out/price-history/ram/").filter(([file]) => file.split("/").length === 5);
+  assert.equal(productPages.length, OFFERS.products.length);
+  for (const [file, content] of productPages) {
+    const svgs = [...content.matchAll(/<svg[\s\S]*?<\/svg>/gu)].map((match) => match[0]);
+    assert.equal(svgs.length, 1, `${file} should render one raw-observation plot`);
+    assert.match(svgs[0], /viewBox="/u);
+    assert.doesNotMatch(svgs[0], /<svg[^>]*\swidth="/u);
+    assert.match(svgs[0], /<circle/u, `${file} has no observation points`);
+    assert.doesNotMatch(svgs[0], /<(?:path|polyline)\b/u, `${file} joins sparse observations`);
+    assert.match(content, /points are not a continuous series/iu, `${file} does not explain the point legend`);
+    assert.match(svgs[0], /aria-label="Dated price observations"/u, `${file} has no accessible point group`);
   }
-  if (isPublic) assert.ok(svgCount > 0, "an open build must render its chart");
-  else assert.equal(svgCount, 0, "a withheld build must not render chart geometry");
+  if (!isPublic) assert.equal(allHtml.includes("index-chart"), false);
 });
 
 // ---------------------------------------------------------------------------
-// 7. No money reaches public output
+// 7. Money reaches public output only through the factual-offer contract
 // ---------------------------------------------------------------------------
 
 const MONEY_KEY = /minor|amount|price|gbp|cost/iu;
@@ -271,10 +254,98 @@ test("the public projection is a money-free zone", () => {
   assert.deepEqual(offending, [], "money reached the public projection");
 });
 
-test("no currency amount is rendered anywhere", { skip: needsBuild }, () => {
+test("every rendered currency amount comes from the approved factual-offer payload", { skip: renderedSkip }, () => {
+  const approved = new Set(OFFERS.observations.map((item) => `£${(item.item_price_minor / 100).toFixed(2)}`));
+  const rendered = [...allHtml.matchAll(/£\d+(?:,\d{3})*\.\d{2}/gu)].map((match) => match[0].replace(",", ""));
+  assert.ok(rendered.length > 0, "the useful offer release rendered no prices");
+  for (const amount of rendered) assert.ok(approved.has(amount), `${amount} is not in the approved factual-offer payload`);
+  assert.doesNotMatch(allHtml, /\bGBP\s*\d/u);
+});
+
+const decodeHtml = (value) => value
+  .replaceAll("&amp;", "&")
+  .replaceAll("&quot;", '"')
+  .replaceAll("&#x27;", "'")
+  .replaceAll("&lt;", "<")
+  .replaceAll("&gt;", ">");
+const textFromHtml = (value) => decodeHtml(value.replace(/<[^>]+>/gu, " ")).replace(/\s+/gu, " ").trim();
+const offerDate = (value) => new Intl.DateTimeFormat("en-GB", {
+  day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Europe/London", timeZoneName: "short",
+}).format(new Date(value));
+const offerPrice = (minor) => `£${(minor / 100).toFixed(2)}`;
+
+test("offer links preserve approved MPN, retailer, capture, price and URL tuples", { skip: renderedSkip }, () => {
+  const approvedUrls = new Set(OFFERS.observations.map((item) => item.source_url));
+
+  for (const product of OFFERS.products) {
+    const file = `out/price-history/ram/${product.mpn}/index.html`;
+    const content = pages.get(file);
+    assert.ok(content, `missing offer history page for ${product.mpn}`);
+    const rows = [...content.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gu)].map((match) => match[1]);
+
+    for (const item of OFFERS.observations.filter((observation) => observation.mpn === product.mpn)) {
+      const matching = rows.filter((row) => {
+        const href = row.match(/<a[^>]*href="([^"]+)"[^>]*target="_blank"/u)?.[1];
+        const text = textFromHtml(row);
+        return href && decodeHtml(href) === item.source_url
+          && text.includes(item.retailer_name)
+          && text.includes(offerDate(item.observed_at))
+          && text.includes(offerPrice(item.item_price_minor));
+      });
+      assert.equal(
+        matching.length,
+        1,
+        `rendered offer tuple drifted: ${[product.mpn, item.retailer_name, item.observed_at, item.item_price_minor, item.source_url].join(" | ")}`,
+      );
+    }
+
+    for (const match of content.matchAll(/<a([^>]*)href="([^"]+)"([^>]*)target="_blank"([^>]*)>/gu)) {
+      const href = decodeHtml(match[2]);
+      assert.ok(approvedUrls.has(href), `${file} has an external offer link outside the approved payload: ${href}`);
+    }
+  }
+});
+
+test("archive and direct-retailer actions describe the source they open", { skip: renderedSkip }, () => {
+  const approvedByUrl = new Map(OFFERS.observations.map((item) => [item.source_url, item]));
+  let waybackLinks = 0;
   for (const [file, content] of pages) {
-    assert.equal(content.includes("£"), false, `${file} renders a pound sign`);
-    assert.doesNotMatch(content, /\bGBP\s*\d/u, `${file} renders a GBP amount`);
+    for (const match of content.matchAll(/<a[^>]*href="([^"]+)"[^>]*target="_blank"[^>]*>([\s\S]*?)<\/a>/gu)) {
+      const href = decodeHtml(match[1]);
+      const item = approvedByUrl.get(href);
+      if (!item) continue;
+      const action = textFromHtml(match[2]);
+      if (href.startsWith("https://web.archive.org/web/")) {
+        waybackLinks += 1;
+        assert.equal(item.observation_kind, "archived_retail_observation", `${file} has an untyped Wayback link`);
+        assert.match(action, /Open archived snapshot/iu, `${file} disguises a Wayback action as a live source`);
+        const rowStart = content.lastIndexOf("<tr", match.index);
+        const cardStart = content.lastIndexOf('<article class="offer-card', match.index);
+        const blockStart = Math.max(rowStart, cardStart);
+        const rowEnd = content.indexOf("</tr>", match.index);
+        const cardEnd = content.indexOf("</article>", match.index);
+        const candidateEnds = [rowEnd, cardEnd].filter((position) => position >= match.index);
+        const blockEnd = candidateEnds.length ? Math.min(...candidateEnds) : match.index + match[0].length;
+        const sourceBlock = content.slice(Math.max(0, blockStart), blockEnd);
+        assert.match(sourceBlock, /Archived snapshot/iu, `${file} has a Wayback link without a visible archive label`);
+      } else {
+        assert.equal(item.observation_kind, "direct_retail_observation", `${file} has a direct URL typed as an archive`);
+        assert.match(action, /Visit retailer/iu, `${file} labels a direct retailer action incorrectly`);
+        assert.doesNotMatch(action, /archived snapshot/iu);
+      }
+    }
+  }
+  assert.ok(waybackLinks > 0, "the archive wording test found no rendered Wayback links");
+  assert.doesNotMatch(allHtml, />\s*(?:In stock|Available to order)\s*</u, "availability is presented without capture qualification");
+});
+
+test("every new-tab link prevents opener access", { skip: renderedSkip }, () => {
+  for (const [file, content] of pages) {
+    for (const match of content.matchAll(/<a([^>]*)target="_blank"([^>]*)>/gu)) {
+      const attributes = `${match[1]} ${match[2]}`;
+      const rel = attributes.match(/rel="([^"]+)"/u)?.[1]?.split(/\s+/u) ?? [];
+      assert.ok(rel.includes("noopener"), `${file} has target=_blank without rel=noopener`);
+    }
   }
 });
 
@@ -291,7 +362,7 @@ function registryEntries() {
   }));
 }
 
-test("a category with no observations renders no chart and says so", { skip: needsBuild }, () => {
+test("a category with no observations renders no chart and says so", { skip: renderedSkip }, () => {
   const entries = registryEntries();
   assert.ok(entries.length >= 2, "expected the registry to parse");
   assert.ok(entries.some((entry) => entry.dataset === null), "expected at least one uncollected category");
@@ -305,39 +376,28 @@ test("a category with no observations renders no chart and says so", { skip: nee
   }
 });
 
-test("RAM distinguishes active research from an uncollected category", { skip: needsBuild }, () => {
+test("RAM exposes factual prices while keeping the aggregate series distinct", { skip: renderedSkip }, () => {
   const ram = pages.get("out/price-history/ram/index.html");
   assert.ok(ram, "expected the RAM workspace");
-  assert.match(ram, /Research programme active\. No public series released\./u);
+  assert.match(ram, /Validated retail prices and exact-product histories are public\./u);
+  assert.match(ram, /The aggregate RAM index is still withheld\./u);
   assert.match(ram, /No publishable index point exists\./u);
-  assert.doesNotMatch(ram, /No observations collected for RAM/u);
-  assert.equal(ram.includes("index-chart"), false, "withheld RAM must not render a numerical chart");
+  assert.match(ram, /Visit retailer/u);
+  assert.equal(ram.includes("index-chart"), false, "closed aggregate RAM index rendered numerical geometry");
+  assert.equal(isPublic, false, "factual offer publication must not open the aggregate methodology gate");
 });
 
-test("the number of product pages equals the number of products exactly", { skip: needsBuild }, () => {
+test("the number of factual-offer product pages equals the approved products exactly", { skip: renderedSkip }, () => {
   const productPages = globSync("out/price-history/*/*/index.html");
   const named = productPages.map((file) => file.split("/").at(-2));
-
-  if (!isPublic) {
-    // A withheld build renders no product. Next refuses to build a dynamic route
-    // that yields no paths under `output: export`, so one path exists and it
-    // resolves to nothing, producing a not-found document.
-    assert.deepEqual(named, ["not-published"]);
-    const placeholder = pages.get(productPages[0]);
-    assert.match(placeholder, /Signal absent|does not exist/u, "the placeholder path is not a 404");
-    assert.match(placeholder, /name="robots" content="noindex"/u, "the placeholder path is indexable");
-    assert.doesNotMatch(placeholder, /private candidate|quoted-item|exact MPN/iu, "the placeholder metadata describes private work");
-    return;
-  }
-
   assert.deepEqual(
     [...named].sort(),
-    PRODUCTS.products.map((product) => product.mpn).sort(),
-    "product pages and products have drifted apart",
+    OFFERS.products.map((product) => product.mpn).sort(),
+    "factual-offer product pages and approved products have drifted apart",
   );
 });
 
-test("a product whose observations stopped early says so wherever it is drawn", { skip: needsBuild }, () => {
+test("a product whose observations stopped early says so wherever it is drawn", { skip: renderedSkip }, () => {
   if (!isPublic) return;
 
   // 15 of the 20 products showing a fall stop being observed before the 2025
@@ -373,7 +433,7 @@ test("a product whose observations stopped early says so wherever it is drawn", 
 // 9. Parameters travel with the index, wherever it appears
 // ---------------------------------------------------------------------------
 
-test("every page showing the index also shows how it was built", { skip: needsBuild }, () => {
+test("every page showing the index also shows how it was built", { skip: renderedSkip }, () => {
   const charted = [...pages].filter(([, content]) => content.includes('class="index-chart"'));
   if (isPublic) assert.ok(charted.length > 0, "an open gate must render the index somewhere");
 
@@ -404,7 +464,7 @@ const METHODOLOGY_ONLY = [
   "retailer of record",
 ];
 
-test("methodology lives on the methodology page and nowhere else", { skip: needsBuild }, () => {
+test("methodology lives on the methodology page and nowhere else", { skip: renderedSkip }, () => {
   const methodology = [...pages].filter(([file]) => file.startsWith("out/methodology/"));
   assert.equal(methodology.length, 1, "expected exactly one methodology page");
   const [, methodologyHtml] = methodology[0];
@@ -466,8 +526,15 @@ test("the public frontend is retail-first and exposes no deferred channel", () =
   const source = globSync(["app/**/*.tsx", "components/**/*.tsx", "lib/site.ts", "lib/components-registry.ts"])
     .map((file) => readFileSync(file, "utf8"))
     .join("\n");
+  const about = readFileSync("app/about/page.tsx", "utf8");
+  const disclosure = readFileSync("app/affiliate-disclosure/page.tsx", "utf8");
   assert.match(readFileSync("app/page.tsx", "utf8"), /Primary retail only/u);
-  assert.match(readFileSync("app/affiliate-disclosure/page.tsx", "utf8"), /No outbound product links are currently published/iu);
+  assert.match(about, /ordinary, uncompensated links/iu);
+  assert.match(disclosure, /ordinary, uncompensated links/iu);
+  assert.match(about, /future affiliate link will be[^.]*labelled/iu);
+  assert.match(disclosure, /future affiliate link will be[^.]*labelled/iu);
+  assert.doesNotMatch(`${about}\n${disclosure}`, /No outbound product links are currently published/iu);
+  assert.doesNotMatch(`${about}\n${disclosure}`, /(?:approved|endorsed|partnered) (?:by|with) (?:a |any )?(?:retailer|affiliate|network)/iu);
   assert.doesNotMatch(source, /marketplace|second-hand|resale/iu);
   assert.doesNotMatch(source, /ObservedPriceBoard|MarketChannelCharts/u);
 });
@@ -491,7 +558,7 @@ test("no tracking package", () => {
   );
 });
 
-test("Cloudflare target remains static but production deployment is locked", () => {
+test("Cloudflare target remains static and deployment is bound to the approved factual preview", () => {
   const config = readFileSync("wrangler.jsonc", "utf8");
   assert.match(config, /"directory"\s*:\s*"\.\/out"/u);
   assert.doesNotMatch(config, /opennext/iu);
@@ -499,9 +566,12 @@ test("Cloudflare target remains static but production deployment is locked", () 
   assert.match(config, /"pattern"\s*:\s*"www\.siliconforecast\.com"/u);
   assert.match(config, /"custom_domain"\s*:\s*true/u);
   const deploy = JSON.parse(readFileSync("package.json", "utf8")).scripts.deploy;
-  assert.equal(deploy, "node scripts/refuse-production-deploy.mjs");
-  assert.doesNotMatch(deploy, /wrangler\s+deploy/u);
-  assert.match(readFileSync("scripts/refuse-production-deploy.mjs", "utf8"), /Production deployment is locked/u);
+  assert.equal(deploy, "node scripts/deploy-approved-public-preview.mjs");
+  const approval = JSON.parse(readFileSync("config/factual-offer-deployment-approval.v1.json", "utf8"));
+  assert.equal(approval.status, "approved");
+  assert.equal(approval.scope.factual_offers, true);
+  for (const locked of ["aggregate_index", "methodology", "basket", "baseline", "historical_reference", "deflator", "research_publication", "recommendations", "paid_affiliate_tracking"]) assert.equal(approval.scope[locked], false, `${locked} must remain locked`);
+  execFileSync(process.execPath, ["scripts/deploy-approved-public-preview.mjs", "--check"], { stdio: "pipe" });
 });
 
 test("the Pages workflow is manual, withheld and cannot deploy", () => {

@@ -20,7 +20,7 @@ export function SiteHeader() {
         <div className="shell status-inner">
           <span className="status-light" />
           {site.status}
-          <span className="status-detail">UK DDR5 research preview · public series withheld</span>
+          <span className="status-detail">UK DDR5 observed prices public · aggregate index withheld</span>
         </div>
       </div>
       <div className="shell nav-row">

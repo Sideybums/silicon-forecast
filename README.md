@@ -5,14 +5,15 @@ Silicon Forecast is an independent UK project building evidence-backed PC-compon
 This repository currently contains:
 
 - the product and technical source briefs;
-- the governed methodology and source-rights research;
-- a public pre-launch publisher-review website;
+- governed source-rights, methodology and provenance research;
+- a public observation-first RAM website;
+- a checksum-bound release containing qualifying dated UK primary-retail observations for exact MPNs;
 - a candidate-only PostgreSQL/control-plane foundation; and
-- no live retailer feeds, news collectors or production price index.
+- no public aggregate price index, forecast, recommendation or automated editorial feed.
 
 ## Public website
 
-The website is intentionally honest about its status. It exposes the primary-retail tracking scope, qualification rules and release gates, but no verified public price series, synthetic price chart, outbound product links or purchasing recommendations.
+The website publishes a deliberately narrow factual preview: dated, VAT-inclusive item-price observations for qualifying exact-MPN 32GB DDR5 kits, their evidence links and sparse raw histories. It does not claim live-market completeness, rank retailers, recommend purchases or expose an aggregate index.
 
 Routes include:
 
@@ -62,7 +63,7 @@ The canonical deployment target is Cloudflare Workers Static Assets. Cloudflare'
 
 Do not select Cloudflare's OpenNext/SSR preset: this application intentionally uses Next.js static export and does not produce a `.next/standalone` server bundle.
 
-`npm run deploy:dry-run` builds the site and verifies Wrangler can package the exported assets without making an external change.
+`npm run deploy` validates the human approval record, exact policy, manifest, public payload and reviewed deployment-surface digest before invoking Wrangler. Any bound change fails closed and requires a new approval. `npm run deploy:dry-run` builds the site and verifies Wrangler can package the exported assets without making an external change.
 
 `worker.mjs` enforces HTTP-to-HTTPS redirection and adds baseline security headers before serving the static assets.
 
@@ -75,4 +76,4 @@ The public site and custom domain are live through Cloudflare Workers. `hello@si
 3. treat each advertiser application and feed permission as a separate rights decision; and
 4. retain network names only in non-visible ownership-verification metadata unless a live commercial relationship requires public disclosure.
 
-Do not add analytics, affiliate tracking, live offers or claims of complete market coverage without updating the disclosures and passing the project approval gates.
+Do not add analytics, paid affiliate tracking, unsupported sources or claims of complete market coverage without updating the disclosures and passing the project approval gates. Dated factual offers remain distinct from any future aggregate index or recommendation.
