@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at": "2026-08-17T02:47:10Z",
+  "updated_at": "2026-08-17T10:41:38Z",
   "project": "Silicon Forecast",
   "north_star": "Prove one lawful, accurate, reproducible regional DDR5 price index before expanding scope.",
   "recovery": {
@@ -28,6 +28,22 @@
       "lock_present": false,
       "collector_process_present": false,
       "hermes_collector_job_present": false
+    },
+    "runs_since_installation": 1,
+    "last_observed_run": {
+      "run_id": "sf-collection-run-20260817T103006Z",
+      "started_at": "2026-08-17T10:30:06Z",
+      "completed_at": "2026-08-17T10:32:25Z",
+      "outcome": "completed",
+      "targets_attempted": 45,
+      "observations_retained": 36,
+      "abstentions": 9,
+      "commit": "b4f0396d99a32502d78828f570695e35602c3916"
+    },
+    "post_run_integration_repair": {
+      "commit": "0fa33f8a219e93a67efb962a3becb2b291f2cbbb",
+      "issue": "The first run exposed that a prospective tranche was not automatically classified in the exhaustive private candidate input manifest.",
+      "resolution": "Collector now appends each new prospective tranche as excluded_private_candidate, preserving frozen calculation inputs and every governance lock."
     }
   },
   "evidence": {
@@ -89,9 +105,8 @@
     "remaining_warning": "Node MODULE_TYPELESS_PACKAGE_JSON performance warning only; no functional failure"
   },
   "next_steps": [
-    "Allow launchd—not a manual command—to perform the next scheduled 11:30 local prospective collection.",
-    "Independently audit that run for a clean fast-forward, one additive observation tranche, evidence manifest, ledger update, global audit, local commit and normal push outcome.",
-    "If push fails, preserve and recover the local evidence commit; never reset, rebase, force-push or invent the missing 2026-08-11 run.",
-    "Keep publication, deployment, source, methodology, threshold, reference, deflator, basket and public-claim locks closed until separately governed decisions exist."
+    "Allow the next natural 11:30 launchd run; do not trigger an overlapping manual fetch.",
+    "Audit whether the prospective manifest entry is committed atomically with the tranche and remains excluded_private_candidate.",
+    "Review abstention reasons separately without changing targets, sources, thresholds or policy without explicit approval."
   ]
 }

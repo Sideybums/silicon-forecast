@@ -146,7 +146,7 @@ The public frontend is now **built but gated**. A complete graphs-first site exi
 
 ## Next Action
 
-Recovery is integrated on `main`. launchd label `uk.co.siliconforecast.collector` is installed against `/Users/weetoddy/Desktop/Projects/Silicon_Forecast_Collector`, loaded idle with `RunAtLoad` false and zero runs; no manual retailer fetch was triggered and no Hermes collector job exists. The daily slot was amended from the inherited 13:45 time to 11:30 local on David's instruction. Audit the next naturally scheduled run for additive observation, evidence-manifest, ledger, global-audit, local-commit and push outcomes. Do not restore Hermes scheduling or select methodology, sources, thresholds, references, deflators, baskets or public claims. The exact handoff is machine-readable in `.planning/HANDOFF.json`.
+Recovery is integrated on `main`. launchd label `uk.co.siliconforecast.collector` is installed against `/Users/weetoddy/Desktop/Projects/Silicon_Forecast_Collector`, loaded idle with `RunAtLoad` false and one successful natural run; no manual retailer fetch was triggered and no Hermes collector job exists. The daily slot was amended from the inherited 13:45 time to 11:30 local on David's instruction. Run `sf-collection-run-20260817T103006Z` retained 36 observations from 45 targets with 9 abstentions and pushed evidence commit `b4f0396`. Parent replay then failed closed because the new tranche lacked an exhaustive private-input classification; repair `0fa33f8` now appends future tranches atomically as `excluded_private_candidate`. Verify that behaviour on the next natural run. Do not restore Hermes scheduling or select methodology, sources, thresholds, references, deflators, baskets or public claims. The exact handoff is machine-readable in `.planning/HANDOFF.json`.
 
 ## Safety Note
 
@@ -156,4 +156,4 @@ The 2026-08-13 frontend rebuild changed no authority. It generates and commits a
 
 ---
 *State created: 2026-08-05*
-*Last updated: 2026-08-13 after the graphs-first frontend rebuild: public projection pipeline, fail-closed publication gate, integer-only chart geometry, attributed event line, registry-driven routes and the eleven-invariant site-content rewrite. The site ships gated; the collector's missed scheduled run remains an open item.*
+*Last updated: 2026-08-17 after governed recovery, launchd installation, the first observed 11:30 run and the prospective-manifest integration repair. Publication and production deployment remain structurally locked.*
