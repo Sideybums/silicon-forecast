@@ -1,12 +1,12 @@
 {
   "schema_version": 3,
-  "updated_at": "2026-08-17T16:04:21Z",
+  "updated_at": "2026-08-17T16:20:00Z",
   "project": "Silicon Forecast",
   "north_star": "Prove one lawful, accurate, reproducible regional DDR5 price index before expanding scope.",
   "recovery": {
-    "status": "completed_integrated_and_scheduler_verified",
+    "status": "observation_first_deployed_and_production_verified",
     "worktree": "/Users/weetoddy/Desktop/Projects/Silicon_Forecast_Recovery",
-    "branch": "feat/observation-first-publication",
+    "branch": "main",
     "base": "origin/main",
     "preserved_original_branch": "feat/graphs-first-frontend",
     "public_numerical_release": "factual_observations_approved_aggregate_withheld"
@@ -112,10 +112,9 @@
     "remaining_warning": "Node MODULE_TYPELESS_PACKAGE_JSON performance warning only; no functional failure"
   },
   "next_steps": [
-    "Complete full release verification, commit and push the observation-first feature, then fast-forward main.",
-    "Allow the canonical Cloudflare Git build to run the exact checksum-bound deployment and verify production apex/www routes, product histories, links, redirects and security headers.",
-    "Continue natural 11:30 launchd collection as the sole prospective fetcher; do not trigger a competing fetch.",
-    "After production verification, implement Phase 6 Wave R0 with synthetic fixtures only; live discovery remains disabled pending separate approval."
+    "Continue natural 11:30 launchd collection as the sole prospective fetcher and independently audit the next manifest integration.",
+    "Implement Phase 6 Wave R0 with synthetic fixtures only; live discovery remains disabled pending separate approval.",
+    "Treat any deployment-surface or payload change as requiring a new exact deployment approval."
   ],
   "public_preview": {
     "ram_product_template": "observation_first_implemented_and_release_verified",
@@ -134,9 +133,18 @@
     "desktop_render": "verified",
     "mobile_390px_render": "verified",
     "publication_gate": "factual_observation_contract_open_aggregate_gate_withheld",
-    "production_deploy": "approved_exact_surface_pending_release_transaction",
+    "production_deploy": "deployed_and_verified",
     "public_observations": 44,
     "public_products": 3,
-    "private_exceptions": 33
+    "private_exceptions": 33,
+    "deployed_revision": "04026eae2ad45b0d3eaa4c58f4a60f898bbee77c",
+    "live_url": "https://siliconforecast.com",
+    "production_verification": {
+      "apex_and_three_product_routes": "http_200",
+      "approved_prices_mpns_and_source_urls": "verified",
+      "http_and_www_redirects": "308_to_https_apex",
+      "security_headers": "HSTS_nosniff_referrer_policy_verified",
+      "aggregate_index_geometry": "absent"
+    }
   }
 }

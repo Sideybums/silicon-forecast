@@ -15,7 +15,7 @@ See `.planning/PROJECT.md` (last updated 2026-08-09).
 - `config/factual-offer-publication-policy.v1.json` is the closed publication contract. The generated public payload currently contains 44 observations across three products; 33 nonconforming or duplicate records remain private. An approved fourth identity has no qualifying observation and therefore no public route.
 - Every released observation is bound to reviewed exact identity, catalogue scope, immutable evidence-ledger facts, response hash/length/status, strict timestamps, VAT and availability semantics, and a fixed retailer-host relationship. Conflicting same-retailer/timestamp facts suppress the whole key; points are never joined or interpolated.
 - `data/derived/private-candidate/public-offers-manifest.v1.json` binds policy, inputs, evidence, catalogue/reviews, generator, build script and payload bytes. Public cards and exact-MPN pages distinguish direct retailer observations from archived snapshots and make no current-price, recommendation, ranking or complete-market claim.
-- David separately approved deployment of this exact reviewed preview. `config/factual-offer-deployment-approval.v1.json` binds the policy, manifest, payload and deployment-surface digest. Any bound change fails closed and requires new approval.
+- David separately approved deployment of this exact reviewed preview. `config/factual-offer-deployment-approval.v1.json` binds the policy, manifest, payload and deployment-surface digest. Revision `04026eae2ad45b0d3eaa4c58f4a60f898bbee77c` is deployed and production-verified; any bound change fails closed and requires new approval.
 - Cloudflare Workers Static Assets is the canonical target for `siliconforecast.com` and `www.siliconforecast.com`. GitHub Pages remains manual, withheld and incapable of deployment.
 - Aggregate index publication, methodology, basket, baseline, historical reference, deflator, research/editorial publication, recommendations, paid affiliate tracking, source-family approval and production database mutation remain locked.
 
@@ -165,7 +165,7 @@ The public frontend now has two deliberately separate states: the checksum-bound
 
 ## Next Action
 
-Complete the observation-first release transaction: run full verification, commit and push the reviewed feature, fast-forward `main`, allow the canonical Cloudflare Git build to invoke the checksum-bound deployment command, then verify the live apex/www routes, exact-MPN histories, approved outbound links, redirects and security headers. Keep launchd as the sole prospective fetcher and do not trigger collection during release work. After production verification, resume synthetic-only Phase 6 Wave R0; live discovery still requires separate approval.
+The observation-first preview is deployed and production-verified. Continue natural 11:30 launchd collection as the sole prospective fetcher and independently audit the next tranche's fail-closed integration; do not trigger a competing fetch. The next implementation slice is Phase 6 Wave R0 using synthetic fixtures only. Live research-source discovery, aggregate methodology, references, deflators, baskets, recommendations and editorial publication still require separate decisions.
 
 ## Safety Note
 
