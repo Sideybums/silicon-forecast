@@ -11,15 +11,17 @@
 //   node scripts/run-canonical-collector.mjs [--max N] [--priority P] [--dry-run]
 //
 // Nothing here approves a source, a methodology or a publication.
-import { createHash } from "node:crypto";
 import { mkdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import process from "node:process";
-import { execFileSync } from "node:child_process";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { COLLECTOR_VERSION, SCHEDULE, buildEstablishedKitShapes, buildProspectiveObservation, detectMissedSlots, runCollection } from "../lib/canonical-collector.mjs";
+import { acquireCollectorLock, gitCommand, pushCollectorCommit, synchroniseCollectorCheckout } from "../lib/collector-runtime.mjs";
+import { buildGlobalIntegrationAudit, discoverProspectiveTranches, writeGlobalIntegrationAudit } from "../lib/global-integration-audit.mjs";
 import { readdirSync } from "node:fs";
 
 const repo = new URL("../", import.meta.url);
-const repoPath = new URL(".", repo).pathname;
+const repoPath = fileURLToPath(repo);
 const LEDGER = new URL("data/collection-runs/ledger.v1.json", repo);
 
 const args = new Map();
@@ -32,6 +34,23 @@ for (let i = 2; i < process.argv.length; i += 1) {
 const maxTargets = args.has("max") ? Number(args.get("max")) : 45;
 const maxPriority = args.has("priority") ? Number(args.get("priority")) : 4;
 const dryRun = args.get("dry-run") === true;
+
+// Repository safety is resolved before reading targets, robots.txt or retailer
+// pages. A dirty, divergent, locally-ahead or non-main checkout therefore makes
+// zero retailer requests.
+const expectedCheckout = process.env.SF_COLLECTOR_CHECKOUT ?? repoPath;
+const lockPath = process.env.SF_COLLECTOR_LOCK ?? path.join(process.env.HOME ?? repoPath, "Library/Application Support/Silicon Forecast Collector/collector.lock");
+const releaseLock = acquireCollectorLock(lockPath, { checkout: repoPath });
+process.once("exit", releaseLock);
+process.once("SIGINT", () => process.exit(130));
+process.once("SIGTERM", () => process.exit(143));
+try {
+  const aligned = synchroniseCollectorCheckout(repoPath, { expectedCheckout, branch: process.env.SF_COLLECTOR_BRANCH ?? "main" });
+  process.stdout.write(`collector preflight: main aligned at ${aligned.slice(0, 12)}\n`);
+} catch (error) {
+  releaseLock();
+  throw error;
+}
 
 const now = new Date();
 const stamp = `${now.toISOString().slice(0, 19).replace(/[-:]/gu, "")}Z`;
@@ -77,7 +96,7 @@ process.stdout.write(`  last run:     ${lastRun ?? "none recorded"}\n`);
 process.stdout.write(`  missed slots: ${missed.length}${missed.length ? ` -> ${missed.join(", ")}` : ""}\n`);
 
 if (dryRun) {
-  process.stdout.write("dry run: no fetch performed, nothing written\n");
+  process.stdout.write("dry run: repository preflight completed; no retailer fetch performed and nothing written\n");
   process.exit(0);
 }
 
@@ -104,7 +123,6 @@ const usable = results.filter((r) => r.usable);
 const observations = usable.map((r) =>
   buildProspectiveObservation(r, {
     observedAt: iso,
-    stamp,
     evidencePath: `research/evidence/primary-retail-${stamp}/ledger.v1.json`,
   }),
 );
@@ -193,6 +211,10 @@ if (observations.length) {
   );
 }
 
+const globalAudit = buildGlobalIntegrationAudit(discoverProspectiveTranches(repo), iso);
+const globalAuditPath = writeGlobalIntegrationAudit(repo, globalAudit);
+runRecord.global_integration_audit = globalAuditPath;
+
 mkdirSync(new URL("data/collection-runs/", repo), { recursive: true });
 writeFileSync(LEDGER, `${JSON.stringify(ledger, null, 2)}\n`);
 
@@ -211,36 +233,33 @@ const paths = [
   "data/collection-runs/ledger.v1.json",
   runRecord.tranche_file,
   runRecord.evidence_ledger ? `research/evidence/primary-retail-${stamp}/` : null,
+  globalAuditPath,
 ].filter(Boolean);
 
-const git = (args) => execFileSync("git", args, { cwd: repoPath, encoding: "utf8" }).trim();
+const git = (args) => gitCommand(repoPath, args);
+git(["add", "--", ...paths]);
+const staged = git(["diff", "--cached", "--name-only"]);
+if (!staged) {
+  throw new Error("collector wrote no staged output; refusing to report success");
+}
+const summary = observations.length
+  ? `${observations.length} observations from ${new Set(observations.map((o) => o.seller.display_name)).size} retailers`
+  : "no usable readings";
+const gaps = missed.length ? `\n\nRecorded ${missed.length} scheduled slot(s) with no run: ${missed.join(", ")}.` : "";
+git([
+  "commit",
+  "-q",
+  "-m",
+  `data: collection run ${stamp}`,
+  "-m",
+  `Automated canonical collector run. ${summary}; ${runRecord.abstentions} abstentions.${gaps}\n\nNo source, methodology or publication is approved.`,
+]);
+const commit = git(["rev-parse", "--short", "HEAD"]);
+process.stdout.write(`git: committed ${commit} on main\n`);
 try {
-  git(["add", "--", ...paths]);
-  const staged = git(["diff", "--cached", "--name-only"]);
-  if (!staged) {
-    process.stdout.write("git: nothing to commit\n");
-  } else {
-    const summary = observations.length
-      ? `${observations.length} observations from ${new Set(observations.map((o) => o.seller.display_name)).size} retailers`
-      : "no usable readings";
-    const gaps = missed.length ? `\n\nRecorded ${missed.length} scheduled slot(s) with no run: ${missed.join(", ")}.` : "";
-    git([
-      "commit",
-      "-q",
-      "-m",
-      `data: collection run ${stamp}`,
-      "-m",
-      `Automated canonical collector run. ${summary}; ${runRecord.abstentions} abstentions.${gaps}\n\nNo source, methodology or publication is approved.`,
-    ]);
-    const branch = git(["rev-parse", "--abbrev-ref", "HEAD"]);
-    process.stdout.write(`git: committed ${git(["rev-parse", "--short", "HEAD"])} on ${branch}\n`);
-    try {
-      git(["push", "--quiet", "origin", branch]);
-      process.stdout.write(`git: pushed to origin/${branch}\n`);
-    } catch (error) {
-      process.stdout.write(`git: PUSH FAILED (${String(error.message).slice(0, 120)}) — commit is local only\n`);
-    }
-  }
+  pushCollectorCommit(repoPath);
+  process.stdout.write("git: pushed HEAD to origin/main\n");
 } catch (error) {
-  process.stdout.write(`git: COMMIT FAILED (${String(error.message).slice(0, 160)}) — data is written but uncommitted\n`);
+  process.stderr.write(`collector: PUSH FAILED; evidence retained in local commit ${commit}; origin/main was not updated\n`);
+  throw error;
 }

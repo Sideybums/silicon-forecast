@@ -8,6 +8,7 @@
 import indexRam from "@/data/public-projection/index-ram.v1.json";
 import productsRam from "@/data/public-projection/products-ram.v1.json";
 import eventsRam from "@/data/public-projection/events-ram.v1.json";
+import { seriesIsPublic } from "@/lib/publication-gate";
 
 export type IndexPeriod = {
   period_id: string;
@@ -16,7 +17,6 @@ export type IndexPeriod = {
   link_permille: number | null;
   change_permille: number | null;
   matched_product_count: number | null;
-  dispersion_permille: { min: number | null; median: number | null; max: number | null };
   distinct_products_in_period: number;
   is_reference: boolean;
 };
@@ -99,15 +99,15 @@ const PRODUCTS: Record<string, ProductsDataset> = { ram: productsRam as Products
 const EVENTS: Record<string, EventsDataset> = { ram: eventsRam as EventsDataset };
 
 export function indexFor(dataset: string | null): IndexDataset | null {
-  return dataset ? (INDEX[dataset] ?? null) : null;
+  return seriesIsPublic() && dataset ? (INDEX[dataset] ?? null) : null;
 }
 
 export function productsFor(dataset: string | null): ProductsDataset | null {
-  return dataset ? (PRODUCTS[dataset] ?? null) : null;
+  return seriesIsPublic() && dataset ? (PRODUCTS[dataset] ?? null) : null;
 }
 
 export function eventsFor(dataset: string | null): EventsDataset | null {
-  return dataset ? (EVENTS[dataset] ?? null) : null;
+  return seriesIsPublic() && dataset ? (EVENTS[dataset] ?? null) : null;
 }
 
 export function productFor(dataset: string | null, mpn: string): Product | null {

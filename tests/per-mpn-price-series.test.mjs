@@ -10,7 +10,7 @@ import {
   buildSeriesFromRepository,
   loadSeriesObservations,
   SELLER_RESOLUTION_FILE,
-  SERIES_TRANCHES,
+  seriesTranches,
 } from "../lib/per-mpn-price-series.mjs";
 
 const obs = (overrides) => ({
@@ -352,8 +352,9 @@ test("the seller resolution file is referenced by a stable path", () => {
   assert.match(SELLER_RESOLUTION_FILE, /^research\/evidence\/.+\/resolution\.v1\.json$/u);
 });
 
-test("the series draws on the multi-retailer backfill as well as the envelope tranches", () => {
-  const files = SERIES_TRANCHES.map((t) => t.file);
+test("the series draws only on explicitly classified private-candidate inputs", () => {
+  const root = new URL("../", import.meta.url);
+  const files = seriesTranches(root).map((t) => t.file);
   assert.ok(
     files.includes("uk-primary-retail-multi-retailer-2026-08-11T090000Z.v1.json"),
     "multi-retailer backfill must be an input to the per-product series",

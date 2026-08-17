@@ -2,12 +2,22 @@ import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
 import { readFileSync, readdirSync } from "node:fs";
 import test from "node:test";
+import { buildGlobalIntegrationAudit, discoverProspectiveTranches } from "../lib/global-integration-audit.mjs";
 
 const repo = new URL("../", import.meta.url);
 const candidateDir = new URL("data/observations/candidate/", repo);
-const auditPath = "research/audits/uk-primary-retail-global-integration-audit-2026-08-13T000000Z.v1.json";
-const audit = JSON.parse(readFileSync(new URL(auditPath, repo), "utf8"));
+const auditDir = new URL("research/audits/", repo);
+const auditPaths = readdirSync(auditDir)
+  .filter((name) => /^uk-primary-retail-global-integration-audit-.+\.v1\.json$/u.test(name))
+  .map((name) => `research/audits/${name}`);
+const audits = auditPaths.map((path) => ({ path, value: JSON.parse(readFileSync(new URL(path, repo), "utf8")) }));
+audits.sort((a, b) => a.value.created_at.localeCompare(b.value.created_at) || a.path.localeCompare(b.path));
+const audit = audits.at(-1).value;
 const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex");
+
+test("the latest global audit is the complete canonical builder output", () => {
+  assert.deepEqual(audit, buildGlobalIntegrationAudit(discoverProspectiveTranches(repo), audit.created_at));
+});
 
 function prospectiveTranches() {
   const entries = [];
@@ -33,6 +43,14 @@ test("the global audit covers every prospective tranche present, byte for byte",
   );
   for (const [i, e] of audit.audited_tranches.entries()) {
     assert.equal(sha256(entries[i].bytes), e.sha256, `tranche changed after being audited: ${e.path}`);
+  }
+});
+
+test("historical global audits remain valid snapshots of their declared bytes", () => {
+  for (const { value: snapshot } of audits) {
+    for (const entry of snapshot.audited_tranches) {
+      assert.equal(sha256(readFileSync(new URL(entry.path, repo))), entry.sha256, `historical audit hash drift: ${entry.path}`);
+    }
   }
 });
 

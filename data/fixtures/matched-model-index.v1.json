@@ -22,6 +22,83 @@
   },
   "periods": [
     {
+      "period_id": "2021Q4",
+      "state": "outside_stopped_chain",
+      "index_value": null,
+      "link": null,
+      "matched_product_count": null,
+      "relative_min": null,
+      "relative_median": null,
+      "relative_max": null,
+      "distinct_products_in_period": 1
+    },
+    {
+      "period_id": "2022Q1",
+      "state": "outside_stopped_chain",
+      "index_value": null,
+      "link": null,
+      "matched_product_count": null,
+      "relative_min": null,
+      "relative_median": null,
+      "relative_max": null,
+      "distinct_products_in_period": 11
+    },
+    {
+      "period_id": "2022Q2",
+      "state": "outside_stopped_chain",
+      "index_value": null,
+      "link": null,
+      "matched_product_count": null,
+      "relative_min": null,
+      "relative_median": null,
+      "relative_max": null,
+      "distinct_products_in_period": 13
+    },
+    {
+      "period_id": "2022Q3",
+      "state": "outside_stopped_chain",
+      "index_value": null,
+      "link": null,
+      "matched_product_count": null,
+      "relative_min": null,
+      "relative_median": null,
+      "relative_max": null,
+      "distinct_products_in_period": 29
+    },
+    {
+      "period_id": "2022Q4",
+      "state": "outside_stopped_chain",
+      "index_value": null,
+      "link": null,
+      "matched_product_count": null,
+      "relative_min": null,
+      "relative_median": null,
+      "relative_max": null,
+      "distinct_products_in_period": 15
+    },
+    {
+      "period_id": "2023Q1",
+      "state": "outside_stopped_chain",
+      "index_value": null,
+      "link": null,
+      "matched_product_count": null,
+      "relative_min": null,
+      "relative_median": null,
+      "relative_max": null,
+      "distinct_products_in_period": 40
+    },
+    {
+      "period_id": "2023Q2",
+      "state": "outside_stopped_chain",
+      "index_value": null,
+      "link": null,
+      "matched_product_count": null,
+      "relative_min": null,
+      "relative_median": null,
+      "relative_max": null,
+      "distinct_products_in_period": 13
+    },
+    {
       "period_id": "2023Q3",
       "state": "insufficient_matched_evidence",
       "index_value": null,

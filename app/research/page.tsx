@@ -39,30 +39,34 @@ export default function Page() {
         <div>
           <p className="section-label">Where the research stands</p>
           <h2 id="research-state-title">
-            {markerCount === 0
-              ? "No movement has a reviewed explanation yet."
-              : `${markerCount} source${markerCount === 1 ? "" : "s"} reviewed so far.`}
+            {datasets.some(({ events }) => events !== null)
+              ? markerCount === 0
+                ? "No published movement has a reviewed explanation yet."
+                : `${markerCount} source${markerCount === 1 ? "" : "s"} reviewed so far.`
+              : "No event-line data is public yet."}
           </h2>
           <p>
-            {measured} price movements have been measured across the tracked datasets. {unexplained} of them have no
-            reviewed explanation. That number is published deliberately: an event line with nothing on it and no count
-            beside it would imply there was nothing to explain.
+            {datasets.some(({ events }) => events !== null)
+              ? `${measured} published movements are available; ${unexplained} have no reviewed explanation.`
+              : "Private candidate movement and source records are withheld with the numerical series. No counts, URLs or derived claims are exposed by this page."}
           </p>
         </div>
-        <dl>
-          <div>
-            <dt>Movements measured</dt>
-            <dd>{measured}</dd>
-          </div>
-          <div>
-            <dt>With a reviewed source</dt>
-            <dd>{measured - unexplained}</dd>
-          </div>
-          <div>
-            <dt>Unexplained</dt>
-            <dd>{unexplained}</dd>
-          </div>
-        </dl>
+        {datasets.some(({ events }) => events !== null) ? (
+          <dl>
+            <div>
+              <dt>Movements measured</dt>
+              <dd>{measured}</dd>
+            </div>
+            <div>
+              <dt>With a reviewed source</dt>
+              <dd>{measured - unexplained}</dd>
+            </div>
+            <div>
+              <dt>Unexplained</dt>
+              <dd>{unexplained}</dd>
+            </div>
+          </dl>
+        ) : null}
       </section>
 
       {datasets.map(({ entry, events }) =>

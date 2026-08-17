@@ -27,6 +27,16 @@
   <key>WorkingDirectory</key>
   <string>__REPO__</string>
 
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>SF_COLLECTOR_CHECKOUT</key>
+    <string>__REPO__</string>
+    <key>SF_COLLECTOR_BRANCH</key>
+    <string>main</string>
+    <key>SF_COLLECTOR_LOCK</key>
+    <string>__LOCK__</string>
+  </dict>
+
   <key>StartCalendarInterval</key>
   <dict>
     <key>Hour</key>

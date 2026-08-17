@@ -1,8 +1,6 @@
 import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
-import { existsSync, globSync, mkdirSync, mkdtempSync, readFileSync, rmSync, statSync, writeFileSync } from "node:fs";
-import { tmpdir } from "node:os";
-import path from "node:path";
+import { existsSync, globSync, readFileSync, statSync } from "node:fs";
 import test from "node:test";
 import { publicationGate, seriesIsPublic } from "../lib/publication-gate.ts";
 
@@ -123,44 +121,19 @@ test("a withheld series leaves no index level anywhere in the build", { skip: ne
 // 2. The gate fails closed
 // ---------------------------------------------------------------------------
 
-test("the gate opens only on a signed approval, and the environment can only close it", () => {
-  const dir = mkdtempSync(path.join(tmpdir(), "sf-site-gate-"));
-  const reviews = path.join(dir, "reviews");
-  mkdirSync(reviews, { recursive: true });
-  const configPath = path.join(dir, "release.json");
-  const decide = (env) => publicationGate({ configPath, reviewsDir: reviews, env });
-
-  try {
-    // No config at all.
-    assert.equal(decide(undefined).isPublic, false);
-
-    // Unreadable config: the failure mode that would otherwise publish silently.
-    writeFileSync(configPath, "{ not json");
-    assert.equal(decide(undefined).isPublic, false);
-
-    // Approved, but naming an approval record that does not exist.
-    writeFileSync(configPath, JSON.stringify({ public_series_release: "approved", approval_ref: "sf-nothing" }));
-    assert.equal(decide(undefined).isPublic, false);
-
-    // Approved and signed: open, and only then.
-    writeFileSync(configPath, JSON.stringify({ public_series_release: "approved", approval_ref: "sf-a" }));
-    writeFileSync(
-      path.join(reviews, "a.json"),
-      JSON.stringify({ review_id: "sf-a", decided_by: "A Person", decided_at: "2026-08-13T00:00:00Z" }),
-    );
-    assert.equal(decide(undefined).isPublic, true);
-    assert.equal(decide("withheld").isPublic, false, "the environment must be able to close an open gate");
-
-    // ...and never the other way round.
-    writeFileSync(configPath, JSON.stringify({ public_series_release: "withheld", approval_ref: null }));
-    for (const env of ["approved", "public", "true", "1"]) {
-      assert.equal(decide(env).isPublic, false, `SF_PUBLIC_SERIES=${env} must not open a closed gate`);
-    }
-  } finally {
-    rmSync(dir, { recursive: true, force: true });
+test("publication activation is structurally unavailable during recovery", () => {
+  for (const env of [undefined, "withheld", "approved", "public", "true", "1"]) {
+    const decision = publicationGate({
+      configPath: "/tmp/attacker-release.json",
+      manifestPath: "/tmp/attacker-manifest.json",
+      reviewsDir: "/tmp/attacker-reviews",
+      env,
+    });
+    assert.equal(decision.isPublic, false);
+    assert.match(decision.reason, /not implemented/u);
   }
 
-  // Whatever the build state, the approval reference itself is never rendered:
+  // Whatever the build state, any approval reference is never rendered:
   // approval and review identifiers are a banned key class.
   const config = JSON.parse(readFileSync("config/public-release.v1.json", "utf8"));
   if (config.approval_ref) assert.equal(allHtml.includes(config.approval_ref), false);
@@ -241,13 +214,11 @@ test("explained and unexplained movements account for every movement", () => {
   assert.equal(EVENTS.explained_movement_count, EVENTS.markers.length);
 });
 
-test("the unexplained count is rendered, not quietly omitted", { skip: needsBuild }, () => {
-  if (EVENTS.unexplained_movement_count === 0) return;
-  assert.ok(
-    allHtml.includes(String(EVENTS.unexplained_movement_count)),
-    "the number of unexplained movements never reaches a page",
-  );
-  assert.match(allHtml, /no reviewed explanation/iu, "the build never says movements lack a reviewed explanation");
+test("private candidate movement counts are withheld with the closed series", { skip: needsBuild }, () => {
+  const research = pages.get("out/research/index.html");
+  assert.ok(research, "expected the research page");
+  assert.match(research, /No event-line data is public yet/iu);
+  assert.doesNotMatch(research, new RegExp(`${EVENTS.movement_count} price movements`, "u"));
 });
 
 // ---------------------------------------------------------------------------
@@ -415,11 +386,8 @@ test("every page showing the index also shows how it was built", { skip: needsBu
 // single current version, so these strings are pinned to exactly one page.
 const METHODOLOGY_ONLY = [
   "VAT-inclusive landed price",
-  "Four checks before one price enters",
+  "Four required checks before any future public price enters.",
   "retailer of record",
-  INDEX.parameters_public.weighting_basis,
-  INDEX.parameters_public.gap_policy_basis,
-  INDEX.parameters_public.formula,
 ];
 
 test("methodology lives on the methodology page and nowhere else", { skip: needsBuild }, () => {
@@ -509,17 +477,23 @@ test("no tracking package", () => {
   );
 });
 
-test("Cloudflare deploys the static export without OpenNext", () => {
+test("Cloudflare target remains static but production deployment is locked", () => {
   const config = readFileSync("wrangler.jsonc", "utf8");
   assert.match(config, /"directory"\s*:\s*"\.\/out"/u);
   assert.doesNotMatch(config, /opennext/iu);
   assert.match(config, /"pattern"\s*:\s*"siliconforecast\.com"/u);
   assert.match(config, /"pattern"\s*:\s*"www\.siliconforecast\.com"/u);
   assert.match(config, /"custom_domain"\s*:\s*true/u);
-  assert.equal(JSON.parse(readFileSync("package.json", "utf8")).scripts.deploy, "wrangler deploy");
+  const deploy = JSON.parse(readFileSync("package.json", "utf8")).scripts.deploy;
+  assert.equal(deploy, "node scripts/refuse-production-deploy.mjs");
+  assert.doesNotMatch(deploy, /wrangler\s+deploy/u);
+  assert.match(readFileSync("scripts/refuse-production-deploy.mjs", "utf8"), /Production deployment is locked/u);
 });
 
-test("the deploy workflow sets the second gate lever", () => {
+test("the Pages workflow is manual, withheld and cannot deploy", () => {
   const workflow = readFileSync(".github/workflows/deploy-pages.yml", "utf8");
   assert.match(workflow, /SF_PUBLIC_SERIES:\s*withheld/u, "CI does not force the series closed");
+  assert.match(workflow, /run:\s*npm run deploy/u);
+  assert.doesNotMatch(workflow, /actions\/deploy-pages|actions\/upload-pages-artifact|pages:\s*write/u);
+  assert.doesNotMatch(workflow, /push:\s*$/mu);
 });

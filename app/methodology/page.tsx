@@ -6,7 +6,7 @@ import { indexFor, productsFor } from "@/lib/public-data";
 export const metadata: Metadata = {
   title: "Methodology",
   description:
-    "How the Silicon Forecast UK component price index is built: what qualifies as a retail price, the exact index parameters, coverage limits and the gates that must pass before publication.",
+    "How a future Silicon Forecast UK component price series must qualify observations, record parameters, preserve gaps and pass explicit publication gates.",
 };
 
 // Everything that used to sit between a reader and the chart lives here.
@@ -40,19 +40,19 @@ export default function Page() {
     <div className="shell page-shell">
       <header className="page-header">
         <p className="eyebrow">Methodology</p>
-        <h1>How the number is built, and what it cannot tell you.</h1>
+        <h1>How a future public number must be built—and what remains unapproved.</h1>
         <p>
-          Every figure on this site comes from prices observed at UK retailers and matched to exact manufacturer part
-          numbers. This page states the rules those observations pass, the parameters the index uses and the checks that
-          have not yet been met.
+          Retained candidate observations are matched to exact manufacturer part numbers, but they are not all qualifying
+          landed retail prices and no public index methodology is approved. This page states the rules a future public
+          series must pass rather than claiming the private candidate already passes them.
         </p>
       </header>
 
       <section className="retail-methodology-panel" aria-labelledby="qualifies-title">
         <div className="panel-heading">
           <div>
-            <p className="section-label">01 · What qualifies as retail</p>
-            <h2 id="qualifies-title">Four checks before one price enters.</h2>
+            <p className="section-label">01 · What would qualify as retail</p>
+            <h2 id="qualifies-title">Four required checks before any future public price enters.</h2>
           </div>
           <Link href="/about">Why the rules matter →</Link>
         </div>
@@ -213,9 +213,8 @@ export default function Page() {
         </div>
         <footer className="release-footer">
           <p>
-            The series is built and checked on every change whether or not it is published. Publication is a separate,
-            signed decision, and the site fails closed if that decision is missing, unreadable or names an approval that
-            does not exist.
+            The private candidate series is built and checked on every change. Publication activation is not implemented:
+            repository configuration and review files cannot open the public boundary, and production deployment is locked.
           </p>
           <Link href="/price-history/">See what is being collected →</Link>
         </footer>

@@ -9,6 +9,7 @@ import {
   deriveMatchedModelIndex,
   jevonsLink,
   quarterIdForMonth,
+  quarterSpine,
 } from "../lib/matched-model-index.mjs";
 
 const root = new URL("../", import.meta.url);
@@ -112,6 +113,23 @@ test("the chain stops rather than bridging when matched evidence is short", () =
   assert.equal(q3.matched_product_count, 1);
   // Crucially it must not have bridged 2024Q2 -> 2024Q3 by some other route.
   assert.equal(idx.coverage.last_period, "2024Q2");
+});
+
+test("the quarterly spine keeps missing calendar periods explicit", () => {
+  assert.deepEqual(quarterSpine("2023Q4", "2024Q3"), ["2023Q4", "2024Q1", "2024Q2", "2024Q3"]);
+  const idx = deriveMatchedModelIndex(
+    series({ A: { "2024-01": 10000, "2024-07": 11000, "2024-10": 12000 } }),
+    params({ minimum_matched_products_per_link: 1 }),
+  );
+  assert.deepEqual(
+    idx.periods.map(({ period_id, state }) => [period_id, state]),
+    [
+      ["2024Q1", "observed"],
+      ["2024Q2", "no_observations"],
+      ["2024Q3", "outside_stopped_chain"],
+      ["2024Q4", "outside_stopped_chain"],
+    ],
+  );
 });
 
 test("the chain runs backwards from the reference period as well as forwards", () => {

@@ -73,6 +73,30 @@ export function contiguousRuns(values: readonly (number | null)[]): number[][] {
   return runs;
 }
 
+/**
+ * Groups dated monthly points without joining across an unobserved month.
+ * The input may be sparse; adjacency in the array is not evidence of adjacency
+ * in time.
+ */
+export function calendarMonthRuns(
+  points: readonly { month: string; value: number | null }[],
+): number[][] {
+  const runs: number[][] = [];
+  let current: number[] = [];
+  let previousMonth: string | null = null;
+  for (const [i, point] of points.entries()) {
+    const adjacent = previousMonth !== null && monthOffset(point.month, previousMonth) === 1;
+    if (point.value === null || (!adjacent && current.length)) {
+      if (current.length) runs.push(current);
+      current = [];
+    }
+    if (point.value !== null) current.push(i);
+    previousMonth = point.month;
+  }
+  if (current.length) runs.push(current);
+  return runs;
+}
+
 /** SVG polyline `points`. Integers only, so the output holds no decimal point. */
 export function polyline(points: readonly Point[]): string {
   return points.map((p) => `${Math.round(p.x)},${Math.round(p.y)}`).join(" ");

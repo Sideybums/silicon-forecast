@@ -1,11 +1,32 @@
 {
   "schema_version": 1,
   "generated_by": "scripts/build-public-site-data.mjs",
+  "artifact_status": "private_candidate",
+  "publication_eligible": false,
+  "approvals": {
+    "source": false,
+    "methodology": false,
+    "basket": false,
+    "historical_reference": false,
+    "publication": false
+  },
   "datasets": [
-    "events-ram.v1.json",
-    "index-ram.v1.json",
-    "products-ram.v1.json"
+    {
+      "path": "events-ram.v1.json",
+      "sha256": "c3116d672838d562872f0290d0147e8595255d085dd76f189b9a7bbed63ca217",
+      "byte_length": 392
+    },
+    {
+      "path": "index-ram.v1.json",
+      "sha256": "c86d21603cc2e1a5125e853ee5361c7d4797fa7b09f54a503371de09d14b0dac",
+      "byte_length": 6735
+    },
+    {
+      "path": "products-ram.v1.json",
+      "sha256": "700c06759f22bad1c4ea2787b59d61d463efb2526b9118fb530ef636a6f81cd8",
+      "byte_length": 129109
+    }
   ],
-  "coverage_note": "Derived from archived and collected retailer observations. Gaps are preserved and never interpolated; a period with too little matched evidence carries no value at all.",
-  "approval_note": "No source, methodology, basket or publication is approved. These files exist so the public site can be built and reviewed against real data; whether any of it renders publicly is controlled separately by config/public-release.v1.json."
+  "coverage_note": "Private candidate derivation from archived and collected retailer observations. Gaps are preserved and never interpolated; a period with too little matched evidence carries no value at all.",
+  "approval_note": "No source, methodology, basket, historical reference or publication is approved. These files are private candidate engineering artefacts and are structurally ineligible for publication."
 }

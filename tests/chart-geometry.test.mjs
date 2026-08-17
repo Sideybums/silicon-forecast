@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import test from "node:test";
 import {
   bounds,
+  calendarMonthRuns,
   contiguousRuns,
   niceTicks,
   path,
@@ -79,6 +80,26 @@ test("a gap breaks the line rather than being drawn across", () => {
   // A single observed period between two gaps is its own run, not silently
   // dropped: it is real evidence and must still be drawn as a point.
   assert.deepEqual(contiguousRuns([null, 7, null]), [[1]]);
+});
+
+test("calendar gaps split sparse monthly product paths", () => {
+  assert.deepEqual(
+    calendarMonthRuns([
+      { month: "2026-01", value: 1000 },
+      { month: "2026-02", value: 1050 },
+      { month: "2026-04", value: 900 },
+      { month: "2026-05", value: 910 },
+    ]),
+    [[0, 1], [2, 3]],
+  );
+  assert.deepEqual(
+    calendarMonthRuns([
+      { month: "2026-01", value: 1000 },
+      { month: "2026-02", value: null },
+      { month: "2026-03", value: 900 },
+    ]),
+    [[0], [2]],
+  );
 });
 
 test("the real index series breaks exactly where the chain stops", async () => {

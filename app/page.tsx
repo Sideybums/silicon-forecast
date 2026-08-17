@@ -3,7 +3,7 @@ import { CategoryGrid } from "@/components/CategoryGrid";
 import { EmptyStateChart } from "@/components/EmptyStateChart";
 import { IndexChart, IndexHeadline } from "@/components/chart/IndexChart";
 import { ProductSparkline, monthDomain } from "@/components/chart/ProductSparkline";
-import { components, trackedComponents } from "@/lib/components-registry";
+import { components } from "@/lib/components-registry";
 import { eventsFor, indexFor, productsFor } from "@/lib/public-data";
 import { seriesIsPublic } from "@/lib/publication-gate";
 
@@ -84,7 +84,7 @@ export default function Home() {
         </div>
         <CategoryGrid />
         <p className="after-chart">
-          {trackedComponents.length} of {components.length} categories have observations ·{" "}
+          {isPublic ? `${components.filter((entry) => entry.dataset).length} of ${components.length} categories have public observations` : "No category has a public numerical series"} ·{" "}
           <Link href="/methodology/">How this is measured →</Link>
         </p>
       </section>

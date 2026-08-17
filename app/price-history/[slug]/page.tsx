@@ -6,7 +6,7 @@ import { EventList } from "@/components/chart/EventLine";
 import { IndexChart, IndexHeadline } from "@/components/chart/IndexChart";
 import { ProductSparkline, monthDomain } from "@/components/chart/ProductSparkline";
 import { componentFor, components } from "@/lib/components-registry";
-import { eventsFor, formatIndex, formatPermilleChange, formatPermilleRatio, indexFor, productsFor } from "@/lib/public-data";
+import { eventsFor, formatIndex, formatPermilleChange, indexFor, productsFor } from "@/lib/public-data";
 import { seriesIsPublic } from "@/lib/publication-gate";
 
 // One page per component category, generated from the registry.
@@ -29,7 +29,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${entry.name} price history`,
     description: entry.dataset
-      ? `Observed UK retail price history for ${entry.name.toLowerCase()}: index by quarter, coverage limits and the products behind it.`
+      ? `Private candidate exact-MPN quoted-item observations for ${entry.name.toLowerCase()}; publication remains withheld pending governed qualification and approval.`
       : `${entry.name} coverage status at Silicon Forecast. No observations have been collected.`,
   };
 }
@@ -112,7 +112,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                   <th scope="col">Change</th>
                   <th scope="col">Matched</th>
                   <th scope="col">Products seen</th>
-                  <th scope="col">Spread</th>
+
                 </tr>
               </thead>
               <tbody>
@@ -123,11 +123,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                     <td>{formatPermilleChange(period.change_permille)}</td>
                     <td>{period.matched_product_count ?? "—"}</td>
                     <td>{period.distinct_products_in_period}</td>
-                    <td>
-                      {period.dispersion_permille.min === null
-                        ? "—"
-                        : `${formatPermilleRatio(period.dispersion_permille.min)} – ${formatPermilleRatio(period.dispersion_permille.max)}`}
-                    </td>
+
                   </tr>
                 ))}
               </tbody>

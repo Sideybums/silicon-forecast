@@ -1,10 +1,11 @@
 # What flipping the publication gate would publish
 
 **Prepared:** 2026-08-13
-**Status:** not an approval. This document exists so the decision can be made by
-reading one page instead of a diff.
-**Decision it supports:** setting `public_series_release` to `approved` in
-`config/public-release.v1.json` and naming a signed record in `data/reviews/`.
+**Status:** superseded historical review; not an approval or activation runbook.
+The recovery audit proved that repository JSON is not an independently signed
+decision and that this document's former activation recipe was unsafe.
+**Decision it supports:** none. Publication activation is deliberately not
+implemented and requires a separately designed, protected approval process.
 
 Nothing in this document is currently public. The site ships with the gate shut
 and CI sets `SF_PUBLIC_SERIES: withheld` as a second lever.
@@ -121,13 +122,11 @@ remain locked and are listed as such in the config.
 - The site has no favicon; the browser requests one and receives a 404. Cosmetic,
   pre-existing, unrelated to this work.
 
-## 7. The one-line change
+## 7. Activation withdrawn
 
-```json
-"public_series_release": "approved",
-"approval_ref": "<review_id of a record in data/reviews/ carrying decided_by and decided_at>"
-```
-
-If the named record does not exist, carries no decision, or the config cannot be
-parsed, the gate stays shut. `SF_PUBLIC_SERIES=withheld` overrides it in the
-closing direction only.
+There is no configuration-only activation path. `lib/publication-gate.ts`
+returns withheld for every input, the public data bridge returns no private
+candidate datasets, and the production deploy command exits non-zero. Restoring
+publication would be a new governed project requiring independently
+authenticated approval, exact dataset-byte binding, protected deployment and a
+fresh review. This historical document must not be used to perform that work.

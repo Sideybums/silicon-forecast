@@ -6,11 +6,12 @@
     "basis": "first_observed_month_equals_1000_permille",
     "selected_by": "operator"
   },
-  "notes": "Charts are built and tested against real data on every run. Nothing renders publicly until public_series_release is set to approved AND approval_ref names a signed record in data/reviews/ carrying decided_by and decided_at. The environment variable SF_PUBLIC_SERIES can force this closed but can never open it.",
-  "what_opening_this_would_publish": "A quarterly matched-model index for UK 32GB DDR5, per-product relative price movement for products meeting the coverage floor, and the count of price movements for which no explanation has been researched. No retained price and no seller identity is published in any case.",
+  "notes": "The existing calculation is a private candidate and cannot be made public by this config alone. A future release requires a dedicated, exact, hash-bound publication approval and an explicitly publication-eligible projection manifest; no such approval exists.",
+  "what_opening_this_would_publish": "Only an exact approved public projection bound by a dedicated publication review. The current private candidate calculation remains structurally ineligible.",
   "still_locked_regardless": [
     "external_publish",
     "source_approval",
+    "basket_approval",
     "editorial_activation",
     "methodology_change",
     "production_activation"

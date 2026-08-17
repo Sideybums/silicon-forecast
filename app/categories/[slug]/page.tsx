@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { componentFor, components } from "@/lib/components-registry";
+import { seriesIsPublic } from "@/lib/publication-gate";
 
 // Kept because it is a linked, indexable route, but it is no longer where the
 // data lives. Everything with a number on it is at /price-history/[slug]/; this
@@ -25,6 +26,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const { slug } = await params;
   const entry = componentFor(slug);
   if (!entry) notFound();
+  const hasPublicData = seriesIsPublic() && Boolean(entry.dataset);
 
   return (
     <div className="shell page-shell">
@@ -35,12 +37,12 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           <p>{entry.summary}</p>
         </div>
         <div className="category-state">
-          <span>{entry.dataset ? "Observations collected" : "Nothing collected"}</span>
+          <span>{hasPublicData ? "Public observations available" : "No public observations released"}</span>
           <strong>{entry.scopeNote}</strong>
         </div>
       </header>
 
-      {entry.dataset ? (
+      {hasPublicData ? (
         <div className="notice">
           <strong>This category has observed price history</strong>
           <p>
@@ -50,10 +52,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         </div>
       ) : (
         <section className="no-data-card">
-          <strong>No observations collected</strong>
+          <strong>No public observations released</strong>
           <p>
-            Nothing has been collected for this category. There is no chart, no index and no product history, and this
-            page will keep saying so until that changes.
+            Private candidate work is not a published series. There is no public chart, index or product history for this
+            category, and this page will keep saying so until a separately governed release exists.
           </p>
         </section>
       )}

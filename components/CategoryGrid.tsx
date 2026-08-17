@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { components } from "@/lib/components-registry";
+import { seriesIsPublic } from "@/lib/publication-gate";
 
 // The one place the category board is drawn.
 //
@@ -7,6 +8,7 @@ import { components } from "@/lib/components-registry";
 // dataset — and starts pointing at real data — by changing one field in
 // lib/components-registry.ts and nothing else.
 export function CategoryGrid() {
+  const isPublic = seriesIsPublic();
   return (
     <div className="category-board">
       <div className="category-head">
@@ -19,8 +21,8 @@ export function CategoryGrid() {
           <span className="category-index">{String(i + 1).padStart(2, "0")}</span>
           <strong>{entry.shortName}</strong>
           <span>{entry.summary}</span>
-          <em data-status={entry.dataset ? "tracking" : "planned"}>
-            {entry.dataset ? entry.scopeNote : "No observations collected"}
+          <em data-status={isPublic && entry.dataset ? "tracking" : "planned"}>
+            {isPublic && entry.dataset ? entry.scopeNote : "No public observations released"}
           </em>
           <span aria-hidden="true">→</span>
         </Link>

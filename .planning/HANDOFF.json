@@ -1,141 +1,89 @@
 {
-  "schema_version": "silicon-forecast-handoff.v2",
-  "generated_at": "2026-08-10T13:00:00Z",
+  "schema_version": 3,
+  "updated_at": "2026-08-17T02:41:03Z",
   "project": "Silicon Forecast",
-  "branch": "historical-context-band",
-  "handoff_state": "historical_context_band_wave3_movements_and_immutability_proof_committed_and_verified",
-  "authority": {
-    "parent_orchestrator": "Jarvis",
-    "worker_outputs_trusted_without_parent_review": false,
-    "methodology_selected_or_approved": false,
-    "source_selected_or_approved": false,
-    "threshold_selected_or_approved": false,
-    "historical_reference_selected_or_approved": false,
-    "deflator_selected_or_approved": false,
-    "basket_selected_or_approved": false,
-    "production_action_approved": false,
-    "public_claim_or_publication_approved": false
+  "north_star": "Prove one lawful, accurate, reproducible regional DDR5 price index before expanding scope.",
+  "recovery": {
+    "status": "verified_ready_for_integration",
+    "worktree": "/Users/weetoddy/Desktop/Projects/Silicon_Forecast_Recovery",
+    "branch": "recovery/governed-graphs-20260817",
+    "base": "origin/main",
+    "preserved_original_branch": "feat/graphs-first-frontend",
+    "public_numerical_release": "structurally_withheld"
   },
-  "canonical_collector": {
-    "job_id": "7e98d1467473",
-    "name": "Silicon Forecast recurring UK primary-retail collector",
-    "enabled": true,
-    "state_observed": "missed_scheduled_run_no_longer_listed_as_scheduled",
-    "last_run_at": "2026-08-10T00:46:29.452051+01:00",
-    "last_status": "ok",
-    "last_commit": "fbdbba3ea8841525b0b00f6c36897ebe3857c3a2",
-    "scheduled_run_missed_at": "2026-08-10T13:45:00+01:00",
-    "sole_prospective_fetcher": true,
-    "open_item": "The job did not run at its scheduled 2026-08-10T13:45+01:00 slot: no new commit and no new observation file exist after that time, and a live scheduler check (CronList) reports no scheduled jobs. It appears to no longer be scheduled. This is significant because it is the sole prospective fetcher; it requires investigation and re-scheduling before it can be relied on again.",
-    "instruction": "Keep this job as the sole prospective fetcher once rescheduled. Every run must create an additive global run-integration audit. Same seller+MPN+UTC-date collisions remain raw candidate evidence but are blocked from date-level diagnostic integration unless a separate rule is explicitly approved."
+  "scheduler": {
+    "sole_scheduler": "launchd",
+    "label": "uk.co.siliconforecast.collector",
+    "schedule": "13:45 local daily",
+    "current_state": "unloaded_during_recovery",
+    "hermes_job": null,
+    "installation_policy": "dedicated clean main checkout exactly aligned with cached origin/main; RunAtLoad false",
+    "prospective_fetch_policy": "one canonical collector only; never create or run a competing fetcher"
   },
-  "completed_waves": {
-    "wave_0": "Git, scheduler, two immutable observation tranches, seven extract hashes, all locks and baseline tests verified.",
-    "wave_1": "Prospective readiness, bounded exact-MPN archive research and non-selecting official-statistics/context reports integrated; no new historical observations found and no competing prospective fetch occurred.",
-    "wave_2": "Candidate basket-link, reference/real-series and event-overlay fixtures implemented with external synthetic approval envelopes bound to exact strategy, implementation and input bytes; numeric/event separation retained.",
-    "wave_3": "Private worker harness reduced to inactive validation-only manifest preparation. It resolves and hashes repository-local fixture bytes and exports no dispatcher or executor.",
-    "wave_4": "Three independent read-only audits completed. SEV-2 findings were reproduced and fixed; parent adversarial tests and the full suite passed. Remaining runtime concerns are inactive prerequisites, not enabled capabilities.",
-    "wave_5": "Seven separate non-approving decision packets produced; governing records and verification evidence updated.",
-    "historical_wave_1": "Bounded archive/editorial research retained two parent-verified exact-MPN 2025 CCL observations and five 2021-2022 editorial anchors; 2023-2024 exact UK retailer coverage remains an explicit gap.",
-    "historical_wave_2": "Three bounded read-only workers produced six parent-verified exact-MPN archived storefront observations across Corsair and Crucial, five separate editorial anchors and three held URL-only MPN leads; sparse graph expanded to 15 points across six products with explicit VAT state and no aggregation.",
-    "historical_wave_3": "A third bounded acquisition retained 47 observations from three archived UK retailer category/subcategory pages (Overclockers UK 2023-12-03: 29, Ebuyer 2024-11-02: 16, Novatech 2022-01-25: 2) in uk-primary-retail-historical-backfill-2026-08-10T130500Z.v1.json. The observed-price envelope now derives 20 UTC calendar quarters (2021-Q4 to 2026-Q3) from 65 total observations across six tranches: 12 observed, 8 explicit gaps, 0 VAT-unresolved. Newly filled quarters: 2022-Q1, 2023-Q4, 2024-Q4. deriveHistoricalMovements over all 65 observations yields 7 movements (6 within-seller, 1 cross-seller), recorded in a retrospective explanation ledger with 0 explanations (research deferred, not because no counterevidence exists) and a passing numeric-immutability proof: mutating the ledger's explanations array leaves every canonical envelope byte unchanged."
+  "evidence": {
+    "immutable_collector_runs_preserved": [
+      "2026-08-13T12:45:05Z",
+      "2026-08-14T12:45:04Z",
+      "2026-08-15T12:45:05Z",
+      "2026-08-16T12:45:06Z"
+    ],
+    "known_no_run_gap": "2026-08-11",
+    "candidate_input_manifest": "data/derived/private-candidate/ram-input-manifest.v1.json",
+    "candidate_input_count": 17,
+    "latest_global_audit": "research/audits/uk-primary-retail-global-integration-audit-20260817T014039Z.v1.json",
+    "historical_audits": "immutable snapshots",
+    "integration_policy": "additive exact-byte audit; collisions and gaps remain explicit"
   },
-  "retained_evidence": {
-    "candidate_tranches": 6,
-    "observations": 65,
-    "exact_seller_mpn_lines": 6,
-    "envelope_quarters": 20,
-    "envelope_quarters_observed": 12,
-    "envelope_quarters_gap": 8,
-    "envelope_vat_unresolved_observations": 0,
-    "derived_movements": 7,
-    "derived_movements_within_seller": 6,
-    "derived_movements_cross_seller": 1,
-    "movement_explanations_recorded": 0,
-    "historical_research_result": "wave3_added_47_category_page_observations_expanding_envelope_to_65_observations_and_20_quarters_with_a_passing_numeric_immutability_proof",
-    "immutable_observation_files_changed_by_big_push": false,
-    "all_source_approval_flags": false,
-    "all_production_eligibility_flags": false,
-    "all_publication_eligibility_flags": false
-  },
-  "private_contracts": {
-    "quoted_item_history": "existing fixed report remains seven points; additive sparse graph fixture now contains 15 exact-MPN markers across six products with seller-visible lineage, explicit per-point VAT state, explicit gaps and every connecting/fill/aggregation behaviour disabled",
-    "quoted_item_relative_diagnostic": "private not_an_index; preserves prefix; source-key migration cannot split seller+MPN identity",
-    "basket_vintage_linking": "synthetic candidate only; closed internal implementation; exact approval and input binding; no method selected",
-    "reference_real_series": "synthetic candidate only; exact release-vintage and monthly checks; deterministic series/revision/input/output hashes; no reference or deflator selected",
-    "event_overlay": "synthetic private only; checksum-bound retained captures and claims; independent human-review transition; numeric bytes immutable",
-    "worker_harness": "validation_only_no_dispatch; five fixture jobs; exact schemas and allowlists; repository input bytes verified twice; default CLI refusal",
-    "historical_acquisition": "DDR5 launch onward; weekly preferred, monthly fallback, gaps preserved; editorial and primary-retail evidence separated; no interval rule, source, reference or basket approved"
-  },
-  "decision_packets": "research/decision-packets/2026-08-09-big-push/",
-  "verification": {
-    "phase_1_checks": 130,
-    "tracked_json_files_parsed": 65,
-    "v1_requirements_mapped_exactly_once": 50,
-    "full_check": "historical Wave 2 passed lint, 146 Node tests, TypeScript, 14-page static build, public-boundary tests, 65 governed JSON parses and disposable PostgreSQL verification",
-    "post_collector_audit_check": "passed 138 of 138 Node tests, lint, TypeScript, 14-page static build, disposable PostgreSQL verification, 130 Phase 1 checks, 59 current/tracked JSON parses, diff hygiene and high-confidence new-artifact secret scan",
-    "wave_2_commit": "dfcca73",
-    "wave_2_commit_correction": "the previously recorded a58ea71 is a commit object left dangling and unreachable by a git commit --amend; it is not on this branch and was replaced with the reachable dfcca73 (research: integrate verified historical DDR5 wave two)",
-    "task_11_check": "npm test passed 190/190 Node tests, npm run lint passed, npx tsc --noEmit passed with no output, npm run build passed (14-page static Next.js build plus public-boundary tests), npm run test:db passed disposable PostgreSQL verification, and git diff --check was clean; the generated tsconfig.tsbuildinfo was deleted before commit",
-    "parent_wave_4_adversary": "passed",
-    "retail_report_sha256": "57b70c5818acceffc34bdf3b939c2c63f2dc97e32c6d81bca136877e8b2e740a",
-    "quoted_history_html_sha256": "f47d71ba22b8761f9729d4ccbe22d899908fd2dd0ff184552caa1a4c9bda4bcd",
-    "quoted_history_svg_sha256": "307b3486559f5a5dc808f71cebae7651eaa1f7e6007d46382b18aaa770f6139a",
-    "high_confidence_secret_scan": "passed",
-    "git_diff_check": "passed"
-  },
-  "locks": {
-    "external_publication": true,
-    "spend": true,
-    "production_mutation": true,
-    "methodology_change": true,
-    "source_approval": true,
-    "production_activation": true,
-    "editorial_activation": true
-  },
-  "collector_run_audit": {
-    "path": "research/audits/uk-primary-retail-run-integration-audit-2026-08-10T004629+0100.v1.json",
-    "result": "raw_candidate_evidence_retained_global_date_level_diagnostic_integration_blocked",
-    "collision_key": "seller legal name + exact MPN + UTC calendar date",
-    "collision_lines": 3,
-    "price_changes": 0,
-    "selection_or_aggregation_rule_approved": false
-  },
-  "open_items": [
-    {
-      "id": "collector_missed_scheduled_run",
-      "summary": "Canonical collector job 7e98d1467473 did not run at its scheduled 2026-08-10T13:45+01:00 slot: no new commit, no new observation file, and CronList reports no scheduled jobs. It appears to no longer be scheduled. This is significant because it is the sole prospective fetcher.",
-      "resolved": false
-    },
-    {
-      "id": "movement_explanation_research_deferred",
-      "summary": "The movement-explanation ledger has 7 movement records and 0 explanations. The research half was deferred for session capacity, not because no counterevidence exists.",
-      "resolved": false
-    },
-    {
-      "item": "product_tier_comparability_ruling",
-      "ruling": "Different product tiers must not be compared; a band or movement spanning tiers is not a market signal.",
-      "decided_by": "David Sidebottom",
-      "decided_at": "2026-08-10",
-      "record": "data/reviews/product-tier-comparability-ruling-2026-08-10.json",
-      "state": "not_yet_implemented",
-      "consequence": "The envelope must not be presented as a price history while consecutive periods share almost no products. Per-MPN movement records and the sparse graph are unaffected and remain the valid comparison.",
-      "corrected_diagnosis": "Initially attributed to mixing product tiers; that was wrong. Measured cause is product-set churn - consecutive observed quarters share almost no exact MPNs and only 7 of 52 MPNs are ever observed twice.",
-      "next_acquisition_priority": "Additional dates for MPNs already held, rather than discovery of further products. Coverage is currently broad (52 MPNs) and shallow (7 repeat)."
-    }
-  ],
-  "next_action": {
-    "path": ".planning/HANDOVER-2026-08-10.md",
-    "when": "after the collector schedule is investigated and restored, and/or the next bounded historical evidence wave",
-    "steps": [
-      "Investigate why canonical collector job 7e98d1467473 is no longer scheduled and restore its daily 13:45 local run before trusting it as the sole prospective fetcher again.",
-      "Require the job to start from a clean branch aligned with origin/main and remain the sole prospective writer.",
-      "Verify its additive tranche, evidence, manifest and global run-integration audit bytes independently.",
-      "Keep all same-date collisions blocked; do not select or aggregate intraday values without separate approval.",
-      "Continue historical acquisition only with archives or dated editorial evidence that cannot compete with the canonical prospective collector; prioritise remaining exact-MPN UK gaps (2022-Q2, 2023-Q2, 2024-Q1 through 2024-Q3, 2025-Q1, 2025-Q4, 2026-Q2).",
-      "Keep weekly as an acquisition preference and monthly/quarterly as honest fallbacks; do not interpolate, connect or aggregate sparse points without approval.",
-      "Research and record dated, sourced explanations for the 7 derived movements in the explanation ledger, including a genuine counterevidence search for each, before treating the ledger as complete.",
-      "Do not approve methodology, sources, references, baskets, production actions or publication."
+  "governance": {
+    "publication_activation_implemented": false,
+    "public_data_bridge_exposes_candidate_series": false,
+    "production_deploy_enabled": false,
+    "github_pages_deploy_enabled": false,
+    "projection_datasets_sha256_bound": true,
+    "source_approved": false,
+    "methodology_approved": false,
+    "basket_approved": false,
+    "historical_reference_approved": false,
+    "publication_approved": false,
+    "production_activation_approved": false,
+    "prohibited_assumptions": [
+      "no interpolation, forward-fill, backcast or fabricated continuity",
+      "no archive date treated as an exact price-change date",
+      "no editorial anchor enters a numerical series",
+      "no private candidate can open a public gate",
+      "no methodology, source, threshold, reference, deflator, basket or public claim is approved by recovery"
     ]
-  }
+  },
+  "collector_safety": {
+    "clean_main_required": true,
+    "exact_origin_main_required_at_install": true,
+    "runtime_sync": "fetch plus fast-forward-only; divergence and local-ahead states fail closed",
+    "overlap_lock": "atomic directory lock; only same-host provably dead PID may be reclaimed",
+    "preflight_before_retailer_requests": true,
+    "push_failure": "nonzero exit with local evidence commit retained",
+    "installer_transaction": "validate target revision and rendered plist before bootout; restore prior plist/job/checkout metadata on failure"
+  },
+  "verification": {
+    "completed_at": "2026-08-17T02:41:03Z",
+    "npm_check": "passed",
+    "node_tests": "344 discovered; 333 passed before build, 11 build-dependent skipped; 33/33 post-build boundary tests passed",
+    "next_build": "passed; 20 static routes generated",
+    "postgresql": "passed in disposable postgres:16-alpine container",
+    "projection_replay": "passed",
+    "json_parse": "117 governed JSON files passed",
+    "plist_lint": "passed",
+    "shell_and_node_syntax": "passed",
+    "git_diff_check": "passed",
+    "secret_shape_scan": "passed",
+    "independent_audits": "two bounded three-worker rounds completed; reproduced blockers were remediated and parent-verified",
+    "remaining_warning": "Node MODULE_TYPELESS_PACKAGE_JSON performance warning only; no functional failure"
+  },
+  "next_steps": [
+    "Commit and push the verified recovery branch.",
+    "Fast-forward or merge the reviewed recovery branch into main without changing public locks.",
+    "Create or refresh one dedicated main-based collector checkout from the integrated origin/main.",
+    "Run ops/install-collector.sh install against that checkout; RunAtLoad must remain false and no retailer collection may be manually triggered.",
+    "Independently verify one launchd label, one plist, one checkout binding, exact main alignment, schedule 13:45 local, lock state and no Hermes collector job.",
+    "Audit each later scheduled collector output additively; never reconstruct the 2026-08-11 no-run gap."
+  ]
 }

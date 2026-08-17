@@ -1,6 +1,6 @@
 import type { Product } from "@/lib/public-data";
 import { formatPermilleChange } from "@/lib/public-data";
-import { bounds, contiguousRuns, monthOffset, monthSpan, path, plotArea, xFor, yFor } from "./geometry";
+import { bounds, calendarMonthRuns, monthOffset, monthSpan, path, plotArea, xFor, yFor } from "./geometry";
 
 const SPARK = { width: 320, height: 72 } as const;
 const SPARK_PADDING = { top: 8, right: 6, bottom: 8, left: 6 } as const;
@@ -54,7 +54,7 @@ export function ProductSparkline({
   const values = product.points.map((p) => p.relative_permille);
   const { min, max } = bounds(values, 0.18);
   const area = plotArea(SPARK, SPARK_PADDING);
-  const runs = contiguousRuns(values);
+  const runs = calendarMonthRuns(product.points.map((point) => ({ month: point.month, value: point.relative_permille })));
   const baseline = yFor(1000, min, max, area);
 
   // Without a domain the product is alone on the page and its own span is the

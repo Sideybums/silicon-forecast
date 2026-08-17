@@ -22,11 +22,11 @@ export default function Page() {
     <div className="shell page-shell">
       <header className="page-header">
         <p className="eyebrow">UK · Primary retail only</p>
-        <h1>What has been collected so far.</h1>
+        <h1>No numerical price history is public yet.</h1>
         <p>
-          One category has observed price history. The rest are listed so their absence is a stated fact rather than a
-          gap you have to notice. Nothing here is estimated, back-filled or carried across a period where the evidence
-          ran out.
+          Private candidate evidence exists, but it is not an approved public series and none of its derived counts,
+          settings or movements are exposed here. Categories remain closed until an independently authenticated
+          publication process is designed and explicitly approved.
         </p>
       </header>
 
@@ -34,8 +34,8 @@ export default function Page() {
         <div className="notice">
           <strong>The series is built but not published</strong>
           <p>
-            Collection and derivation run on every change, and the results are checked in and reviewable. No index point
-            is published while the basket and baseline remain unapproved, so the charts below stay closed.
+            Collection and private derivation remain reviewable internally. No candidate index point, aggregate, event
+            count or parameter is published, so the data bridge and charts below stay closed.
           </p>
         </div>
       )}
@@ -52,7 +52,7 @@ export default function Page() {
                 <div className="dataset-card-head">
                   <h2>{entry.name}</h2>
                   <span className="dataset-state" data-status="planned">
-                    No observations collected
+                    No public observations released
                   </span>
                 </div>
                 <p>{entry.detail}</p>
@@ -102,8 +102,8 @@ export default function Page() {
 
       <div className="page-nav-note">
         <p>
-          Every rule behind these figures — what counts as a retail price, how quarters are chained, why nothing is
-          weighted — is stated in one place.
+          The required rules behind any future figures—what would qualify as a retail price, how an approved method would
+          chain periods and whether weighting is justified—are stated in one place.
         </p>
         <Link href="/methodology/">Read the methodology →</Link>
       </div>

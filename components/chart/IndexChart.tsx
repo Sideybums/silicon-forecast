@@ -67,22 +67,6 @@ export function IndexChart({
             ))}
           </g>
 
-          {/* Dispersion behind the line: how spread the underlying product
-              changes were, so a large move is visibly broad or visibly not. */}
-          <g className="index-chart-dispersion" aria-hidden="true">
-            {periods.map((p, i) =>
-              p.index_milli === null || p.dispersion_permille.min === null || p.matched_product_count === null ? null : (
-                <line
-                  key={p.period_id}
-                  x1={xFor(i, periods.length, area)}
-                  x2={xFor(i, periods.length, area)}
-                  y1={yFor(Math.min(max, (values[i] as number) * (p.dispersion_permille.max as number) / 1000), min, max, area)}
-                  y2={yFor(Math.max(min, (values[i] as number) * (p.dispersion_permille.min as number) / 1000), min, max, area)}
-                />
-              ),
-            )}
-          </g>
-
           {runs.map((run) => (
             <path key={run[0]} className="index-chart-line" d={path(run.map(pointAt))} />
           ))}
@@ -118,7 +102,11 @@ export function IndexChart({
                 style={{ ["--x" as string]: permilleAcross(i, periods.length), ["--anchor" as string]: edgeAnchor(i, periods.length) }}
               >
                 <span>
-                  {p.period_id}: only {p.matched_product_count} product{p.matched_product_count === 1 ? "" : "s"} carried across
+                  {p.period_id}: {p.state === "no_observations"
+                    ? "no retained observation"
+                    : p.state === "outside_stopped_chain"
+                      ? "outside the stopped private candidate chain"
+                      : `only ${p.matched_product_count ?? 0} product${p.matched_product_count === 1 ? "" : "s"} carried across`}
                 </span>
               </li>
             ) : null,
@@ -131,7 +119,6 @@ export function IndexChart({
       <figcaption className="index-chart-caption">
         <ol className="index-chart-legend">
           <li className="legend-line">Index level, {dataset.parameters_public.reference_period} = {dataset.parameters_public.reference_value}</li>
-          <li className="legend-dispersion">Spread of the underlying product changes</li>
           <li className="legend-gap">Quarter with too little matched evidence</li>
         </ol>
         <ChartCaveat dataset={dataset} />

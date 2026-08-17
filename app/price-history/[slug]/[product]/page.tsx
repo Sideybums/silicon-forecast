@@ -40,7 +40,7 @@ export async function generateMetadata({
   if (!entry) return {};
   return {
     title: `${product} price movement`,
-    description: `How the observed UK retail price of ${product} has moved since it first appeared, with its coverage and gaps stated.`,
+    description: `Private candidate quoted-item movement for exact MPN ${product}; not a published qualifying landed-price series.`,
   };
 }
 

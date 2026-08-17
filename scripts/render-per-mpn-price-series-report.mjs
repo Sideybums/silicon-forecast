@@ -46,7 +46,6 @@ const speeds = [...new Set(series.map((s) => s.speed_mts))].filter((s) => s !== 
 
 // Embedded JSON must not be able to close the script element early.
 const json = JSON.stringify(payload).replace(/</gu, "\\u003c");
-const esc = (s) => String(s).replace(/[&<>"]/gu, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" })[c]);
 
 const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">

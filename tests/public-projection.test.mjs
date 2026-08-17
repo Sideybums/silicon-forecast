@@ -1,9 +1,9 @@
 import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import test from "node:test";
 import {
   PASS_THROUGH_FIELDS,
-  PUBLIC_SCHEMA,
   assertPublicSafe,
   projectEvents,
   projectIndex,
@@ -16,6 +16,17 @@ import { repositoryPrivateTokens, repositoryReasonCodes } from "./helpers/privat
 const root = new URL("../", import.meta.url);
 const FLOOR = { min_months: 6, min_sellers: 2 };
 const REBASING = { basis: "first_observed_month_equals_1000_permille", selected_by: "operator" };
+
+test("the private projection manifest binds every dataset byte-for-byte", () => {
+  const manifest = JSON.parse(readFileSync(new URL("data/public-projection/manifest.v1.json", root), "utf8"));
+  assert.equal(manifest.publication_eligible, false);
+  assert.deepEqual(manifest.datasets.map((entry) => entry.path), [...manifest.datasets.map((entry) => entry.path)].sort());
+  for (const entry of manifest.datasets) {
+    const bytes = readFileSync(new URL(`data/public-projection/${entry.path}`, root));
+    assert.equal(createHash("sha256").update(bytes).digest("hex"), entry.sha256);
+    assert.equal(bytes.length, entry.byte_length);
+  }
+});
 
 const rawIndex = () => buildIndexFromRepository(root);
 const rawSeries = () => buildSeriesFromRepository(root, { minMonths: FLOOR.min_months, minSellers: FLOOR.min_sellers });
@@ -47,7 +58,7 @@ function stringsWithPaths(node, path = "", found = []) {
     return found;
   }
   if (Array.isArray(node)) {
-    node.forEach((item, i) => stringsWithPaths(item, `${path}[]`, found));
+    node.forEach((item) => stringsWithPaths(item, `${path}[]`, found));
     return found;
   }
   if (node && typeof node === "object") {
@@ -174,7 +185,7 @@ test("per-product output carries relative change only, never a level", () => {
 
 // --- honesty of the derived series ------------------------------------------
 
-test("the index projection preserves gaps and dispersion", () => {
+test("the index projection preserves gaps and parks unapproved dispersion diagnostics", () => {
   const projected = projectIndex(rawIndex(), "ram");
   const gaps = projected.periods.filter((p) => p.state !== "observed");
   assert.ok(gaps.length > 0, "expected the real chain to stop at both ends");
@@ -183,15 +194,9 @@ test("the index projection preserves gaps and dispersion", () => {
   }
   const observed = projected.periods.filter((p) => p.state === "observed");
   const reference = observed.filter((p) => p.is_reference);
-  assert.equal(reference.length, 1, "exactly one reference period");
-  assert.equal(reference[0].index_milli, 100000, "reference is 100 in thousandths");
-  // Dispersion must survive; it is what shows whether a big link was broad or
-  // driven by extremes.
-  const surge = observed.find((p) => p.change_permille !== null && p.change_permille > 500);
-  assert.ok(surge, "expected the 2025Q4 surge in the real data");
-  assert.ok(surge.dispersion_permille.min !== null && surge.dispersion_permille.max !== null);
-  assert.ok(surge.dispersion_permille.max > surge.dispersion_permille.median);
-  assert.ok(surge.matched_product_count >= 10);
+  assert.equal(reference.length, 1, "exactly one private calculation anchor");
+  assert.equal(reference[0].index_milli, 100000, "private calculation anchor is 100 in thousandths");
+  assert.equal(JSON.stringify(projected).includes("dispersion"), false, "unapproved dispersion must not enter the projection");
 });
 
 test("the parameters a reader needs to judge the number are published, including that it is unapproved", () => {

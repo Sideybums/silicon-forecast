@@ -59,7 +59,7 @@ export default function Page() {
             The next work is broader primary-retail evidence, deterministic index calculation and
             research notes that preserve sources, alternatives and uncertainty.
           </p>
-          <Link href="/price-history">Inspect the first published observations →</Link><br />
+          <Link href="/price-history">See the current publication status →</Link><br />
           <Link href="/contact">Contact the project →</Link>
         </div>
       </section>

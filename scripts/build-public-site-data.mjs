@@ -10,6 +10,7 @@
 // generator that writes first and validates afterwards leaves unsafe bytes on
 // disk for whatever reads them next.
 import { mkdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
+import { createHash } from "node:crypto";
 import process from "node:process";
 import { buildIndexFromRepository } from "../lib/matched-model-index.mjs";
 import { buildSeriesFromRepository } from "../lib/per-mpn-price-series.mjs";
@@ -67,14 +68,34 @@ for (const [file, { dataset, value }] of Object.entries(datasets)) {
   }
 }
 
+const datasetRecords = Object.entries(datasets)
+  .sort(([a], [b]) => (a < b ? -1 : a > b ? 1 : 0))
+  .map(([file, { value }]) => {
+    const bytes = canonicalProjectionBytes(value);
+    return {
+      path: file,
+      sha256: createHash("sha256").update(bytes).digest("hex"),
+      byte_length: Buffer.byteLength(bytes),
+    };
+  });
+
 const manifest = {
   schema_version: PROJECTION_SCHEMA_VERSION,
   generated_by: "scripts/build-public-site-data.mjs",
-  datasets: Object.keys(datasets).sort(),
+  artifact_status: "private_candidate",
+  publication_eligible: false,
+  approvals: {
+    source: false,
+    methodology: false,
+    basket: false,
+    historical_reference: false,
+    publication: false,
+  },
+  datasets: datasetRecords,
   coverage_note:
-    "Derived from archived and collected retailer observations. Gaps are preserved and never interpolated; a period with too little matched evidence carries no value at all.",
+    "Private candidate derivation from archived and collected retailer observations. Gaps are preserved and never interpolated; a period with too little matched evidence carries no value at all.",
   approval_note:
-    "No source, methodology, basket or publication is approved. These files exist so the public site can be built and reviewed against real data; whether any of it renders publicly is controlled separately by config/public-release.v1.json.",
+    "No source, methodology, basket, historical reference or publication is approved. These files are private candidate engineering artefacts and are structurally ineligible for publication.",
 };
 
 const files = { "manifest.v1.json": manifest };

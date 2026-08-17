@@ -16,6 +16,7 @@ node_modules/
 out/
 dist/
 coverage/
+tsconfig.tsbuildinfo
 
 # Python tooling used for data experiments
 .venv/
