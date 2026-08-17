@@ -38,9 +38,12 @@ export async function generateMetadata({
   const { slug, product } = await params;
   const entry = componentFor(slug);
   if (!entry) return {};
+  if (!seriesIsPublic() || product === "not-published") {
+    return { title: "Page not found", robots: { index: false, follow: false } };
+  }
   return {
     title: `${product} price movement`,
-    description: `Private candidate quoted-item movement for exact MPN ${product}; not a published qualifying landed-price series.`,
+    description: `Published relative price movement research for exact product ${product}.`,
   };
 }
 

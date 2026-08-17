@@ -8,6 +8,7 @@
 import indexRam from "@/data/public-projection/index-ram.v1.json";
 import productsRam from "@/data/public-projection/products-ram.v1.json";
 import eventsRam from "@/data/public-projection/events-ram.v1.json";
+import type { ComponentEntry } from "@/lib/components-registry";
 import { seriesIsPublic } from "@/lib/publication-gate";
 
 export type IndexPeriod = {
@@ -94,20 +95,49 @@ export type EventsDataset = {
   pending_reason: string | null;
 };
 
-const INDEX: Record<string, IndexDataset> = { ram: indexRam as IndexDataset };
-const PRODUCTS: Record<string, ProductsDataset> = { ram: productsRam as ProductsDataset };
-const EVENTS: Record<string, EventsDataset> = { ram: eventsRam as EventsDataset };
+export type PublicDatasetBundle = {
+  index: IndexDataset;
+  products: ProductsDataset;
+  events: EventsDataset;
+};
+
+const DATASETS: Record<string, PublicDatasetBundle> = {
+  ram: {
+    index: indexRam as IndexDataset,
+    products: productsRam as ProductsDataset,
+    events: eventsRam as EventsDataset,
+  },
+};
+
+export type CategoryDataView =
+  | { state: "uncollected" }
+  | { state: "withheld" }
+  | { state: "public"; data: PublicDatasetBundle };
+
+/** Resolve category state once, without exposing private candidate contents. */
+export function categoryViewFor(entry: ComponentEntry): CategoryDataView {
+  if (entry.programme === "uncollected") return { state: "uncollected" };
+  if (!seriesIsPublic()) return { state: "withheld" };
+  const data = DATASETS[entry.dataset];
+  if (!data) return { state: "withheld" };
+  if (
+    data.index.dataset_id !== entry.dataset
+    || data.products.dataset_id !== entry.dataset
+    || data.events.dataset_id !== entry.dataset
+  ) return { state: "withheld" };
+  return { state: "public", data };
+}
 
 export function indexFor(dataset: string | null): IndexDataset | null {
-  return seriesIsPublic() && dataset ? (INDEX[dataset] ?? null) : null;
+  return seriesIsPublic() && dataset ? (DATASETS[dataset]?.index ?? null) : null;
 }
 
 export function productsFor(dataset: string | null): ProductsDataset | null {
-  return seriesIsPublic() && dataset ? (PRODUCTS[dataset] ?? null) : null;
+  return seriesIsPublic() && dataset ? (DATASETS[dataset]?.products ?? null) : null;
 }
 
 export function eventsFor(dataset: string | null): EventsDataset | null {
-  return seriesIsPublic() && dataset ? (EVENTS[dataset] ?? null) : null;
+  return seriesIsPublic() && dataset ? (DATASETS[dataset]?.events ?? null) : null;
 }
 
 export function productFor(dataset: string | null, mpn: string): Product | null {

@@ -63,7 +63,7 @@ const needsBuild = htmlFiles.length === 0
 /** The empty state the site must show wherever a withheld chart would go. */
 const EMPTY_STATE = [
   "No publishable index point exists",
-  "index scale begins only after the basket and baseline receive methodology approval",
+  "No invented baseline. No filled gaps. No implied trend.",
 ];
 
 /**
@@ -244,7 +244,8 @@ test("no rendered chart geometry contains a two-decimal value", { skip: needsBui
       assert.doesNotMatch(match[0], /<svg[^>]*\swidth="/u, `${file} has an svg with a fixed width`);
     }
   }
-  assert.ok(svgCount > 0, "expected at least one chart in the build");
+  if (isPublic) assert.ok(svgCount > 0, "an open build must render its chart");
+  else assert.equal(svgCount, 0, "a withheld build must not render chart geometry");
 });
 
 // ---------------------------------------------------------------------------
@@ -298,9 +299,19 @@ test("a category with no observations renders no chart and says so", { skip: nee
   for (const entry of entries.filter((e) => e.dataset === null)) {
     const [[file, content]] = pagesUnder(`out/price-history/${entry.slug}/`);
     assert.ok(content.includes("No observations collected"), `${file} does not state that nothing was collected`);
+    assert.ok(content.includes("No category research underway"), `${file} implies category research has started`);
     assert.equal(content.includes("index-chart"), false, `${file} renders an index chart with no data behind it`);
     assert.equal(content.includes("collection-chart"), false, `${file} implies collection has started`);
   }
+});
+
+test("RAM distinguishes active research from an uncollected category", { skip: needsBuild }, () => {
+  const ram = pages.get("out/price-history/ram/index.html");
+  assert.ok(ram, "expected the RAM workspace");
+  assert.match(ram, /Research programme active\. No public series released\./u);
+  assert.match(ram, /No publishable index point exists\./u);
+  assert.doesNotMatch(ram, /No observations collected for RAM/u);
+  assert.equal(ram.includes("index-chart"), false, "withheld RAM must not render a numerical chart");
 });
 
 test("the number of product pages equals the number of products exactly", { skip: needsBuild }, () => {
@@ -312,7 +323,10 @@ test("the number of product pages equals the number of products exactly", { skip
     // that yields no paths under `output: export`, so one path exists and it
     // resolves to nothing, producing a not-found document.
     assert.deepEqual(named, ["not-published"]);
-    assert.match(pages.get(productPages[0]), /Signal absent|does not exist/u, "the placeholder path is not a 404");
+    const placeholder = pages.get(productPages[0]);
+    assert.match(placeholder, /Signal absent|does not exist/u, "the placeholder path is not a 404");
+    assert.match(placeholder, /name="robots" content="noindex"/u, "the placeholder path is indexable");
+    assert.doesNotMatch(placeholder, /private candidate|quoted-item|exact MPN/iu, "the placeholder metadata describes private work");
     return;
   }
 

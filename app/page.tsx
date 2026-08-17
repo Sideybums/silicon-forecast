@@ -1,92 +1,90 @@
 import Link from "next/link";
 import { CategoryGrid } from "@/components/CategoryGrid";
-import { EmptyStateChart } from "@/components/EmptyStateChart";
-import { IndexChart, IndexHeadline } from "@/components/chart/IndexChart";
-import { ProductSparkline, monthDomain } from "@/components/chart/ProductSparkline";
-import { components } from "@/lib/components-registry";
-import { eventsFor, indexFor, productsFor } from "@/lib/public-data";
-import { seriesIsPublic } from "@/lib/publication-gate";
+import { componentFor } from "@/lib/components-registry";
+import { categoryViewFor } from "@/lib/public-data";
 
 export const metadata = {
-  title: "Silicon Forecast — UK PC component price trends",
-  description: "Evidence-backed views of UK PC component prices over time. Primary retail only.",
+  title: "Silicon Forecast — UK PC component price research",
+  description: "Transparent UK PC component price-history research, beginning with exact-product DDR5 memory evidence.",
 };
 
-// The homepage is the graphs. Methodology lives at /methodology for anyone who
-// wants it; putting it here would bury the thing people actually came for.
 export default function Home() {
-  const isPublic = seriesIsPublic();
-  const dataset = "ram";
-  const index = indexFor(dataset);
-  const events = eventsFor(dataset);
-  const products = productsFor(dataset);
-
-  // The largest movers, by size of move rather than by level, because there are
-  // no levels here. Every sparkline is drawn on the dataset's full span, so a
-  // product that stopped being observed shows an empty stretch rather than a
-  // line that appears to run to today.
-  const domain = monthDomain(products?.products ?? []);
-  const movers = (products?.products ?? [])
-    .filter((p) => p.change_permille !== null && p.month_count >= 8)
-    .sort((a, b) => Math.abs(b.change_permille as number) - Math.abs(a.change_permille as number))
-    .slice(0, 3);
+  const ram = componentFor("ram");
+  if (!ram) throw new Error("RAM category registry entry is required");
+  const ramView = categoryViewFor(ram);
 
   return (
     <>
-      <section className="shell price-lead">
-        <p className="eyebrow">UK · Primary retail only</p>
-        <h1>Are component prices going up or down?</h1>
-        <p className="hero-copy">
-          Memory prices are tracked against exact manufacturer part numbers, so the line moves when prices move — not
-          when the shops change what they stock. Retail series in preparation.
-        </p>
-
-        {isPublic && index ? (
-          <>
-            <IndexHeadline dataset={index} />
-            <IndexChart dataset={index} events={events} title="UK 32GB DDR5 index by quarter" />
-          </>
-        ) : (
-          <>
-            <div className="notice">
-              <strong>Not yet published</strong>
-              <p>
-                Collection is under way and the series is built and checked on every change, but no index point is
-                published while the basket and baseline remain unapproved.
-              </p>
-            </div>
-            <EmptyStateChart id="home-collection-chart" />
-          </>
-        )}
-
-        {isPublic && movers.length ? (
-          <div className="movers-strip">
-            {movers.map((product) => (
-              <article key={product.mpn}>
-                <h3>
-                  <Link href={`/price-history/${dataset}/${encodeURIComponent(product.mpn)}/`}>{product.mpn}</Link>
-                </h3>
-                <ProductSparkline product={product} domain={domain} />
-                <p className="movers-meta">
-                  {product.first_month} to {product.last_month} · {product.month_count} months ·{" "}
-                  {product.seller_count} retailers
-                </p>
-              </article>
-            ))}
+      <section className="shell product-hero">
+        <div className="product-hero-copy">
+          <p className="eyebrow">UK component intelligence · Primary retail only</p>
+          <h1>See the market move without changing the products underneath it.</h1>
+          <p>
+            Silicon Forecast is building reproducible price history for PC components. It begins with exact-product DDR5 memory research, visible gaps and a hard line between evidence, calculation and explanation.
+          </p>
+          <div className="hero-actions">
+            <Link className="button-link" href="/price-history/ram/">Explore the RAM workspace →</Link>
+            <Link href="/methodology/">Read the publication standard</Link>
           </div>
-        ) : null}
+        </div>
+        <aside className="hero-status-card" aria-label="RAM programme status">
+          <span>Current vertical</span>
+          <strong>DDR5 memory</strong>
+          <p>{ram.scopeNote}</p>
+          <dl>
+            <div><dt>Research</dt><dd>{ramView.state === "uncollected" ? "Not started" : "Active"}</dd></div>
+            <div><dt>Public numbers</dt><dd>{ramView.state === "public" ? "Released" : "Withheld"}</dd></div>
+            <div><dt>Buying links</dt><dd>None</dd></div>
+          </dl>
+        </aside>
       </section>
 
-      <section className="shell section">
-        <div className="section-kicker">
-          <span>02</span>
-          <p>Component categories</p>
+      <section className="shell section product-proof" aria-labelledby="why-title">
+        <div className="retail-home-panel">
+          <div className="retail-home-heading">
+            <div><p className="section-label">Why this exists</p><h2 id="why-title">A price chart should be evidence, not decoration.</h2></div>
+            <span className="status-badge status-badge-building">Research preview</span>
+          </div>
+          <div className="retail-home-grid">
+            <article><span>01</span><strong>Exact identity</strong><p>Manufacturer part numbers and exact configurations take priority over convenient fuzzy matches.</p></article>
+            <article><span>02</span><strong>Honest absence</strong><p>Missed collection and unavailable comparisons remain visible gaps rather than smooth invented history.</p></article>
+            <article><span>03</span><strong>Separate context</strong><p>News can help explain timing, but it cannot alter a price observation or manufacture causation.</p></article>
+          </div>
+          <div className="retail-home-footer"><p>Built so a future category uses the same evidence contract, not a fresh set of exceptions.</p><Link href="/about/">About the project →</Link></div>
+        </div>
+      </section>
+
+      <section className="shell section ram-feature" aria-labelledby="ram-feature-title">
+        <div className="ram-feature-heading">
+          <div>
+            <p className="section-label">First complete template</p>
+            <h2 id="ram-feature-title">Memory (RAM)</h2>
+            <p>{ram.detail}</p>
+          </div>
+          <span className="category-focus-mark">01 / RAM</span>
+        </div>
+        <div className="ram-feature-grid">
+          <article><span>Scope</span><strong>{ram.scopeNote}</strong></article>
+          <article><span>History</span><strong>{ramView.state === "public" ? "Public series available" : "Workspace ready · series withheld"}</strong></article>
+          <article><span>Research</span><strong>Human-reviewed context only</strong></article>
+        </div>
+        <div className="ram-feature-actions">
+          <Link className="button-link" href="/categories/ram/">View RAM research →</Link>
+          <Link href="/price-history/ram/">Open price-history workspace →</Link>
+        </div>
+      </section>
+
+      <section className="shell section" aria-labelledby="categories-title">
+        <div className="section-heading-row">
+          <div><p className="section-label">Expansion path</p><h2 id="categories-title">One template. More component markets later.</h2></div>
+          <p>RAM proves the operating model first. GPUs, CPUs and SSDs do not inherit a methodology merely because the page is ready.</p>
         </div>
         <CategoryGrid />
-        <p className="after-chart">
-          {isPublic ? `${components.filter((entry) => entry.dataset).length} of ${components.length} categories have public observations` : "No category has a public numerical series"} ·{" "}
-          <Link href="/methodology/">How this is measured →</Link>
-        </p>
+      </section>
+
+      <section className="shell section next-phase-panel">
+        <div><p className="section-label">Next product layer</p><h2>Research that helps describe movements without pretending to prove their cause.</h2></div>
+        <div><p>The next product layer will gather reported context from credible sources. Claims, alternatives, uncertainty and wording must be reviewed before anything reaches the site.</p><Link href="/research/">See the research standard →</Link></div>
       </section>
     </>
   );

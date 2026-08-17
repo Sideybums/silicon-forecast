@@ -1,6 +1,6 @@
 {
   "schema_version": 3,
-  "updated_at": "2026-08-17T10:41:38Z",
+  "updated_at": "2026-08-17T11:32:43Z",
   "project": "Silicon Forecast",
   "north_star": "Prove one lawful, accurate, reproducible regional DDR5 price index before expanding scope.",
   "recovery": {
@@ -15,7 +15,7 @@
     "sole_scheduler": "launchd",
     "label": "uk.co.siliconforecast.collector",
     "schedule": "11:30 local daily",
-    "current_state": "loaded_idle_zero_runs",
+    "current_state": "loaded_idle_one_successful_run",
     "hermes_job": null,
     "installation_policy": "dedicated clean main checkout exactly aligned with cached origin/main; RunAtLoad false",
     "prospective_fetch_policy": "one canonical collector only; never create or run a competing fetcher",
@@ -23,7 +23,7 @@
     "ownership_verification": {
       "single_plist": true,
       "launchd_state": "not running",
-      "runs": 0,
+      "runs": 1,
       "run_at_load": false,
       "lock_present": false,
       "collector_process_present": false,
@@ -55,7 +55,7 @@
     ],
     "known_no_run_gap": "2026-08-11",
     "candidate_input_manifest": "data/derived/private-candidate/ram-input-manifest.v1.json",
-    "candidate_input_count": 17,
+    "candidate_input_count": 18,
     "latest_global_audit": "research/audits/uk-primary-retail-global-integration-audit-20260817T014039Z.v1.json",
     "historical_audits": "immutable snapshots",
     "integration_policy": "additive exact-byte audit; collisions and gaps remain explicit"
@@ -90,9 +90,9 @@
     "installer_transaction": "validate target revision and rendered plist before bootout; restore prior plist/job/checkout metadata on failure"
   },
   "verification": {
-    "completed_at": "2026-08-17T02:41:03Z",
+    "completed_at": "2026-08-17T11:32:43Z",
     "npm_check": "passed",
-    "node_tests": "344 discovered; 333 passed before build, 11 build-dependent skipped; 33/33 post-build boundary tests passed",
+    "node_tests": "345 discovered; 333 passed before build, 12 build-dependent skipped; 34/34 post-build public-boundary and generated-content tests passed",
     "next_build": "passed; 20 static routes generated",
     "postgresql": "passed in disposable postgres:16-alpine container",
     "projection_replay": "passed",
@@ -101,12 +101,30 @@
     "shell_and_node_syntax": "passed",
     "git_diff_check": "passed",
     "secret_shape_scan": "passed",
-    "independent_audits": "two bounded three-worker rounds completed; reproduced blockers were remediated and parent-verified",
+    "independent_audits": "two bounded frontend review passes completed; reproduced public-copy, metadata, visual-direction and contrast findings were remediated and parent-verified",
     "remaining_warning": "Node MODULE_TYPELESS_PACKAGE_JSON performance warning only; no functional failure"
   },
   "next_steps": [
-    "Allow the next natural 11:30 launchd run; do not trigger an overlapping manual fetch.",
-    "Audit whether the prospective manifest entry is committed atomically with the tranche and remains excluded_private_candidate.",
-    "Review abstention reasons separately without changing targets, sources, thresholds or policy without explicit approval."
-  ]
+    "Implement Wave R0 of .planning/RESEARCH-AGENT-PLAN.md using synthetic fixtures only: exact worker contracts, run ledger, stop controls and evaluation cases.",
+    "Keep live network discovery disabled until David explicitly approves one bounded run; workers do not select or approve source families.",
+    "Continue natural 11:30 launchd collection as the sole prospective fetcher and independently audit its manifest integration."
+  ],
+  "public_preview": {
+    "ram_product_template": "implemented_and_verified",
+    "category_states": [
+      "public",
+      "withheld_active_research",
+      "uncollected"
+    ],
+    "routes": [
+      "/",
+      "/categories/[slug]",
+      "/price-history",
+      "/price-history/[slug]"
+    ],
+    "desktop_render": "verified",
+    "mobile_390px_render": "verified",
+    "publication_gate": "structurally_withheld",
+    "production_deploy": "disabled"
+  }
 }

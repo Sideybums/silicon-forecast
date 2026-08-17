@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { CategoryStatusPanel } from "@/components/category/CategoryStatusPanel";
+import { ComparisonConsiderations } from "@/components/category/ComparisonConsiderations";
 import { componentFor, components } from "@/lib/components-registry";
-import { seriesIsPublic } from "@/lib/publication-gate";
-
-// Kept because it is a linked, indexable route, but it is no longer where the
-// data lives. Everything with a number on it is at /price-history/[slug]/; this
-// page describes the category and sends the reader there.
+import { categoryViewFor } from "@/lib/public-data";
 
 export const dynamicParams = false;
 
@@ -17,79 +15,57 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const entry = componentFor(slug);
-  return entry
-    ? { title: entry.name, description: `${entry.name} coverage scope and price-history status at Silicon Forecast.` }
-    : {};
+  return entry ? { title: entry.name, description: `${entry.name} research scope and public coverage status at Silicon Forecast.` } : {};
 }
 
 export default async function Page({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const entry = componentFor(slug);
   if (!entry) notFound();
-  const hasPublicData = seriesIsPublic() && Boolean(entry.dataset);
+  const view = categoryViewFor(entry);
 
   return (
-    <div className="shell page-shell">
-      <header className="category-header">
+    <div className="shell page-shell category-landing">
+      <header className="category-header category-product-header">
         <div>
-          <p className="eyebrow">Component category</p>
+          <p className="eyebrow"><Link href="/">Home</Link> · Component research</p>
           <h1>{entry.name}</h1>
           <p>{entry.summary}</p>
         </div>
         <div className="category-state">
-          <span>{hasPublicData ? "Public observations available" : "No public observations released"}</span>
+          <span>{view.state === "public" ? "Public series available" : view.state === "withheld" ? "Research programme active" : "Not collecting"}</span>
           <strong>{entry.scopeNote}</strong>
         </div>
       </header>
 
-      {hasPublicData ? (
-        <div className="notice">
-          <strong>This category has observed price history</strong>
-          <p>
-            The series, its coverage limits and every product behind it are on the price-history page for this category.
-          </p>
-          <Link href={`/price-history/${entry.slug}/`}>Open the {entry.shortName} series →</Link>
-        </div>
-      ) : (
-        <section className="no-data-card">
-          <strong>No public observations released</strong>
-          <p>
-            Private candidate work is not a published series. There is no public chart, index or product history for this
-            category, and this page will keep saying so until a separately governed release exists.
-          </p>
-        </section>
-      )}
-
-      <section className="content-grid">
+      <section className="category-proposition">
         <div>
-          <p className="eyebrow">Active scope</p>
-          <h2>Like-for-like before large numbers.</h2>
+          <p className="section-label">The product question</p>
+          <h2>What changed—and are we comparing the same thing?</h2>
         </div>
-        <div className="prose">
+        <div>
           <p>{entry.detail}</p>
-          <Link href={`/price-history/${entry.slug}/`}>Price history for {entry.shortName} →</Link>
+          <p>Silicon Forecast separates evidence collection, numerical calculation and editorial explanation so one cannot quietly rewrite another.</p>
         </div>
       </section>
 
-      <section className="considerations">
-        <p className="eyebrow">Comparison considerations</p>
+      <CategoryStatusPanel entry={entry} view={view} />
+
+      <section className="category-workspace-link">
         <div>
-          {entry.considerations.map((value, i) => (
-            <article key={value}>
-              <span>0{i + 1}</span>
-              <p>{value}</p>
-            </article>
-          ))}
+          <p className="section-label">Canonical workspace</p>
+          <h2>{entry.shortName} price history</h2>
+          <p>{view.state === "withheld" ? "Explore the finished research template, its evidence standard and the deliberately withheld chart region." : view.state === "public" ? "Open the dated category series, coverage gaps, exact-product histories and reviewed context." : "See the category template and its honest not-collecting state."}</p>
         </div>
+        <Link className="button-link" href={`/price-history/${entry.slug}/`}>Open {entry.shortName} workspace →</Link>
       </section>
+
+      <ComparisonConsiderations entry={entry} />
 
       <section className="category-disclosure">
-        <strong>Affiliate and coverage note</strong>
-        <p>
-          No outbound product links are currently published. Future affiliate feeds would provide a panel of
-          participating retailers, not automatic evidence of the complete UK market.
-        </p>
-        <Link href="/affiliate-disclosure">Full disclosure →</Link>
+        <strong>No purchasing recommendation is published.</strong>
+        <p>There are no outbound product links on this category. Any future commercial relationship must be disclosed without changing the evidence or ranking logic.</p>
+        <Link href="/affiliate-disclosure/">Read the disclosure →</Link>
       </section>
     </div>
   );

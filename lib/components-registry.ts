@@ -8,18 +8,21 @@
 //
 // It supersedes the `categories` array that used to live in lib/site.ts.
 
-export type ComponentEntry = {
+type ComponentEntryBase = {
   slug: string;
   shortName: string;
   name: string;
   summary: string;
   detail: string;
   considerations: readonly string[];
-  /** Key into the public projection, or null when nothing has been collected. */
-  dataset: string | null;
   /** What we track, stated plainly enough for a reader to know what is excluded. */
   scopeNote: string;
 };
+
+export type ComponentEntry = ComponentEntryBase & (
+  | { programme: "candidate"; dataset: string }
+  | { programme: "uncollected"; dataset: null }
+);
 
 export const components: readonly ComponentEntry[] = [
   {
@@ -35,6 +38,7 @@ export const components: readonly ComponentEntry[] = [
       "Speed, timings, model and manufacturer identifiers matter",
       "Coverage limits stay visible rather than being filled with estimates",
     ],
+    programme: "candidate",
     dataset: "ram",
     scopeNote: "32GB (2×16GB) DDR5 desktop kits, UK retailer-owned stock",
   },
@@ -51,6 +55,7 @@ export const components: readonly ComponentEntry[] = [
       "New retail stock only",
       "Bundles and seller-of-record ambiguity need separate treatment",
     ],
+    programme: "uncollected",
     dataset: null,
     scopeNote: "Not yet collecting",
   },
@@ -67,6 +72,7 @@ export const components: readonly ComponentEntry[] = [
       "Retail boxed and tray products",
       "Bundles and included coolers",
     ],
+    programme: "uncollected",
     dataset: null,
     scopeNote: "Not yet collecting",
   },
@@ -83,6 +89,7 @@ export const components: readonly ComponentEntry[] = [
       "M.2 or 2.5-inch form factor",
       "Hardware revisions and bundled heatsinks",
     ],
+    programme: "uncollected",
     dataset: null,
     scopeNote: "Not yet collecting",
   },

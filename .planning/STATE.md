@@ -5,9 +5,18 @@
 See `.planning/PROJECT.md` (last updated 2026-08-09).
 
 **Core value:** Let people follow dated UK component-price graphs as they would a stock, with reviewed market/news overlays explaining possible effects while deterministic calculations and complete lineage remain authoritative.
-**Current focus:** Recovery of the graphs-first branch is being completed through an isolated `origin/main`-based worktree. Four immutable launchd collector tranches from 13–16 August have been preserved; the public gate is withheld and now requires an exact hash-bound publication approval against an explicitly publication-eligible artefact. Candidate inputs are fully classified and hash-pinned, sparse calendar gaps are explicit, and collector hardening is being verified before launchd is reinstalled against a dedicated `main` checkout. No source, methodology, threshold, reference, deflator, basket, public claim or production action is approved by this recovery.
+**Current focus:** The governed collector is operating from its dedicated checkout and the RAM public research-preview template is complete. The immediate next slice is the bounded Phase 6 research/news worker harness: source discovery, claim extraction, counterevidence search and private draft assembly, with numerical mutation and automated publication structurally unavailable.
 
 ## Status
+
+### RAM product-template update — 2026-08-17
+
+- The public frontend now distinguishes active RAM research from genuinely uncollected GPU, CPU and SSD categories without exposing private prices, products, counts, observations, settings or worker details.
+- `/`, `/categories/[slug]`, `/price-history` and `/price-history/[slug]` use a reusable registry-driven category state. The same component structure can support later categories without implying that their collection or methodology has been approved.
+- The RAM price-history workspace has a finished non-numerical withheld state, separate research rail, comparison standard and release panel. It draws no chart geometry or directional trend while the public series is closed.
+- Desktop and 390px mobile renders were inspected. The primary RAM CTA measures 6.14:1 contrast, and the no-product sentinel is a noindex 404 with no private metadata.
+- Full verification passes with 345 tests discovered, 333 pre-build passes and 12 build-dependent tests, followed by 34/34 public-boundary and generated-content tests after the static build.
+- Production deployment, numerical release, affiliate claims, source approval, methodology decisions and automated editorial publication remain locked.
 
 ### Recovery update — 2026-08-17
 

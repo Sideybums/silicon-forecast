@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { components } from "@/lib/components-registry";
-import { eventsFor, indexFor, productsFor } from "@/lib/public-data";
-import { seriesIsPublic } from "@/lib/publication-gate";
+import { categoryViewFor } from "@/lib/public-data";
 
 export const metadata: Metadata = {
   title: "Price history",
-  description: "Which UK PC component categories have observed price history, how far back it goes and what is still uncollected.",
+  description: "UK PC component price-history research status, beginning with DDR5 memory and showing clearly where no public series exists.",
 };
 
 // The dataset overview: what exists, how much of it, and where to go next.
@@ -16,47 +15,35 @@ export const metadata: Metadata = {
 // at /methodology, and every claim about how the number is built is made there
 // once.
 export default function Page() {
-  const isPublic = seriesIsPublic();
-
   return (
     <div className="shell page-shell">
       <header className="page-header">
         <p className="eyebrow">UK · Primary retail only</p>
-        <h1>No numerical price history is public yet.</h1>
+        <h1>Component price-history workspaces.</h1>
         <p>
-          Private candidate evidence exists, but it is not an approved public series and none of its derived counts,
-          settings or movements are exposed here. Categories remain closed until an independently authenticated
-          publication process is designed and explicitly approved.
+          RAM has an active research programme, but no numerical series has been publicly released. Working data,
+          settings and movements remain outside this site; other categories state plainly whether research has begun.
         </p>
       </header>
 
-      {isPublic ? null : (
-        <div className="notice">
-          <strong>The series is built but not published</strong>
-          <p>
-            Collection and private derivation remain reviewable internally. No candidate index point, aggregate, event
-            count or parameter is published, so the data bridge and charts below stay closed.
-          </p>
-        </div>
-      )}
-
       <section className="dataset-list" aria-label="Component datasets">
         {components.map((entry) => {
-          const index = indexFor(entry.dataset);
-          const products = productsFor(entry.dataset);
-          const events = eventsFor(entry.dataset);
+          const view = categoryViewFor(entry);
+          const index = view.state === "public" ? view.data.index : null;
+          const products = view.state === "public" ? view.data.products : null;
+          const events = view.state === "public" ? view.data.events : null;
 
-          if (!entry.dataset || !index) {
+          if (view.state !== "public" || !index) {
             return (
               <article className="dataset-card is-empty" key={entry.slug}>
                 <div className="dataset-card-head">
                   <h2>{entry.name}</h2>
-                  <span className="dataset-state" data-status="planned">
-                    No public observations released
+                  <span className="dataset-state" data-status={view.state}>
+                    {view.state === "withheld" ? "Active research · numerical series withheld" : "Not collecting"}
                   </span>
                 </div>
                 <p>{entry.detail}</p>
-                <Link href={`/price-history/${entry.slug}/`}>What would need to be true →</Link>
+                <Link href={`/price-history/${entry.slug}/`}>{view.state === "withheld" ? "Open the research workspace" : "View the category state"} →</Link>
               </article>
             );
           }

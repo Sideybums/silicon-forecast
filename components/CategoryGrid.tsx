@@ -1,32 +1,28 @@
 import Link from "next/link";
 import { components } from "@/lib/components-registry";
-import { seriesIsPublic } from "@/lib/publication-gate";
+import { categoryViewFor } from "@/lib/public-data";
 
-// The one place the category board is drawn.
-//
-// It maps over the registry rather than a hardcoded list, so a category gains a
-// dataset — and starts pointing at real data — by changing one field in
-// lib/components-registry.ts and nothing else.
 export function CategoryGrid() {
-  const isPublic = seriesIsPublic();
   return (
     <div className="category-board">
       <div className="category-head">
         <span>Category</span>
-        <span>Coverage</span>
+        <span>Research scope</span>
         <span>Status</span>
       </div>
-      {components.map((entry, i) => (
-        <Link className="category-row" href={`/price-history/${entry.slug}/`} key={entry.slug}>
-          <span className="category-index">{String(i + 1).padStart(2, "0")}</span>
-          <strong>{entry.shortName}</strong>
-          <span>{entry.summary}</span>
-          <em data-status={isPublic && entry.dataset ? "tracking" : "planned"}>
-            {isPublic && entry.dataset ? entry.scopeNote : "No public observations released"}
-          </em>
-          <span aria-hidden="true">→</span>
-        </Link>
-      ))}
+      {components.map((entry, index) => {
+        const view = categoryViewFor(entry);
+        const status = view.state === "public" ? "Public series" : view.state === "withheld" ? "Active research · numbers withheld" : "Not collecting";
+        return (
+          <Link className="category-row" href={`/categories/${entry.slug}/`} key={entry.slug} data-programme={entry.programme}>
+            <span className="category-index">{String(index + 1).padStart(2, "0")}</span>
+            <strong>{entry.shortName}</strong>
+            <span>{entry.summary}</span>
+            <em data-status={view.state}>{status}</em>
+            <span aria-hidden="true">→</span>
+          </Link>
+        );
+      })}
     </div>
   );
 }

@@ -2,7 +2,8 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 
 const links = [
-  ["/price-history/", "Prices"],
+  ["/categories/ram/", "RAM"],
+  ["/price-history/", "Price history"],
   ["/research/", "Research"],
   ["/methodology/", "Methodology"],
   ["/about", "About"],
@@ -19,7 +20,7 @@ export function SiteHeader() {
         <div className="shell status-inner">
           <span className="status-light" />
           {site.status}
-          <span className="status-detail">UK DDR5 retail index · evidence build</span>
+          <span className="status-detail">UK DDR5 research preview · public series withheld</span>
         </div>
       </div>
       <div className="shell nav-row">

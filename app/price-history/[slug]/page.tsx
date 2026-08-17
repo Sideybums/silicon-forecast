@@ -1,20 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { EmptyStateChart } from "@/components/EmptyStateChart";
+import { ComparisonConsiderations } from "@/components/category/ComparisonConsiderations";
+import { CategoryStatusPanel } from "@/components/category/CategoryStatusPanel";
+import { WithheldHistoryPanel } from "@/components/category/WithheldHistoryPanel";
 import { EventList } from "@/components/chart/EventLine";
 import { IndexChart, IndexHeadline } from "@/components/chart/IndexChart";
 import { ProductSparkline, monthDomain } from "@/components/chart/ProductSparkline";
 import { componentFor, components } from "@/lib/components-registry";
-import { eventsFor, formatIndex, formatPermilleChange, indexFor, productsFor } from "@/lib/public-data";
-import { seriesIsPublic } from "@/lib/publication-gate";
-
-// One page per component category, generated from the registry.
-//
-// A category with no dataset is not a placeholder and not a promise. It renders
-// the same page structure with a plain statement that nothing has been
-// collected, because a category page that quietly implies future coverage is a
-// claim we have not earned.
+import { categoryViewFor, formatIndex, formatPermilleChange } from "@/lib/public-data";
 
 export const dynamicParams = false;
 
@@ -26,11 +20,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const { slug } = await params;
   const entry = componentFor(slug);
   if (!entry) return {};
+  const view = categoryViewFor(entry);
   return {
-    title: `${entry.name} price history`,
-    description: entry.dataset
-      ? `Private candidate exact-MPN quoted-item observations for ${entry.name.toLowerCase()}; publication remains withheld pending governed qualification and approval.`
-      : `${entry.name} coverage status at Silicon Forecast. No observations have been collected.`,
+    title: `${entry.name} price history research`,
+    description: view.state === "public"
+      ? `${entry.name} public price-history research at Silicon Forecast.`
+      : view.state === "withheld"
+      ? `${entry.name} price-history research at Silicon Forecast. No numerical series is publicly released.`
+      : `${entry.name} coverage status at Silicon Forecast. Collection has not begun.`,
   };
 }
 
@@ -39,82 +36,65 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const entry = componentFor(slug);
   if (!entry) notFound();
 
-  const isPublic = seriesIsPublic();
-  const index = indexFor(entry.dataset);
-  const products = productsFor(entry.dataset);
-  const events = eventsFor(entry.dataset);
-
+  const view = categoryViewFor(entry);
+  const bundle = view.state === "public" ? view.data : null;
+  const index = bundle?.index ?? null;
+  const products = bundle?.products ?? null;
+  const events = bundle?.events ?? null;
   const domain = monthDomain(products?.products ?? []);
   const ranked = [...(products?.products ?? [])].sort(
     (a, b) => Math.abs(b.change_permille ?? 0) - Math.abs(a.change_permille ?? 0),
   );
 
   return (
-    <div className="shell page-shell">
-      <header className="page-header">
-        <p className="eyebrow">
-          <Link href="/price-history/">Price history</Link> · {entry.shortName}
+    <div className="shell page-shell price-history-page">
+      <header className="page-header price-history-header">
+        <p className="eyebrow breadcrumb">
+          <Link href="/">Home</Link> · <Link href={`/categories/${entry.slug}/`}>{entry.shortName}</Link> · Price history
         </p>
-        <h1>{entry.name}</h1>
-        <p>{entry.detail}</p>
+        <div className="product-heading-row">
+          <div>
+            <h1>{entry.name} price history</h1>
+            <p>{entry.detail}</p>
+          </div>
+          <span className="status-badge status-badge-building">
+            {view.state === "public" ? "Public series" : view.state === "withheld" ? "Research preview" : "Not collecting"}
+          </span>
+        </div>
       </header>
 
-      {!entry.dataset || !index ? (
-        <section className="no-data-card" aria-labelledby="no-data-title">
-          <strong id="no-data-title">No observations collected</strong>
+      <CategoryStatusPanel entry={entry} view={view} showWorkspaceLink={false} />
+
+      {view.state === "uncollected" ? (
+        <section className="uncollected-workspace" aria-labelledby="uncollected-title">
+          <p className="section-label">Coverage state</p>
+          <h2 id="uncollected-title">No observations collected for {entry.shortName}.</h2>
           <p>
-            Nothing has been collected for this category, so there is no chart, no index and no product history. When
-            collection begins, this page will show the same evidence as any other category — and until then it will keep
-            saying so.
+            This is an honest empty state, not a launch promise. The same category template is ready, but collection scope,
+            identity rules and governance must be defined before evidence enters it.
           </p>
         </section>
-      ) : isPublic ? (
+      ) : bundle && index ? (
         <>
           <IndexHeadline dataset={index} />
-          <IndexChart
-            dataset={index}
-            events={events}
-            title={`UK ${entry.scopeNote} index by quarter`}
-            describedBy={`${entry.slug}-index-desc`}
-          />
+          <IndexChart dataset={index} events={events} title={`UK ${entry.scopeNote} index by quarter`} describedBy={`${entry.slug}-index-desc`} />
         </>
       ) : (
-        <>
-          <div className="notice">
-            <strong>Not yet published</strong>
-            <p>
-              The series for this category is derived and checked on every change, but no index point is published while
-              the basket and baseline remain unapproved.
-            </p>
-          </div>
-          <EmptyStateChart id={`${entry.slug}-collection-chart`} />
-        </>
+        <WithheldHistoryPanel entry={entry} />
       )}
 
-      {entry.dataset && index && isPublic ? (
+      {bundle && index ? (
         <section className="method-panel" aria-labelledby="periods-title">
           <div className="panel-heading">
             <div>
               <p className="section-label">Coverage by quarter</p>
-              <h2 id="periods-title">Where the evidence is thick, and where it runs out.</h2>
+              <h2 id="periods-title">Where the evidence is present—and where it stops.</h2>
             </div>
           </div>
           <div className="table-scroll">
             <table className="period-table">
-              <caption>
-                Matched products are those present in both this quarter and the one before it — the only ones a
-                comparison can use. Spread is the range of individual product changes behind the quarter.
-              </caption>
-              <thead>
-                <tr>
-                  <th scope="col">Quarter</th>
-                  <th scope="col">Index</th>
-                  <th scope="col">Change</th>
-                  <th scope="col">Matched</th>
-                  <th scope="col">Products seen</th>
-
-                </tr>
-              </thead>
+              <caption>Unavailable comparisons remain unavailable; they are never interpolated or carried forward.</caption>
+              <thead><tr><th scope="col">Quarter</th><th scope="col">Index</th><th scope="col">Change</th><th scope="col">Matched</th><th scope="col">Products seen</th></tr></thead>
               <tbody>
                 {index.periods.map((period) => (
                   <tr key={period.period_id} data-state={period.state}>
@@ -123,7 +103,6 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
                     <td>{formatPermilleChange(period.change_permille)}</td>
                     <td>{period.matched_product_count ?? "—"}</td>
                     <td>{period.distinct_products_in_period}</td>
-
                   </tr>
                 ))}
               </tbody>
@@ -132,47 +111,39 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         </section>
       ) : null}
 
-      {entry.dataset && events ? (
-        <section className="method-panel" aria-labelledby="events-title">
-          <div className="panel-heading">
-            <div>
-              <p className="section-label">News and research</p>
-              <h2 id="events-title">What was reported around these movements.</h2>
-            </div>
-            <Link href="/research/">All sources →</Link>
-          </div>
-          <EventList events={events} />
-        </section>
-      ) : null}
-
-      {entry.dataset && products && isPublic ? (
-        <section className="method-panel" aria-labelledby="products-title">
-          <div className="panel-heading">
-            <div>
-              <p className="section-label">Products</p>
-              <h2 id="products-title">
-                {products.product_count} products followed individually.
-              </h2>
-            </div>
-          </div>
-          <p className="method-lede">
-            Each line is one exact part number and shows how far it has moved from the first month we saw it, not what it
-            costs. {products.excluded_below_floor_count} further products were observed but fall below the coverage floor
-            and are not shown.
+      <section className="research-rail" aria-labelledby="research-title">
+        <div>
+          <p className="section-label">News and research</p>
+          <h2 id="research-title">{view.state === "uncollected" ? "Context starts with evidence, not headlines." : "Context is reviewed separately from the numbers."}</h2>
+          <p>
+            {view.state === "uncollected"
+              ? "Category research begins only after collection scope and evidence rules exist. A ready page is not evidence that work has started."
+              : "Research can describe what was reported around a movement. It cannot rewrite an observation, fill a gap or turn timing into proof of cause."}
           </p>
+          <Link href="/research/">Open the research desk →</Link>
+        </div>
+        <div>
+          {events ? <EventList events={events} /> : (
+            <div className="research-empty-state">
+              <span>Editorial state</span>
+              <strong>{view.state === "uncollected" ? "No category research underway" : "No reviewed explanations published"}</strong>
+              <p>{view.state === "uncollected" ? "No news or explanatory work is implied for this category." : "Potential context is not published until its claims, sources, alternatives and wording receive human review."}</p>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {products ? (
+        <section className="method-panel" aria-labelledby="products-title">
+          <div className="panel-heading"><div><p className="section-label">Products</p><h2 id="products-title">{products.product_count} exact products followed individually.</h2></div></div>
+          <p className="method-lede">Each line is one exact part number and describes movement rather than a monetary selling price.</p>
           <ul className="product-list">
             {ranked.map((product) => (
               <li key={product.mpn}>
                 <Link href={`/price-history/${entry.slug}/${product.mpn}/`}>
                   <strong>{product.mpn}</strong>
                   <ProductSparkline product={product} domain={domain} label={false} />
-                  <span className="product-list-meta">
-                    <span className={(product.change_permille ?? 0) > 0 ? "is-higher" : "is-lower"}>
-                      {formatPermilleChange(product.change_permille)}
-                    </span>{" "}
-                    · {product.month_count} months · {product.seller_count} retailers · {product.first_month} to{" "}
-                    {product.last_month}
-                  </span>
+                  <span className="product-list-meta">{formatPermilleChange(product.change_permille)} · {product.month_count} months</span>
                 </Link>
               </li>
             ))}
@@ -180,22 +151,22 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         </section>
       ) : null}
 
-      <section className="considerations">
-        <p className="eyebrow">Comparison considerations</p>
-        <div>
-          {entry.considerations.map((value, i) => (
-            <article key={value}>
-              <span>0{i + 1}</span>
-              <p>{value}</p>
-            </article>
-          ))}
+      <section className="retail-methodology-panel" aria-labelledby="qualification-title">
+        <div className="panel-heading"><div><p className="section-label">Evidence standard</p><h2 id="qualification-title">The comparison has to survive ordinary scrutiny.</h2></div><Link href="/methodology/">Full methodology status →</Link></div>
+        <div className="qualification-grid">
+          <article><span>01</span><h3>Same product</h3><p>Exact identifiers take priority. Ambiguous matches are rejected rather than guessed.</p></article>
+          <article><span>02</span><h3>Comparable offer</h3><p>Stock state, seller responsibility and delivered-price treatment must be explicit.</p></article>
+          <article><span>03</span><h3>Visible gaps</h3><p>Missing periods remain gaps. They are not backfilled, smoothed or borrowed from another model.</p></article>
+          <article><span>04</span><h3>Reproducible release</h3><p>Published output must be tied to reviewable evidence and deterministic generated bytes.</p></article>
         </div>
       </section>
 
-      <div className="page-nav-note">
-        <p>How these figures are built, and what they cannot tell you.</p>
-        <Link href="/methodology/">Read the methodology →</Link>
-      </div>
+      <ComparisonConsiderations entry={entry} />
+
+      <section className="release-summary" aria-labelledby="release-title">
+        <div><p className="section-label">Release standard</p><h2 id="release-title">Finished presentation does not mean unreviewed publication.</h2></div>
+        <div><p>The template is ready to carry a supported series. Numerical activation, methodology decisions, source approval and public claims remain separate governed decisions.</p><Link href="/about/">Why Silicon Forecast is being built →</Link></div>
+      </section>
     </div>
   );
 }
