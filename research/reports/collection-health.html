@@ -47,8 +47,8 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule2);color:
 <p class="lede">What the daily collector has done, which scheduled days passed with no run at all, and which retailers will actually answer it.</p>
 
 <div class="cards">
-  <div><span>Last run</span><strong>2026-08-13</strong><em>0 observations</em></div>
-  <div><span>Runs recorded</span><strong>6</strong><em>schedule 13:45 daily</em></div>
+  <div><span>Last run</span><strong>2026-08-16</strong><em>36 observations</em></div>
+  <div><span>Runs recorded</span><strong>10</strong><em>schedule 11:30 daily</em></div>
   <div class=""><span>Gaps awaiting you</span><strong>0</strong><em>1 recorded in total</em></div>
   <div><span>Targets</span><strong>416</strong><em>242 products, 6 retailers</em></div>
 </div>
@@ -73,9 +73,9 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule2);color:
     </tr><tr>
       <td>Scan Computers</td>
       <td class="num">96</td>
-      <td class="num">0</td>
-      <td class="mono">—</td>
-      <td><span class="pill unknown">not yet collected</span></td>
+      <td class="num">104</td>
+      <td class="mono">2026-08-16 12:45</td>
+      <td><span class="pill ok">collected</span></td>
     </tr><tr>
       <td>CCL Online</td>
       <td class="num">82</td>
@@ -85,26 +85,54 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule2);color:
     </tr><tr>
       <td>AWD-IT</td>
       <td class="num">63</td>
-      <td class="num">19</td>
-      <td class="mono">2026-08-12 12:47</td>
+      <td class="num">47</td>
+      <td class="mono">2026-08-16 12:45</td>
       <td><span class="pill ok">collected</span></td>
     </tr><tr>
       <td>Novatech</td>
       <td class="num">36</td>
-      <td class="num">2</td>
-      <td class="mono">2026-08-12 12:45</td>
+      <td class="num">6</td>
+      <td class="mono">2026-08-16 12:45</td>
       <td><span class="pill ok">collected</span></td>
     </tr><tr>
       <td>KingstonMemoryShop</td>
       <td class="num">2</td>
-      <td class="num">12</td>
-      <td class="mono">2026-08-12 12:47</td>
+      <td class="num">20</td>
+      <td class="mono">2026-08-16 12:45</td>
       <td><span class="pill ok">collected</span></td>
     </tr></tbody></table>
-
+<div class="notice"><strong>Refusing the collector</strong><p>The most recent run saw 5× HTTP_403. Overclockers UK and CCL Online return 403 to automated requests even though their robots.txt permits us, so this is bot protection rather than a crawl rule. No attempt is made to work around it. Affiliate programme membership is the legitimate route to those two.</p></div>
 
 <h2>Recent runs</h2>
 <table><thead><tr><th>Started</th><th class="num">Attempted</th><th class="num">Retained</th><th class="num">Abstained</th><th>Reasons</th><th>Source</th></tr></thead><tbody><tr>
+      <td class="mono">2026-08-16 12:45</td>
+      <td class="num">45</td>
+      <td class="num strong">36</td>
+      <td class="num">9</td>
+      <td class="mono small">HTTP_403×5  UNKNOWN×2  MPN_NOT_VISIBLE×2</td>
+      <td><span class='pill ok'>collector</span></td>
+    </tr><tr>
+      <td class="mono">2026-08-15 12:45</td>
+      <td class="num">45</td>
+      <td class="num strong">36</td>
+      <td class="num">9</td>
+      <td class="mono small">HTTP_403×5  UNKNOWN×2  MPN_NOT_VISIBLE×2</td>
+      <td><span class='pill ok'>collector</span></td>
+    </tr><tr>
+      <td class="mono">2026-08-14 12:45</td>
+      <td class="num">45</td>
+      <td class="num strong">36</td>
+      <td class="num">9</td>
+      <td class="mono small">HTTP_403×5  UNKNOWN×2  MPN_NOT_VISIBLE×2</td>
+      <td><span class='pill ok'>collector</span></td>
+    </tr><tr>
+      <td class="mono">2026-08-13 12:45</td>
+      <td class="num">45</td>
+      <td class="num strong">36</td>
+      <td class="num">9</td>
+      <td class="mono small">HTTP_403×5  UNKNOWN×2  MPN_NOT_VISIBLE×2</td>
+      <td><span class='pill ok'>collector</span></td>
+    </tr><tr>
       <td class="mono">2026-08-13 06:36</td>
       <td class="num">0</td>
       <td class="num strong">0</td>
@@ -148,5 +176,5 @@ footer{margin-top:3rem;padding-top:1rem;border-top:1px solid var(--rule2);color:
       <td><span class='pill unknown'>reconstructed</span></td>
     </tr></tbody></table>
 
-<footer>Private operations artefact generated 2026-08-13. Regenerate with <code>node scripts/render-collection-health-report.mjs</code>, or check from the terminal with <code>ops/install-collector.sh status</code>. Runs marked <em>reconstructed</em> were performed by an orchestrated session before the scheduled collector existed, and their attempt counts reflect retained observations only. No source, methodology or publication is approved.</footer>
+<footer>Private operations artefact generated 2026-08-17. Regenerate with <code>node scripts/render-collection-health-report.mjs</code>, or check from the terminal with <code>ops/install-collector.sh status</code>. Runs marked <em>reconstructed</em> were performed by an orchestrated session before the scheduled collector existed, and their attempt counts reflect retained observations only. No source, methodology or publication is approved.</footer>
 </div></body></html>

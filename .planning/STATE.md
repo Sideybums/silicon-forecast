@@ -146,7 +146,7 @@ The public frontend is now **built but gated**. A complete graphs-first site exi
 
 ## Next Action
 
-Recovery is integrated on `main`. launchd label `uk.co.siliconforecast.collector` is installed against `/Users/weetoddy/Desktop/Projects/Silicon_Forecast_Collector`, loaded idle with `RunAtLoad` false and zero runs; no manual retailer fetch was triggered and no Hermes collector job exists. Audit the next naturally scheduled 13:45 local run for additive observation, evidence-manifest, ledger, global-audit, local-commit and push outcomes. Do not restore Hermes scheduling or select methodology, sources, thresholds, references, deflators, baskets or public claims. The exact handoff is machine-readable in `.planning/HANDOFF.json`.
+Recovery is integrated on `main`. launchd label `uk.co.siliconforecast.collector` is installed against `/Users/weetoddy/Desktop/Projects/Silicon_Forecast_Collector`, loaded idle with `RunAtLoad` false and zero runs; no manual retailer fetch was triggered and no Hermes collector job exists. The daily slot was amended from the inherited 13:45 time to 11:30 local on David's instruction. Audit the next naturally scheduled run for additive observation, evidence-manifest, ledger, global-audit, local-commit and push outcomes. Do not restore Hermes scheduling or select methodology, sources, thresholds, references, deflators, baskets or public claims. The exact handoff is machine-readable in `.planning/HANDOFF.json`.
 
 ## Safety Note
 

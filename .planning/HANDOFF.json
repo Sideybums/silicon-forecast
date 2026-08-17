@@ -14,7 +14,7 @@
   "scheduler": {
     "sole_scheduler": "launchd",
     "label": "uk.co.siliconforecast.collector",
-    "schedule": "13:45 local daily",
+    "schedule": "11:30 local daily",
     "current_state": "loaded_idle_zero_runs",
     "hermes_job": null,
     "installation_policy": "dedicated clean main checkout exactly aligned with cached origin/main; RunAtLoad false",
@@ -89,7 +89,7 @@
     "remaining_warning": "Node MODULE_TYPELESS_PACKAGE_JSON performance warning only; no functional failure"
   },
   "next_steps": [
-    "Allow launchd—not a manual command—to perform the next scheduled 13:45 local prospective collection.",
+    "Allow launchd—not a manual command—to perform the next scheduled 11:30 local prospective collection.",
     "Independently audit that run for a clean fast-forward, one additive observation tranche, evidence manifest, ledger update, global audit, local commit and normal push outcome.",
     "If push fails, preserve and recover the local evidence commit; never reset, rebase, force-push or invent the missing 2026-08-11 run.",
     "Keep publication, deployment, source, methodology, threshold, reference, deflator, basket and public-claim locks closed until separately governed decisions exist."

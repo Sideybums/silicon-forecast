@@ -162,28 +162,28 @@ test("one failing target does not abort the rest of the run", async () => {
 // --- missed-slot detection --------------------------------------------------
 
 test("a day the machine was asleep is recorded as a missed slot", () => {
-  // Ran Monday 13:45, next run Thursday 14:00. Tuesday and Wednesday are gone
+  // Ran Monday 11:30, next run Thursday 14:00. Tuesday and Wednesday are gone
   // and must be recorded; launchd only ever catches up once.
-  const missed = detectMissedSlots("2026-08-10T13:45:00", new Date(2026, 7, 13, 14, 0), SCHEDULE);
-  assert.deepEqual(missed, ["2026-08-11T13:45:00", "2026-08-12T13:45:00"]);
+  const missed = detectMissedSlots("2026-08-10T11:30:00", new Date(2026, 7, 13, 14, 0), SCHEDULE);
+  assert.deepEqual(missed, ["2026-08-11T11:30:00", "2026-08-12T11:30:00"]);
 });
 
 test("consecutive daily runs report no missed slots", () => {
-  assert.deepEqual(detectMissedSlots("2026-08-11T13:45:00", new Date(2026, 7, 12, 13, 45), SCHEDULE), []);
+  assert.deepEqual(detectMissedSlots("2026-08-11T11:30:00", new Date(2026, 7, 12, 11, 30), SCHEDULE), []);
 });
 
 test("a run before its own day's slot leaves that slot outstanding", () => {
-  // Ran at 09:00, so that day's 13:45 slot went unserved. The following day's
+  // Ran at 09:00, so that day's 11:30 slot went unserved. The following day's
   // slot is not a miss: the run happening now is the one serving it.
   const missed = detectMissedSlots("2026-08-11T09:00:00", new Date(2026, 7, 12, 14, 0), SCHEDULE);
-  assert.deepEqual(missed, ["2026-08-11T13:45:00"]);
+  assert.deepEqual(missed, ["2026-08-11T11:30:00"]);
 });
 
 test("the slot the current run is serving is never recorded as missed", () => {
   // Otherwise every ordinary run — launchd fires a few minutes late — would
   // stamp a false gap on the day it actually collected.
-  assert.deepEqual(detectMissedSlots("2026-08-11T13:45:00", new Date(2026, 7, 12, 13, 47), SCHEDULE), []);
-  assert.deepEqual(detectMissedSlots("2026-08-11T13:45:00", new Date(2026, 7, 12, 23, 59), SCHEDULE), []);
+  assert.deepEqual(detectMissedSlots("2026-08-11T11:30:00", new Date(2026, 7, 12, 11, 32), SCHEDULE), []);
+  assert.deepEqual(detectMissedSlots("2026-08-11T11:30:00", new Date(2026, 7, 12, 23, 59), SCHEDULE), []);
 });
 
 test("a run after its own day's slot does not re-report that slot", () => {
@@ -193,10 +193,10 @@ test("a run after its own day's slot does not re-report that slot", () => {
 
 test("a long outage records every missing day, not just one", () => {
   // Aug 2 through Aug 11 are unrecoverable; Aug 12 is served by this run.
-  const missed = detectMissedSlots("2026-08-01T13:45:00", new Date(2026, 7, 12, 14, 0), SCHEDULE);
+  const missed = detectMissedSlots("2026-08-01T11:30:00", new Date(2026, 7, 12, 14, 0), SCHEDULE);
   assert.equal(missed.length, 10);
-  assert.equal(missed[0], "2026-08-02T13:45:00");
-  assert.equal(missed.at(-1), "2026-08-11T13:45:00");
+  assert.equal(missed[0], "2026-08-02T11:30:00");
+  assert.equal(missed.at(-1), "2026-08-11T11:30:00");
 });
 
 test("with no previous run there is nothing to call missed", () => {
@@ -204,7 +204,7 @@ test("with no previous run there is nothing to call missed", () => {
 });
 
 test("missed-slot detection validates its inputs", () => {
-  assert.throws(() => detectMissedSlots("2026-08-11T13:45:00", "not a date"), /must be a valid Date/u);
+  assert.throws(() => detectMissedSlots("2026-08-11T11:30:00", "not a date"), /must be a valid Date/u);
   assert.throws(() => detectMissedSlots("nonsense", new Date()), /not a valid instant/u);
 });
 

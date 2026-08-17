@@ -102,7 +102,7 @@ case "${1:-status}" in
     echo "  checkout: $REPO"
     echo "  revision: $(git -C "$REPO" rev-parse HEAD)"
     echo "  branch:   main"
-    echo "  schedule: daily 13:45 local"
+    echo "  schedule: daily 11:30 local"
     echo "  logs:     $REPO/logs/collector.{out,err}.log"
     echo "  RunAtLoad is false; installation performed no collection."
     ;;

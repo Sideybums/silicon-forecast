@@ -5,8 +5,8 @@
   "policy": "Append-only. Every attempted run is recorded whether it succeeded or not, and every scheduled slot that passed without a run is recorded as an unobserved gap for the operator to review after the fact. Entries are never edited or removed; corrections are additive.",
   "acknowledgement_rule": "Acknowledgements are appended to the acknowledgements array with who accepted the gap and when; operator_acknowledged on each missed slot is derived from them. Acknowledging records that a human has seen and accepted an unobserved slot. It never creates, infers or backfills an observation, and the day remains a gap in every derived series whether acknowledged or not.",
   "schedule": {
-    "hour": 13,
-    "minute": 45,
+    "hour": 11,
+    "minute": 30,
     "cadence": "daily"
   },
   "runs": [
