@@ -587,7 +587,7 @@ test("no tracking package", () => {
   );
 });
 
-test("Cloudflare target remains static and deployment is bound to the approved factual preview", () => {
+test("Cloudflare target remains static and deployment is bound to the approved dashboard preview", () => {
   const config = readFileSync("wrangler.jsonc", "utf8");
   assert.match(config, /"directory"\s*:\s*"\.\/out"/u);
   assert.doesNotMatch(config, /opennext/iu);
@@ -598,15 +598,12 @@ test("Cloudflare target remains static and deployment is bound to the approved f
   assert.equal(deploy, "node scripts/deploy-approved-public-preview.mjs");
   const approval = JSON.parse(readFileSync("config/factual-offer-deployment-approval.v1.json", "utf8"));
   assert.equal(approval.status, "approved");
-  assert.equal(approval.scope.factual_offers, true);
+  for (const approved of ["factual_offers", "retailer_links", "raw_exact_mpn_history", "daily_market_dashboard", "empty_event_line"]) assert.equal(approval.scope[approved], true, `${approved} must be explicitly approved`);
   for (const locked of ["aggregate_index", "methodology", "basket", "baseline", "historical_reference", "deflator", "research_publication", "recommendations", "paid_affiliate_tracking"]) assert.equal(approval.scope[locked], false, `${locked} must remain locked`);
   const dashboardPolicy = JSON.parse(readFileSync("config/daily-market-dashboard-policy.v1.json", "utf8"));
   assert.equal(dashboardPolicy.unrelated_authorities.production_deployment, false);
-  assert.throws(
-    () => execFileSync(process.execPath, ["scripts/deploy-approved-public-preview.mjs", "--check"], { stdio: "pipe" }),
-    /reviewed deployment surface changed after approval/u,
-    "an unapproved dashboard surface must fail closed",
-  );
+  const check = execFileSync(process.execPath, ["scripts/deploy-approved-public-preview.mjs", "--check"], { encoding: "utf8" });
+  assert.match(check, /matches the reviewed surface/u);
 });
 
 test("deployment digest covers every Daily Dashboard and Event Line authority and artefact", () => {

@@ -1,16 +1,17 @@
 {
   "schema_version": 1,
-  "approval_id": "sf-observation-first-deployment-2026-08-17T160421Z",
+  "approval_id": "sf-daily-market-dashboard-deployment-2026-08-18T032152Z",
   "status": "approved",
-  "decision": "deploy_observation_first_public_preview",
+  "decision": "deploy_daily_market_dashboard_public_preview",
   "approved_by": {
     "name": "David Sidebottom",
     "role": "project_owner"
   },
-  "approved_at": "2026-08-17T16:04:21Z",
+  "approved_at": "2026-08-18T03:21:52Z",
   "approval_record": {
     "channel": "interactive_project_session",
-    "response": "I approve lets deploy and get this working"
+    "response": "I also approve this and it should be pushed.",
+    "approved_scope": "Deploy the exact reviewed Daily Market Dashboard, approved factual-offer history and empty Event Line surface. No real event marker, formal index, new source, recommendation or affiliate authority is granted."
   },
   "targets": [
     "siliconforecast.com",
@@ -20,6 +21,8 @@
     "factual_offers": true,
     "retailer_links": true,
     "raw_exact_mpn_history": true,
+    "daily_market_dashboard": true,
+    "empty_event_line": true,
     "aggregate_index": false,
     "methodology": false,
     "basket": false,
@@ -43,7 +46,31 @@
       "path": "data/public-offers/offers-ram.v1.json",
       "sha256": "8319c030c16fa73d5bfb30bb681a395b6ffee015c6547bd64789d57cd2256524"
     },
-    "deployment_surface_sha256": "84427c1e82f8021f4488fe404f7da5645c9844c0ec7fc20fe38d047e820e30ec"
+    "dashboard_policy": {
+      "path": "config/daily-market-dashboard-policy.v1.json",
+      "sha256": "3eae1d3d0868d3afc00e96a235f061fcccbb28ebe763be18038a7487561dffb2"
+    },
+    "dashboard_manifest": {
+      "path": "data/public-dashboard/daily-market-ram.manifest.v1.json",
+      "sha256": "b45dbb83261838e700162a1dbf9dc1ec16eccecaa558b81b61d393fc21f9f1dc"
+    },
+    "dashboard_payload": {
+      "path": "data/public-dashboard/daily-market-ram.v1.json",
+      "sha256": "cf9a9130463de541471ac23b6a51a0d818785315fee1a8ed69eff7d1869634da"
+    },
+    "event_policy": {
+      "path": "config/event-line-publication-policy.v1.json",
+      "sha256": "050db5d0e2b40a48f898df2f4896bc8833cfe4e1a993ed14b39cc0c8df984476"
+    },
+    "event_manifest": {
+      "path": "data/public-dashboard/event-line-ram.manifest.v1.json",
+      "sha256": "e83d7575c59ea8a972aa785cc0cedc4cefce05330c6cbef2f874e265d846686d"
+    },
+    "event_payload": {
+      "path": "data/public-dashboard/event-line-ram.v1.json",
+      "sha256": "93936a912a0884f942d2c1cc69ff5761583bcd03d719b9346151d72561f3d9c6"
+    },
+    "deployment_surface_sha256": "9aa3bddf4bb5f4679a9801ed0d837c7118d7e0b5fbfde55c57ab5b63864ebc90"
   },
-  "notes": "This approval permits deployment of the exact bound observation-first preview only. Any bound artefact or reviewed deployment-surface change fails closed and requires a new approval."
+  "notes": "This approval permits deployment of this exact checksum-bound dashboard surface only. Any bound artefact, public code or reviewed deployment-surface change fails closed and requires a new approval."
 }

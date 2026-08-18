@@ -57,14 +57,26 @@ function fail(message) {
 function validateApproval() {
   if (!existsSync(APPROVAL_PATH)) fail("deployment approval record is missing");
   const approval = JSON.parse(readFileSync(APPROVAL_PATH, "utf8"));
-  if (approval.schema_version !== 1 || approval.status !== "approved" || approval.decision !== "deploy_observation_first_public_preview") fail("approval identity is invalid");
+  if (approval.schema_version !== 1 || approval.status !== "approved" || approval.decision !== "deploy_daily_market_dashboard_public_preview") fail("approval identity is invalid");
   if (approval.approved_by?.name !== "David Sidebottom" || approval.approved_by?.role !== "project_owner") fail("project-owner approval is absent");
-  if (approval.scope?.factual_offers !== true || approval.scope?.retailer_links !== true || approval.scope?.raw_exact_mpn_history !== true) fail("approved factual scope is incomplete");
+  for (const approved of ["factual_offers", "retailer_links", "raw_exact_mpn_history", "daily_market_dashboard", "empty_event_line"]) {
+    if (approval.scope?.[approved] !== true) fail(`${approved} is not explicitly approved`);
+  }
   for (const locked of ["aggregate_index", "methodology", "basket", "baseline", "historical_reference", "deflator", "research_publication", "recommendations", "paid_affiliate_tracking"]) {
     if (approval.scope?.[locked] !== false) fail(`${locked} is not explicitly locked`);
   }
   if (JSON.stringify(approval.targets) !== JSON.stringify(["siliconforecast.com", "www.siliconforecast.com"])) fail("deployment target drift");
-  for (const binding of [approval.bindings?.policy, approval.bindings?.manifest, approval.bindings?.payload]) {
+  for (const binding of [
+    approval.bindings?.policy,
+    approval.bindings?.manifest,
+    approval.bindings?.payload,
+    approval.bindings?.dashboard_policy,
+    approval.bindings?.dashboard_manifest,
+    approval.bindings?.dashboard_payload,
+    approval.bindings?.event_policy,
+    approval.bindings?.event_manifest,
+    approval.bindings?.event_payload,
+  ]) {
     if (!binding?.path || !/^[0-9a-f]{64}$/.test(binding.sha256) || sha256(readFileSync(binding.path)) !== binding.sha256) fail(`bound artefact changed: ${binding?.path ?? "unknown"}`);
   }
   const surface = deploymentSurface();
