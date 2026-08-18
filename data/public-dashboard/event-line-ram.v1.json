@@ -1,0 +1,8 @@
+{
+  "schema_version": 1,
+  "policy_id": "sf-public-event-line-v1",
+  "dataset_id": "sf-public-event-line-ram-v1",
+  "category_slug": "ram",
+  "status": "empty_pending_review",
+  "markers": []
+}

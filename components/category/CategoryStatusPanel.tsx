@@ -32,7 +32,7 @@ export function CategoryStatusPanel({ entry, view, showWorkspaceLink = true }: {
         </div>
         <div>
           <span>Numerical output</span>
-          <strong>{publicSeries ? "Index released" : publicOffers ? "Observed prices released · index withheld" : candidate ? "Withheld" : "None"}</strong>
+          <strong>{publicSeries ? "Price history released" : publicOffers ? "Observed price history released" : candidate ? "Withheld" : "None"}</strong>
         </div>
         <div>
           <span>Buying links</span>
@@ -44,7 +44,7 @@ export function CategoryStatusPanel({ entry, view, showWorkspaceLink = true }: {
           Public price history will appear here only when a supported release exists. Until then, this page describes the research scope and the standard the output must meet without exposing working data.
         </p>
       ) : publicOffers ? (
-        <p className="status-explainer">Qualifying factual observations publish after deterministic validation. The aggregate index, basket and methodology remain separately locked.</p>
+        <p className="status-explainer">Qualifying factual observations publish after deterministic validation, with exact-product identity, dated evidence and source links retained.</p>
       ) : null}
       <div className="status-actions">
         {showWorkspaceLink ? <Link href={`/price-history/${entry.slug}/`}>Open the {entry.shortName} research workspace →</Link> : null}

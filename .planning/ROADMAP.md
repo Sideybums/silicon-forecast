@@ -17,6 +17,18 @@ A narrow public research-preview site is an approved enabling exception to that 
 - Desktop and 390px mobile renders are verified; the static build, accessibility-sensitive contrast and public-boundary tests pass.
 - David approved deployment of this exact surface through the checksum-bound Cloudflare gate. Future bound changes require new approval; Phase 6 remains synthetic-only after production verification.
 
+### Governed repository release — Daily observed-market dashboard
+
+**Status:** Owner-approved for repository publication on 2026-08-18; production deployment remains separately digest-locked.
+
+- The candidate derives one latest qualifying price per UK calendar day, exact MPN and retailer; a product median gives each retailer one vote, and a category median gives each observed exact MPN one vote.
+- The dashboard publishes retained low/high evidence and explicit released-roster coverage. Direction is suppressed unless adjacent calendar days contain the same exact MPN set. Missing days remain disconnected. The homepage omits internal observed-day counts.
+- The 7D and 30D views retain daily points. The 3M, 1Y and All views plot one rounded arithmetic average of daily typical prices per observed month and never connect across an unobserved month.
+- The calculation replays from the checksum-bound factual-offer payload and is bound to an executable schema, calculation-engine hash, policy, input and output manifest. The known £99,999.99 placeholder is quarantined; no general temporal outlier threshold has been selected.
+- This is an approved factual-derivation repository publication class, not the Phase 5 basket-vintage-linked index. The public surface does not promote or apologise for the private index. It selects no basket, baseline, reference, deflator, source, threshold or claim beyond its approval contract.
+- The Event Line is a separate executable empty contract. Real markers, research selection, interpretations and editorial publication remain locked and require an exact reviewed revision.
+- The existing production approval intentionally rejects this changed surface. Production requires a new digest-bound deployment approval covering every dashboard/Event Line policy, schema, generator, manifest and payload.
+
 ## Phase 1 — Source and Methodology Gate
 
 **Goal:** Prove that one candidate region can legally and methodologically support the vertical slice.

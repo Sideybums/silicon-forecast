@@ -1,0 +1,21 @@
+{
+  "schema_version": 1,
+  "manifest_id": "sf-public-event-line-ram-manifest-v1",
+  "generator": {
+    "path": "scripts/build-event-line.mjs",
+    "sha256": "37a5a9c01f7ded3c71ab8c3f14f554bcf256cf48b9dd9b7067ab0e8645a16245"
+  },
+  "policy": {
+    "path": "config/event-line-publication-policy.v1.json",
+    "sha256": "050db5d0e2b40a48f898df2f4896bc8833cfe4e1a993ed14b39cc0c8df984476"
+  },
+  "schema": {
+    "path": "schemas/event-line.v1.schema.json",
+    "sha256": "75234a29c0d460da3dd57c1b277eb3eba922036b2f2f0d1cca0487c2fdcdb7aa"
+  },
+  "output": {
+    "path": "data/public-dashboard/event-line-ram.v1.json",
+    "sha256": "93936a912a0884f942d2c1cc69ff5761583bcd03d719b9346151d72561f3d9c6"
+  },
+  "reviewed_inputs": []
+}

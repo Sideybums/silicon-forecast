@@ -31,7 +31,7 @@ export const components: readonly ComponentEntry[] = [
     name: "Memory (RAM)",
     summary: "Capacity, DDR generation, kit configuration and speed.",
     detail:
-      "Coverage is narrow on purpose: 32GB (2×16GB) DDR5 desktop memory kits sold from retailer-owned UK stock. Every price is matched to an exact manufacturer part number, so a change in the number reflects a change in prices rather than a change in which products happened to be on sale.",
+      "Coverage is narrow on purpose: 32GB (2×16GB) DDR5 desktop memory kits sold from retailer-owned UK stock. Every price is matched to an exact manufacturer part number. Coverage stays visible, and daily direction is withheld whenever the observed product set changes.",
     considerations: [
       "Capacity and module count must match exactly",
       "Desktop UDIMM and laptop SO-DIMM products are kept separate",

@@ -1,8 +1,8 @@
 import Link from "next/link";
 import { CategoryGrid } from "@/components/CategoryGrid";
-import { OfferCard } from "@/components/offers/OfferCard";
+import { DailyMarketDashboard } from "@/components/dashboard/DailyMarketDashboard";
 import { componentFor } from "@/lib/components-registry";
-import { categoryViewFor, latestOffersByProduct, offersFor } from "@/lib/public-data";
+import { dailyMarketFor, eventLineFor, offersFor } from "@/lib/public-data";
 
 export const metadata = {
   title: "Silicon Forecast — UK PC component price research",
@@ -12,43 +12,13 @@ export const metadata = {
 export default function Home() {
   const ram = componentFor("ram");
   if (!ram) throw new Error("RAM category registry entry is required");
-  const ramView = categoryViewFor(ram);
   const ramOffers = offersFor(ram.dataset);
-  const latestRamOffers = latestOffersByProduct(ram.dataset);
+  const dailyMarket = ramOffers ? dailyMarketFor(ram.slug) : null;
+  const eventLine = eventLineFor(ram.slug);
 
   return (
     <>
-      <section className="shell product-hero">
-        <div className="product-hero-copy">
-          <p className="eyebrow">UK component intelligence · Primary retail only</p>
-          <h1>See real UK RAM prices—and the evidence behind every point.</h1>
-          <p>
-            Compare dated primary-retail observations for exact DDR5 kits, follow source links and inspect raw product history. No fuzzy product substitutions, smoothed gaps or decorative mystery lines.
-          </p>
-          <div className="hero-actions">
-            <Link className="button-link" href="/price-history/ram/">Explore the RAM workspace →</Link>
-            <Link href="/methodology/">Read the publication standard</Link>
-          </div>
-        </div>
-        <aside className="hero-status-card" aria-label="RAM programme status">
-          <span>Current vertical</span>
-          <strong>DDR5 memory</strong>
-          <p>{ram.scopeNote}</p>
-          <dl>
-            <div><dt>Observed prices</dt><dd>{ramOffers ? "Public" : "Withheld"}</dd></div>
-            <div><dt>Aggregate index</dt><dd>{ramView.state === "public" ? "Released" : "Withheld"}</dd></div>
-            <div><dt>Retailer links</dt><dd>{ramOffers ? "Published" : "None"}</dd></div>
-          </dl>
-        </aside>
-      </section>
-
-      {ramOffers ? (
-        <section className="shell section homepage-offers" aria-labelledby="homepage-offers-title">
-          <div className="section-heading-row"><div><p className="section-label">Latest retained prices</p><h2 id="homepage-offers-title">Start with the products, not a promise.</h2></div><p>Observed through {ramOffers.latest_observed_at.slice(0, 10)}. VAT included; delivery excluded. Check the retailer before buying.</p></div>
-          <div className="offer-grid">{latestRamOffers.map(({ product, observation }) => <OfferCard key={product.mpn} dataset="ram" product={product} observation={observation} />)}</div>
-          <div className="retail-home-footer"><p>{ramOffers.observations.length} released observations across {ramOffers.products.length} exact products.</p><Link href="/price-history/ram/">See all RAM evidence →</Link></div>
-        </section>
-      ) : null}
+      {dailyMarket ? <div className="shell homepage-dashboard"><DailyMarketDashboard dataset={dailyMarket} eventLine={eventLine} headingLevel="h1" eyebrow="Daily market snapshot · RAM · Primary retail only" /></div> : null}
 
       <section className="shell section product-proof" aria-labelledby="why-title">
         <div className="retail-home-panel">
@@ -77,7 +47,7 @@ export default function Home() {
         <div className="ram-feature-grid">
           <article><span>Scope</span><strong>{ram.scopeNote}</strong></article>
           <article><span>Prices</span><strong>{ramOffers ? `${ramOffers.products.length} exact products · source links live` : "No factual release"}</strong></article>
-          <article><span>Index</span><strong>{ramView.state === "public" ? "Public series available" : "Aggregate series withheld"}</strong></article>
+          <article><span>History</span><strong>{dailyMarket ? `Observed prices since ${new Intl.DateTimeFormat("en-GB", { month: "short", year: "numeric", timeZone: "UTC" }).format(new Date(`${dailyMarket.first_date}T12:00:00Z`))}` : "No factual release"}</strong></article>
         </div>
         <div className="ram-feature-actions">
           <Link className="button-link" href="/categories/ram/">View RAM research →</Link>

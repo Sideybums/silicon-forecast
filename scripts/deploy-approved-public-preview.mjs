@@ -5,18 +5,24 @@ import { spawnSync } from "node:child_process";
 import path from "node:path";
 
 const APPROVAL_PATH = "config/factual-offer-deployment-approval.v1.json";
-const SURFACE_ROOTS = ["app", "components", "lib", "public", "data/public-offers", "data/public-projection"];
+const SURFACE_ROOTS = ["app", "components", "lib", "public", "data/public-offers", "data/public-projection", "data/public-dashboard"];
 const SURFACE_FILES = [
   ".github/workflows/deploy-pages.yml",
   "config/factual-offer-publication-policy.v1.json",
   "config/public-release.v1.json",
+  "config/daily-market-dashboard-policy.v1.json",
+  "config/event-line-publication-policy.v1.json",
   "eslint.config.mjs",
   "next.config.ts",
   "package-lock.json",
   "package.json",
   "scripts/build-public-offers.mjs",
   "scripts/build-public-site-data.mjs",
+  "scripts/build-daily-market.mjs",
+  "scripts/build-event-line.mjs",
   "scripts/deploy-approved-public-preview.mjs",
+  "schemas/daily-market-dashboard.v1.schema.json",
+  "schemas/event-line.v1.schema.json",
   "tsconfig.json",
   "worker.mjs",
   "wrangler.jsonc",

@@ -43,8 +43,8 @@ export default function Page() {
         <h1>How a future public number must be built—and what remains unapproved.</h1>
         <p>
           Retained candidate observations are matched to exact manufacturer part numbers, but they are not all qualifying
-          landed retail prices and no public index methodology is approved. This page states the rules a future public
-          series must pass rather than claiming the private candidate already passes them.
+          landed retail prices. This page states the evidence and publication rules for the observed-price history rather
+          than claiming that every retained research record belongs in the public output.
         </p>
       </header>
 

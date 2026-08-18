@@ -3,10 +3,10 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CategoryStatusPanel } from "@/components/category/CategoryStatusPanel";
 import { ComparisonConsiderations } from "@/components/category/ComparisonConsiderations";
-import { WithheldHistoryPanel } from "@/components/category/WithheldHistoryPanel";
+import { DailyMarketDashboard } from "@/components/dashboard/DailyMarketDashboard";
 import { OfferCard } from "@/components/offers/OfferCard";
 import { componentFor, components } from "@/lib/components-registry";
-import { categoryViewFor, latestOffersByProduct, offersFor } from "@/lib/public-data";
+import { categoryViewFor, dailyMarketFor, eventLineFor, latestOffersByProduct, offersFor } from "@/lib/public-data";
 
 export const dynamicParams = false;
 export function generateStaticParams() { return components.map((entry) => ({ slug: entry.slug })); }
@@ -31,6 +31,8 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   const view = categoryViewFor(entry);
   const offers = offersFor(entry.dataset);
   const latest = latestOffersByProduct(entry.dataset);
+  const dailyMarket = offers ? dailyMarketFor(entry.slug) : null;
+  const eventLine = eventLineFor(entry.slug);
 
   return (
     <div className="shell page-shell price-history-page">
@@ -43,6 +45,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
 
       {offers ? (
         <>
+          {dailyMarket ? <DailyMarketDashboard dataset={dailyMarket} eventLine={eventLine} /> : null}
           <section className="latest-offers-section" aria-labelledby="latest-offers-title">
             <div className="panel-heading"><div><p className="section-label">Latest retained observation per product</p><h2 id="latest-offers-title">Real prices, exact products, direct sources.</h2></div><span className="capture-date">Through {offers.latest_observed_at.slice(0, 10)}</span></div>
             <p className="method-lede">These are the most recent qualifying observations in this release—not a complete scan of the market and not a guarantee of today&apos;s checkout price. VAT is included; delivery is excluded.</p>
@@ -56,12 +59,10 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
             <div><span>Oldest released observation</span><strong>{offers.observations[0].observed_at.slice(0, 10)}</strong></div>
           </section>
 
-          <section className="history-layer-heading"><p className="section-label">Separate analytical layer</p><h2>The aggregate RAM index is still withheld.</h2><p>Direct observations can be useful without pretending that an unapproved basket, baseline or linking method already represents the whole market.</p></section>
-          <WithheldHistoryPanel entry={entry} />
         </>
       ) : entry.programme === "uncollected" ? (
         <section className="uncollected-workspace" aria-labelledby="uncollected-title"><p className="section-label">Coverage state</p><h2 id="uncollected-title">No observations collected for {entry.shortName}.</h2><p>The template exists, but no prices or source links are implied for this category.</p></section>
-      ) : <WithheldHistoryPanel entry={entry} />}
+      ) : null}
 
       <section className="research-rail" aria-labelledby="research-title">
         <div><p className="section-label">News and research</p><h2 id="research-title">{entry.programme === "uncollected" ? "No category research underway." : "Context is reviewed separately from prices."}</h2><p>{entry.programme === "uncollected" ? `No ${entry.shortName} price or research programme has started. This page exists only as a reusable category template.` : "Research can describe reported events around an observed movement. It cannot rewrite a price, fill a missing date or convert timing into proof of cause."}</p>{entry.programme === "uncollected" ? null : <Link href="/research/">Open the research desk →</Link>}</div>

@@ -38,6 +38,7 @@ Let people follow trustworthy UK component-price graphs over time, inspect dated
 - [x] Publish a retail-first observation preview containing only deterministically validated, checksum-bound factual prices, exact-MPN sparse histories and disclosed evidence links; keep deferred channels and aggregate indexes unavailable.
 - [ ] Connect reviewed news and research to observed movements using facts, alternatives, counterevidence and human-approved causal language; event overlays remain mathematically separate annotations and never alter, fill or weight numeric series.
 - [ ] Let users compare present prices with meaningful pre-surge history; the public product must not present collection-inception 100 as a normative historical level.
+- [ ] Review the candidate daily observed-market dashboard as a separate factual-derivation publication class. Its implementation does not approve methodology, a supported index, event markers or production deployment.
 
 ### Out of Scope
 
@@ -47,6 +48,7 @@ Let people follow trustworthy UK component-price graphs over time, inspect dated
 - Public API and commercial data resale — require proven demand and explicit redistribution rights.
 - Automated AI-written publication or unapproved forecasts — incompatible with initial trust and accountability requirements.
 - Supported live public index publication remains deferred; the public frontend may explain the primary-retail evidence programme and publish explicitly approved qualifying retail observations only. Other price channels remain private and deferred.
+- The daily dashboard and empty Event Line are approved for repository publication. They remain outside production until a newly bound exact deployment surface is separately approved.
 - User accounts, premium memberships and alerts — deferred until the core index proves useful.
 - Microservices — unnecessary operational complexity for the MVP.
 - Zero-human corporate operation — legal, security, methodology and publication accountability remain human-governed.
@@ -86,6 +88,7 @@ The technical reference architecture is a TypeScript/Next.js modular monolith ba
 | Use a defensible historical reference rather than collection inception as 100 | The product should explain shortage-era purchasing power, not imply that the first observed day is normal | Product direction clarified 2026-08-09; the reference period and all selection thresholds remain `PROPOSED_LOCKED` pending evidence and approval |
 | Separate nominal, constant-price, affordability and event layers | Inflation adjustment, earnings comparison and editorial context answer different questions and must remain auditable | Nominal linked history is primary; monthly real history requires an approved official UK deflator/release vintage; earnings-relative affordability is optional; event overlays never change numbers |
 | Make dated price graphs the target experience | Users should follow components as they would a stock and inspect evidence-backed context without confusing correlation with causation | Stock-market-like describes the graph interaction and attention model, not speculative pricing; overlays remain mathematically separate |
+| Implement a separate observed-market dashboard candidate | Users need a useful daily snapshot before the formal basket index is ready, but sparse evidence must not be dressed up as a supported index | Implemented for review only; exact-product medians, coverage, gaps and source evidence are deterministic, while methodology/publication/deployment approval remains pending |
 | Treat launch-to-present history as minimum useful context | Buyers remember component prices from before prospective collection and need to judge whether the current market is elevated | Weekly historical points are preferred and monthly points are acceptable where evidence is sparse; gaps remain visible, and no reference, interpolation or aggregation rule is approved by this direction |
 
 ## Evolution

@@ -162,10 +162,13 @@ The public frontend now has two deliberately separate states: the checksum-bound
 - No official UK deflator series, release-vintage policy, nominal monthly completeness rule, basket-vintage link rule or optional earnings measure is approved. Each dependent output must remain explicitly unavailable.
 - The aggregate numerical boundary is structurally shut. `config/public-release.v1.json` remains withheld/private-candidate and cannot be opened by configuration, the factual-offer approval or the bounded deployment approval. `research/PUBLIC-RELEASE-SIGNOFF-2026-08-13.md` is explicitly superseded and is not an activation runbook.
 - The explanation ledger holds zero explanations against 99 measured movements, so the event line ships empty. This is a stated absence rather than a defect: no marker will exist until an explanation is researched, attributed and reviewed.
+- A Daily observed-market dashboard candidate is implemented on `feat/daily-market-dashboard`. It derives exact-product daily medians, retained low/high evidence, released-roster coverage and same-product adjacent-day direction from the approved factual-offer payload. It is not an approved index or production surface.
+- The candidate and its empty Event Line are checksum-bound and schema-validated, but their policies are explicitly `implemented_for_review`. Sources, temporal outlier thresholds, baskets, references, deflators, real event records, interpretations, claims and production deployment remain unapproved.
+- The existing deployment approval fails closed against this branch. A new approval must bind the complete dashboard/Event Line surface before any production action.
 
 ## Next Action
 
-The observation-first preview is deployed and production-verified. Continue natural 11:30 launchd collection as the sole prospective fetcher and independently audit the next tranche's fail-closed integration; do not trigger a competing fetch. The next implementation slice is Phase 6 Wave R0 using synthetic fixtures only. Live research-source discovery, aggregate methodology, references, deflators, baskets, recommendations and editorial publication still require separate decisions.
+The observation-first preview is deployed and production-verified. The Daily Market Dashboard and empty Event Line are owner-approved for repository publication; 7D/30D remain daily and longer ranges use one monthly average point. Commit and push the verified feature branch, but do not deploy it under the old approval. Next, expand exact-MPN coverage from existing candidate holdings and repair deterministic collector target rotation without launching a competing fetch. Continue natural launchd collection as the sole prospective fetcher. Phase 6 Wave R0 remains synthetic-only. Real Event Line markers, new source approval and production deployment remain blocked pending explicit decisions.
 
 ## Safety Note
 
@@ -175,4 +178,4 @@ The observation-first change adds a separate, additive factual publication class
 
 ---
 *State created: 2026-08-05*
-*Last updated: 2026-08-17 after approval of the checksum-bound observation-first factual release and exact-surface Cloudflare deployment. Aggregate publication and all unrelated production authorities remain locked.*
+*Last updated: 2026-08-18 after implementation of the governed Daily observed-market dashboard and empty Event Line candidates for review. The deployed observation preview is unchanged; methodology, event publication, aggregate publication and production deployment of the candidate remain locked.*

@@ -23,10 +23,12 @@ const publicSourceFiles = globSync([
   "public/**/*",
   "lib/site.ts",
   "lib/public-data.ts",
+  "lib/daily-market.ts",
   "lib/components-registry.ts",
   "lib/publication-gate.ts",
   "data/public-projection/**/*",
   "data/public-offers/**/*",
+  "data/public-dashboard/**/*",
 ]).filter((file) => statSync(file).isFile());
 
 const publicBuildFiles = existsSync("out")

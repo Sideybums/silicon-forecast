@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { execFileSync } from "node:child_process";
 import { existsSync, globSync, readFileSync, statSync } from "node:fs";
 import test from "node:test";
+import { buildDailyMarketDataset } from "../lib/daily-market.ts";
 import { publicationGate, seriesIsPublic } from "../lib/publication-gate.ts";
 
 // What the public site is allowed to say.
@@ -23,6 +24,7 @@ const INDEX = JSON.parse(readFileSync("data/public-projection/index-ram.v1.json"
 const PRODUCTS = JSON.parse(readFileSync("data/public-projection/products-ram.v1.json", "utf8"));
 const EVENTS = JSON.parse(readFileSync("data/public-projection/events-ram.v1.json", "utf8"));
 const OFFERS = JSON.parse(readFileSync("data/public-offers/offers-ram.v1.json", "utf8"));
+const DAILY_MARKET = buildDailyMarketDataset(OFFERS);
 const PROJECTION_FILES = globSync("data/public-projection/**/*.json");
 
 const isPublic = seriesIsPublic();
@@ -72,12 +74,6 @@ test("release-mode rendered checks have a fresh static build", () => {
   assert.equal(needsBuild, false, needsBuild || "expected a fresh static build");
 });
 
-/** The empty state the site must show wherever a withheld chart would go. */
-const EMPTY_STATE = [
-  "No publishable index point exists",
-  "No invented baseline. No filled gaps. No implied trend.",
-];
-
 function pagesUnder(prefix) {
   return [...pages].filter(([file]) => file.startsWith(prefix));
 }
@@ -86,16 +82,15 @@ function pagesUnder(prefix) {
 // 1. Gate honesty, measured by absence
 // ---------------------------------------------------------------------------
 
-test("a withheld aggregate series renders no index geometry or period-labelled levels", { skip: renderedSkip }, () => {
+test("a private aggregate series renders no index geometry or period-labelled levels", { skip: renderedSkip }, () => {
   if (isPublic) {
     assert.ok(allHtml.includes("index-chart"), "an open aggregate gate must render its chart");
     return;
   }
   assert.equal(allHtml.includes("index-chart"), false, "the aggregate gate is closed but index geometry rendered");
   for (const period of INDEX.periods) {
-    assert.equal(allHtml.includes(period.period_id), false, `${period.period_id} leaked from the withheld aggregate series`);
+    assert.equal(allHtml.includes(period.period_id), false, `${period.period_id} leaked from the private aggregate series`);
   }
-  for (const phrase of EMPTY_STATE) assert.ok(allHtml.includes(phrase), `a withheld aggregate build must state: ${phrase}`);
 });
 
 // ---------------------------------------------------------------------------
@@ -254,12 +249,47 @@ test("the public projection is a money-free zone", () => {
   assert.deepEqual(offending, [], "money reached the public projection");
 });
 
-test("every rendered currency amount comes from the approved factual-offer payload", { skip: renderedSkip }, () => {
+test("every rendered currency amount comes from the approved factual-offer payload or its approved daily calculation", { skip: renderedSkip }, () => {
   const approved = new Set(OFFERS.observations.map((item) => `£${(item.item_price_minor / 100).toFixed(2)}`));
+  for (const point of DAILY_MARKET.points) {
+    for (const amount of [point.low_minor, point.typical_minor, point.high_minor]) approved.add(`£${(amount / 100).toFixed(2)}`);
+  }
   const rendered = [...allHtml.matchAll(/£\d+(?:,\d{3})*\.\d{2}/gu)].map((match) => match[0].replace(",", ""));
   assert.ok(rendered.length > 0, "the useful offer release rendered no prices");
-  for (const amount of rendered) assert.ok(approved.has(amount), `${amount} is not in the approved factual-offer payload`);
+  for (const amount of rendered) assert.ok(approved.has(amount), `${amount} is neither an approved factual offer nor an approved daily derivation`);
   assert.doesNotMatch(allHtml, /\bGBP\s*\d/u);
+});
+
+test("the homepage and RAM workspace expose the approved daily dashboard without opening the formal index", { skip: renderedSkip }, () => {
+  for (const file of ["out/index.html", "out/price-history/ram/index.html"]) {
+    const content = pages.get(file);
+    assert.ok(content, `missing ${file}`);
+    assert.match(content, /Daily market snapshot · RAM/u);
+    assert.match(content, /Latest typical observed price/u);
+    assert.match(content, /not the whole UK market/iu);
+    assert.match(content, /No reviewed market events published yet/u);
+    assert.match(content, /<legend>Chart range<\/legend>/u);
+    assert.match(content, /daily-market-chart/u);
+    assert.equal(content.includes("index-chart"), false, `${file} opened the formal aggregate index`);
+  }
+  const dashboardSource = readFileSync("components/dashboard/DailyMarketDashboard.tsx", "utf8");
+  assert.doesNotMatch(dashboardSource, /Observed days|unobserved calendar/u);
+  assert.match(dashboardSource, /Monthly average of daily typical prices/u);
+  assert.match(dashboardSource, /range === "3M" \|\| range === "1Y" \|\| range === "ALL"/u);
+});
+
+test("daily dashboard evidence and derived values resolve only to approved factual observations", () => {
+  const approvedIds = new Set(OFFERS.observations.map((item) => item.public_observation_id));
+  const approvedUrls = new Set(OFFERS.observations.map((item) => item.source_url));
+  for (const point of DAILY_MARKET.points) {
+    assert.ok(point.typical_minor >= point.low_minor && point.typical_minor <= point.high_minor);
+    assert.ok(point.product_count <= point.declared_product_count);
+    for (const evidence of [...point.low_evidence, ...point.high_evidence]) {
+      assert.ok(approvedIds.has(evidence.public_observation_id));
+      assert.ok(approvedUrls.has(evidence.source_url));
+    }
+  }
+  assert.equal(DAILY_MARKET.excluded.sentinel_price_count, 0);
 });
 
 const decodeHtml = (value) => value
@@ -376,12 +406,11 @@ test("a category with no observations renders no chart and says so", { skip: ren
   }
 });
 
-test("RAM exposes factual prices while keeping the aggregate series distinct", { skip: renderedSkip }, () => {
+test("RAM exposes factual price history without making the private index a user-facing caveat", { skip: renderedSkip }, () => {
   const ram = pages.get("out/price-history/ram/index.html");
   assert.ok(ram, "expected the RAM workspace");
   assert.match(ram, /Validated retail prices and exact-product histories are public\./u);
-  assert.match(ram, /The aggregate RAM index is still withheld\./u);
-  assert.match(ram, /No publishable index point exists\./u);
+  assert.doesNotMatch(ram, /aggregate RAM index|No publishable index point|index withheld/iu);
   assert.match(ram, /Visit retailer/u);
   assert.equal(ram.includes("index-chart"), false, "closed aggregate RAM index rendered numerical geometry");
   assert.equal(isPublic, false, "factual offer publication must not open the aggregate methodology gate");
@@ -571,7 +600,26 @@ test("Cloudflare target remains static and deployment is bound to the approved f
   assert.equal(approval.status, "approved");
   assert.equal(approval.scope.factual_offers, true);
   for (const locked of ["aggregate_index", "methodology", "basket", "baseline", "historical_reference", "deflator", "research_publication", "recommendations", "paid_affiliate_tracking"]) assert.equal(approval.scope[locked], false, `${locked} must remain locked`);
-  execFileSync(process.execPath, ["scripts/deploy-approved-public-preview.mjs", "--check"], { stdio: "pipe" });
+  const dashboardPolicy = JSON.parse(readFileSync("config/daily-market-dashboard-policy.v1.json", "utf8"));
+  assert.equal(dashboardPolicy.unrelated_authorities.production_deployment, false);
+  assert.throws(
+    () => execFileSync(process.execPath, ["scripts/deploy-approved-public-preview.mjs", "--check"], { stdio: "pipe" }),
+    /reviewed deployment surface changed after approval/u,
+    "an unapproved dashboard surface must fail closed",
+  );
+});
+
+test("deployment digest covers every Daily Dashboard and Event Line authority and artefact", () => {
+  const deployScript = readFileSync("scripts/deploy-approved-public-preview.mjs", "utf8");
+  for (const required of [
+    "data/public-dashboard",
+    "config/daily-market-dashboard-policy.v1.json",
+    "config/event-line-publication-policy.v1.json",
+    "scripts/build-daily-market.mjs",
+    "scripts/build-event-line.mjs",
+    "schemas/daily-market-dashboard.v1.schema.json",
+    "schemas/event-line.v1.schema.json",
+  ]) assert.ok(deployScript.includes(required), required);
 });
 
 test("the Pages workflow is manual, withheld and cannot deploy", () => {

@@ -1,0 +1,1443 @@
+{
+  "policy_id": "sf-daily-market-dashboard-v1",
+  "dataset_id": "ram",
+  "market": "GB",
+  "currency": "GBP",
+  "time_zone": "Europe/London",
+  "first_date": "2023-01-31",
+  "latest_date": "2026-08-17",
+  "declared_products": [
+    {
+      "mpn": "CMK32GX5M2B6000C36",
+      "manufacturer": "Corsair",
+      "model": "Corsair VENGEANCE DDR5-6000 CL36 Black",
+      "memory_type": "DDR5",
+      "capacity_gb": 32,
+      "module_count": 2,
+      "speed_mt_s": 6000,
+      "form_factor": "UDIMM"
+    },
+    {
+      "mpn": "KF560C30BBEK2-32",
+      "manufacturer": "Kingston Technology",
+      "model": "Kingston FURY Beast DDR5 6000 CL30",
+      "memory_type": "DDR5",
+      "capacity_gb": 32,
+      "module_count": 2,
+      "speed_mt_s": 6000,
+      "form_factor": "UDIMM"
+    },
+    {
+      "mpn": "KF564C32RSK2-32",
+      "manufacturer": "Kingston Technology",
+      "model": "Kingston FURY Renegade DDR5 6400 CL32",
+      "memory_type": "DDR5",
+      "capacity_gb": 32,
+      "module_count": 2,
+      "speed_mt_s": 6400,
+      "form_factor": "UDIMM"
+    }
+  ],
+  "points": [
+    {
+      "date": "2023-01-31",
+      "typical_minor": 15060,
+      "low_minor": 15060,
+      "high_minor": 15060,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 15060,
+          "low_minor": 15060,
+          "high_minor": 15060,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-97f0e6f3e53c48e2dbcdb026",
+          "observed_at": "2023-01-31T16:46:06Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "ccl",
+          "retailer_name": "CCL",
+          "item_price_minor": 15060,
+          "source_url": "https://web.archive.org/web/20230131164606id_/https://www.cclonline.com/kf564c32rsk2-32-kingston-fury-renegade-32gb-2x16gb-6400mhz-ddr5-memory-kit-390326/"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-97f0e6f3e53c48e2dbcdb026",
+          "observed_at": "2023-01-31T16:46:06Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "ccl",
+          "retailer_name": "CCL",
+          "item_price_minor": 15060,
+          "source_url": "https://web.archive.org/web/20230131164606id_/https://www.cclonline.com/kf564c32rsk2-32-kingston-fury-renegade-32gb-2x16gb-6400mhz-ddr5-memory-kit-390326/"
+        }
+      ]
+    },
+    {
+      "date": "2023-09-26",
+      "typical_minor": 15060,
+      "low_minor": 15060,
+      "high_minor": 15060,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 15060,
+          "low_minor": 15060,
+          "high_minor": 15060,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-eb8305f6a8d9baefed916089",
+          "observed_at": "2023-09-26T09:31:57Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "ccl",
+          "retailer_name": "CCL",
+          "item_price_minor": 15060,
+          "source_url": "https://web.archive.org/web/20230926093157id_/https://www.cclonline.com/kf564c32rsk2-32-kingston-fury-renegade-32gb-2x16gb-6400mhz-ddr5-memory-kit-390326/"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-eb8305f6a8d9baefed916089",
+          "observed_at": "2023-09-26T09:31:57Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "ccl",
+          "retailer_name": "CCL",
+          "item_price_minor": 15060,
+          "source_url": "https://web.archive.org/web/20230926093157id_/https://www.cclonline.com/kf564c32rsk2-32-kingston-fury-renegade-32gb-2x16gb-6400mhz-ddr5-memory-kit-390326/"
+        }
+      ]
+    },
+    {
+      "date": "2024-01-15",
+      "typical_minor": 10699,
+      "low_minor": 10699,
+      "high_minor": 10699,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 10699,
+          "low_minor": 10699,
+          "high_minor": 10699,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-664e6ba24c1d07efb412d134",
+          "observed_at": "2024-01-15T03:31:38Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 10699,
+          "source_url": "https://web.archive.org/web/20240115033138id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-664e6ba24c1d07efb412d134",
+          "observed_at": "2024-01-15T03:31:38Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 10699,
+          "source_url": "https://web.archive.org/web/20240115033138id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ]
+    },
+    {
+      "date": "2024-02-27",
+      "typical_minor": 10898,
+      "low_minor": 10898,
+      "high_minor": 10898,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 10898,
+          "low_minor": 10898,
+          "high_minor": 10898,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-0b6e4793454819c61b62791f",
+          "observed_at": "2024-02-27T03:36:29Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 10898,
+          "source_url": "https://web.archive.org/web/20240227033629id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-0b6e4793454819c61b62791f",
+          "observed_at": "2024-02-27T03:36:29Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 10898,
+          "source_url": "https://web.archive.org/web/20240227033629id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ]
+    },
+    {
+      "date": "2024-04-22",
+      "typical_minor": 14999,
+      "low_minor": 14999,
+      "high_minor": 14999,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 14999,
+          "low_minor": 14999,
+          "high_minor": 14999,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-5ce80720ea3345d48644966a",
+          "observed_at": "2024-04-22T22:41:01Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "overclockers-uk",
+          "retailer_name": "Overclockers UK",
+          "item_price_minor": 14999,
+          "source_url": "https://web.archive.org/web/20240422224101id_/https://www.overclockers.co.uk/kingston-fury-renegade-32gb-2x16gb-ddr5-pc5-51200c32-6400mhz-dual-channel-my-29n-ks.html"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-5ce80720ea3345d48644966a",
+          "observed_at": "2024-04-22T22:41:01Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "overclockers-uk",
+          "retailer_name": "Overclockers UK",
+          "item_price_minor": 14999,
+          "source_url": "https://web.archive.org/web/20240422224101id_/https://www.overclockers.co.uk/kingston-fury-renegade-32gb-2x16gb-ddr5-pc5-51200c32-6400mhz-dual-channel-my-29n-ks.html"
+        }
+      ]
+    },
+    {
+      "date": "2024-09-09",
+      "typical_minor": 11399,
+      "low_minor": 11399,
+      "high_minor": 11399,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 11399,
+          "low_minor": 11399,
+          "high_minor": 11399,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-3dbab3523429504102f86af5",
+          "observed_at": "2024-09-09T01:35:59Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 11399,
+          "source_url": "https://web.archive.org/web/20240909013559id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-3dbab3523429504102f86af5",
+          "observed_at": "2024-09-09T01:35:59Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 11399,
+          "source_url": "https://web.archive.org/web/20240909013559id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ]
+    },
+    {
+      "date": "2024-10-08",
+      "typical_minor": 13098,
+      "low_minor": 13098,
+      "high_minor": 13098,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 13098,
+          "low_minor": 13098,
+          "high_minor": 13098,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-112056b9b90eb93ab0e3277f",
+          "observed_at": "2024-10-08T02:55:31Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "ccl",
+          "retailer_name": "CCL",
+          "item_price_minor": 13098,
+          "source_url": "https://web.archive.org/web/20241008025531id_/https://www.cclonline.com/kf564c32rsk2-32-kingston-fury-renegade-32gb-2x16gb-6400mhz-ddr5-memory-kit-390326/"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-112056b9b90eb93ab0e3277f",
+          "observed_at": "2024-10-08T02:55:31Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "ccl",
+          "retailer_name": "CCL",
+          "item_price_minor": 13098,
+          "source_url": "https://web.archive.org/web/20241008025531id_/https://www.cclonline.com/kf564c32rsk2-32-kingston-fury-renegade-32gb-2x16gb-6400mhz-ddr5-memory-kit-390326/"
+        }
+      ]
+    },
+    {
+      "date": "2024-11-12",
+      "typical_minor": 11999,
+      "low_minor": 11999,
+      "high_minor": 11999,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 11999,
+          "low_minor": 11999,
+          "high_minor": 11999,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-d4ba77fefa4c82ffccbc7368",
+          "observed_at": "2024-11-12T23:24:23Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "overclockers-uk",
+          "retailer_name": "Overclockers UK",
+          "item_price_minor": 11999,
+          "source_url": "https://web.archive.org/web/20241112232423id_/https://www.overclockers.co.uk/corsair-vengeance-lpx-32gb-2x16gb-ddr5-pc5-49600c36-6000mhz-dual-channel-mem-crs-01176.html"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-d4ba77fefa4c82ffccbc7368",
+          "observed_at": "2024-11-12T23:24:23Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "overclockers-uk",
+          "retailer_name": "Overclockers UK",
+          "item_price_minor": 11999,
+          "source_url": "https://web.archive.org/web/20241112232423id_/https://www.overclockers.co.uk/corsair-vengeance-lpx-32gb-2x16gb-ddr5-pc5-49600c36-6000mhz-dual-channel-mem-crs-01176.html"
+        }
+      ]
+    },
+    {
+      "date": "2025-01-17",
+      "typical_minor": 11247,
+      "low_minor": 9995,
+      "high_minor": 12499,
+      "product_count": 2,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 2,
+      "coverage_permille": 666,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 9995,
+          "low_minor": 9995,
+          "high_minor": 9995,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 12499,
+          "low_minor": 12499,
+          "high_minor": 12499,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-c42df2b1e625413bb31dc928",
+          "observed_at": "2025-01-17T00:17:41Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF560C30BBEK2-32",
+          "retailer_id": "overclockers-uk",
+          "retailer_name": "Overclockers UK",
+          "item_price_minor": 9995,
+          "source_url": "https://web.archive.org/web/20250117001741id_/https://www.overclockers.co.uk/kingston-fury-beast-expo-32gb-2x16gb-ddr5-c30-6000mhz-dual-channel-ki-mem-kng-03705.html"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-861ffca328cae4d47bf9f14e",
+          "observed_at": "2025-01-17T05:54:52Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "overclockers-uk",
+          "retailer_name": "Overclockers UK",
+          "item_price_minor": 12499,
+          "source_url": "https://web.archive.org/web/20250117055452id_/https://www.overclockers.co.uk/kingston-fury-renegade-32gb-2x16gb-ddr5-pc5-51200c32-6400mhz-dual-channel-my-29n-ks.html"
+        }
+      ]
+    },
+    {
+      "date": "2025-02-09",
+      "typical_minor": 11999,
+      "low_minor": 11999,
+      "high_minor": 11999,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 11999,
+          "low_minor": 11999,
+          "high_minor": 11999,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-d1afca89388c1428611f81fa",
+          "observed_at": "2025-02-09T05:28:12Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "overclockers-uk",
+          "retailer_name": "Overclockers UK",
+          "item_price_minor": 11999,
+          "source_url": "https://web.archive.org/web/20250209052812id_/https://www.overclockers.co.uk/corsair-vengeance-lpx-32gb-2x16gb-ddr5-pc5-49600c36-6000mhz-dual-channel-mem-crs-01176.html"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-d1afca89388c1428611f81fa",
+          "observed_at": "2025-02-09T05:28:12Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "overclockers-uk",
+          "retailer_name": "Overclockers UK",
+          "item_price_minor": 11999,
+          "source_url": "https://web.archive.org/web/20250209052812id_/https://www.overclockers.co.uk/corsair-vengeance-lpx-32gb-2x16gb-ddr5-pc5-49600c36-6000mhz-dual-channel-mem-crs-01176.html"
+        }
+      ]
+    },
+    {
+      "date": "2025-02-10",
+      "typical_minor": 11247,
+      "low_minor": 9995,
+      "high_minor": 12499,
+      "product_count": 2,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 2,
+      "coverage_permille": 666,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 9995,
+          "low_minor": 9995,
+          "high_minor": 9995,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 12499,
+          "low_minor": 12499,
+          "high_minor": 12499,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-0e527173e4898fee28d3e255",
+          "observed_at": "2025-02-10T07:08:27Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF560C30BBEK2-32",
+          "retailer_id": "overclockers-uk",
+          "retailer_name": "Overclockers UK",
+          "item_price_minor": 9995,
+          "source_url": "https://web.archive.org/web/20250210070827id_/https://www.overclockers.co.uk/kingston-fury-beast-expo-32gb-2x16gb-ddr5-c30-6000mhz-dual-channel-ki-mem-kng-03705.html"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-8a510e916df6ffa632752153",
+          "observed_at": "2025-02-10T01:00:47Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "overclockers-uk",
+          "retailer_name": "Overclockers UK",
+          "item_price_minor": 12499,
+          "source_url": "https://web.archive.org/web/20250210010047id_/https://www.overclockers.co.uk/kingston-fury-renegade-32gb-2x16gb-ddr5-pc5-51200c32-6400mhz-dual-channel-my-29n-ks.html"
+        }
+      ]
+    },
+    {
+      "date": "2025-03-19",
+      "typical_minor": 10199,
+      "low_minor": 10199,
+      "high_minor": 10199,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 10199,
+          "low_minor": 10199,
+          "high_minor": 10199,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-08fe69de9c47e5b818738aaa",
+          "observed_at": "2025-03-19T14:18:50Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 10199,
+          "source_url": "https://web.archive.org/web/20250319141850id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-08fe69de9c47e5b818738aaa",
+          "observed_at": "2025-03-19T14:18:50Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 10199,
+          "source_url": "https://web.archive.org/web/20250319141850id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ]
+    },
+    {
+      "date": "2025-06-19",
+      "typical_minor": 11399,
+      "low_minor": 11399,
+      "high_minor": 11399,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 11399,
+          "low_minor": 11399,
+          "high_minor": 11399,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-b782c3a1cb3e8acc2820d86b",
+          "observed_at": "2025-06-19T06:37:21Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "ccl",
+          "retailer_name": "CCL",
+          "item_price_minor": 11399,
+          "source_url": "https://web.archive.org/web/20250619063721id_/https://www.cclonline.com/kf564c32rsk2-32-kingston-fury-renegade-32gb-2x16gb-6400mhz-ddr5-memory-kit-390326/"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-b782c3a1cb3e8acc2820d86b",
+          "observed_at": "2025-06-19T06:37:21Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "ccl",
+          "retailer_name": "CCL",
+          "item_price_minor": 11399,
+          "source_url": "https://web.archive.org/web/20250619063721id_/https://www.cclonline.com/kf564c32rsk2-32-kingston-fury-renegade-32gb-2x16gb-6400mhz-ddr5-memory-kit-390326/"
+        }
+      ]
+    },
+    {
+      "date": "2025-06-22",
+      "typical_minor": 10799,
+      "low_minor": 10799,
+      "high_minor": 10799,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 10799,
+          "low_minor": 10799,
+          "high_minor": 10799,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-7d9ff9484d994d4fc2466aa4",
+          "observed_at": "2025-06-22T15:03:35Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 10799,
+          "source_url": "https://web.archive.org/web/20250622150335id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-7d9ff9484d994d4fc2466aa4",
+          "observed_at": "2025-06-22T15:03:35Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 10799,
+          "source_url": "https://web.archive.org/web/20250622150335id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ]
+    },
+    {
+      "date": "2025-09-07",
+      "typical_minor": 11399,
+      "low_minor": 11399,
+      "high_minor": 11399,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 11399,
+          "low_minor": 11399,
+          "high_minor": 11399,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-8608f7206846aaf9bafae2dc",
+          "observed_at": "2025-09-07T20:30:52Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF560C30BBEK2-32",
+          "retailer_id": "ccl",
+          "retailer_name": "CCL",
+          "item_price_minor": 11399,
+          "source_url": "https://web.archive.org/web/20250907203052id_/https://www.cclonline.com/kf560c30bbek2-32-kingston-fury-beast-32gb-2x16gb-6000mt-s-ddr5-memory-kit/"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-8608f7206846aaf9bafae2dc",
+          "observed_at": "2025-09-07T20:30:52Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF560C30BBEK2-32",
+          "retailer_id": "ccl",
+          "retailer_name": "CCL",
+          "item_price_minor": 11399,
+          "source_url": "https://web.archive.org/web/20250907203052id_/https://www.cclonline.com/kf560c30bbek2-32-kingston-fury-beast-32gb-2x16gb-6000mt-s-ddr5-memory-kit/"
+        }
+      ]
+    },
+    {
+      "date": "2025-09-16",
+      "typical_minor": 12499,
+      "low_minor": 12499,
+      "high_minor": 12499,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 12499,
+          "low_minor": 12499,
+          "high_minor": 12499,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-1ad71ae38403ef26a5fde15e",
+          "observed_at": "2025-09-16T03:46:14Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "overclockers-uk",
+          "retailer_name": "Overclockers UK",
+          "item_price_minor": 12499,
+          "source_url": "https://web.archive.org/web/20250916034614id_/https://www.overclockers.co.uk/kingston-fury-renegade-32gb-2x16gb-ddr5-pc5-51200c32-6400mhz-dual-channel-my-29n-ks.html"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-1ad71ae38403ef26a5fde15e",
+          "observed_at": "2025-09-16T03:46:14Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "overclockers-uk",
+          "retailer_name": "Overclockers UK",
+          "item_price_minor": 12499,
+          "source_url": "https://web.archive.org/web/20250916034614id_/https://www.overclockers.co.uk/kingston-fury-renegade-32gb-2x16gb-ddr5-pc5-51200c32-6400mhz-dual-channel-my-29n-ks.html"
+        }
+      ]
+    },
+    {
+      "date": "2025-10-17",
+      "typical_minor": 15899,
+      "low_minor": 15899,
+      "high_minor": 15899,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 15899,
+          "low_minor": 15899,
+          "high_minor": 15899,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-8edeffb6712e71e9518ef55f",
+          "observed_at": "2025-10-17T06:50:52Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF560C30BBEK2-32",
+          "retailer_id": "overclockers-uk",
+          "retailer_name": "Overclockers UK",
+          "item_price_minor": 15899,
+          "source_url": "https://web.archive.org/web/20251017065052id_/https://www.overclockers.co.uk/kingston-fury-beast-expo-32gb-2x16gb-ddr5-c30-6000mhz-dual-channel-ki-mem-kng-03705.html"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-8edeffb6712e71e9518ef55f",
+          "observed_at": "2025-10-17T06:50:52Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF560C30BBEK2-32",
+          "retailer_id": "overclockers-uk",
+          "retailer_name": "Overclockers UK",
+          "item_price_minor": 15899,
+          "source_url": "https://web.archive.org/web/20251017065052id_/https://www.overclockers.co.uk/kingston-fury-beast-expo-32gb-2x16gb-ddr5-c30-6000mhz-dual-channel-ki-mem-kng-03705.html"
+        }
+      ]
+    },
+    {
+      "date": "2025-12-18",
+      "typical_minor": 36449,
+      "low_minor": 36449,
+      "high_minor": 36449,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 36449,
+          "low_minor": 36449,
+          "high_minor": 36449,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-329f3d5952e85bec28eb2017",
+          "observed_at": "2025-12-18T09:55:40Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 36449,
+          "source_url": "https://web.archive.org/web/20251218095540id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-329f3d5952e85bec28eb2017",
+          "observed_at": "2025-12-18T09:55:40Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 36449,
+          "source_url": "https://web.archive.org/web/20251218095540id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-11",
+      "typical_minor": 46298,
+      "low_minor": 46298,
+      "high_minor": 46298,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 46298,
+          "low_minor": 46298,
+          "high_minor": 46298,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-b89d708d175d9ca5293ed2fb",
+          "observed_at": "2026-02-11T18:18:54Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 46298,
+          "source_url": "https://web.archive.org/web/20260211181854id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-b89d708d175d9ca5293ed2fb",
+          "observed_at": "2026-02-11T18:18:54Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 46298,
+          "source_url": "https://web.archive.org/web/20260211181854id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ]
+    },
+    {
+      "date": "2026-02-21",
+      "typical_minor": 40999,
+      "low_minor": 40999,
+      "high_minor": 40999,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 40999,
+          "low_minor": 40999,
+          "high_minor": 40999,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-79264a67cbfc1c792fe91c4c",
+          "observed_at": "2026-02-21T20:29:59Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "ccl",
+          "retailer_name": "CCL",
+          "item_price_minor": 40999,
+          "source_url": "https://web.archive.org/web/20260221202959id_/https://www.cclonline.com/kf564c32rsk2-32-kingston-fury-renegade-32gb-2x16gb-6400mhz-ddr5-memory-kit-390326/"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-79264a67cbfc1c792fe91c4c",
+          "observed_at": "2026-02-21T20:29:59Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "ccl",
+          "retailer_name": "CCL",
+          "item_price_minor": 40999,
+          "source_url": "https://web.archive.org/web/20260221202959id_/https://www.cclonline.com/kf564c32rsk2-32-kingston-fury-renegade-32gb-2x16gb-6400mhz-ddr5-memory-kit-390326/"
+        }
+      ]
+    },
+    {
+      "date": "2026-03-27",
+      "typical_minor": 48398,
+      "low_minor": 48398,
+      "high_minor": 48398,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 48398,
+          "low_minor": 48398,
+          "high_minor": 48398,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-e6c1a6a359fb429198e336d4",
+          "observed_at": "2026-03-27T18:58:09Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 48398,
+          "source_url": "https://web.archive.org/web/20260327185809id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-e6c1a6a359fb429198e336d4",
+          "observed_at": "2026-03-27T18:58:09Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 48398,
+          "source_url": "https://web.archive.org/web/20260327185809id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ]
+    },
+    {
+      "date": "2026-05-14",
+      "typical_minor": 49199,
+      "low_minor": 49199,
+      "high_minor": 49199,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 49199,
+          "low_minor": 49199,
+          "high_minor": 49199,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-2ac00a94bdabfcb017052704",
+          "observed_at": "2026-05-14T19:13:28Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 49199,
+          "source_url": "https://web.archive.org/web/20260514191328id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-2ac00a94bdabfcb017052704",
+          "observed_at": "2026-05-14T19:13:28Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 49199,
+          "source_url": "https://web.archive.org/web/20260514191328id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ]
+    },
+    {
+      "date": "2026-07-29",
+      "typical_minor": 52399,
+      "low_minor": 52399,
+      "high_minor": 52399,
+      "product_count": 1,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 1,
+      "coverage_permille": 333,
+      "capture_basis": "archive",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 52399,
+          "low_minor": 52399,
+          "high_minor": 52399,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-9f448e7cbb5d4b9f14971d26",
+          "observed_at": "2026-07-29T20:41:05Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 52399,
+          "source_url": "https://web.archive.org/web/20260729204105id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-9f448e7cbb5d4b9f14971d26",
+          "observed_at": "2026-07-29T20:41:05Z",
+          "observation_kind": "archived_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 52399,
+          "source_url": "https://web.archive.org/web/20260729204105id_/https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-12",
+      "typical_minor": 61128,
+      "low_minor": 60690,
+      "high_minor": 61566,
+      "product_count": 2,
+      "declared_product_count": 3,
+      "retailer_count": 1,
+      "observation_count": 2,
+      "coverage_permille": 666,
+      "capture_basis": "direct",
+      "products": [
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 60690,
+          "low_minor": 60690,
+          "high_minor": 60690,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 61566,
+          "low_minor": 61566,
+          "high_minor": 61566,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-0b6e831df89d79320c024cae",
+          "observed_at": "2026-08-12T12:45:05Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "KF560C30BBEK2-32",
+          "retailer_id": "kingston-memory-shop",
+          "retailer_name": "KingstonMemoryShop",
+          "item_price_minor": 60690,
+          "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-beast-kf560c30bbek2-32-32gb-16gb-x2-ddr5-6000mt-s-black-memory-dimm-expo"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-76aeee0d006fc16b7ef02114",
+          "observed_at": "2026-08-12T12:45:05Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "kingston-memory-shop",
+          "retailer_name": "KingstonMemoryShop",
+          "item_price_minor": 61566,
+          "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-13",
+      "typical_minor": 60690,
+      "low_minor": 52399,
+      "high_minor": 61566,
+      "product_count": 3,
+      "declared_product_count": 3,
+      "retailer_count": 2,
+      "observation_count": 3,
+      "coverage_permille": 1000,
+      "capture_basis": "direct",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 52399,
+          "low_minor": 52399,
+          "high_minor": 52399,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 60690,
+          "low_minor": 60690,
+          "high_minor": 60690,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 61566,
+          "low_minor": 61566,
+          "high_minor": 61566,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-13c89f9ad89723a304508bd1",
+          "observed_at": "2026-08-13T12:45:05Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 52399,
+          "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-baf5061a01e02b46f97e1509",
+          "observed_at": "2026-08-13T12:45:05Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "kingston-memory-shop",
+          "retailer_name": "KingstonMemoryShop",
+          "item_price_minor": 61566,
+          "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-14",
+      "typical_minor": 60690,
+      "low_minor": 52399,
+      "high_minor": 61566,
+      "product_count": 3,
+      "declared_product_count": 3,
+      "retailer_count": 2,
+      "observation_count": 3,
+      "coverage_permille": 1000,
+      "capture_basis": "direct",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 52399,
+          "low_minor": 52399,
+          "high_minor": 52399,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 60690,
+          "low_minor": 60690,
+          "high_minor": 60690,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 61566,
+          "low_minor": 61566,
+          "high_minor": 61566,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-258584dd8270ec00e3beb17e",
+          "observed_at": "2026-08-14T12:45:04Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 52399,
+          "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-c154d07d4af521ea8e87a1c5",
+          "observed_at": "2026-08-14T12:45:04Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "kingston-memory-shop",
+          "retailer_name": "KingstonMemoryShop",
+          "item_price_minor": 61566,
+          "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-15",
+      "typical_minor": 60690,
+      "low_minor": 52399,
+      "high_minor": 61566,
+      "product_count": 3,
+      "declared_product_count": 3,
+      "retailer_count": 2,
+      "observation_count": 3,
+      "coverage_permille": 1000,
+      "capture_basis": "direct",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 52399,
+          "low_minor": 52399,
+          "high_minor": 52399,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 60690,
+          "low_minor": 60690,
+          "high_minor": 60690,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 61566,
+          "low_minor": 61566,
+          "high_minor": 61566,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-81d36dd031984f0a24143d01",
+          "observed_at": "2026-08-15T12:45:05Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 52399,
+          "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-00574321b1ac55d85be4a354",
+          "observed_at": "2026-08-15T12:45:05Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "kingston-memory-shop",
+          "retailer_name": "KingstonMemoryShop",
+          "item_price_minor": 61566,
+          "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-16",
+      "typical_minor": 60690,
+      "low_minor": 52399,
+      "high_minor": 61566,
+      "product_count": 3,
+      "declared_product_count": 3,
+      "retailer_count": 2,
+      "observation_count": 3,
+      "coverage_permille": 1000,
+      "capture_basis": "direct",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 52399,
+          "low_minor": 52399,
+          "high_minor": 52399,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 60690,
+          "low_minor": 60690,
+          "high_minor": 60690,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 61566,
+          "low_minor": 61566,
+          "high_minor": 61566,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-487b8c404c0038f14a0003dc",
+          "observed_at": "2026-08-16T12:45:06Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 52399,
+          "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-ccf753320b56d51faae14693",
+          "observed_at": "2026-08-16T12:45:06Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "kingston-memory-shop",
+          "retailer_name": "KingstonMemoryShop",
+          "item_price_minor": 61566,
+          "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-17",
+      "typical_minor": 60690,
+      "low_minor": 52399,
+      "high_minor": 61566,
+      "product_count": 3,
+      "declared_product_count": 3,
+      "retailer_count": 2,
+      "observation_count": 3,
+      "coverage_permille": 1000,
+      "capture_basis": "direct",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 52399,
+          "low_minor": 52399,
+          "high_minor": 52399,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 60690,
+          "low_minor": 60690,
+          "high_minor": 60690,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 61566,
+          "low_minor": 61566,
+          "high_minor": 61566,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-b50b9dbe1d2228a75a10d896",
+          "observed_at": "2026-08-17T10:30:06Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 52399,
+          "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-2760c7ef32a285cfd7da28cc",
+          "observed_at": "2026-08-17T10:30:06Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "kingston-memory-shop",
+          "retailer_name": "KingstonMemoryShop",
+          "item_price_minor": 61566,
+          "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
+        }
+      ]
+    }
+  ],
+  "excluded": {
+    "not_in_stock_count": 0,
+    "sentinel_price_count": 0
+  }
+}

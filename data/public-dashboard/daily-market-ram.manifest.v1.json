@@ -1,0 +1,30 @@
+{
+  "schema_version": 1,
+  "manifest_id": "sf-daily-market-ram-manifest-v1",
+  "source_latest_observed_at": "2026-08-17T10:30:06Z",
+  "generator": {
+    "path": "scripts/build-daily-market.mjs",
+    "sha256": "d878cbd5bda3cd5b648bd859d93a6baed427168ca37cb396d7a061c5c76a62fc"
+  },
+  "calculation_engine": {
+    "path": "lib/daily-market.ts",
+    "sha256": "61f5ab8604d7c7baca57d62a0bec46498a4efc474e1bfd011795a9374e01e25e"
+  },
+  "policy": {
+    "path": "config/daily-market-dashboard-policy.v1.json",
+    "sha256": "3eae1d3d0868d3afc00e96a235f061fcccbb28ebe763be18038a7487561dffb2"
+  },
+  "schema": {
+    "path": "schemas/daily-market-dashboard.v1.schema.json",
+    "sha256": "1b2de0cc93392927493d22d4235ce1198e753c9d1f6755c81bb47a65aa82f650"
+  },
+  "input": {
+    "path": "data/public-offers/offers-ram.v1.json",
+    "dataset_id": "ram",
+    "sha256": "8319c030c16fa73d5bfb30bb681a395b6ffee015c6547bd64789d57cd2256524"
+  },
+  "output": {
+    "path": "data/public-dashboard/daily-market-ram.v1.json",
+    "sha256": "cf9a9130463de541471ac23b6a51a0d818785315fee1a8ed69eff7d1869634da"
+  }
+}

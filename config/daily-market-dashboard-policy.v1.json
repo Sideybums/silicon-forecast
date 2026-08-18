@@ -1,0 +1,90 @@
+{
+  "schema_version": 1,
+  "policy_id": "sf-daily-market-dashboard-v1",
+  "approved_by": {
+    "name": "David Sidebottom",
+    "role": "project_owner"
+  },
+  "approved_at": "2026-08-18T03:13:13Z",
+  "approval_record": {
+    "channel": "interactive_project_session",
+    "response": "I also approve this and it should be pushed.",
+    "approved_scope": "Repository publication of the Daily Market Dashboard surface, removal of observed-day homepage messaging, removal of public index emphasis, and monthly plotting for ranges longer than 30 days. Production deployment remains separately locked."
+  },
+  "status": "approved_for_repository_publication",
+  "scope": {
+    "market": "GB",
+    "category": "ram",
+    "source_payload": "data/public-offers/offers-ram.v1.json",
+    "price_basis": "VAT-included item price; delivery excluded",
+    "daily_calendar": "Europe/London",
+    "declared_roster": "products present in the separately approved factual-offer payload",
+    "public_surfaces": [
+      "homepage daily RAM chart",
+      "RAM price-history workspace",
+      "source-linked daily low and high evidence",
+      "separate reviewed event-line empty state"
+    ]
+  },
+  "calculation": {
+    "intraday_selection": "latest qualifying observation per Europe/London calendar day, exact MPN and retailer",
+    "product_typical": "median of one selected qualifying price per retailer",
+    "category_typical": "median of per-product daily medians; one exact MPN receives one vote",
+    "daily_low": "minimum selected qualifying observation",
+    "daily_high": "maximum selected qualifying observation",
+    "even_median": "integer minor-unit midpoint rounded half-up",
+    "availability": "in_stock only",
+    "currency": "GBP",
+    "vat_state": "included",
+    "gap_policy": "no interpolation, forward-fill, backfill or line across an unobserved calendar day",
+    "range_anchor": "latest retained qualifying observation date, never browser current date",
+    "presentation_granularity": {
+      "7D": "daily points",
+      "30D": "daily points",
+      "3M": "one monthly point",
+      "1Y": "one monthly point",
+      "ALL": "one monthly point"
+    },
+    "monthly_point": "rounded arithmetic average of the daily typical minor-unit prices retained in that Europe/London calendar month",
+    "monthly_gap_policy": "no point for an unobserved month and no line across an unobserved month",
+    "monthly_range": "no monthly low/high whisker; daily source evidence remains available in the price-history workspace"
+  },
+  "quality": {
+    "excluded_exact_item_price_minor": [9999999],
+    "excluded_reason": "known retailer placeholder amount",
+    "temporal_outlier_suppression": false,
+    "note": "Large but otherwise qualifying price movements are not silently removed. Further outlier rules require a separately reviewed policy revision."
+  },
+  "claims": {
+    "allowed": [
+      "typical retained observed price",
+      "low and high among retained qualifying observations",
+      "coverage against the released exact-product roster",
+      "direction versus the immediately preceding calendar day only when the same exact products are represented"
+    ],
+    "prohibited": [
+      "complete UK market price",
+      "supported statistical index",
+      "recommendation or ranking",
+      "causal claim",
+      "current checkout guarantee"
+    ]
+  },
+  "events": {
+    "structure_implemented_for_review": true,
+    "empty_surface_approved": true,
+    "numeric_influence": false,
+    "real_markers_require_separate_exact_revision_review": true,
+    "empty_state_until_reviewed_marker_exists": true
+  },
+  "unrelated_authorities": {
+    "formal_matched_model_index": false,
+    "basket_or_reference_selection": false,
+    "deflator": false,
+    "new_source_approval": false,
+    "collector_fetch": false,
+    "production_deployment": false,
+    "recommendations": false,
+    "paid_affiliate_tracking": false
+  }
+}

@@ -56,7 +56,7 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
         <div>
           <p className="section-label">Canonical workspace</p>
           <h2>{entry.shortName} price history</h2>
-          <p>{offers ? `Browse ${offers.observations.length} released dated observations across ${offers.products.length} exact products, with raw history and retailer source links. The aggregate index remains separately withheld.` : view.state === "withheld" ? "Explore the research template, evidence standard and deliberately withheld chart region." : view.state === "public" ? "Open the dated category series, coverage gaps, exact-product histories and reviewed context." : "See the category template and its honest not-collecting state."}</p>
+          <p>{offers ? `Browse ${offers.observations.length} released dated observations across ${offers.products.length} exact products, with price history and retailer source links.` : view.state === "withheld" ? "Explore the research template, evidence standard and deliberately withheld chart region." : view.state === "public" ? "Open the dated category series, coverage gaps, exact-product histories and reviewed context." : "See the category template and why no collection is active."}</p>
         </div>
         <Link className="button-link" href={`/price-history/${entry.slug}/`}>Open {entry.shortName} workspace →</Link>
       </section>

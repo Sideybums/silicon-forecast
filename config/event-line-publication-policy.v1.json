@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "policy_id": "sf-public-event-line-v1",
+  "status": "implemented_structure_for_review",
+  "requested_by": "David Sidebottom",
+  "requested_on": "2026-08-18",
+  "scope": {
+    "category": "ram",
+    "public_empty_state": true,
+    "real_markers": false
+  },
+  "required_review_record_fields": [
+    "event_id",
+    "headline",
+    "publisher",
+    "author",
+    "source_url",
+    "publication_date",
+    "event_date",
+    "interpretation",
+    "uncertainty",
+    "counter_evidence",
+    "revision",
+    "review_id"
+  ],
+  "public_marker_fields": [
+    "event_id",
+    "headline",
+    "publisher",
+    "author",
+    "source_url",
+    "publication_date",
+    "event_date",
+    "interpretation",
+    "uncertainty",
+    "counter_evidence",
+    "revision"
+  ],
+  "wording_contract": {
+    "chronology_only": true,
+    "causation_prohibited": true,
+    "numeric_influence": false,
+    "missing_author_must_be_explicit": true,
+    "counter_evidence_required": true,
+    "separate_exact_revision_approval_required": true
+  },
+  "authority": {
+    "publish_empty_contract": true,
+    "publish_real_marker": false,
+    "select_research": false,
+    "approve_source": false,
+    "approve_interpretation": false,
+    "alter_prices_or_index": false,
+    "production_deployment": false
+  }
+}

@@ -12,7 +12,7 @@ export function CategoryGrid() {
       </div>
       {components.map((entry, index) => {
         const view = categoryViewFor(entry);
-        const status = offersFor(entry.dataset) ? "Observed prices public · index withheld" : view.state === "public" ? "Public series" : view.state === "withheld" ? "Active research · numbers withheld" : "Not collecting";
+        const status = offersFor(entry.dataset) ? "Observed price history" : view.state === "public" ? "Public series" : view.state === "withheld" ? "Active research · numbers withheld" : "Not collecting";
         return (
           <Link className="category-row" href={`/categories/${entry.slug}/`} key={entry.slug} data-programme={entry.programme}>
             <span className="category-index">{String(index + 1).padStart(2, "0")}</span>

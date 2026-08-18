@@ -9,6 +9,10 @@ import indexRam from "@/data/public-projection/index-ram.v1.json";
 import productsRam from "@/data/public-projection/products-ram.v1.json";
 import eventsRam from "@/data/public-projection/events-ram.v1.json";
 import offersRam from "@/data/public-offers/offers-ram.v1.json";
+import dailyMarketRam from "@/data/public-dashboard/daily-market-ram.v1.json";
+import eventLineRam from "@/data/public-dashboard/event-line-ram.v1.json";
+import { buildDailyMarketDataset, type DailyMarketDataset } from "@/lib/daily-market";
+import { assertPublicEventLine, type PublicEventLineDataset } from "@/lib/event-line";
 import type { ComponentEntry } from "@/lib/components-registry";
 import { seriesIsPublic } from "@/lib/publication-gate";
 
@@ -135,12 +139,29 @@ export type PublicOffersDataset = {
   observations: PublicOfferObservation[];
 };
 
+
 const OFFER_DATASETS: Record<string, PublicOffersDataset> = {
   ram: offersRam as PublicOffersDataset,
 };
 
 export function offersFor(dataset: string | null): PublicOffersDataset | null {
   return dataset ? (OFFER_DATASETS[dataset] ?? null) : null;
+}
+
+export function dailyMarketFor(dataset: string | null): DailyMarketDataset | null {
+  if (dataset !== "ram") return null;
+  const offers = offersFor(dataset);
+  const dashboard = dailyMarketRam as DailyMarketDataset;
+  if (!offers) return null;
+  const replay = buildDailyMarketDataset(offers);
+  if (JSON.stringify(replay) !== JSON.stringify(dashboard)) throw new Error("Daily dashboard artifact does not replay from the public offer payload");
+  return dashboard;
+}
+
+
+export function eventLineFor(dataset: string | null): PublicEventLineDataset | null {
+  if (dataset !== "ram") return null;
+  return assertPublicEventLine(eventLineRam as PublicEventLineDataset);
 }
 
 export function offerProductFor(dataset: string | null, mpn: string): PublicOfferProduct | null {
