@@ -206,6 +206,24 @@
       "tranche_file": "data/observations/candidate/uk-primary-retail-20260818T103007Z.v1.json",
       "evidence_ledger": "research/evidence/primary-retail-20260818T103007Z/ledger.v1.json",
       "global_integration_audit": "research/audits/uk-primary-retail-global-integration-audit-20260818T103007Z.v1.json"
+    },
+    {
+      "run_id": "sf-collection-run-20260819T103006Z",
+      "collector_version": 1,
+      "started_at": "2026-08-19T10:30:06Z",
+      "completed_at": "2026-08-19T10:32:25Z",
+      "outcome": "completed",
+      "targets_attempted": 45,
+      "observations_retained": 35,
+      "abstentions": 10,
+      "abstention_reasons": {
+        "HTTP_403": 5,
+        "UNKNOWN": 2,
+        "MPN_NOT_VISIBLE": 3
+      },
+      "tranche_file": "data/observations/candidate/uk-primary-retail-20260819T103006Z.v1.json",
+      "evidence_ledger": "research/evidence/primary-retail-20260819T103006Z/ledger.v1.json",
+      "global_integration_audit": "research/audits/uk-primary-retail-global-integration-audit-20260819T103006Z.v1.json"
     }
   ],
   "missed_slots": [
