@@ -188,6 +188,132 @@
       "tranche_file": "data/observations/candidate/uk-primary-retail-20260817T103006Z.v1.json",
       "evidence_ledger": "research/evidence/primary-retail-20260817T103006Z/ledger.v1.json",
       "global_integration_audit": "research/audits/uk-primary-retail-global-integration-audit-20260817T103006Z.v1.json"
+    },
+    {
+      "run_id": "sf-collection-run-20260818T103007Z",
+      "collector_version": 1,
+      "started_at": "2026-08-18T10:30:07Z",
+      "completed_at": "2026-08-18T10:32:25Z",
+      "outcome": "completed",
+      "targets_attempted": 45,
+      "observations_retained": 35,
+      "abstentions": 10,
+      "abstention_reasons": {
+        "HTTP_403": 5,
+        "UNKNOWN": 2,
+        "MPN_NOT_VISIBLE": 3
+      },
+      "tranche_file": "data/observations/candidate/uk-primary-retail-20260818T103007Z.v1.json",
+      "evidence_ledger": "research/evidence/primary-retail-20260818T103007Z/ledger.v1.json",
+      "global_integration_audit": "research/audits/uk-primary-retail-global-integration-audit-20260818T103007Z.v1.json"
+    },
+    {
+      "run_id": "sf-collection-run-20260819T103006Z",
+      "collector_version": 1,
+      "started_at": "2026-08-19T10:30:06Z",
+      "completed_at": "2026-08-19T10:32:25Z",
+      "outcome": "completed",
+      "targets_attempted": 45,
+      "observations_retained": 35,
+      "abstentions": 10,
+      "abstention_reasons": {
+        "HTTP_403": 5,
+        "UNKNOWN": 2,
+        "MPN_NOT_VISIBLE": 3
+      },
+      "tranche_file": "data/observations/candidate/uk-primary-retail-20260819T103006Z.v1.json",
+      "evidence_ledger": "research/evidence/primary-retail-20260819T103006Z/ledger.v1.json",
+      "global_integration_audit": "research/audits/uk-primary-retail-global-integration-audit-20260819T103006Z.v1.json"
+    },
+    {
+      "run_id": "sf-collection-run-20260820T103006Z",
+      "collector_version": 1,
+      "started_at": "2026-08-20T10:30:06Z",
+      "completed_at": "2026-08-20T10:32:25Z",
+      "outcome": "completed",
+      "targets_attempted": 45,
+      "observations_retained": 35,
+      "abstentions": 10,
+      "abstention_reasons": {
+        "HTTP_403": 5,
+        "UNKNOWN": 2,
+        "MPN_NOT_VISIBLE": 3
+      },
+      "tranche_file": "data/observations/candidate/uk-primary-retail-20260820T103006Z.v1.json",
+      "evidence_ledger": "research/evidence/primary-retail-20260820T103006Z/ledger.v1.json",
+      "global_integration_audit": "research/audits/uk-primary-retail-global-integration-audit-20260820T103006Z.v1.json"
+    },
+    {
+      "run_id": "sf-collection-run-20260821T103007Z",
+      "collector_version": 1,
+      "started_at": "2026-08-21T10:30:07Z",
+      "completed_at": "2026-08-21T10:32:19Z",
+      "outcome": "completed",
+      "targets_attempted": 45,
+      "observations_retained": 35,
+      "abstentions": 10,
+      "abstention_reasons": {
+        "HTTP_403": 5,
+        "UNKNOWN": 2,
+        "MPN_NOT_VISIBLE": 3
+      },
+      "tranche_file": "data/observations/candidate/uk-primary-retail-20260821T103007Z.v1.json",
+      "evidence_ledger": "research/evidence/primary-retail-20260821T103007Z/ledger.v1.json",
+      "global_integration_audit": "research/audits/uk-primary-retail-global-integration-audit-20260821T103007Z.v1.json"
+    },
+    {
+      "run_id": "sf-collection-run-20260822T103010Z",
+      "collector_version": 1,
+      "started_at": "2026-08-22T10:30:10Z",
+      "completed_at": "2026-08-22T10:32:24Z",
+      "outcome": "completed",
+      "targets_attempted": 45,
+      "observations_retained": 35,
+      "abstentions": 10,
+      "abstention_reasons": {
+        "HTTP_403": 5,
+        "UNKNOWN": 2,
+        "MPN_NOT_VISIBLE": 3
+      },
+      "tranche_file": "data/observations/candidate/uk-primary-retail-20260822T103010Z.v1.json",
+      "evidence_ledger": "research/evidence/primary-retail-20260822T103010Z/ledger.v1.json",
+      "global_integration_audit": "research/audits/uk-primary-retail-global-integration-audit-20260822T103010Z.v1.json"
+    },
+    {
+      "run_id": "sf-collection-run-20260823T103006Z",
+      "collector_version": 1,
+      "started_at": "2026-08-23T10:30:06Z",
+      "completed_at": "2026-08-23T10:32:23Z",
+      "outcome": "completed",
+      "targets_attempted": 45,
+      "observations_retained": 35,
+      "abstentions": 10,
+      "abstention_reasons": {
+        "HTTP_403": 5,
+        "UNKNOWN": 2,
+        "MPN_NOT_VISIBLE": 3
+      },
+      "tranche_file": "data/observations/candidate/uk-primary-retail-20260823T103006Z.v1.json",
+      "evidence_ledger": "research/evidence/primary-retail-20260823T103006Z/ledger.v1.json",
+      "global_integration_audit": "research/audits/uk-primary-retail-global-integration-audit-20260823T103006Z.v1.json"
+    },
+    {
+      "run_id": "sf-collection-run-20260824T103006Z",
+      "collector_version": 1,
+      "started_at": "2026-08-24T10:30:06Z",
+      "completed_at": "2026-08-24T10:32:24Z",
+      "outcome": "completed",
+      "targets_attempted": 45,
+      "observations_retained": 35,
+      "abstentions": 10,
+      "abstention_reasons": {
+        "HTTP_403": 5,
+        "UNKNOWN": 2,
+        "MPN_NOT_VISIBLE": 3
+      },
+      "tranche_file": "data/observations/candidate/uk-primary-retail-20260824T103006Z.v1.json",
+      "evidence_ledger": "research/evidence/primary-retail-20260824T103006Z/ledger.v1.json",
+      "global_integration_audit": "research/audits/uk-primary-retail-global-integration-audit-20260824T103006Z.v1.json"
     }
   ],
   "missed_slots": [
