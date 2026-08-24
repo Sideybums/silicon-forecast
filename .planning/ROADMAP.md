@@ -19,7 +19,7 @@ A narrow public research-preview site is an approved enabling exception to that 
 
 ### Governed repository release — Daily observed-market dashboard
 
-**Status:** Owner-approved for repository publication on 2026-08-18; production deployment remains separately digest-locked.
+**Status:** Owner-approved, digest-bound and production-verified on 2026-08-18.
 
 - The candidate derives one latest qualifying price per UK calendar day, exact MPN and retailer; a product median gives each retailer one vote, and a category median gives each observed exact MPN one vote.
 - The dashboard publishes retained low/high evidence and explicit released-roster coverage. Direction is suppressed unless adjacent calendar days contain the same exact MPN set. Missing days remain disconnected. The homepage omits internal observed-day counts.
@@ -27,7 +27,16 @@ A narrow public research-preview site is an approved enabling exception to that 
 - The calculation replays from the checksum-bound factual-offer payload and is bound to an executable schema, calculation-engine hash, policy, input and output manifest. The known £99,999.99 placeholder is quarantined; no general temporal outlier threshold has been selected.
 - This is an approved factual-derivation repository publication class, not the Phase 5 basket-vintage-linked index. The public surface does not promote or apologise for the private index. It selects no basket, baseline, reference, deflator, source, threshold or claim beyond its approval contract.
 - The Event Line is a separate executable empty contract. Real markers, research selection, interpretations and editorial publication remain locked and require an exact reviewed revision.
-- The existing production approval intentionally rejects this changed surface. Production requires a new digest-bound deployment approval covering every dashboard/Event Line policy, schema, generator, manifest and payload.
+- The production approval binds every dashboard/Event Line policy, schema, generator, manifest and payload; any later surface change fails closed.
+
+### Governed repository release — exact-MPN retailer comparison
+
+**Status:** Eight-retailer roster and UI design owner-approved on 2026-08-24; candidate implementation verified and pushed on `feat/retailer-comparison-matrix`, and remains outside production pending a separately digest-bound deployment approval.
+
+- The approved display axis is AWD-IT, Box.co.uk, CCL, Currys, KingstonMemoryShop, Novatech, Overclockers UK and Scan. It authorises a public comparison axis only; no unobserved price, source completeness claim, prospective fetch or automatic retailer relationship is inferred.
+- The RAM workspace renders released exact MPNs as rows and the approved retailers as columns. Each cell contains the latest qualifying released observation for that exact pair, or an explicit blank when none exists.
+- Three factual spotlight cards select lower, middle and higher retained observations after first reducing to one latest qualifying observation per released product. They are neither recommendations nor market-wide extrema.
+- The roster is a schema-validated, policy-checksummed and replayable public artefact. Its generator, schema, policy, manifest and payload are deployment-bound; the prior production approval must reject the changed surface.
 
 ## Phase 1 — Source and Methodology Gate
 
