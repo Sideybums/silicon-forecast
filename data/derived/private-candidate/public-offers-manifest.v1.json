@@ -9,8 +9,8 @@
   "generator": {
     "path": "lib/public-offers.mjs",
     "version": 1,
-    "sha256": "89cc8ac9027de6f49dbda333c5038cf9e594c05f1396d039230ebe47ae9eb638",
-    "byte_length": 27806
+    "sha256": "b4d1a8a2cfcd993ea933b2f34dc141d8247a5926743d7b0eff1fa9cf28070769",
+    "byte_length": 31471
   },
   "build_script": {
     "path": "scripts/build-public-offers.mjs",
@@ -18,6 +18,11 @@
     "byte_length": 1522
   },
   "inputs": [
+    {
+      "path": "config/factual-offer-active-release.v1.json",
+      "sha256": "accb9df48f1dddc8a8a33a3642dfa766e35baa2a15ea9cdc1f3b60eb6412caea",
+      "byte_length": 4270
+    },
     {
       "path": "config/factual-offer-publication-policy.v1.json",
       "sha256": "c5ede45b38d2cf20fefeb8891f9b01e96a2a8197d917a8f9f08523404461062f",

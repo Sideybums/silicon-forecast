@@ -4,8 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/build-public-offers.mjs --check && node scripts/build-daily-market.mjs --check && node scripts/build-event-line.mjs --check && node scripts/build-retailer-comparison.mjs --check && node scripts/build-public-site-data.mjs --check && next build && node --test tests/daily-market.test.mjs tests/event-line.test.mjs tests/public-boundary.test.mjs tests/public-offer-view.test.mjs tests/public-offers.test.mjs tests/site-content.test.mjs",
+    "build": "node scripts/build-public-offers.mjs --check && node scripts/build-factual-offer-promotion-candidates.mjs --check && node scripts/build-daily-market.mjs --check && node scripts/build-event-line.mjs --check && node scripts/build-retailer-comparison.mjs --check && node scripts/build-public-site-data.mjs --check && next build && node --test tests/daily-market.test.mjs tests/event-line.test.mjs tests/public-boundary.test.mjs tests/public-offer-view.test.mjs tests/public-offers.test.mjs tests/site-content.test.mjs",
     "build:data": "node scripts/build-public-offers.mjs && node scripts/build-daily-market.mjs && node scripts/build-event-line.mjs && node scripts/build-retailer-comparison.mjs && node scripts/build-public-site-data.mjs",
+    "build:promotion-candidates": "node scripts/build-factual-offer-promotion-candidates.mjs",
     "start": "next start",
     "lint": "eslint .",
     "test": "node --test tests/*.test.mjs",

@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { cpSync, mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
@@ -39,9 +39,19 @@ function mutateJson(root, relativePath, mutate) {
   const value = JSON.parse(readFileSync(target, "utf8"));
   mutate(value);
   writeFileSync(target, `${JSON.stringify(value, null, 2)}\n`);
+  const lockPath = path.join(root, "config/factual-offer-active-release.v1.json");
+  if (relativePath.startsWith("data/observations/candidate/") && existsSync(lockPath)) {
+    const lock = JSON.parse(readFileSync(lockPath, "utf8"));
+    const input = lock.observation_inputs.find((item) => item.path === relativePath);
+    if (input) {
+      input.sha256 = sha256(readFileSync(target));
+      writeFileSync(lockPath, `${JSON.stringify(lock, null, 2)}\n`);
+    }
+  }
 }
 
 const rootUrl = (root) => pathToFileURL(`${root}${path.sep}`);
+const buildPrivateFixture = (root) => buildPublicOffers(rootUrl(root), { privateCandidateObservationPaths: readJson("config/factual-offer-active-release.v1.json", root).observation_inputs.map((item) => item.path) });
 const keyOf = (item) => `${item.mpn}|${item.retailer_id}|${item.observed_at}`;
 const directObservation = (tranche) => tranche.observations.find((item) => item.observation_id === DIRECT_ID);
 const directEvidence = (ledger) => ledger.entries.find((item) => item.facts?.mpn === "KF560C30BBEK2-32" && item.seller_display_name === "KingstonMemoryShop");
@@ -72,6 +82,23 @@ test("public offer projection replays byte-for-byte and remains non-empty", () =
   assert.equal(publicOfferCanonicalBytes(rebuilt.payload), readFileSync("data/public-offers/offers-ram.v1.json", "utf8"));
   assert.equal(publicOfferCanonicalBytes(rebuilt.manifest), readFileSync("data/derived/private-candidate/public-offers-manifest.v1.json", "utf8"));
   assert.equal(publicOfferCanonicalBytes(rebuilt.reviewQueue), readFileSync("data/review-queue/public-offer-exceptions.v1.json", "utf8"));
+});
+
+test("an unpromoted collector tranche cannot alter the active public release", (t) => {
+  const root = temporaryFixture(t);
+  const before = buildPublicOffers(rootUrl(root));
+  const unlisted = "data/observations/candidate/uk-primary-retail-20990101T000000Z.v1.json";
+  cpSync(path.join(root, DIRECT_TRANCHE), path.join(root, unlisted));
+  const after = buildPublicOffers(rootUrl(root));
+  assert.deepEqual(after.payload, before.payload);
+  assert.deepEqual(after.reviewQueue, before.reviewQueue);
+  assert.equal(after.manifest.inputs.some((entry) => entry.path === unlisted), false);
+});
+
+test("active release payload checksum blocks transitive evidence drift", (t) => {
+  const root = temporaryFixture(t);
+  mutateJson(root, DIRECT_LEDGER, (ledger) => { ledger.entries = ledger.entries.filter((item) => item !== directEvidence(ledger)); });
+  assert.throws(() => buildPublicOffers(rootUrl(root)), /payload drifted from its checksum-bound release lock/u);
 });
 
 test("manifest binds generator, build script, policy, payload, and every discovered candidate input", () => {
@@ -120,31 +147,31 @@ test("arbitrary direct host is excluded even when the ledger is mutated to agree
   const evil = "https://evil.example/product";
   mutateJson(root, DIRECT_TRANCHE, (tranche) => { directObservation(tranche).source.source_url = evil; directObservation(tranche).evidence.source_url = evil; });
   mutateJson(root, DIRECT_LEDGER, (ledger) => { directEvidence(ledger).source_url = evil; directEvidence(ledger).final_url = evil; });
-  assertDirectExcluded(buildPublicOffers(rootUrl(root)), "source_url_contract_mismatch");
+  assertDirectExcluded(buildPrivateFixture(root), "source_url_contract_mismatch");
 });
 
 test("omitted or hash-mismatched evidence and omitted product scope are fail-closed", (t) => {
   const evidenceRoot = temporaryFixture(t);
   mutateJson(evidenceRoot, DIRECT_LEDGER, (ledger) => { ledger.entries = ledger.entries.filter((item) => item !== directEvidence(ledger)); });
-  assertDirectExcluded(buildPublicOffers(rootUrl(evidenceRoot)), "missing_evidence_ledger_entry");
+  assertDirectExcluded(buildPrivateFixture(evidenceRoot), "missing_evidence_ledger_entry");
 
   const hashRoot = temporaryFixture(t);
   mutateJson(hashRoot, DIRECT_TRANCHE, (tranche) => { directObservation(tranche).evidence.response_sha256 = "0".repeat(64); });
-  assertDirectExcluded(buildPublicOffers(rootUrl(hashRoot)), "evidence_facts_mismatch");
+  assertDirectExcluded(buildPrivateFixture(hashRoot), "evidence_facts_mismatch");
 
   const productRoot = temporaryFixture(t);
   mutateJson(productRoot, DIRECT_TRANCHE, (tranche) => { delete directObservation(tranche).product; });
-  assertDirectExcluded(buildPublicOffers(rootUrl(productRoot)), "evidence_facts_mismatch");
+  assertDirectExcluded(buildPrivateFixture(productRoot), "evidence_facts_mismatch");
 });
 
 test("future observation and ambiguous availability are fail-closed", (t) => {
   const futureRoot = temporaryFixture(t);
   mutateJson(futureRoot, DIRECT_TRANCHE, (tranche) => { directObservation(tranche).observed_at = "2026-08-17T10:30:07Z"; });
-  assertDirectExcluded(buildPublicOffers(rootUrl(futureRoot)), "invalid_or_future_observed_at");
+  assertDirectExcluded(buildPrivateFixture(futureRoot), "invalid_or_future_observed_at");
 
   const ambiguousRoot = temporaryFixture(t);
   mutateJson(ambiguousRoot, DIRECT_TRANCHE, (tranche) => { directObservation(tranche).availability.eligibility_semantics = "ambiguous"; });
-  const result = buildPublicOffers(rootUrl(ambiguousRoot));
+  const result = buildPrivateFixture(ambiguousRoot);
   assertDirectExcluded(result, "availability_not_explicitly_orderable");
   assertDirectExcluded(result, "record_specific_ambiguity_restriction_or_rejection");
 });
@@ -165,7 +192,7 @@ test("conflicting same-key archived facts suppress every record for that key", (
     clone.facts.item_price_minor += 1;
     ledger.entries.push(clone);
   });
-  const result = buildPublicOffers(rootUrl(root));
+  const result = buildPrivateFixture(root);
   const key = "KF564C32RSK2-32|ccl|2023-01-31T16:46:06Z";
   assert.equal(result.payload.observations.some((item) => keyOf(item) === key), false);
   assert.equal(result.reviewQueue.items.filter((item) => item.reasons.includes("conflicting_same_retailer_timestamp") && item.observed_at === "2023-01-31T16:46:06Z").length, 2);
@@ -184,7 +211,7 @@ test("an exact duplicate retains one record and queues the rest", (t) => {
     clone.evidence_id = `${ARCHIVE_EVIDENCE_ID}-duplicate`;
     ledger.entries.push(clone);
   });
-  const result = buildPublicOffers(rootUrl(root));
+  const result = buildPrivateFixture(root);
   const key = "KF564C32RSK2-32|ccl|2023-01-31T16:46:06Z";
   assert.equal(result.payload.observations.filter((item) => keyOf(item) === key).length, 1);
   assert.ok(result.reviewQueue.items.some((item) => item.reasons.includes("duplicate_fact") && item.observation_id.endsWith("-duplicate")));

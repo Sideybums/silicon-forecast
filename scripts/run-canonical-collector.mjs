@@ -15,7 +15,7 @@ import { mkdirSync, readFileSync, writeFileSync, existsSync } from "node:fs";
 import process from "node:process";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import { COLLECTOR_VERSION, SCHEDULE, buildEstablishedKitShapes, buildProspectiveObservation, detectMissedSlots, runCollection } from "../lib/canonical-collector.mjs";
+import { COLLECTOR_VERSION, SCHEDULE, buildEstablishedKitShapes, buildProspectiveObservation, detectMissedSlots, runCollection, selectCollectionTargets } from "../lib/canonical-collector.mjs";
 import { acquireCollectorLock, gitCommand, pushCollectorCommit, synchroniseCollectorCheckout } from "../lib/collector-runtime.mjs";
 import { buildGlobalIntegrationAudit, discoverProspectiveTranches, writeGlobalIntegrationAudit } from "../lib/global-integration-audit.mjs";
 import { appendExcludedProspectiveCandidate, CANDIDATE_INPUT_MANIFEST } from "../lib/candidate-input-manifest.mjs";
@@ -58,7 +58,6 @@ const stamp = `${now.toISOString().slice(0, 19).replace(/[-:]/gu, "")}Z`;
 const iso = `${now.toISOString().slice(0, 19)}Z`;
 
 const registry = JSON.parse(readFileSync(new URL("data/catalogue/collection-targets.v1.json", repo), "utf8"));
-const targets = registry.targets.filter((t) => t.collection_priority <= maxPriority).slice(0, maxTargets);
 
 const ledger = existsSync(LEDGER)
   ? JSON.parse(readFileSync(LEDGER, "utf8"))
@@ -72,6 +71,9 @@ const ledger = existsSync(LEDGER)
       runs: [],
       missed_slots: [],
     };
+
+const targetSelection = selectCollectionTargets(registry.targets, { maxPriority, maxTargets, priorRuns: ledger.runs });
+const targets = targetSelection.targets;
 
 // Record any scheduled slots that passed with no run at all. This is the whole
 // point of the ledger: launchd catches up at most once after a sleep, so
@@ -92,7 +94,8 @@ for (const slot of missed) {
 }
 
 process.stdout.write(`canonical collector v${COLLECTOR_VERSION}\n`);
-process.stdout.write(`  targets:      ${targets.length} (priority <= ${maxPriority}, max ${maxTargets})\n`);
+process.stdout.write(`  targets:      ${targets.length} (eligible ${targetSelection.state.eligible_target_count}, priority <= ${maxPriority}, max ${maxTargets})\n`);
+process.stdout.write(`  rotation:     ${targetSelection.state.cursor_basis}; after ${targetSelection.state.started_after_target_key ?? "start"}\n`);
 process.stdout.write(`  last run:     ${lastRun ?? "none recorded"}\n`);
 process.stdout.write(`  missed slots: ${missed.length}${missed.length ? ` -> ${missed.join(", ")}` : ""}\n`);
 
@@ -148,6 +151,7 @@ const evidence = usable.map((r) => ({
 const runRecord = {
   run_id: `sf-collection-run-${stamp}`,
   collector_version: COLLECTOR_VERSION,
+  target_selection: targetSelection.state,
   started_at: iso,
   completed_at: `${new Date().toISOString().slice(0, 19)}Z`,
   outcome: usable.length ? "completed" : "completed_with_no_usable_readings",
