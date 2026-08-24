@@ -9,6 +9,7 @@ import indexRam from "@/data/public-projection/index-ram.v1.json";
 import productsRam from "@/data/public-projection/products-ram.v1.json";
 import eventsRam from "@/data/public-projection/events-ram.v1.json";
 import offersRam from "@/data/public-offers/offers-ram.v1.json";
+import retailerComparisonRam from "@/data/public-offers/retailer-comparison-ram.v1.json";
 import dailyMarketRam from "@/data/public-dashboard/daily-market-ram.v1.json";
 import eventLineRam from "@/data/public-dashboard/event-line-ram.v1.json";
 import { buildDailyMarketDataset, type DailyMarketDataset } from "@/lib/daily-market";
@@ -139,13 +140,33 @@ export type PublicOffersDataset = {
   observations: PublicOfferObservation[];
 };
 
+export type RetailerComparisonDataset = {
+  schema_version: 1;
+  dataset_id: "ram";
+  market: "GB";
+  currency: "GBP";
+  policy_id: string;
+  policy_sha256: string;
+  absence_label: string;
+  spotlight_labels: [string, string, string];
+  retailers: Array<{ retailer_id: string; display_name: string }>;
+};
+
 
 const OFFER_DATASETS: Record<string, PublicOffersDataset> = {
   ram: offersRam as PublicOffersDataset,
 };
 
+const RETAILER_COMPARISON_DATASETS: Record<string, RetailerComparisonDataset> = {
+  ram: retailerComparisonRam as RetailerComparisonDataset,
+};
+
 export function offersFor(dataset: string | null): PublicOffersDataset | null {
   return dataset ? (OFFER_DATASETS[dataset] ?? null) : null;
+}
+
+export function retailerComparisonFor(dataset: string | null): RetailerComparisonDataset | null {
+  return dataset ? (RETAILER_COMPARISON_DATASETS[dataset] ?? null) : null;
 }
 
 export function dailyMarketFor(dataset: string | null): DailyMarketDataset | null {

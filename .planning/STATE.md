@@ -2,12 +2,20 @@
 
 ## Project Reference
 
-See `.planning/PROJECT.md` (last updated 2026-08-09).
+See `.planning/PROJECT.md` (last updated 2026-08-24).
 
 **Core value:** Let people follow dated UK component-price graphs as they would a stock, with reviewed market/news overlays explaining possible effects while deterministic calculations and complete lineage remain authoritative.
-**Current focus:** Ship and verify the approved observation-first RAM preview: checksum-bound qualifying UK primary-retail prices, retailer/archive evidence links and sparse exact-MPN histories. The aggregate index, methodology, basket, baseline, reference, deflator, recommendations and automated research publication remain unavailable.
+**Current focus:** Verify and publish the owner-approved exact-MPN-by-retailer RAM comparison candidate: an eight-retailer display roster, honest blank cells and three deterministic factual spotlights. No competing fetch, methodology, basket, baseline, reference, deflator, recommendation or automated research publication is authorised.
 
 ## Status
+
+### Exact-MPN retailer-comparison candidate — 2026-08-24
+
+- David approved the display roster: AWD-IT, Box.co.uk, CCL, Currys, KingstonMemoryShop, Novatech, Overclockers UK and Scan. This is public-axis authority, not authority to fabricate missing observations, claim complete retailer coverage or launch a competing prospective fetch.
+- `config/retailer-comparison-roster.v1.json`, its draft-07 schema, generator and committed public artefact form a deterministic checksum-bound contract. The artefact currently defines eight retailer axes and the lower/middle/higher factual spotlight labels.
+- The RAM workspace now reduces each exact MPN/retailer pair to its latest qualifying released observation and renders absent pairs as explicit blanks. Spotlight selection first reduces to one latest observation per released product, then chooses deterministic lower/middle/higher positions without repeating an MPN.
+- The existing 44-observation factual payload is unchanged. No new observation, product, source fetch, threshold, aggregate method, recommendation or market-completeness claim was introduced.
+- Production remains on the dashboard release at `1d222308df0742362ecc301ba263678605822334`; the changed comparison surface is fail-closed pending full verification and a separate exact deployment approval.
 
 ### Observation-first factual release and deployment approval — 2026-08-17
 
@@ -15,7 +23,7 @@ See `.planning/PROJECT.md` (last updated 2026-08-09).
 - `config/factual-offer-publication-policy.v1.json` is the closed publication contract. The generated public payload currently contains 44 observations across three products; 33 nonconforming or duplicate records remain private. An approved fourth identity has no qualifying observation and therefore no public route.
 - Every released observation is bound to reviewed exact identity, catalogue scope, immutable evidence-ledger facts, response hash/length/status, strict timestamps, VAT and availability semantics, and a fixed retailer-host relationship. Conflicting same-retailer/timestamp facts suppress the whole key; points are never joined or interpolated.
 - `data/derived/private-candidate/public-offers-manifest.v1.json` binds policy, inputs, evidence, catalogue/reviews, generator, build script and payload bytes. Public cards and exact-MPN pages distinguish direct retailer observations from archived snapshots and make no current-price, recommendation, ranking or complete-market claim.
-- David separately approved deployment of this exact reviewed preview. `config/factual-offer-deployment-approval.v1.json` binds the policy, manifest, payload and deployment-surface digest. Revision `04026eae2ad45b0d3eaa4c58f4a60f898bbee77c` is deployed and production-verified; any bound change fails closed and requires new approval.
+- David separately approved the factual preview and later Daily Market Dashboard deployment surfaces. `config/factual-offer-deployment-approval.v1.json` binds the policies, manifests, payloads and deployment-surface digest. Revision `1d222308df0742362ecc301ba263678605822334` is deployed and production-verified; any bound change fails closed and requires new approval.
 - Cloudflare Workers Static Assets is the canonical target for `siliconforecast.com` and `www.siliconforecast.com`. GitHub Pages remains manual, withheld and incapable of deployment.
 - Aggregate index publication, methodology, basket, baseline, historical reference, deflator, research/editorial publication, recommendations, paid affiliate tracking, source-family approval and production database mutation remain locked.
 

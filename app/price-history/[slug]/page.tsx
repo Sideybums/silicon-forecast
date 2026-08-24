@@ -5,8 +5,10 @@ import { CategoryStatusPanel } from "@/components/category/CategoryStatusPanel";
 import { ComparisonConsiderations } from "@/components/category/ComparisonConsiderations";
 import { DailyMarketDashboard } from "@/components/dashboard/DailyMarketDashboard";
 import { OfferCard } from "@/components/offers/OfferCard";
+import { OfferMatrix } from "@/components/offers/OfferMatrix";
 import { componentFor, components } from "@/lib/components-registry";
-import { categoryViewFor, dailyMarketFor, eventLineFor, latestOffersByProduct, offersFor } from "@/lib/public-data";
+import { buildOfferMatrix, selectSpotlightOffers } from "@/lib/public-offer-view";
+import { categoryViewFor, dailyMarketFor, eventLineFor, offersFor, retailerComparisonFor } from "@/lib/public-data";
 
 export const dynamicParams = false;
 export function generateStaticParams() { return components.map((entry) => ({ slug: entry.slug })); }
@@ -30,7 +32,9 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
   if (!entry) notFound();
   const view = categoryViewFor(entry);
   const offers = offersFor(entry.dataset);
-  const latest = latestOffersByProduct(entry.dataset);
+  const comparison = retailerComparisonFor(entry.dataset);
+  const spotlights = offers && comparison ? selectSpotlightOffers(offers, comparison) : [];
+  const matrix = offers && comparison ? buildOfferMatrix(offers, comparison) : [];
   const dailyMarket = offers ? dailyMarketFor(entry.slug) : null;
   const eventLine = eventLineFor(entry.slug);
 
@@ -46,16 +50,18 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
       {offers ? (
         <>
           {dailyMarket ? <DailyMarketDashboard dataset={dailyMarket} eventLine={eventLine} /> : null}
-          <section className="latest-offers-section" aria-labelledby="latest-offers-title">
-            <div className="panel-heading"><div><p className="section-label">Latest retained observation per product</p><h2 id="latest-offers-title">Real prices, exact products, direct sources.</h2></div><span className="capture-date">Through {offers.latest_observed_at.slice(0, 10)}</span></div>
-            <p className="method-lede">These are the most recent qualifying observations in this release—not a complete scan of the market and not a guarantee of today&apos;s checkout price. VAT is included; delivery is excluded.</p>
-            <div className="offer-grid">{latest.map(({ product, observation }) => <OfferCard key={product.mpn} dataset={entry.slug} product={product} observation={observation} />)}</div>
+          <section className="latest-offers-section spotlight-offers-section" aria-labelledby="latest-offers-title">
+            <div className="panel-heading"><div><p className="section-label">Retained price spotlights</p><h2 id="latest-offers-title">Lower, middle and higher exact-product observations.</h2></div><span className="capture-date">Through {offers.latest_observed_at.slice(0, 10)}</span></div>
+            <p className="method-lede">One latest qualifying observation is selected per exact MPN, then ordered by retained price. These are factual examples—not recommendations, a complete scan or a guarantee of today&apos;s checkout price.</p>
+            <div className="offer-grid">{spotlights.map(({ label, product, observation }) => <OfferCard key={label} dataset={entry.slug} product={product} observation={observation} spotlightLabel={label} />)}</div>
           </section>
+
+          {comparison ? <OfferMatrix dataset={entry.slug} comparison={comparison} rows={matrix} /> : null}
 
           <section className="observation-release-strip" aria-label="Released factual evidence summary">
             <div><span>Released observations</span><strong>{offers.observations.length}</strong></div>
             <div><span>Exact products</span><strong>{offers.products.length}</strong></div>
-            <div><span>Retailers in history</span><strong>{offers.retailers.length}</strong></div>
+            <div><span>Approved comparison retailers</span><strong>{comparison?.retailers.length ?? offers.retailers.length}</strong></div>
             <div><span>Oldest released observation</span><strong>{offers.observations[0].observed_at.slice(0, 10)}</strong></div>
           </section>
 

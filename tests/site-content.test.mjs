@@ -278,6 +278,19 @@ test("the homepage and RAM workspace expose the approved daily dashboard without
   assert.match(dashboardSource, /range === "3M" \|\| range === "1Y" \|\| range === "ALL"/u);
 });
 
+test("retailer matrix and spotlight surface are explicit, accessible and bounded", () => {
+  const roster = JSON.parse(readFileSync("data/public-offers/retailer-comparison-ram.v1.json", "utf8"));
+  assert.equal(roster.retailers.length, 8);
+  assert.deepEqual(roster.spotlight_labels, ["Lower retained observation", "Middle retained observation", "Higher retained observation"]);
+  const pageSource = readFileSync("app/price-history/[slug]/page.tsx", "utf8");
+  assert.match(pageSource, /selectSpotlightOffers/u);
+  assert.match(pageSource, /<OfferMatrix/u);
+  const matrixSource = readFileSync("components/offers/OfferMatrix.tsx", "utf8");
+  for (const required of ["<caption>", "scope=\"col\"", "scope=\"row\"", "tabIndex={0}", "A blank does not mean unavailable"]) assert.ok(matrixSource.includes(required), required);
+  assert.match(matrixSource, /target="_blank"/u);
+  assert.match(matrixSource, /rel="noopener noreferrer"/u);
+});
+
 test("daily dashboard evidence and derived values resolve only to approved factual observations", () => {
   const approvedIds = new Set(OFFERS.observations.map((item) => item.public_observation_id));
   const approvedUrls = new Set(OFFERS.observations.map((item) => item.source_url));
@@ -602,8 +615,17 @@ test("Cloudflare target remains static and deployment is bound to the approved d
   for (const locked of ["aggregate_index", "methodology", "basket", "baseline", "historical_reference", "deflator", "research_publication", "recommendations", "paid_affiliate_tracking"]) assert.equal(approval.scope[locked], false, `${locked} must remain locked`);
   const dashboardPolicy = JSON.parse(readFileSync("config/daily-market-dashboard-policy.v1.json", "utf8"));
   assert.equal(dashboardPolicy.unrelated_authorities.production_deployment, false);
-  const check = execFileSync(process.execPath, ["scripts/deploy-approved-public-preview.mjs", "--check"], { encoding: "utf8" });
-  assert.match(check, /matches the reviewed surface/u);
+  const currentDigest = execFileSync(process.execPath, ["scripts/deploy-approved-public-preview.mjs", "--print-digest"], { encoding: "utf8" }).trim();
+  if (approval.surface_sha256 === currentDigest) {
+    const check = execFileSync(process.execPath, ["scripts/deploy-approved-public-preview.mjs", "--check"], { encoding: "utf8" });
+    assert.match(check, /matches the reviewed surface/u);
+  } else {
+    assert.throws(
+      () => execFileSync(process.execPath, ["scripts/deploy-approved-public-preview.mjs", "--check"], { encoding: "utf8", stdio: "pipe" }),
+      /Command failed/u,
+      "a changed surface must fail closed until a new deployment approval is issued",
+    );
+  }
 });
 
 test("deployment digest covers every Daily Dashboard and Event Line authority and artefact", () => {
@@ -616,6 +638,9 @@ test("deployment digest covers every Daily Dashboard and Event Line authority an
     "scripts/build-event-line.mjs",
     "schemas/daily-market-dashboard.v1.schema.json",
     "schemas/event-line.v1.schema.json",
+    "config/retailer-comparison-roster.v1.json",
+    "scripts/build-retailer-comparison.mjs",
+    "schemas/retailer-comparison.v1.schema.json",
   ]) assert.ok(deployScript.includes(required), required);
 });
 

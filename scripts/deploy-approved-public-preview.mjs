@@ -12,6 +12,7 @@ const SURFACE_FILES = [
   "config/public-release.v1.json",
   "config/daily-market-dashboard-policy.v1.json",
   "config/event-line-publication-policy.v1.json",
+  "config/retailer-comparison-roster.v1.json",
   "eslint.config.mjs",
   "next.config.ts",
   "package-lock.json",
@@ -20,9 +21,11 @@ const SURFACE_FILES = [
   "scripts/build-public-site-data.mjs",
   "scripts/build-daily-market.mjs",
   "scripts/build-event-line.mjs",
+  "scripts/build-retailer-comparison.mjs",
   "scripts/deploy-approved-public-preview.mjs",
   "schemas/daily-market-dashboard.v1.schema.json",
   "schemas/event-line.v1.schema.json",
+  "schemas/retailer-comparison.v1.schema.json",
   "tsconfig.json",
   "worker.mjs",
   "wrangler.jsonc",
@@ -76,6 +79,11 @@ function validateApproval() {
     approval.bindings?.event_policy,
     approval.bindings?.event_manifest,
     approval.bindings?.event_payload,
+    approval.bindings?.retailer_comparison_policy,
+    approval.bindings?.retailer_comparison_manifest,
+    approval.bindings?.retailer_comparison_payload,
+    approval.bindings?.retailer_comparison_schema,
+    approval.bindings?.retailer_comparison_generator,
   ]) {
     if (!binding?.path || !/^[0-9a-f]{64}$/.test(binding.sha256) || sha256(readFileSync(binding.path)) !== binding.sha256) fail(`bound artefact changed: ${binding?.path ?? "unknown"}`);
   }
