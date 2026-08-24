@@ -5,7 +5,7 @@
 See `.planning/PROJECT.md` (last updated 2026-08-24).
 
 **Core value:** Let people follow dated UK component-price graphs as they would a stock, with reviewed market/news overlays explaining possible effects while deterministic calculations and complete lineage remain authoritative.
-**Current focus:** Verify and publish the owner-approved exact-MPN-by-retailer RAM comparison candidate: an eight-retailer display roster, honest blank cells and three deterministic factual spotlights. No competing fetch, methodology, basket, baseline, reference, deflator, recommendation or automated research publication is authorised.
+**Current focus:** Reconcile the verified retailer-comparison branch with six completed natural collector commits, audit the pending 24 August launchd run, prove and repair collector target rotation using fixture-only tests, and recompute exact-MPN publication eligibility from retained evidence. No competing fetch, methodology, basket, baseline, reference, deflator, recommendation or production deployment is authorised.
 
 ## Status
 
@@ -16,6 +16,8 @@ See `.planning/PROJECT.md` (last updated 2026-08-24).
 - The RAM workspace now reduces each exact MPN/retailer pair to its latest qualifying released observation and renders absent pairs as explicit blanks. Spotlight selection first reduces to one latest observation per released product, then chooses deterministic lower/middle/higher positions without repeating an MPN.
 - The existing 44-observation factual payload is unchanged. No new observation, product, source fetch, threshold, aggregate method, recommendation or market-completeness claim was introduced.
 - Production remains on the dashboard release at `1d222308df0742362ecc301ba263678605822334`; the changed comparison surface is fail-closed pending full verification and a separate exact deployment approval.
+- The comparison implementation and planning record are pushed on `feat/retailer-comparison-matrix` at `66c1a541f7da6ef4341f78c7b0c70f8b2b3254b2`. Final verification passed 75/75 tests plus desktop and 390px visual review. The feature remains unmerged and undeployed.
+- Fresh Git inspection on 24 August found six natural collector commits on `origin/main` through `46ab5c2`; the feature branch is six main-only commits behind and two feature-only commits ahead. The dedicated collector checkout is clean, idle and aligned to `origin/main`; its next run is due at 11:30 BST and must remain the sole prospective fetcher.
 
 ### Observation-first factual release and deployment approval — 2026-08-17
 
@@ -176,7 +178,7 @@ The public frontend now has two deliberately separate states: the checksum-bound
 
 ## Next Action
 
-The observation-first preview is deployed and production-verified. The Daily Market Dashboard and empty Event Line are owner-approved for repository publication; 7D/30D remain daily and longer ranges use one monthly average point. Commit and push the verified feature branch, but do not deploy it under the old approval. Next, expand exact-MPN coverage from existing candidate holdings and repair deterministic collector target rotation without launching a competing fetch. Continue natural launchd collection as the sole prospective fetcher. Phase 6 Wave R0 remains synthetic-only. Real Event Line markers, new source approval and production deployment remain blocked pending explicit decisions.
+The observation-first preview and Daily Market Dashboard are deployed and production-verified. The retailer-comparison candidate is verified and pushed but remains unmerged and undeployed. Do not modify the dedicated collector checkout or launch any prospective fetch before/during the pending 24 August 11:30 BST launchd run. After it completes, audit the immutable tranche, fetch and normally merge current `origin/main` into the feature branch, then execute `mx-4`: prove/fix deterministic target rotation with fixture-only tests and recompute exact-MPN promotion eligibility from all retained evidence. Real Event Line markers, source-family approval, methodology choices and production deployment remain separately locked.
 
 ## Safety Note
 
@@ -186,4 +188,4 @@ The observation-first change adds a separate, additive factual publication class
 
 ---
 *State created: 2026-08-05*
-*Last updated: 2026-08-18 after implementation of the governed Daily observed-market dashboard and empty Event Line candidates for review. The deployed observation preview is unchanged; methodology, event publication, aggregate publication and production deployment of the candidate remain locked.*
+*Last updated: 2026-08-24 after verification and push of the governed retailer-comparison candidate and live reconciliation of collector/main state. The comparison remains unmerged and undeployed; methodology, event publication, aggregate publication and changed-surface production deployment remain locked.*
