@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "release_id": "sf-factual-ram-offers-through-20260817T103006Z-v1",
+  "release_id": "sf-factual-ram-offers-through-20260824T103006Z-v1",
   "claim_class": "dated_factual_primary_retail_offer_observation",
   "policy": {
     "path": "config/factual-offer-publication-policy.v1.json",
@@ -9,8 +9,8 @@
   "generator": {
     "path": "lib/public-offers.mjs",
     "version": 1,
-    "sha256": "89cc8ac9027de6f49dbda333c5038cf9e594c05f1396d039230ebe47ae9eb638",
-    "byte_length": 27806
+    "sha256": "425e70180339fdfd7fd51d6c147ece9cd638be01a5150fa91388e21b14650905",
+    "byte_length": 39364
   },
   "build_script": {
     "path": "scripts/build-public-offers.mjs",
@@ -18,6 +18,16 @@
     "byte_length": 1522
   },
   "inputs": [
+    {
+      "path": "config/factual-offer-active-release.v1.json",
+      "sha256": "e2baea9c3b13b2cc5730da02a133918ee832dadb9e46c50d93f51afe61cf28a3",
+      "byte_length": 6072
+    },
+    {
+      "path": "config/factual-offer-promotion-approval-2026-08-25.v1.json",
+      "sha256": "6b10b93e6777f95e25372526dd69ce8c0e03113e1b45126c5fdd719129622afe",
+      "byte_length": 31852
+    },
     {
       "path": "config/factual-offer-publication-policy.v1.json",
       "sha256": "c5ede45b38d2cf20fefeb8891f9b01e96a2a8197d917a8f9f08523404461062f",
@@ -87,6 +97,41 @@
       "path": "data/observations/candidate/uk-primary-retail-20260817T103006Z.v1.json",
       "sha256": "a7d3f34d5ebc962a7348a2da9032df3fe7a21b68443c7ea33c0278edbaa97a6a",
       "byte_length": 105237
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260818T103007Z.v1.json",
+      "sha256": "dc542b2f79c31a8a4ed8fefbae409aa27f706ba7b736f552f1ec3601c678bcf4",
+      "byte_length": 102393
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260819T103006Z.v1.json",
+      "sha256": "ef669912b2dfab052b2e4cdbe9bc407cb549fefb9fcc51a06da3ae81163a27b4",
+      "byte_length": 102393
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260820T103006Z.v1.json",
+      "sha256": "ffc003d354d8359b5c07aa3b3ebf91db9a4e8c9a26607f16e92773c49653b979",
+      "byte_length": 102393
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260821T103007Z.v1.json",
+      "sha256": "423b45615360ce5b826146de1f01ae50489f7f9a181fff9b5d8733717fc53fdf",
+      "byte_length": 102393
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260822T103010Z.v1.json",
+      "sha256": "2179b5cc15428de0c3e937efd72b00dab50e8091ad39e86c8521074138c9f1d5",
+      "byte_length": 102393
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260823T103006Z.v1.json",
+      "sha256": "8cab1e361b4382dcbcc7629cff110b5750cb479b19daab78a6f2b2756f140dce",
+      "byte_length": 102393
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260824T103006Z.v1.json",
+      "sha256": "6ca15084f8eeb363bfb47040a227e0fd0aec84a03507fd85f3ed1b9a4b34e4a6",
+      "byte_length": 102393
     },
     {
       "path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
@@ -182,13 +227,48 @@
       "path": "research/evidence/primary-retail-20260817T103006Z/ledger.v1.json",
       "sha256": "24d8680c6263a6e3870882feb64aabf093c111e0a3f066c0baf6f774b6e4fbf5",
       "byte_length": 43435
+    },
+    {
+      "path": "research/evidence/primary-retail-20260818T103007Z/ledger.v1.json",
+      "sha256": "43d1b2f4eb4bf4a643b8b63778e1fcadad57033966cd9bd7c953a7142f8d0e1b",
+      "byte_length": 42196
+    },
+    {
+      "path": "research/evidence/primary-retail-20260819T103006Z/ledger.v1.json",
+      "sha256": "b5249f728e676b49fa63649d0e7e858ee2d7f93159f5b27171ea5d668f268cfd",
+      "byte_length": 42196
+    },
+    {
+      "path": "research/evidence/primary-retail-20260820T103006Z/ledger.v1.json",
+      "sha256": "d6310eeb6f2412531d8ab44029030cdd30d28c30f86137f2bff17cfc5b2fcf55",
+      "byte_length": 42196
+    },
+    {
+      "path": "research/evidence/primary-retail-20260821T103007Z/ledger.v1.json",
+      "sha256": "6206aa62d757557658302cc061ce4504306136ecc42780f10a26d3d135fefeb2",
+      "byte_length": 42196
+    },
+    {
+      "path": "research/evidence/primary-retail-20260822T103010Z/ledger.v1.json",
+      "sha256": "cb902039d278d110bb018ae47af415bfefb7e18d55b94135df3ad2f89749c567",
+      "byte_length": 42196
+    },
+    {
+      "path": "research/evidence/primary-retail-20260823T103006Z/ledger.v1.json",
+      "sha256": "db9483ec3ae75e5e2ba892b73a885b4e3aa95949baedd2ff41ee5b5b52153d76",
+      "byte_length": 42196
+    },
+    {
+      "path": "research/evidence/primary-retail-20260824T103006Z/ledger.v1.json",
+      "sha256": "be87dcebe5c3f26fd72288100f47671221bd6b7786cf3b581e900bc599e0a039",
+      "byte_length": 42196
     }
   ],
   "payload": {
     "path": "data/public-offers/offers-ram.v1.json",
-    "sha256": "8319c030c16fa73d5bfb30bb681a395b6ffee015c6547bd64789d57cd2256524",
-    "byte_length": 29631,
-    "record_count": 44
+    "sha256": "5fab2b68a6e9ca2b5609d95344554b7f5a243b67ce1a455f6c2db5bfb3b59ad8",
+    "byte_length": 42574,
+    "record_count": 65
   },
   "authority": {
     "factual_observations": true,

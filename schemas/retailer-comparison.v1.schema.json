@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://siliconforecast.com/schemas/retailer-comparison.v1.schema.json",
+  "title": "Silicon Forecast public retailer comparison roster",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "dataset_id", "market", "currency", "policy_id", "policy_sha256", "absence_label", "spotlight_labels", "retailers"],
+  "properties": {
+    "schema_version": { "const": 1 },
+    "dataset_id": { "const": "ram" },
+    "market": { "const": "GB" },
+    "currency": { "const": "GBP" },
+    "policy_id": { "type": "string", "minLength": 1 },
+    "policy_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+    "absence_label": { "const": "No qualifying released observation" },
+    "spotlight_labels": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3,
+      "items": { "type": "string", "minLength": 1 },
+      "uniqueItems": true
+    },
+    "retailers": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["retailer_id", "display_name"],
+        "properties": {
+          "retailer_id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
+          "display_name": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}

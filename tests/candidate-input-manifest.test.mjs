@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import { createHash } from "node:crypto";
-import { mkdirSync, mkdtempSync, rmSync, writeFileSync } from "node:fs";
+import { mkdirSync, mkdtempSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
 import path from "node:path";
 import { pathToFileURL } from "node:url";
@@ -12,7 +12,8 @@ const sha256 = (bytes) => createHash("sha256").update(bytes).digest("hex");
 test("the private candidate manifest classifies every candidate observation exactly once", () => {
   const root = new URL("../", import.meta.url);
   const manifest = loadCandidateInputManifest(root);
-  assert.equal(manifest.entries.length, 18);
+  const candidateCount = readdirSync(new URL("../data/observations/candidate/", import.meta.url)).filter((name) => name.endsWith(".json")).length;
+  assert.equal(manifest.entries.length, candidateCount);
   assert.equal(manifest.publication_eligible, false);
   assert.ok(manifest.entries.every((entry) => entry.reason.length > 20));
 });

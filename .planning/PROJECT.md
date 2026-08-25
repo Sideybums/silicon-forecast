@@ -39,6 +39,7 @@ Let people follow trustworthy UK component-price graphs over time, inspect dated
 - [ ] Connect reviewed news and research to observed movements using facts, alternatives, counterevidence and human-approved causal language; event overlays remain mathematically separate annotations and never alter, fill or weight numeric series.
 - [ ] Let users compare present prices with meaningful pre-surge history; the public product must not present collection-inception 100 as a normative historical level.
 - [ ] Review the candidate daily observed-market dashboard as a separate factual-derivation publication class. Its implementation does not approve methodology, a supported index, event markers or production deployment.
+- [x] Publish an exact-MPN-by-retailer RAM comparison matrix against an owner-approved eight-retailer display roster, with honest blanks and three deterministic factual spotlights; do not imply complete retailer coverage or buying recommendations.
 
 ### Out of Scope
 
@@ -48,7 +49,7 @@ Let people follow trustworthy UK component-price graphs over time, inspect dated
 - Public API and commercial data resale — require proven demand and explicit redistribution rights.
 - Automated AI-written publication or unapproved forecasts — incompatible with initial trust and accountability requirements.
 - Supported live public index publication remains deferred; the public frontend may explain the primary-retail evidence programme and publish explicitly approved qualifying retail observations only. Other price channels remain private and deferred.
-- The daily dashboard and empty Event Line are approved for repository publication. They remain outside production until a newly bound exact deployment surface is separately approved.
+- The daily dashboard and empty Event Line were deployed through an exact digest-bound approval on 2026-08-18. The later retailer-comparison change remains outside production until its own changed surface is verified and separately approved for deployment.
 - User accounts, premium memberships and alerts — deferred until the core index proves useful.
 - Microservices — unnecessary operational complexity for the MVP.
 - Zero-human corporate operation — legal, security, methodology and publication accountability remain human-governed.

@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "lock_id": "sf-active-factual-offer-release-through-20260824T103006Z-v1",
+  "status": "active_existing_release_boundary",
+  "claim_class": "dated_factual_primary_retail_offer_observation",
+  "dataset_id": "ram",
+  "region": "GB",
+  "prior_release": {
+    "git_commit": "04026eae2ad45b0d3eaa4c58f4a60f898bbee77c",
+    "manifest": {
+      "path": "data/derived/private-candidate/public-offers-manifest.v1.json",
+      "sha256_at_commit": "fd34ede923af7e8973b36d873fd1b5dd4d5217590595af6f65a1357eb898b9d9"
+    },
+    "payload": {
+      "path": "data/public-offers/offers-ram.v1.json",
+      "sha256_at_commit": "8319c030c16fa73d5bfb30bb681a395b6ffee015c6547bd64789d57cd2256524",
+      "record_count": 44,
+      "latest_observed_at": "2026-08-17T10:30:06Z"
+    }
+  },
+  "locked_payload": {
+    "path": "data/public-offers/offers-ram.v1.json",
+    "sha256": "5fab2b68a6e9ca2b5609d95344554b7f5a243b67ce1a455f6c2db5bfb3b59ad8",
+    "record_count": 65,
+    "latest_observed_at": "2026-08-24T10:30:06Z"
+  },
+  "promotion_approval": {
+    "path": "config/factual-offer-promotion-approval-2026-08-25.v1.json",
+    "sha256": "6b10b93e6777f95e25372526dd69ce8c0e03113e1b45126c5fdd719129622afe"
+  },
+  "observation_inputs": [
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-09T122437Z.v1.json",
+      "sha256": "efe276384a828f32b86891422c9519c6b3e15cb4640c0bbc2095edcca4564fb6"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
+      "sha256": "41fd88e7e48cbb343254522d46d3ec74c999f494169da34ecfeefb3ed667428e"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-10T165537Z.v1.json",
+      "sha256": "484361e044d5ed74bb6aaae7c21b32f99141a61e39e15525135e0f04a2b98b10"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-12T124750Z.prospective.v1.json",
+      "sha256": "1f900e20ca1fd2a5e9acff79970ba5b76ef04b924ba3b7dede00a289ccc4bc2a"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260812T114904Z.v1.json",
+      "sha256": "2c18dabff9b2c77ceca36aa391bd17d41f4cb445d4facb8e97963ac3f511d51d"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260812T124505Z.v1.json",
+      "sha256": "5db7317e3096a3f7709410d7b0564a663501c20edcc8509ce1f5dbf499488b04"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260813T124505Z.v1.json",
+      "sha256": "bb7510f8dd29e8727f5aca1aafc527c9516c7f910821eadb378a9c54fa3db6bf"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260814T124504Z.v1.json",
+      "sha256": "4336f22150dde5f0ab0cd17196fe34520767cd9434018dbc12df7f029d55c8ac"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260815T124505Z.v1.json",
+      "sha256": "ae3a665eea20a3fbd28d3a9328531c060cdd4c74b14ec2a40c7bf824b7252d99"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260816T124506Z.v1.json",
+      "sha256": "00a4953a25c0beb81ba9328e71b79bbd46753a7b934fbf2319a97f403e7c7835"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260817T103006Z.v1.json",
+      "sha256": "a7d3f34d5ebc962a7348a2da9032df3fe7a21b68443c7ea33c0278edbaa97a6a"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260818T103007Z.v1.json",
+      "sha256": "dc542b2f79c31a8a4ed8fefbae409aa27f706ba7b736f552f1ec3601c678bcf4"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260819T103006Z.v1.json",
+      "sha256": "ef669912b2dfab052b2e4cdbe9bc407cb549fefb9fcc51a06da3ae81163a27b4"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260820T103006Z.v1.json",
+      "sha256": "ffc003d354d8359b5c07aa3b3ebf91db9a4e8c9a26607f16e92773c49653b979"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260821T103007Z.v1.json",
+      "sha256": "423b45615360ce5b826146de1f01ae50489f7f9a181fff9b5d8733717fc53fdf"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260822T103010Z.v1.json",
+      "sha256": "2179b5cc15428de0c3e937efd72b00dab50e8091ad39e86c8521074138c9f1d5"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260823T103006Z.v1.json",
+      "sha256": "8cab1e361b4382dcbcc7629cff110b5750cb479b19daab78a6f2b2756f140dce"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260824T103006Z.v1.json",
+      "sha256": "6ca15084f8eeb363bfb47040a227e0fd0aec84a03507fd85f3ed1b9a4b34e4a6"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
+      "sha256": "c54210ddc8a607826fc229480eb88c31bbd974111c93f940d3835a12e72cace8"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T040544Z.v1.json",
+      "sha256": "d8fd61d59de4f41f440a7bdacc8cae8af714423ceceabaed430957d8b23efa5e"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T065616Z.v1.json",
+      "sha256": "f0d12da95e4d906b96c76de19bc8e229b9a59234325bdf41bb9f6f153667df69"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-10T130500Z.v1.json",
+      "sha256": "ce2619249b189206a33f18e3d99b1652d984e944318b612ef70651093ea94d5f"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-multi-retailer-2026-08-11T090000Z.v1.json",
+      "sha256": "a1fbc37f47ff053c8afa6631cb87ae4c8ab3905e0c580d4075af15a7b663c23e"
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-scan-depth-2026-08-10T173000Z.v1.json",
+      "sha256": "32bc43f8714779f55d563d269316bd138f9dca283cabdffe9154f7c4a1c53d6f"
+    }
+  ],
+  "authority": {
+    "preserve_existing_release": true,
+    "admit_new_observation_inputs": false,
+    "approve_products": false,
+    "approve_sources": false,
+    "approve_methodology": false,
+    "approve_publication_expansion": false,
+    "approve_deployment": false
+  }
+}

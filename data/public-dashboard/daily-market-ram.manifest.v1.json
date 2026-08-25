@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "manifest_id": "sf-daily-market-ram-manifest-v1",
-  "source_latest_observed_at": "2026-08-17T10:30:06Z",
+  "source_latest_observed_at": "2026-08-24T10:30:06Z",
   "generator": {
     "path": "scripts/build-daily-market.mjs",
     "sha256": "d878cbd5bda3cd5b648bd859d93a6baed427168ca37cb396d7a061c5c76a62fc"
@@ -21,10 +21,10 @@
   "input": {
     "path": "data/public-offers/offers-ram.v1.json",
     "dataset_id": "ram",
-    "sha256": "8319c030c16fa73d5bfb30bb681a395b6ffee015c6547bd64789d57cd2256524"
+    "sha256": "5fab2b68a6e9ca2b5609d95344554b7f5a243b67ce1a455f6c2db5bfb3b59ad8"
   },
   "output": {
     "path": "data/public-dashboard/daily-market-ram.v1.json",
-    "sha256": "cf9a9130463de541471ac23b6a51a0d818785315fee1a8ed69eff7d1869634da"
+    "sha256": "ec30cb9314e261bc54b93c0935720b249c3d22db4272c5a6072033ecd5d881fc"
   }
 }

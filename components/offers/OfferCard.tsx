@@ -6,10 +6,11 @@ const formatObservedAt = (value: string) => new Intl.DateTimeFormat("en-GB", {
   day: "numeric", month: "short", year: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Europe/London", timeZoneName: "short",
 }).format(new Date(value));
 
-export function OfferCard({ dataset, product, observation }: { dataset: string; product: PublicOfferProduct; observation: PublicOfferObservation }) {
+export function OfferCard({ dataset, product, observation, spotlightLabel }: { dataset: string; product: PublicOfferProduct; observation: PublicOfferObservation; spotlightLabel?: string }) {
   const isArchived = observation.observation_kind === "archived_retail_observation";
   return (
     <article className="offer-card">
+      {spotlightLabel ? <p className="offer-spotlight-label">{spotlightLabel}</p> : null}
       <div className="offer-card-heading">
         <div><span>{product.manufacturer}</span><h3>{product.model}</h3></div>
         <div className="offer-capture-status">

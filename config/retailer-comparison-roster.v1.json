@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "policy_id": "sf-retailer-comparison-roster-v1",
+  "status": "approved",
+  "decision": "approve_public_exact_mpn_retailer_comparison_roster",
+  "approved_by": {
+    "name": "David Sidebottom",
+    "role": "project_owner"
+  },
+  "approved_at": "2026-08-24T06:00:06Z",
+  "approval_record": {
+    "channel": "interactive_project_session",
+    "response": "I approve lets comit and push",
+    "approved_scope": "Publish the named retailer roster as columns in an exact-MPN comparison matrix; retain three deterministic lower, middle and higher factual-offer spotlights. Blank cells mean only that no qualifying released observation exists for that MPN and retailer."
+  },
+  "dataset_id": "ram",
+  "market": "GB",
+  "currency": "GBP",
+  "retailers": [
+    { "retailer_id": "awd-it", "display_name": "AWD-IT", "https_hosts": ["www.awd-it.co.uk"] },
+    { "retailer_id": "box-uk", "display_name": "Box.co.uk", "https_hosts": ["box.co.uk", "www.box.co.uk"] },
+    { "retailer_id": "ccl", "display_name": "CCL", "https_hosts": ["www.cclonline.com"] },
+    { "retailer_id": "currys", "display_name": "Currys", "https_hosts": ["www.currys.co.uk"] },
+    { "retailer_id": "kingston-memory-shop", "display_name": "KingstonMemoryShop", "https_hosts": ["www.kingstonmemoryshop.co.uk"] },
+    { "retailer_id": "novatech", "display_name": "Novatech", "https_hosts": ["www.novatech.co.uk"] },
+    { "retailer_id": "overclockers-uk", "display_name": "Overclockers UK", "https_hosts": ["www.overclockers.co.uk"] },
+    { "retailer_id": "scan-computers", "display_name": "Scan", "https_hosts": ["www.scan.co.uk"] }
+  ],
+  "public_absence_label": "No qualifying released observation",
+  "spotlight_labels": [
+    "Lower retained observation",
+    "Middle retained observation",
+    "Higher retained observation"
+  ],
+  "authority": {
+    "public_retailer_axes": true,
+    "visible_blank_cells": true,
+    "factual_offer_spotlights": true,
+    "source_collection_approval": false,
+    "marketplace_stock": false,
+    "recommendation_or_ranking": false,
+    "production_deployment": false
+  },
+  "hard_prohibitions": [
+    "blank_cell_as_no_stock_claim",
+    "current_price_or_current_stock_claim",
+    "recommendation_best_deal_or_value_claim",
+    "marketplace_or_second_hand_offer",
+    "cross_mpn_substitution",
+    "forward_fill_or_interpolation",
+    "unreleased_observation",
+    "automatic_prospective_fetch"
+  ]
+}

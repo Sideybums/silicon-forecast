@@ -24,6 +24,7 @@ const publicSourceFiles = globSync([
   "lib/site.ts",
   "lib/public-data.ts",
   "lib/daily-market.ts",
+  "lib/public-offer-view.ts",
   "lib/components-registry.ts",
   "lib/publication-gate.ts",
   "data/public-projection/**/*",

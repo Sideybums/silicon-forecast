@@ -143,7 +143,7 @@ test("the committed factual-offer payload produces a sparse, source-bound daily 
   const offers = JSON.parse(readFileSync("data/public-offers/offers-ram.v1.json", "utf8"));
   const data = buildDailyMarketDataset(offers);
   assert.equal(data.policy_id, "sf-daily-market-dashboard-v1");
-  assert.equal(data.latest_date, "2026-08-17");
+  assert.equal(data.latest_date, new Intl.DateTimeFormat("en-CA", { timeZone: "Europe/London", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date(offers.latest_observed_at)));
   assert.equal(data.declared_products.length, offers.products.length);
   assert.ok(data.points.length >= 10);
   assert.ok(data.points.some((point) => point.capture_basis === "archive"));

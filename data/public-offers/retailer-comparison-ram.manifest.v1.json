@@ -1,0 +1,20 @@
+{
+  "schema_version": 1,
+  "manifest_id": "sf-retailer-comparison-ram-manifest-v1",
+  "generator": {
+    "path": "scripts/build-retailer-comparison.mjs",
+    "sha256": "c5816a49d60b03836de7c119d23e72af43da8431cfb7dfa82553bd70d4e8c61c"
+  },
+  "policy": {
+    "path": "config/retailer-comparison-roster.v1.json",
+    "sha256": "4e47caed5b56e7bdcf219d6e9e66394601e29df16c24a405f33ea7f1df8b9e27"
+  },
+  "schema": {
+    "path": "schemas/retailer-comparison.v1.schema.json",
+    "sha256": "e436fd5dc48743a8cdf68a11c4b352dcc5d1505f797759c47f2e2e77cdf36ccd"
+  },
+  "output": {
+    "path": "data/public-offers/retailer-comparison-ram.v1.json",
+    "sha256": "7ba8f1dbea52c28a25447fed29d3575675f8f012b82e598a76f166cc1c607ae9"
+  }
+}
