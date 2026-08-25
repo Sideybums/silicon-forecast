@@ -1,7 +1,13 @@
 {
-  "schema_version": 5,
-  "updated_at": "2026-08-25T06:32:29Z",
+  "schema_version": 6,
+  "updated_at": "2026-08-25T13:53:44.280Z",
   "project": "Silicon Forecast",
+  "status": "paused_before_backend_persistence_design",
+  "phase": {
+    "id": "02-platform-catalogue-control-plane",
+    "task": "backend-persistence-design",
+    "human_handover": ".planning/phases/02-platform-catalogue-control-plane/.continue-here.md"
+  },
   "north_star": "Prove one lawful, accurate and reproducible regional DDR5 price-index foundation before expanding scope.",
   "resume_documents": [
     "AGENTS.md",
@@ -10,149 +16,179 @@
     ".planning/ROADMAP.md",
     ".planning/STATE.md",
     ".planning/HANDOFF.json",
-    ".planning/HANDOVER-2026-08-24.md",
+    ".planning/phases/02-platform-catalogue-control-plane/.continue-here.md",
+    ".planning/phases/02-platform-catalogue-control-plane/PLAN.md",
     "docs/AUTONOMY.md",
     "docs/BRIEF-SOURCES.md"
   ],
-  "completed_task": {
-    "id": "mx-4",
-    "title": "Expand exact-MPN publication, fix deterministic collector rotation and publish the reviewed retailer comparison",
-    "status": "completed_verified_deployed",
-    "completed_at": "2026-08-25T06:32:29Z"
-  },
   "repository": {
-    "development_worktree": "/Users/weetoddy/Desktop/Projects/Silicon_Forecast_Recovery",
-    "development_branch": "feat/retailer-comparison-matrix",
-    "release_feature_head": "7af0bdaf15a1cf0837eb9eaad644b17d52baf438",
-    "canonical_main_at_deploy": "e1dbe6ddc9167046d1bb5b8f1ff9a249f0e4fb86",
+    "worktree": "/Users/weetoddy/Desktop/Projects/Silicon_Forecast_Recovery",
+    "handoff_branch": "docs/backend-persistence-handover",
+    "base_commit": "2181685afa98dcc42316c13377f50b932a471431",
     "canonical_remote": "origin/main",
-    "release_ancestor": "eb56fdb638a3aa8fede2e8e169b7ca2b666266e3",
-    "merged_pull_requests": [
-      "#1 Promote reviewed offers and publish retailer comparison",
-      "#2 Approve exact retailer comparison deployment",
-      "#3 Make deployment source digest reproducible",
-      "#4 Bind deployment approval to reproducible release"
-    ],
-    "history_policy_result": "collector, feature and handoff history were merged normally; no rebase, force-push or history rewriting was used",
-    "current_head_rule": "Query origin/main when resuming; the documentation-only handoff merges necessarily post-date canonical_main_at_deploy."
+    "collector_commit_in_base": true,
+    "history_policy": "normal commits and merges only; never rewrite collector or release history"
+  },
+  "completed_context": {
+    "mx_4": "completed_verified_deployed",
+    "retailer_comparison": "deployed_and_live_verified",
+    "cloudflare_version": "9b839548-d4e1-42f0-b6b0-6083e71074a7",
+    "backend_audit": "completed_read_only_independently_reviewed"
   },
   "collector": {
     "sole_scheduler": "launchd",
     "label": "uk.co.siliconforecast.collector",
     "schedule_local": "11:30 daily",
-    "run_at_load": false,
-    "state_at_handoff": "loaded_idle_pending_2026-08-25_run",
-    "recorded_runs": 8,
-    "last_exit_code": 0,
-    "process_lock": "absent",
-    "collector_processes": 0,
     "dedicated_checkout": "/Users/weetoddy/Desktop/Projects/Silicon_Forecast_Collector",
-    "checkout_branch": "main",
-    "checkout_head": "0eaa292954f732660f64eaaf732f7ee0e645d1d6",
-    "checkout_local_origin_main": "0eaa292954f732660f64eaaf732f7ee0e645d1d6",
-    "checkout_clean": true,
-    "checkout_note": "The dedicated checkout was deliberately not fetched or modified before the pending 25 August run; its preflight must fetch and fast-forward to current remote main itself.",
+    "checkout_head": "2181685afa98dcc42316c13377f50b932a471431",
+    "checkout_clean_at_audit": true,
+    "recorded_runs": 9,
+    "last_exit_code": 0,
     "last_completed_run": {
-      "run_id": "20260824T103006Z",
-      "commit": "0eaa292954f732660f64eaaf732f7ee0e645d1d6",
-      "retained_observations": 35,
+      "run_id": "sf-collection-run-20260825T103008Z",
+      "started_at": "2026-08-25T10:30:08Z",
+      "completed_at": "2026-08-25T10:32:23Z",
+      "targets_attempted": 45,
+      "observations_retained": 35,
       "evidence_entries": 35,
-      "tranche_sha256": "6ca15084f8eeb363bfb47040a227e0fd0aec84a03507fd85f3ed1b9a4b34e4a6",
-      "audit_result": "append_only_checksum_bound_private_candidate"
-    },
-    "rotation": {
-      "status": "fixture_proven_and_fixed",
-      "prior_defect": "86 eligible targets were repeatedly truncated to the first 45, starving 41 targets",
-      "identity": "retailer plus normalised MPN",
-      "advance_rule": "cursor advances only after committed success",
-      "fail_closed_rules": [
-        "duplicate target identity",
-        "uncommitted or failed run",
-        "registry drift without deterministic recovery"
-      ]
-    },
-    "pending_run_rule": "Do not manually launch prospective fetches, create a competing scheduler or modify/switch/rebase the dedicated checkout before or during the 11:30 run."
+      "abstentions": 10,
+      "abstention_reasons": {
+        "HTTP_403": 5,
+        "MPN_NOT_VISIBLE": 3,
+        "UNKNOWN": 2
+      },
+      "tranche": "data/observations/candidate/uk-primary-retail-20260825T103008Z.v1.json",
+      "tranche_sha256": "d4fc36847d577ae541db56e62ce9b269a61bc0be73ff804b1cb01a6d29f57366",
+      "evidence_ledger": "research/evidence/primary-retail-20260825T103008Z/ledger.v1.json",
+      "evidence_ledger_sha256": "293cce2e9a1de0227e25fd3eb35c4df8757101dba4272ebd79aeb509c76c518e",
+      "audit_result": "35 observations and 35 evidence entries; zero missing bindings, zero field mismatches and 35 unique observation IDs"
+    }
   },
-  "public_release": {
-    "active_release_id": "sf-active-factual-offer-release-through-20260824T103006Z-v1",
-    "factual_offer_payload": "data/public-offers/offers-ram.v1.json",
-    "observations": 65,
-    "products": 3,
-    "promoted_observations": 21,
-    "promotion_queue": 0,
-    "private_exceptions": 40,
-    "payload_sha256": "5fab2b68a6e9ca2b5609d95344554b7f5a243b67ce1a455f6c2db5bfb3b59ad8",
-    "promotion_approval": "config/factual-offer-promotion-approval-2026-08-25.v1.json",
-    "sentinel_99999_99_quarantined": true,
-    "future_inputs_auto_public": false
-  },
-  "retailer_comparison": {
-    "status": "merged_deployed_verified",
-    "rows": 3,
-    "columns": 8,
-    "populated_pairs": 8,
-    "retailers": [
-      "AWD-IT",
-      "Box.co.uk",
-      "CCL",
-      "Currys",
-      "KingstonMemoryShop",
-      "Novatech",
-      "Overclockers UK",
-      "Scan"
+  "verified_backend_reality": {
+    "persistent_sql_backend_active": false,
+    "database_url_present_at_audit": false,
+    "pg_host_present_at_audit": false,
+    "local_postgresql_listener_present_at_audit": false,
+    "runtime_postgresql_client_present": false,
+    "database_test_mode": "disposable PostgreSQL 16 container destroyed after migrations and fixture tests",
+    "operational_flow": "collector -> immutable Git JSON/evidence -> approval-gated public JSON -> static Next.js build -> Cloudflare",
+    "frontend_data_bridge": "lib/public-data.ts imports checked-in JSON",
+    "existing_observation_table": "silicon_forecast.candidate_primary_retail_observation",
+    "existing_schema_capability": [
+      "canonical product and exact expected/observed MPN",
+      "retailer, source and source-policy foreign keys",
+      "observed/retrieved timestamps",
+      "seller identity",
+      "item price minor units, currency and VAT",
+      "availability, delivery and landed-price state",
+      "qualification state and reasons",
+      "source URL and evidence reference/hash",
+      "append-only observations and retailer-product movements"
     ],
-    "blank_semantics": "No qualifying released observation; never an out-of-stock or unavailable claim",
-    "claim_boundary": "dated factual examples only; no recommendation, market-completeness or live-checkout claim"
-  },
-  "deployment": {
-    "status": "production_verified",
-    "url": "https://siliconforecast.com/",
-    "canonical_main_at_deploy": "e1dbe6ddc9167046d1bb5b8f1ff9a249f0e4fb86",
-    "approved_release_commit": "eb56fdb638a3aa8fede2e8e169b7ca2b666266e3",
-    "approval_id": "sf-factual-offers-retailer-comparison-deployment-2026-08-25-v2",
-    "approval_sha256": "fdc782fa89b75e61043453bd41807c37d973589aee5c4805f63f9e3c21713b37",
-    "source_sha256": "f2f8b9e676b1a446dce874cec61777273f4993f5d252b31492373f552ca61618",
-    "source_files": 96,
-    "upload_sha256": "ec5e432618862be134db35d97c2ddd8c314ca800bc0fec3775c9f9b5ac36a794",
-    "upload_regular_files": 116,
-    "cloudflare_version": "9b839548-d4e1-42f0-b6b0-6083e71074a7",
-    "deployed_at": "2026-08-25T06:25:59Z",
-    "verification": [
-      "clean-clone approval check passed against actual remote main",
-      "Wrangler dry-run passed",
-      "apex homepage, RAM workspace, exact-MPN page and research page returned HTTP 200 and matched approved HTML bytes",
-      "www and plaintext HTTP redirect to HTTPS apex with HTTP 308",
-      "approved retailer comparison wording present",
-      "recommendation, current-stock and formal-index-live claims absent"
+    "unconnected_or_lossy_fields": [
+      "collection run and tranche identity",
+      "collector version, Git commit, target set and rotation cursor",
+      "individual successful and failed target attempts",
+      "HTTP status and final URL",
+      "response SHA-256, response bytes and retention state",
+      "evidence-ledger SHA-256 and structured evidence facts",
+      "parser/extractor version",
+      "raw seller, availability, delivery and qualification vocabulary"
+    ],
+    "direct_load_blockers": [
+      "collector availability value other is outside SQL enum",
+      "collector extract SHA-256 may be null while SQL requires one",
+      "delivery destination may be null while SQL requires text",
+      "collector observation IDs may violate SQL key format",
+      "collector and SQL qualification vocabularies differ",
+      "most collector MPNs lack mandatory canonical-product SQL rows"
     ]
   },
-  "verification": {
-    "git_diff_check": "passed",
-    "focused_adversarial_tests": "passed",
-    "check_full": "passed",
-    "typescript": "passed",
-    "static_build": "passed_22_routes",
-    "postgresql_16": "passed_disposable_container",
-    "deterministic_replay": "passed",
-    "independent_reviews": "passed_after_all_material_findings_remediated",
-    "remaining_warning": "npm ci reports one high-severity dependency advisory; no unreviewed npm audit fix was applied"
+  "coverage": {
+    "target_registry": {
+      "mpns": 242,
+      "targets": 416,
+      "retailer_families": 6,
+      "mpns_by_distinct_retailer_count": {
+        "1": 141,
+        "2": 55,
+        "3": 24,
+        "4": 17,
+        "5": 5
+      },
+      "maximum_retailers_per_mpn": 5,
+      "mpns_with_six_or_more": 0
+    },
+    "public_product_retailer_identity_counts": {
+      "CMK32GX5M2B6000C36": 2,
+      "KF560C30BBEK2-32": 4,
+      "KF564C32RSK2-32": 4
+    },
+    "conclusion": "Current registry breadth cannot generally support the desired five-to-ten retailers per exact MPN; source expansion and/or a narrower deeper tracked set is required. No exact set or source family is selected."
   },
+  "approved_direction_for_design": [
+    "retain immutable Git artefacts as acquisition authority",
+    "design an idempotent post-collection PostgreSQL importer rather than direct collector writes",
+    "preserve source JSON/evidence losslessly before normalisation",
+    "persist every target attempt so matrix blanks have auditable reasons",
+    "create deterministic latest-offer and coverage views",
+    "retain checksum-bound static frontend export initially",
+    "favour retailer depth over broad shallow catalogue coverage without selecting methodology or basket"
+  ],
+  "remaining_tasks": [
+    {
+      "id": 1,
+      "name": "Draft backend persistence design contract",
+      "status": "not_started",
+      "output": ".planning/phases/02-platform-catalogue-control-plane/BACKEND-PERSISTENCE-DESIGN.md"
+    },
+    {
+      "id": 2,
+      "name": "Independently critique and revise design",
+      "status": "not_started"
+    },
+    {
+      "id": 3,
+      "name": "Add lossless fixture-only persistence migrations and mapping contract",
+      "status": "not_started"
+    },
+    {
+      "id": 4,
+      "name": "Build idempotent fixture-only tranche/evidence importer with quarantine",
+      "status": "not_started"
+    },
+    {
+      "id": 5,
+      "name": "Add deterministic latest-offer and retailer-coverage views/exports",
+      "status": "not_started"
+    },
+    {
+      "id": 6,
+      "name": "Propose durable PostgreSQL deployment separately for exact human approval",
+      "status": "not_started"
+    }
+  ],
+  "blocking_constraints": [
+    "launchd remains the sole prospective fetcher",
+    "collector-to-SQL ingestion must be lossless and versioned",
+    "individual failed target identity must be retained",
+    "production database mutation remains locked",
+    "existing Phase 2 plan excludes a production database-backed public page",
+    "no methodology, basket, baseline, reference, deflator, threshold or source family is selected"
+  ],
   "locks": {
-    "aggregate_index_approved": false,
+    "production_database_mutation_approved": false,
+    "public_database_activation_approved": false,
+    "source_family_portfolio_approved": false,
     "methodology_approved": false,
-    "thresholds_approved": false,
     "basket_approved": false,
     "baseline_approved": false,
     "historical_reference_approved": false,
     "deflator_approved": false,
-    "source_family_portfolio_approved": false,
-    "recommendations_approved": false,
-    "event_markers_approved": false,
-    "editorial_causal_claims_approved": false,
+    "thresholds_approved": false,
     "current_price_or_stock_claims_approved": false,
-    "production_database_mutation_approved": false,
-    "new_region_or_category_approved": false
+    "new_public_deployment_approved": false
   },
-  "next_action": "Observe and audit the natural 25 August launchd run after it completes. Keep prospective collection single-writer and treat its tranche as private candidate evidence. Separately triage the npm high-severity advisory without changing dependencies or production bytes implicitly.",
-  "suggested_prompt": "Continue Silicon Forecast from .planning/HANDOFF.json and .planning/STATE.md. mx-4 and the retailer-comparison deployment are complete. Jarvis remains parent orchestrator; worker claims remain untrusted until independently reproduced. The launchd collector at 11:30 local remains the sole prospective fetcher. Do not touch its dedicated checkout or launch any prospective fetch before/during the pending run. After the natural 25 August run, audit its immutable tranche and Git integration before accepting any derived effect. Preserve every methodology, basket, baseline, reference, deflator, threshold, source-family, recommendation, event-claim and production-database lock."
+  "next_action": "Read and acknowledge the blocking constraints, verify current origin/main plus collector/launchd state, then draft and independently critique BACKEND-PERSISTENCE-DESIGN.md before writing migrations or importer code.",
+  "suggested_prompt": "Continue Silicon Forecast from .planning/HANDOFF.json and .planning/phases/02-platform-catalogue-control-plane/.continue-here.md. Jarvis remains parent orchestrator and worker output is untrusted until independently verified. Start with read-only Git, launchd and collector-checkout preflight. Then design the lossless collector-to-PostgreSQL persistence layer and obtain an independent critique before implementation. Keep the launchd collector as the sole prospective fetcher, preserve immutable Git evidence, persist every target attempt including failures, and keep production DB mutation, source-family selection, methodology, basket, baseline, reference, deflator, thresholds and deployment locked."
 }
