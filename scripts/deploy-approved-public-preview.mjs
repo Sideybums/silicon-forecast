@@ -94,12 +94,19 @@ function walk(relativePath) {
   return readdirSync(relativePath).sort().flatMap((entry) => walk(path.posix.join(relativePath, entry)));
 }
 
-function recordsFor(files) {
+function trackedMode(file) {
+  const result = spawnSync("git", ["ls-files", "--stage", "--", file], { encoding: "utf8" });
+  const match = result.status === 0 ? /^(100644|100755) [0-9a-f]+ \d+\t/u.exec(result.stdout) : null;
+  if (!match) throw new Error(`deployment source is not a tracked regular file: ${file}`);
+  return match[1].slice(-3);
+}
+
+function recordsFor(files, modeFor = (file) => (lstatSync(file).mode & 0o777).toString(8).padStart(3, "0")) {
   return files.map((file) => {
     const stat = lstatSync(file);
     if (!stat.isFile() || stat.isSymbolicLink()) throw new Error(`deployment material is not a regular file: ${file}`);
     const bytes = readFileSync(file);
-    return { path: file, type: "file", mode: (stat.mode & 0o777).toString(8).padStart(3, "0"), byte_length: bytes.length, sha256: sha256(bytes) };
+    return { path: file, type: "file", mode: modeFor(file), byte_length: bytes.length, sha256: sha256(bytes) };
   });
 }
 
@@ -111,7 +118,7 @@ export function deploymentSurface() {
   const files = [...new Set([...SURFACE_FILES, ...SURFACE_ROOTS.flatMap(walk)])]
     .filter((file) => existsSync(file))
     .sort();
-  const records = recordsFor(files);
+  const records = recordsFor(files, trackedMode);
   return { digest: digestRecords(records), records };
 }
 

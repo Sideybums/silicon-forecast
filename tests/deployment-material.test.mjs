@@ -13,6 +13,11 @@ function inspect(root) {
   return JSON.parse(execFileSync(process.execPath, ["--input-type=module", "--eval", source], { cwd: root, encoding: "utf8" }));
 }
 
+function inspectSource(root) {
+  const source = `import { deploymentSurface } from ${JSON.stringify(moduleUrl)}; console.log(JSON.stringify(deploymentSurface()));`;
+  return JSON.parse(execFileSync(process.execPath, ["--input-type=module", "--eval", source], { cwd: root, encoding: "utf8" }));
+}
+
 function fixture(t) {
   const root = mkdtempSync(path.join(tmpdir(), "sf-deploy-artifact-"));
   mkdirSync(path.join(root, "out", "nested"), { recursive: true });
@@ -45,4 +50,18 @@ test("deployment artifact rejects symbolic links", (t) => {
   symlinkSync("index.html", path.join(root, "out", "alias.html"));
   const source = `import { deploymentArtifact } from ${JSON.stringify(moduleUrl)}; deploymentArtifact();`;
   assert.throws(() => execFileSync(process.execPath, ["--input-type=module", "--eval", source], { cwd: root, encoding: "utf8", stdio: "pipe" }), /Command failed/u);
+});
+
+test("deployment source mode follows reproducible Git state rather than local permission noise", (t) => {
+  const root = mkdtempSync(path.join(tmpdir(), "sf-deploy-source-"));
+  t.after(() => rmSync(root, { recursive: true, force: true }));
+  writeFileSync(path.join(root, "package.json"), "{}\n");
+  execFileSync("git", ["init", "--quiet"], { cwd: root });
+  execFileSync("git", ["add", "package.json"], { cwd: root });
+  chmodSync(path.join(root, "package.json"), 0o600);
+  const privateMode = inspectSource(root);
+  assert.equal(privateMode.records[0].mode, "644");
+  chmodSync(path.join(root, "package.json"), 0o644);
+  const ordinaryMode = inspectSource(root);
+  assert.equal(ordinaryMode.digest, privateMode.digest);
 });

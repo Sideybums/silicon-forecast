@@ -648,6 +648,8 @@ test("deployment digest covers every approved authority, artefact and canonical-
     "data/public-offers/retailer-comparison-ram.manifest.v1.json",
     "data/public-offers/retailer-comparison-ram.v1.json",
     "ls-remote",
+    "ls-files",
+    "--stage",
     "refs/heads/main",
     "...SURFACE_ROOTS, ...SURFACE_FILES",
   ]) assert.ok(deployScript.includes(required), required);
