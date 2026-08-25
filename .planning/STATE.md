@@ -5,9 +5,21 @@
 See `.planning/PROJECT.md` (last updated 2026-08-24).
 
 **Core value:** Let people follow dated UK component-price graphs as they would a stock, with reviewed market/news overlays explaining possible effects while deterministic calculations and complete lineage remain authoritative.
-**Current focus:** Reconcile the verified retailer-comparison branch with six completed natural collector commits, audit the pending 24 August launchd run, prove and repair collector target rotation using fixture-only tests, and recompute exact-MPN publication eligibility from retained evidence. No competing fetch, methodology, basket, baseline, reference, deflator, recommendation or production deployment is authorised.
+**Current focus:** `mx-4` and the retailer-comparison deployment are complete. Preserve the exact public release and all unrelated locks, then observe and audit the natural 25 August launchd run after it completes. The launchd collector remains the sole prospective fetcher; no competing fetch, methodology, basket, baseline, reference, deflator, recommendation, event claim or production-database mutation is authorised.
 
 ## Status
+
+### mx-4 completion and exact production release — 2026-08-25
+
+- The natural 24 August launchd run `20260824T103006Z` completed in append-only commit `0eaa292954f732660f64eaaf732f7ee0e645d1d6`. Its 35 observations and 35 evidence entries were audited against immutable tranche SHA-256 `6ca15084f8eeb363bfb47040a227e0fd0aec84a03507fd85f3ed1b9a4b34e4a6`.
+- Collector selection was proven to repeat the first 45 of 86 eligible targets, starving 41. The repaired fixture-first contract rotates by retailer plus normalised MPN, wraps deterministically, migrates legacy state once, survives registry changes, rejects duplicate identities and advances only after committed success.
+- Exactly 21 reviewed exact-MPN observations were promoted under one-time approval. The factual payload now contains 65 observations across three products; 40 exceptions remain private, the promotion queue is empty and all `£99,999.99` sentinel observations remain quarantined.
+- The exact-MPN retailer comparison is merged and public: three product rows, eight approved retailer columns, eight populated exact-pair cells and explicit honest blanks. It makes no recommendation, live-stock or complete-market claim.
+- PRs #1–#4 were merged normally. Canonical `origin/main` is `e1dbe6ddc9167046d1bb5b8f1ff9a249f0e4fb86`; no feature or collector history was rewritten.
+- Deployment approval `sf-factual-offers-retailer-comparison-deployment-2026-08-25-v2` binds release ancestor `eb56fdb638a3aa8fede2e8e169b7ca2b666266e3`, 96-file source SHA-256 `f2f8b9e676b1a446dce874cec61777273f4993f5d252b31492373f552ca61618` and 116-file upload SHA-256 `ec5e432618862be134db35d97c2ddd8c314ca800bc0fec3775c9f9b5ac36a794`.
+- Cloudflare version `9b839548-d4e1-42f0-b6b0-6083e71074a7` is deployed. Four key routes returned HTTP 200 and matched approved local HTML byte-for-byte; apex/www/plain-HTTP redirects and live claim boundaries were independently rechecked.
+- The final full gate passed focused adversarial tests, lint, TypeScript, the 22-route static build, deterministic replay and disposable PostgreSQL 16 verification. One high-severity `npm ci` advisory remains for separate triage; no unreviewed dependency mutation was applied.
+- Aggregate index, methodology, thresholds, basket, baseline, historical reference, deflator, source-family portfolio, recommendations, event markers, editorial causal claims, current-price/current-stock claims, production database mutation and new region/category authority all remain locked.
 
 ### Exact-MPN retailer-comparison candidate — 2026-08-24
 
@@ -178,7 +190,7 @@ The public frontend now has two deliberately separate states: the checksum-bound
 
 ## Next Action
 
-The observation-first preview and Daily Market Dashboard are deployed and production-verified. The retailer-comparison candidate is verified and pushed but remains unmerged and undeployed. Do not modify the dedicated collector checkout or launch any prospective fetch before/during the pending 24 August 11:30 BST launchd run. After it completes, audit the immutable tranche, fetch and normally merge current `origin/main` into the feature branch, then execute `mx-4`: prove/fix deterministic target rotation with fixture-only tests and recompute exact-MPN promotion eligibility from all retained evidence. Real Event Line markers, source-family approval, methodology choices and production deployment remain separately locked.
+The observation-first preview, Daily Market Dashboard and exact-MPN retailer comparison are deployed and production-verified. Do not modify the dedicated collector checkout or launch any prospective fetch before/during the pending 25 August 11:30 BST launchd run. After it completes naturally, audit its immutable tranche, evidence ledger, cursor transition and Git integration before accepting any derived effect. Separately triage the high-severity dependency advisory without an automatic `npm audit fix`. Real Event Line markers, source-family approval, methodology choices, aggregate publication and production-database mutation remain locked.
 
 ## Safety Note
 
@@ -188,4 +200,4 @@ The observation-first change adds a separate, additive factual publication class
 
 ---
 *State created: 2026-08-05*
-*Last updated: 2026-08-24 after verification and push of the governed retailer-comparison candidate and live reconciliation of collector/main state. The comparison remains unmerged and undeployed; methodology, event publication, aggregate publication and changed-surface production deployment remain locked.*
+*Last updated: 2026-08-25 after mx-4 completion, canonical merges, exact digest-bound deployment and live byte verification. The retailer comparison is deployed; methodology, event publication, aggregate publication, source-family authority and production-database mutation remain locked.*
