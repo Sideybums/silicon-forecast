@@ -1,17 +1,17 @@
 {
   "schema_version": 1,
-  "approval_id": "sf-daily-market-dashboard-deployment-2026-08-18T032152Z",
+  "approval_id": "sf-factual-offers-retailer-comparison-deployment-2026-08-25-v1",
   "status": "approved",
-  "decision": "deploy_daily_market_dashboard_public_preview",
+  "decision": "deploy_factual_offers_and_retailer_comparison_public_preview",
   "approved_by": {
     "name": "David Sidebottom",
     "role": "project_owner"
   },
-  "approved_at": "2026-08-18T03:21:52Z",
+  "approved_at": "2026-08-25T06:12:54Z",
   "approval_record": {
     "channel": "interactive_project_session",
-    "response": "I also approve this and it should be pushed.",
-    "approved_scope": "Deploy the exact reviewed Daily Market Dashboard, approved factual-offer history and empty Event Line surface. No real event marker, formal index, new source, recommendation or affiliate authority is granted."
+    "response": "all of it",
+    "approved_scope": "Deploy the exact 21-observation promotion, reviewed retailer-comparison surface, existing Daily Market Dashboard, approved factual-offer history and empty Event Line bound here. No aggregate index, methodology, basket, baseline, historical reference, deflator, threshold, source-family, recommendation, current-price, causal-claim or production-database authority is granted."
   },
   "targets": [
     "siliconforecast.com",
@@ -23,6 +23,7 @@
     "raw_exact_mpn_history": true,
     "daily_market_dashboard": true,
     "empty_event_line": true,
+    "retailer_comparison": true,
     "aggregate_index": false,
     "methodology": false,
     "basket": false,
@@ -31,20 +32,34 @@
     "deflator": false,
     "research_publication": false,
     "recommendations": false,
-    "paid_affiliate_tracking": false
+    "paid_affiliate_tracking": false,
+    "new_product_approval": false,
+    "source_family_approval": false,
+    "threshold_selection": false,
+    "current_price_or_stock_claims": false,
+    "causal_claims": false,
+    "production_database_mutation": false
   },
   "bindings": {
     "policy": {
       "path": "config/factual-offer-publication-policy.v1.json",
       "sha256": "c5ede45b38d2cf20fefeb8891f9b01e96a2a8197d917a8f9f08523404461062f"
     },
+    "active_release": {
+      "path": "config/factual-offer-active-release.v1.json",
+      "sha256": "e2baea9c3b13b2cc5730da02a133918ee832dadb9e46c50d93f51afe61cf28a3"
+    },
+    "promotion_approval": {
+      "path": "config/factual-offer-promotion-approval-2026-08-25.v1.json",
+      "sha256": "6b10b93e6777f95e25372526dd69ce8c0e03113e1b45126c5fdd719129622afe"
+    },
     "manifest": {
       "path": "data/derived/private-candidate/public-offers-manifest.v1.json",
-      "sha256": "fd34ede923af7e8973b36d873fd1b5dd4d5217590595af6f65a1357eb898b9d9"
+      "sha256": "e57eb8098a76b9caab2222922882861146970534e90016beca96c0b7ecd003f2"
     },
     "payload": {
       "path": "data/public-offers/offers-ram.v1.json",
-      "sha256": "8319c030c16fa73d5bfb30bb681a395b6ffee015c6547bd64789d57cd2256524"
+      "sha256": "5fab2b68a6e9ca2b5609d95344554b7f5a243b67ce1a455f6c2db5bfb3b59ad8"
     },
     "dashboard_policy": {
       "path": "config/daily-market-dashboard-policy.v1.json",
@@ -52,11 +67,11 @@
     },
     "dashboard_manifest": {
       "path": "data/public-dashboard/daily-market-ram.manifest.v1.json",
-      "sha256": "b45dbb83261838e700162a1dbf9dc1ec16eccecaa558b81b61d393fc21f9f1dc"
+      "sha256": "ec65ca859aac5531470b676809caf1fea387b1556c7526968a1f2ec9cadd08cf"
     },
     "dashboard_payload": {
       "path": "data/public-dashboard/daily-market-ram.v1.json",
-      "sha256": "cf9a9130463de541471ac23b6a51a0d818785315fee1a8ed69eff7d1869634da"
+      "sha256": "ec30cb9314e261bc54b93c0935720b249c3d22db4272c5a6072033ecd5d881fc"
     },
     "event_policy": {
       "path": "config/event-line-publication-policy.v1.json",
@@ -70,7 +85,30 @@
       "path": "data/public-dashboard/event-line-ram.v1.json",
       "sha256": "93936a912a0884f942d2c1cc69ff5761583bcd03d719b9346151d72561f3d9c6"
     },
-    "deployment_surface_sha256": "9aa3bddf4bb5f4679a9801ed0d837c7118d7e0b5fbfde55c57ab5b63864ebc90"
+    "retailer_comparison_policy": {
+      "path": "config/retailer-comparison-roster.v1.json",
+      "sha256": "4e47caed5b56e7bdcf219d6e9e66394601e29df16c24a405f33ea7f1df8b9e27"
+    },
+    "retailer_comparison_manifest": {
+      "path": "data/public-offers/retailer-comparison-ram.manifest.v1.json",
+      "sha256": "ca9236d0d5f8243d7663399404160b1b470f789da54dc3e0285b98987c8027c4"
+    },
+    "retailer_comparison_payload": {
+      "path": "data/public-offers/retailer-comparison-ram.v1.json",
+      "sha256": "7ba8f1dbea52c28a25447fed29d3575675f8f012b82e598a76f166cc1c607ae9"
+    },
+    "retailer_comparison_schema": {
+      "path": "schemas/retailer-comparison.v1.schema.json",
+      "sha256": "e436fd5dc48743a8cdf68a11c4b352dcc5d1505f797759c47f2e2e77cdf36ccd"
+    },
+    "retailer_comparison_generator": {
+      "path": "scripts/build-retailer-comparison.mjs",
+      "sha256": "c5816a49d60b03836de7c119d23e72af43da8431cfb7dfa82553bd70d4e8c61c"
+    },
+    "release_commit": "473030d8ea82891bbaee9a1fe203046d80e88f68",
+    "deployment_source_sha256": "9e743e8084f79d6b3ac3e529c8d5b5e3356d9160b9c60f8f439aa0369d054ce9",
+    "deployment_artifact_sha256": "8ee7ab46e64dc290a97bcd6a8a2dac11f2498e6906513a6e7250f89586a4bca0",
+    "deployment_artifact_file_count": 116
   },
-  "notes": "This approval permits deployment of this exact checksum-bound dashboard surface only. Any bound artefact, public code or reviewed deployment-surface change fails closed and requires a new approval."
+  "notes": "This approval permits deployment of only the exact canonical release commit, checksum-bound source surface and 116-file upload artefact identified here. Any bound byte, path, file type, mode, length, target or deployment-surface change fails closed and requires a new approval."
 }
