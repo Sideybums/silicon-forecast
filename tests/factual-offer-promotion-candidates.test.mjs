@@ -37,22 +37,16 @@ test("every bound input and executable component matches its recorded digest", (
   for (const entry of manifest.entries) assert.ok(bound.has(entry.path), `retained candidate input is unbound: ${entry.path}`);
 });
 
-test("promotion candidates are exact-MPN non-approving records outside the active release", () => {
+test("approved candidates are active and the private promotion queue is deterministically drained", () => {
   const active = JSON.parse(readFileSync("data/public-offers/offers-ram.v1.json", "utf8"));
+  const approval = JSON.parse(readFileSync("config/factual-offer-promotion-approval-2026-08-25.v1.json", "utf8"));
   const activeIds = new Set(active.observations.map((item) => item.public_observation_id));
-  const policy = JSON.parse(readFileSync("config/factual-offer-publication-policy.v1.json", "utf8"));
-  const approvedMpns = new Set(policy.approved_products.map((item) => item.mpn));
-  assert.ok(committed.promotion_candidates.length > 0);
-  for (const item of committed.promotion_candidates) {
-    assert.equal(item.disposition, "candidate_for_human_promotion_review");
-    assert.equal(item.meets_existing_factual_offer_predicates, true);
-    assert.equal(item.known_placeholder_quarantine_passed, true);
-    assert.equal(item.approved, false);
-    assert.equal(item.publication_action_allowed, false);
-    assert.ok(approvedMpns.has(item.public_offer_candidate.mpn));
-    assert.ok(!activeIds.has(item.public_offer_candidate.public_observation_id));
-    assert.notEqual(item.public_offer_candidate.item_price_minor, 9999999);
-  }
+  assert.equal(committed.promotion_candidates.length, 0);
+  assert.equal(committed.coverage.promotion_candidates, 0);
+  assert.equal(committed.coverage.already_active, 65);
+  assert.equal(active.observations.length, approval.expected_result.record_count);
+  assert.ok(approval.approved_public_observation_ids.every((id) => activeIds.has(id)));
+  assert.equal(committed.active_release_conflicts.length, 0);
 });
 
 test("known placeholder values and unrelated authority remain quarantined", () => {

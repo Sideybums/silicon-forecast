@@ -5,7 +5,7 @@
   "currency": "GBP",
   "time_zone": "Europe/London",
   "first_date": "2023-01-31",
-  "latest_date": "2026-08-17",
+  "latest_date": "2026-08-24",
   "declared_products": [
     {
       "mpn": "CMK32GX5M2B6000C36",
@@ -1431,6 +1431,419 @@
           "retailer_id": "kingston-memory-shop",
           "retailer_name": "KingstonMemoryShop",
           "item_price_minor": 61566,
+          "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-18",
+      "typical_minor": 67004,
+      "low_minor": 52399,
+      "high_minor": 67878,
+      "product_count": 3,
+      "declared_product_count": 3,
+      "retailer_count": 2,
+      "observation_count": 3,
+      "coverage_permille": 1000,
+      "capture_basis": "direct",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 52399,
+          "low_minor": 52399,
+          "high_minor": 52399,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 67004,
+          "low_minor": 67004,
+          "high_minor": 67004,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 67878,
+          "low_minor": 67878,
+          "high_minor": 67878,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-7dbcb352ed627936841df470",
+          "observed_at": "2026-08-18T10:30:07Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 52399,
+          "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-b794f4f431dd83e6a28902d4",
+          "observed_at": "2026-08-18T10:30:07Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "kingston-memory-shop",
+          "retailer_name": "KingstonMemoryShop",
+          "item_price_minor": 67878,
+          "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-19",
+      "typical_minor": 67004,
+      "low_minor": 52399,
+      "high_minor": 67878,
+      "product_count": 3,
+      "declared_product_count": 3,
+      "retailer_count": 2,
+      "observation_count": 3,
+      "coverage_permille": 1000,
+      "capture_basis": "direct",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 52399,
+          "low_minor": 52399,
+          "high_minor": 52399,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 67004,
+          "low_minor": 67004,
+          "high_minor": 67004,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 67878,
+          "low_minor": 67878,
+          "high_minor": 67878,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-5cd763bb1c9358316fdf9a7f",
+          "observed_at": "2026-08-19T10:30:06Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 52399,
+          "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-899bb21eace8c8ab22533fd5",
+          "observed_at": "2026-08-19T10:30:06Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "kingston-memory-shop",
+          "retailer_name": "KingstonMemoryShop",
+          "item_price_minor": 67878,
+          "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-20",
+      "typical_minor": 67004,
+      "low_minor": 52399,
+      "high_minor": 67878,
+      "product_count": 3,
+      "declared_product_count": 3,
+      "retailer_count": 2,
+      "observation_count": 3,
+      "coverage_permille": 1000,
+      "capture_basis": "direct",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 52399,
+          "low_minor": 52399,
+          "high_minor": 52399,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 67004,
+          "low_minor": 67004,
+          "high_minor": 67004,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 67878,
+          "low_minor": 67878,
+          "high_minor": 67878,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-e92f5265991973c084c618fd",
+          "observed_at": "2026-08-20T10:30:06Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 52399,
+          "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-08533dddbeb58efb1c2a4513",
+          "observed_at": "2026-08-20T10:30:06Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "kingston-memory-shop",
+          "retailer_name": "KingstonMemoryShop",
+          "item_price_minor": 67878,
+          "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-21",
+      "typical_minor": 67004,
+      "low_minor": 52399,
+      "high_minor": 67878,
+      "product_count": 3,
+      "declared_product_count": 3,
+      "retailer_count": 2,
+      "observation_count": 3,
+      "coverage_permille": 1000,
+      "capture_basis": "direct",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 52399,
+          "low_minor": 52399,
+          "high_minor": 52399,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 67004,
+          "low_minor": 67004,
+          "high_minor": 67004,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 67878,
+          "low_minor": 67878,
+          "high_minor": 67878,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-f4ea5f1757ff52d44bdb6873",
+          "observed_at": "2026-08-21T10:30:07Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 52399,
+          "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-e6ba92d99b1ba4d4a2a19f66",
+          "observed_at": "2026-08-21T10:30:07Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "kingston-memory-shop",
+          "retailer_name": "KingstonMemoryShop",
+          "item_price_minor": 67878,
+          "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-22",
+      "typical_minor": 67004,
+      "low_minor": 52399,
+      "high_minor": 67878,
+      "product_count": 3,
+      "declared_product_count": 3,
+      "retailer_count": 2,
+      "observation_count": 3,
+      "coverage_permille": 1000,
+      "capture_basis": "direct",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 52399,
+          "low_minor": 52399,
+          "high_minor": 52399,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 67004,
+          "low_minor": 67004,
+          "high_minor": 67004,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 67878,
+          "low_minor": 67878,
+          "high_minor": 67878,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-a4ed51392cd8c539c6ccef64",
+          "observed_at": "2026-08-22T10:30:10Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 52399,
+          "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-c30b84eb5572cf4f550f1451",
+          "observed_at": "2026-08-22T10:30:10Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "kingston-memory-shop",
+          "retailer_name": "KingstonMemoryShop",
+          "item_price_minor": 67878,
+          "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-23",
+      "typical_minor": 67004,
+      "low_minor": 52399,
+      "high_minor": 67878,
+      "product_count": 3,
+      "declared_product_count": 3,
+      "retailer_count": 2,
+      "observation_count": 3,
+      "coverage_permille": 1000,
+      "capture_basis": "direct",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 52399,
+          "low_minor": 52399,
+          "high_minor": 52399,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 67004,
+          "low_minor": 67004,
+          "high_minor": 67004,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 67878,
+          "low_minor": 67878,
+          "high_minor": 67878,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-4f4a2b19e0941fbef35a0014",
+          "observed_at": "2026-08-23T10:30:06Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 52399,
+          "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-7fda73e63eed385d5a45276c",
+          "observed_at": "2026-08-23T10:30:06Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "kingston-memory-shop",
+          "retailer_name": "KingstonMemoryShop",
+          "item_price_minor": 67878,
+          "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
+        }
+      ]
+    },
+    {
+      "date": "2026-08-24",
+      "typical_minor": 67004,
+      "low_minor": 52399,
+      "high_minor": 67878,
+      "product_count": 3,
+      "declared_product_count": 3,
+      "retailer_count": 2,
+      "observation_count": 3,
+      "coverage_permille": 1000,
+      "capture_basis": "direct",
+      "products": [
+        {
+          "mpn": "CMK32GX5M2B6000C36",
+          "median_minor": 52399,
+          "low_minor": 52399,
+          "high_minor": 52399,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF560C30BBEK2-32",
+          "median_minor": 67004,
+          "low_minor": 67004,
+          "high_minor": 67004,
+          "retailer_count": 1
+        },
+        {
+          "mpn": "KF564C32RSK2-32",
+          "median_minor": 67878,
+          "low_minor": 67878,
+          "high_minor": 67878,
+          "retailer_count": 1
+        }
+      ],
+      "low_evidence": [
+        {
+          "public_observation_id": "offer-a1c773b44af40fc85bf5dc78",
+          "observed_at": "2026-08-24T10:30:06Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "CMK32GX5M2B6000C36",
+          "retailer_id": "scan-computers",
+          "retailer_name": "Scan Computers",
+          "item_price_minor": 52399,
+          "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+        }
+      ],
+      "high_evidence": [
+        {
+          "public_observation_id": "offer-48dbef411b0193d386015fe5",
+          "observed_at": "2026-08-24T10:30:06Z",
+          "observation_kind": "direct_retail_observation",
+          "mpn": "KF564C32RSK2-32",
+          "retailer_id": "kingston-memory-shop",
+          "retailer_name": "KingstonMemoryShop",
+          "item_price_minor": 67878,
           "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
         }
       ]

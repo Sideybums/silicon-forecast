@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import { cpSync, existsSync, mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { tmpdir } from "node:os";
@@ -74,6 +75,44 @@ test("standing factual-offer approval is exact, narrow, and explicitly supersede
   assert.equal(policy.candidate_lock_supersession.does_not_approve_sources_indexes_methodology_baskets_or_deployment, true);
   assert.deepEqual(policy.retailer_identity_contract.map((item) => item.display_name), ["AWD-IT", "CCL", "KingstonMemoryShop", "Overclockers UK", "Scan Computers"]);
   assert.match(readFileSync("lib/publication-gate.ts", "utf8"), /isPublic: false/);
+});
+
+test("one-time promotion approval binds exactly the 21 reviewed observations and no broader authority", () => {
+  const approval = readJson("config/factual-offer-promotion-approval-2026-08-25.v1.json");
+  const lock = readJson("config/factual-offer-active-release.v1.json");
+  const publicIds = new Set(dataset.observations.map((item) => item.public_observation_id));
+  assert.equal(approval.status, "approved");
+  assert.equal(approval.decision, "approve_exact_factual_offer_promotion");
+  assert.equal(approval.approved_public_observation_ids.length, 21);
+  assert.equal(new Set(approval.approved_public_observation_ids).size, 21);
+  assert.ok(approval.approved_public_observation_ids.every((id) => publicIds.has(id)));
+  assert.equal(lock.locked_payload.record_count, 65);
+  assert.equal(lock.authority.admit_new_observation_inputs, false);
+  assert.equal(lock.authority.approve_publication_expansion, false);
+  assert.deepEqual(Object.entries(approval.scope).filter(([, value]) => value === true).map(([key]) => key), ["exact_candidate_promotion", "retailer_comparison_publication"]);
+});
+
+test("promotion approval replays the exact historical candidate report and 44-record prior release", () => {
+  const approval = readJson("config/factual-offer-promotion-approval-2026-08-25.v1.json");
+  const commit = approval.basis.candidate_report_git_commit;
+  const historicalReportBytes = execFileSync("git", ["show", `${commit}:${approval.basis.candidate_report_path}`]);
+  const historicalPayloadBytes = execFileSync("git", ["show", `${approval.basis.prior_active_git_commit}:data/public-offers/offers-ram.v1.json`]);
+  const historicalReport = JSON.parse(historicalReportBytes);
+  const historicalPayload = JSON.parse(historicalPayloadBytes);
+  const lock = readJson("config/factual-offer-active-release.v1.json");
+  const historicalManifestBytes = execFileSync("git", ["show", `${lock.prior_release.git_commit}:${lock.prior_release.manifest.path}`]);
+  assert.equal(sha256(historicalReportBytes), approval.basis.candidate_report_sha256_at_approval);
+  assert.equal(sha256(historicalPayloadBytes), approval.basis.prior_active_payload_sha256);
+  assert.equal(sha256(historicalManifestBytes), lock.prior_release.manifest.sha256_at_commit);
+  assert.deepEqual(historicalReport.promotion_candidates, approval.approved_candidates);
+  assert.deepEqual(historicalPayload.observations.map((item) => item.public_observation_id).sort(), approval.prior_active_public_observation_ids);
+  assert.equal(historicalPayload.observations.length, approval.basis.prior_active_record_count);
+});
+
+test("promotion approval mutation fails closed", (t) => {
+  const root = temporaryFixture(t);
+  mutateJson(root, "config/factual-offer-promotion-approval-2026-08-25.v1.json", (approval) => { approval.scope.aggregate_index = true; });
+  assert.throws(() => buildPublicOffers(rootUrl(root)), /promotion approval hash mismatch/u);
 });
 
 test("public offer projection replays byte-for-byte and remains non-empty", () => {

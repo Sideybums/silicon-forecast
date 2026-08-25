@@ -14,7 +14,7 @@
     "check": "npm run lint && npm test && npm run build",
     "check:full": "npm run check && npm run test:db",
     "deploy": "node scripts/deploy-approved-public-preview.mjs",
-    "deploy:dry-run": "npm run build && wrangler deploy --dry-run"
+    "deploy:dry-run": "node scripts/deploy-approved-public-preview.mjs --dry-run"
   },
   "dependencies": {
     "next": "16.3.0",
