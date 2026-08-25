@@ -1,13 +1,13 @@
 {
   "schema_version": 1,
-  "approval_id": "sf-factual-offers-retailer-comparison-deployment-2026-08-25-v1",
+  "approval_id": "sf-factual-offers-retailer-comparison-deployment-2026-08-25-v2",
   "status": "approved",
   "decision": "deploy_factual_offers_and_retailer_comparison_public_preview",
   "approved_by": {
     "name": "David Sidebottom",
     "role": "project_owner"
   },
-  "approved_at": "2026-08-25T06:12:54Z",
+  "approved_at": "2026-08-25T06:22:42Z",
   "approval_record": {
     "channel": "interactive_project_session",
     "response": "all of it",
@@ -105,10 +105,10 @@
       "path": "scripts/build-retailer-comparison.mjs",
       "sha256": "c5816a49d60b03836de7c119d23e72af43da8431cfb7dfa82553bd70d4e8c61c"
     },
-    "release_commit": "473030d8ea82891bbaee9a1fe203046d80e88f68",
-    "deployment_source_sha256": "9e743e8084f79d6b3ac3e529c8d5b5e3356d9160b9c60f8f439aa0369d054ce9",
-    "deployment_artifact_sha256": "8ee7ab46e64dc290a97bcd6a8a2dac11f2498e6906513a6e7250f89586a4bca0",
+    "release_commit": "eb56fdb638a3aa8fede2e8e169b7ca2b666266e3",
+    "deployment_source_sha256": "f2f8b9e676b1a446dce874cec61777273f4993f5d252b31492373f552ca61618",
+    "deployment_artifact_sha256": "ec5e432618862be134db35d97c2ddd8c314ca800bc0fec3775c9f9b5ac36a794",
     "deployment_artifact_file_count": 116
   },
-  "notes": "This approval permits deployment of only the exact canonical release commit, checksum-bound source surface and 116-file upload artefact identified here. Any bound byte, path, file type, mode, length, target or deployment-surface change fails closed and requires a new approval."
+  "notes": "This replacement approval permits deployment of only canonical release eb56fdb638a3aa8fede2e8e169b7ca2b666266e3, source SHA-256 f2f8b9e676b1a446dce874cec61777273f4993f5d252b31492373f552ca61618 and the exact 116-file upload artefact bound here. It supersedes v1, which remains invalid for these bytes. Any bound byte, path, file type, tracked source mode, upload mode, length, target or deployment-surface change fails closed and requires another approval."
 }
