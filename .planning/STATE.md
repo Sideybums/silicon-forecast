@@ -5,9 +5,19 @@
 See `.planning/PROJECT.md` (last updated 2026-08-24).
 
 **Core value:** Let people follow dated UK component-price graphs as they would a stock, with reviewed market/news overlays explaining possible effects while deterministic calculations and complete lineage remain authoritative.
-**Current focus:** `mx-4` and the retailer-comparison deployment are complete. Preserve the exact public release and all unrelated locks, then observe and audit the natural 25 August launchd run after it completes. The launchd collector remains the sole prospective fetcher; no competing fetch, methodology, basket, baseline, reference, deflator, recommendation, event claim or production-database mutation is authorised.
+**Current focus:** Pause before designing the lossless collector-to-PostgreSQL persistence layer. The current SQL work is a tested foundation schema, not an operational backend: no persistent database is configured, no collector ingestion exists and the frontend imports checked-in JSON. Preserve immutable Git evidence and the exact public release while designing per-target attempt history, lossless evidence staging, idempotent normalisation and deterministic static exports. Production database mutation and all unrelated methodology/source/publication locks remain closed.
 
 ## Status
+
+### Backend persistence audit and pause point — 2026-08-25
+
+- The natural 25 August collector run `sf-collection-run-20260825T103008Z` completed in canonical commit `2181685afa98dcc42316c13377f50b932a471431`: 45 targets attempted, 35 observations retained and 10 aggregate abstentions. All 35 retained observations match their 35 evidence entries; tranche SHA-256 is `d4fc36847d577ae541db56e62ce9b269a61bc0be73ff804b1cb01a6d29f57366`.
+- PostgreSQL is not an active backend. `npm run test:db` creates and deletes a disposable PostgreSQL 16 container; no runtime connection/client, ingestion path or database-backed frontend exists. The operational flow remains immutable Git JSON/evidence to checksum-gated public JSON to a static Cloudflare build.
+- The existing SQL observation schema can represent exact MPN, retailer, item price, currency/VAT, availability, delivery, source URL, timestamps, qualification and evidence reference. It structurally supports many retailers and dated observations per MPN.
+- Direct ingestion would be lossy or fail: collection-run/tranche identity and individual failed attempts are absent; evidence response metadata is not modelled losslessly; collector and SQL availability, nullability, ID and qualification contracts differ; and most collected MPNs lack canonical SQL catalogue rows.
+- The target registry has 242 MPNs and 416 targets across six retailer families. Retailer depth is 141 MPNs with one retailer, 55 with two, 24 with three, 17 with four and five with five; none has six or more. The three public MPNs have two, four and four normalised retailer identities respectively.
+- Agreed design direction: immutable Git remains acquisition authority; a versioned idempotent post-collection importer populates lossless raw/staging plus normalised SQL tables; every attempted target is retained; reviewed SQL views export deterministic checksum-bound static JSON. No production database or source-family activation is approved.
+- Fresh-context handoff: `.planning/phases/02-platform-catalogue-control-plane/.continue-here.md` and `.planning/HANDOFF.json`.
 
 ### mx-4 completion and exact production release — 2026-08-25
 
@@ -190,7 +200,7 @@ The public frontend now has two deliberately separate states: the checksum-bound
 
 ## Next Action
 
-The observation-first preview, Daily Market Dashboard and exact-MPN retailer comparison are deployed and production-verified. Do not modify the dedicated collector checkout or launch any prospective fetch before/during the pending 25 August 11:30 BST launchd run. After it completes naturally, audit its immutable tranche, evidence ledger, cursor transition and Git integration before accepting any derived effect. Separately triage the high-severity dependency advisory without an automatic `npm audit fix`. Real Event Line markers, source-family approval, methodology choices, aggregate publication and production-database mutation remain locked.
+Resume from `.planning/HANDOFF.json` and `.planning/phases/02-platform-catalogue-control-plane/.continue-here.md`. Start with read-only Git, launchd and collector preflight, then draft `.planning/phases/02-platform-catalogue-control-plane/BACKEND-PERSISTENCE-DESIGN.md`. Independently critique and revise that design before writing migrations or importer code. Keep the collector single-writer, preserve raw evidence losslessly, model every target attempt and keep production database mutation, source-family activation, methodology and deployment locked.
 
 ## Safety Note
 
@@ -200,4 +210,4 @@ The observation-first change adds a separate, additive factual publication class
 
 ---
 *State created: 2026-08-05*
-*Last updated: 2026-08-25 after mx-4 completion, canonical merges, exact digest-bound deployment and live byte verification. The retailer comparison is deployed; methodology, event publication, aggregate publication, source-family authority and production-database mutation remain locked.*
+*Last updated: 2026-08-25 after the natural collector run and read-only backend persistence audit. The project is paused before persistence design; the deployed retailer comparison is unchanged and production database mutation, methodology, event publication, aggregate publication and source-family authority remain locked.*
