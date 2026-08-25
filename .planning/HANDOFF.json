@@ -23,9 +23,8 @@
   "repository": {
     "development_worktree": "/Users/weetoddy/Desktop/Projects/Silicon_Forecast_Recovery",
     "development_branch": "feat/retailer-comparison-matrix",
-    "development_head": "7af0bdaf15a1cf0837eb9eaad644b17d52baf438",
-    "remote_feature_head": "7af0bdaf15a1cf0837eb9eaad644b17d52baf438",
-    "canonical_main": "e1dbe6ddc9167046d1bb5b8f1ff9a249f0e4fb86",
+    "release_feature_head": "7af0bdaf15a1cf0837eb9eaad644b17d52baf438",
+    "canonical_main_at_deploy": "e1dbe6ddc9167046d1bb5b8f1ff9a249f0e4fb86",
     "canonical_remote": "origin/main",
     "release_ancestor": "eb56fdb638a3aa8fede2e8e169b7ca2b666266e3",
     "merged_pull_requests": [
@@ -34,7 +33,8 @@
       "#3 Make deployment source digest reproducible",
       "#4 Bind deployment approval to reproducible release"
     ],
-    "history_policy_result": "collector and feature history were merged normally; no rebase, force-push or history rewriting was used"
+    "history_policy_result": "collector, feature and handoff history were merged normally; no rebase, force-push or history rewriting was used",
+    "current_head_rule": "Query origin/main when resuming; the documentation-only handoff merges necessarily post-date canonical_main_at_deploy."
   },
   "collector": {
     "sole_scheduler": "launchd",
