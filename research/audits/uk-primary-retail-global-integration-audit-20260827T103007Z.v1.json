@@ -1,0 +1,303 @@
+{
+  "schema_version": 1,
+  "audit_id": "sf-uk-primary-retail-global-integration-audit-20260827T103007Z-v1",
+  "status": "candidate_private_immutable",
+  "created_at": "2026-08-27T10:30:07Z",
+  "scope": "Every prospective PRIMARY_RETAIL candidate tranche in the repository at the time of writing. Historical backfill tranches are excluded because their timestamp semantics differ.",
+  "selection": {
+    "historical_backfill_explicitly_excluded": true,
+    "discovered_by": "parsed schema, not filename"
+  },
+  "audited_tranches": [
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-09T122437Z.v1.json",
+      "sha256": "efe276384a828f32b86891422c9519c6b3e15cb4640c0bbc2095edcca4564fb6",
+      "created_at": "2026-08-09T12:25:54Z",
+      "observation_count": 3,
+      "collector_version": null
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json",
+      "sha256": "41fd88e7e48cbb343254522d46d3ec74c999f494169da34ecfeefb3ed667428e",
+      "created_at": "2026-08-09T23:43:37Z",
+      "observation_count": 3,
+      "collector_version": null
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-10T165537Z.v1.json",
+      "sha256": "484361e044d5ed74bb6aaae7c21b32f99141a61e39e15525135e0f04a2b98b10",
+      "created_at": "2026-08-10T16:55:37Z",
+      "observation_count": 3,
+      "collector_version": null
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260812T114904Z.v1.json",
+      "sha256": "2c18dabff9b2c77ceca36aa391bd17d41f4cb445d4facb8e97963ac3f511d51d",
+      "created_at": "2026-08-12T11:49:04Z",
+      "observation_count": 4,
+      "collector_version": null
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260812T124505Z.v1.json",
+      "sha256": "5db7317e3096a3f7709410d7b0564a663501c20edcc8509ce1f5dbf499488b04",
+      "created_at": "2026-08-12T12:45:05Z",
+      "observation_count": 17,
+      "collector_version": null
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-2026-08-12T124750Z.prospective.v1.json",
+      "sha256": "1f900e20ca1fd2a5e9acff79970ba5b76ef04b924ba3b7dede00a289ccc4bc2a",
+      "created_at": "2026-08-12T12:47:50Z",
+      "observation_count": 3,
+      "collector_version": null
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260813T124505Z.v1.json",
+      "sha256": "bb7510f8dd29e8727f5aca1aafc527c9516c7f910821eadb378a9c54fa3db6bf",
+      "created_at": "2026-08-13T12:45:05Z",
+      "observation_count": 36,
+      "collector_version": 1
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260814T124504Z.v1.json",
+      "sha256": "4336f22150dde5f0ab0cd17196fe34520767cd9434018dbc12df7f029d55c8ac",
+      "created_at": "2026-08-14T12:45:04Z",
+      "observation_count": 36,
+      "collector_version": 1
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260815T124505Z.v1.json",
+      "sha256": "ae3a665eea20a3fbd28d3a9328531c060cdd4c74b14ec2a40c7bf824b7252d99",
+      "created_at": "2026-08-15T12:45:05Z",
+      "observation_count": 36,
+      "collector_version": 1
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260816T124506Z.v1.json",
+      "sha256": "00a4953a25c0beb81ba9328e71b79bbd46753a7b934fbf2319a97f403e7c7835",
+      "created_at": "2026-08-16T12:45:06Z",
+      "observation_count": 36,
+      "collector_version": 1
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260817T103006Z.v1.json",
+      "sha256": "a7d3f34d5ebc962a7348a2da9032df3fe7a21b68443c7ea33c0278edbaa97a6a",
+      "created_at": "2026-08-17T10:30:06Z",
+      "observation_count": 36,
+      "collector_version": 1
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260818T103007Z.v1.json",
+      "sha256": "dc542b2f79c31a8a4ed8fefbae409aa27f706ba7b736f552f1ec3601c678bcf4",
+      "created_at": "2026-08-18T10:30:07Z",
+      "observation_count": 35,
+      "collector_version": 1
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260819T103006Z.v1.json",
+      "sha256": "ef669912b2dfab052b2e4cdbe9bc407cb549fefb9fcc51a06da3ae81163a27b4",
+      "created_at": "2026-08-19T10:30:06Z",
+      "observation_count": 35,
+      "collector_version": 1
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260820T103006Z.v1.json",
+      "sha256": "ffc003d354d8359b5c07aa3b3ebf91db9a4e8c9a26607f16e92773c49653b979",
+      "created_at": "2026-08-20T10:30:06Z",
+      "observation_count": 35,
+      "collector_version": 1
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260821T103007Z.v1.json",
+      "sha256": "423b45615360ce5b826146de1f01ae50489f7f9a181fff9b5d8733717fc53fdf",
+      "created_at": "2026-08-21T10:30:07Z",
+      "observation_count": 35,
+      "collector_version": 1
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260822T103010Z.v1.json",
+      "sha256": "2179b5cc15428de0c3e937efd72b00dab50e8091ad39e86c8521074138c9f1d5",
+      "created_at": "2026-08-22T10:30:10Z",
+      "observation_count": 35,
+      "collector_version": 1
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260823T103006Z.v1.json",
+      "sha256": "8cab1e361b4382dcbcc7629cff110b5750cb479b19daab78a6f2b2756f140dce",
+      "created_at": "2026-08-23T10:30:06Z",
+      "observation_count": 35,
+      "collector_version": 1
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260824T103006Z.v1.json",
+      "sha256": "6ca15084f8eeb363bfb47040a227e0fd0aec84a03507fd85f3ed1b9a4b34e4a6",
+      "created_at": "2026-08-24T10:30:06Z",
+      "observation_count": 35,
+      "collector_version": 1
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260825T103008Z.v1.json",
+      "sha256": "d4fc36847d577ae541db56e62ce9b269a61bc0be73ff804b1cb01a6d29f57366",
+      "created_at": "2026-08-25T10:30:08Z",
+      "observation_count": 35,
+      "collector_version": 1
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260826T103007Z.v1.json",
+      "sha256": "a7003e33c73d807c9ccfbaf918bb278868c947821bc05235a918b3b09c004f5e",
+      "created_at": "2026-08-26T10:30:07Z",
+      "observation_count": 21,
+      "collector_version": 1
+    },
+    {
+      "path": "data/observations/candidate/uk-primary-retail-20260827T103007Z.v1.json",
+      "sha256": "fe2339aa7922a6b04c0436a22fa7af2d318c1c5cb9fdb17e015d0661b5112038",
+      "created_at": "2026-08-27T10:30:07Z",
+      "observation_count": 31,
+      "collector_version": 1
+    }
+  ],
+  "collision_rule": "A collision is the same seller and exact MPN observed more than once on the same UTC date. Legal entity is used where established; otherwise the observed display name is retained.",
+  "collisions": [
+    {
+      "seller": "ADMI Limited",
+      "seller_identity_basis": "legal_name",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "utc_date": "2026-08-09",
+      "observation_count": 2,
+      "observation_ids": [
+        "awdit-f5-6000j3636f16gx2-fx5-2026-08-09T122437Z",
+        "awdit-f5-6000j3636f16gx2-fx5-2026-08-09t234337z"
+      ],
+      "tranches": [
+        "data/observations/candidate/uk-primary-retail-2026-08-09T122437Z.v1.json",
+        "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json"
+      ]
+    },
+    {
+      "seller": "SweetCow Ltd t/a KingstonMemoryShop",
+      "seller_identity_basis": "legal_name",
+      "mpn": "KF560C30BBEK2-32",
+      "utc_date": "2026-08-09",
+      "observation_count": 2,
+      "observation_ids": [
+        "kms-kf560c30bbek2-32-2026-08-09T122553Z",
+        "kms-kf560c30bbek2-32-2026-08-09t234337z"
+      ],
+      "tranches": [
+        "data/observations/candidate/uk-primary-retail-2026-08-09T122437Z.v1.json",
+        "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json"
+      ]
+    },
+    {
+      "seller": "SweetCow Ltd t/a KingstonMemoryShop",
+      "seller_identity_basis": "legal_name",
+      "mpn": "KF564C32RSK2-32",
+      "utc_date": "2026-08-09",
+      "observation_count": 2,
+      "observation_ids": [
+        "kms-kf564c32rsk2-32-2026-08-09T122554Z",
+        "kms-kf564c32rsk2-32-2026-08-09t234337z"
+      ],
+      "tranches": [
+        "data/observations/candidate/uk-primary-retail-2026-08-09T122437Z.v1.json",
+        "data/observations/candidate/uk-primary-retail-2026-08-09T234337Z.v1.json"
+      ]
+    },
+    {
+      "seller": "ADMI Limited",
+      "seller_identity_basis": "legal_name",
+      "mpn": "CMH32GX5M2B5600C40K",
+      "utc_date": "2026-08-12",
+      "observation_count": 2,
+      "observation_ids": [
+        "awd-it-cmh32gx5m2b5600c40k-2026-08-12t11:49:04z",
+        "awd-it-cmh32gx5m2b5600c40k-2026-08-12t12:45:05z"
+      ],
+      "tranches": [
+        "data/observations/candidate/uk-primary-retail-20260812T114904Z.v1.json",
+        "data/observations/candidate/uk-primary-retail-20260812T124505Z.v1.json"
+      ]
+    },
+    {
+      "seller": "ADMI Limited",
+      "seller_identity_basis": "legal_name",
+      "mpn": "CMH32GX5M2E6000C36W",
+      "utc_date": "2026-08-12",
+      "observation_count": 2,
+      "observation_ids": [
+        "awd-it-cmh32gx5m2e6000c36w-2026-08-12t11:49:04z",
+        "awd-it-cmh32gx5m2e6000c36w-2026-08-12t12:45:05z"
+      ],
+      "tranches": [
+        "data/observations/candidate/uk-primary-retail-20260812T114904Z.v1.json",
+        "data/observations/candidate/uk-primary-retail-20260812T124505Z.v1.json"
+      ]
+    },
+    {
+      "seller": "ADMI Limited",
+      "seller_identity_basis": "legal_name",
+      "mpn": "F5-6000J3636F16GX2-FX5",
+      "utc_date": "2026-08-12",
+      "observation_count": 2,
+      "observation_ids": [
+        "awd-it-f5-6000j3636f16gx2-fx5-2026-08-12t12:45:05z",
+        "awdit-f5-6000j3636f16gx2-fx5-2026-08-12t12:47:11z"
+      ],
+      "tranches": [
+        "data/observations/candidate/uk-primary-retail-2026-08-12T124750Z.prospective.v1.json",
+        "data/observations/candidate/uk-primary-retail-20260812T124505Z.v1.json"
+      ]
+    },
+    {
+      "seller": "SweetCow Ltd t/a KingstonMemoryShop",
+      "seller_identity_basis": "legal_name",
+      "mpn": "KF560C30BBEK2-32",
+      "utc_date": "2026-08-12",
+      "observation_count": 3,
+      "observation_ids": [
+        "kingstonmemoryshop-kf560c30bbek2-32-2026-08-12t11:49:04z",
+        "kingstonmemoryshop-kf560c30bbek2-32-2026-08-12t12:45:05z",
+        "kms-kf560c30bbek2-32-2026-08-12t12:47:38z"
+      ],
+      "tranches": [
+        "data/observations/candidate/uk-primary-retail-2026-08-12T124750Z.prospective.v1.json",
+        "data/observations/candidate/uk-primary-retail-20260812T114904Z.v1.json",
+        "data/observations/candidate/uk-primary-retail-20260812T124505Z.v1.json"
+      ]
+    },
+    {
+      "seller": "SweetCow Ltd t/a KingstonMemoryShop",
+      "seller_identity_basis": "legal_name",
+      "mpn": "KF564C32RSK2-32",
+      "utc_date": "2026-08-12",
+      "observation_count": 3,
+      "observation_ids": [
+        "kingstonmemoryshop-kf564c32rsk2-32-2026-08-12t11:49:04z",
+        "kingstonmemoryshop-kf564c32rsk2-32-2026-08-12t12:45:05z",
+        "kms-kf564c32rsk2-32-2026-08-12t12:47:50z"
+      ],
+      "tranches": [
+        "data/observations/candidate/uk-primary-retail-2026-08-12T124750Z.prospective.v1.json",
+        "data/observations/candidate/uk-primary-retail-20260812T114904Z.v1.json",
+        "data/observations/candidate/uk-primary-retail-20260812T124505Z.v1.json"
+      ]
+    }
+  ],
+  "seller_identity_unresolved": [
+    "Novatech",
+    "Scan Computers"
+  ],
+  "integration": {
+    "date_level_diagnostic_integration_allowed": false,
+    "reason_code": "BLOCKED_DUPLICATE_SELLER_MPN_UTC_DATE",
+    "detail": "At least one seller and exact MPN pair occurs more than once on a UTC date. No intraday rule is approved, so date-level derivation remains blocked."
+  },
+  "governance": {
+    "production_import_allowed": false,
+    "production_activation_allowed": false,
+    "index_eligibility": false,
+    "methodology_approval": false,
+    "publication_allowed": false
+  }
+}
