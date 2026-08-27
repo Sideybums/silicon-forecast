@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://siliconforecast.example/schemas/collector-target-attempt-set.v1.schema.json",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "attempt_set_id", "run_id", "collector_version", "target_registry_path", "target_registry_sha256", "target_selection_contract_version", "started_at", "completed_at", "attempt_count", "attempts", "status", "governance"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "attempt_set_id": {"type": "string", "pattern": "^sf-collection-attempt-set-[0-9]{8}T[0-9]{6}Z-v1$"},
+    "run_id": {"type": "string", "pattern": "^sf-collection-run-[0-9]{8}T[0-9]{6}Z$"},
+    "collector_version": {"type": ["integer", "string"]},
+    "target_registry_path": {"type": "string", "minLength": 1},
+    "target_registry_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+    "target_selection_contract_version": {"type": "string", "minLength": 1},
+    "started_at": {"type": "string", "format": "date-time"},
+    "completed_at": {"type": "string", "format": "date-time"},
+    "attempt_count": {"type": "integer", "minimum": 0},
+    "attempts": {"type": "array", "items": {"$ref": "#/definitions/attempt"}},
+    "status": {"const": "candidate_private_immutable"},
+    "governance": {"$ref": "#/definitions/governance"}
+  },
+  "definitions": {
+    "governance": {
+      "type": "object", "additionalProperties": false,
+      "required": ["source_approved", "methodology_approved", "index_eligible", "production_eligible", "publication_eligible", "public_claim_approved"],
+      "properties": {"source_approved": {"const": false}, "methodology_approved": {"const": false}, "index_eligible": {"const": false}, "production_eligible": {"const": false}, "publication_eligible": {"const": false}, "public_claim_approved": {"const": false}}
+    },
+    "attempt": {
+      "type": "object", "additionalProperties": false,
+      "required": ["attempt_id", "ordinal", "target_key", "expected_mpn", "seller_display_name", "seller_legal_name_supplied", "source_key", "requested_url", "attempt_started_at", "attempt_completed_at", "outcome", "raw_reasons", "http_status", "final_url", "response_bytes", "response_sha256", "response_bytes_retained", "retention_note", "observation_id", "evidence_id", "raw_result_sha256", "raw_result"],
+      "properties": {
+        "attempt_id": {"type": "string", "pattern": "^sf-collection-run-[0-9]{8}T[0-9]{6}Z:attempt:[0-9]{4}$"}, "ordinal": {"type": "integer", "minimum": 1}, "target_key": {"type": "string", "minLength": 1}, "expected_mpn": {"type": "string", "minLength": 1}, "seller_display_name": {"type": "string", "minLength": 1}, "seller_legal_name_supplied": {"type": ["string", "null"], "minLength": 1}, "source_key": {"type": "string", "minLength": 1}, "requested_url": {"type": "string", "minLength": 1}, "attempt_started_at": {"type": "string", "format": "date-time"}, "attempt_completed_at": {"type": "string", "format": "date-time"},
+        "outcome": {"enum": ["observation_retained", "http_failure", "robots_disallowed", "fetch_failure", "parser_abstention", "identity_abstention", "qualification_abstention"]}, "raw_reasons": {"type": "array", "items": {"type": "string", "minLength": 1}}, "http_status": {"type": ["integer", "null"], "minimum": 100, "maximum": 599}, "final_url": {"type": ["string", "null"]}, "response_bytes": {"type": ["integer", "null"], "minimum": 0}, "response_sha256": {"type": ["string", "null"], "pattern": "^[0-9a-f]{64}$"}, "response_bytes_retained": {"const": false}, "retention_note": {"type": "string", "minLength": 1}, "observation_id": {"type": ["string", "null"]}, "evidence_id": {"type": ["string", "null"]}, "raw_result_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}, "raw_result": {"type": "object"}
+      },
+      "allOf": [
+        {"if": {"properties": {"outcome": {"const": "observation_retained"}}}, "then": {"properties": {"raw_reasons": {"maxItems": 0}, "observation_id": {"type": "string", "minLength": 1}, "evidence_id": {"type": "string", "minLength": 1}}}, "else": {"properties": {"raw_reasons": {"minItems": 1}, "observation_id": {"const": null}, "evidence_id": {"const": null}}}},
+        {"if": {"properties": {"response_bytes": {"type": "integer"}}}, "then": {"properties": {"response_sha256": {"type": "string"}}}, "else": {"properties": {"response_sha256": {"const": null}}}}
+      ]
+    }
+  }
+}
