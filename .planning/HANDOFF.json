@@ -1,11 +1,11 @@
 {
-  "schema_version": 6,
-  "updated_at": "2026-08-25T13:53:44.280Z",
+  "schema_version": 7,
+  "updated_at": "2026-08-27T09:50:34Z",
   "project": "Silicon Forecast",
-  "status": "paused_before_backend_persistence_design",
+  "status": "fixture_backend_persistence_approved_for_commit_and_pr",
   "phase": {
     "id": "02-platform-catalogue-control-plane",
-    "task": "backend-persistence-design",
+    "task": "backend-persistence-fixture-verified",
     "human_handover": ".planning/phases/02-platform-catalogue-control-plane/.continue-here.md"
   },
   "north_star": "Prove one lawful, accurate and reproducible regional DDR5 price-index foundation before expanding scope.",
@@ -23,9 +23,9 @@
   ],
   "repository": {
     "worktree": "/Users/weetoddy/Desktop/Projects/Silicon_Forecast_Recovery",
-    "handoff_branch": "docs/backend-persistence-handover",
-    "base_commit": "2181685afa98dcc42316c13377f50b932a471431",
-    "canonical_remote": "origin/main",
+    "handoff_branch": "feat/backend-persistence",
+    "base_commit": "1631e07acd55df29e61fb19b7f9f71f9cb1813c5",
+    "canonical_remote": "origin/main@1631e07acd55df29e61fb19b7f9f71f9cb1813c5",
     "collector_commit_in_base": true,
     "history_policy": "normal commits and merges only; never rewrite collector or release history"
   },
@@ -33,7 +33,9 @@
     "mx_4": "completed_verified_deployed",
     "retailer_comparison": "deployed_and_live_verified",
     "cloudflare_version": "9b839548-d4e1-42f0-b6b0-6083e71074a7",
-    "backend_audit": "completed_read_only_independently_reviewed"
+    "backend_audit": "completed_read_only_independently_reviewed",
+    "backend_persistence_design": "independently_reviewed_and_reconciled",
+    "backend_persistence_fixture_slice": "implemented_and_independently_go_verified"
   },
   "collector": {
     "sole_scheduler": "launchd",
@@ -62,7 +64,11 @@
       "evidence_ledger": "research/evidence/primary-retail-20260825T103008Z/ledger.v1.json",
       "evidence_ledger_sha256": "293cce2e9a1de0227e25fd3eb35c4df8757101dba4272ebd79aeb509c76c518e",
       "audit_result": "35 observations and 35 evidence entries; zero missing bindings, zero field mismatches and 35 unique observation IDs"
-    }
+    },
+    "immutable_ledger_runs_at_final_preflight": 20,
+    "checkout_clean_at_final_preflight": true,
+    "lock_present_at_final_preflight": false,
+    "process_running_at_final_preflight": false
   },
   "verified_backend_reality": {
     "persistent_sql_backend_active": false,
@@ -102,7 +108,21 @@
       "collector observation IDs may violate SQL key format",
       "collector and SQL qualification vocabularies differ",
       "most collector MPNs lack mandatory canonical-product SQL rows"
-    ]
+    ],
+    "fixture_persistence_implemented": true,
+    "fixture_persistence_operational": false,
+    "migration": "db/migrations/0004_lossless_collector_persistence.sql",
+    "mapping_contract": "sf-collector-mapping-v1 content-bound to six exact implementation/schema artefacts",
+    "legacy_projection": "35 observation-derived successes plus one explicit unresolved ten-attempt gap; no failed identities inferred",
+    "synthetic_attempt_contract": "45 exact ordered attempts including 43 failures and 2 retained observations",
+    "verification": {
+      "focused_unit": "5/5 passed",
+      "disposable_postgresql_16": "passed: standalone synthetic import, exact replay, two-session collision, mapping-v2 additive projection, coverage, append-only and privilege locks",
+      "lint": "passed",
+      "diff_check": "passed",
+      "independent_final_review": "GO",
+      "full_suite": "baseline blocker: three stale private factual-offer promotion-candidate assertions reproduce from untouched HEAD; build stops at the same stale private report; locked artefact not modified"
+    }
   },
   "coverage": {
     "target_registry": {
@@ -139,33 +159,33 @@
     {
       "id": 1,
       "name": "Draft backend persistence design contract",
-      "status": "not_started",
+      "status": "completed_verified",
       "output": ".planning/phases/02-platform-catalogue-control-plane/BACKEND-PERSISTENCE-DESIGN.md"
     },
     {
       "id": 2,
       "name": "Independently critique and revise design",
-      "status": "not_started"
+      "status": "completed_verified"
     },
     {
       "id": 3,
       "name": "Add lossless fixture-only persistence migrations and mapping contract",
-      "status": "not_started"
+      "status": "completed_verified"
     },
     {
       "id": 4,
       "name": "Build idempotent fixture-only tranche/evidence importer with quarantine",
-      "status": "not_started"
+      "status": "completed_verified"
     },
     {
       "id": 5,
-      "name": "Add deterministic latest-offer and retailer-coverage views/exports",
-      "status": "not_started"
+      "name": "Deterministic latest-offer and retailer-coverage views; static export remains separately locked/deferred",
+      "status": "views_completed_verified_export_deferred_locked"
     },
     {
       "id": 6,
       "name": "Propose durable PostgreSQL deployment separately for exact human approval",
-      "status": "not_started"
+      "status": "not_started_human_approval_required"
     }
   ],
   "blocking_constraints": [
@@ -174,7 +194,8 @@
     "individual failed target identity must be retained",
     "production database mutation remains locked",
     "existing Phase 2 plan excludes a production database-backed public page",
-    "no methodology, basket, baseline, reference, deflator, threshold or source family is selected"
+    "no methodology, basket, baseline, reference, deflator, threshold or source family is selected",
+    "full repository gate has a pre-existing stale private promotion-candidate report at untouched HEAD; do not refresh it inside this persistence slice without separate authority"
   ],
   "locks": {
     "production_database_mutation_approved": false,
@@ -189,6 +210,20 @@
     "current_price_or_stock_claims_approved": false,
     "new_public_deployment_approved": false
   },
-  "next_action": "Read and acknowledge the blocking constraints, verify current origin/main plus collector/launchd state, then draft and independently critique BACKEND-PERSISTENCE-DESIGN.md before writing migrations or importer code.",
-  "suggested_prompt": "Continue Silicon Forecast from .planning/HANDOFF.json and .planning/phases/02-platform-catalogue-control-plane/.continue-here.md. Jarvis remains parent orchestrator and worker output is untrusted until independently verified. Start with read-only Git, launchd and collector-checkout preflight. Then design the lossless collector-to-PostgreSQL persistence layer and obtain an independent critique before implementation. Keep the launchd collector as the sole prospective fetcher, preserve immutable Git evidence, persist every target attempt including failures, and keep production DB mutation, source-family selection, methodology, basket, baseline, reference, deflator, thresholds and deployment locked."
+  "next_action": "Commit and open the verified fixture-only persistence PR on current origin/main. After that, prepare separate governed decision packets for the now-approved durable PostgreSQL environment and live immutable-artifact importer. Keep launchd as sole prospective fetcher and all unrelated source, methodology, publication and deployment locks closed.",
+  "suggested_prompt": "Continue Silicon Forecast after the fixture-only persistence PR. Durable PostgreSQL and governed live immutable-artifact ingestion are approved as separate decision packets. Recheck collector state, select and document the durable environment, backup/migration/rollback/observability model, then implement live ingestion without adding a second fetcher or unlocking source, methodology, basket, baseline, reference, deflator, thresholds, static export, publication or deployment.",
+  "approvals": {
+    "fixture_persistence_commit_and_pr": {
+      "approved": true,
+      "scope": "commit, push and open PR for the verified fixture-only persistence slice"
+    },
+    "durable_postgresql": {
+      "approved": true,
+      "scope": "design, provision and verify a durable PostgreSQL environment in a separate governed decision packet"
+    },
+    "live_integration": {
+      "approved": true,
+      "scope": "implement and verify governed collector-artifact-to-durable-PostgreSQL integration in a separate decision packet; launchd remains the sole prospective fetcher"
+    }
+  }
 }

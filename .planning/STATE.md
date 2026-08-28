@@ -5,9 +5,22 @@
 See `.planning/PROJECT.md` (last updated 2026-08-24).
 
 **Core value:** Let people follow dated UK component-price graphs as they would a stock, with reviewed market/news overlays explaining possible effects while deterministic calculations and complete lineage remain authoritative.
-**Current focus:** Pause before designing the lossless collector-to-PostgreSQL persistence layer. The current SQL work is a tested foundation schema, not an operational backend: no persistent database is configured, no collector ingestion exists and the frontend imports checked-in JSON. Preserve immutable Git evidence and the exact public release while designing per-target attempt history, lossless evidence staging, idempotent normalisation and deterministic static exports. Production database mutation and all unrelated methodology/source/publication locks remain closed.
+**Current focus:** Review and package the verified fixture-only lossless collector-to-PostgreSQL persistence slice on `feat/backend-persistence`. Migration 0004, immutable-Git importers, exact-attempt/legacy-gap fixtures, mapping-versioned projections and private read views are implemented and independently GO-reviewed; no persistent database, live collector integration, static export or database-backed frontend is active. Production database mutation and all methodology/source/publication/deployment locks remain closed.
 
 ## Status
+
+### Fixture-only backend persistence implementation — 2026-08-25
+
+- On 2026-08-27 David approved committing and opening a PR for this verified fixture slice. He separately approved durable PostgreSQL provisioning and governed live immutable-artifact ingestion as the next decision packets. Those approvals do not add a second prospective fetcher or unlock source selection, methodology, basket, baseline, reference, deflator, thresholds, public export, publication or deployment.
+
+- Implemented migration `0004_lossless_collector_persistence.sql`, a content-bound mapping contract, executable closed schemas and deterministic fixture SQL renderers.
+- The allowlisted legacy projection preserves 35 exact observation-derived successes and one explicit ten-attempt identity gap; no historical failed target identity is inferred. The synthetic future contract persists all 45 ordered attempts, including 43 failures and two successes.
+- Immutable Git acquisition evidence is separate from additive mapping projections. Disposable PostgreSQL tests prove a mapping-v2 projection over the same six raw artefacts without duplicate acquisition rows or coverage inflation.
+- Exact replay is idempotent; changed-content identity reuse fails closed. A real two-session test proves advisory-lock serialisation, and all history tables have changed-content plus update/delete protection coverage. Fixture importer privileges cannot mutate prior candidate tables.
+- Focused persistence tests passed 5/5, ESLint and `git diff --check` passed, and disposable PostgreSQL 16 verification passed migrations 0001–0004 plus all fixture/adversarial tests. Final independent review returned GO.
+- The full repository suite/build remains blocked by a pre-existing stale private factual-offer promotion-candidate report. The same three failures reproduce from untouched HEAD. That unrelated locked authority artefact was not refreshed.
+- Final collector preflight: dedicated checkout clean on `main` at `1631e07acd55df29e61fb19b7f9f71f9cb1813c5`, no lock/process, launchd idle with ten runs and last exit 0. No collector or schedule mutation occurred.
+- No durable/production database or live integration was added in this slice; David approved those as separate next packets on 2026-08-27. Source family, methodology, basket, baseline, reference, deflator, threshold, release, static export and deployment authority remain locked.
 
 ### Backend persistence audit and pause point — 2026-08-25
 
@@ -200,7 +213,7 @@ The public frontend now has two deliberately separate states: the checksum-bound
 
 ## Next Action
 
-Resume from `.planning/HANDOFF.json` and `.planning/phases/02-platform-catalogue-control-plane/.continue-here.md`. Start with read-only Git, launchd and collector preflight, then draft `.planning/phases/02-platform-catalogue-control-plane/BACKEND-PERSISTENCE-DESIGN.md`. Independently critique and revise that design before writing migrations or importer code. Keep the collector single-writer, preserve raw evidence losslessly, model every target attempt and keep production database mutation, source-family activation, methodology and deployment locked.
+Resume from `.planning/HANDOFF.json` and `.planning/phases/02-platform-catalogue-control-plane/.continue-here.md`. Commit/open the approved `feat/backend-persistence` fixture PR, then prepare separate governed packets for the approved durable PostgreSQL environment and live immutable-artifact ingestion. Do not refresh the unrelated stale private promotion report inside this change. Static export, source selection, methodology and deployment remain locked.
 
 ## Safety Note
 
@@ -210,4 +223,4 @@ The observation-first change adds a separate, additive factual publication class
 
 ---
 *State created: 2026-08-05*
-*Last updated: 2026-08-25 after the natural collector run and read-only backend persistence audit. The project is paused before persistence design; the deployed retailer comparison is unchanged and production database mutation, methodology, event publication, aggregate publication and source-family authority remain locked.*
+*Last updated: 2026-08-25 after fixture-only backend persistence implementation, disposable PostgreSQL verification and independent GO review. The slice is uncommitted; the deployed retailer comparison is unchanged and production database mutation, live collector integration, methodology, event publication, aggregate publication, static export, deployment and source-family authority remain locked.*

@@ -1,0 +1,1545 @@
+{
+  "schema_version": 1,
+  "attempt_set_id": "sf-collection-attempt-set-20260826T103000Z-v1",
+  "run_id": "sf-collection-run-20260826T103000Z",
+  "collector_version": 2,
+  "target_registry_path": "tests/fixtures/collector-persistence/synthetic-targets.v1.json",
+  "target_registry_sha256": "0000000000000000000000000000000000000000000000000000000000000000",
+  "target_selection_contract_version": "sf-target-selection-v1",
+  "started_at": "2026-08-26T10:30:00Z",
+  "completed_at": "2026-08-26T10:30:45Z",
+  "attempt_count": 45,
+  "attempts": [
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0001",
+      "ordinal": 1,
+      "target_key": "Synthetic Rétailer 1\u001fSYNTH-001",
+      "expected_mpn": "SYNTH-001",
+      "seller_display_name": "Synthetic Rétailer 1",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-1",
+      "requested_url": "https://fixture.invalid/1",
+      "attempt_started_at": "2026-08-26T10:30:01Z",
+      "attempt_completed_at": "2026-08-26T10:30:01Z",
+      "outcome": "observation_retained",
+      "raw_reasons": [],
+      "http_status": 200,
+      "final_url": "https://fixture.invalid/1",
+      "response_bytes": 101,
+      "response_sha256": "169b662cf059820589c145a0b6f3c99a078e6d5117c31b4082634cb40b19d6a9",
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": "synthetic-observation:1",
+      "evidence_id": "synthetic-evidence:1",
+      "raw_result_sha256": "fd546b699e245353fdd54362f18d6bc47f9224fcdb9eb1c96f0c1a97b4a203d9",
+      "raw_result": {
+        "usable": true,
+        "reasons": [],
+        "mpn": "SYNTH-001",
+        "seller": "Synthetic Rétailer 1",
+        "http_status": 200
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0002",
+      "ordinal": 2,
+      "target_key": "Synthetic Rétailer 2\u001fSYNTH-002",
+      "expected_mpn": "SYNTH-002",
+      "seller_display_name": "Synthetic Rétailer 2",
+      "seller_legal_name_supplied": "Synthetic Legal 2",
+      "source_key": "synthetic-source-2",
+      "requested_url": "https://fixture.invalid/2",
+      "attempt_started_at": "2026-08-26T10:30:02Z",
+      "attempt_completed_at": "2026-08-26T10:30:02Z",
+      "outcome": "observation_retained",
+      "raw_reasons": [],
+      "http_status": 200,
+      "final_url": "https://fixture.invalid/2",
+      "response_bytes": 102,
+      "response_sha256": "6dc610ef0e0211658b721e7e596f899f634af51015680de8215893db37673f3d",
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": "synthetic-observation:2",
+      "evidence_id": "synthetic-evidence:2",
+      "raw_result_sha256": "8142a94cc5efe2c78f14706d8557c399ebaf8872cbe38999aceb2fa123e7f51a",
+      "raw_result": {
+        "usable": true,
+        "reasons": [],
+        "mpn": "SYNTH-002",
+        "seller": "Synthetic Rétailer 2",
+        "http_status": 200
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0003",
+      "ordinal": 3,
+      "target_key": "Synthetic Rétailer 3\u001fSYNTH-003",
+      "expected_mpn": "SYNTH-003",
+      "seller_display_name": "Synthetic Rétailer 3",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-3",
+      "requested_url": "https://fixture.invalid/3",
+      "attempt_started_at": "2026-08-26T10:30:03Z",
+      "attempt_completed_at": "2026-08-26T10:30:03Z",
+      "outcome": "http_failure",
+      "raw_reasons": [
+        "HTTP_403"
+      ],
+      "http_status": 403,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "ca9598ca01d13969f5a94cb0295a7358f7f5c6cdc5abcd477c5b3b4f523be244",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "HTTP_403"
+        ],
+        "mpn": "SYNTH-003",
+        "seller": "Synthetic Rétailer 3",
+        "http_status": 403
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0004",
+      "ordinal": 4,
+      "target_key": "Synthetic Rétailer 4\u001fSYNTH-004",
+      "expected_mpn": "SYNTH-004",
+      "seller_display_name": "Synthetic Rétailer 4",
+      "seller_legal_name_supplied": "Synthetic Legal 4",
+      "source_key": "synthetic-source-4",
+      "requested_url": "https://fixture.invalid/4",
+      "attempt_started_at": "2026-08-26T10:30:04Z",
+      "attempt_completed_at": "2026-08-26T10:30:04Z",
+      "outcome": "robots_disallowed",
+      "raw_reasons": [
+        "ROBOTS_DISALLOWED"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "f5b63c4818ca7f9771814693800da42e9ab8eb775393629cf5b15f03a9e81a76",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "ROBOTS_DISALLOWED"
+        ],
+        "mpn": "SYNTH-004",
+        "seller": "Synthetic Rétailer 4",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0005",
+      "ordinal": 5,
+      "target_key": "Synthetic Rétailer 5\u001fSYNTH-005",
+      "expected_mpn": "SYNTH-005",
+      "seller_display_name": "Synthetic Rétailer 5",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-5",
+      "requested_url": "https://fixture.invalid/5",
+      "attempt_started_at": "2026-08-26T10:30:05Z",
+      "attempt_completed_at": "2026-08-26T10:30:05Z",
+      "outcome": "identity_abstention",
+      "raw_reasons": [
+        "MPN_NOT_VISIBLE"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "ba62f0dc66a144633cb77765eea3aeb91cb7727d68d03ed7c63c7f261ed8a946",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "MPN_NOT_VISIBLE"
+        ],
+        "mpn": "SYNTH-005",
+        "seller": "Synthetic Rétailer 5",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0006",
+      "ordinal": 6,
+      "target_key": "Synthetic Rétailer 6\u001fSYNTH-006",
+      "expected_mpn": "SYNTH-006",
+      "seller_display_name": "Synthetic Rétailer 6",
+      "seller_legal_name_supplied": "Synthetic Legal 6",
+      "source_key": "synthetic-source-6",
+      "requested_url": "https://fixture.invalid/6",
+      "attempt_started_at": "2026-08-26T10:30:06Z",
+      "attempt_completed_at": "2026-08-26T10:30:06Z",
+      "outcome": "http_failure",
+      "raw_reasons": [
+        "HTTP_403"
+      ],
+      "http_status": 403,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "df1529e65f7558058056f2a5a64eea876891044ec250ce16f07ae859f17377b3",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "HTTP_403"
+        ],
+        "mpn": "SYNTH-006",
+        "seller": "Synthetic Rétailer 6",
+        "http_status": 403
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0007",
+      "ordinal": 7,
+      "target_key": "Synthetic Rétailer 7\u001fSYNTH-007",
+      "expected_mpn": "SYNTH-007",
+      "seller_display_name": "Synthetic Rétailer 7",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-7",
+      "requested_url": "https://fixture.invalid/7",
+      "attempt_started_at": "2026-08-26T10:30:07Z",
+      "attempt_completed_at": "2026-08-26T10:30:07Z",
+      "outcome": "robots_disallowed",
+      "raw_reasons": [
+        "ROBOTS_DISALLOWED"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "041f34109d592945ecdc8e7b063a82fe1876d17e344608efb3b3730346bf3c6a",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "ROBOTS_DISALLOWED"
+        ],
+        "mpn": "SYNTH-007",
+        "seller": "Synthetic Rétailer 7",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0008",
+      "ordinal": 8,
+      "target_key": "Synthetic Rétailer 8\u001fSYNTH-008",
+      "expected_mpn": "SYNTH-008",
+      "seller_display_name": "Synthetic Rétailer 8",
+      "seller_legal_name_supplied": "Synthetic Legal 8",
+      "source_key": "synthetic-source-8",
+      "requested_url": "https://fixture.invalid/8",
+      "attempt_started_at": "2026-08-26T10:30:08Z",
+      "attempt_completed_at": "2026-08-26T10:30:08Z",
+      "outcome": "identity_abstention",
+      "raw_reasons": [
+        "MPN_NOT_VISIBLE"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "6313067e16f8f2735882b55c8ec975b5b14f7bf49e7bbfa059eef58c6af6afb9",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "MPN_NOT_VISIBLE"
+        ],
+        "mpn": "SYNTH-008",
+        "seller": "Synthetic Rétailer 8",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0009",
+      "ordinal": 9,
+      "target_key": "Synthetic Rétailer 9\u001fSYNTH-009",
+      "expected_mpn": "SYNTH-009",
+      "seller_display_name": "Synthetic Rétailer 9",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-9",
+      "requested_url": "https://fixture.invalid/9",
+      "attempt_started_at": "2026-08-26T10:30:09Z",
+      "attempt_completed_at": "2026-08-26T10:30:09Z",
+      "outcome": "http_failure",
+      "raw_reasons": [
+        "HTTP_403"
+      ],
+      "http_status": 403,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "336f6b4452b45561292fd77c10af9ac10690ad1f3aec834040bf6b8dc6c29ab9",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "HTTP_403"
+        ],
+        "mpn": "SYNTH-009",
+        "seller": "Synthetic Rétailer 9",
+        "http_status": 403
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0010",
+      "ordinal": 10,
+      "target_key": "Synthetic Rétailer 10\u001fSYNTH-010",
+      "expected_mpn": "SYNTH-010",
+      "seller_display_name": "Synthetic Rétailer 10",
+      "seller_legal_name_supplied": "Synthetic Legal 10",
+      "source_key": "synthetic-source-10",
+      "requested_url": "https://fixture.invalid/10",
+      "attempt_started_at": "2026-08-26T10:30:10Z",
+      "attempt_completed_at": "2026-08-26T10:30:10Z",
+      "outcome": "robots_disallowed",
+      "raw_reasons": [
+        "ROBOTS_DISALLOWED"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "e97e382da673faeaf1e52323b8cd475c78df82bc435d2ad8c305ed47f6f6a32a",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "ROBOTS_DISALLOWED"
+        ],
+        "mpn": "SYNTH-010",
+        "seller": "Synthetic Rétailer 10",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0011",
+      "ordinal": 11,
+      "target_key": "Synthetic Rétailer 11\u001fSYNTH-011",
+      "expected_mpn": "SYNTH-011",
+      "seller_display_name": "Synthetic Rétailer 11",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-11",
+      "requested_url": "https://fixture.invalid/11",
+      "attempt_started_at": "2026-08-26T10:30:11Z",
+      "attempt_completed_at": "2026-08-26T10:30:11Z",
+      "outcome": "identity_abstention",
+      "raw_reasons": [
+        "MPN_NOT_VISIBLE"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "bf02f4c23f37de69bfdd026b84f097c876d9b6f1b02216ddd36e5563aaa0b280",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "MPN_NOT_VISIBLE"
+        ],
+        "mpn": "SYNTH-011",
+        "seller": "Synthetic Rétailer 11",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0012",
+      "ordinal": 12,
+      "target_key": "Synthetic Rétailer 12\u001fSYNTH-012",
+      "expected_mpn": "SYNTH-012",
+      "seller_display_name": "Synthetic Rétailer 12",
+      "seller_legal_name_supplied": "Synthetic Legal 12",
+      "source_key": "synthetic-source-12",
+      "requested_url": "https://fixture.invalid/12",
+      "attempt_started_at": "2026-08-26T10:30:12Z",
+      "attempt_completed_at": "2026-08-26T10:30:12Z",
+      "outcome": "http_failure",
+      "raw_reasons": [
+        "HTTP_403"
+      ],
+      "http_status": 403,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "4c8a6f8c258312bc84216b84d2f633e95ef20b04b3c3078b7e02aa15fac53ee8",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "HTTP_403"
+        ],
+        "mpn": "SYNTH-012",
+        "seller": "Synthetic Rétailer 12",
+        "http_status": 403
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0013",
+      "ordinal": 13,
+      "target_key": "Synthetic Rétailer 13\u001fSYNTH-013",
+      "expected_mpn": "SYNTH-013",
+      "seller_display_name": "Synthetic Rétailer 13",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-13",
+      "requested_url": "https://fixture.invalid/13",
+      "attempt_started_at": "2026-08-26T10:30:13Z",
+      "attempt_completed_at": "2026-08-26T10:30:13Z",
+      "outcome": "robots_disallowed",
+      "raw_reasons": [
+        "ROBOTS_DISALLOWED"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "393078bdb1cf4f627bb0c329e7a7320d6baa8a1a9d8fe0ef3842423076ab7976",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "ROBOTS_DISALLOWED"
+        ],
+        "mpn": "SYNTH-013",
+        "seller": "Synthetic Rétailer 13",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0014",
+      "ordinal": 14,
+      "target_key": "Synthetic Rétailer 14\u001fSYNTH-014",
+      "expected_mpn": "SYNTH-014",
+      "seller_display_name": "Synthetic Rétailer 14",
+      "seller_legal_name_supplied": "Synthetic Legal 14",
+      "source_key": "synthetic-source-14",
+      "requested_url": "https://fixture.invalid/14",
+      "attempt_started_at": "2026-08-26T10:30:14Z",
+      "attempt_completed_at": "2026-08-26T10:30:14Z",
+      "outcome": "identity_abstention",
+      "raw_reasons": [
+        "MPN_NOT_VISIBLE"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "8ebbf6d5c9a3d10b6b7b320d973bac6de6c37bceb1e95344703737365261ed95",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "MPN_NOT_VISIBLE"
+        ],
+        "mpn": "SYNTH-014",
+        "seller": "Synthetic Rétailer 14",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0015",
+      "ordinal": 15,
+      "target_key": "Synthetic Rétailer 15\u001fSYNTH-015",
+      "expected_mpn": "SYNTH-015",
+      "seller_display_name": "Synthetic Rétailer 15",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-15",
+      "requested_url": "https://fixture.invalid/15",
+      "attempt_started_at": "2026-08-26T10:30:15Z",
+      "attempt_completed_at": "2026-08-26T10:30:15Z",
+      "outcome": "http_failure",
+      "raw_reasons": [
+        "HTTP_403"
+      ],
+      "http_status": 403,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "cd23b6a2e64f7c96de5e4ed3b39784a83f44c24677213e6e0421b0645d520ce6",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "HTTP_403"
+        ],
+        "mpn": "SYNTH-015",
+        "seller": "Synthetic Rétailer 15",
+        "http_status": 403
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0016",
+      "ordinal": 16,
+      "target_key": "Synthetic Rétailer 16\u001fSYNTH-016",
+      "expected_mpn": "SYNTH-016",
+      "seller_display_name": "Synthetic Rétailer 16",
+      "seller_legal_name_supplied": "Synthetic Legal 16",
+      "source_key": "synthetic-source-16",
+      "requested_url": "https://fixture.invalid/16",
+      "attempt_started_at": "2026-08-26T10:30:16Z",
+      "attempt_completed_at": "2026-08-26T10:30:16Z",
+      "outcome": "robots_disallowed",
+      "raw_reasons": [
+        "ROBOTS_DISALLOWED"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "2419edf4380dfaf9e176d916b84f87fc2b0b9ef7a8e94b9dec14c09efeec516e",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "ROBOTS_DISALLOWED"
+        ],
+        "mpn": "SYNTH-016",
+        "seller": "Synthetic Rétailer 16",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0017",
+      "ordinal": 17,
+      "target_key": "Synthetic Rétailer 17\u001fSYNTH-017",
+      "expected_mpn": "SYNTH-017",
+      "seller_display_name": "Synthetic Rétailer 17",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-17",
+      "requested_url": "https://fixture.invalid/17",
+      "attempt_started_at": "2026-08-26T10:30:17Z",
+      "attempt_completed_at": "2026-08-26T10:30:17Z",
+      "outcome": "identity_abstention",
+      "raw_reasons": [
+        "MPN_NOT_VISIBLE"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "c4a0f4aab94340aed83578389d9a965091db8d78141f66c0f1aa769ab7e96591",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "MPN_NOT_VISIBLE"
+        ],
+        "mpn": "SYNTH-017",
+        "seller": "Synthetic Rétailer 17",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0018",
+      "ordinal": 18,
+      "target_key": "Synthetic Rétailer 18\u001fSYNTH-018",
+      "expected_mpn": "SYNTH-018",
+      "seller_display_name": "Synthetic Rétailer 18",
+      "seller_legal_name_supplied": "Synthetic Legal 18",
+      "source_key": "synthetic-source-18",
+      "requested_url": "https://fixture.invalid/18",
+      "attempt_started_at": "2026-08-26T10:30:18Z",
+      "attempt_completed_at": "2026-08-26T10:30:18Z",
+      "outcome": "http_failure",
+      "raw_reasons": [
+        "HTTP_403"
+      ],
+      "http_status": 403,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "b075e3163ec2c886dd94c133b5d2f6c9ba60a139f0ff3d0a96bbdab2b96ef7bd",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "HTTP_403"
+        ],
+        "mpn": "SYNTH-018",
+        "seller": "Synthetic Rétailer 18",
+        "http_status": 403
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0019",
+      "ordinal": 19,
+      "target_key": "Synthetic Rétailer 19\u001fSYNTH-019",
+      "expected_mpn": "SYNTH-019",
+      "seller_display_name": "Synthetic Rétailer 19",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-19",
+      "requested_url": "https://fixture.invalid/19",
+      "attempt_started_at": "2026-08-26T10:30:19Z",
+      "attempt_completed_at": "2026-08-26T10:30:19Z",
+      "outcome": "robots_disallowed",
+      "raw_reasons": [
+        "ROBOTS_DISALLOWED"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "6c0277dba53d892a16da2a90eac5ae8cebefff3e00f3634f3e085ce35f7404c7",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "ROBOTS_DISALLOWED"
+        ],
+        "mpn": "SYNTH-019",
+        "seller": "Synthetic Rétailer 19",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0020",
+      "ordinal": 20,
+      "target_key": "Synthetic Rétailer 20\u001fSYNTH-020",
+      "expected_mpn": "SYNTH-020",
+      "seller_display_name": "Synthetic Rétailer 20",
+      "seller_legal_name_supplied": "Synthetic Legal 20",
+      "source_key": "synthetic-source-20",
+      "requested_url": "https://fixture.invalid/20",
+      "attempt_started_at": "2026-08-26T10:30:20Z",
+      "attempt_completed_at": "2026-08-26T10:30:20Z",
+      "outcome": "identity_abstention",
+      "raw_reasons": [
+        "MPN_NOT_VISIBLE"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "30721a9868d9a093b16f4ced20e064b6ed54b97686672d1a168e584901d1a67c",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "MPN_NOT_VISIBLE"
+        ],
+        "mpn": "SYNTH-020",
+        "seller": "Synthetic Rétailer 20",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0021",
+      "ordinal": 21,
+      "target_key": "Synthetic Rétailer 21\u001fSYNTH-021",
+      "expected_mpn": "SYNTH-021",
+      "seller_display_name": "Synthetic Rétailer 21",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-21",
+      "requested_url": "https://fixture.invalid/21",
+      "attempt_started_at": "2026-08-26T10:30:21Z",
+      "attempt_completed_at": "2026-08-26T10:30:21Z",
+      "outcome": "http_failure",
+      "raw_reasons": [
+        "HTTP_403"
+      ],
+      "http_status": 403,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "d325aa537588e64f15228ee497bdf559191c02b3d353200fbf1b3148c4995216",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "HTTP_403"
+        ],
+        "mpn": "SYNTH-021",
+        "seller": "Synthetic Rétailer 21",
+        "http_status": 403
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0022",
+      "ordinal": 22,
+      "target_key": "Synthetic Rétailer 22\u001fSYNTH-022",
+      "expected_mpn": "SYNTH-022",
+      "seller_display_name": "Synthetic Rétailer 22",
+      "seller_legal_name_supplied": "Synthetic Legal 22",
+      "source_key": "synthetic-source-22",
+      "requested_url": "https://fixture.invalid/22",
+      "attempt_started_at": "2026-08-26T10:30:22Z",
+      "attempt_completed_at": "2026-08-26T10:30:22Z",
+      "outcome": "robots_disallowed",
+      "raw_reasons": [
+        "ROBOTS_DISALLOWED"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "a0326541a9890dd74173bfaa56c663ce6807adf5f6e154880d0ac12ddb7fb5ee",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "ROBOTS_DISALLOWED"
+        ],
+        "mpn": "SYNTH-022",
+        "seller": "Synthetic Rétailer 22",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0023",
+      "ordinal": 23,
+      "target_key": "Synthetic Rétailer 23\u001fSYNTH-023",
+      "expected_mpn": "SYNTH-023",
+      "seller_display_name": "Synthetic Rétailer 23",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-23",
+      "requested_url": "https://fixture.invalid/23",
+      "attempt_started_at": "2026-08-26T10:30:23Z",
+      "attempt_completed_at": "2026-08-26T10:30:23Z",
+      "outcome": "identity_abstention",
+      "raw_reasons": [
+        "MPN_NOT_VISIBLE"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "0cfef6066269eace89d96554becff6b7450ac00c98e518ce903a6f9f365b4de3",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "MPN_NOT_VISIBLE"
+        ],
+        "mpn": "SYNTH-023",
+        "seller": "Synthetic Rétailer 23",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0024",
+      "ordinal": 24,
+      "target_key": "Synthetic Rétailer 24\u001fSYNTH-024",
+      "expected_mpn": "SYNTH-024",
+      "seller_display_name": "Synthetic Rétailer 24",
+      "seller_legal_name_supplied": "Synthetic Legal 24",
+      "source_key": "synthetic-source-24",
+      "requested_url": "https://fixture.invalid/24",
+      "attempt_started_at": "2026-08-26T10:30:24Z",
+      "attempt_completed_at": "2026-08-26T10:30:24Z",
+      "outcome": "http_failure",
+      "raw_reasons": [
+        "HTTP_403"
+      ],
+      "http_status": 403,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "4c9d26415ee736d01ff7dd63137a22f35e613df065695f6bbf8d6e992230d1ee",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "HTTP_403"
+        ],
+        "mpn": "SYNTH-024",
+        "seller": "Synthetic Rétailer 24",
+        "http_status": 403
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0025",
+      "ordinal": 25,
+      "target_key": "Synthetic Rétailer 25\u001fSYNTH-025",
+      "expected_mpn": "SYNTH-025",
+      "seller_display_name": "Synthetic Rétailer 25",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-25",
+      "requested_url": "https://fixture.invalid/25",
+      "attempt_started_at": "2026-08-26T10:30:25Z",
+      "attempt_completed_at": "2026-08-26T10:30:25Z",
+      "outcome": "robots_disallowed",
+      "raw_reasons": [
+        "ROBOTS_DISALLOWED"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "7d8f21077b2efc955f46e3b5048a599d5ad993c00884075ad83d886e4b5ef053",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "ROBOTS_DISALLOWED"
+        ],
+        "mpn": "SYNTH-025",
+        "seller": "Synthetic Rétailer 25",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0026",
+      "ordinal": 26,
+      "target_key": "Synthetic Rétailer 26\u001fSYNTH-026",
+      "expected_mpn": "SYNTH-026",
+      "seller_display_name": "Synthetic Rétailer 26",
+      "seller_legal_name_supplied": "Synthetic Legal 26",
+      "source_key": "synthetic-source-26",
+      "requested_url": "https://fixture.invalid/26",
+      "attempt_started_at": "2026-08-26T10:30:26Z",
+      "attempt_completed_at": "2026-08-26T10:30:26Z",
+      "outcome": "identity_abstention",
+      "raw_reasons": [
+        "MPN_NOT_VISIBLE"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "0c8aed61a12464a8252d60b5f68826982437d242fe296558ffd29e256918412c",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "MPN_NOT_VISIBLE"
+        ],
+        "mpn": "SYNTH-026",
+        "seller": "Synthetic Rétailer 26",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0027",
+      "ordinal": 27,
+      "target_key": "Synthetic Rétailer 27\u001fSYNTH-027",
+      "expected_mpn": "SYNTH-027",
+      "seller_display_name": "Synthetic Rétailer 27",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-27",
+      "requested_url": "https://fixture.invalid/27",
+      "attempt_started_at": "2026-08-26T10:30:27Z",
+      "attempt_completed_at": "2026-08-26T10:30:27Z",
+      "outcome": "http_failure",
+      "raw_reasons": [
+        "HTTP_403"
+      ],
+      "http_status": 403,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "e97bd652a98c0caff18526b4755a61390fb3cb86a187191cabe7803c09f4e8bd",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "HTTP_403"
+        ],
+        "mpn": "SYNTH-027",
+        "seller": "Synthetic Rétailer 27",
+        "http_status": 403
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0028",
+      "ordinal": 28,
+      "target_key": "Synthetic Rétailer 28\u001fSYNTH-028",
+      "expected_mpn": "SYNTH-028",
+      "seller_display_name": "Synthetic Rétailer 28",
+      "seller_legal_name_supplied": "Synthetic Legal 28",
+      "source_key": "synthetic-source-28",
+      "requested_url": "https://fixture.invalid/28",
+      "attempt_started_at": "2026-08-26T10:30:28Z",
+      "attempt_completed_at": "2026-08-26T10:30:28Z",
+      "outcome": "robots_disallowed",
+      "raw_reasons": [
+        "ROBOTS_DISALLOWED"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "bcc29791500c9b0b5efc8a9550a69db83bd38f05c5ef6359e31df454ebd83465",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "ROBOTS_DISALLOWED"
+        ],
+        "mpn": "SYNTH-028",
+        "seller": "Synthetic Rétailer 28",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0029",
+      "ordinal": 29,
+      "target_key": "Synthetic Rétailer 29\u001fSYNTH-029",
+      "expected_mpn": "SYNTH-029",
+      "seller_display_name": "Synthetic Rétailer 29",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-29",
+      "requested_url": "https://fixture.invalid/29",
+      "attempt_started_at": "2026-08-26T10:30:29Z",
+      "attempt_completed_at": "2026-08-26T10:30:29Z",
+      "outcome": "identity_abstention",
+      "raw_reasons": [
+        "MPN_NOT_VISIBLE"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "bae0437193be56581cc4040ffffa073afddc5f6196784bad44061fa7ba251874",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "MPN_NOT_VISIBLE"
+        ],
+        "mpn": "SYNTH-029",
+        "seller": "Synthetic Rétailer 29",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0030",
+      "ordinal": 30,
+      "target_key": "Synthetic Rétailer 30\u001fSYNTH-030",
+      "expected_mpn": "SYNTH-030",
+      "seller_display_name": "Synthetic Rétailer 30",
+      "seller_legal_name_supplied": "Synthetic Legal 30",
+      "source_key": "synthetic-source-30",
+      "requested_url": "https://fixture.invalid/30",
+      "attempt_started_at": "2026-08-26T10:30:30Z",
+      "attempt_completed_at": "2026-08-26T10:30:30Z",
+      "outcome": "http_failure",
+      "raw_reasons": [
+        "HTTP_403"
+      ],
+      "http_status": 403,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "35aaf61245f30e2e232a15838806471b715d406db144aa4b6816be00ace56eee",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "HTTP_403"
+        ],
+        "mpn": "SYNTH-030",
+        "seller": "Synthetic Rétailer 30",
+        "http_status": 403
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0031",
+      "ordinal": 31,
+      "target_key": "Synthetic Rétailer 31\u001fSYNTH-031",
+      "expected_mpn": "SYNTH-031",
+      "seller_display_name": "Synthetic Rétailer 31",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-31",
+      "requested_url": "https://fixture.invalid/31",
+      "attempt_started_at": "2026-08-26T10:30:31Z",
+      "attempt_completed_at": "2026-08-26T10:30:31Z",
+      "outcome": "robots_disallowed",
+      "raw_reasons": [
+        "ROBOTS_DISALLOWED"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "66442f1dbcccc8d0895b86d050725325fcf705188097c8314987307eeeff2b12",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "ROBOTS_DISALLOWED"
+        ],
+        "mpn": "SYNTH-031",
+        "seller": "Synthetic Rétailer 31",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0032",
+      "ordinal": 32,
+      "target_key": "Synthetic Rétailer 32\u001fSYNTH-032",
+      "expected_mpn": "SYNTH-032",
+      "seller_display_name": "Synthetic Rétailer 32",
+      "seller_legal_name_supplied": "Synthetic Legal 32",
+      "source_key": "synthetic-source-32",
+      "requested_url": "https://fixture.invalid/32",
+      "attempt_started_at": "2026-08-26T10:30:32Z",
+      "attempt_completed_at": "2026-08-26T10:30:32Z",
+      "outcome": "identity_abstention",
+      "raw_reasons": [
+        "MPN_NOT_VISIBLE"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "08701fef20cdff9690ff7c51a86571eb27bb8c9d5ecd6e1f90b7bb005aaf7714",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "MPN_NOT_VISIBLE"
+        ],
+        "mpn": "SYNTH-032",
+        "seller": "Synthetic Rétailer 32",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0033",
+      "ordinal": 33,
+      "target_key": "Synthetic Rétailer 33\u001fSYNTH-033",
+      "expected_mpn": "SYNTH-033",
+      "seller_display_name": "Synthetic Rétailer 33",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-33",
+      "requested_url": "https://fixture.invalid/33",
+      "attempt_started_at": "2026-08-26T10:30:33Z",
+      "attempt_completed_at": "2026-08-26T10:30:33Z",
+      "outcome": "http_failure",
+      "raw_reasons": [
+        "HTTP_403"
+      ],
+      "http_status": 403,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "cadcb10f11c5dee73ca6319dd1779a7bfb99bf2c03d5cac3f66910db4da56f47",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "HTTP_403"
+        ],
+        "mpn": "SYNTH-033",
+        "seller": "Synthetic Rétailer 33",
+        "http_status": 403
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0034",
+      "ordinal": 34,
+      "target_key": "Synthetic Rétailer 34\u001fSYNTH-034",
+      "expected_mpn": "SYNTH-034",
+      "seller_display_name": "Synthetic Rétailer 34",
+      "seller_legal_name_supplied": "Synthetic Legal 34",
+      "source_key": "synthetic-source-34",
+      "requested_url": "https://fixture.invalid/34",
+      "attempt_started_at": "2026-08-26T10:30:34Z",
+      "attempt_completed_at": "2026-08-26T10:30:34Z",
+      "outcome": "robots_disallowed",
+      "raw_reasons": [
+        "ROBOTS_DISALLOWED"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "541c899540466ed4b2c065483f557530e18ef162a7508f9517b0870525bff8c3",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "ROBOTS_DISALLOWED"
+        ],
+        "mpn": "SYNTH-034",
+        "seller": "Synthetic Rétailer 34",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0035",
+      "ordinal": 35,
+      "target_key": "Synthetic Rétailer 35\u001fSYNTH-035",
+      "expected_mpn": "SYNTH-035",
+      "seller_display_name": "Synthetic Rétailer 35",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-35",
+      "requested_url": "https://fixture.invalid/35",
+      "attempt_started_at": "2026-08-26T10:30:35Z",
+      "attempt_completed_at": "2026-08-26T10:30:35Z",
+      "outcome": "identity_abstention",
+      "raw_reasons": [
+        "MPN_NOT_VISIBLE"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "b696910aef1cdafc3663d7d21528c03616c20d35a1c9f5caa61f56944d51f103",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "MPN_NOT_VISIBLE"
+        ],
+        "mpn": "SYNTH-035",
+        "seller": "Synthetic Rétailer 35",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0036",
+      "ordinal": 36,
+      "target_key": "Synthetic Rétailer 36\u001fSYNTH-036",
+      "expected_mpn": "SYNTH-036",
+      "seller_display_name": "Synthetic Rétailer 36",
+      "seller_legal_name_supplied": "Synthetic Legal 36",
+      "source_key": "synthetic-source-36",
+      "requested_url": "https://fixture.invalid/36",
+      "attempt_started_at": "2026-08-26T10:30:36Z",
+      "attempt_completed_at": "2026-08-26T10:30:36Z",
+      "outcome": "http_failure",
+      "raw_reasons": [
+        "HTTP_403"
+      ],
+      "http_status": 403,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "af1f87d8c4a12acf23cc7fa9c5b14d1b87f74735704c00e1804df9f3502fd4c7",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "HTTP_403"
+        ],
+        "mpn": "SYNTH-036",
+        "seller": "Synthetic Rétailer 36",
+        "http_status": 403
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0037",
+      "ordinal": 37,
+      "target_key": "Synthetic Rétailer 37\u001fSYNTH-037",
+      "expected_mpn": "SYNTH-037",
+      "seller_display_name": "Synthetic Rétailer 37",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-37",
+      "requested_url": "https://fixture.invalid/37",
+      "attempt_started_at": "2026-08-26T10:30:37Z",
+      "attempt_completed_at": "2026-08-26T10:30:37Z",
+      "outcome": "robots_disallowed",
+      "raw_reasons": [
+        "ROBOTS_DISALLOWED"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "e80e53afcb8d20c0ff9debc2208631aa61a50aa9dace0130c4b61c340725301e",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "ROBOTS_DISALLOWED"
+        ],
+        "mpn": "SYNTH-037",
+        "seller": "Synthetic Rétailer 37",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0038",
+      "ordinal": 38,
+      "target_key": "Synthetic Rétailer 38\u001fSYNTH-038",
+      "expected_mpn": "SYNTH-038",
+      "seller_display_name": "Synthetic Rétailer 38",
+      "seller_legal_name_supplied": "Synthetic Legal 38",
+      "source_key": "synthetic-source-38",
+      "requested_url": "https://fixture.invalid/38",
+      "attempt_started_at": "2026-08-26T10:30:38Z",
+      "attempt_completed_at": "2026-08-26T10:30:38Z",
+      "outcome": "identity_abstention",
+      "raw_reasons": [
+        "MPN_NOT_VISIBLE"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "9f76a0c8d236e906bdf12f4fcbf3cf3bc97320bedb34f087c101368b138a5457",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "MPN_NOT_VISIBLE"
+        ],
+        "mpn": "SYNTH-038",
+        "seller": "Synthetic Rétailer 38",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0039",
+      "ordinal": 39,
+      "target_key": "Synthetic Rétailer 39\u001fSYNTH-039",
+      "expected_mpn": "SYNTH-039",
+      "seller_display_name": "Synthetic Rétailer 39",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-39",
+      "requested_url": "https://fixture.invalid/39",
+      "attempt_started_at": "2026-08-26T10:30:39Z",
+      "attempt_completed_at": "2026-08-26T10:30:39Z",
+      "outcome": "http_failure",
+      "raw_reasons": [
+        "HTTP_403"
+      ],
+      "http_status": 403,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "d08f1263e37d92a901ad0d602230e60cc6d29adb5541b0023d594e68fd94a208",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "HTTP_403"
+        ],
+        "mpn": "SYNTH-039",
+        "seller": "Synthetic Rétailer 39",
+        "http_status": 403
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0040",
+      "ordinal": 40,
+      "target_key": "Synthetic Rétailer 40\u001fSYNTH-040",
+      "expected_mpn": "SYNTH-040",
+      "seller_display_name": "Synthetic Rétailer 40",
+      "seller_legal_name_supplied": "Synthetic Legal 40",
+      "source_key": "synthetic-source-40",
+      "requested_url": "https://fixture.invalid/40",
+      "attempt_started_at": "2026-08-26T10:30:40Z",
+      "attempt_completed_at": "2026-08-26T10:30:40Z",
+      "outcome": "robots_disallowed",
+      "raw_reasons": [
+        "ROBOTS_DISALLOWED"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "776fb9480e79270ec49621ccf2b3629a233483fe23c8ac62482c2cf62633e6db",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "ROBOTS_DISALLOWED"
+        ],
+        "mpn": "SYNTH-040",
+        "seller": "Synthetic Rétailer 40",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0041",
+      "ordinal": 41,
+      "target_key": "Synthetic Rétailer 41\u001fSYNTH-041",
+      "expected_mpn": "SYNTH-041",
+      "seller_display_name": "Synthetic Rétailer 41",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-41",
+      "requested_url": "https://fixture.invalid/41",
+      "attempt_started_at": "2026-08-26T10:30:41Z",
+      "attempt_completed_at": "2026-08-26T10:30:41Z",
+      "outcome": "identity_abstention",
+      "raw_reasons": [
+        "MPN_NOT_VISIBLE"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "e2d5b789ab0aa81f8a373e2537973c82595bcdc67e3b0324784f7d2caf61d4d8",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "MPN_NOT_VISIBLE"
+        ],
+        "mpn": "SYNTH-041",
+        "seller": "Synthetic Rétailer 41",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0042",
+      "ordinal": 42,
+      "target_key": "Synthetic Rétailer 42\u001fSYNTH-042",
+      "expected_mpn": "SYNTH-042",
+      "seller_display_name": "Synthetic Rétailer 42",
+      "seller_legal_name_supplied": "Synthetic Legal 42",
+      "source_key": "synthetic-source-42",
+      "requested_url": "https://fixture.invalid/42",
+      "attempt_started_at": "2026-08-26T10:30:42Z",
+      "attempt_completed_at": "2026-08-26T10:30:42Z",
+      "outcome": "http_failure",
+      "raw_reasons": [
+        "HTTP_403"
+      ],
+      "http_status": 403,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "85f7297171926fe8e6a088f9e792b925a0f125231445d384ec63b5e813466257",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "HTTP_403"
+        ],
+        "mpn": "SYNTH-042",
+        "seller": "Synthetic Rétailer 42",
+        "http_status": 403
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0043",
+      "ordinal": 43,
+      "target_key": "Synthetic Rétailer 43\u001fSYNTH-043",
+      "expected_mpn": "SYNTH-043",
+      "seller_display_name": "Synthetic Rétailer 43",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-43",
+      "requested_url": "https://fixture.invalid/43",
+      "attempt_started_at": "2026-08-26T10:30:43Z",
+      "attempt_completed_at": "2026-08-26T10:30:43Z",
+      "outcome": "robots_disallowed",
+      "raw_reasons": [
+        "ROBOTS_DISALLOWED"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "723328fca6a3a767d838617da0ec7fa41bfb14fd49544f91396991067296dc9f",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "ROBOTS_DISALLOWED"
+        ],
+        "mpn": "SYNTH-043",
+        "seller": "Synthetic Rétailer 43",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0044",
+      "ordinal": 44,
+      "target_key": "Synthetic Rétailer 44\u001fSYNTH-044",
+      "expected_mpn": "SYNTH-044",
+      "seller_display_name": "Synthetic Rétailer 44",
+      "seller_legal_name_supplied": "Synthetic Legal 44",
+      "source_key": "synthetic-source-44",
+      "requested_url": "https://fixture.invalid/44",
+      "attempt_started_at": "2026-08-26T10:30:44Z",
+      "attempt_completed_at": "2026-08-26T10:30:44Z",
+      "outcome": "identity_abstention",
+      "raw_reasons": [
+        "MPN_NOT_VISIBLE"
+      ],
+      "http_status": null,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "cad1ec0da9f91f5d18020322949ed6dacafcabca49d6971a924c0e65ab929744",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "MPN_NOT_VISIBLE"
+        ],
+        "mpn": "SYNTH-044",
+        "seller": "Synthetic Rétailer 44",
+        "http_status": null
+      }
+    },
+    {
+      "attempt_id": "sf-collection-run-20260826T103000Z:attempt:0045",
+      "ordinal": 45,
+      "target_key": "Synthetic Rétailer 45\u001fSYNTH-045",
+      "expected_mpn": "SYNTH-045",
+      "seller_display_name": "Synthetic Rétailer 45",
+      "seller_legal_name_supplied": null,
+      "source_key": "synthetic-source-45",
+      "requested_url": "https://fixture.invalid/45",
+      "attempt_started_at": "2026-08-26T10:30:45Z",
+      "attempt_completed_at": "2026-08-26T10:30:45Z",
+      "outcome": "http_failure",
+      "raw_reasons": [
+        "HTTP_403"
+      ],
+      "http_status": 403,
+      "final_url": null,
+      "response_bytes": null,
+      "response_sha256": null,
+      "response_bytes_retained": false,
+      "retention_note": "Synthetic fixture response bytes are not retained.",
+      "observation_id": null,
+      "evidence_id": null,
+      "raw_result_sha256": "f3a7fbc434b128133b7e242c5e859b1302a70ad549b971c13deb25b42ac39a50",
+      "raw_result": {
+        "usable": false,
+        "reasons": [
+          "HTTP_403"
+        ],
+        "mpn": "SYNTH-045",
+        "seller": "Synthetic Rétailer 45",
+        "http_status": 403
+      }
+    }
+  ],
+  "status": "candidate_private_immutable",
+  "governance": {
+    "source_approved": false,
+    "methodology_approved": false,
+    "index_eligible": false,
+    "production_eligible": false,
+    "publication_eligible": false,
+    "public_claim_approved": false
+  }
+}
