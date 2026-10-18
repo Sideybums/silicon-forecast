@@ -1,0 +1,1521 @@
+{
+  "schema_version": 1,
+  "tranche_id": "sf-gb-primary-retail-20261018T103009Z-v1",
+  "status": "candidate_private_immutable",
+  "scope": "candidate_only",
+  "region": "GB",
+  "channel": "PRIMARY_RETAIL",
+  "created_at": "2026-10-18T10:30:09Z",
+  "observation_count": 19,
+  "collector_version": 1,
+  "evidence_ledger": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+  "immutability_policy": "Append-only candidate observation tranche; do not edit in place. Corrections require a new additive artifact.",
+  "capture_basis": {
+    "observed_at_semantics": "Time of retrieval by the canonical collector; the retailer's own price-change time is not observed.",
+    "acquisition_method": "Scheduled unattended retrieval of exact-MPN product pages listed in data/catalogue/collection-targets.v1.json. One request at a time with a delay between requests, an identifying user-agent, and robots.txt honoured per host.",
+    "run_id": "sf-collection-run-20261018T103009Z"
+  },
+  "observations": [
+    {
+      "observation_id": "awd-it-ff3d532g6000hc38adc01-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "ff3d532g6000hc38adc01",
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/teamgroup-delta-rgb-32gb-2x16gb-6000mhz-c38-ddr5-memory-kit-ff3d532g6000hc38adc01.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "FF3D532G6000HC38ADC01",
+        "mpn_observed": "FF3D532G6000HC38ADC01",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 46210,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "unknown",
+        "schema": null,
+        "display": null,
+        "eligibility_semantics": "unknown"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 46210,
+        "reasons": [
+          "delivery_not_read_by_collector"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "1d44fed4b2550c5ae3ba3d534fcdac1d2a19421ddf3164f0e1a3ee8b45162c43",
+        "response_bytes": 401385,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/teamgroup-delta-rgb-32gb-2x16gb-6000mhz-c38-ddr5-memory-kit-ff3d532g6000hc38adc01.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "awd-it-ax5u6400c3216g-dclarbk-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "ax5u6400c3216g-dclarbk",
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/adata-xpg-lancer-rgb-32gb-kit-2-x-16gb-6400mhz-ddr5-cl32-memory-ax5u6400c3216g-dclarbk.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "AX5U6400C3216G-DCLARBK",
+        "mpn_observed": "AX5U6400C3216G-DCLARBK",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 58599,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "unknown",
+        "schema": null,
+        "display": null,
+        "eligibility_semantics": "unknown"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 58599,
+        "reasons": [
+          "delivery_not_read_by_collector"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "e9ab9122b4ca89c82324c73d8bf20939644f387679e1d0e6ba9d27ac262f2873",
+        "response_bytes": 401838,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/adata-xpg-lancer-rgb-32gb-kit-2-x-16gb-6400mhz-ddr5-cl32-memory-ax5u6400c3216g-dclarbk.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "awd-it-ax5u6400c3216g-dtlabbk-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "ax5u6400c3216g-dtlabbk",
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/adata-xpg-lancer-blade-32gb-kit-2-x-16gb-6400mhz-ddr5-cl32-memory-ax5u6400c3216g-dtlabbk.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "AX5U6400C3216G-DTLABBK",
+        "mpn_observed": "AX5U6400C3216G-DTLABBK",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 55499,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "unknown",
+        "schema": null,
+        "display": null,
+        "eligibility_semantics": "unknown"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 55499,
+        "reasons": [
+          "delivery_not_read_by_collector"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "a7162473cdcb058e05414d844daab54b2213be68e2ed5c904fb7b9781e64edf2",
+        "response_bytes": 416854,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/adata-xpg-lancer-blade-32gb-kit-2-x-16gb-6400mhz-ddr5-cl32-memory-ax5u6400c3216g-dtlabbk.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "scan-computers-cmh32gx5m2b6000c36-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "cmh32gx5m2b6000c36",
+      "source": {
+        "source_key": "scan-computers-uk-public-page",
+        "source_name": "Scan Computers public product page",
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-rgb-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMH32GX5M2B6000C36",
+        "mpn_observed": "CMH32GX5M2B6000C36",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "established_for_mpn_from_prior_evidence",
+        "capacity_basis_reference": "sf-hist-scan-cmh32gx5m2b6000c36-20231208160859"
+      },
+      "seller": {
+        "display_name": "Scan Computers",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 52999,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "in_stock",
+        "schema": "In stock",
+        "display": "In stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 52999,
+        "reasons": [
+          "delivery_not_read_by_collector",
+          "seller_legal_name_unresolved"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "7c1035974d63b7609ef220a57025ed67e5df992917729a2b0cbbbf40411545ef",
+        "response_bytes": 115961,
+        "response_bytes_retained": false,
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-rgb-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "scan-computers-cmh32gx5m2b6000c36w-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "cmh32gx5m2b6000c36w",
+      "source": {
+        "source_key": "scan-computers-uk-public-page",
+        "source_name": "Scan Computers public product page",
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-rgb-white-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMH32GX5M2B6000C36W",
+        "mpn_observed": "CMH32GX5M2B6000C36W",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "established_for_mpn_from_prior_evidence",
+        "capacity_basis_reference": "sf-hist-scan-cmh32gx5m2b6000c36w-20240228033721"
+      },
+      "seller": {
+        "display_name": "Scan Computers",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 53449,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "in_stock",
+        "schema": "In stock",
+        "display": "In stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 53449,
+        "reasons": [
+          "delivery_not_read_by_collector",
+          "seller_legal_name_unresolved"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "1e3c798999e2bb036baae345c0f55346c0ab57c486fc80977ddda2bf9a8f6848",
+        "response_bytes": 115046,
+        "response_bytes_retained": false,
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-rgb-white-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "scan-computers-cmh32gx5m2b6400c32w-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "cmh32gx5m2b6400c32w",
+      "source": {
+        "source_key": "scan-computers-uk-public-page",
+        "source_name": "Scan Computers public product page",
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-rgb-white-pc5-51200-6400-non-ecc-unbuffered-cas-32-xmp-30-14v",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMH32GX5M2B6400C32W",
+        "mpn_observed": "CMH32GX5M2B6400C32W",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "established_for_mpn_from_prior_evidence",
+        "capacity_basis_reference": "sf-hist-scan-cmh32gx5m2b6400c32w-20240211233718"
+      },
+      "seller": {
+        "display_name": "Scan Computers",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 55699,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "in_stock",
+        "schema": "In stock",
+        "display": "In stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 55699,
+        "reasons": [
+          "delivery_not_read_by_collector",
+          "seller_legal_name_unresolved"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "3a13b2143ac92952e73630c3f0e4335b417e7089704c92d2ac4fc3f3b6b65ed8",
+        "response_bytes": 119265,
+        "response_bytes_retained": false,
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-rgb-white-pc5-51200-6400-non-ecc-unbuffered-cas-32-xmp-30-14v"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "scan-computers-cmh32gx5m2b6800c40-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "cmh32gx5m2b6800c40",
+      "source": {
+        "source_key": "scan-computers-uk-public-page",
+        "source_name": "Scan Computers public product page",
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-rgb-black-pc5-54400-6800-non-ecc-unbuffered-cas-40-xmp-30-14v",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMH32GX5M2B6800C40",
+        "mpn_observed": "CMH32GX5M2B6800C40",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "established_for_mpn_from_prior_evidence",
+        "capacity_basis_reference": "sf-hist-scan-cmh32gx5m2b6800c40-20240225061613"
+      },
+      "seller": {
+        "display_name": "Scan Computers",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 9999999,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "in_stock",
+        "schema": "In stock",
+        "display": "In stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 9999999,
+        "reasons": [
+          "delivery_not_read_by_collector",
+          "seller_legal_name_unresolved"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "f9fa544920c09d2a8b6943def5ac9f11a2915e69af01eb5bfa4bc842c4c0ed2b",
+        "response_bytes": 111234,
+        "response_bytes_retained": false,
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-rgb-black-pc5-54400-6800-non-ecc-unbuffered-cas-40-xmp-30-14v"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "scan-computers-cmh32gx5m2b7000c40-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "cmh32gx5m2b7000c40",
+      "source": {
+        "source_key": "scan-computers-uk-public-page",
+        "source_name": "Scan Computers public product page",
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-rgb-black-pc5-56000-7000-non-ecc-unbuffered-cas-34",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMH32GX5M2B7000C40",
+        "mpn_observed": "CMH32GX5M2B7000C40",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "established_for_mpn_from_prior_evidence",
+        "capacity_basis_reference": "sf-hist-scan-cmh32gx5m2b7000c40-20231208192350"
+      },
+      "seller": {
+        "display_name": "Scan Computers",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 9999999,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "in_stock",
+        "schema": "In stock",
+        "display": "In stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 9999999,
+        "reasons": [
+          "delivery_not_read_by_collector",
+          "seller_legal_name_unresolved"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "c317c0f39e5726dd61d8f7a2267a21bdcd0872034d10e1c4a72323140134bee9",
+        "response_bytes": 129229,
+        "response_bytes_retained": false,
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-rgb-black-pc5-56000-7000-non-ecc-unbuffered-cas-34"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "scan-computers-cmh32gx5m2x7200c34-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "cmh32gx5m2x7200c34",
+      "source": {
+        "source_key": "scan-computers-uk-public-page",
+        "source_name": "Scan Computers public product page",
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-rgb-black-pc5-57600-7200-non-ecc-unbuffered-cas-34-xmp-30-145v",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMH32GX5M2X7200C34",
+        "mpn_observed": "CMH32GX5M2X7200C34",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "established_for_mpn_from_prior_evidence",
+        "capacity_basis_reference": "sf-hist-scan-cmh32gx5m2x7200c34-20231211193142"
+      },
+      "seller": {
+        "display_name": "Scan Computers",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 62348,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "unknown",
+        "schema": null,
+        "display": null,
+        "eligibility_semantics": "unknown"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 62348,
+        "reasons": [
+          "delivery_not_read_by_collector",
+          "seller_legal_name_unresolved"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "261149c95d2aedc7a21200820d5f470c1354a426d329fe6dd2b88a4fe829035c",
+        "response_bytes": 136061,
+        "response_bytes_retained": false,
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-rgb-black-pc5-57600-7200-non-ecc-unbuffered-cas-34-xmp-30-145v"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "scan-computers-cmk32gx5m2e6000c36w-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "cmk32gx5m2e6000c36w",
+      "source": {
+        "source_key": "scan-computers-uk-public-page",
+        "source_name": "Scan Computers public product page",
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-white-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-14v",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMK32GX5M2E6000C36W",
+        "mpn_observed": "CMK32GX5M2E6000C36W",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "established_for_mpn_from_prior_evidence",
+        "capacity_basis_reference": "sf-hist-scan-cmk32gx5m2e6000c36w-20240228033718"
+      },
+      "seller": {
+        "display_name": "Scan Computers",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 9999999,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "unknown",
+        "schema": null,
+        "display": null,
+        "eligibility_semantics": "unknown"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 9999999,
+        "reasons": [
+          "delivery_not_read_by_collector",
+          "seller_legal_name_unresolved"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "af0206d7b87d191da5b64fc442ef2d60e58f5cfd7a8071c7b9d427a687ca6bec",
+        "response_bytes": 111253,
+        "response_bytes_retained": false,
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-white-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-14v"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "scan-computers-cmp32gx5m2b6000z30-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "cmp32gx5m2b6000z30",
+      "source": {
+        "source_key": "scan-computers-uk-public-page",
+        "source_name": "Scan Computers public product page",
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-dominator-titanium-rgb-grey-pc5-48000-6000-non-ecc-unbuffered-cas-30-xmp-am",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMP32GX5M2B6000Z30",
+        "mpn_observed": "CMP32GX5M2B6000Z30",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "established_for_mpn_from_prior_evidence",
+        "capacity_basis_reference": "sf-hist-scan-cmp32gx5m2b6000z30-20240228033718"
+      },
+      "seller": {
+        "display_name": "Scan Computers",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 61349,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "in_stock",
+        "schema": "In stock",
+        "display": "In stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 61349,
+        "reasons": [
+          "delivery_not_read_by_collector",
+          "seller_legal_name_unresolved"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "cc0ca385ff4ecad003a29b0e744d96063e1cf3649bc6c8de9761f8274e3fafb2",
+        "response_bytes": 121610,
+        "response_bytes_retained": false,
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-dominator-titanium-rgb-grey-pc5-48000-6000-non-ecc-unbuffered-cas-30-xmp-am"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "scan-computers-cmsx32gx5m2a4800c40-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "cmsx32gx5m2a4800c40",
+      "source": {
+        "source_key": "scan-computers-uk-public-page",
+        "source_name": "Scan Computers public product page",
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-sodimm-pc5-38400-4800-non-ecc-unbuffered-cas-40-11v",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMSX32GX5M2A4800C40",
+        "mpn_observed": "CMSX32GX5M2A4800C40",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "established_for_mpn_from_prior_evidence",
+        "capacity_basis_reference": "sf-hist-scan-cmsx32gx5m2a4800c40-20220812125323"
+      },
+      "seller": {
+        "display_name": "Scan Computers",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 44498,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "in_stock",
+        "schema": "In stock",
+        "display": "In stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 44498,
+        "reasons": [
+          "delivery_not_read_by_collector",
+          "seller_legal_name_unresolved"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "85b72954d4667af44a1ce94f7252298e2b02d5e5db033ab606a6432fa2ec9be6",
+        "response_bytes": 114967,
+        "response_bytes_retained": false,
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-sodimm-pc5-38400-4800-non-ecc-unbuffered-cas-40-11v"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "scan-computers-cmsx32gx5m2a5600c48-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "cmsx32gx5m2a5600c48",
+      "source": {
+        "source_key": "scan-computers-uk-public-page",
+        "source_name": "Scan Computers public product page",
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-sodimm-pc5-44800-5600-non-ecc-unbuffered-cas-48-11v",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMSX32GX5M2A5600C48",
+        "mpn_observed": "CMSX32GX5M2A5600C48",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "established_for_mpn_from_prior_evidence",
+        "capacity_basis_reference": "sf-hist-scan-cmsx32gx5m2a5600c48-20231208171521"
+      },
+      "seller": {
+        "display_name": "Scan Computers",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 46099,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "in_stock",
+        "schema": "In stock",
+        "display": "In stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 46099,
+        "reasons": [
+          "delivery_not_read_by_collector",
+          "seller_legal_name_unresolved"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "247dbf76fe49b1c379978c66707dcd7b6f09230c1d63cc81d61c0a4ac3bb1eb5",
+        "response_bytes": 112988,
+        "response_bytes_retained": false,
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-sodimm-pc5-44800-5600-non-ecc-unbuffered-cas-48-11v"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "awd-it-ff3d532g8000hc38ddc01-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "ff3d532g8000hc38ddc01",
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/teamgroup-delta-rgb-32gb-2x16gb-8000mhz-c38-ddr5-memory-kit-ff3d532g8000hc38ddc01.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "FF3D532G8000HC38DDC01",
+        "mpn_observed": "FF3D532G8000HC38DDC01",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 49799,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "unknown",
+        "schema": null,
+        "display": null,
+        "eligibility_semantics": "unknown"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 49799,
+        "reasons": [
+          "delivery_not_read_by_collector"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "c9b5b7e2906a2c59f1fad7d3ed7fc40937fc1dcff558345765b392293d148e23",
+        "response_bytes": 402218,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/teamgroup-delta-rgb-32gb-2x16gb-8000mhz-c38-ddr5-memory-kit-ff3d532g8000hc38ddc01.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "awd-it-ra50d516gx2-5600c36a-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "ra50d516gx2-5600c36a",
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/thermaltake-toughram-rc-d5-32gb-2x16gb-ddr5-5600mt-s-c36-memory-ra50d516gx2-5600c36a.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "RA50D516GX2-5600C36A",
+        "mpn_observed": "RA50D516GX2-5600C36A",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 39999,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "unknown",
+        "schema": null,
+        "display": null,
+        "eligibility_semantics": "unknown"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 39999,
+        "reasons": [
+          "delivery_not_read_by_collector"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "5060be3256e3c0f84a01c3ab952f808b98a7825085e48141d130c4e3bf9674e9",
+        "response_bytes": 397928,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/thermaltake-toughram-rc-d5-32gb-2x16gb-ddr5-5600mt-s-c36-memory-ra50d516gx2-5600c36a.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "awd-it-f5-6000j3636f16gx2-fx5-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "f5-6000j3636f16gx2-fx5",
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/g-skill-flare-x5-32gb-16gb-x2-ddr5-6000mt-s-cl36-memory-kit-black-f5-6000j3636f16gx2-fx5.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "F5-6000J3636F16GX2-FX5",
+        "mpn_observed": "F5-6000J3636F16GX2-FX5",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 55299,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "unknown",
+        "schema": null,
+        "display": null,
+        "eligibility_semantics": "unknown"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 55299,
+        "reasons": [
+          "delivery_not_read_by_collector"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "967cef465e53eb48cc0a78acff1c0820600879fd0911e6db188cae1045c7c767",
+        "response_bytes": 405776,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/g-skill-flare-x5-32gb-16gb-x2-ddr5-6000mt-s-cl36-memory-kit-black-f5-6000j3636f16gx2-fx5.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "kingstonmemoryshop-kf560c30bbek2-32-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "kf560c30bbek2-32",
+      "source": {
+        "source_key": "kingstonmemoryshop-uk-public-page",
+        "source_name": "KingstonMemoryShop public product page",
+        "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-beast-kf560c30bbek2-32-32gb-16gb-x2-ddr5-6000mt-s-black-memory-dimm-expo",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "KF560C30BBEK2-32",
+        "mpn_observed": "KF560C30BBEK2-32",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
+      },
+      "seller": {
+        "display_name": "KingstonMemoryShop",
+        "legal_name": "SweetCow Ltd t/a KingstonMemoryShop",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 80590,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "in_stock",
+        "schema": "In stock",
+        "display": "In stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 80590,
+        "reasons": [
+          "delivery_not_read_by_collector"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "c46b33ce9ba569cf29a9bcddcab5497f519b92e312b65f262497c4fb9a5777df",
+        "response_bytes": 614825,
+        "response_bytes_retained": false,
+        "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-beast-kf560c30bbek2-32-32gb-16gb-x2-ddr5-6000mt-s-black-memory-dimm-expo"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "kingstonmemoryshop-kf564c32rsk2-32-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "kf564c32rsk2-32",
+      "source": {
+        "source_key": "kingstonmemoryshop-uk-public-page",
+        "source_name": "KingstonMemoryShop public product page",
+        "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "KF564C32RSK2-32",
+        "mpn_observed": "KF564C32RSK2-32",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
+      },
+      "seller": {
+        "display_name": "KingstonMemoryShop",
+        "legal_name": "SweetCow Ltd t/a KingstonMemoryShop",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 82061,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "in_stock",
+        "schema": "In stock",
+        "display": "In stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 82061,
+        "reasons": [
+          "delivery_not_read_by_collector"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "c40ba908a67e94479b6f9e2aa2db6a4ba8a2be0ed7636a22185dd3d484cda11b",
+        "response_bytes": 614478,
+        "response_bytes_retained": false,
+        "source_url": "https://www.kingstonmemoryshop.co.uk/kingston-fury-renegade-silver-kf564c32rsk2-32-32gb-16gb-x2-ddr5-6400mt-s-non-ecc-dimm"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "scan-computers-cmk32gx5m2b6000c36-2026-10-18t10:30:09z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-10-18T10:30:09Z",
+      "product_key": "cmk32gx5m2b6000c36",
+      "source": {
+        "source_key": "scan-computers-uk-public-page",
+        "source_name": "Scan Computers public product page",
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CMK32GX5M2B6000C36",
+        "mpn_observed": "CMK32GX5M2B6000C36",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "established_for_mpn_from_prior_evidence",
+        "capacity_basis_reference": "sf-hist-ocuk-cmk32gx5m2b6000c36-20241112232423"
+      },
+      "seller": {
+        "display_name": "Scan Computers",
+        "legal_name": null,
+        "legal_name_state": "not_established_from_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 52399,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "in_stock",
+        "schema": "In stock",
+        "display": "In stock",
+        "eligibility_semantics": "explicit"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 52399,
+        "reasons": [
+          "delivery_not_read_by_collector",
+          "seller_legal_name_unresolved"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261018T103009Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "aca8141fc0d7e016eb8815fb65f693f1e1b768964b86d8ac2664d09aa959e05b",
+        "response_bytes": 120890,
+        "response_bytes_retained": false,
+        "source_url": "https://www.scan.co.uk/products/32gb-2x16gb-corsair-ddr5-vengeance-black-pc5-48000-6000-non-ecc-unbuffered-cas-36-xmp-30-125v"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    }
+  ],
+  "governance": {
+    "source_approved": false,
+    "methodology_approved": false,
+    "index_eligible": false,
+    "production_eligible": false,
+    "publication_eligible": false,
+    "public_claim_approved": false
+  }
+}
