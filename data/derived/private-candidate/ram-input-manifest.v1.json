@@ -690,6 +690,15 @@
       "reason": "Retained candidate evidence not included in this frozen calculation revision pending explicit governance review and revisioning."
     },
     {
+      "path": "data/observations/candidate/uk-primary-retail-20261118T113006Z.v1.json",
+      "sha256": "35d933a9b44e4647c78cb7af7d86b14909ac8c643874e00be2a16acbf295c157",
+      "schema_version": 1,
+      "channel": "PRIMARY_RETAIL",
+      "capture_kind": "prospective_capture",
+      "decision": "excluded_private_candidate",
+      "reason": "Retained candidate evidence not included in this frozen calculation revision pending explicit governance review and revisioning."
+    },
+    {
       "path": "data/observations/candidate/uk-primary-retail-historical-backfill-2026-08-09T145021Z.v1.json",
       "sha256": "c54210ddc8a607826fc229480eb88c31bbd974111c93f940d3835a12e72cace8",
       "schema_version": 1,
