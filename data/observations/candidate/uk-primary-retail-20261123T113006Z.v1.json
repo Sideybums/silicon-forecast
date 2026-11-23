@@ -1,0 +1,496 @@
+{
+  "schema_version": 1,
+  "tranche_id": "sf-gb-primary-retail-20261123T113006Z-v1",
+  "status": "candidate_private_immutable",
+  "scope": "candidate_only",
+  "region": "GB",
+  "channel": "PRIMARY_RETAIL",
+  "created_at": "2026-11-23T11:30:06Z",
+  "observation_count": 6,
+  "collector_version": 1,
+  "evidence_ledger": "research/evidence/primary-retail-20261123T113006Z/ledger.v1.json",
+  "immutability_policy": "Append-only candidate observation tranche; do not edit in place. Corrections require a new additive artifact.",
+  "capture_basis": {
+    "observed_at_semantics": "Time of retrieval by the canonical collector; the retailer's own price-change time is not observed.",
+    "acquisition_method": "Scheduled unattended retrieval of exact-MPN product pages listed in data/catalogue/collection-targets.v1.json. One request at a time with a delay between requests, an identifying user-agent, and robots.txt honoured per host.",
+    "run_id": "sf-collection-run-20261123T113006Z"
+  },
+  "observations": [
+    {
+      "observation_id": "awd-it-cp2k16g60c36u5w-2026-11-23t11:30:06z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-11-23T11:30:06Z",
+      "product_key": "cp2k16g60c36u5w",
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/crucial-pro-overclocking-32gb-2x16gb-6000mt-s-ddr5-memory-kit-cp2k16g60c36u5w.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CP2K16G60C36U5W",
+        "mpn_observed": "CP2K16G60C36U5W",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 53495,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "unknown",
+        "schema": null,
+        "display": null,
+        "eligibility_semantics": "unknown"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 53495,
+        "reasons": [
+          "delivery_not_read_by_collector"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261123T113006Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "9b47c18c8ee395ca997ed6b58346b2df7a20755fa82fe39527a427eaded7e681",
+        "response_bytes": 420732,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/crucial-pro-overclocking-32gb-2x16gb-6000mt-s-ddr5-memory-kit-cp2k16g60c36u5w.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "awd-it-cp2k16g64c38u5w-2026-11-23t11:30:06z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-11-23T11:30:06Z",
+      "product_key": "cp2k16g64c38u5w",
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/crucial-pro-32gb-2x16gb-ddr5-6400mhz-cl38-desktop-ram-kit-white-cp2k16g64c38u5w.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "CP2K16G64C38U5W",
+        "mpn_observed": "CP2K16G64C38U5W",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 57125,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "unknown",
+        "schema": null,
+        "display": null,
+        "eligibility_semantics": "unknown"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 57125,
+        "reasons": [
+          "delivery_not_read_by_collector"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261123T113006Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "d2bc4e7852a2cc906b9cbb02679cec8c01a48637daa5a04ab9e2a8aa51fb4386",
+        "response_bytes": 409736,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/crucial-pro-32gb-2x16gb-ddr5-6400mhz-cl38-desktop-ram-kit-white-cp2k16g64c38u5w.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "awd-it-ff3d532g6000hc38adc01-2026-11-23t11:30:06z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-11-23T11:30:06Z",
+      "product_key": "ff3d532g6000hc38adc01",
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/teamgroup-delta-rgb-32gb-2x16gb-6000mhz-c38-ddr5-memory-kit-ff3d532g6000hc38adc01.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "FF3D532G6000HC38ADC01",
+        "mpn_observed": "FF3D532G6000HC38ADC01",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 58195,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "unknown",
+        "schema": null,
+        "display": null,
+        "eligibility_semantics": "unknown"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 58195,
+        "reasons": [
+          "delivery_not_read_by_collector"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261123T113006Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "37143274b61b9e4dbd98b01fa85c23f62eff8619aa9df1083157da592d0a818d",
+        "response_bytes": 412901,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/teamgroup-delta-rgb-32gb-2x16gb-6000mhz-c38-ddr5-memory-kit-ff3d532g6000hc38adc01.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "awd-it-ax5u6400c3216g-dclarbk-2026-11-23t11:30:06z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-11-23T11:30:06Z",
+      "product_key": "ax5u6400c3216g-dclarbk",
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/adata-xpg-lancer-rgb-32gb-kit-2-x-16gb-6400mhz-ddr5-cl32-memory-ax5u6400c3216g-dclarbk.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "AX5U6400C3216G-DCLARBK",
+        "mpn_observed": "AX5U6400C3216G-DCLARBK",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 58599,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "unknown",
+        "schema": null,
+        "display": null,
+        "eligibility_semantics": "unknown"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 58599,
+        "reasons": [
+          "delivery_not_read_by_collector"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261123T113006Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "7ed00b3bc17cf08b5f5a6a9cb833768fa515d276f78dfc221f22a0f17fbf9c5f",
+        "response_bytes": 412982,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/adata-xpg-lancer-rgb-32gb-kit-2-x-16gb-6400mhz-ddr5-cl32-memory-ax5u6400c3216g-dclarbk.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "awd-it-ax5u6400c3216g-dtlabbk-2026-11-23t11:30:06z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-11-23T11:30:06Z",
+      "product_key": "ax5u6400c3216g-dtlabbk",
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/adata-xpg-lancer-blade-32gb-kit-2-x-16gb-6400mhz-ddr5-cl32-memory-ax5u6400c3216g-dtlabbk.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "AX5U6400C3216G-DTLABBK",
+        "mpn_observed": "AX5U6400C3216G-DTLABBK",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 55499,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "unknown",
+        "schema": null,
+        "display": null,
+        "eligibility_semantics": "unknown"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 55499,
+        "reasons": [
+          "delivery_not_read_by_collector"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261123T113006Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "c4e2548e07ad4ec72e53566504e6e74000e9bdf05cbe24e297df4a66300f8c0a",
+        "response_bytes": 427892,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/adata-xpg-lancer-blade-32gb-kit-2-x-16gb-6400mhz-ddr5-cl32-memory-ax5u6400c3216g-dtlabbk.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    },
+    {
+      "observation_id": "awd-it-ff3d532g8000hc38ddc01-2026-11-23t11:30:06z",
+      "status": "candidate_private_immutable",
+      "scope": "candidate_only",
+      "observed_at": "2026-11-23T11:30:06Z",
+      "product_key": "ff3d532g8000hc38ddc01",
+      "source": {
+        "source_key": "awd-it-uk-public-page",
+        "source_name": "AWD-IT public product page",
+        "source_url": "https://www.awd-it.co.uk/teamgroup-delta-rgb-32gb-2x16gb-8000mhz-c38-ddr5-memory-kit-ff3d532g8000hc38ddc01.html",
+        "supplied_url_status": "http_200",
+        "collection_method": "scheduled unattended HTTP retrieval by the canonical collector",
+        "source_approved_for_production": false
+      },
+      "identity": {
+        "mpn_expected": "FF3D532G8000HC38DDC01",
+        "mpn_observed": "FF3D532G8000HC38DDC01",
+        "match_basis": "exact_mpn"
+      },
+      "product": {
+        "capacity_gb": 32,
+        "module_count": 2,
+        "memory_type": "DDR5",
+        "capacity_basis": "visible_on_page",
+        "capacity_basis_reference": null
+      },
+      "seller": {
+        "display_name": "AWD-IT",
+        "legal_name": "ADMI Limited",
+        "legal_name_state": "established_from_prior_retained_extract",
+        "relationship": "retailer_owned"
+      },
+      "item_price": {
+        "amount_minor": 49895,
+        "currency": "GBP",
+        "vat_state": "included"
+      },
+      "availability": {
+        "normalised": "unknown",
+        "schema": null,
+        "display": null,
+        "eligibility_semantics": "unknown"
+      },
+      "delivery": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "claim": null,
+        "destination_basis": null,
+        "destination_verified": false
+      },
+      "landed_price": {
+        "amount_minor": null,
+        "currency": "GBP",
+        "eligibility": "abstain"
+      },
+      "qualification": {
+        "status": "candidate_retained_not_landed_price_eligible",
+        "item_price_minor": 49895,
+        "reasons": [
+          "delivery_not_read_by_collector"
+        ]
+      },
+      "evidence": {
+        "extract_path": "research/evidence/primary-retail-20261123T113006Z/ledger.v1.json",
+        "extract_sha256": null,
+        "response_sha256": "53297f05635ad2299ce75092f8cb41e2540142d509443d126b0f52f7a562dd65",
+        "response_bytes": 413654,
+        "response_bytes_retained": false,
+        "source_url": "https://www.awd-it.co.uk/teamgroup-delta-rgb-32gb-2x16gb-8000mhz-c38-ddr5-memory-kit-ff3d532g8000hc38ddc01.html"
+      },
+      "governance": {
+        "production_import_allowed": false,
+        "production_activation_allowed": false,
+        "index_eligibility": false,
+        "methodology_approval": false,
+        "publication_allowed": false
+      }
+    }
+  ],
+  "governance": {
+    "source_approved": false,
+    "methodology_approved": false,
+    "index_eligible": false,
+    "production_eligible": false,
+    "publication_eligible": false,
+    "public_claim_approved": false
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "ledger_id": "sf-primary-retail-20261123T113006Z-v1",
+  "status": "candidate_private_immutable",
+  "created_at": "2026-11-23T11:30:06Z",
+  "run_id": "sf-collection-run-20261123T113006Z",
+  "entry_count": 6,
+  "entries": [
+    {
+      "evidence_id": "sf-collect-evidence-cp2k16g60c36u5w-awdit-20261123T113006Z",
+      "seller_display_name": "AWD-IT",
+      "source_url": "https://www.awd-it.co.uk/crucial-pro-overclocking-32gb-2x16gb-6000mt-s-ddr5-memory-kit-cp2k16g60c36u5w.html",
+      "final_url": "https://www.awd-it.co.uk/crucial-pro-overclocking-32gb-2x16gb-6000mt-s-ddr5-memory-kit-cp2k16g60c36u5w.html",
+      "retrieved_at": "2026-11-23T11:30:06Z",
+      "http_status": 200,
+      "response_bytes": 420732,
+      "response_sha256": "9b47c18c8ee395ca997ed6b58346b2df7a20755fa82fe39527a427eaded7e681",
+      "response_bytes_retained": false,
+      "retention_note": "Fetched response bytes are not retained; only this minimal factual extract, the response byte count and the response SHA-256 are kept.",
+      "vat_determination": "inclusive_exclusive_pair_reconciled",
+      "facts": {
+        "mpn": "CP2K16G60C36U5W",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 53495,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Crucial Pro Overclocking 32GB (2x16GB) DDR5 6000MHz CL36 Dual Channel White Memory Kit - CP2K16G60C36U5W — GBP 534.95"
+    },
+    {
+      "evidence_id": "sf-collect-evidence-cp2k16g64c38u5w-awdit-20261123T113006Z",
+      "seller_display_name": "AWD-IT",
+      "source_url": "https://www.awd-it.co.uk/crucial-pro-32gb-2x16gb-ddr5-6400mhz-cl38-desktop-ram-kit-white-cp2k16g64c38u5w.html",
+      "final_url": "https://www.awd-it.co.uk/crucial-pro-32gb-2x16gb-ddr5-6400mhz-cl38-desktop-ram-kit-white-cp2k16g64c38u5w.html",
+      "retrieved_at": "2026-11-23T11:30:06Z",
+      "http_status": 200,
+      "response_bytes": 409736,
+      "response_sha256": "d2bc4e7852a2cc906b9cbb02679cec8c01a48637daa5a04ab9e2a8aa51fb4386",
+      "response_bytes_retained": false,
+      "retention_note": "Fetched response bytes are not retained; only this minimal factual extract, the response byte count and the response SHA-256 are kept.",
+      "vat_determination": "inclusive_exclusive_pair_reconciled",
+      "facts": {
+        "mpn": "CP2K16G64C38U5W",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 57125,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "Crucial Pro 32GB (2x16GB) DDR5 6400MHz CL38 Dual Channel White Memory Kit - CP2K16G64C38U5W — GBP 571.25"
+    },
+    {
+      "evidence_id": "sf-collect-evidence-ff3d532g6000hc38adc01-awdit-20261123T113006Z",
+      "seller_display_name": "AWD-IT",
+      "source_url": "https://www.awd-it.co.uk/teamgroup-delta-rgb-32gb-2x16gb-6000mhz-c38-ddr5-memory-kit-ff3d532g6000hc38adc01.html",
+      "final_url": "https://www.awd-it.co.uk/teamgroup-delta-rgb-32gb-2x16gb-6000mhz-c38-ddr5-memory-kit-ff3d532g6000hc38adc01.html",
+      "retrieved_at": "2026-11-23T11:30:06Z",
+      "http_status": 200,
+      "response_bytes": 412901,
+      "response_sha256": "37143274b61b9e4dbd98b01fa85c23f62eff8619aa9df1083157da592d0a818d",
+      "response_bytes_retained": false,
+      "retention_note": "Fetched response bytes are not retained; only this minimal factual extract, the response byte count and the response SHA-256 are kept.",
+      "vat_determination": "inclusive_exclusive_pair_reconciled",
+      "facts": {
+        "mpn": "FF3D532G6000HC38ADC01",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 58195,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "TeamGroup T-Force Delta RGB 32GB (2x16GB) DDR5 6000MHz CL38 Dual Channel Black Memory Kit - FF3D532G6000HC38ADC01 — GBP 581.95"
+    },
+    {
+      "evidence_id": "sf-collect-evidence-ax5u6400c3216g-dclarbk-awdit-20261123T113006Z",
+      "seller_display_name": "AWD-IT",
+      "source_url": "https://www.awd-it.co.uk/adata-xpg-lancer-rgb-32gb-kit-2-x-16gb-6400mhz-ddr5-cl32-memory-ax5u6400c3216g-dclarbk.html",
+      "final_url": "https://www.awd-it.co.uk/adata-xpg-lancer-rgb-32gb-kit-2-x-16gb-6400mhz-ddr5-cl32-memory-ax5u6400c3216g-dclarbk.html",
+      "retrieved_at": "2026-11-23T11:30:06Z",
+      "http_status": 200,
+      "response_bytes": 412982,
+      "response_sha256": "7ed00b3bc17cf08b5f5a6a9cb833768fa515d276f78dfc221f22a0f17fbf9c5f",
+      "response_bytes_retained": false,
+      "retention_note": "Fetched response bytes are not retained; only this minimal factual extract, the response byte count and the response SHA-256 are kept.",
+      "vat_determination": "inclusive_exclusive_pair_reconciled",
+      "facts": {
+        "mpn": "AX5U6400C3216G-DCLARBK",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 58599,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "ADATA XPG Lancer RGB 32GB (2x16GB) DDR5 6400MHz CL32 Dual Channel Black Memory Kit - AX5U6400C3216G-DCLARBK — GBP 585.99"
+    },
+    {
+      "evidence_id": "sf-collect-evidence-ax5u6400c3216g-dtlabbk-awdit-20261123T113006Z",
+      "seller_display_name": "AWD-IT",
+      "source_url": "https://www.awd-it.co.uk/adata-xpg-lancer-blade-32gb-kit-2-x-16gb-6400mhz-ddr5-cl32-memory-ax5u6400c3216g-dtlabbk.html",
+      "final_url": "https://www.awd-it.co.uk/adata-xpg-lancer-blade-32gb-kit-2-x-16gb-6400mhz-ddr5-cl32-memory-ax5u6400c3216g-dtlabbk.html",
+      "retrieved_at": "2026-11-23T11:30:06Z",
+      "http_status": 200,
+      "response_bytes": 427892,
+      "response_sha256": "c4e2548e07ad4ec72e53566504e6e74000e9bdf05cbe24e297df4a66300f8c0a",
+      "response_bytes_retained": false,
+      "retention_note": "Fetched response bytes are not retained; only this minimal factual extract, the response byte count and the response SHA-256 are kept.",
+      "vat_determination": "inclusive_exclusive_pair_reconciled",
+      "facts": {
+        "mpn": "AX5U6400C3216G-DTLABBK",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 55499,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "ADATA XPG Lancer Blade 32GB (2x16GB) DDR5 6400MHz CL32 Dual Channel Black Memory Kit - AX5U6400C3216G-DTLABBK — GBP 554.99"
+    },
+    {
+      "evidence_id": "sf-collect-evidence-ff3d532g8000hc38ddc01-awdit-20261123T113006Z",
+      "seller_display_name": "AWD-IT",
+      "source_url": "https://www.awd-it.co.uk/teamgroup-delta-rgb-32gb-2x16gb-8000mhz-c38-ddr5-memory-kit-ff3d532g8000hc38ddc01.html",
+      "final_url": "https://www.awd-it.co.uk/teamgroup-delta-rgb-32gb-2x16gb-8000mhz-c38-ddr5-memory-kit-ff3d532g8000hc38ddc01.html",
+      "retrieved_at": "2026-11-23T11:30:06Z",
+      "http_status": 200,
+      "response_bytes": 413654,
+      "response_sha256": "53297f05635ad2299ce75092f8cb41e2540142d509443d126b0f52f7a562dd65",
+      "response_bytes_retained": false,
+      "retention_note": "Fetched response bytes are not retained; only this minimal factual extract, the response byte count and the response SHA-256 are kept.",
+      "vat_determination": "inclusive_exclusive_pair_reconciled",
+      "facts": {
+        "mpn": "FF3D532G8000HC38DDC01",
+        "capacity_gb": 32,
+        "module_count": 2,
+        "item_price_minor": 49895,
+        "currency": "GBP",
+        "vat_included": true
+      },
+      "minimal_quote": "TeamGroup T-Force Delta RGB 32GB (2x16GB) DDR5 8000MHz CL38 Dual Channel Black Memory Kit - FF3D532G8000HC38DDC01 — GBP 498.95"
+    }
+  ],
+  "authority": {
+    "source_approved": false,
+    "methodology_approved": false,
+    "index_eligible": false,
+    "publication_eligible": false
+  }
+}
